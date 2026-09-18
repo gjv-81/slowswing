@@ -1,0 +1,13 @@
+scan_time_et,ticker,signal,ref_entry,ref_stop,ref_target,atr,score,in_sweep,opening_bar_suspect,reason
+2026-05-27 10:01:32,TSLA,BUY,441.6,429.77,472.84,15.62,,YES,no,qualified
+2026-05-27 10:01:32,AAPL,BUY,312.03,307.67,323.41,5.69,,YES,no,qualified
+2026-05-27 10:01:32,BKNG,BUY,169.13,163.0,181.25,6.06,,no,no,qualified
+2026-05-27 10:01:32,CHTR,BUY,147.73,143.93,165.29,8.78,,no,no,qualified
+2026-05-27 10:01:32,FDX,BUY,411.9,399.66,434.46,11.28,,no,no,qualified
+2026-05-27 10:01:32,ROKU,BUY,130.06,127.17,138.78,4.36,,no,no,qualified
+2026-05-27 10:19:18,CRM,BUY,182.62,177.89,196.98,7.18,,no,no,qualified
+2026-05-27 10:37:35,PH,SELL,855.26,875.46,808.26,23.5,,no,no,qualified
+2026-05-27 12:11:44,ILMN,BUY,147.69,144.51,158.23,5.27,,no,no,qualified
+2026-05-27 12:11:44,EXPD,BUY,162.56,161.73,170.46,3.95,,no,no,qualified
+2026-05-27 13:27:27,TMO,BUY,450.74,448.0,476.98,13.12,,no,no,qualified
+2026-05-27 14:19:49,META,BUY,622.11,609.21,651.67,14.78,,YES,no,qualified

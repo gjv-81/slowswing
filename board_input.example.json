@@ -1,0 +1,13 @@
+[
+  {
+    "t": "NVDA", "n": "NVIDIA",
+    "setup": "cruise", "score": 16, "q": "pass",
+    "profile": "Core", "sector": "Semis", "rs": "strong",
+    "date": "2026-08-18", "pe": 210.0, "mfe": 7.2, "mae": -2.1, "dtp": 3,
+
+    "_comment": "Fields below are PRIVATE — your pipeline may attach anything; build_board.py drops everything not on the public whitelist.",
+    "sma200": 150.2, "dist200": 0.41, "wash_min8w": 1, "depth": 0.12,
+
+    "_regime": {"state": "Healthy", "dial": 1.8}
+  }
+]

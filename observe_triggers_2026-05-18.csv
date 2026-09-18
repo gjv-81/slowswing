@@ -1,0 +1,23 @@
+scan_time_et,ticker,signal,ref_entry,ref_stop,ref_target,atr,score,in_sweep,opening_bar_suspect,reason
+2026-05-18 10:20:28,PANW,BUY,247.22,235.81,266.34,9.56,,no,no,qualified
+2026-05-18 10:20:28,NTAP,BUY,121.81,118.5,129.03,3.61,,no,no,qualified
+2026-05-18 10:20:28,DUOL,BUY,115.53,110.47,127.97,6.22,,no,no,qualified
+2026-05-18 10:28:58,SPOT,BUY,453.39,431.99,491.57,19.09,,no,no,qualified
+2026-05-18 10:47:10,COP,BUY,123.56,120.39,130.46,3.45,,no,no,qualified
+2026-05-18 11:02:04,XOM,BUY,159.07,155.23,167.25,4.09,,no,no,qualified
+2026-05-18 11:02:04,COP,BUY,123.82,120.39,130.74,3.46,,no,no,qualified
+2026-05-18 11:02:04,PSX,BUY,177.62,171.84,188.62,5.5,,no,no,qualified
+2026-05-18 11:02:04,CDNS,SELL,342.84,350.06,322.1,10.37,,no,no,qualified
+2026-05-18 11:02:04,MPC,BUY,256.55,249.49,273.21,8.33,,no,no,qualified
+2026-05-18 11:17:09,XOM,BUY,159.48,155.28,167.72,4.12,,no,no,qualified
+2026-05-18 11:17:09,MPC,BUY,257.74,251.2,274.54,8.4,,no,no,qualified
+2026-05-18 11:17:09,PSX,BUY,178.09,172.7,189.13,5.52,,no,no,qualified
+2026-05-18 11:17:09,CDNS,SELL,342.99,350.06,322.25,10.37,,no,no,qualified
+2026-05-18 11:17:09,FANG,BUY,204.77,201.41,217.15,6.19,,no,no,qualified
+2026-05-18 11:32:02,ROST,SELL,211.11,215.34,200.87,5.12,,no,no,qualified
+2026-05-18 11:32:02,FANG,BUY,205.12,201.94,217.5,6.19,,no,no,qualified
+2026-05-18 11:47:03,BX,SELL,117.49,118.72,109.29,4.1,,no,no,qualified
+2026-05-18 11:47:03,PEP,SELL,148.15,149.84,141.87,3.14,,no,no,qualified
+2026-05-18 11:47:03,ROST,SELL,211.12,214.56,200.86,5.13,,no,no,qualified
+2026-05-18 11:47:03,RCL,SELL,256.63,263.79,233.89,11.37,,YES,no,qualified
+2026-05-18 14:32:11,USO,BUY,152.93,149.64,166.51,6.79,,no,no,qualified

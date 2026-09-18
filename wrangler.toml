@@ -1,0 +1,31 @@
+name = "theslowswing"
+account_id = "cc91a84e03ba8f3eae482a9a8a8fe36e"
+compatibility_date = "2025-09-01"
+main = "worker.js"
+
+# Dead-man check: 01:00 UTC = 9pm EDT / 8pm EST, Tue-Sat UTC = Mon-Fri evenings ET.
+# Fires the `scheduled` handler in worker.js, which emails NOTIFY_EMAIL if
+# board:current in KV is not stamped with today's session.
+[triggers]
+crons = ["0 1 * * 2-6"]
+
+[assets]
+directory = "./site"
+binding = "ASSETS"
+
+[vars]
+APP_URL = "https://theslowswing.com"
+EMAIL_FROM = "The Slow Swing <hello@send.theslowswing.com>"
+NOTIFY_EMAIL = "gjv1000@gmail.com"
+
+# Stripe LIVE price IDs (acct_1UCn8TDl0kTLe9eM, product prod_VDDkspzAgZss56).
+# Price IDs are not secrets. The secret key goes in via: wrangler secret put STRIPE_SECRET_KEY
+STRIPE_PRICE_MONTHLY  = "price_1UEHODDl0kTLe9eMrVkCJY9D"   # $20 / month
+STRIPE_PRICE_ANNUAL   = "price_1UEHODDl0kTLe9eMVUxgJGyd"   # $180 / year
+STRIPE_PRICE_FOUNDERS = "price_1UEHOCDl0kTLe9eMoFdbSgP4"   # $90 / year
+
+# Created by: wrangler kv namespace create STORE
+# Paste the id it prints in place of PASTE_KV_ID_HERE
+[[kv_namespaces]]
+binding = "STORE"
+id = "a508b741054b4df1870519403ac02af2"

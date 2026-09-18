@@ -1,0 +1,39 @@
+# ============================================================
+# STS RS vs MARKET — lower chart study (daily)
+# 40-day return minus RSP's 40-day return, on every bar.
+# Shows WHEN leadership emerged or faded — the history the
+# RSvMKT column can't show.
+#
+# INSTALL: Charts -> Studies -> Edit Studies -> Create ->
+# paste -> OK. Daily chart. Stack it under the Score study.
+#
+# READING:
+#   above 0 (green) : leading the average stock (8-week basis)
+#   0 to -5 (yellow): pack member
+#   below -5 (red)  : being dragged
+# The pattern that mattered in your research: RS crossing UP
+# through zero while the SCORE is high = the marked-down stock
+# starting to lead — the HIMS profile. RS collapsing below -5
+# while score is high = the RKLB profile (cheap, no evidence).
+# ============================================================
+
+declare lower;
+
+input benchmark = "RSP";
+
+def stockRet = close / close[40] - 1;
+def benchC   = close(benchmark);
+def benchRet = benchC / benchC[40] - 1;
+
+plot RS = 100 * (stockRet - benchRet);
+RS.SetLineWeight(2);
+RS.AssignValueColor(
+    if RS >= 0 then Color.GREEN
+    else if RS >= -5 then Color.YELLOW
+    else Color.RED);
+
+plot Zero = 0;
+Zero.SetDefaultColor(Color.DARK_GRAY);
+plot DragLine = -5;
+DragLine.SetDefaultColor(Color.DARK_RED);
+DragLine.SetStyle(Curve.SHORT_DASH);

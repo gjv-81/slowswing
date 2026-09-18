@@ -1,0 +1,1258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STS — Signal Trading System</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg2:#f5f8f9; --panel:#ffffff; --panel2:#f3f6f8;
+    --line:#e3eaee; --line2:#d3dde2;
+    --ink:#0e2a2b; --body:#3f4d53; --muted:#6b7a80; --faint:#98a5ab;
+    --primary:#0f766e; --primary-dark:#0b5c56; --primary-tint:#e6f2f0;
+    --phoenix:#7c3aed; --cruise:#1d4ed8;
+    --pass:#15803d; --watch:#b7791f; --fail:#b91c1c;
+    --up:#15803d; --down:#c0392b; --gold:#c98a12;
+    --radius:14px; --maxw:1140px;
+    font-synthesis:none;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:auto}
+  body{margin:0; background:var(--bg); color:var(--body);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:inherit; text-decoration:none}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 26px}
+  .muted{color:var(--muted)} .faint{color:var(--faint)}
+  h1,h2,h3,h4{line-height:1.15; margin:0; color:var(--ink)}
+  h2.section{font-size:30px; letter-spacing:-.02em; font-weight:750; margin-bottom:6px}
+  .kicker{font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--primary); font-weight:700}
+  .btn{display:inline-block; padding:12px 22px; border-radius:10px; font-weight:650; font-size:15px; cursor:pointer; border:1px solid transparent; transition:.15s}
+  .btn-primary{background:var(--primary); color:#fff}
+  .btn-primary:hover{background:var(--primary-dark)}
+  .btn-ghost{background:#fff; border-color:var(--line2); color:var(--ink)}
+  .btn-ghost:hover{background:var(--panel2)}
+  .btn-select{background:#fff; color:var(--primary); border:1px solid var(--primary)}
+  .btn-select:hover{background:var(--primary-tint)}
+
+  /* NAV */
+  nav{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex; align-items:center; gap:22px; height:68px}
+  .logo{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:-.02em; font-size:18px; color:var(--ink); cursor:pointer}
+  .logo .mark{width:32px; height:32px; border-radius:8px; background:linear-gradient(135deg,var(--primary),#12a594); display:grid; place-items:center; color:#fff; font-weight:900; font-size:15px}
+  .logo .sub{font-weight:500; font-size:12.5px; color:var(--faint)}
+  .navlinks{display:flex; gap:1px; margin-left:10px}
+  .navlinks a{font-size:13px; color:var(--body); padding:8px 9px; border-radius:8px; cursor:pointer; font-weight:550; white-space:nowrap}
+  .navlinks a#navTour{color:var(--primary); font-weight:700}
+  .navlinks a:hover{background:var(--panel2); color:var(--ink)}
+  .navlinks a.active{color:var(--primary); background:var(--primary-tint)}
+  .navdrop{position:relative; display:flex; align-items:center}
+  .navmenu{position:absolute; top:100%; left:0; min-width:236px; background:#fff; border:1px solid var(--line); border-radius:12px; box-shadow:0 20px 44px -20px rgba(14,42,43,.32); padding:8px; display:none; flex-direction:column; gap:2px; z-index:60}
+  .navdrop:hover .navmenu{display:flex}
+  .navmenu a{font-size:14px; color:var(--body); padding:9px 12px; border-radius:8px; cursor:pointer; white-space:nowrap; font-weight:500}
+  .navmenu a:hover{background:var(--panel2); color:var(--primary)}
+  .navmenu .mdesc{display:block; font-size:11.5px; color:var(--faint); font-weight:400; margin-top:1px}
+  section[id^="how-"]{scroll-margin-top:86px}
+  /* SPY regime bar */
+  .regimebar{border:1px solid var(--line2); border-left:4px solid var(--primary); border-radius:var(--radius); background:linear-gradient(180deg,#fff,var(--panel2)); padding:20px 24px; margin-bottom:22px; box-shadow:0 10px 30px -22px rgba(14,42,43,.3)}
+  .rb-title{font-size:16px; font-weight:750; color:var(--ink); margin-bottom:14px}
+  .rb-cells{display:flex; gap:16px; align-items:center; flex-wrap:wrap}
+  .rb-cell{display:flex; align-items:center; gap:12px; border:1px solid var(--line); border-radius:12px; padding:12px 16px; background:#fff}
+  .rb-tk{font-weight:800; font-size:18px; color:var(--ink)}
+  .rb-px{font-size:15px; color:var(--muted); font-weight:600}
+  .rb-pill{font-size:12.5px; font-weight:750; padding:4px 12px; border-radius:999px}
+  .rb-pill.green{background:rgba(21,128,61,.12); color:var(--pass)}
+  .rb-pill.yellow{background:rgba(183,121,31,.14); color:var(--watch)}
+  .rb-pill.red{background:rgba(185,28,28,.1); color:var(--fail)}
+  .rb-atr{font-size:13px; color:var(--faint)}
+  .rb-take{flex:1; min-width:250px; font-size:14px; color:var(--muted)}
+  @media(max-width:900px){ .rb-take{flex-basis:100%} }
+  .navcta{margin-left:auto; display:flex; gap:8px; align-items:center}
+  .navcta .btn{font-size:13px; padding:8px 14px; white-space:nowrap}
+  .logo{white-space:nowrap}
+  .logo .sub{white-space:nowrap}
+
+  /* PAGES */
+  .page{display:none}
+  .page.active{display:block; animation:pageIn .34s ease both}
+  @keyframes pageIn{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+  section.block{padding:64px 0; border-top:1px solid var(--line)}
+  section.block:first-child{border-top:none}
+
+  /* HERO */
+  .hero{padding:78px 0 64px; background:linear-gradient(180deg,var(--primary-tint),#fff 78%); position:relative; overflow:hidden}
+  .herogrid{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center}
+  .pill{display:inline-flex; gap:8px; align-items:center; font-size:13px; color:var(--primary); border:1px solid var(--line2); background:#fff; padding:6px 13px; border-radius:999px; font-weight:600}
+  .dot{width:7px; height:7px; border-radius:50%; background:var(--primary)}
+  a.pill{cursor:pointer; transition:.15s} a.pill:hover{border-color:var(--primary); color:var(--primary); background:var(--primary-tint)}
+  .hero h1{font-size:60px; letter-spacing:-.035em; font-weight:800; margin-top:18px}
+  .hero .lead{font-size:18px; color:var(--body); max-width:56ch; margin-top:18px}
+  .herocta{display:flex; gap:14px; align-items:center; margin-top:28px; flex-wrap:wrap}
+  .microcopy{font-size:13px; color:var(--faint)}
+  .heronums{display:flex; gap:30px; margin-top:40px; flex-wrap:wrap}
+  .heronums .n{font-size:28px; font-weight:800; letter-spacing:-.02em; color:var(--ink)}
+  .heronums .l{font-size:12.5px; color:var(--muted)}
+  .heroart{background:#fff; border:1px solid var(--line); border-radius:20px; box-shadow:0 24px 60px -30px rgba(14,42,43,.28); padding:22px}
+  .heroart .hb{display:flex; align-items:center; justify-content:space-between; margin-bottom:14px}
+  .miniquote{font-size:13px; color:var(--muted)}
+
+  /* generic panels / cards */
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:18px; position:relative; transition:transform .15s, box-shadow .15s, border-color .15s; animation:cardIn .42s cubic-bezier(.2,.75,.3,1) both}
+  .card:hover{transform:translateY(-2px); box-shadow:0 16px 40px -24px rgba(14,42,43,.35); border-color:var(--line2)}
+  @keyframes cardIn{from{opacity:0; transform:translateY(14px) scale(.98)} to{opacity:1; transform:none}}
+  @keyframes fadeUp{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
+  @media (prefers-reduced-motion: reduce){ .card,.listwrap,.page.active{animation:none} }
+
+  /* BOARD */
+  .boardhead{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:22px}
+  .updated{font-size:13px; color:var(--muted); display:flex; align-items:center; gap:8px}
+  .liveflag{font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--pass); border:1px solid rgba(21,128,61,.35); border-radius:6px; padding:2px 7px}
+  .setupintro{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px}
+  .si{background:var(--panel2); border:1px solid var(--line); border-radius:var(--radius); padding:20px}
+  .si h3{font-size:18px; display:flex; align-items:center; gap:10px}
+  .si .swatch{width:12px;height:12px;border-radius:4px}
+  .si p{font-size:14px; color:var(--muted); margin:10px 0 0}
+
+  .tabs{display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap}
+  .tab{font-size:14px; padding:8px 15px; border-radius:9px; border:1px solid var(--line2); color:var(--muted); cursor:pointer; background:#fff}
+  .tab:hover{color:var(--ink)}
+  .tab.active{color:var(--ink); background:var(--panel2); border-color:transparent}
+  .tab[data-k="phoenix"].active{background:rgba(124,58,237,.1); color:var(--phoenix); border-color:rgba(124,58,237,.3)}
+  .tab[data-k="cruise"].active{background:rgba(29,78,216,.1); color:var(--cruise); border-color:rgba(29,78,216,.3)}
+  .tab[data-q="pass"].active{background:rgba(21,128,61,.1); color:var(--pass); border-color:rgba(21,128,61,.3)}
+  #agetabs .tab{font-size:16px; font-weight:750; padding:11px 22px}
+  #agetabs .tab[data-age="active"].active{background:rgba(21,128,61,.12); color:var(--pass); border-color:rgba(21,128,61,.4)}
+  #agetabs .tab[data-age="extended"].active{background:rgba(201,138,18,.12); color:var(--gold); border-color:rgba(201,138,18,.4)}
+  .trstats{display:none; gap:14px; flex-wrap:wrap; margin-bottom:18px; padding:16px 20px; background:var(--panel2); border:1px solid var(--line); border-radius:var(--radius)}
+  .trstat{flex:1; min-width:120px}
+  .trstat .v{font-size:23px; font-weight:800; color:var(--ink); letter-spacing:-.01em}
+  .trstat .v.up{color:var(--up)} .trstat .v.down{color:var(--down)}
+  .trstat .l{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-top:2px}
+
+  .vtoggle{display:inline-flex; border:1px solid var(--line2); border-radius:10px; overflow:hidden; flex:none}
+  .vbtn{background:#fff; color:var(--muted); border:none; padding:7px 14px; font-size:13px; cursor:pointer; font-family:inherit; font-weight:600}
+  .vbtn:hover{color:var(--ink)} .vbtn.active{background:var(--panel2); color:var(--ink)}
+  .vbtn+.vbtn{border-left:1px solid var(--line2)}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:16px}
+  .card .top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px}
+  .tkr{font-size:21px; font-weight:800; letter-spacing:-.02em; color:var(--ink)}
+  .co{font-size:13px; color:var(--muted); margin-top:1px}
+  .setuptag{font-size:11px; font-weight:750; letter-spacing:.04em; text-transform:uppercase; padding:4px 9px; border-radius:7px}
+  .setuptag.phoenix{background:rgba(124,58,237,.1); color:var(--phoenix)}
+  .setuptag.cruise{background:rgba(29,78,216,.1); color:var(--cruise)}
+  .row{display:flex; align-items:center; gap:8px; margin-top:14px; flex-wrap:wrap}
+  .metric{flex:1; min-width:120px; background:var(--panel2); border:1px solid var(--line); border-radius:10px; padding:9px 12px}
+  .metric .k{font-size:11px; color:var(--faint); letter-spacing:.04em; text-transform:uppercase}
+  .metric .v{font-size:17px; font-weight:750; margin-top:2px; display:flex; align-items:center; gap:7px; color:var(--ink)}
+  .conviction{font-size:11px; font-weight:700; padding:2px 8px; border-radius:6px; background:#fff; border:1px solid var(--line2); color:var(--muted)}
+  .conviction.vhigh{color:var(--pass); border-color:rgba(21,128,61,.4)}
+  .conviction.high{color:var(--watch); border-color:rgba(183,121,31,.4)}
+  .badges{display:flex; gap:7px; margin-top:14px; flex-wrap:wrap}
+  .badge{font-size:12px; font-weight:650; padding:5px 10px; border-radius:8px; border:1px solid var(--line2); display:inline-flex; align-items:center; gap:6px; color:var(--muted)}
+  .badge.watch{color:var(--watch); border-color:rgba(183,121,31,.35); background:rgba(183,121,31,.06)}
+  .badge.fail{color:var(--fail); border-color:rgba(185,28,28,.3); background:rgba(185,28,28,.05)}
+  .badge.pulse-strong{color:var(--pass); border-color:rgba(21,128,61,.3)}
+  .badge.pulse-neutral{color:var(--faint)}
+  .badge.pulse-weak{color:var(--fail); border-color:rgba(185,28,28,.3)}
+  .badge .ic{width:7px;height:7px;border-radius:50%}
+  .card.premium{border-color:rgba(21,128,61,.4); box-shadow:0 0 0 1px rgba(21,128,61,.12)}
+  .gem{position:absolute; top:-9px; right:16px; background:var(--pass); color:#fff; font-size:11px; font-weight:800; letter-spacing:.03em; padding:3px 10px; border-radius:999px; box-shadow:0 6px 16px -6px rgba(21,128,61,.6)}
+  .newflag{display:inline-block; font-size:6px; font-weight:800; letter-spacing:.06em; color:#3a2c00; background:#eab308; padding:1px 4px; border-radius:4px; vertical-align:middle; position:relative; top:-2px}
+  .whatmeans{font-size:12.5px; color:var(--muted); margin-top:14px; padding-top:13px; border-top:1px dashed var(--line2)}
+  .card-sc{margin-top:10px; font-size:11px; color:var(--muted); font-weight:600; letter-spacing:.01em}
+  .card-sc .sc-tag{text-transform:uppercase; letter-spacing:.06em; font-size:9px; font-weight:800; opacity:.9; margin-right:7px}
+
+  /* list / table */
+  .listwrap{overflow:auto; max-height:74vh; border:1px solid var(--line); border-radius:var(--radius); background:#fff; animation:fadeUp .38s ease both}
+  .ltable{width:100%; border-collapse:separate; border-spacing:0; font-size:10.5px; min-width:0}
+  .ltable thead{position:sticky; top:0; z-index:5}
+  .ltable thead th{background:#ffffff; box-shadow:inset 0 -1px 0 var(--line)}
+  .ltable thead tr.grouprow th{box-shadow:none}
+  .chg-up{color:var(--up); font-weight:700}
+  .chg-down{color:var(--down); font-weight:700}
+  .ltable th{text-align:left; font-size:9px; text-transform:uppercase; letter-spacing:.02em; color:var(--faint); font-weight:700; padding:5px 6px; border-bottom:1px solid var(--line); white-space:nowrap; cursor:pointer; user-select:none; transition:color .12s}
+  .ltable th:hover{color:var(--muted)}
+  .ltable th.sorted{color:var(--primary)}
+  .ltable th .arr{font-size:8px}
+  .ltable th .prio{font-size:10px; margin-left:2px; opacity:.9}
+  .ltable .grouprow th{padding:6px 9px; cursor:default; text-transform:none; border-bottom:none}
+  .ltable th.grouphead{text-align:center; color:var(--gold); font-size:10px; font-weight:750; letter-spacing:.06em; border-left:1px solid var(--line); background:#faf4e8}
+  .ltable th.grouphead .ghsub{color:var(--faint); font-weight:500; text-transform:none; letter-spacing:0}
+  .ltable td:nth-child(8), .ltable thead tr:not(.grouprow) th:nth-child(8){border-left:1px solid var(--line)}
+  .sorttip{font-size:11.5px; color:var(--faint); padding:10px 4px 0}
+  .sorttip b{color:var(--muted); font-weight:650}
+  .clearsort{color:var(--primary); cursor:pointer; font-weight:600}
+  .clearsort:hover{text-decoration:underline}
+  .ltable td{padding:5px 6px; border-bottom:1px solid var(--line); vertical-align:middle; white-space:nowrap}
+  .ltable tr:last-child td{border-bottom:none}
+  .ltable tbody tr:hover td{background:var(--panel2)}
+  .ltable tbody tr.premium td{box-shadow:inset 3px 0 0 var(--pass)}
+  .lt-tkr{font-weight:800; font-size:11.5px; letter-spacing:-.01em; color:var(--ink)}
+  .lt-co{color:var(--muted); font-size:9px}
+  .lt-sector{color:var(--muted); font-size:9.5px}
+  .lt-score{font-weight:750; font-size:11.5px; color:var(--ink)}
+  .lt-q.pass{color:var(--pass); font-weight:750} .lt-q.watch{color:var(--watch); font-weight:750} .lt-q.fail{color:var(--fail); font-weight:750}
+  .lt-set.phoenix{color:var(--phoenix); font-weight:700} .lt-set.cruise{color:var(--cruise); font-weight:700}
+  .lt-pulse{display:inline-flex; align-items:center; gap:7px; font-weight:600}
+  .lt-dot{width:8px; height:8px; border-radius:50%; flex:none}
+
+  /* feature cols */
+  .cols3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:26px}
+  .fcard{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:22px}
+  .fcard .ico{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:var(--primary-tint);border:1px solid var(--line);font-size:20px;margin-bottom:14px}
+  .fcard h3{font-size:16px} .fcard p{font-size:14px;color:var(--muted);margin-top:8px}
+  .fitlist{list-style:none; padding:0; margin:10px 0 0}
+  .fitlist li{position:relative; padding:6px 0 6px 20px; font-size:14px; color:var(--muted)}
+  .fitlist li:before{content:"•"; position:absolute; left:4px; color:var(--faint)}
+  .fitlist li b{color:var(--ink)}
+
+  /* quality gate */
+  .qg{display:grid; grid-template-columns:1.1fr .9fr; gap:30px; align-items:center; margin-top:24px}
+  .qglist{list-style:none; padding:0; margin:18px 0 0}
+  .qglist li{display:flex; gap:12px; padding:10px 0; border-bottom:1px solid var(--line); font-size:14px}
+  .qglist li b{color:var(--ink)}
+  .qgcard{background:var(--primary-tint); border:1px solid var(--line); border-radius:var(--radius); padding:24px}
+  .qgcard .big{font-size:15px; color:var(--ink); font-weight:600}
+  .checkline{display:flex; gap:10px; align-items:center; margin-top:14px; font-size:14px; color:var(--body)}
+  .check{width:20px;height:20px;border-radius:50%;background:#fff;color:var(--pass);display:grid;place-items:center;font-size:12px;flex:none;border:1px solid rgba(21,128,61,.3)}
+
+  /* approach band */
+  .convband{background:var(--primary-tint); border:1px solid var(--line); border-radius:20px; padding:40px 42px; position:relative; overflow:hidden}
+  .convband h2{font-size:30px}
+  .convband p{position:relative}
+  @media(max-width:900px){ .convband{padding:28px 22px} .convband h2{font-size:24px} }
+
+  /* methodology */
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:26px}
+  .step{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px}
+  .step .num{font-size:12px; font-weight:800; color:var(--primary); letter-spacing:.1em}
+  .step h4{font-size:15px; margin:8px 0 6px} .step p{font-size:13px; color:var(--muted); margin:0}
+
+  /* pricing */
+  .pricegrid{display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:760px; margin:34px auto 0; text-align:left}
+  .price{background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:28px; position:relative; cursor:pointer; box-shadow:0 10px 30px -22px rgba(14,42,43,.25)}
+  .price.best{border-color:rgba(15,118,110,.5); box-shadow:0 0 0 1px rgba(15,118,110,.16), 0 18px 44px -24px rgba(15,118,110,.4)}
+  .price.selected{border-color:var(--primary); box-shadow:0 0 0 2px rgba(15,118,110,.35)}
+  .price .ribbon{position:absolute; top:-13px; left:50%; transform:translateX(-50%); white-space:nowrap; background:var(--primary); color:#fff; font-size:12px; font-weight:750; padding:5px 14px; border-radius:999px}
+  .planpick{display:flex; align-items:center; gap:9px; margin-bottom:4px}
+  .radio{width:16px; height:16px; border-radius:50%; border:2px solid var(--line2); flex:none; position:relative; transition:.15s}
+  .price.selected .radio{border-color:var(--primary)}
+  .price.selected .radio:after{content:""; position:absolute; inset:2px; border-radius:50%; background:var(--primary)}
+  .planname{font-size:13px; font-weight:750; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+  .price .amt{font-size:44px; font-weight:850; letter-spacing:-.03em; margin-top:6px; color:var(--ink)}
+  .price .amt small{font-size:15px; color:var(--muted); font-weight:600}
+  .price ul{list-style:none; padding:0; margin:20px 0; text-align:left}
+  .price li{display:flex; gap:10px; padding:7px 0; font-size:13.5px; color:var(--muted)}
+  .price li b{color:var(--ink); font-weight:600}
+  .autorenew{display:flex; align-items:flex-start; gap:9px; font-size:12.5px; color:var(--muted); margin-bottom:14px; cursor:pointer; text-align:left; line-height:1.4}
+  .autorenew input{accent-color:var(--primary); width:15px; height:15px; margin-top:1px; cursor:pointer; flex:none}
+  .autorenew b{color:var(--ink); font-weight:600}
+
+  /* disclaimer */
+  .disc{background:var(--panel2); border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:12px; padding:20px 22px; font-size:13px; color:var(--muted)}
+  .disc b{color:var(--ink)}
+
+  footer{border-top:1px solid var(--line); padding:34px 0; color:var(--faint); font-size:13px; background:var(--bg2)}
+  footer .wrap{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap}
+  footer a{cursor:pointer} footer a:hover{color:var(--primary)}
+
+  /* hero bullets */
+  .herobul{list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:9px}
+  .herobul li{display:flex; gap:11px; align-items:flex-start; font-size:15.5px; color:var(--body)}
+  .herobul li b{color:var(--ink)}
+  .herobul .hi{font-size:18px; line-height:1.35}
+
+  /* stat balloons */
+  .balloons{display:grid; grid-template-columns:auto auto 1fr; gap:30px; align-items:center; margin-top:6px}
+  .balloon{width:172px; height:172px; border-radius:50%; display:grid; place-items:center; text-align:center; color:#fff; background:radial-gradient(circle at 35% 28%, #16b3a0, var(--primary)); box-shadow:0 22px 46px -18px rgba(15,118,110,.6)}
+  .balloon.alt{background:radial-gradient(circle at 35% 28%, #4aa3f2, #1d4ed8); box-shadow:0 22px 46px -18px rgba(29,78,216,.5)}
+  .balloon .bnum{font-size:52px; font-weight:850; line-height:1; letter-spacing:-.02em}
+  .balloon .bsub{font-size:12px; opacity:.92; margin-top:6px; padding:0 22px; line-height:1.35}
+  .balloonside .kicker{margin-bottom:8px}
+  .balloonnote{font-size:11.5px; margin-top:46px; max-width:88ch}
+  .balloons2{display:flex; gap:34px; align-items:center; flex-wrap:wrap; justify-content:center; margin-top:2px}
+  .balloons2 .balloon{width:190px; height:190px}
+  .balloons2 .balloon .bnum{font-size:56px}
+  .balloons2 .balloon .bsub{font-size:13px}
+  .ballooncap{max-width:62ch; margin:18px auto 0; text-align:center}
+  .herohead{margin-top:38px}
+
+  /* analogy band + video */
+  .analogyband{display:grid; grid-template-columns:1.35fr .65fr; gap:26px; align-items:center; background:var(--primary-tint); border:1px solid var(--line); border-radius:20px; padding:34px 36px}
+  .videocard{background:#0e2a2b; border-radius:16px; padding:28px 24px; text-align:center; color:#fff; cursor:pointer; transition:.15s; position:relative; overflow:hidden}
+  .videocard:hover{transform:translateY(-2px)}
+  .videocard:before{content:""; position:absolute; inset:0; background:radial-gradient(circle at 50% 38%, rgba(15,118,110,.55), transparent 70%)}
+  .playbtn{position:relative; width:62px; height:62px; border-radius:50%; background:#fff; color:var(--primary); display:grid; place-items:center; font-size:22px; margin:0 auto 14px; box-shadow:0 10px 30px -8px rgba(0,0,0,.45)}
+  .videocard .vlabel{position:relative; font-weight:700; font-size:15px}
+  .videocard .vsub{position:relative; font-size:12.5px; opacity:.82; margin-top:4px}
+
+  /* clickable tickers */
+  .tkr[data-ticker], .lt-tkr[data-ticker]{cursor:pointer}
+  .tkr[data-ticker]:hover, .lt-tkr[data-ticker]:hover{text-decoration:underline; text-decoration-color:var(--primary)}
+
+  /* modal */
+  .modal-ov{position:fixed; inset:0; background:rgba(14,42,43,.55); backdrop-filter:blur(2px); display:none; align-items:center; justify-content:center; z-index:200; padding:20px}
+  .modal-ov.open{display:flex}
+  .modal-card{background:#fff; border-radius:18px; max-width:640px; width:100%; padding:24px; box-shadow:0 40px 80px -30px rgba(0,0,0,.5); position:relative; animation:cardIn .3s ease both}
+  .modal-close{position:absolute; top:14px; right:16px; width:30px; height:30px; border-radius:8px; border:1px solid var(--line); background:#fff; cursor:pointer; color:var(--muted); font-size:15px}
+  .modal-close:hover{background:var(--panel2); color:var(--ink)}
+  .chart-h{display:flex; align-items:baseline; gap:10px}
+  .chart-h .ct{font-size:22px; font-weight:800; color:var(--ink)}
+  .chart-h .cn{font-size:13px; color:var(--muted)}
+  .chart-cap{font-size:12px; color:var(--faint); margin-top:12px; line-height:1.5}
+
+  /* animated explainer */
+  .explainer{position:relative; width:100%; aspect-ratio:16/9; background:linear-gradient(160deg,#0e2a2b,#0b3b38); border-radius:14px; overflow:hidden; color:#fff}
+  .exp-scene{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:26px; opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; pointer-events:none}
+  .exp-scene.active{opacity:1; transform:none; pointer-events:auto}
+  .exp-k{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#5ee0c8; font-weight:700; margin-bottom:10px}
+  .exp-h{font-size:25px; font-weight:800; line-height:1.2; max-width:22ch}
+  .exp-s{font-size:13.5px; color:#b9cfcb; margin-top:10px; max-width:34ch}
+  .exp-prog{position:absolute; left:0; bottom:0; height:4px; background:#5ee0c8; width:0; transition:width .35s linear}
+  .exp-dots{position:absolute; top:12px; right:14px; display:flex; gap:6px}
+  .exp-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.25)}
+  .exp-dot.on{background:#5ee0c8}
+  .exp-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin-top:18px; width:100%; max-width:460px; position:relative; overflow:hidden; border-radius:8px}
+  .exp-grid:after{content:""; position:absolute; inset:0; background:linear-gradient(120deg,transparent,rgba(94,224,200,.3),transparent); transform:translateX(-100%); animation:shine 1.9s ease-in-out infinite}
+  @keyframes shine{to{transform:translateX(120%)}}
+  .exp-chip{font-size:10px; font-weight:700; background:rgba(255,255,255,.08); border-radius:5px; padding:6px 0; color:#cfe3df; text-align:center}
+  .exp-chip.hit{background:rgba(94,224,200,.28); color:#eafffb}
+  .exp-cards{display:flex; gap:11px; margin-top:20px; flex-wrap:wrap; justify-content:center}
+  .exp-card{width:70px; height:88px; border-radius:9px; background:#123634; border:1px solid rgba(255,255,255,.14); position:relative; transition:.6s; overflow:hidden}
+  .exp-card.dim{opacity:.24}
+  .exp-card.keep{border-color:#5ee0c8; box-shadow:0 8px 20px -10px rgba(94,224,200,.5)}
+  .exp-gem{position:absolute; top:-8px; right:-6px; font-size:15px; z-index:2}
+  .ecbar{height:6px; width:100%}
+  .ectk{font-size:11px; font-weight:800; color:#eafffb; text-align:center; margin-top:9px; letter-spacing:.02em}
+  .ecline{height:5px; border-radius:3px; background:rgba(255,255,255,.16); margin:7px 9px 0}
+  .ecline.short{width:55%}
+  .exp-pill2{display:inline-block; padding:8px 15px; border-radius:999px; font-weight:750; font-size:14px; margin:4px}
+  .exp-num{font-size:50px; font-weight:850; color:#5ee0c8; line-height:1}
+  .exp-btn{margin-top:16px; background:#5ee0c8; color:#04231f; font-weight:750; padding:11px 22px; border-radius:10px; cursor:pointer; border:none; font-size:15px}
+  .exp-replay{position:absolute; bottom:12px; left:14px; background:rgba(255,255,255,.14); color:#fff; border:none; border-radius:8px; padding:6px 12px; font-size:12px; cursor:pointer; display:none}
+  .exp-replay:hover{background:rgba(255,255,255,.24)}
+
+  /* tour */
+  .tour-ov{position:fixed; inset:0; z-index:300; display:none}
+  .tour-ov.open{display:block}
+  .tour-hole{position:fixed; border-radius:10px; box-shadow:0 0 0 9999px rgba(14,42,43,.6); transition:all .25s ease; pointer-events:none}
+  .tour-tip{position:fixed; background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 18px; width:300px; box-shadow:0 24px 50px -20px rgba(0,0,0,.45); z-index:301}
+  .tour-tip h4{font-size:15px; margin:0 0 6px; color:var(--ink)}
+  .tour-tip p{font-size:13px; color:var(--muted); margin:0 0 12px; line-height:1.5}
+  .tour-tip .row{display:flex; justify-content:space-between; align-items:center; gap:10px}
+  .tour-step{font-size:12px; color:var(--faint)}
+  .tour-btns{display:flex; gap:8px; align-items:center}
+  .tour-btns button{font-size:13px; padding:7px 13px; border-radius:8px; cursor:pointer; border:1px solid var(--line); background:#fff; color:var(--ink); font-weight:600}
+  .tour-btns .primary{background:var(--primary); color:#fff; border-color:var(--primary)}
+  .tour-skip{color:var(--faint); background:none; border:none; cursor:pointer; font-size:12px}
+
+  @media(max-width:900px){
+    .balloons{grid-template-columns:1fr 1fr} .balloonnote{margin-top:20px}
+    .analogyband{grid-template-columns:1fr}
+    .hero h1{font-size:40px} .balloons2{gap:18px}
+    .qg{grid-template-columns:1fr} .steps{grid-template-columns:1fr 1fr}
+    .cols3{grid-template-columns:1fr} .setupintro{grid-template-columns:1fr} .navlinks{display:none}
+    .pricegrid{grid-template-columns:1fr; max-width:460px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav><div class="wrap">
+  <div class="logo" data-nav="home"><div class="mark">S</div> STS <span class="sub">Signal Trading System</span></div>
+  <div class="navlinks">
+    <a data-nav="home">Home</a>
+    <a data-nav="board">Today's Board</a>
+    <a data-nav="track">Track Record</a>
+    <div class="navdrop">
+      <a data-nav="how">How it works ▾</a>
+      <div class="navmenu">
+        <a data-nav="how" data-scroll="how-approach">Our approach<span class="mdesc">The edge is conviction</span></a>
+        <a data-nav="how" data-scroll="how-method">Methodology<span class="mdesc">How we built it</span></a>
+        <a data-nav="how" data-scroll="how-boards">Active vs Extended board<span class="mdesc">The board, day to day</span></a>
+        <a data-nav="how" data-scroll="how-regime">Market regime &amp; timing<span class="mdesc">Why timing vs. SPY matters</span></a>
+        <a data-nav="how" data-scroll="how-read">How to read a signal<span class="mdesc">What every card shows</span></a>
+        <a data-nav="how" data-scroll="how-gate">The quality gate<span class="mdesc">Why you can hold a dip</span></a>
+      </div>
+    </div>
+    <a data-nav="psychology">Trading Psychology</a>
+    <a data-nav="pricing">Pricing</a>
+    <a id="navTour">▶ 30-sec tour</a>
+  </div>
+  <div class="navcta">
+    <a class="btn btn-ghost" id="navLogin">Log in</a>
+    <a class="btn btn-primary" data-nav="pricing">Start free trial</a>
+  </div>
+</div></nav>
+
+<!-- ============ HOME ============ -->
+<div class="page active" data-page="home">
+  <header class="hero"><div class="wrap">
+    <div class="kicker" style="text-align:center; margin-bottom:14px">Our edge, in one glance</div>
+    <div class="balloons2">
+      <div class="balloon"><div><div class="bnum"><span class="cval" data-count="90">0</span>%</div><div class="bsub">reached <b>+5% or more</b> at peak</div></div></div>
+      <div class="balloon alt"><div><div class="bnum"><span class="cval" data-count="69">0</span>%</div><div class="bsub">reached <b>+10% or more</b> at peak</div></div></div>
+    </div>
+    <div class="ballooncap">
+      <div style="font-weight:750; color:var(--ink); font-size:18px">Across <i>every</i> signal we publish — not a cherry-picked few.</div>
+      <div class="muted" style="font-size:15px; margin-top:6px">The vast majority reach a meaningful gain, and get there fast — median ~2 weeks to peak. What you do with the move is yours.</div>
+    </div>
+    <p class="faint" style="font-size:11.5px; margin:14px auto 0; max-width:94ch; text-align:center"><b>Hypothetical maximum favorable moves</b> (peak / MFE) across all 62 signals published <b>Jul 2 – Aug 20, 2026</b>, measured as of Aug 20, 2026 — not returns anyone earned, and not advice. We use no stops or targets; if, when, and how you act is your decision. Refreshed periodically.</p>
+
+    <div class="herohead">
+      <a class="pill" id="shortlistLink"><span class="dot"></span> A short list of setups, refreshed after every close →</a>
+      <h1>Trade deliberately.</h1>
+      <p class="lead">Every night our model does the hunting, so our setups can be the <b style="color:var(--ink)">first filter</b> in your own process for finding high-quality trades. Educational research, not investment advice.</p>
+      <ul class="herobul">
+        <li><span class="hi">⏱️</span><span><b>Built for busy professionals</b> — a vetted shortlist after every close, not hours of screening.</span></li>
+        <li><span class="hi">📵</span><span><b>No staring at charts</b> — we scan the whole market nightly; you check in on your own schedule.</span></li>
+        <li><span class="hi">💎</span><span><b>Only high-quality setups</b> — every name clears a fundamental quality gate.</span></li>
+      </ul>
+      <div class="herocta">
+        <a class="btn btn-primary" data-nav="pricing">Start free trial</a>
+        <a class="btn btn-ghost" data-nav="board">Check the board →</a>
+        <span class="microcopy">1 week free · then $20/mo · cancel anytime</span>
+      </div>
+      <div class="heronums">
+        <div><div class="n">Nightly</div><div class="l">full U.S. market scan</div></div>
+        <div><div class="n">2</div><div class="l">setups we publish</div></div>
+        <div><div class="n">💎</div><div class="l">flags the strongest companies</div></div>
+        <div><div class="n">10 yrs</div><div class="l">of data behind the model</div></div>
+      </div>
+    </div>
+  </div></header>
+
+  <section class="block"><div class="wrap">
+    <div class="analogyband">
+      <div>
+        <div class="kicker">The idea in one line</div>
+        <h2 class="section" style="max-width:18ch; margin-top:6px">We scout the fat pitches. The swing is yours.</h2>
+        <p class="muted" style="font-size:16px; max-width:60ch; margin-top:12px">Our setups are pitches grooved right in your wheelhouse — the kind you <i>can</i> drive for extra bases. We don't swing for you; we just keep you from chasing junk out of the zone. Some turn into singles, some into home runs — how far you take it, and when you exit, is entirely your call.</p>
+      </div>
+      <div class="videocard" data-video>
+        <div class="playbtn">▶</div>
+        <div class="vlabel">Watch the 60-sec explainer</div>
+        <div class="vsub">How STS works, in a minute</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:16px">
+      <div><div class="kicker">A live peek</div><h2 class="section">Today's board</h2></div>
+      <a class="btn btn-ghost" data-nav="board">See the entire board →</a>
+    </div>
+    <div class="heroart" style="max-width:540px">
+      <div class="hb"><span class="kicker">Today's board</span><span class="liveflag">● LIVE</span></div>
+      <div class="grid" id="heropeek" style="grid-template-columns:1fr; gap:12px"></div>
+      <p class="miniquote" style="margin-top:14px">Just a taste — <a data-nav="board" style="color:var(--primary); font-weight:600">see the entire board →</a></p>
+    </div>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <div class="kicker">What STS is</div>
+    <h2 class="section">A quant research desk that does the hunting for you</h2>
+    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">You already know the idea that works: buy good companies when they're temporarily out of favor, and give them room to recover. The hard part is <i>finding</i> those moments — it means scanning hundreds of charts every night, which is time a working professional simply doesn't have. STS does that scan for you.</p>
+    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">Every evening after the close, our machine-learning model — trained on ten years of U.S. market data — grades the entire market and surfaces the short list whose behavior matches the statistical profile of past winners. Each name is then run through a fundamental quality gate, so what reaches your board isn't just a promising chart: it's a financially sound business at an interesting moment.</p>
+    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">You get a handful of setups a week, sorted into two clear types — <b style="color:var(--phoenix)">Phoenix</b> and <b style="color:var(--cruise)">Cruise</b> — each with a plain-English read. No entry prices, no targets, no pressure to act. Just a vetted starting point for the few deliberate trades you actually have time to make, held for weeks rather than minutes. And because emotion wrecks most swing traders, the <b style="color:var(--pass)">💎 quality flag</b> tells you which names are sound enough to hold through a dip with confidence.</p>
+
+    <div style="margin-top:34px; display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap">
+      <div><div class="kicker">A peek at today's setups</div><h3 style="font-size:20px; margin-top:6px">A few live examples</h3></div>
+      <a class="btn btn-ghost" data-nav="board">See the entire board →</a>
+    </div>
+    <p class="muted" style="margin:8px 0 18px; font-size:14px">Real names from today's board. These are just a taste — subscribers see the full list, every trading day.</p>
+    <div class="grid" id="examples"></div>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap">
+      <div>
+        <div class="kicker">Trading Psychology</div>
+        <h2 class="section" style="max-width:24ch">The hardest part isn't the setup — it's you</h2>
+      </div>
+      <a class="btn btn-ghost" data-nav="psychology">Read our trading psychology →</a>
+    </div>
+    <p class="muted" style="max-width:74ch; margin:10px 0 0; font-size:16px">The best setup in the world won't help if you sell in a panic or bet too big. STS is a disciplined filter — but the mindset is what turns it into results. Here's what we care about most.</p>
+    <div class="cols3" style="margin-top:24px">
+      <div class="fcard"><div class="ico">🎯</div><h3>Discipline</h3><p>Winners aren't the ones with a secret — they're the ones who follow a consistent method without improvising. Use STS as your first filter or a second opinion to anchor your process.</p></div>
+      <div class="fcard"><div class="ico">🧘</div><h3>Emotional control</h3><p>Trades are won in the uncomfortable middle. Real conviction — earned from a company's quality — is what lets you hold through a drawdown instead of getting shaken out.</p></div>
+      <div class="fcard"><div class="ico">🛟</div><h3>Risk appetite</h3><p>Don't trust any system on past performance — build trust through experience. Start small, size up slowly, and never go all in. Live to trade the next day.</p></div>
+    </div>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <div class="kicker">Expectations</div>
+    <h2 class="section">Who this is for — and who it isn't</h2>
+    <p class="muted" style="max-width:76ch; margin-top:10px; font-size:16px">STS is an <b style="color:var(--ink)">educational research service</b> — we are not a broker-dealer or an investment adviser. We don't execute trades, hold your money, or tell you what to buy or sell. To act on anything you learn here, you'll use your own brokerage account.</p>
+    <div class="cols3" style="grid-template-columns:1fr 1fr; margin-top:24px">
+      <div class="fcard" style="border-color:rgba(21,128,61,.35)">
+        <div class="ico" style="background:rgba(21,128,61,.1)">✅</div>
+        <h3>A good fit if…</h3>
+        <ul class="fitlist">
+          <li>You want a few deliberate <b>swing trades</b> a week, held for weeks — not minutes.</li>
+          <li>You want a vetted starting point and will do your own homework on top.</li>
+          <li>You value a repeatable process and education over hot tips.</li>
+        </ul>
+      </div>
+      <div class="fcard" style="border-color:rgba(185,28,28,.3)">
+        <div class="ico" style="background:rgba(185,28,28,.08)">🚫</div>
+        <h3>Not the right fit if…</h3>
+        <ul class="fitlist">
+          <li>You're looking for a <b>broker</b> or somewhere to place trades — we're not one; you'll trade on your own broker platform.</li>
+          <li>You want <b>intraday / day-trading</b> signals — this education is for swing trading, not intraday.</li>
+          <li>You want personalized advice or someone to tell you exactly what to buy or sell.</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="block"><div class="wrap" style="text-align:center">
+    <h2 class="section" style="max-width:20ch; margin:0 auto">Ready to make fewer, better trades?</h2>
+    <p class="muted" style="max-width:48ch; margin:10px auto 22px">Try the full board free for a week. Cancel anytime before it renews.</p>
+    <a class="btn btn-primary" data-nav="pricing" style="padding:14px 28px">Start your free week</a>
+  </div></section>
+</div>
+
+<!-- ============ BOARD ============ -->
+<div class="page" data-page="board">
+  <section class="block"><div class="wrap">
+    <div class="boardhead">
+      <div>
+        <div class="kicker">Today's board · what you can act on now</div>
+        <h2 class="section">The live buy board</h2>
+        <p class="muted" style="margin:6px 0 0; max-width:66ch">Setups still inside their window — <b>Active</b> (a valid entry today) and <b>Extended</b> (already ran +5%, wait for a pullback) — with the fundamentally strongest marked <b style="color:var(--pass)">💎 High-Quality</b>. After 4 weeks a setup retires to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>. Never an entry price, a target, or "buy this."</p>
+      </div>
+      <div class="updated"><span class="liveflag">● LIVE</span> Updated <span id="upd">Aug 20, 2026</span> · next refresh after tonight's close</div>
+    </div>
+
+    <div class="regimebar">
+      <div class="rb-title">📡 Market regime <span class="faint" style="font-weight:400">· context for sizing, not a trade trigger — timing vs. SPY matters (<a data-nav="how" data-scroll="how-regime" style="color:var(--primary); font-weight:600">learn why</a>)</span></div>
+      <div class="rb-cells">
+        <div class="rb-cell" data-sym="spy"><span class="rb-tk">SPY</span><span class="rb-px">—</span><span class="rb-pill">—</span><span class="rb-atr">—</span></div>
+        <div class="rb-cell" data-sym="qqq"><span class="rb-tk">QQQ</span><span class="rb-px">—</span><span class="rb-pill">—</span><span class="rb-atr">—</span></div>
+        <div class="rb-take">A quick read on the market's health for sizing context.</div>
+      </div>
+    </div>
+
+    <div class="tabs" id="agetabs" style="margin-bottom:16px">
+      <div class="tab active" data-age="active">🟢 Active board</div>
+      <div class="tab" data-age="extended">📈 Extended board</div>
+      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = under 4 weeks old and still within +5% of the signal (or below) — a valid entry today. Switch to <b style="color:var(--muted)">Extended</b> for names that already ran +5%. After 4 weeks, setups move to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span>
+    </div>
+
+    <div class="setupintro">
+      <div class="si"><h3><span class="swatch" style="background:var(--phoenix)"></span> Phoenix</h3><p>A company that sold off hard and is now showing early signs of turning back up. We publish the full Phoenix board — and the <b style="color:var(--pass)">💎</b> marks the ones whose fundamentals are strong enough to hold through the nerves. Our highest-conviction signal.</p></div>
+      <div class="si"><h3><span class="swatch" style="background:var(--cruise)"></span> Cruise</h3><p>A market leader in an established uptrend that's simply taking a breather. Lower drama, steadier path — a strong company pausing to catch its breath, not one that's breaking down. The calmer way to ride existing strength.</p></div>
+    </div>
+
+    <div class="tabs" id="tabs">
+      <div class="tab active" data-k="all">All setups</div>
+      <div class="tab" data-k="phoenix">Phoenix</div>
+      <div class="tab" data-k="cruise">Cruise</div>
+    </div>
+    <div class="tabs" id="qtabs" style="margin-top:-4px">
+      <div class="tab active" data-q="all" style="font-size:13px">Show everything</div>
+      <div class="tab" data-q="pass" style="font-size:13px">💎 High-quality only</div>
+      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px">💎 = cleared our fundamental quality gate · ◆ = watch · △ = higher-risk / speculative &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:14px; margin:4px 0 14px; flex-wrap:wrap">
+      <div class="faint" style="font-size:12.5px">Showing <b id="count" style="color:var(--ink)">–</b> names on today's board</div>
+      <div class="vtoggle" id="vtabs">
+        <button class="vbtn active" data-v="cards">▦ Cards</button>
+        <button class="vbtn" data-v="list">☰ List</button>
+      </div>
+    </div>
+    <div class="trstats" id="trstats"></div>
+    <div class="grid" id="cards"></div>
+    <p class="faint" style="font-size:12.5px; margin-top:20px">The board shows every name the model flags today. The 💎 badge is your confidence signal — a business sound enough to hold through a drawdown. Names without it can still work, but demand more of your own homework and smaller size. A quiet day may show only a handful of setups — by design. <b style="color:var(--primary)">Tip: click any ticker for its price chart.</b></p>
+  </div></section>
+</div>
+
+<!-- ============ TRACK RECORD ============ -->
+<div class="page" data-page="track">
+  <section class="block"><div class="wrap">
+    <div class="boardhead">
+      <div>
+        <div class="kicker">Honest track record · paper / hypothetical</div>
+        <h2 class="section">Every setup, four weeks later</h2>
+        <p class="muted" style="margin:6px 0 0; max-width:72ch">When a setup reaches the <b>4-week mark</b> it retires from the live board and lands here — with its <b>actual</b> 2-week and 4-week returns and the worst dip along the way. No cherry-picking: every retired name is shown, winners and losers alike.</p>
+      </div>
+    </div>
+    <div class="trstats" id="trackStats" style="display:flex"></div>
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:14px; margin:4px 0 14px; flex-wrap:wrap">
+      <div class="faint" style="font-size:12.5px">Showing <b id="trackCount" style="color:var(--ink)">–</b> retired setups · newest first</div>
+    </div>
+    <div id="trackBody"></div>
+    <p class="faint" style="font-size:12px; margin-top:16px">Returns are <b>actual close-to-close</b> at 2 / 4 / 12 weeks after the signal date — not peak, not returns anyone earned. Peak (MFE) is the hypothetical best intraday move, shown for context only. <b>Paper / hypothetical</b> during live validation (started Jul 20, 2026); subject to survivorship bias and excluding costs. Educational research, not advice.</p>
+  </div></section>
+</div>
+
+<!-- ============ HOW IT WORKS ============ -->
+<div class="page" data-page="how">
+  <section class="block" id="how-approach"><div class="wrap">
+    <div class="convband">
+      <div class="kicker">Our approach</div>
+      <h2 class="section" style="max-width:24ch">The edge isn't predicting the market. It's conviction.</h2>
+      <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">We built a proprietary setup using machine learning on years of market history — trained to recognize the conditions that have tended to precede strong swing-trade moves. On top of it sits a quality gate grounded in <b style="color:var(--ink)">published academic research</b>, so every name we surface isn't just technically interesting; it's a financially sound business you can stand behind.</p>
+      <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">Because markets are unpredictable. What separates successful traders from everyone else isn't forecasting the next move — it's how they act when things get uncomfortable. That's what we're really offering: <b style="color:var(--primary)">conviction</b>. When one of these high-quality setups runs into volatility, the quality gate is your reason to stay patient — sound companies tend to bounce back, even if it takes a longer holding period to get there.</p>
+    </div>
+  </div></section>
+
+  <section class="block" id="how-method"><div class="wrap">
+    <div class="kicker">Methodology</div>
+    <h2 class="section">How we built this</h2>
+    <p class="muted" style="max-width:70ch; margin-top:10px">We trained a machine-learning model on ten years of daily data across the U.S. market, and asked it a single question: which price behaviors best predicted which companies would outperform over the following few months? We validated it the honest way — always on data the model had never seen. From that research we distilled a small, disciplined scanner that grades the entire market every night — and we'll walk you through the thinking behind it.</p>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><h4>Learn</h4><p>A model studies a decade of history to learn the fingerprint of stocks that went on to outperform.</p></div>
+      <div class="step"><div class="num">02</div><h4>Validate</h4><p>Tested walk-forward, out-of-sample only. If it didn't hold on unseen data, it didn't make the cut.</p></div>
+      <div class="step"><div class="num">03</div><h4>Screen</h4><p>Survivors pass the fundamental quality gate. Fragile businesses are removed before you ever see them.</p></div>
+      <div class="step"><div class="num">04</div><h4>Forward-test</h4><p>Every signal is tracked live in a paper portfolio — so the numbers we trust are real-time, not just backtests.</p></div>
+    </div>
+    <div class="disc" style="margin-top:26px"><b>We show our work.</b> Backtested figures are idealized — they exclude trading costs and carry survivorship bias — so we treat them as ceilings, not marketing. That's exactly why we track every signal live, in real time, in a transparent record that grows every day. We'd rather earn your trust with a real, evolving track record than a polished number we can't stand behind.</div>
+  </div></section>
+
+  <section class="block" id="how-boards"><div class="wrap">
+    <div class="kicker">The board, day to day</div>
+    <h2 class="section">Active board vs. Extended board</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Every evening after the close, the model re-scans the market and refreshes the board. A setup is only worth acting on while price is still near where the signal appeared — once a name has run away from that level, chasing it is a different (and worse) trade. So we split the board by <b style="color:var(--ink)">how far price has moved from the setup</b>, not by date.</p>
+    <div class="cols3" style="grid-template-columns:1fr 1fr; margin-top:24px">
+      <div class="fcard" style="border-color:rgba(21,128,61,.35)"><div class="ico" style="background:rgba(21,128,61,.1)">🟢</div><h3>Active board</h3><p>Price is still within <b>+5% of the setup</b> — or below it. The conditions the signal flagged still look ripe here, so this is the list to study first. Fresh arrivals this week carry a gold <b>NEW</b> tag.</p></div>
+      <div class="fcard" style="border-color:rgba(201,138,18,.35)"><div class="ico" style="background:rgba(201,138,18,.1)">📈</div><h3>Extended board</h3><p>Price has already moved <b>more than +5%</b> past the setup — the window where conditions looked ripe has largely passed. We keep these to show the calls that worked: their <b style="color:var(--up)">Peak</b> vs <b style="color:var(--down)">Max Dip</b>, and — importantly — the <b>median time to peak</b>, evidence that gains often arrive in weeks, not months. Educational, not actionable.</p></div>
+    </div>
+    <p class="muted" style="max-width:74ch; margin-top:18px; font-size:15px">Because we use <b style="color:var(--ink)">no stop-loss and no price targets</b>, the board tells you <i>when conditions look ripe</i> — the entry timing, the position size, and especially the exit are always your decision. The Extended board exists to build conviction, not to imply anyone bought at the low or sold at the peak.</p>
+  </div></section>
+
+  <section class="block" id="how-regime"><div class="wrap">
+    <div class="kicker">Market regime &amp; timing</div>
+    <h2 class="section">The tide matters as much as the boat</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">No stock trades in a vacuum. When the broad market — measured by <b style="color:var(--ink)">SPY</b> — is healthy and trending, most quality setups have the wind at their back. When it's weak or stretched, even a good setup fights a headwind. That's why the board carries a simple <b style="color:var(--ink)">market regime</b> read at the top: not to predict the market, but to tell you how hard to lean in today.</p>
+    <div class="cols3" style="margin-top:22px">
+      <div class="fcard"><div class="ico">β</div><h3>Beta</h3><p>How much a stock amplifies the market's move. A beta near 1.5 tends to swing about 1.5× SPY — a tailwind in a strong tape, and painful in a weak one. High-beta names need a healthier regime to be worth the ride.</p></div>
+      <div class="fcard"><div class="ico">🔗</div><h3>Correlation to SPY</h3><p>How tightly a name tracks the market. Highly correlated names give you little shelter — when SPY drops, they usually drop with it. Lower-correlation quality names are steadier when the tape turns.</p></div>
+      <div class="fcard"><div class="ico">🎚️</div><h3>The regime dial</h3><p>Measured in ATRs (a stock's typical daily range) above or below the market's long-term trend: <b style="color:var(--pass)">Healthy</b> (lean in, full size), <b style="color:var(--watch)">Extended</b> (stretched — trim size, expect chop), <b style="color:var(--fail)">Weak</b> (reduce or wait).</p></div>
+    </div>
+    <p class="muted" style="max-width:74ch; margin-top:18px; font-size:15px">We frame regime as <b style="color:var(--ink)">context</b>, not a command — a way to gauge how supportive conditions are, never a hard veto or a market forecast. We can't predict the market any more than we can predict a single stock. A weak regime is generally a reason for caution — the environment tends to favor lower-beta, less-correlated quality names; a healthy regime is more supportive. Same setups, read against the conditions.</p>
+  </div></section>
+
+  <section class="block" id="how-read"><div class="wrap">
+    <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap">
+      <div><div class="kicker">How to read a signal</div>
+      <h2 class="section">What's on every card — and what it means</h2></div>
+      <div class="videocard" data-video style="max-width:230px; padding:18px"><div class="playbtn" style="width:46px;height:46px;font-size:17px;margin-bottom:10px">▶</div><div class="vlabel" style="font-size:13.5px">Watch: reading a card</div><div class="vsub">45-second walkthrough</div></div>
+    </div>
+    <div class="cols3">
+      <div class="fcard"><div class="ico">◆</div><h3>The STS Score</h3><p>Our model's conviction reading, distilled from years of market data. Higher means a stronger match to what we're looking for. Use it to prioritize your attention — a ranking, not a promise.</p></div>
+      <div class="fcard"><div class="ico">🛡️</div><h3>The Quality badge</h3><p>💎 means the company cleared a fundamental safety screen built on published academic research. It's not about predicting the next move — it's about knowing the business underneath is sound.</p></div>
+      <div class="fcard"><div class="ico">🔥</div><h3>The Setup</h3><p>Which of our two signals fired — Phoenix or Cruise. Each carries its own character and temperament, so you know the kind of opportunity you're holding and roughly what to expect.</p></div>
+      <div class="fcard"><div class="ico">📈</div><h3>Market Pulse</h3><p>A quick read on how the name is carrying itself versus the broader market — Strong, Neutral, or Weak. Shown as context, one of several inputs the model considers, not a signal to act on by itself.</p></div>
+      <div class="fcard"><div class="ico">🏷️</div><h3>Sector &amp; profile</h3><p>The industry and business type (Core, Growth) so you can keep your own portfolio balanced and avoid piling into one theme.</p></div>
+      <div class="fcard"><div class="ico">🧭</div><h3>What we don't show</h3><p>No entry price. No exit. No "buy now." We tell you the conditions look ripe from a technical standpoint — the decision, the sizing, and the timing are always yours.</p></div>
+    </div>
+  </div></section>
+
+  <section class="block" id="how-gate"><div class="wrap">
+    <div class="kicker">The quality gate</div>
+    <h2 class="section">The reason you can hold through a dip</h2>
+    <div class="qg">
+      <div>
+        <p class="muted" style="margin-top:0">The hardest part of swing trading isn't finding a setup — it's holding it when it goes against you for a while. Most people sell good positions at the worst possible moment out of fear. Our fix is upstream: every name we publish first has to clear a fundamental safety screen. So when a position wobbles, you already know the business behind it is solid. That's what lets you sit still.</p>
+        <ul class="qglist">
+          <li><b>Profitability &amp; earnings quality</b> — is the company genuinely making money, cleanly?</li>
+          <li><b>Financial health</b> — a multi-point accounting-strength check on the balance sheet.</li>
+          <li><b>Distress screen</b> — a hard veto on names with real bankruptcy risk. They never reach your board.</li>
+          <li><b>Self-funding</b> — does the business generate its own cash, or lean on debt?</li>
+        </ul>
+        <p class="faint" style="font-size:13px; margin-top:14px">Screens are grounded in published research (Piotroski, Altman, Novy-Marx, Sloan). The gate's job isn't to boost returns — it's to keep fragile businesses out, so a temporary drawdown stays temporary.</p>
+      </div>
+      <div class="qgcard">
+        <div class="big">Every published name is:</div>
+        <div class="checkline"><span class="check">✓</span> A profitable, financially sound business</div>
+        <div class="checkline"><span class="check">✓</span> Screened against bankruptcy / distress risk</div>
+        <div class="checkline"><span class="check">✓</span> Flagged only when technicals look ripe</div>
+        <div class="checkline"><span class="check">✓</span> Yours to size, time, and hold as you see fit</div>
+        <div style="margin-top:20px; padding-top:18px; border-top:1px solid var(--line); font-size:14px; color:var(--muted)"><b style="color:var(--ink)">The mindset we're selling:</b> if the company is good, a red week is an opportunity to be patient — not a reason to panic. Confidence comes from quality, not from a stop-loss.</div>
+      </div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ============ TRADING PSYCHOLOGY ============ -->
+<div class="page" data-page="psychology">
+  <section class="block"><div class="wrap">
+    <div class="convband">
+      <div class="kicker">Trading Psychology</div>
+      <h2 class="section" style="max-width:22ch">The trader matters more than the trade.</h2>
+      <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">You can be handed the best setups in the world and still lose money — because trading is won or lost in the head, not on the chart. STS is a tool; how you use it is what decides your results. This is the mindset we build the product around, and the part no scanner can do for you.</p>
+    </div>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <div class="kicker">01 · Methodology &amp; discipline</div>
+    <h2 class="section">A method you actually follow beats a better method you don't</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Every trader — winning or losing — has a methodology. What separates the successful ones isn't a cleverer secret; it's the <b style="color:var(--ink)">discipline to follow their method consistently</b>, without improvising the moment emotions flare. A repeatable process quietly removes the thousand small, emotional decisions that erode returns over time.</p>
+    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">That's where STS fits. It's a disciplined, unemotional filter that runs the same way every single night. Use it as your <b style="color:var(--ink)">first filter</b> — a vetted shortlist to begin your own research from — or as a <b style="color:var(--ink)">second opinion</b> after your own screen. Either way, it anchors your process in something consistent, instead of a gut feeling that changes with your mood.</p>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <div class="kicker">02 · Emotional control</div>
+    <h2 class="section">Winners are made in the uncomfortable middle</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">The biggest difference between a winning trade and a losing one is rarely the entry — it's the <b style="color:var(--ink)">grit to hold through the uncomfortable stretch</b> in between. Nobody can predict the next move. There are simply too many variables acting on a stock at once for anyone to know which way it goes next, and pretending otherwise is exactly how people get shaken out at the worst possible moment.</p>
+    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">What carries you through those stretches is <b style="color:var(--primary)">conviction</b> — and conviction has to be earned, not faked. When you genuinely believe in the business underneath (which is precisely what the quality gate is for), a deep drawdown becomes something you can sit through, and even average into deliberately, rather than panic-sell. Markets routinely overreact — over-punishing a strong company on a small revenue miss — and those are often the names that rebound fastest once sentiment comes back to its senses.</p>
+    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">There's a subtler trap, too: <b style="color:var(--ink)">scale changes how a loss feels, even when the math doesn't</b>. Early on, a $100 loss on a $1,000 trade barely registers — but a $10,000 loss on a $100,000 trade can throw you into internal chaos, or freeze you from making the next trade at all. On a percentage basis they're identical; our brains simply aren't wired to see it that way — we react to the dollar figure, not the ratio. The skill to build is getting to the point where both losses feel the <i>same</i>. Traders who master this don't get rattled out of a sound approach early, before it's had the chance to work — which is often the whole difference between winning and losing over time.</p>
+    <p class="faint" style="max-width:74ch; margin-top:14px; font-size:14px">Conviction is not stubbornness. It's grounded in the company's quality — not in a refusal to ever be wrong. If the reason you owned it genuinely breaks, that's a different situation from ordinary volatility.</p>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <div class="kicker">03 · Risk appetite</div>
+    <h2 class="section">Know your risk — and live to trade tomorrow</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Before any of this, understand your own <b style="color:var(--ink)">risk appetite</b> — how much you can lose without it affecting your sleep or your judgment. And don't trust any system, including ours, on the strength of past performance. Trust isn't claimed; it's <b style="color:var(--ink)">built slowly, through your own experience</b> using it.</p>
+    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">So start small. Trade sizes you're genuinely comfortable being wrong on, and only increase them as the system earns your confidence over time. And no matter how much trust you build, <b style="color:var(--ink)">keep your risk controlled and never go all in</b>. The goal isn't to win the biggest single trade — it's to still be here for the next one. We have to live to trade the next day.</p>
+    <div class="disc" style="margin-top:22px">This page is educational and reflects our trading philosophy — it is not investment advice, and it is not a recommendation to buy, sell, hold, or average into any security. Averaging down, position sizing, and every exit are personal decisions with real risk of loss. Know your own situation and consider a licensed professional.</div>
+  </div></section>
+</div>
+
+<!-- ============ PRICING ============ -->
+<div class="page" data-page="pricing">
+  <section class="block"><div class="wrap" style="text-align:center">
+    <div class="kicker">Pricing</div>
+    <h2 class="section">One product. No upsells. No performance fees.</h2>
+    <p class="muted" style="max-width:52ch; margin:8px auto 0">The same board, the same research, for everyone. Try it free for a week — if it's not for you, cancel before it renews.</p>
+    <div class="pricegrid">
+      <div class="price" data-plan="monthly">
+        <div class="planpick"><span class="radio"></span><span class="planname">Monthly</span></div>
+        <div class="amt">$20<small> / month</small></div>
+        <div class="muted" style="font-size:13px">billed monthly · $240 / year</div>
+        <ul>
+          <li>✓ <b>The nightly board</b> — every Phoenix &amp; Cruise setup, refreshed after each close</li>
+          <li>✓ <b>The STS Score &amp; quality badge</b> on every name</li>
+          <li>✓ <b>The educational layer</b> — why each setup qualifies</li>
+          <li>✓ <b>Market-context read</b> so you know when to lean in</li>
+          <li>✓ <b>1 week free</b>, then cancel anytime — no lock-in</li>
+        </ul>
+        <a class="btn btn-select planbtn" data-nav="pricing" style="width:100%; padding:14px; text-align:center">Start free trial</a>
+        <div class="faint" style="font-size:12px; margin-top:12px">No card charged until day 8 · renews monthly</div>
+      </div>
+      <div class="price best" data-plan="annual">
+        <div class="ribbon">Save 25% · best value</div>
+        <div class="planpick"><span class="radio"></span><span class="planname">Annual</span></div>
+        <div class="amt">$15<small> / month</small></div>
+        <div class="muted" style="font-size:13px"><s style="color:var(--faint)">$240</s> &nbsp;<b style="color:var(--pass)">$180 / year</b>, billed annually</div>
+        <ul>
+          <li>✓ <b>Everything in Monthly</b>, at 25% off the monthly rate</li>
+          <li>✓ <b>$60 saved</b> every year vs paying month to month</li>
+          <li>✓ <b>The STS Score &amp; quality badge</b> on every name</li>
+          <li>✓ <b>The full educational layer</b> &amp; market context</li>
+          <li>✓ <b>1 week free</b>, then cancel anytime — no lock-in</li>
+        </ul>
+        <label class="autorenew" onclick="event.stopPropagation()"><input type="checkbox" id="autorenew" checked> <span>Auto-renew annually — you'll be reminded before each renewal, <b>cancel anytime</b></span></label>
+        <a class="btn btn-primary planbtn" data-nav="pricing" style="width:100%; padding:14px; text-align:center">Start free trial</a>
+        <div class="faint" style="font-size:12px; margin-top:12px">No card charged until day 8</div>
+      </div>
+    </div>
+    <p class="faint" style="font-size:12px; margin-top:16px">Both plans include the 7-day free trial and the same research. Educational research, not advice.</p>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <div class="kicker">Cancellation policy</div>
+    <h2 class="section">Simple, fair, and self-serve</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px">We want you subscribed because STS is useful to you — not because it's hard to leave. You can cancel at any time, in a couple of clicks, and here's exactly how it works.</p>
+    <div class="cols3" style="margin-top:24px">
+      <div class="fcard"><div class="ico">🆓</div><h3>During your free week</h3><p>Cancel any time in the first 7 days and you're charged nothing — no card is billed until day 8. Cancel before then and the subscription simply ends with the trial.</p></div>
+      <div class="fcard"><div class="ico">🗓️</div><h3>Monthly plan</h3><p>Cancel whenever you like. You keep access until the end of the current billing month, and you won't be charged again. No partial-month refunds, since you retain full access through the period you paid for.</p></div>
+      <div class="fcard"><div class="ico">📅</div><h3>Annual plan</h3><p>Cancel any time to stop future renewals. Your access continues until the end of the year you've paid for. Annual terms are prepaid and generally non-refundable once the trial ends — the discount reflects that commitment.</p></div>
+    </div>
+    <div class="disc" style="margin-top:24px"><b>How to cancel.</b> Go to <b>Account → Billing → Cancel subscription</b>, or email <b>support@sts.example</b> and we'll take care of it. Cancellation takes effect at the end of your current paid period; access and the nightly board remain available until then. We don't add cancellation fees, and we never bury the button. If you were charged in error or something went wrong, contact us and we'll make it right. This policy is provided for transparency and may be updated; the version in our Terms of Service at the time of your purchase governs.</div>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <div class="disc"><b>Important — please read.</b> STS is an educational research service, not investment advice, and we are not a registered investment adviser or broker-dealer. Nothing here is a recommendation to buy or sell any security, and nothing is tailored to your personal situation. The same impersonal research is published to all subscribers. We do not provide entry prices, exit prices, price targets, or position sizing. Markets involve risk, including loss of principal; past performance — backtested or live — does not guarantee future results. You are solely responsible for your own decisions. There is no comments section and we do not respond to individual "should I buy X" questions, because doing so would cross into personalized advice. Do your own research and consider consulting a licensed financial professional.</div>
+  </div></section>
+</div>
+
+<footer><div class="wrap">
+  <div>© 2026 STS · Signal Trading System · Educational research, not advice</div>
+  <div class="faint">Terms · Privacy · Risk disclosure · <a data-nav="pricing">Cancellation</a> · Contact</div>
+</div></footer>
+
+<div class="modal-ov" id="modal"><div class="modal-card"><button class="modal-close" id="modalClose">✕</button><div id="modalBody"></div></div></div>
+<div class="tour-ov" id="tourOv"><div class="tour-hole" id="tourHole"></div><div class="tour-tip" id="tourTip"></div></div>
+
+<script>
+let DATA = [{"t":"HUM","n":"Humana","setup":"cruise","phase":"active","score":2.1,"q":"fail","profile":"Core","sector":"Healthcare","rs":"strong","date":"Jul 29","dial":"Healthy","pe":388.2,"pc":386.61,"chg":-0.4,"wk2":0.16,"mfe":1.83,"mae":-8.89,"md4":-8.89,"dtp":0.0},{"t":"BAX","n":"Baxter International","setup":"cruise","phase":"extended","score":2.1,"q":"fail","profile":"Core","sector":"Healthcare","rs":"strong","date":"Jul 29","dial":"Healthy","pe":24.4,"pc":26.49,"chg":8.6,"wk2":10.45,"mfe":22.95,"mae":-0.49,"md4":-0.49,"dtp":1.0},{"t":"POOL","n":"Pool Corporation","setup":"phoenix","phase":"active","score":2.2,"q":"pass","profile":"Declining","sector":"Industrials","rs":"neutral","date":"Jul 29","dial":"Healthy","pe":189.62,"pc":188.24,"chg":-0.7,"wk2":4.48,"mfe":9.91,"mae":-3.33,"md4":-3.33,"dtp":7.0},{"t":"CPRI","n":"Capri Holdings","setup":"phoenix","phase":"active","score":2.0,"q":"watch","profile":"Declining","sector":"Consumer Cyclical","rs":"weak","date":"Jul 30","dial":"Extended","pe":15.78,"pc":13.68,"chg":-13.3,"wk2":-1.14,"mfe":7.48,"mae":-14.04,"md4":-14.04,"dtp":4.0},{"t":"ROP","n":"Roper Technologies","setup":"phoenix","phase":"active","score":2.1,"q":"watch","profile":"Core","sector":"Technology","rs":"strong","date":"Jul 30","dial":"Extended","pe":397.66,"pc":415.51,"chg":4.5,"wk2":-0.04,"mfe":5.3,"mae":-4.12,"md4":-4.12,"dtp":17.0},{"t":"AFRM","n":"Affirm Holdings","setup":"phoenix","phase":"extended","score":2.1,"q":"watch","profile":"Growth","sector":"Financial Services","rs":"weak","date":"Jul 30","dial":"Extended","pe":70.92,"pc":76.88,"chg":8.4,"wk2":10.43,"mfe":14.23,"mae":-1.51,"md4":-1.51,"dtp":4.0},{"t":"TXN","n":"Texas Instruments","setup":"cruise","phase":"active","score":2.2,"q":"pass","profile":"New-Ipo","sector":"Technology","rs":"weak","date":"Jul 30","dial":"Extended","pe":275.41,"pc":258.94,"chg":-6.0,"wk2":-0.72,"mfe":5.16,"mae":-7.33,"md4":-7.33,"dtp":9.0},{"t":"FIS","n":"Fidelity National Information S","setup":"phoenix","phase":"active","score":2.3,"q":"fail","profile":"Leveraged","sector":"Technology","rs":"strong","date":"Jul 30","dial":"Extended","pe":46.01,"pc":41.4,"chg":-10.0,"wk2":-4.09,"mfe":0.89,"mae":-15.24,"md4":-15.24,"dtp":2.0},{"t":"DOCU","n":"DocuSign","setup":"phoenix","phase":"extended","score":2.0,"q":"pass","profile":"Core","sector":"Technology","rs":"neutral","date":"Jul 31","dial":"Extended","pe":53.06,"pc":62.56,"chg":17.9,"wk2":16.92,"mfe":22.97,"mae":-0.7,"md4":-0.7,"dtp":10.0},{"t":"PODD","n":"Insulet","setup":"phoenix","phase":"active","score":2.0,"q":"pass","profile":"Growth","sector":"Healthcare","rs":"strong","date":"Jul 31","dial":"Extended","pe":164.57,"pc":145.42,"chg":-11.6,"wk2":-12.9,"mfe":4.58,"mae":-23.19,"md4":-23.19,"dtp":1.0},{"t":"PATH","n":"UiPath","setup":"phoenix","phase":"extended","score":2.1,"q":"pass","profile":"Core","sector":"Technology","rs":"neutral","date":"Jul 31","dial":"Extended","pe":12.27,"pc":16.57,"chg":35.0,"wk2":30.48,"mfe":37.08,"mae":-0.9,"md4":-0.9,"dtp":10.0},{"t":"SRPT","n":"Sarepta Therapeutics","setup":"phoenix","phase":"extended","score":2.0,"q":"fail","profile":"Leveraged","sector":"Healthcare","rs":"weak","date":"Aug 3","dial":"Extended","pe":15.09,"pc":18.13,"chg":20.1,"wk2":20.48,"mfe":33.8,"mae":-2.25,"md4":-2.25,"dtp":12.0},{"t":"EPAM","n":"EPAM Systems","setup":"phoenix","phase":"active","score":2.0,"q":"pass","profile":"Core","sector":"Technology","rs":"strong","date":"Aug 3","dial":"Extended","pe":108.29,"pc":111.26,"chg":2.7,"wk2":-8.83,"mfe":4.35,"mae":-19.66,"md4":-19.66,"dtp":2.0},{"t":"AAL","n":"American Airlines Group","setup":"cruise","phase":"active","score":2.0,"q":"fail","profile":"Leveraged","sector":"Industrials","rs":"strong","date":"Aug 3","dial":"Extended","pe":15.77,"pc":13.63,"chg":-13.6,"wk2":-8.5,"mfe":8.5,"mae":-14.84,"md4":-14.84,"dtp":2.0},{"t":"WDAY","n":"Workday","setup":"phoenix","phase":"extended","score":2.0,"q":"pass","profile":"Core","sector":"Technology","rs":"strong","date":"Aug 3","dial":"Extended","pe":165.84,"pc":199.15,"chg":20.1,"wk2":15.28,"mfe":37.17,"mae":-2.53,"md4":-2.53,"dtp":8.0},{"t":"ROKU","n":"Roku, Inc.","setup":"cruise","phase":"extended","score":2.1,"q":"pass","profile":"Core","sector":"Communication Services","rs":"strong","date":"Aug 3","dial":"Extended","pe":145.85,"pc":158.18,"chg":8.5,"wk2":8.54,"mfe":9.49,"mae":-0.44,"md4":-0.44,"dtp":11.0},{"t":"MOH","n":"Molina Healthcare","setup":"cruise","phase":"active","score":2.0,"q":"watch","profile":"Core","sector":"Healthcare","rs":"weak","date":"Aug 5","dial":"Extended","pe":190.46,"pc":198.5,"chg":4.2,"wk2":5.62,"mfe":12.8,"mae":-1.59,"md4":-1.59,"dtp":7.0},{"t":"AI","n":"C3.ai","setup":"phoenix","phase":"active","score":4.9,"q":"fail","profile":"Declining","sector":"Technology","rs":"weak","date":"Aug 5","dial":"Extended","pe":10.02,"pc":10.11,"chg":0.9,"wk2":3.54,"mfe":7.03,"mae":-5.13,"md4":-5.13,"dtp":4.0},{"t":"CZR","n":"Caesars Entertainment","setup":"cruise","phase":"active","score":2.1,"q":"fail","profile":"Leveraged","sector":"Consumer Cyclical","rs":"neutral","date":"Aug 6","dial":"Extended","pe":30.15,"pc":29.66,"chg":-1.6,"wk2":-1.69,"mfe":0.17,"mae":-1.92,"md4":-1.92,"dtp":1.0},{"t":"PLTR","n":"Palantir Technologies","setup":"cruise","phase":"extended","score":2.1,"q":"pass","profile":"Speculative","sector":"Technology","rs":"strong","date":"Aug 7","dial":"Extended","pe":160.07,"pc":175.89,"chg":9.9,"wk2":12.41,"mfe":13.98,"mae":-0.07,"md4":-0.07,"dtp":10.0},{"t":"VST","n":"Vistra","setup":"phoenix","phase":"active","score":2.1,"q":"fail","profile":"Leveraged","sector":"Utilities","rs":"weak","date":"Aug 7","dial":"Extended","pe":138.62,"pc":135.66,"chg":-2.1,"wk2":-1.74,"mfe":8.34,"mae":-2.96,"md4":-2.96,"dtp":5.0},{"t":"LSTR","n":"Landstar System","setup":"cruise","phase":"active","score":2.0,"q":"pass","profile":"Declining","sector":"Industrials","rs":"weak","date":"Aug 10","dial":"Extended","pe":181.49,"pc":179.92,"chg":-0.9,"wk2":-0.86,"mfe":6.66,"mae":-3.64,"md4":-3.64,"dtp":5.0},{"t":"FICO","n":"Fair Isaac","setup":"phoenix","phase":"extended","score":2.0,"q":"pass","profile":"Core","sector":"Technology","rs":"weak","date":"Aug 10","dial":"Extended","pe":1029.6,"pc":1166.4,"chg":13.3,"wk2":13.29,"mfe":15.46,"mae":-1.42,"md4":-1.42,"dtp":9.0},{"t":"CEG","n":"Constellation Energy Corporatio","setup":"phoenix","phase":"active","score":2.1,"q":"fail","profile":"Core","sector":"Utilities","rs":"neutral","date":"Aug 10","dial":"Extended","pe":269.89,"pc":273.43,"chg":1.3,"wk2":1.31,"mfe":6.18,"mae":-1.88,"md4":-1.88,"dtp":4.0},{"t":"NET","n":"Cloudflare","setup":"cruise","phase":"active","score":2.2,"q":"fail","profile":"Speculative","sector":"Technology","rs":"strong","date":"Aug 10","dial":"Extended","pe":295.5,"pc":280.35,"chg":-5.1,"wk2":-5.13,"mfe":12.43,"mae":-7.27,"md4":-7.27,"dtp":3.0},{"t":"SHOP","n":"Shopify","setup":"cruise","phase":"active","score":2.2,"q":"pass","profile":"Growth","sector":"Technology","rs":"strong","date":"Aug 10","dial":"Extended","pe":150.44,"pc":149.8,"chg":-0.4,"wk2":-0.43,"mfe":5.6,"mae":-4.2,"md4":-4.2,"dtp":4.0},{"t":"SPOT","n":"Spotify Technology","setup":"phoenix","phase":"extended","score":2.1,"q":"pass","profile":"Core","sector":"Communication Services","rs":"neutral","date":"Aug 11","dial":"Extended","pe":510.34,"pc":537.84,"chg":5.4,"mfe":6.77,"mae":-5.3,"md4":-5.3,"dtp":7.0},{"t":"MPC","n":"Marathon Petroleum","setup":"cruise","phase":"extended","score":2.3,"q":"watch","profile":"Declining","sector":"Energy","rs":"strong","date":"Aug 13","dial":"Extended","pe":344.46,"pc":362.52,"chg":5.2,"mfe":6.72,"mae":-0.41,"md4":-0.41,"dtp":5.0},{"t":"CRSP","n":"CRISPR Therapeutics","setup":"phoenix","phase":"extended","score":2.1,"q":"fail","profile":"Speculative","sector":"Healthcare","rs":"neutral","date":"Aug 14","dial":"Extended","pe":53.99,"pc":57.08,"chg":5.7,"mfe":15.83,"mae":-4.06,"md4":-4.06,"dtp":5.0},{"t":"VLO","n":"Valero Energy","setup":"cruise","phase":"active","score":2.2,"q":"watch","profile":"Declining","sector":"Energy","rs":"strong","date":"Aug 14","dial":"Extended","pe":342.92,"pc":346.0,"chg":0.9,"mfe":2.94,"mae":-1.08,"md4":-1.08,"dtp":6.0},{"t":"NOW","n":"ServiceNow","setup":"phoenix","phase":"active","score":2.9,"q":"pass","profile":"Core","sector":"Technology","rs":"strong","date":"Aug 14","dial":"Extended","pe":127.7,"pc":128.05,"chg":0.3,"mfe":2.73,"mae":-7.92,"md4":-7.92,"dtp":5.0},{"t":"ENPH","n":"Enphase Energy","setup":"phoenix","phase":"active","score":2.9,"q":"watch","profile":"Core","sector":"Technology","rs":"weak","date":"Aug 14","dial":"Extended","pe":40.92,"pc":37.18,"chg":-9.1,"mfe":1.78,"mae":-9.51,"md4":-9.51,"dtp":0.0},{"t":"RIOT","n":"Riot Platforms","setup":"phoenix","phase":"extended","score":3.1,"q":"fail","profile":"Growth","sector":"Financial Services","rs":"weak","date":"Aug 14","dial":"Extended","pe":18.82,"pc":20.0,"chg":6.3,"mfe":17.96,"mae":-5.09,"md4":-5.09,"dtp":5.0},{"t":"MP","n":"MP Materials","setup":"phoenix","phase":"active","score":3.2,"q":"fail","profile":"Speculative","sector":"Basic Materials","rs":"weak","date":"Aug 14","dial":"Extended","pe":56.3,"pc":57.42,"chg":2.0,"mfe":8.54,"mae":-6.89,"md4":-6.89,"dtp":0.0},{"t":"ON","n":"ON Semiconductor","setup":"phoenix","phase":"active","score":3.4,"q":"watch","profile":"Declining","sector":"Technology","rs":"weak","date":"Aug 14","dial":"Extended","pe":81.84,"pc":71.93,"chg":-12.1,"mfe":4.53,"mae":-13.34,"md4":-13.34,"dtp":1.0},{"t":"PINS","n":"Pinterest","setup":"phoenix","phase":"active","score":3.5,"q":"pass","profile":"Core","sector":"Communication Services","rs":"neutral","date":"Aug 14","dial":"Extended","pe":23.26,"pc":23.47,"chg":0.9,"mfe":4.17,"mae":-1.98,"md4":-1.98,"dtp":0.0},{"t":"GDDY","n":"GoDaddy","setup":"phoenix","phase":"active","score":3.5,"q":"fail","profile":"Leveraged","sector":"Technology","rs":"strong","date":"Aug 14","dial":"Extended","pe":101.56,"pc":100.52,"chg":-1.0,"mfe":0.42,"mae":-9.12,"md4":-9.12,"dtp":0.0},{"t":"RKLB","n":"Rocket Lab","setup":"phoenix","phase":"active","score":3.5,"q":"fail","profile":"Speculative","sector":"Industrials","rs":"weak","date":"Aug 14","dial":"Extended","pe":79.59,"pc":68.28,"chg":-14.2,"mfe":7.49,"mae":-14.35,"md4":-14.35,"dtp":1.0},{"t":"HOOD","n":"Robinhood Markets","setup":"phoenix","phase":"extended","score":3.6,"q":"fail","profile":"Growth","sector":"Financial Services","rs":"neutral","date":"Aug 14","dial":"Extended","pe":98.0,"pc":103.62,"chg":5.7,"mfe":11.95,"mae":-6.69,"md4":-6.69,"dtp":5.0},{"t":"DKNG","n":"DraftKings","setup":"phoenix","phase":"active","score":3.7,"q":"fail","profile":"Growth","sector":"Consumer Cyclical","rs":"weak","date":"Aug 14","dial":"Extended","pe":25.69,"pc":25.97,"chg":1.1,"mfe":3.67,"mae":-6.77,"md4":-6.77,"dtp":1.0},{"t":"ZS","n":"Zscaler","setup":"phoenix","phase":"active","score":4.7,"q":"watch","profile":"Growth","sector":"Technology","rs":"strong","date":"Aug 14","dial":"Extended","pe":190.0,"pc":176.06,"chg":-7.3,"mfe":0.51,"mae":-9.24,"md4":-9.24,"dtp":2.0},{"t":"PL","n":"Planet Labs PBC","setup":"phoenix","phase":"active","score":4.9,"q":"fail","profile":"Growth","sector":"Industrials","rs":"weak","date":"Aug 14","dial":"Extended","pe":24.86,"pc":21.57,"chg":-13.2,"mfe":2.7,"mae":-14.32,"md4":-14.32,"dtp":0.0},{"t":"LUNR","n":"Intuitive Machines","setup":"phoenix","phase":"active","score":5.2,"q":"fail","profile":"Declining","sector":"Industrials","rs":"weak","date":"Aug 14","dial":"Extended","pe":19.17,"pc":16.66,"chg":-13.1,"mfe":8.71,"mae":-13.35,"md4":-13.35,"dtp":1.0},{"t":"DUOL","n":"Duolingo","setup":"phoenix","phase":"active","score":6.9,"q":"pass","profile":"Growth","sector":"Technology","rs":"strong","date":"Aug 14","dial":"Extended","pe":143.4,"pc":146.84,"chg":2.4,"mfe":5.3,"mae":-10.41,"md4":-10.41,"dtp":3.0},{"t":"ILMN","n":"Illumina","setup":"cruise","phase":"extended","score":2.1,"q":"pass","profile":"Declining","sector":"Healthcare","rs":"strong","date":"Aug 17","dial":"Extended","pe":191.01,"pc":223.22,"chg":16.9,"mfe":17.26,"mae":-1.82,"md4":-1.82,"dtp":5.0},{"t":"LYFT","n":"Lyft, Inc.","setup":"phoenix","phase":"active","score":2.9,"q":"fail","profile":"Leveraged","sector":"Technology","rs":"strong","date":"Aug 19","dial":"Extended","pe":16.88,"pc":17.68,"chg":4.7,"mfe":5.86,"mae":-0.36,"md4":-0.36,"dtp":3.0},{"t":"OLN","n":"Olin","setup":"phoenix","phase":"active","score":2.0,"q":"fail","profile":"New-Ipo","sector":"Basic Materials","rs":"weak","date":"Aug 20","dial":"Extended","pe":18.75,"pc":17.57,"chg":-6.3,"mfe":0.85,"mae":-6.35,"md4":-6.35,"dtp":1.0},{"t":"PSX","n":"Phillips 66","setup":"cruise","phase":"active","score":2.0,"q":"pass","profile":"Declining","sector":"Energy","rs":"strong","date":"Aug 20","dial":"Extended","pe":243.26,"pc":241.96,"chg":-0.5,"mfe":1.52,"mae":-1.64,"md4":-1.64,"dtp":0.0},{"t":"ACM","n":"AECOM","setup":"phoenix","phase":"active","score":2.0,"q":"watch","profile":"Core","sector":"Industrials","rs":"weak","date":"Aug 20","dial":"Extended","pe":64.77,"pc":64.99,"chg":0.3,"mfe":1.98,"mae":-0.97,"md4":-0.97,"dtp":0.0},{"t":"NFLX","n":"Netflix","setup":"phoenix","phase":"active","score":2.0,"q":"pass","profile":"Core","sector":"Communication Services","rs":"neutral","date":"Aug 20","dial":"Extended","pe":80.14,"pc":80.01,"chg":-0.2,"mfe":1.17,"mae":-1.4,"md4":-1.4,"dtp":0.0},{"t":"AKAM","n":"Akamai Technologies","setup":"phoenix","phase":"active","score":2.2,"q":"watch","profile":"Core","sector":"Technology","rs":"weak","date":"Aug 20","dial":"Extended","pe":112.19,"pc":105.66,"chg":-5.8,"mfe":0.47,"mae":-6.23,"md4":-6.23,"dtp":0.0},{"t":"BROS","n":"Dutch Bros","setup":"phoenix","phase":"active","score":2.2,"q":"fail","profile":"Growth","sector":"Consumer Cyclical","rs":"weak","date":"Aug 20","dial":"Extended","pe":50.2,"pc":51.95,"chg":3.5,"mfe":4.1,"mae":-3.09,"md4":-3.09,"dtp":2.0},{"t":"PLNT","n":"Planet Fitness","setup":"phoenix","phase":"active","score":2.2,"q":"fail","profile":"Leveraged","sector":"Consumer Cyclical","rs":"neutral","date":"Aug 20","dial":"Extended","pe":53.81,"pc":53.86,"chg":0.1,"mfe":2.88,"mae":-2.14,"md4":-2.14,"dtp":2.0},{"t":"YELP","n":"Yelp Inc.","setup":"phoenix","phase":"active","score":2.5,"q":"pass","profile":"Core","sector":"Communication Services","rs":"neutral","date":"Aug 20","dial":"Extended","pe":23.7,"pc":23.83,"chg":0.5,"mfe":1.98,"mae":-2.83,"md4":-2.83,"dtp":0.0},{"t":"ETSY","n":"Etsy, Inc.","setup":"cruise","phase":"extended","score":2.5,"q":"fail","profile":"Leveraged","sector":"Consumer Cyclical","rs":"neutral","date":"Aug 20","dial":"Extended","pe":81.69,"pc":87.03,"chg":6.5,"mfe":6.57,"mae":-1.74,"md4":-1.74,"dtp":2.0},{"t":"MTZ","n":"MasTec","setup":"phoenix","phase":"active","score":2.6,"q":"watch","profile":"New-Ipo","sector":"Industrials","rs":"weak","date":"Aug 20","dial":"Extended","pe":270.31,"pc":255.36,"chg":-5.5,"mfe":3.06,"mae":-6.65,"md4":-6.65,"dtp":1.0},{"t":"ARE","n":"Alexandria Real Estate Equities","setup":"phoenix","phase":"extended","score":3.2,"q":"fail","profile":"Declining","sector":"Real Estate","rs":"weak","date":"Aug 20","dial":"Extended","pe":50.78,"pc":54.04,"chg":6.4,"mfe":7.74,"mae":-1.24,"md4":-1.24,"dtp":2.0},{"t":"CIEN","n":"Ciena","setup":"phoenix","phase":"active","score":3.2,"q":"pass","profile":"Core","sector":"Technology","rs":"weak","date":"Aug 20","dial":"Extended","pe":400.35,"pc":371.95,"chg":-7.1,"mfe":1.0,"mae":-9.46,"md4":-9.46,"dtp":0.0},{"t":"GLW","n":"Corning","setup":"phoenix","phase":"active","score":3.5,"q":"pass","profile":"Core","sector":"Technology","rs":"weak","date":"Aug 20","dial":"Extended","pe":152.26,"pc":145.55,"chg":-4.4,"mfe":2.11,"mae":-6.98,"md4":-6.98,"dtp":1.0},{"t":"OWL","n":"Blue Owl Capital","setup":"phoenix","phase":"active","score":2.3,"q":"fail","profile":"Growth","sector":"Financial Services","rs":"strong","date":"Aug 21","dial":"Extended","pe":11.56,"pc":11.68,"chg":1.0,"mfe":2.38,"mae":-0.26,"md4":-0.26,"dtp":1.0},{"t":"LBRDA","n":"Liberty Broadband","setup":"phoenix","phase":"active","score":3.3,"q":"fail","profile":"Leveraged","sector":"Communication Services","rs":"weak","date":"Aug 21","dial":"Extended","pe":35.99,"pc":35.99,"chg":0.0,"mfe":0.0,"mae":0.0,"md4":0.0,"dtp":0.0},{"t":"LBRDK","n":"Liberty Broadband","setup":"phoenix","phase":"active","score":3.4,"q":"fail","profile":"Leveraged","sector":"Communication Services","rs":"weak","date":"Aug 21","dial":"Extended","pe":36.02,"pc":36.02,"chg":0.0,"mfe":0.0,"mae":0.0,"md4":0.0,"dtp":0.0},{"t":"DVA","n":"DaVita","setup":"phoenix","phase":"active","score":4.1,"q":"fail","profile":"Leveraged","sector":"Healthcare","rs":"weak","date":"Aug 21","dial":"Extended","pe":175.25,"pc":176.5,"chg":0.7,"mfe":1.09,"mae":-2.2,"md4":-2.2,"dtp":1.0},{"t":"MARA","n":"MARA Holdings","setup":"phoenix","phase":"active","score":5.9,"q":"fail","profile":"Growth","sector":"Financial Services","rs":"weak","date":"Aug 21","dial":"Extended","pe":11.7,"pc":11.18,"chg":-4.4,"mfe":6.58,"mae":-5.81,"md4":-5.81,"dtp":0.0},{"t":"S","n":"SentinelOne","setup":"cruise","phase":"active","score":2.1,"q":"fail","profile":"Core","sector":"Technology","rs":"strong","date":"Aug 24","dial":"Extended","pe":21.06,"pc":20.82,"chg":-1.1,"mfe":0.34,"mae":-1.85,"md4":-1.85,"dtp":0.0},{"t":"ADBE","n":"Adobe","setup":"phoenix","phase":"active","score":2.1,"q":"pass","profile":"Core","sector":"Technology","rs":"strong","date":"Aug 24","dial":"Extended","pe":274.97,"pc":276.27,"chg":0.5,"mfe":1.47,"mae":-0.63,"md4":-0.63,"dtp":0.0},{"t":"JACK","n":"Jack In The Box","setup":"phoenix","phase":"active","score":2.1,"q":"fail","profile":"Leveraged","sector":"Consumer Cyclical","rs":"strong","date":"Aug 24","dial":"Extended","pe":17.25,"pc":17.83,"chg":3.4,"mfe":6.38,"mae":0.0,"md4":0.0,"dtp":0.0},{"t":"RIVN","n":"Rivian Automotive","setup":"phoenix","phase":"active","score":2.2,"q":"fail","profile":"Leveraged","sector":"Consumer Cyclical","rs":"strong","date":"Aug 24","dial":"Extended","pe":16.98,"pc":16.6,"chg":-2.2,"mfe":1.03,"mae":-2.41,"md4":-2.41,"dtp":0.0},{"t":"ACN","n":"Accenture","setup":"phoenix","phase":"active","score":2.3,"q":"pass","profile":"Core","sector":"Technology","rs":"strong","date":"Aug 24","dial":"Extended","pe":184.64,"pc":186.53,"chg":1.0,"mfe":1.86,"mae":-0.66,"md4":-0.66,"dtp":0.0},{"t":"MORN","n":"Morningstar","setup":"cruise","phase":"active","score":2.4,"q":"pass","profile":"Core","sector":"Financial Services","rs":"strong","date":"Aug 24","dial":"Extended","pe":216.45,"pc":217.5,"chg":0.5,"mfe":2.19,"mae":-0.34,"md4":-0.34,"dtp":0.0},{"t":"SOFI","n":"SoFi Technologies","setup":"phoenix","phase":"active","score":2.8,"q":"fail","profile":"Growth","sector":"Financial Services","rs":"neutral","date":"Aug 24","dial":"Extended","pe":18.73,"pc":18.24,"chg":-2.6,"mfe":0.84,"mae":-2.75,"md4":-2.75,"dtp":0.0},{"t":"KLAC","n":"KLA","setup":"phoenix","phase":"active","score":3.0,"q":"pass","profile":"Core","sector":"Technology","rs":"weak","date":"Aug 24","dial":"Extended","pe":180.02,"pc":181.57,"chg":0.9,"mfe":1.54,"mae":-1.98,"md4":-1.98,"dtp":0.0},{"t":"COIN","n":"Coinbase Global","setup":"phoenix","phase":"active","score":6.4,"q":"watch","profile":"Core","sector":"Financial Services","rs":"strong","date":"Aug 24","dial":"Extended","pe":188.7,"pc":179.48,"chg":-4.9,"mfe":1.66,"mae":-5.39,"md4":-5.39,"dtp":0.0},{"t":"ARM","n":"Arm Holdings","setup":"phoenix","phase":"retired","score":8.1,"q":"pass","profile":"Speculative","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":272.0,"pc":238.78,"chg":-12.2,"wk2":-12.11,"wk4":-0.21,"mfe":10.03,"mae":-19.34,"md4":-19.34,"dtp":14.0},{"t":"MRVL","n":"Marvell Technology","setup":"phoenix","phase":"retired","score":7.7,"q":"pass","profile":"Growth","sector":"Technology","rs":"neutral","date":"Jul 20","dial":"Extended","pe":193.01,"pc":229.29,"chg":18.8,"wk2":0.4,"wk4":21.41,"mfe":30.83,"mae":-15.6,"md4":-15.6,"dtp":24.0},{"t":"WDC","n":"Western Digital","setup":"phoenix","phase":"retired","score":7.4,"q":"pass","profile":"Growth","sector":"Technology","rs":"neutral","date":"Jul 20","dial":"Extended","pe":491.36,"pc":435.38,"chg":-11.4,"wk2":7.3,"wk4":9.09,"mfe":18.04,"mae":-17.07,"md4":-17.07,"dtp":9.0},{"t":"SNDK","n":"Sandisk","setup":"phoenix","phase":"retired","score":7.2,"q":"pass","profile":"New-Ipo","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":1408.78,"pc":1493.12,"chg":6.0,"wk2":-8.57,"wk4":26.84,"mfe":29.76,"mae":-29.15,"md4":-29.15,"dtp":20.0},{"t":"ALAB","n":"Astera Labs","setup":"phoenix","phase":"retired","score":7.2,"q":"pass","profile":"Speculative","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":309.39,"pc":277.53,"chg":-10.3,"wk2":3.77,"wk4":3.48,"mfe":18.9,"mae":-20.94,"md4":-20.94,"dtp":11.0},{"t":"MU","n":"Micron Technology","setup":"phoenix","phase":"retired","score":7.0,"q":"pass","profile":"Growth","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":885.57,"pc":910.43,"chg":2.8,"wk2":-6.33,"wk4":14.25,"mfe":17.0,"mae":-16.68,"md4":-16.68,"dtp":20.0},{"t":"HPE","n":"Hewlett Packard Enterprise Comp","setup":"phoenix","phase":"retired","score":6.6,"q":"fail","profile":"Leveraged","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":46.12,"pc":52.43,"chg":13.7,"wk2":8.93,"wk4":24.91,"mfe":37.55,"mae":-6.11,"md4":-6.11,"dtp":18.0},{"t":"NBIS","n":"Nebius Group","setup":"phoenix","phase":"retired","score":6.6,"q":"fail","profile":"Speculative","sector":"Communication Services","rs":"weak","date":"Jul 20","dial":"Extended","pe":186.96,"pc":210.91,"chg":12.8,"wk2":13.7,"wk4":43.8,"mfe":50.2,"mae":-22.02,"md4":-22.02,"dtp":20.0},{"t":"STX","n":"Seagate Technology Holdings","setup":"phoenix","phase":"retired","score":6.5,"q":"pass","profile":"Growth","sector":"Technology","rs":"neutral","date":"Jul 20","dial":"Extended","pe":810.02,"pc":794.65,"chg":-1.9,"wk2":2.6,"wk4":22.81,"mfe":25.18,"mae":-13.71,"md4":-13.71,"dtp":20.0},{"t":"GLW","n":"Corning","setup":"phoenix","phase":"retired","score":6.5,"q":"pass","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":157.86,"pc":145.55,"chg":-7.8,"wk2":-7.11,"wk4":9.72,"mfe":12.09,"mae":-27.47,"md4":-27.47,"dtp":20.0},{"t":"AMAT","n":"Applied Materials","setup":"phoenix","phase":"retired","score":5.9,"q":"pass","profile":"Core","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":545.05,"pc":484.19,"chg":-11.2,"wk2":-5.03,"wk4":-1.89,"mfe":5.66,"mae":-20.03,"md4":-20.03,"dtp":3.0},{"t":"INTC","n":"Intel","setup":"phoenix","phase":"retired","score":5.7,"q":"fail","profile":"Declining","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":97.58,"pc":87.26,"chg":-10.6,"wk2":-6.74,"wk4":6.06,"mfe":10.24,"mae":-16.18,"md4":-16.18,"dtp":18.0},{"t":"LITE","n":"Lumentum Holdings","setup":"phoenix","phase":"retired","score":5.7,"q":"watch","profile":"Growth","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":764.13,"pc":830.17,"chg":8.6,"wk2":2.06,"wk4":26.8,"mfe":30.83,"mae":-22.15,"md4":-22.15,"dtp":20.0},{"t":"DELL","n":"Dell Technologies","setup":"cruise","phase":"retired","score":5.5,"q":"pass","profile":"Core","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":399.63,"pc":433.19,"chg":8.4,"wk2":7.35,"wk4":20.06,"mfe":28.62,"mae":-10.2,"md4":-10.2,"dtp":18.0},{"t":"FLEX","n":"Flex Ltd.","setup":"phoenix","phase":"retired","score":5.3,"q":"watch","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":120.41,"pc":106.65,"chg":-11.4,"wk2":-2.46,"wk4":7.96,"mfe":9.36,"mae":-17.37,"md4":-17.37,"dtp":3.0},{"t":"HUT","n":"Hut 8","setup":"phoenix","phase":"retired","score":5.1,"q":"fail","profile":"Speculative","sector":"Financial Services","rs":"weak","date":"Jul 20","dial":"Extended","pe":101.51,"pc":79.56,"chg":-21.6,"wk2":10.41,"wk4":-13.27,"mfe":18.59,"mae":-25.1,"md4":-20.69,"dtp":3.0},{"t":"KLAC","n":"KLA","setup":"phoenix","phase":"retired","score":5.0,"q":"pass","profile":"Core","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":217.2,"pc":181.57,"chg":-16.4,"wk2":-15.96,"wk4":-5.27,"mfe":1.63,"mae":-21.91,"md4":-21.91,"dtp":1.0},{"t":"DUOL","n":"Duolingo","setup":"phoenix","phase":"retired","score":5.0,"q":"pass","profile":"Growth","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":132.68,"pc":146.84,"chg":10.7,"wk2":2.35,"wk4":-1.9,"mfe":13.81,"mae":-15.57,"md4":-15.57,"dtp":22.0},{"t":"COHR","n":"Coherent","setup":"phoenix","phase":"retired","score":4.9,"q":"watch","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":288.65,"pc":275.49,"chg":-4.6,"wk2":-0.18,"wk4":21.68,"mfe":35.59,"mae":-23.55,"md4":-23.55,"dtp":14.0},{"t":"MARA","n":"MARA Holdings","setup":"phoenix","phase":"retired","score":4.9,"q":"fail","profile":"Growth","sector":"Financial Services","rs":"weak","date":"Jul 20","dial":"Extended","pe":11.08,"pc":11.18,"chg":0.9,"wk2":6.05,"wk4":-12.27,"mfe":18.77,"mae":-21.66,"md4":-18.77,"dtp":3.0},{"t":"MRNA","n":"Moderna","setup":"phoenix","phase":"retired","score":4.8,"q":"fail","profile":"Declining","sector":"Healthcare","rs":"strong","date":"Jul 20","dial":"Extended","pe":61.46,"pc":138.89,"chg":126.0,"wk2":-10.28,"wk4":4.88,"mfe":187.44,"mae":-14.32,"md4":-14.32,"dtp":22.0},{"t":"CIEN","n":"Ciena","setup":"phoenix","phase":"retired","score":4.8,"q":"pass","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":375.01,"pc":371.95,"chg":-0.8,"wk2":4.2,"wk4":18.71,"mfe":23.38,"mae":-13.79,"md4":-13.79,"dtp":18.0},{"t":"LUNR","n":"Intuitive Machines","setup":"phoenix","phase":"retired","score":4.7,"q":"fail","profile":"Declining","sector":"Industrials","rs":"weak","date":"Jul 20","dial":"Extended","pe":13.77,"pc":16.66,"chg":21.0,"wk2":-4.87,"wk4":48.0,"mfe":51.34,"mae":-18.01,"md4":-18.01,"dtp":20.0},{"t":"SMCI","n":"Super Micro Computer","setup":"phoenix","phase":"retired","score":4.6,"q":"watch","profile":"Growth","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":24.35,"pc":35.17,"chg":44.4,"wk2":17.62,"wk4":57.21,"mfe":73.76,"mae":-2.38,"md4":-2.38,"dtp":18.0},{"t":"TER","n":"Teradyne","setup":"phoenix","phase":"retired","score":4.5,"q":"pass","profile":"New-Ipo","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":335.22,"pc":364.9,"chg":8.9,"wk2":9.12,"wk4":32.19,"mfe":32.5,"mae":-10.21,"md4":-10.21,"dtp":20.0},{"t":"LRCX","n":"Lam Research","setup":"phoenix","phase":"retired","score":4.5,"q":"pass","profile":"Growth","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":321.15,"pc":310.17,"chg":-3.4,"wk2":-8.26,"wk4":7.07,"mfe":7.51,"mae":-22.0,"md4":-22.0,"dtp":20.0},{"t":"AMD","n":"Advanced Micro Devices","setup":"cruise","phase":"retired","score":4.4,"q":"pass","profile":"Growth","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":517.0,"pc":456.74,"chg":-11.7,"wk2":-6.26,"wk4":-2.13,"mfe":8.6,"mae":-17.98,"md4":-17.98,"dtp":2.0},{"t":"WULF","n":"TeraWulf","setup":"phoenix","phase":"retired","score":4.4,"q":"fail","profile":"Speculative","sector":"Financial Services","rs":"weak","date":"Jul 20","dial":"Extended","pe":18.79,"pc":15.48,"chg":-17.6,"wk2":0.21,"wk4":-6.33,"mfe":9.95,"mae":-21.5,"md4":-21.18,"dtp":3.0},{"t":"UPST","n":"Upstart Holdings","setup":"phoenix","phase":"retired","score":4.4,"q":"fail","profile":"Growth","sector":"Financial Services","rs":"neutral","date":"Jul 20","dial":"Extended","pe":29.5,"pc":29.89,"chg":1.3,"wk2":-0.25,"wk4":0.83,"mfe":17.57,"mae":-12.25,"md4":-12.25,"dtp":12.0},{"t":"PL","n":"Planet Labs PBC","setup":"phoenix","phase":"retired","score":4.3,"q":"fail","profile":"Growth","sector":"Industrials","rs":"weak","date":"Jul 20","dial":"Extended","pe":21.72,"pc":21.57,"chg":-0.7,"wk2":-0.87,"wk4":12.25,"mfe":17.54,"mae":-11.79,"md4":-11.79,"dtp":19.0},{"t":"ON","n":"ON Semiconductor","setup":"phoenix","phase":"retired","score":4.2,"q":"watch","profile":"Declining","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":89.88,"pc":71.93,"chg":-20.0,"wk2":-10.55,"wk4":-7.23,"mfe":4.87,"mae":-21.09,"md4":-15.79,"dtp":2.0},{"t":"SEDG","n":"SolarEdge Technologies","setup":"phoenix","phase":"retired","score":4.2,"q":"fail","profile":"Growth","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":53.56,"pc":30.09,"chg":-43.8,"wk2":-15.76,"wk4":-42.51,"mfe":0.07,"mae":-44.9,"md4":-42.96,"dtp":0.0},{"t":"FMC","n":"FMC Corporation","setup":"phoenix","phase":"retired","score":4.2,"q":"fail","profile":"Leveraged","sector":"Basic Materials","rs":"weak","date":"Jul 20","dial":"Extended","pe":11.06,"pc":11.28,"chg":2.0,"wk2":-6.33,"wk4":-7.96,"mfe":9.86,"mae":-10.04,"md4":-10.04,"dtp":2.0},{"t":"ENPH","n":"Enphase Energy","setup":"phoenix","phase":"retired","score":4.2,"q":"watch","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":41.45,"pc":37.18,"chg":-10.3,"wk2":-5.07,"wk4":-6.76,"mfe":4.41,"mae":-15.66,"md4":-15.66,"dtp":17.0},{"t":"IRDM","n":"Iridium Communications","setup":"cruise","phase":"retired","score":4.2,"q":"watch","profile":"Core","sector":"Communication Services","rs":"neutral","date":"Jul 20","dial":"Extended","pe":46.57,"pc":47.3,"chg":1.6,"wk2":3.76,"wk4":7.47,"mfe":9.45,"mae":-5.07,"md4":-5.07,"dtp":20.0},{"t":"ELF","n":"e.l.f. Beauty","setup":"phoenix","phase":"retired","score":4.1,"q":"watch","profile":"Core","sector":"Consumer Defensive","rs":"strong","date":"Jul 20","dial":"Extended","pe":73.47,"pc":105.95,"chg":44.2,"wk2":12.48,"wk4":27.48,"mfe":45.2,"mae":-0.32,"md4":-0.32,"dtp":25.0},{"t":"RIOT","n":"Riot Platforms","setup":"phoenix","phase":"retired","score":4.0,"q":"fail","profile":"Growth","sector":"Financial Services","rs":"weak","date":"Jul 20","dial":"Extended","pe":18.76,"pc":20.0,"chg":6.6,"wk2":14.18,"wk4":6.82,"mfe":34.17,"mae":-4.79,"md4":-3.35,"dtp":3.0},{"t":"CLSK","n":"CleanSpark","setup":"phoenix","phase":"retired","score":3.9,"q":"fail","profile":"Growth","sector":"Financial Services","rs":"weak","date":"Jul 20","dial":"Extended","pe":13.5,"pc":11.93,"chg":-11.6,"wk2":8.52,"wk4":-8.15,"mfe":19.26,"mae":-18.33,"md4":-16.52,"dtp":3.0},{"t":"ORCL","n":"Oracle","setup":"phoenix","phase":"retired","score":3.7,"q":"fail","profile":"Leveraged","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":124.27,"pc":142.45,"chg":14.6,"wk2":14.15,"wk4":18.01,"mfe":28.16,"mae":-7.86,"md4":-7.86,"dtp":18.0},{"t":"RKLB","n":"Rocket Lab","setup":"phoenix","phase":"retired","score":3.7,"q":"fail","profile":"Speculative","sector":"Industrials","rs":"weak","date":"Jul 20","dial":"Extended","pe":68.39,"pc":68.28,"chg":-0.2,"wk2":2.98,"wk4":20.02,"mfe":26.96,"mae":-14.9,"md4":-14.9,"dtp":15.0},{"t":"WING","n":"Wingstop","setup":"phoenix","phase":"retired","score":3.6,"q":"pass","profile":"Core","sector":"Consumer Cyclical","rs":"strong","date":"Jul 20","dial":"Extended","pe":146.32,"pc":116.84,"chg":-20.1,"wk2":-11.15,"wk4":-20.92,"mfe":2.52,"mae":-24.74,"md4":-24.74,"dtp":0.0},{"t":"CIFR","n":"Cipher Digital","setup":"phoenix","phase":"retired","score":3.6,"q":"fail","profile":"Growth","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":18.78,"pc":15.36,"chg":-18.2,"wk2":28.65,"wk4":-1.49,"mfe":42.92,"mae":-20.71,"md4":-13.74,"dtp":3.0},{"t":"FISV","n":"Fiserv","setup":"phoenix","phase":"retired","score":3.5,"q":"fail","profile":"Leveraged","rs":"weak","date":"Jul 20","dial":"Extended","pe":50.49,"pc":52.96,"chg":4.9,"wk2":7.65,"wk4":3.41,"mfe":12.16,"mae":-1.84,"md4":-1.84,"dtp":12.0},{"t":"ARE","n":"Alexandria Real Estate Equities","setup":"phoenix","phase":"retired","score":3.5,"q":"fail","profile":"Declining","sector":"Real Estate","rs":"neutral","date":"Jul 20","dial":"Extended","pe":50.22,"pc":54.04,"chg":7.6,"wk2":5.6,"wk4":-6.53,"mfe":10.99,"mae":-8.84,"md4":-8.2,"dtp":7.0},{"t":"TEAM","n":"Atlassian","setup":"phoenix","phase":"retired","score":3.5,"q":"pass","profile":"Growth","sector":"Technology","rs":"neutral","date":"Jul 20","dial":"Extended","pe":91.0,"pc":171.33,"chg":88.3,"wk2":13.97,"wk4":74.0,"mfe":95.47,"mae":-12.09,"md4":-12.09,"dtp":23.0},{"t":"LI","n":"Li Auto","setup":"phoenix","phase":"retired","score":3.5,"q":"fail","profile":"Leveraged","sector":"Consumer Cyclical","rs":"weak","date":"Jul 20","dial":"Extended","pe":12.56,"pc":12.48,"chg":-0.6,"wk2":4.46,"wk4":-1.19,"mfe":11.78,"mae":-3.98,"md4":-3.98,"dtp":7.0},{"t":"IT","n":"Gartner","setup":"phoenix","phase":"retired","score":3.4,"q":"pass","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":138.0,"pc":202.78,"chg":46.9,"wk2":9.8,"wk4":29.85,"mfe":47.11,"mae":-6.68,"md4":-6.68,"dtp":25.0},{"t":"TRI","n":"Thomson Reuters","setup":"phoenix","phase":"retired","score":3.4,"q":"pass","profile":"Core","sector":"Industrials","rs":"neutral","date":"Jul 20","dial":"Extended","pe":94.63,"pc":108.62,"chg":14.8,"wk2":6.68,"wk4":4.0,"mfe":19.12,"mae":-11.15,"md4":-11.15,"dtp":12.0},{"t":"CRWV","n":"CoreWeave","setup":"phoenix","phase":"retired","score":3.4,"q":"fail","profile":"New-Ipo","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":75.76,"pc":86.25,"chg":13.8,"wk2":13.19,"wk4":39.91,"mfe":55.07,"mae":-20.08,"md4":-20.08,"dtp":18.0},{"t":"BBWI","n":"Bath & Body Works","setup":"phoenix","phase":"retired","score":3.4,"q":"pass","profile":"Declining","sector":"Consumer Cyclical","rs":"strong","date":"Jul 20","dial":"Extended","pe":20.61,"pc":19.17,"chg":-7.0,"wk2":0.72,"wk4":-9.65,"mfe":3.55,"mae":-13.88,"md4":-13.88,"dtp":12.0},{"t":"CHTR","n":"Charter Communications","setup":"phoenix","phase":"retired","score":3.3,"q":"fail","profile":"Leveraged","sector":"Communication Services","rs":"weak","date":"Jul 20","dial":"Extended","pe":130.31,"pc":150.3,"chg":15.3,"wk2":10.58,"wk4":10.58,"mfe":22.24,"mae":-14.4,"md4":-14.4,"dtp":22.0},{"t":"JBL","n":"Jabil","setup":"phoenix","phase":"retired","score":3.3,"q":"fail","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":303.93,"pc":304.89,"chg":0.3,"wk2":4.73,"wk4":21.7,"mfe":24.0,"mae":-5.99,"md4":-5.99,"dtp":18.0},{"t":"MP","n":"MP Materials","setup":"phoenix","phase":"retired","score":3.3,"q":"fail","profile":"Speculative","sector":"Basic Materials","rs":"weak","date":"Jul 20","dial":"Extended","pe":45.36,"pc":57.42,"chg":26.6,"wk2":-3.35,"wk4":28.99,"mfe":34.72,"mae":-16.64,"md4":-16.64,"dtp":19.0},{"t":"RBLX","n":"Roblox","setup":"phoenix","phase":"retired","score":3.2,"q":"fail","profile":"Growth","sector":"Communication Services","rs":"strong","date":"Jul 20","dial":"Extended","pe":52.0,"pc":38.76,"chg":-25.5,"wk2":-29.48,"wk4":-27.06,"mfe":6.58,"mae":-34.85,"md4":-34.85,"dtp":0.0},{"t":"VRT","n":"Vertiv Holdings, LLC","setup":"cruise","phase":"retired","score":3.1,"q":"pass","profile":"Growth","sector":"Industrials","rs":"weak","date":"Jul 20","dial":"Extended","pe":295.0,"pc":254.97,"chg":-13.6,"wk2":-10.83,"wk4":-0.87,"mfe":6.31,"mae":-25.11,"md4":-25.11,"dtp":3.0},{"t":"GNRC","n":"Generac Holdlings","setup":"phoenix","phase":"retired","score":3.1,"q":"pass","profile":"Declining","sector":"Industrials","rs":"weak","date":"Jul 20","dial":"Extended","pe":218.02,"pc":203.56,"chg":-6.6,"wk2":-7.71,"wk4":1.48,"mfe":3.66,"mae":-13.98,"md4":-13.98,"dtp":12.0},{"t":"PSKY","n":"Paramount Skydance","setup":"phoenix","phase":"retired","score":3.1,"q":"fail","profile":"Leveraged","sector":"Communication Services","rs":"weak","date":"Jul 20","dial":"Extended","pe":8.8,"pc":10.35,"chg":17.6,"wk2":-6.59,"wk4":16.82,"mfe":21.02,"mae":-13.41,"md4":-13.41,"dtp":23.0},{"t":"FTNT","n":"Fortinet","setup":"cruise","phase":"retired","score":3.1,"q":"pass","profile":"Core","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":160.64,"pc":151.99,"chg":-5.4,"wk2":1.6,"wk4":-2.98,"mfe":7.13,"mae":-10.5,"md4":-10.5,"dtp":12.0},{"t":"STLD","n":"Steel Dynamics","setup":"cruise","phase":"retired","score":3.1,"q":"watch","profile":"Core","sector":"Basic Materials","rs":"neutral","date":"Jul 20","dial":"Extended","pe":235.89,"pc":229.27,"chg":-2.8,"wk2":9.53,"wk4":9.44,"mfe":15.88,"mae":-7.58,"md4":-3.02,"dtp":12.0},{"t":"COIN","n":"Coinbase Global","setup":"phoenix","phase":"retired","score":3.0,"q":"watch","profile":"Core","sector":"Financial Services","rs":"weak","date":"Jul 20","dial":"Extended","pe":158.19,"pc":179.48,"chg":13.5,"wk2":-7.39,"wk4":-4.83,"mfe":21.27,"mae":-12.06,"md4":-12.06,"dtp":25.0},{"t":"FDS","n":"FactSet Research Systems","setup":"phoenix","phase":"retired","score":3.0,"q":"pass","profile":"Core","sector":"Financial Services","rs":"strong","date":"Jul 20","dial":"Extended","pe":254.99,"pc":305.31,"chg":19.7,"wk2":5.76,"wk4":8.54,"mfe":20.97,"mae":-5.84,"md4":-5.84,"dtp":25.0},{"t":"ASTS","n":"AST SpaceMobile","setup":"phoenix","phase":"retired","score":3.0,"q":"fail","profile":"Speculative","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":58.11,"pc":62.35,"chg":7.3,"wk2":9.31,"wk4":22.42,"mfe":29.2,"mae":-9.14,"md4":-9.14,"dtp":17.0},{"t":"BLDR","n":"Builders FirstSource","setup":"phoenix","phase":"retired","score":2.9,"q":"watch","profile":"Declining","sector":"Industrials","rs":"strong","date":"Jul 20","dial":"Extended","pe":74.5,"pc":70.22,"chg":-5.7,"wk2":-2.71,"wk4":-5.76,"mfe":3.09,"mae":-12.62,"md4":-12.62,"dtp":14.0},{"t":"TRIP","n":"TripAdvisor","setup":"phoenix","phase":"retired","score":2.9,"q":"fail","profile":"Leveraged","sector":"Consumer Cyclical","rs":"strong","date":"Jul 20","dial":"Extended","pe":14.6,"pc":10.19,"chg":-30.2,"wk2":-0.68,"wk4":-30.34,"mfe":3.01,"mae":-31.92,"md4":-30.89,"dtp":7.0},{"t":"DVA","n":"DaVita","setup":"cruise","phase":"retired","score":2.8,"q":"fail","profile":"Leveraged","sector":"Healthcare","rs":"strong","date":"Jul 20","dial":"Extended","pe":236.43,"pc":176.5,"chg":-25.3,"wk2":-1.16,"wk4":-25.26,"mfe":4.68,"mae":-27.5,"md4":-25.47,"dtp":10.0},{"t":"AA","n":"Alcoa","setup":"phoenix","phase":"retired","score":2.8,"q":"fail","profile":"Core","sector":"Basic Materials","rs":"weak","date":"Jul 20","dial":"Extended","pe":44.28,"pc":49.39,"chg":11.5,"wk2":1.06,"wk4":16.77,"mfe":24.31,"mae":-4.26,"md4":-4.26,"dtp":17.0},{"t":"PINS","n":"Pinterest","setup":"phoenix","phase":"retired","score":2.8,"q":"pass","profile":"Core","sector":"Communication Services","rs":"strong","date":"Jul 20","dial":"Extended","pe":23.18,"pc":23.47,"chg":1.3,"wk2":4.23,"wk4":-0.47,"mfe":10.98,"mae":-7.03,"md4":-7.03,"dtp":11.0},{"t":"DDOG","n":"Datadog","setup":"cruise","phase":"retired","score":2.7,"q":"pass","profile":"Growth","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":258.59,"pc":225.77,"chg":-12.7,"wk2":5.8,"wk4":-4.36,"mfe":13.2,"mae":-12.89,"md4":-12.89,"dtp":12.0},{"t":"NUE","n":"Nucor","setup":"cruise","phase":"retired","score":2.7,"q":"watch","profile":"Core","sector":"Basic Materials","rs":"neutral","date":"Jul 20","dial":"Extended","pe":237.82,"pc":244.64,"chg":2.9,"wk2":9.86,"wk4":14.66,"mfe":17.78,"mae":-3.29,"md4":-3.29,"dtp":12.0},{"t":"PANW","n":"Palo Alto Networks","setup":"cruise","phase":"retired","score":2.7,"q":"pass","profile":"Core","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":354.72,"pc":350.9,"chg":-1.1,"wk2":-2.14,"wk4":5.93,"mfe":12.45,"mae":-13.02,"md4":-13.02,"dtp":18.0},{"t":"FIX","n":"Comfort Systems USA","setup":"cruise","phase":"retired","score":2.7,"q":"pass","profile":"Growth","sector":"Industrials","rs":"weak","date":"Jul 20","dial":"Extended","pe":1699.13,"pc":1609.69,"chg":-5.3,"wk2":4.17,"wk4":10.71,"mfe":10.86,"mae":-12.28,"md4":-12.28,"dtp":20.0},{"t":"JACK","n":"Jack In The Box","setup":"phoenix","phase":"retired","score":2.7,"q":"fail","profile":"Leveraged","sector":"Consumer Cyclical","rs":"strong","date":"Jul 20","dial":"Extended","pe":15.13,"pc":17.83,"chg":17.8,"wk2":12.36,"wk4":13.02,"mfe":52.35,"mae":-13.22,"md4":-13.22,"dtp":18.0},{"t":"MTZ","n":"MasTec","setup":"cruise","phase":"retired","score":2.7,"q":"watch","profile":"New-Ipo","sector":"Industrials","rs":"weak","date":"Jul 20","dial":"Extended","pe":337.41,"pc":255.36,"chg":-24.3,"wk2":-22.58,"wk4":-10.35,"mfe":8.56,"mae":-25.21,"md4":-25.18,"dtp":3.0},{"t":"SHAK","n":"Shake Shack","setup":"phoenix","phase":"retired","score":2.7,"q":"pass","profile":"Core","sector":"Consumer Cyclical","rs":"weak","date":"Jul 20","dial":"Extended","pe":58.41,"pc":75.44,"chg":29.2,"wk2":10.91,"wk4":27.02,"mfe":30.82,"mae":-7.05,"md4":-7.05,"dtp":25.0},{"t":"NTAP","n":"NetApp","setup":"cruise","phase":"retired","score":2.6,"q":"pass","profile":"Core","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":163.79,"pc":186.86,"chg":14.1,"wk2":11.68,"wk4":24.67,"mfe":27.64,"mae":-1.82,"md4":-1.82,"dtp":18.0},{"t":"AXON","n":"Axon Enterprise","setup":"phoenix","phase":"retired","score":2.5,"q":"watch","profile":"Growth","sector":"Industrials","rs":"strong","date":"Jul 20","dial":"Extended","pe":501.64,"pc":597.59,"chg":19.1,"wk2":14.8,"wk4":20.47,"mfe":29.9,"mae":-3.17,"md4":-3.17,"dtp":22.0},{"t":"LYB","n":"LyondellBasell Industries NV","setup":"phoenix","phase":"retired","score":2.5,"q":"fail","profile":"Declining","sector":"Basic Materials","rs":"neutral","date":"Jul 20","dial":"Extended","pe":58.9,"pc":65.2,"chg":10.7,"wk2":2.92,"wk4":9.9,"mfe":17.37,"mae":-1.8,"md4":-1.8,"dtp":24.0},{"t":"NOW","n":"ServiceNow","setup":"phoenix","phase":"retired","score":2.5,"q":"pass","profile":"Core","sector":"Technology","rs":"neutral","date":"Jul 20","dial":"Extended","pe":100.52,"pc":128.05,"chg":27.4,"wk2":13.6,"wk4":17.09,"mfe":30.5,"mae":-8.94,"md4":-8.94,"dtp":24.0},{"t":"GLOB","n":"Globant","setup":"phoenix","phase":"retired","score":2.5,"q":"watch","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":31.71,"pc":39.58,"chg":24.8,"wk2":17.12,"wk4":14.35,"mfe":31.35,"mae":-7.73,"md4":-7.73,"dtp":18.0},{"t":"ALK","n":"Alaska Air Group","setup":"phoenix","phase":"retired","score":2.5,"q":"fail","profile":"Leveraged","sector":"Industrials","rs":"strong","date":"Jul 20","dial":"Extended","pe":45.7,"pc":41.56,"chg":-9.1,"wk2":9.87,"wk4":-3.63,"mfe":17.33,"mae":-12.76,"md4":-9.3,"dtp":12.0},{"t":"DKNG","n":"DraftKings","setup":"phoenix","phase":"retired","score":2.5,"q":"fail","profile":"Growth","sector":"Consumer Cyclical","rs":"weak","date":"Jul 20","dial":"Extended","pe":24.73,"pc":25.97,"chg":5.0,"wk2":-4.97,"wk4":2.3,"mfe":7.7,"mae":-13.79,"md4":-13.79,"dtp":20.0},{"t":"ALB","n":"Albemarle","setup":"phoenix","phase":"retired","score":2.4,"q":"fail","profile":"Declining","sector":"Basic Materials","rs":"neutral","date":"Jul 20","dial":"Extended","pe":121.0,"pc":141.51,"chg":17.0,"wk2":-1.89,"wk4":10.74,"mfe":19.05,"mae":-7.81,"md4":-7.81,"dtp":25.0},{"t":"SWKS","n":"Skyworks Solutions","setup":"phoenix","phase":"retired","score":2.4,"q":"pass","profile":"Declining","sector":"Technology","rs":"neutral","date":"Jul 20","dial":"Extended","pe":60.02,"pc":66.86,"chg":11.4,"wk2":2.12,"wk4":12.85,"mfe":17.88,"mae":-4.2,"md4":-4.2,"dtp":15.0},{"t":"QCOM","n":"QUALCOMM","setup":"phoenix","phase":"retired","score":2.4,"q":"pass","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":175.55,"pc":158.53,"chg":-9.7,"wk2":-13.66,"wk4":-7.62,"mfe":1.77,"mae":-18.6,"md4":-18.6,"dtp":2.0},{"t":"PAYC","n":"Paycom Software","setup":"phoenix","phase":"retired","score":2.4,"q":"watch","profile":"Core","sector":"Technology","rs":"neutral","date":"Jul 20","dial":"Extended","pe":146.33,"pc":229.62,"chg":56.9,"wk2":15.27,"wk4":46.37,"mfe":58.8,"mae":-6.51,"md4":-6.51,"dtp":25.0},{"t":"HOOD","n":"Robinhood Markets","setup":"phoenix","phase":"retired","score":2.3,"q":"fail","profile":"Growth","sector":"Financial Services","rs":"strong","date":"Jul 20","dial":"Extended","pe":102.49,"pc":103.62,"chg":1.1,"wk2":-11.85,"wk4":-6.09,"mfe":7.04,"mae":-18.35,"md4":-18.35,"dtp":24.0},{"t":"AKAM","n":"Akamai Technologies","setup":"phoenix","phase":"retired","score":2.3,"q":"watch","profile":"Core","sector":"Technology","rs":"neutral","date":"Jul 20","dial":"Extended","pe":120.43,"pc":105.66,"chg":-12.3,"wk2":-2.12,"wk4":2.11,"mfe":5.87,"mae":-12.65,"md4":-11.06,"dtp":1.0},{"t":"GDDY","n":"GoDaddy","setup":"phoenix","phase":"retired","score":2.3,"q":"fail","profile":"Leveraged","sector":"Technology","rs":"neutral","date":"Jul 20","dial":"Extended","pe":92.51,"pc":100.52,"chg":8.7,"wk2":-4.39,"wk4":-0.15,"mfe":14.58,"mae":-20.98,"md4":-20.98,"dtp":7.0},{"t":"MOS","n":"Mosaic Company (The)","setup":"phoenix","phase":"retired","score":2.3,"q":"fail","profile":"Core","sector":"Basic Materials","rs":"neutral","date":"Jul 20","dial":"Extended","pe":22.33,"pc":24.0,"chg":7.5,"wk2":-2.33,"wk4":-4.93,"mfe":12.74,"mae":-6.76,"md4":-6.76,"dtp":25.0},{"t":"PWR","n":"Quanta Services","setup":"cruise","phase":"retired","score":2.3,"q":"watch","profile":"Core","sector":"Industrials","rs":"neutral","date":"Jul 20","dial":"Extended","pe":634.19,"pc":616.78,"chg":-2.7,"wk2":7.25,"wk4":13.89,"mfe":14.29,"mae":-12.63,"md4":-12.63,"dtp":20.0},{"t":"FLUT","n":"Flutter Entertainment","setup":"phoenix","phase":"retired","score":2.3,"q":"fail","profile":"Leveraged","sector":"Consumer Cyclical","rs":"neutral","date":"Jul 20","dial":"Extended","pe":104.15,"pc":102.58,"chg":-1.5,"wk2":1.74,"wk4":-7.45,"mfe":5.87,"mae":-13.86,"md4":-13.86,"dtp":6.0},{"t":"KTOS","n":"Kratos Defense & Security Solut","setup":"phoenix","phase":"retired","score":2.3,"q":"fail","profile":"Core","sector":"Industrials","rs":"weak","date":"Jul 20","dial":"Extended","pe":46.24,"pc":53.07,"chg":14.8,"wk2":6.42,"wk4":36.87,"mfe":45.11,"mae":-6.81,"md4":-6.81,"dtp":19.0},{"t":"OKLO","n":"Oklo Inc.","setup":"phoenix","phase":"retired","score":2.3,"q":"fail","profile":"Core","sector":"Utilities","rs":"weak","date":"Jul 20","dial":"Extended","pe":41.25,"pc":39.69,"chg":-3.8,"wk2":-0.07,"wk4":6.38,"mfe":19.95,"mae":-11.25,"md4":-11.25,"dtp":14.0},{"t":"XPEV","n":"XPeng","setup":"phoenix","phase":"retired","score":2.3,"q":"fail","profile":"Growth","sector":"Consumer Cyclical","rs":"weak","date":"Jul 20","dial":"Extended","pe":13.48,"pc":11.15,"chg":-17.3,"wk2":-8.23,"wk4":-9.5,"mfe":1.04,"mae":-17.66,"md4":-14.76,"dtp":0.0},{"t":"GTLB","n":"GitLab","setup":"phoenix","phase":"retired","score":2.3,"q":"pass","profile":"Growth","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":32.59,"pc":42.03,"chg":29.0,"wk2":9.19,"wk4":24.33,"mfe":34.43,"mae":-8.41,"md4":-8.41,"dtp":19.0},{"t":"ANF","n":"Abercrombie & Fitch","setup":"phoenix","phase":"retired","score":2.3,"q":"pass","profile":"Core","sector":"Consumer Cyclical","rs":"strong","date":"Jul 20","dial":"Extended","pe":96.34,"pc":112.36,"chg":16.6,"wk2":12.95,"wk4":9.16,"mfe":24.48,"mae":-6.51,"md4":-6.51,"dtp":16.0},{"t":"PYPL","n":"PayPal Holdings","setup":"phoenix","phase":"retired","score":2.2,"q":"pass","profile":"Core","sector":"Financial Services","rs":"strong","date":"Jul 20","dial":"Extended","pe":56.49,"pc":61.68,"chg":9.2,"wk2":2.44,"wk4":7.05,"mfe":11.05,"mae":-2.75,"md4":-2.75,"dtp":23.0},{"t":"TOST","n":"Toast","setup":"phoenix","phase":"retired","score":2.2,"q":"pass","profile":"Core","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":30.0,"pc":36.71,"chg":22.4,"wk2":9.3,"wk4":14.4,"mfe":23.37,"mae":-6.2,"md4":-6.2,"dtp":25.0},{"t":"AEO","n":"American Eagle Outfitters","setup":"phoenix","phase":"retired","score":2.2,"q":"pass","profile":"Core","sector":"Consumer Cyclical","rs":"strong","date":"Jul 20","dial":"Extended","pe":17.49,"pc":16.87,"chg":-3.5,"wk2":2.17,"wk4":-6.52,"mfe":5.55,"mae":-9.55,"md4":-9.55,"dtp":15.0},{"t":"AVAV","n":"AeroVironment","setup":"phoenix","phase":"retired","score":2.2,"q":"fail","profile":"Growth","sector":"Industrials","rs":"weak","date":"Jul 20","dial":"Extended","pe":142.6,"pc":148.2,"chg":3.9,"wk2":11.63,"wk4":27.02,"mfe":45.74,"mae":-1.82,"md4":-1.82,"dtp":19.0},{"t":"CAVA","n":"CAVA Group","setup":"phoenix","phase":"retired","score":2.2,"q":"watch","profile":"Core","sector":"Consumer Cyclical","rs":"weak","date":"Jul 20","dial":"Extended","pe":68.29,"pc":71.93,"chg":5.3,"wk2":-5.59,"wk4":4.0,"mfe":10.77,"mae":-11.92,"md4":-11.92,"dtp":19.0},{"t":"AAP","n":"Advance Auto Parts","setup":"cruise","phase":"retired","score":2.2,"q":"fail","profile":"Leveraged","sector":"Consumer Cyclical","rs":"neutral","date":"Jul 20","dial":"Extended","pe":53.22,"pc":43.63,"chg":-18.0,"wk2":4.62,"wk4":6.58,"mfe":13.27,"mae":-23.6,"md4":-4.28,"dtp":12.0},{"t":"CE","n":"Celanese","setup":"phoenix","phase":"retired","score":2.2,"q":"fail","profile":"Leveraged","sector":"Basic Materials","rs":"weak","date":"Jul 20","dial":"Extended","pe":45.49,"pc":45.26,"chg":-0.5,"wk2":-3.52,"wk4":-1.1,"mfe":9.09,"mae":-9.63,"md4":-9.63,"dtp":3.0},{"t":"DOW","n":"Dow Inc.","setup":"phoenix","phase":"retired","score":2.1,"q":"fail","profile":"Leveraged","sector":"Basic Materials","rs":"neutral","date":"Jul 20","dial":"Extended","pe":29.75,"pc":31.44,"chg":5.7,"wk2":0.47,"wk4":5.34,"mfe":12.27,"mae":-5.11,"md4":-5.11,"dtp":23.0},{"t":"KEYS","n":"Keysight Technologies","setup":"cruise","phase":"retired","score":2.1,"q":"watch","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":318.43,"pc":310.66,"chg":-2.4,"wk2":1.09,"wk4":13.42,"mfe":15.07,"mae":-7.81,"md4":-7.81,"dtp":20.0},{"t":"APA","n":"APA Corporation","setup":"cruise","phase":"retired","score":2.1,"q":"watch","profile":"Declining","sector":"Energy","rs":"neutral","date":"Jul 20","dial":"Extended","pe":34.49,"pc":42.96,"chg":24.6,"wk2":6.91,"wk4":20.57,"mfe":30.63,"mae":-1.06,"md4":-1.06,"dtp":23.0},{"t":"FSLR","n":"First Solar","setup":"phoenix","phase":"retired","score":2.1,"q":"pass","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":215.14,"pc":208.31,"chg":-3.2,"wk2":8.18,"wk4":1.26,"mfe":25.36,"mae":-8.97,"md4":-8.97,"dtp":14.0},{"t":"CAT","n":"Caterpillar","setup":"cruise","phase":"retired","score":2.1,"q":"watch","profile":"Core","sector":"Industrials","rs":"neutral","date":"Jul 20","dial":"Extended","pe":890.0,"pc":811.02,"chg":-8.9,"wk2":-6.74,"wk4":-0.94,"mfe":5.06,"mae":-12.81,"md4":-12.81,"dtp":11.0},{"t":"MSTR","n":"Strategy","setup":"phoenix","phase":"retired","score":2.1,"q":"fail","profile":"Speculative","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":95.62,"pc":122.63,"chg":28.2,"wk2":-0.79,"wk4":2.15,"mfe":33.76,"mae":-6.7,"md4":-6.7,"dtp":25.0},{"t":"PENN","n":"PENN Entertainment","setup":"cruise","phase":"retired","score":2.1,"q":"fail","profile":"Leveraged","sector":"Consumer Cyclical","rs":"strong","date":"Jul 20","dial":"Extended","pe":20.88,"pc":18.26,"chg":-12.5,"wk2":-4.31,"wk4":-10.68,"mfe":3.69,"mae":-12.84,"md4":-11.73,"dtp":1.0},{"t":"IP","n":"International Paper","setup":"phoenix","phase":"retired","score":2.0,"q":"fail","profile":"Growth","sector":"Consumer Cyclical","rs":"strong","date":"Jul 20","dial":"Extended","pe":37.36,"pc":41.04,"chg":9.9,"wk2":9.69,"wk4":7.75,"mfe":18.6,"mae":-4.87,"md4":-4.87,"dtp":6.0},{"t":"MGM","n":"MGM Resorts International","setup":"cruise","phase":"retired","score":2.0,"q":"fail","profile":"Leveraged","sector":"Consumer Cyclical","rs":"strong","date":"Jul 20","dial":"Extended","pe":46.32,"pc":43.69,"chg":-5.7,"wk2":-3.93,"wk4":-5.48,"mfe":1.81,"mae":-8.07,"md4":-6.54,"dtp":0.0},{"t":"MPWR","n":"Monolithic Power Systems","setup":"cruise","phase":"retired","score":2.0,"q":"pass","profile":"Growth","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":1332.96,"pc":1285.03,"chg":-3.6,"wk2":0.86,"wk4":6.23,"mfe":17.65,"mae":-6.97,"md4":-6.97,"dtp":9.0},{"t":"CROX","n":"Crocs","setup":"cruise","phase":"retired","score":2.0,"q":"pass","profile":"Declining","sector":"Consumer Cyclical","rs":"strong","date":"Jul 20","dial":"Extended","pe":138.58,"pc":125.84,"chg":-9.2,"wk2":-2.66,"wk4":-6.21,"mfe":1.95,"mae":-18.46,"md4":-18.46,"dtp":11.0},{"t":"SOFI","n":"SoFi Technologies","setup":"phoenix","phase":"retired","score":2.0,"q":"fail","profile":"Growth","sector":"Financial Services","rs":"strong","date":"Jul 20","dial":"Extended","pe":17.42,"pc":18.24,"chg":4.7,"wk2":3.5,"wk4":5.11,"mfe":10.05,"mae":-14.58,"md4":-14.58,"dtp":24.0},{"t":"CRWD","n":"CrowdStrike Holdings","setup":"cruise","phase":"retired","score":2.0,"q":"watch","profile":"Speculative","sector":"Technology","rs":"strong","date":"Jul 20","dial":"Extended","pe":203.08,"pc":190.68,"chg":-6.1,"wk2":-0.27,"wk4":5.33,"mfe":12.02,"mae":-14.25,"md4":-14.25,"dtp":19.0},{"t":"U","n":"Unity Software","setup":"phoenix","phase":"retired","score":2.0,"q":"watch","profile":"Core","sector":"Technology","rs":"neutral","date":"Jul 20","dial":"Extended","pe":28.87,"pc":46.16,"chg":59.9,"wk2":15.62,"wk4":57.43,"mfe":67.86,"mae":-3.6,"md4":-3.6,"dtp":23.0},{"t":"ZS","n":"Zscaler","setup":"phoenix","phase":"retired","score":2.0,"q":"watch","profile":"Growth","sector":"Technology","rs":"weak","date":"Jul 20","dial":"Extended","pe":147.33,"pc":176.06,"chg":19.5,"wk2":4.84,"wk4":25.19,"mfe":29.62,"mae":-5.49,"md4":-5.49,"dtp":21.0},{"t":"NCLH","n":"Norwegian Cruise Line Holdings","setup":"phoenix","phase":"retired","score":2.0,"q":"fail","profile":"Core","sector":"Consumer Cyclical","rs":"strong","date":"Jul 20","dial":"Extended","pe":19.63,"pc":17.22,"chg":-12.3,"wk2":0.66,"wk4":-7.39,"mfe":8.35,"mae":-16.35,"md4":-7.79,"dtp":6.0},{"t":"CRSP","n":"CRISPR Therapeutics","setup":"phoenix","phase":"retired","score":2.2,"q":"fail","profile":"Speculative","sector":"Healthcare","rs":"weak","date":"Jul 21","dial":"Extended","pe":46.99,"pc":57.08,"chg":21.5,"wk2":12.94,"wk4":12.73,"mfe":33.08,"mae":-2.34,"md4":-2.34,"dtp":23.0},{"t":"RIVN","n":"Rivian Automotive","setup":"cruise","phase":"retired","score":2.0,"q":"fail","profile":"Leveraged","sector":"Consumer Cyclical","rs":"strong","date":"Jul 21","dial":"Extended","pe":17.38,"pc":16.6,"chg":-4.5,"wk2":-9.32,"wk4":-14.96,"mfe":3.22,"mae":-17.15,"md4":-17.15,"dtp":1.0},{"t":"OKTA","n":"Okta, Inc.","setup":"cruise","phase":"retired","score":2.3,"q":"pass","profile":"Core","sector":"Technology","rs":"strong","date":"Jul 22","dial":"Extended","pe":141.26,"pc":130.97,"chg":-7.3,"wk2":4.09,"wk4":-0.04,"mfe":10.71,"mae":-8.66,"md4":-8.66,"dtp":17.0},{"t":"INTU","n":"Intuit","setup":"phoenix","phase":"retired","score":2.2,"q":"pass","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 22","dial":"Extended","pe":294.55,"pc":369.92,"chg":25.6,"wk2":11.34,"wk4":23.06,"mfe":26.63,"mae":-5.3,"md4":-5.3,"dtp":23.0},{"t":"FUTU","n":"Futu Holdings","setup":"phoenix","phase":"retired","score":2.5,"q":"watch","profile":"Growth","sector":"Financial Services","rs":"strong","date":"Jul 23","dial":"Extended","pe":103.75,"pc":115.81,"chg":11.6,"wk2":0.75,"wk4":8.66,"mfe":19.99,"mae":-5.46,"md4":-5.46,"dtp":21.0},{"t":"CSCO","n":"Cisco Systems","setup":"cruise","phase":"retired","score":2.0,"q":"pass","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 23","dial":"Extended","pe":112.0,"pc":110.23,"chg":-1.6,"wk2":7.93,"wk4":-2.15,"mfe":11.35,"mae":-2.47,"md4":-2.47,"dtp":12.0},{"t":"ALNY","n":"Alnylam Pharmaceuticals","setup":"phoenix","phase":"retired","score":2.0,"q":"pass","profile":"Growth","sector":"Healthcare","rs":"weak","date":"Jul 24","dial":"Extended","pe":268.74,"pc":236.01,"chg":-12.2,"wk2":-18.43,"wk4":-12.1,"mfe":8.13,"mae":-26.39,"md4":-26.39,"dtp":3.0},{"t":"SNPS","n":"Synopsys","setup":"phoenix","phase":"retired","score":2.2,"q":"fail","profile":"Core","sector":"Technology","rs":"weak","date":"Jul 28","dial":"Extended","pe":392.58,"pc":394.51,"chg":0.5,"wk2":4.67,"mfe":8.46,"mae":-5.7,"md4":-5.7,"dtp":14.0},{"t":"LYFT","n":"Lyft, Inc.","setup":"phoenix","phase":"retired","score":2.0,"q":"fail","profile":"Leveraged","sector":"Technology","rs":"strong","date":"Jul 28","dial":"Extended","pe":15.12,"pc":17.68,"chg":16.9,"wk2":15.97,"mfe":18.15,"mae":-0.79,"md4":-0.79,"dtp":19.0},{"t":"DASH","n":"DoorDash","setup":"phoenix","phase":"retired","score":2.0,"q":"pass","profile":"Growth","sector":"Consumer Cyclical","rs":"strong","date":"Jul 28","dial":"Extended","pe":185.55,"pc":229.06,"chg":23.4,"wk2":14.25,"mfe":23.99,"mae":0.0,"md4":0.0,"dtp":19.0}];
+let REGIME = {"session":"2026-08-24","as_of":"2026-08-24","spy":{"price":763.47,"atr_dist":8.7,"state":"Extended"},"qqq":{"price":706.32,"atr_dist":4.8,"state":"Healthy"},"state":"Extended","take":"Market is stretched above trend \u2014 be selective and trim size; the easy tailwind is mostly spent."};
+function renderRegime(rg){
+  if(!rg) return;
+  const cls={Healthy:'green',Extended:'yellow',Weak:'red'};
+  ['spy','qqq'].forEach(sym=>{
+    const d=rg[sym], cell=document.querySelector('.rb-cell[data-sym="'+sym+'"]');
+    if(!cell||!d) return;
+    cell.querySelector('.rb-px').textContent='$'+Number(d.price).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
+    const pill=cell.querySelector('.rb-pill'); pill.textContent=d.state; pill.className='rb-pill '+(cls[d.state]||'');
+    cell.querySelector('.rb-atr').textContent=(d.atr_dist>=0?'+':'')+d.atr_dist+' ATR vs trend';
+  });
+  const take=document.querySelector('.rb-take');
+  if(take && rg.take) take.textContent=rg.take+(rg.as_of?'  (as of '+rg.as_of+')':'');
+}
+renderRegime(REGIME);
+
+const MEANS = {
+  phoenix:"Beaten-down name showing early signs of turning back up. Expect volatility — a 💎 tells you the business is sound enough to sit through it.",
+  cruise:"Established leader pausing inside an uptrend. Steadier profile — strength taking a breather."
+};
+const QMETA = {
+  pass:  {cls:"pass",  label:"💎 High-Quality"},
+  watch: {cls:"watch", label:"◆ Watch"},
+  fail:  {cls:"fail",  label:"△ Higher-risk"}
+};
+const QRANK = {pass:0, watch:1, fail:2};
+const PULSE = { strong:["pulse-strong","var(--pass)","Strong"], neutral:["pulse-neutral","var(--faint)","Neutral"], weak:["pulse-weak","var(--fail)","Weak"] };
+
+let curSetup="all", curQ="all", curView="cards", curAge="active", sorts=[{key:"date", dir:-1}];
+
+const COLS = [["t","Ticker"],["sector","Sector"],["setup","Setup"],["score","STS Score"],["q","Quality"],["rs","Pulse"],["date","Added"],["dial","Regime @ Add"],["pe","Price @ Add"],["chg","Current %"],["wk2","2wk ▲"],["mfe","Peak ▲"],["md4","Max Dip ▼"]];
+const PRANK = {strong:0, neutral:1, weak:2};
+const DIALRANK = {Healthy:0, Extended:1, Weak:2};
+function dialCell(v){ if(!v) return '<span class="faint">—</span>'; const c=v==="Healthy"?"var(--pass)":v==="Extended"?"var(--watch)":"var(--fail)"; return `<span style="font-weight:700;color:${c}">${v}</span>`; }
+const SECTOR_SHORT = {"Technology":"Tech","Financial Services":"Financials","Consumer Cyclical":"Consumer Cyc","Communication Services":"Comm Svcs","Consumer Defensive":"Consumer Def","Basic Materials":"Materials","Healthcare":"Health","Industrials":"Industrials","Real Estate":"Real Estate","Energy":"Energy","Utilities":"Utilities"};
+function shortSector(s){ return SECTOR_SHORT[s] || s || "—"; }
+function retCell(v){ if(v==null) return '<span class="faint">—</span>'; const c=v>=0?'chg-up':'chg-down'; return `<span class="${c}">${v>=0?'+':''}${v.toFixed(1)}%</span>`; }
+const MON = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+const PRIO = ["①","②","③","④","⑤","⑥","⑦"];
+function dval(s){ if(!s||s==="—") return 0; const [m,d]=s.split(" "); return new Date(2026,MON[m]||0,parseInt(d)||1).getTime(); }
+const REF = new Date(2026,7,20);
+function weekStartMs(ref){ const d=new Date(ref); const back=(d.getDay()+6)%7; d.setDate(d.getDate()-back); d.setHours(0,0,0,0); return d.getTime(); }
+const NEW_SINCE = weekStartMs(REF);
+function isNew(dateStr){ return dateStr && dateStr!=="—" && dval(dateStr) >= NEW_SINCE; }
+const EXT_PCT = 5;   // Active = current price within +5% of the setup (or below); Extended = more than +5% above
+function extPct(d){ return (d.pe && d.pc!=null) ? (d.pc/d.pe-1)*100 : 0; }
+function newBadge(d){ return isNew(d.date) ? ' <span class="newflag">NEW</span>' : ''; }
+function defDir(k){ return ["score","date","pe","pc","chg","mfe","mae","wk2","wk4","wk12","md4"].includes(k) ? -1 : 1; }
+function colval(d,k){
+  switch(k){
+    case "t": return d.t; case "setup": return d.setup; case "score": return d.score;
+    case "q": return QRANK[d.q]; case "rs": return PRANK[d.rs]; case "sector": return d.sector||"";
+    case "date": return dval(d.date);
+    case "dial": return DIALRANK[d.dial]==null?9:DIALRANK[d.dial];
+    case "pe": return d.pe==null?-1:d.pe; case "pc": return d.pc==null?-1:d.pc; case "chg": return d.chg==null?-999:d.chg; case "mfe": return d.mfe==null?-999:d.mfe; case "mae": return d.mae==null?999:d.mae;
+    case "wk2": return d.wk2==null?-999:d.wk2; case "wk4": return d.wk4==null?-999:d.wk4; case "wk12": return d.wk12==null?-999:d.wk12; case "md4": return d.md4==null?999:d.md4;
+  }
+}
+function money(v){ return v==null ? "—" : "$"+v.toFixed(2); }
+function chgCell(v){ if(v==null) return '<span class="faint">—</span>'; const cls=v>=0?"chg-up":"chg-down"; const s=v>0?"+":""; return `<span class="${cls}">${s}${v.toFixed(1)}%</span>`; }
+function mfeCell(v){ return v==null ? '<span class="faint">—</span>' : `<span class="chg-up">+${v.toFixed(1)}%</span>`; }
+function maeCell(v){ return v==null ? '<span class="faint">—</span>' : `<span class="chg-down">${v.toFixed(1)}%</span>`; }
+function cmp(a,b){ for(const s of sorts){ const av=colval(a,s.key), bv=colval(b,s.key); let r=(typeof av==="string")?av.localeCompare(bv):(av-bv); if(r) return s.dir*r; } return b.score-a.score; }
+function conv(s){ if(s>=4) return ["Very high","vhigh"]; if(s>=3) return ["High","high"]; return ["Elevated",""]; }
+function rsBadge(p){ const [cls,ic,label]=PULSE[p]||PULSE.neutral; return `<span class="badge ${cls}"><span class="ic" style="background:${ic}"></span>Pulse · ${label}</span>`; }
+function filtered(){ return DATA.filter(d=>d.phase===curAge).filter(d=>curSetup==="all"||d.setup===curSetup).filter(d=>curQ==="all"||d.q==="pass").sort((a,b)=>(QRANK[a.q]-QRANK[b.q])||(b.score-a.score)); }
+
+function cardsHTML(items){
+  return items.map((d,i)=>{
+    const [clabel,cclass]=conv(d.score); const q=QMETA[d.q];
+    const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise"; const delay=Math.min(i,14)*32;
+    return `
+    <div class="card ${d.q==="pass"?"premium":""}" style="animation-delay:${delay}ms">
+      ${d.q==="pass" ? '<span class="gem">💎 High-Quality</span>' : ''}
+      <div class="top"><div><div class="tkr" data-ticker="${d.t}" title="Click for price chart">${d.t}${newBadge(d)}</div><div class="co">${d.n}</div></div>
+        <span class="setuptag ${d.setup}">${setupLabel}</span></div>
+      <div class="row">
+        <div class="metric"><div class="k">STS Score</div><div class="v">${d.score.toFixed(1)} <span class="conviction ${cclass}">${clabel}</span></div></div>
+        <div class="metric"><div class="k">Sector</div><div class="v" style="font-size:14px">${shortSector(d.sector)}</div></div>
+      </div>
+      <div class="badges">
+        ${d.q!=="pass" ? `<span class="badge ${q.cls}">${q.label}</span>` : ""}
+        <span class="badge">${d.profile}</span>
+        ${rsBadge(d.rs)}
+      </div>
+      <div class="whatmeans">${MEANS[d.setup]}</div>
+      <div class="card-sc"><span class="sc-tag">📊 Setup Scorecard</span> Peak ${mfeCell(d.mfe)} · Max dip ${maeCell(d.md4)}${d.wk2!=null?` · 2wk ${retCell(d.wk2)}`:''} <span class="faint">· since ${d.date}</span>${d.dial?` <span class="faint">·</span> ${dialCell(d.dial)} <span class="faint">at add</span>`:''}</div>
+    </div>`;
+  }).join('');
+}
+
+function listHTML(items){
+  const rows=items.map(d=>{
+    const [,pic,plabel]=PULSE[d.rs]||PULSE.neutral;
+    const qsym=d.q==="pass"?"💎":d.q==="watch"?"◆":"△"; const qtxt=d.q==="pass"?"High-Quality":d.q==="watch"?"Watch":"Higher-risk";
+    const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise";
+    return `
+      <tr class="${d.q==="pass"?"premium":""}">
+        <td><div class="lt-tkr" data-ticker="${d.t}" title="Click for price chart">${d.t}${newBadge(d)}</div><div class="lt-co">${d.n}</div></td>
+        <td class="lt-sector">${shortSector(d.sector)}</td>
+        <td><span class="lt-set ${d.setup}">${setupLabel}</span></td>
+        <td><span class="lt-score">${d.score.toFixed(1)}</span></td>
+        <td><span class="lt-q ${d.q}">${qsym} ${qtxt}</span></td>
+        <td><span class="lt-pulse"><span class="lt-dot" style="background:${pic}"></span>${plabel}</span></td>
+        <td class="faint">${d.date||"—"}</td>
+        <td>${dialCell(d.dial)}</td>
+        <td class="muted">${money(d.pe)}</td>
+        <td>${chgCell(d.chg)}</td>
+        <td>${retCell(d.wk2)}</td>
+        <td>${mfeCell(d.mfe)}</td>
+        <td>${maeCell(d.md4)}</td>
+      </tr>`;
+  }).join('');
+  const heads=COLS.map(([k,label])=>{
+    const si=sorts.findIndex(s=>s.key===k); const active=si>=0;
+    const prio=(active&&sorts.length>1)?`<span class="prio">${PRIO[si]}</span>`:"";
+    const arrow=active?(sorts[si].dir>0?" ▲":" ▼"):"";
+    return `<th data-sort="${k}" class="${active?"sorted":""}">${label}${prio}<span class="arr">${arrow}</span></th>`;
+  }).join("");
+  const nonSc=COLS.length-6;
+  const groupRow=`<tr class="grouprow"><th colspan="${nonSc}"></th><th colspan="6" class="grouphead">📊 Setup Scorecard <span class="ghsub">— hypothetical, educational</span></th></tr>`;
+  const tip=`<div class="sorttip"><b>Tip:</b> click a header to sort · <b>Shift-click</b> a second header for a two-level sort${sorts.length?` · <span class="clearsort" id="clearsort">clear sort ✕</span>`:""}</div>
+    <div class="sorttip" style="padding-top:4px">The <b>Setup Scorecard</b> shows each signal's <b style="color:var(--up)">Peak</b> (maximum favorable move) and <b style="color:var(--down)">Max Dip</b> (maximum adverse move) since it appeared — the upside potential the setup offered, and the drawdown you'd have had to sit through. We use <b>no stop-loss and no price targets</b>: when and how you exit is entirely your own choice. Hypothetical and educational — <b>not</b> a return anyone earned, and not advice. <b>Price @ Add</b> is the price when the signal fired, not an entry recommendation.</div>`;
+  return `<div class="listwrap"><table class="ltable"><thead>${groupRow}<tr>${heads}</tr></thead><tbody>${rows}</tbody></table></div>${tip}`;
+}
+
+function render(){
+  const el=document.getElementById('cards'); let items=filtered();
+  if(curView==="list"){ if(sorts.length) items=items.slice().sort(cmp); el.className=""; el.innerHTML=listHTML(items); }
+  else { el.className="grid"; el.innerHTML=cardsHTML(items); }
+  document.getElementById('count').textContent=items.length;
+  renderTrStats(items);
+}
+
+function renderTrStats(items){
+  const ts=document.getElementById('trstats'); if(!ts) return;
+  if(curAge!=="extended" || !items.length){ ts.style.display="none"; ts.innerHTML=""; return; }
+  const mfes=items.map(d=>d.mfe).filter(v=>v!=null);
+  const maes=items.map(d=>d.mae).filter(v=>v!=null);
+  const avg=a=>a.reduce((x,y)=>x+y,0)/a.length;
+  const best=items.reduce((b,d)=>(d.mfe!=null && (b==null||d.mfe>b.mfe))?d:b, null);
+  const hit10=Math.round(items.filter(d=>d.mfe!=null && d.mfe>=10).length/items.length*100);
+  const dtps=items.map(d=>d.dtp).filter(v=>v!=null).sort((a,b)=>a-b);
+  const medDtp=dtps.length? dtps[Math.floor(dtps.length/2)] : null;
+  ts.innerHTML=`
+    <div class="trstat"><div class="v">${items.length}</div><div class="l">Extended signals</div></div>
+    <div class="trstat"><div class="v">${medDtp!=null?medDtp+" d":"—"}</div><div class="l">Median days to peak *</div></div>
+    <div class="trstat"><div class="v up">+${avg(mfes).toFixed(1)}%</div><div class="l">Avg peak (MFE)</div></div>
+    <div class="trstat"><div class="v down">${avg(maes).toFixed(1)}%</div><div class="l">Avg max dip (MAE)</div></div>
+    <div class="trstat"><div class="v up">+${best.mfe.toFixed(0)}%</div><div class="l">Best peak · ${best.t}</div></div>
+    <div class="trstat"><div class="v">${hit10}%</div><div class="l">Reached +10% or more</div></div>
+    <div style="flex-basis:100%; font-size:11px; color:var(--faint); border-top:1px solid var(--line); padding-top:10px">Hypothetical maximum favorable / adverse moves since each signal appeared, across the current filter — educational, not returns anyone earned, and not advice. We use no stops or targets; exits are your choice. <b>* Days to peak is a simulated placeholder</b> in this mockup, pending the live figure.</div>`;
+  ts.style.display="flex";
+}
+
+document.getElementById('cards').addEventListener('click', e=>{
+  if(e.target.closest('#clearsort')){ sorts=[]; render(); return; }
+  const th=e.target.closest('th[data-sort]'); if(!th) return;
+  const k=th.dataset.sort; const idx=sorts.findIndex(s=>s.key===k);
+  if(e.shiftKey){ if(idx>=0){ sorts[idx].dir=-sorts[idx].dir; } else { sorts.push({key:k,dir:defDir(k)}); } }
+  else { if(sorts.length===1&&sorts[0].key===k){ sorts[0].dir=-sorts[0].dir; } else { sorts=[{key:k,dir:defDir(k)}]; } }
+  render();
+});
+document.querySelectorAll('#tabs .tab').forEach(tab=>tab.addEventListener('click',()=>{ document.querySelectorAll('#tabs .tab').forEach(t=>t.classList.remove('active')); tab.classList.add('active'); curSetup=tab.dataset.k; render(); }));
+document.querySelectorAll('#qtabs .tab').forEach(tab=>tab.addEventListener('click',()=>{ document.querySelectorAll('#qtabs .tab').forEach(t=>t.classList.remove('active')); tab.classList.add('active'); curQ=tab.dataset.q; render(); }));
+document.querySelectorAll('#vtabs .vbtn').forEach(btn=>btn.addEventListener('click',()=>{ document.querySelectorAll('#vtabs .vbtn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); curView=btn.dataset.v; render(); }));
+document.querySelectorAll('#agetabs .tab').forEach(tab=>tab.addEventListener('click',()=>{
+  document.querySelectorAll('#agetabs .tab').forEach(t=>t.classList.remove('active')); tab.classList.add('active'); curAge=tab.dataset.age;
+  const note=document.getElementById('agenote');
+  note.innerHTML = curAge==="extended"
+    ? '<b style="color:var(--muted)">Extended</b> — under 4 weeks old but already up 5%+ from the signal. The move has largely happened — treat these as a watch list and wait for a pullback, not a fresh entry. Educational, not actionable.'
+    : '<b style="color:var(--muted)">Active</b> = under 4 weeks old and still within +5% of the signal (or below) — a valid entry today (includes names that are down, i.e. cheaper near the line). After 4 weeks a setup retires to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.';
+  render();
+}));
+render();
+
+// Pricing card selection
+(function(){
+  const cards=document.querySelectorAll('.pricegrid .price');
+  cards.forEach(card=>card.addEventListener('click', e=>{ if(e.target.closest('.autorenew')) return; cards.forEach(c=>c.classList.remove('selected')); card.classList.add('selected'); }));
+  const annual=document.querySelector('.price[data-plan="annual"]'); if(annual) annual.classList.add('selected');
+})();
+
+// Landing example cards + hero peek
+function renderHome(){
+  const ex=[]; ["phoenix","cruise"].forEach(s=>ex.push(...DATA.filter(d=>d.setup===s&&d.q==="pass"&&d.phase==="active").sort((a,b)=>b.score-a.score).slice(0,2)));
+  const el=document.getElementById("examples"); if(el) el.innerHTML=cardsHTML(ex);
+  const peek=document.getElementById("heropeek");
+  if(peek){ const p=DATA.filter(d=>d.q==="pass"&&d.phase==="active").sort((a,b)=>b.score-a.score).slice(0,2); peek.innerHTML=cardsHTML(p); }
+}
+renderHome();
+
+// ---- Track Record page (retired positions) ----
+function renderTrack(){
+  const items=DATA.filter(d=>d.phase==="retired").sort((a,b)=>dval(b.date)-dval(a.date));
+  const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:0;
+  const tc=document.getElementById('trackCount'); if(tc) tc.textContent=items.length;
+  const w4=items.map(d=>d.wk4).filter(v=>v!=null), w2=items.map(d=>d.wk2).filter(v=>v!=null), dips=items.map(d=>d.md4).filter(v=>v!=null);
+  const win4=w4.length?Math.round(w4.filter(v=>v>0).length/w4.length*100):0;
+  const st=document.getElementById('trackStats');
+  if(st) st.innerHTML=`
+    <div class="trstat"><div class="v">${items.length}</div><div class="l">Retired setups</div></div>
+    <div class="trstat"><div class="v ${avg(w4)>=0?'up':'down'}">${avg(w4)>=0?'+':''}${avg(w4).toFixed(1)}%</div><div class="l">Avg 4-week return</div></div>
+    <div class="trstat"><div class="v">${win4}%</div><div class="l">Positive at 4 weeks</div></div>
+    <div class="trstat"><div class="v ${avg(w2)>=0?'up':'down'}">${avg(w2)>=0?'+':''}${avg(w2).toFixed(1)}%</div><div class="l">Avg 2-week return</div></div>
+    <div class="trstat"><div class="v down">${avg(dips).toFixed(1)}%</div><div class="l">Avg max dip (4wk)</div></div>
+    <div style="flex-basis:100%; font-size:11px; color:var(--faint); border-top:1px solid var(--line); padding-top:10px">Actual close-to-close returns at real horizons — <b>not</b> peak, not returns earned. Paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>`;
+  const rows=items.map(d=>{
+    const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise";
+    const qsym=d.q==="pass"?"💎":d.q==="watch"?"◆":"△";
+    return `<tr>
+      <td><div class="lt-tkr">${d.t}</div><div class="lt-co">${d.n}</div></td>
+      <td class="lt-sector">${shortSector(d.sector)}</td>
+      <td><span class="lt-set ${d.setup}">${setupLabel}</span></td>
+      <td><span class="lt-q ${d.q}">${qsym}</span></td>
+      <td class="faint">${d.date||"—"}</td>
+      <td>${dialCell(d.dial)}</td>
+      <td>${retCell(d.wk2)}</td>
+      <td>${retCell(d.wk4)}</td>
+      <td>${retCell(d.wk12)}</td>
+      <td>${mfeCell(d.mfe)}</td>
+      <td>${maeCell(d.md4)}</td>
+    </tr>`;
+  }).join('');
+  const heads=['Ticker','Sector','Setup','Q','Signal','Regime @ Add','2wk','4wk','12wk','Peak ▲','Max Dip ▼'].map(h=>`<th>${h}</th>`).join('');
+  const body=document.getElementById('trackBody');
+  if(body) body.innerHTML=`<div class="listwrap"><table class="ltable"><thead><tr>${heads}</tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+renderTrack();
+
+// ---- Multi-page router ----
+function showPage(name){
+  const pages=document.querySelectorAll('.page');
+  if(![...pages].some(p=>p.dataset.page===name)) name="home";
+  pages.forEach(p=>p.classList.toggle('active', p.dataset.page===name));
+  document.querySelectorAll('.navlinks a').forEach(a=>a.classList.toggle('active', a.dataset.nav===name));
+  window.scrollTo({top:0, behavior:'auto'});
+  if(location.hash.slice(1)!==name) history.replaceState(null,'','#'+name);
+}
+document.querySelectorAll('[data-nav]').forEach(a=>a.addEventListener('click', e=>{
+  e.preventDefault();
+  const nav=a.dataset.nav, sc=a.dataset.scroll;
+  const go=()=>{ showPage(nav); if(sc){ const el=document.getElementById(sc); if(el) setTimeout(()=>el.scrollIntoView({behavior:'smooth', block:'start'}), 70); } };
+  if(nav==='board' && !loggedIn){ requireLogin(go); } else { go(); }
+}));
+showPage(location.hash.slice(1) || 'home');
+window.addEventListener('hashchange', ()=>{ const n=location.hash.slice(1)||'home'; if(n==='board' && typeof loggedIn!=='undefined' && !loggedIn){ showPage('home'); requireLogin(()=>showPage('board')); } else showPage(n); });
+
+// ===== Modal (chart + video placeholder) =====
+const modal=document.getElementById('modal'), modalBody=document.getElementById('modalBody');
+function openModal(html){ modalBody.innerHTML=html; modal.classList.add('open'); }
+function closeModal(){ modal.classList.remove('open'); modalBody.innerHTML=''; clearExp(); }
+document.getElementById('modalClose').addEventListener('click', closeModal);
+modal.addEventListener('click', e=>{ if(e.target===modal) closeModal(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeModal(); endTour(); } });
+
+function seedRand(str){ let h=2166136261; for(let i=0;i<str.length;i++){ h^=str.charCodeAt(i); h=Math.imul(h,16777619); } return ()=>{ h+=0x6D2B79F5; let t=Math.imul(h^h>>>15,1|h); t^=t+Math.imul(t^t>>>7,61|t); return ((t^t>>>14)>>>0)/4294967296; }; }
+function simSeries(d){
+  const rnd=seedRand(d.t+d.date); const pre=15;
+  const age=Math.round((REF.getTime()-dval(d.date))/86400000);
+  const post=Math.max(6, Math.min(age||20, 45));
+  const pts=[];
+  for(let i=0;i<pre;i++){ const f=i/(pre-1); pts.push(d.pe*(0.94+0.06*f)*(1+(rnd()-0.5)*0.02)); }
+  pts.push(d.pe); const sigIdx=pts.length-1;
+  const low=d.pe*(1+d.mae/100), peak=d.pe*(1+d.mfe/100), end=d.pc;
+  const dipDay=Math.max(1,Math.min(4,Math.floor(post*0.25)));
+  const peakDay=Math.max(dipDay+1,Math.min(post-1,d.dtp||Math.floor(post*0.6)));
+  for(let t=1;t<=post;t++){
+    let base;
+    if(t<=dipDay) base=d.pe+(low-d.pe)*(t/dipDay);
+    else if(t<=peakDay) base=low+(peak-low)*((t-dipDay)/(peakDay-dipDay));
+    else base=peak+(end-peak)*((t-peakDay)/(post-peakDay));
+    pts.push(base*(1+(rnd()-0.5)*0.012));
+  }
+  return {pts, sigIdx};
+}
+const MONN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function fmtDate(dt){ return MONN[dt.getMonth()]+" "+dt.getDate(); }
+function addTradingDays(base,n){ const d=new Date(base); const step=n>=0?1:-1; let c=0; while(c<Math.abs(n)){ d.setDate(d.getDate()+step); const g=d.getDay(); if(g!==0&&g!==6) c++; } return d; }
+function niceStep(range){ const raw=(range||1)/5; const p=Math.pow(10,Math.floor(Math.log10(raw||1))); const n=raw/p; return (n<1.5?1:n<3?2:n<7?5:10)*p; }
+function chartSVG(d){
+  const {pts,sigIdx}=simSeries(d);
+  const pe=d.pe;
+  const pct=pts.map(v=>(v/pe-1)*100);
+  const W=620,H=300, padL=48,padR=54,padT=26,padB=30;
+  // y gridlines by percent
+  let pMin=Math.min(...pct,0), pMax=Math.max(...pct,0);
+  const step=niceStep(pMax-pMin);
+  const lo=Math.floor(pMin/step)*step, hi=Math.ceil(pMax/step)*step;
+  const y=p=>padT+(H-padT-padB)*(1-(p-lo)/((hi-lo)||1));
+  const x=i=>padL+(W-padL-padR)*i/(pts.length-1);
+  const line=pct.map((p,i)=>`${i?'L':'M'}${x(i).toFixed(1)},${y(p).toFixed(1)}`).join(' ');
+  const area=`M${x(0).toFixed(1)},${(H-padB).toFixed(1)} `+pct.map((p,i)=>`L${x(i).toFixed(1)},${y(p).toFixed(1)}`).join(' ')+` L${x(pts.length-1).toFixed(1)},${(H-padB).toFixed(1)} Z`;
+  const sx=x(sigIdx); const up=d.pc>=pe; const col=up?'#15803d':'#c0392b';
+  // gridlines + dual labels (left %, right $)
+  let grid='';
+  for(let p=lo;p<=hi+1e-6;p+=step){
+    const yy=y(p).toFixed(1); const zero=Math.abs(p)<1e-6;
+    const price=pe*(1+p/100);
+    grid+=`<line x1="${padL}" y1="${yy}" x2="${W-padR}" y2="${yy}" stroke="${zero?'#c8d2d6':'#eef2f4'}" stroke-width="1" ${zero?'stroke-dasharray="5 3"':''}/>`;
+    grid+=`<text x="${padL-8}" y="${(+yy+3).toFixed(1)}" fill="${zero?'#0e2a2b':'#98a5ab'}" font-size="10" text-anchor="end" ${zero?'font-weight="700"':''}>${p>0?'+':''}${p.toFixed(0)}%</text>`;
+    grid+=`<text x="${W-padR+8}" y="${(+yy+3).toFixed(1)}" fill="#b7c0c5" font-size="9.5" text-anchor="start">$${price.toFixed(price<50?1:0)}</text>`;
+  }
+  // x-axis date ticks
+  const sig=new Date(dval(d.date));
+  const idxs=[...new Set([0, Math.round(pts.length*0.28), sigIdx, Math.round(sigIdx+(pts.length-1-sigIdx)*0.5), pts.length-1])].sort((a,b)=>a-b);
+  let xlab='';
+  idxs.forEach(i=>{ const dt=addTradingDays(sig, i-sigIdx); const anchor=i===0?'start':i===pts.length-1?'end':'middle';
+    xlab+=`<text x="${x(i).toFixed(1)}" y="${H-padB+16}" fill="#98a5ab" font-size="9.5" text-anchor="${anchor}">${fmtDate(dt)}</text>`; });
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block">
+    <defs><linearGradient id="cg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".16"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>
+    ${grid}
+    <rect x="${padL}" y="${padT}" width="${(sx-padL).toFixed(1)}" height="${H-padT-padB}" fill="rgba(107,122,128,.05)"/>
+    <path d="${area}" fill="url(#cg)"/>
+    <path d="${line}" fill="none" stroke="${col}" stroke-width="2"/>
+    <line x1="${sx.toFixed(1)}" y1="${padT}" x2="${sx.toFixed(1)}" y2="${H-padB}" stroke="#0f766e" stroke-dasharray="4 3" stroke-width="1.3"/>
+    <circle cx="${sx.toFixed(1)}" cy="${y(pct[sigIdx]).toFixed(1)}" r="5" fill="#0f766e" stroke="#fff" stroke-width="2"/>
+    <text x="${sx.toFixed(1)}" y="${padT-9}" fill="#0f766e" font-size="11" font-weight="700" text-anchor="middle">▲ Signal date</text>
+    <text x="${padL-8}" y="${padT-9}" fill="#98a5ab" font-size="9" text-anchor="end">% move</text>
+    <text x="${W-padR+8}" y="${padT-9}" fill="#b7c0c5" font-size="9" text-anchor="start">price</text>
+  </svg>`;
+}
+function openChart(d){
+  openModal(`<div class="chart-h"><span class="ct">${d.t}</span><span class="cn">${d.n} · ${d.setup==='phoenix'?'Phoenix':'Cruise'}</span></div>
+    <div style="font-size:12.5px;color:var(--muted);margin:4px 0 12px">Price around the signal date — roughly 15 trading days before, through today.</div>
+    ${chartSVG(d)}
+    <div class="chart-cap">Illustrative price path for the mockup. The dashed line marks the <b>signal date</b> (not a buy instruction). Peak ${d.mfe>=0?'+':''}${d.mfe}% · max dip ${d.mae}% since. Educational, not advice.</div>`);
+}
+document.addEventListener('click', e=>{
+  const tk=e.target.closest('[data-ticker]');
+  if(tk){ const d=DATA.find(x=>x.t===tk.dataset.ticker); if(d) openChart(d); return; }
+  if(e.target.closest('[data-video]')){ openExplainer(); }
+});
+
+// ===== Animated explainer =====
+let expTimers=[];
+function clearExp(){ expTimers.forEach(clearTimeout); expTimers=[]; }
+function openExplainer(){
+  const tickers=["NVDA","AAPL","MU","AMD","GOOGL","TSLA","DELL","SHOP","INTC","ORCL","AVGO","CSCO","NOW","DUOL","OKTA","TEAM","FSLR","WING","NTAP","LRCX","ASML","CRM","QCOM","ADBE"];
+  const grid=tickers.map((t,i)=>`<span class="exp-chip ${[3,8,14,19].includes(i)?'hit':''}">${t}</span>`).join('');
+  const cardData=[{tk:"DUOL",c:"#7c3aed",keep:1,gem:1},{tk:"AA",c:"#7c3aed",keep:0,gem:0},{tk:"DELL",c:"#1d4ed8",keep:1,gem:1},{tk:"NOW",c:"#7c3aed",keep:1,gem:0},{tk:"XPEV",c:"#1d4ed8",keep:0,gem:0},{tk:"SHOP",c:"#1d4ed8",keep:1,gem:0}];
+  const cards=cardData.map(d=>`<div class="exp-card ${d.keep?'keep':'dim'}">${d.gem?'<span class="exp-gem">💎</span>':''}<div class="ecbar" style="background:${d.c}"></div><div class="ectk">${d.tk}</div><div class="ecline"></div><div class="ecline short"></div></div>`).join('');
+  const scenes=[
+    {dur:3600, html:`<div class="exp-k">STS in 30 seconds</div><div class="exp-h">A few high-conviction trades a week — without the hours of hunting.</div>`},
+    {dur:4200, html:`<div class="exp-h" style="font-size:22px">Every night, we scan the entire U.S. market.</div><div class="exp-grid">${grid}</div>`},
+    {dur:4200, html:`<div class="exp-h" style="font-size:22px">…and surface a short list of quality setups.</div><div class="exp-cards">${cards}</div>`},
+    {dur:4200, html:`<div class="exp-h" style="font-size:22px">Sorted into two clear signals.</div><div style="margin-top:6px"><span class="exp-pill2" style="background:rgba(124,58,237,.32)">Phoenix</span><span class="exp-pill2" style="background:rgba(90,169,240,.32)">Cruise</span></div><div class="exp-s">Each one first clears a fundamental quality gate <b style="color:#5ee0c8">💎</b></div>`},
+    {dur:4600, html:`<div class="exp-h">We scout the fat pitches. ⚾</div><div class="exp-s">The swing is yours — no entry price, no exit, no advice. You decide if, when, and how.</div>`},
+    {dur:4600, html:`<div class="exp-k">Across every signal we've published</div><div style="display:flex; gap:34px; margin-top:6px"><div><div class="exp-num"><span data-c="90">0</span>%</div><div class="exp-s">reached +5% or more</div></div><div><div class="exp-num" style="color:#7db8ff"><span data-c="69">0</span>%</div><div class="exp-s">reached +10% or more</div></div></div><div class="exp-s" style="font-size:11px; margin-top:14px">Hypothetical peak (MFE), not returns earned. Not advice.</div>`},
+    {dur:9999, html:`<div class="exp-h">Ready to try it?</div><div class="exp-s">Your first week is free · then $20/mo.</div><button class="exp-btn" id="expCta">Start free trial →</button>`}
+  ];
+  const n=scenes.length;
+  const dots=scenes.map((_,i)=>`<span class="exp-dot" data-d="${i}"></span>`).join('');
+  openModal(`<div class="explainer" id="exp"><div class="exp-dots">${dots}</div>${scenes.map((s,i)=>`<div class="exp-scene" data-i="${i}">${s.html}</div>`).join('')}<div class="exp-prog" id="expProg"></div><button class="exp-replay" id="expReplay">↻ Replay</button></div>`);
+  const cta=document.getElementById('expCta'); if(cta) cta.onclick=()=>{ closeModal(); showPage('pricing'); };
+  function show(k){
+    document.querySelectorAll('#exp .exp-scene').forEach(el=>el.classList.toggle('active', +el.dataset.i===k));
+    document.querySelectorAll('#exp .exp-dot').forEach(el=>el.classList.toggle('on', +el.dataset.d<=k));
+    const prog=document.getElementById('expProg'); if(prog) prog.style.width=((k+1)/n*100)+'%';
+    const sc=document.querySelector('#exp .exp-scene[data-i="'+k+'"]');
+    if(sc) sc.querySelectorAll('[data-c]').forEach(el=>{ const tgt=+el.dataset.c, t0=performance.now(); (function st(t){ const p=Math.min(1,(t-t0)/900); el.textContent=Math.round(tgt*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(st); })(t0); });
+  }
+  function run(k){ show(k); if(k<n-1){ expTimers.push(setTimeout(()=>run(k+1), scenes[k].dur)); } else { const r=document.getElementById('expReplay'); if(r) r.style.display='block'; } }
+  const r=document.getElementById('expReplay'); if(r) r.onclick=()=>{ clearExp(); r.style.display='none'; run(0); };
+  run(0);
+}
+
+// ===== Count-up balloons =====
+function countUp(){
+  document.querySelectorAll('.cval').forEach(el=>{
+    const target=+el.dataset.count, dur=1150, t0=performance.now();
+    (function step(t){ const p=Math.min(1,(t-t0)/dur); el.textContent=Math.round(target*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(step); })(t0);
+  });
+}
+
+// ===== Guided tour =====
+const tourSteps=[
+  {sel:'.regimebar', t:'Market regime', d:'A quick read on the market’s health (SPY/QQQ) — context for sizing, never a trade trigger.'},
+  {sel:'#agetabs', t:'Active vs Extended', d:'Active = price still near the setup. Extended = already ran, kept to show how past signals played out.'},
+  {sel:'#tabs', t:'Filter by setup', d:'Show all names, or just Phoenix (recovering leaders) or Cruise (leaders pausing).'},
+  {sel:'#qtabs', t:'Quality filter', d:'Collapse to 💎 High-Quality names only — the ones sound enough to hold through a dip.'},
+  {sel:'#vtabs', t:'Cards or List', d:'Switch to a sortable list with the full Setup Scorecard: peak, max dip, and prices.'},
+  {sel:'#cards .card', t:'Read a signal', d:'Each card shows the STS score, quality badge, market pulse, and scorecard. Tip: click any ticker to see its price chart.'}
+];
+let tourI=0;
+const tourOv=document.getElementById('tourOv'), tourHole=document.getElementById('tourHole'), tourTip=document.getElementById('tourTip');
+function startTour(){ showPage('board'); tourI=0; setTimeout(()=>{ tourOv.classList.add('open'); showTourStep(); }, 400); try{localStorage.setItem('sts_toured','1');}catch(e){} }
+function lockScroll(){ const sw=window.innerWidth-document.documentElement.clientWidth; document.body.style.overflow='hidden'; document.body.style.paddingRight=sw+'px'; }
+function unlockScroll(){ document.body.style.overflow=''; document.body.style.paddingRight=''; }
+function endTour(){ tourOv.classList.remove('open'); unlockScroll(); if(typeof loggedIn!=='undefined' && !loggedIn && location.hash.slice(1)==='board') showPage('home'); }
+function positionTour(){
+  const s=tourSteps[tourI]; const el=document.querySelector(s.sel); if(!el) return;
+  const r=el.getBoundingClientRect(), pad=6;
+  tourHole.style.left=(r.left-pad)+'px'; tourHole.style.top=(r.top-pad)+'px';
+  tourHole.style.width=(r.width+2*pad)+'px'; tourHole.style.height=(r.height+2*pad)+'px';
+  const th=tourTip.offsetHeight||170;
+  let tt=r.bottom+12; if(tt+th>window.innerHeight) tt=Math.max(12, r.top-th-12);
+  let tl=Math.min(Math.max(12, r.left), window.innerWidth-316);
+  tourTip.style.top=tt+'px'; tourTip.style.left=tl+'px';
+}
+function showTourStep(){
+  const s=tourSteps[tourI]; const el=document.querySelector(s.sel);
+  if(!el){ if(++tourI<tourSteps.length) return showTourStep(); return endTour(); }
+  unlockScroll();                                   // allow the programmatic jump
+  el.scrollIntoView({behavior:'auto', block:'center'});
+  setTimeout(()=>{
+    const last=tourI===tourSteps.length-1;
+    tourTip.innerHTML=`<h4>${s.t}</h4><p>${s.d}</p><div class="row"><span class="tour-step">${tourI+1} / ${tourSteps.length}</span><div class="tour-btns">${tourI>0?'<button id="tPrev">Back</button>':'<button class="tour-skip" id="tSkip">Skip</button>'}<button class="primary" id="tNext">${last?'Done':'Next'}</button></div></div>`;
+    document.getElementById('tNext').onclick=()=>{ last?endTour():(tourI++,showTourStep()); };
+    const pv=document.getElementById('tPrev'); if(pv) pv.onclick=()=>{ tourI--; showTourStep(); };
+    const sk=document.getElementById('tSkip'); if(sk) sk.onclick=endTour;
+    lockScroll();                                   // freeze the page while this step is shown
+    positionTour();
+  },50);
+}
+const tb=document.getElementById('navTour'); if(tb) tb.addEventListener('click', e=>{ e.preventDefault(); startTour(); });
+let tourRaf=null;
+function tourReposition(){ if(!tourOv.classList.contains('open')) return; if(tourRaf) cancelAnimationFrame(tourRaf); tourRaf=requestAnimationFrame(positionTour); }
+window.addEventListener('scroll', tourReposition, {passive:true});
+window.addEventListener('resize', tourReposition);
+
+// ===== Login gate (mockup) =====
+let loggedIn=false; try{ loggedIn=localStorage.getItem('sts_login')==='1'; }catch(e){}
+function updateNav(){ const b=document.getElementById('navLogin'); if(b) b.textContent=loggedIn?'Log out':'Log in'; }
+function loginHTML(){ return `<div style="text-align:center; padding:6px 4px">
+    <div style="font-size:34px">🔐</div>
+    <h3 style="margin:8px 0 4px; color:var(--ink)">Log in to view today's board</h3>
+    <p style="color:var(--muted); font-size:14px; margin:0 auto 16px; max-width:36ch">Enter your email and we'll send a magic link. <span class="faint">(Demo login for the mockup — no real auth yet.)</span></p>
+    <input id="loginEmail" type="email" placeholder="you@email.com" style="width:100%; max-width:320px; padding:11px 14px; border:1px solid var(--line2); border-radius:10px; font-size:15px; margin-bottom:12px; font-family:inherit">
+    <div><button class="btn btn-primary" id="loginGo" style="min-width:220px; padding:12px">Continue →</button></div>
+    <div style="font-size:12px; color:var(--faint); margin-top:14px">New here? Your first week is free · then $20/mo.</div>
+  </div>`; }
+function setLogin(v){ loggedIn=v; try{ v?localStorage.setItem('sts_login','1'):localStorage.removeItem('sts_login'); }catch(e){} updateNav(); }
+function requireLogin(cb){
+  if(loggedIn){ cb&&cb(); return; }
+  openModal(loginHTML());
+  const go=document.getElementById('loginGo'), em=document.getElementById('loginEmail');
+  if(em) em.focus();
+  const proceed=()=>{ setLogin(true); closeModal(); cb&&cb(); };
+  if(go) go.onclick=proceed;
+  if(em) em.addEventListener('keydown', e=>{ if(e.key==='Enter') proceed(); });
+}
+(function(){
+  const sl=document.getElementById('shortlistLink');
+  if(sl) sl.addEventListener('click', e=>{ e.preventDefault(); requireLogin(()=>showPage('board')); });
+  const nl=document.getElementById('navLogin');
+  if(nl) nl.addEventListener('click', e=>{ e.preventDefault(); if(loggedIn){ setLogin(false); if(location.hash.slice(1)==='board') showPage('home'); } else { requireLogin(()=>{}); } });
+  updateNav();
+  // gate direct load / reload on the board when not logged in
+  if(location.hash.slice(1)==='board' && !loggedIn){ showPage('home'); }
+})();
+
+// run on load
+countUp();
+try{ if(!localStorage.getItem('sts_toured')) setTimeout(startTour, 1000); }catch(e){}
+
+// ---- live data: use board.json when served; fall back to the inlined snapshot ----
+(async function(){
+  try{
+    const r = await fetch('board.json', {cache:'no-store'});
+    if(!r.ok) return;
+    const j = await r.json();
+    if(j && Array.isArray(j.names) && j.names.length){
+      DATA = j.names;
+      if(j.regime && j.regime.spy){ REGIME = j.regime; if(typeof renderRegime==='function') renderRegime(REGIME); }
+      if(typeof render==='function') render();
+      if(typeof renderHome==='function') renderHome();
+      if(typeof renderTrack==='function') renderTrack();
+    }
+  }catch(e){ /* file:// or offline — keep the inlined snapshot */ }
+})();
+</script>
+</body>
+</html>

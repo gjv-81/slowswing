@@ -1,0 +1,35 @@
+# ============================================================
+# STS RS vs SECTOR — custom watchlist column (daily)
+# Tie-breaker for clustered candidates: 40-day return of the
+# stock MINUS 40-day return of a sector ETF. Positive (green) =
+# this name is LEADING its group's move; negative (red) =
+# being dragged along. Use it to prioritize within a sector
+# cluster (e.g., which semis lead) before SSI2 review.
+#
+# INSTALL: Watchlist gear -> Customize -> Custom Quotes ->
+# free slot -> thinkScript Editor -> paste -> Aggregation DAY ->
+# rename column "RSvSMH" (or whichever ETF you set).
+#
+# LIMITATION: thinkScript cannot auto-detect a stock's sector,
+# so the benchmark ETF is a manual input (default SMH for the
+# current semi cluster). Clone this into additional custom-quote
+# slots with different ETFs if you want more sectors:
+#   SMH semis | XLK tech | XLE energy | XLF financials
+#   XLV health | XLI industrials | XLB materials | XLY discret.
+# Reading: within a sector, sort candidates by STS_ML first,
+# then prefer names with RS vs sector near or above 0 —
+# the "strong 8-week, soft 4-week" leaders, not the laggards.
+# ============================================================
+
+input sectorETF = "SMH";
+
+def stockRet = close / close[40] - 1;
+def etfC     = close(sectorETF);
+def etfRet   = etfC / etfC[40] - 1;
+
+plot RSvSector = Round(100 * (stockRet - etfRet), 1);   # percentage points
+
+RSvSector.AssignValueColor(
+    if RSvSector >= 0 then Color.GREEN
+    else if RSvSector >= -5 then Color.YELLOW
+    else Color.RED);

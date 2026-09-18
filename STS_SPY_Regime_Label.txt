@@ -1,0 +1,31 @@
+# ============================================================
+# STS SPY REGIME LABEL — chart study (any chart, daily)
+# Shows the market sizing dial in the top-left corner of every
+# chart: SPY's distance above/below its 200-day SMA, in SPY ATRs
+# (the exact spy_regime feature from the research).
+#
+#   GREEN  "SPY +x.x ATR"  = healthy, full size
+#   YELLOW "SPY +x.x ATR"  = extended (> +5 ATR), be selective
+#   RED    "SPY -x.x ATR"  = below 200-DMA, reduce size /
+#                            fewer new entries (dial, not veto)
+#
+# INSTALL: Charts -> Studies -> Edit Studies -> Create ->
+# paste this -> add to your chart template so it shows on
+# every chart automatically. Works on any symbol's chart.
+# ============================================================
+
+declare upper;
+
+def spyC    = close("SPY", period = AggregationPeriod.DAY);
+def spyH    = high("SPY",  period = AggregationPeriod.DAY);
+def spyL    = low("SPY",   period = AggregationPeriod.DAY);
+def spySma  = Average(spyC, 200);
+def spyTr   = Max(spyH - spyL, Max(AbsValue(spyH - spyC[1]), AbsValue(spyL - spyC[1])));
+def spyAtr  = MovingAverage(AverageType.WILDERS, spyTr, 14);
+def regime  = (spyC - spySma) / spyAtr;
+
+AddLabel(yes,
+    "SPY " + (if regime >= 0 then "+" else "") + Round(regime, 1) + " ATR vs 200d",
+    if regime < 0 then Color.RED
+    else if regime > 5 then Color.YELLOW
+    else Color.GREEN);

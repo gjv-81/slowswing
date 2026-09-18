@@ -1,0 +1,37 @@
+# ============================================================
+# STS RS vs MARKET — custom watchlist column (daily)
+# Universal leadership measure, valid for EVERY row: 40-day
+# return of the stock MINUS 40-day return of RSP (equal-weight
+# S&P 500). No sector matching needed.
+#
+# Why RSP and not SPY: SPY is cap-weighted — a handful of mega
+# caps dominate it. RSP is the average stock, so this column
+# answers "is this name beating the typical stock?" — cleaner
+# leadership reading, especially when mega caps and the rest
+# of the market diverge.
+#
+# INSTALL: Watchlist gear -> Customize -> Custom Quotes ->
+# free slot -> thinkScript Editor -> paste -> Aggregation DAY ->
+# rename column "RSvMKT".
+#
+# READING (color thresholds):
+#   GREEN  >= 0   : leading the average stock over 8 weeks
+#   YELLOW 0..-5  : pack member, neither leading nor lagging
+#   RED    < -5   : lagging by >5 pts — being dragged, not leading
+# Use alongside STS_ML: among similar scores, prefer green here
+# (the "strong 8-week RS" half of the proven pullback profile).
+# Keep the SMH clone for within-semi-cluster comparisons.
+# ============================================================
+
+input benchmark = "RSP";
+
+def stockRet = close / close[40] - 1;
+def benchC   = close(benchmark);
+def benchRet = benchC / benchC[40] - 1;
+
+plot RSvMKT = Round(100 * (stockRet - benchRet), 1);   # percentage points
+
+RSvMKT.AssignValueColor(
+    if RSvMKT >= 0 then Color.GREEN
+    else if RSvMKT >= -5 then Color.YELLOW
+    else Color.RED);

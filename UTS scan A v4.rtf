@@ -1,0 +1,72 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 # UTS_ScanA_v4  \'97  Precondition scan, DAILY-ONLY\
+# TOS scans do not permit weekly secondary aggregation, so all conditions\
+# are evaluated on the daily timeframe. The weekly EMA/MACD check is\
+# handled later at alert-time on the chart (charts can reference weekly).\
+# End-of-day. Plots ONE boolean: ScanA. Aggregation: D.\
+\
+declare lower;\
+\
+# \uc0\u9472 \u9472 \u9472  1. ICHIMOKU 9/26/52 \'97 DAILY \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \
+def tenkan = (Highest(high, 9)  + Lowest(low, 9))  / 2;\
+def kijun  = (Highest(high, 26) + Lowest(low, 26)) / 2;\
+def spanA  = (tenkan[26] + kijun[26]) / 2;\
+def spanB  = (Highest(high[26], 52) + Lowest(low[26], 52)) / 2;\
+\
+def C1_cloud = close > Max(spanA, spanB);\
+\
+# \uc0\u9472 \u9472 \u9472  2. EMA 9 > EMA 21 \'97 DAILY \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \
+def ema9  = ExpAverage(close, 9);\
+def ema21 = ExpAverage(close, 21);\
+def C2_ema = ema9 > ema21;\
+\
+# \uc0\u9472 \u9472 \u9472  3. MACD bullish \'97 DAILY \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \
+def macd_line = ExpAverage(close, 12) - ExpAverage(close, 26);\
+def macd_sig  = ExpAverage(macd_line, 9);\
+def C3_macd = macd_line > macd_sig;\
+\
+# \uc0\u9472 \u9472 \u9472  4. NOT in TTM squeeze \'97 DAILY \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \
+def sLen   = 20;\
+def sdMul  = 2.0;\
+def atrMul = 1.5;\
+def avgSq  = Average(close, sLen);\
+def sdSq   = StDev(close, sLen);\
+def atrSq  = Average(TrueRange(high, close, low), sLen);\
+def sdUp   = avgSq + sdMul  * sdSq;\
+def atrUp  = avgSq + atrMul * atrSq;\
+\
+def C4_notSqueeze = sdUp >= atrUp;\
+\
+# \uc0\u9472 \u9472 \u9472  5. RSI Laguerre "Long" state \'97 DAILY \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \
+def nFE = 13;\
+def c_r = (open + high + low + close) / 4;\
+\
+def gamma_r = Log(Sum((Max(high, close[1]) - Min(low, close[1])), nFE) /\
+                  (Highest(high, nFE) - Lowest(low, nFE))) / Log(nFE);\
+\
+def L0_r; def L1_r; def L2_r; def L3_r;\
+L0_r = (1 - gamma_r) * c_r + gamma_r * L0_r[1];\
+L1_r = -gamma_r * L0_r + L0_r[1] + gamma_r * L1_r[1];\
+L2_r = -gamma_r * L1_r + L1_r[1] + gamma_r * L2_r[1];\
+L3_r = -gamma_r * L2_r + L2_r[1] + gamma_r * L3_r[1];\
+\
+def CU1; def CU2; def CU; def CD1; def CD2; def CD;\
+if L0_r >= L1_r then \{ CU1 = L0_r - L1_r;       CD1 = 0; \}\
+              else  \{ CU1 = 0;                  CD1 = L1_r - L0_r; \}\
+if L1_r >= L2_r then \{ CU2 = CU1 + L1_r - L2_r; CD2 = CD1; \}\
+              else  \{ CU2 = CU1;                CD2 = CD1 + L2_r - L1_r; \}\
+if L2_r >= L3_r then \{ CU  = CU2 + L2_r - L3_r; CD  = CD2; \}\
+              else  \{ CU  = CU2;                CD  = CD2 + L3_r - L2_r; \}\
+\
+def RSIL = if (CU + CD) <> 0 then CU / (CU + CD) else 0;\
+\
+def C5_rsiLong = (RSIL > 0.9) or ((RSIL >= RSIL[1]) and (RSIL > 0.1));\
+\
+# \uc0\u9472 \u9472 \u9472  COMBINE \'97 full strength \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \
+plot ScanA = C1_cloud and C2_ema and C3_macd and C4_notSqueeze and C5_rsiLong;}

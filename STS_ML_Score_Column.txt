@@ -1,0 +1,60 @@
+# ============================================================
+# STS ML SCORE — custom watchlist column (daily)
+# Port of the learned-weight model (v2 study, stable weights).
+# Higher = better. Sort your watchlist by this column descending;
+# the top ~10% of your universe is the model's D10.
+#
+# Validated against the full 13-term Python model:
+#   0.91 rank correlation, 84% top-decile overlap.
+#
+# INSTALL: Watchlist gear icon -> Customize -> Custom Quotes ->
+# pick a Custom slot -> thinkScript Editor -> paste this ->
+# set Aggregation to DAY -> rename the column "STS_ML".
+#
+# NOTES
+# - SPY-relative terms are intentionally absent: on any given day
+#   they shift every stock's score equally, so the RANKING is
+#   unchanged. Absolute 40-day momentum stands in for 8-week RS.
+#   SPY vs its own 200-DMA stays your manual sizing dial.
+# - z-score constants are baked in from the 10-year, 604-ticker
+#   research panel (2016-2026).
+# ============================================================
+
+# --- raw features (daily bars) ---
+def atr14   = MovingAverage(AverageType.WILDERS, TrueRange(high, close, low), 14);
+
+def high52  = close / Highest(high, 252) - 1;            # 0 = at 52wk high
+def dist200 = (close - Average(close, 200)) / atr14;     # trend health, in ATRs
+def mom6    = close[10] / close[126] - 1;                # 6-mo momentum, skip 2wks
+def rsi20   = RSI(length = 20, price = close);
+def qqe     = (ExpAverage(rsi20, 5) - 50) / 50;          # smoothed RSI vs 50
+def hma     = HullMovingAvg(close, 20);
+def hullSl  = (hma - hma[1]) / atr14;                    # Hull slope, in ATRs
+def mom40   = close / close[40] - 1;                     # 8wk absolute momentum
+
+# --- z-scores (panel constants), clipped at +/-3 sigma so extreme
+# --- stocks outside the research universe cannot blow up the score
+script zclip { input v = 0; plot z = Max(-3, Min(3, v)); }
+def zHigh52 = zclip((high52  - (-0.149772)) / 0.156737);
+def zDist   = zclip((dist200 -   1.681650 ) / 6.240695);
+def zMom6   = zclip((mom6    -   0.086250 ) / 0.361377);
+def zQqe    = zclip((qqe     -   0.044473 ) / 0.194268);
+def zHull   = zclip((hullSl  -   0.027496 ) / 0.303103);
+def zMom40  = zclip((mom40   -   0.020000 ) / 0.155298);
+
+# --- learned weights (v2 stable set) ---
+def score = -2.20 * zHigh52
+          +  1.35 * zDist
+          +  1.08 * zMom6
+          + -0.99 * zQqe
+          +  0.63 * zMom40
+          +  0.60 * zHull;
+
+plot STS_ML = Round(score, 1);
+
+# text color: green above the historical D10 cutoff (~2.0 pooled),
+# yellow above the top-quintile cutoff (~1.0), gray below.
+STS_ML.AssignValueColor(
+    if score >= 2.0 then Color.GREEN
+    else if score >= 1.0 then Color.YELLOW
+    else Color.GRAY);

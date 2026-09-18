@@ -1,0 +1,97 @@
+# ============================================================
+# STS SETUP ARROWS v2 — chart study (daily, upper)
+# GREEN arrow  = confirmed entry into D200G (>=25% off 52-wk
+#   high, ESTABLISHED above 200-SMA, score >= 2)   [+16.2% cell]
+# ORANGE arrow = confirmed entry into D200 (same state, score
+#   still < 2 — the sprint-recovery / UNH-May catcher) [+14.0%]
+# CYAN arrow   = confirmed entry into B2 / Breather (score >= 2,
+#   10-25% off high)                               [+14.1% cell]
+# A stock can arrow ORANGE first and GREEN later when the score
+# catches up — that is the D200 -> D200G upgrade, both real events.
+#
+# v2 ANTI-SPAM LOGIC (all tunable):
+#   confirmBars   = state must persist N consecutive days before
+#                   the arrow prints (default 3). Aligns with the
+#                   research: fresh state-entrants underperform
+#                   established members.
+#   reentryGap    = no new arrow unless the state was ABSENT for
+#                   at least N days beforehand (default 10).
+#                   Kills the flicker re-arrows at boundaries.
+#   daysAbove200  = "decisively above": close must have been above
+#                   the 200-SMA every day for N days (default 10)
+#                   for the D200G condition. A fresh poke above
+#                   the line no longer counts.
+#
+# The arrow still means CLUB ADMISSION (start SSI2), not a
+# buy-this-bar trigger. Dots show the raw state persisting.
+# INSTALL: Charts -> Studies -> Create -> paste. Daily, 2y+ data.
+# ============================================================
+
+declare upper;
+
+input confirmBars   = 3;
+input reentryGap    = 10;
+input daysAbove200  = 10;
+input showStateDots = yes;
+
+def atr14   = MovingAverage(AverageType.WILDERS, TrueRange(high, close, low), 14);
+def high52  = close / Highest(high, 252) - 1;
+def sma200  = Average(close, 200);
+def dist200 = (close - sma200) / atr14;
+def mom6    = close[10] / close[126] - 1;
+def rsi20   = RSI(length = 20, price = close);
+def qqe     = (ExpAverage(rsi20, 5) - 50) / 50;
+def hma     = HullMovingAvg(close, 20);
+def hullSl  = (hma - hma[1]) / atr14;
+def mom40   = close / close[40] - 1;
+
+script zclip { input v = 0; plot z = Max(-3, Min(3, v)); }
+def score = -2.20 * zclip((high52  - (-0.149772)) / 0.156737)
+          +  1.35 * zclip((dist200 -   1.681650 ) / 6.240695)
+          +  1.08 * zclip((mom6    -   0.086250 ) / 0.361377)
+          + -0.99 * zclip((qqe     -   0.044473 ) / 0.194268)
+          +  0.63 * zclip((mom40   -   0.020000 ) / 0.155298)
+          +  0.60 * zclip((hullSl  -   0.027496 ) / 0.303103);
+
+def deep     = high52 <= -0.25;
+def midBand  = high52 > -0.25 and high52 <= -0.10;
+# "decisively above": above the 200-SMA every day for N days
+def aboveEst = Lowest(close - sma200, daysAbove200) > 0;
+
+def d200g = deep and aboveEst and score >= 2;
+def d200p = deep and aboveEst and score < 2;   # pure D200 (score not yet green)
+def b2    = score >= 2 and midBand;
+
+# confirmed entry: in-state for confirmBars straight, and the
+# state was absent for reentryGap days before that stretch
+def enterD = Sum(d200g, confirmBars) == confirmBars
+         and Sum(d200g[confirmBars], reentryGap) == 0;
+def enterP = Sum(d200p, confirmBars) == confirmBars
+         and Sum(d200p[confirmBars], reentryGap) == 0;
+def enterB = Sum(b2, confirmBars) == confirmBars
+         and Sum(b2[confirmBars], reentryGap) == 0;
+
+plot EnterD200G = enterD and !enterD[1];
+EnterD200G.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_UP);
+EnterD200G.SetDefaultColor(Color.GREEN);
+EnterD200G.SetLineWeight(4);
+
+plot EnterD200 = enterP and !enterP[1];
+EnterD200.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_UP);
+EnterD200.SetDefaultColor(Color.ORANGE);
+EnterD200.SetLineWeight(3);
+
+plot EnterB2 = enterB and !enterB[1];
+EnterB2.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_UP);
+EnterB2.SetDefaultColor(Color.CYAN);
+EnterB2.SetLineWeight(3);
+
+plot D200Gdot = if showStateDots and d200g then low * 0.985 else Double.NaN;
+D200Gdot.SetPaintingStrategy(PaintingStrategy.POINTS);
+D200Gdot.SetDefaultColor(Color.DARK_GREEN);
+D200Gdot.SetLineWeight(1);
+
+plot B2dot = if showStateDots and b2 then low * 0.985 else Double.NaN;
+B2dot.SetPaintingStrategy(PaintingStrategy.POINTS);
+B2dot.SetDefaultColor(CreateColor(0, 90, 110));
+B2dot.SetLineWeight(1);

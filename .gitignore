@@ -1,0 +1,40 @@
+# ---- secrets: NEVER committed. Rotating a key that reached GitHub is the
+#      only fix; keeping them out is far cheaper.
+.env
+.env.*
+.cf_token
+.node_path
+*token*.json
+*.pem
+
+# ---- tooling / caches
+__pycache__/
+*.pyc
+node_modules/
+.wrangler/
+.DS_Store
+~$*
+
+# ---- data: hundreds of MB, rewritten nightly; regenerable from the vendors.
+daily_data/
+daily_data_10y/
+daily_data_v2/
+data/
+*.parquet
+holy_grail_archive/
+Claude outputs/
+uts_exit_sweep_trades*.csv
+uts_daily_backtest.xlsx
+
+# ---- logs and backups
+*.log
+*.bak
+*.bak.*
+*.bak_*
+*.pre_dedup.csv
+*.with_backfill.csv
+*-1.py
+*-1.json
+
+# ---- served copies (the built one is in site/ and KV; the gated board never sits in site/)
+site/board.json

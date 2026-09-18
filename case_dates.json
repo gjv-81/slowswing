@@ -1,0 +1,23 @@
+{
+  "NFLX": {
+    "signal": "Jul 29, 2026",
+    "trough": "Jul 30, 2026",
+    "trough_pct": -2.3,
+    "peak": "Aug 25, 2026",
+    "peak_pct": 14.2
+  },
+  "SNDK": {
+    "signal": "Jul 20, 2026",
+    "trough": "Jul 29, 2026",
+    "trough_pct": -29.1,
+    "peak": "Aug 17, 2026",
+    "peak_pct": 29.8
+  },
+  "CPRI": {
+    "signal": "Jul 30, 2026",
+    "trough": "Aug 27, 2026",
+    "trough_pct": -17.3,
+    "peak": "Aug 5, 2026",
+    "peak_pct": 7.5
+  }
+}
