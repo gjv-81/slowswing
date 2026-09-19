@@ -92,4 +92,15 @@ send_telegram(sys.argv[1])
 PYEOF
 fi
 
+# --- nightly push to GitHub (added 2026-09-18) ---
+# The cloud copy (github.com/gjv-81/slowswing, private) is never more than a
+# day old, so troubleshooting can happen without the laptop. .gitignore keeps
+# secrets and the big data folders out. Failures are logged, never fatal.
+if [ -d "$DIR/.git" ]; then
+  echo "----- git push -----" >> "$LOG" 2>&1
+  ( cd "$DIR" && /usr/bin/git add -A >> "$LOG" 2>&1 \
+    && /usr/bin/git -c user.name="STS nightly" -c user.email="gjv1000@gmail.com" commit -q -m "nightly $(/bin/date '+%Y-%m-%d %H:%M')" >> "$LOG" 2>&1 \
+    ; /usr/bin/git push -q origin main >> "$LOG" 2>&1 && echo "----- git push OK -----" >> "$LOG" || echo "!! git push failed (see above)" >> "$LOG" )
+fi
+
 echo "===== cron END $(/bin/date) rc=$rc after $((n+1)) attempt(s) board=$BOARD =====" >> "$LOG" 2>&1
