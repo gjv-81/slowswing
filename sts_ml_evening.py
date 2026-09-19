@@ -40,8 +40,22 @@ EXCLUDE = {"SPY","QQQ","IWM","DIA","GLD","SLV","USO","SOXX","SMH","RSP",
            "TLT","HYG","ARKK","VOO","VTI","XLB","XLE","XLF","XLI","XLK",
            "XLU","XLV","XLY","UNG","UUP","FXI","KWEB"}
 TELEGRAM_ENABLED = True
-TG_TOKEN    = "8608595671:AAHwVnhGeP3iiX9jk9EV4CPGAmArrbT-DkI"
-TG_CHAT     = "6499078442"
+# Telegram credentials live in .env (never in code — the code is in a git repo).
+#   TG_TOKEN=<bot token from @BotFather>
+#   TG_CHAT=<your chat id>
+def _env(key, default=""):
+    v = os.environ.get(key)
+    if v: return v
+    try:
+        for line in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")):
+            line = line.strip()
+            if line.startswith(key + "="):
+                return line.split("=", 1)[1].strip().strip('"').strip("'")
+    except OSError:
+        pass
+    return default
+TG_TOKEN    = _env("TG_TOKEN")
+TG_CHAT     = _env("TG_CHAT", "6499078442")
 
 # z-constants — MUST match the TOS column exactly
 ZC = {"high52": (-0.149772, 0.156737), "dist200": (1.681650, 6.240695),
@@ -206,7 +220,10 @@ def send_telegram(msg, html=False):
         if html and r.status_code != 200:      # bad HTML? fall back to plain text
             requests.post(f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage",
                           json={"chat_id": TG_CHAT, "text": msg}, timeout=15)
-        print("Telegram sent.")
+        if r.status_code == 200:
+            print("Telegram sent.")
+        else:
+            print(f"Telegram REJECTED ({r.status_code}): {r.text[:160]}")
     except Exception as e:
         print(f"Telegram failed (non-fatal): {e}")
 

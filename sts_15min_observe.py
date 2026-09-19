@@ -93,7 +93,7 @@ APP_SECRET = 'hjJ3ErG8mF7gyxk74ws6ujphCwr9CGlyen4rN7XlrqmJlqoRmqqrmSnX9Qpfjv3P'
 # token lives on the Desktop (confirmed working path)
 TOKEN_PATH = '/Users/Gagan/Desktop/schwab_token.json'
 
-TELEGRAM_TOKEN   = '8608595671:AAHwVnhGeP3iiX9jk9EV4CPGAmArrbT-DkI'
+TELEGRAM_TOKEN   = 'REVOKED-see-.env'
 TELEGRAM_CHAT_ID = '6499078442'
 
 LOG_FILE   = SCRIPT_DIR / 'sts_15min_observe.log'
