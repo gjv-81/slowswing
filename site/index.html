@@ -1537,7 +1537,10 @@ const QMETA = {
 const QRANK = {pass:0, watch:1, fail:2};
 const PULSE = { strong:["pulse-strong","var(--pass)","Strong"], neutral:["pulse-neutral","var(--faint)","Neutral"], weak:["pulse-weak","var(--fail)","Weak"] };
 
-let curSetup="all", curQ="all", curView="cards", curAge="active", sorts=[{key:"date", dir:-1}];
+// Default view: LIST on a desktop (50+ names as cards is a wall; the list carries
+// the scorecard columns and sorting), CARDS on a phone (a 13-column table is
+// unreadable there). The toggle still lets anyone switch.
+let curSetup="all", curQ="all", curView=(window.innerWidth>=900?"list":"cards"), curAge="active", sorts=[{key:"date", dir:-1}];
 let curSearch="", trackSearch="";
 let fSector="",fPulse="",fDial="",fScore=0, tSector="",tPulse="",tDial="",tScore=0;
 
@@ -1750,6 +1753,7 @@ document.getElementById('cards').addEventListener('click', e=>{
 });
 document.querySelectorAll('#tabs .tab').forEach(tab=>tab.addEventListener('click',()=>{ document.querySelectorAll('#tabs .tab').forEach(t=>t.classList.remove('active')); tab.classList.add('active'); curSetup=tab.dataset.k; render(); }));
 document.querySelectorAll('#qtabs .tab').forEach(tab=>tab.addEventListener('click',()=>{ document.querySelectorAll('#qtabs .tab').forEach(t=>t.classList.remove('active')); tab.classList.add('active'); curQ=tab.dataset.q; render(); }));
+document.querySelectorAll('#vtabs .vbtn').forEach(b=>b.classList.toggle('active', b.dataset.v===curView));   // reflect the width-based default
 document.querySelectorAll('#vtabs .vbtn').forEach(btn=>btn.addEventListener('click',()=>{ document.querySelectorAll('#vtabs .vbtn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); curView=btn.dataset.v; render(); }));
 const _bsi=document.getElementById('boardSearch'); if(_bsi) _bsi.addEventListener('input',()=>{ curSearch=_bsi.value.trim().toLowerCase(); render(); });
 const _tsi=document.getElementById('trackSearch'); if(_tsi) _tsi.addEventListener('input',()=>{ trackSearch=_tsi.value.trim().toLowerCase(); renderTrack(); });
