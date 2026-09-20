@@ -20,9 +20,9 @@ NOTIFY_EMAIL = "gjv1000@gmail.com"
 
 # Stripe LIVE price IDs (acct_1UCn8TDl0kTLe9eM, product prod_VDDkspzAgZss56).
 # Price IDs are not secrets. The secret key goes in via: wrangler secret put STRIPE_SECRET_KEY
-STRIPE_PRICE_MONTHLY  = "price_1UEHODDl0kTLe9eMrVkCJY9D"   # $20 / month
-STRIPE_PRICE_ANNUAL   = "price_1UEHODDl0kTLe9eMVUxgJGyd"   # $180 / year
-STRIPE_PRICE_FOUNDERS = "price_1UEHOCDl0kTLe9eMoFdbSgP4"   # $90 / year
+STRIPE_PRICE_MONTHLY  = "price_1UHpvRDl0kTLe9eMmc5YRw7r"   # $15 / month  (2026-09-20; old $20 = price_1UEHODDl0kTLe9eMrVkCJY9D, archived)
+STRIPE_PRICE_ANNUAL   = "price_1UHpwoDl0kTLe9eM6yq1lWWC"   # $120 / year (2026-09-20; old $180 = price_1UEHODDl0kTLe9eMVUxgJGyd, archived)
+STRIPE_PRICE_FOUNDERS = "price_1UHpxcDl0kTLe9eMUyIkoFuI"   # $80 / year  (2026-09-20; old $90 = price_1UEHOCDl0kTLe9eMoFdbSgP4, archived)
 
 # Created by: wrangler kv namespace create STORE
 # Paste the id it prints in place of PASTE_KV_ID_HERE
