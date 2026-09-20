@@ -27,34 +27,41 @@ The scary-looking state (gave back half its gain) went on to slightly OUTPERFORM
 "nothing left" state kept beating the market by the most. Winners kept winning.
 
 ## The psychology-page section (draft copy — final voice up to the site)
+*Written to be understood in ONE read. Short sentences. One idea per paragraph. Keep it
+that way — every edit should make it simpler, not smarter.*
 
 ### The chop is the toll, not a signal
-Every swing trader knows the moment: your position ran up 12%, then gave half of it back in
-a week. The chart looks tired. Every instinct says "conditions are changing — get out while
-you're still green."
+Your stock runs up 12%. Then it gives half of it back in a week. The chart looks sick.
+Everything in you says: get out while you're still green.
 
-We tried to turn that instinct into a feature. We defined "clouds forming" three different
-ways — momentum rolling over, the gain half-surrendered, the original discount fully closed —
-and tested them on roughly 9,000 historical signals across eight years. If any version had
-predicted weaker returns ahead, we'd have put a storm icon on the board.
+We wanted to build a warning light for exactly that moment. So we went back through 9,000
+of our past signals and asked one question: when a stock starts looking sick mid-trade,
+does it actually do worse afterward?
 
-None did. Positions that had given back half their gains went on to perform slightly BETTER
-over the following eight weeks than positions that never wobbled. Positions that had already
-run so far the original opportunity was gone kept outperforming the index by the widest
-margin of all. The market's mid-trade turbulence carried no information about what came next.
+No. It doesn't. The "sick-looking" stocks did just as well over the next two months as the
+healthy-looking ones. The ugly dip told us nothing about what came next. We tried three
+different warning lights. All three failed the test.
 
-That's why our board will never show you a "take profits now" light: not because we're hiding
-it, but because we looked for it — three separate ways — and it does not exist at this
-horizon. The give-back is not a message. It's the toll the market charges for the full move.
-The traders who pay it collect the back half; the traders who dodge it pay more in missed
-gains than they ever save in avoided dips.
+That's why there is no "take profits now" light on this board. Not because we're hiding
+one — because we looked, and it doesn't exist.
 
-(As always: hypothetical research, not advice. Past patterns can stop working. Position
-sizing you can sleep with — never all-in — is what makes paying the toll survivable.)
+Here's the honest math on those scary dips. Out of every 100 of them, about 50 climbed all
+the way back. About 50 didn't. A coin flip — and nothing we tested could tell you which
+side your stock is on. But the winners gained more than the losers lost. So the group as a
+whole still made good money. Sell every dip out of fear, and you dump the 50 winners along
+with the 50 losers — and lose more than you save.
+
+So think of the dip as a toll booth. It's the price the market charges for the full move.
+You can't drive around it. You can only make sure the toll never breaks you — and that's
+done before the trade, not during it: keep every position small enough that a bad dip
+doesn't matter. Small positions, no panic. That's the whole trick.
+
+(Hypothetical research, not advice. Past patterns can stop working. Never bet money you
+can't afford to see dip.)
 
 ### Sidebar stat (pull-quote)
-"Signals that gave back half their gains by week 4 still averaged +6.7% over the next
-8 weeks — slightly MORE than the ones that never dipped."
+"We built three 'sell now' warning lights and tested them on 9,000 signals.
+All three failed. The scary dip tells you nothing."
 
 ## Compliance & copy rules for this section
 - All figures labeled hypothetical/backtested, 2019–2026, no transaction costs, survivorship
