@@ -95,12 +95,12 @@
      breakpoint and a big desktop it used to run off the right edge. Tighten the
      type and spacing as the window narrows, and drop the tour link — it's a
      nicety, and the same button sits in the hero. */
-  @media (max-width:1400px){
+  @media (max-width:1560px){
     .navlinks a{font-size:12.5px; padding:8px 7px}
     .navcta .btn{font-size:12.5px; padding:8px 11px}
     .navcta{gap:6px}
   }
-  @media (max-width:1340px){
+  @media (max-width:1480px){
     .navlinks a#navTour{display:none}
     .navlinks a{font-size:12px; padding:7px 6px}
     #navBilling{margin-right:8px !important; font-size:12px !important}
@@ -110,6 +110,12 @@
     .navlinks{margin-left:2px; gap:0}
     .navlinks a{font-size:11.5px; padding:7px 5px}
     .navcta .btn{font-size:11.5px; padding:7px 9px}
+  }
+  @media (max-width:1100px){
+    /* the logo already goes Home; the word is the cheapest thing to drop */
+    .navlinks a[data-nav="home"]{display:none}
+    .navlinks a{padding:7px 4px}
+    .navcta .btn{padding:7px 8px}
   }
 
   .logo{white-space:nowrap}
@@ -617,6 +623,7 @@
       </div>
     </div>
     <a data-nav="psychology">Trading Psychology</a>
+    <a data-nav="handbook">Handbook</a>
     <a data-nav="blog">Blog</a>
     <a data-nav="pricing">Pricing</a>
     <a id="navTour" data-tour>▶ 30-sec tour</a>
@@ -1044,6 +1051,106 @@
     <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Before any of this, understand your own <b style="color:var(--ink)">risk appetite</b> — how much you can lose without it affecting your sleep or your judgment. And don't trust any system, including ours, on the strength of past performance. Trust isn't claimed; it's <b style="color:var(--ink)">built slowly, through your own experience</b> using it.</p>
     <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">So start small. Trade sizes you're genuinely comfortable being wrong on, and only increase them as the system earns your confidence over time. And no matter how much trust you build, <b style="color:var(--ink)">keep your risk controlled and never go all in</b>. The goal isn't to win the biggest single trade — it's to still be here for the next one. We have to live to trade the next day.</p>
     <div class="disc" style="margin-top:22px">This page is educational and reflects our trading philosophy — it is not investment advice, and it is not a recommendation to buy, sell, hold, or average into any security. Averaging down, position sizing, and every exit are personal decisions with real risk of loss. Know your own situation and consider a licensed professional.</div>
+  </div></section>
+</div>
+
+<!-- ============ HANDBOOK ============ -->
+<div class="page" data-page="handbook">
+  <section class="block"><div class="wrap">
+    <div class="kicker">The Handbook</div>
+    <h2 class="section" style="max-width:26ch">How we think, start to finish — in one place</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Everything on this site, in reading order. Some of it lives on other pages and is linked from here; the rest is written for this page. Read it once, slowly. It is a description of <b style="color:var(--ink)">our</b> approach and what <b style="color:var(--ink)">our</b> data showed — not a set of instructions for you.</p>
+    <div class="cols3" style="margin-top:22px">
+      <div class="fcard"><div class="ico">1</div><h3><a data-nav="handbook" data-scroll="hb-what" style="color:var(--ink)">What this is, and isn't</a></h3><p>Research, not advice. Trading, not investing. Weeks, not minutes.</p></div>
+      <div class="fcard"><div class="ico">2</div><h3><a data-nav="how" style="color:var(--ink)">How the board is built →</a></h3><p>Phoenix and Cruise, the Swing Score, the quality gate, Pulse, the regime bar.</p></div>
+      <div class="fcard"><div class="ico">3</div><h3><a data-nav="handbook" data-scroll="hb-life" style="color:var(--ink)">The life of a setup</a></h3><p>Active → Out of Range → Retired, and what the data says about each stage.</p></div>
+      <div class="fcard"><div class="ico">4</div><h3><a data-nav="handbook" data-scroll="hb-ten" style="color:var(--ink)">The board in ten minutes</a></h3><p>The evening routine we use ourselves.</p></div>
+      <div class="fcard"><div class="ico">5</div><h3><a data-nav="handbook" data-scroll="hb-tested" style="color:var(--ink)">What we tested and rejected</a></h3><p>Stops, targets, warning lights. Three studies, one conclusion.</p></div>
+      <div class="fcard"><div class="ico">6</div><h3><a data-nav="psychology" style="color:var(--ink)">The trader matters more →</a></h3><p>Discipline, the uncomfortable middle, the chop, risk appetite.</p></div>
+      <div class="fcard"><div class="ico">7</div><h3><a data-nav="blog" style="color:var(--ink)">Worked examples →</a></h3><p>A clean winner, a dip-then-win, a loss, a nothing, and earnings both ways.</p></div>
+      <div class="fcard"><div class="ico">8</div><h3><a data-nav="handbook" data-scroll="hb-record" style="color:var(--ink)">Reading the track record honestly</a></h3><p>Peak vs realised, survivorship, the monthly snapshot.</p></div>
+      <div class="fcard"><div class="ico">9</div><h3><a data-nav="handbook" data-scroll="hb-gloss" style="color:var(--ink)">Glossary</a></h3><p>Every term on the board, in one line each.</p></div>
+    </div>
+  </div></section>
+
+  <section class="block" id="hb-what"><div class="wrap">
+    <div class="kicker">1 · What this is, and isn't</div>
+    <h2 class="section">A research publication for swing traders</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Every evening after the close, a model we built scans the U.S. market and publishes a short list of stocks whose conditions look ripe for a swing — a move measured in <b style="color:var(--ink)">weeks</b>. Each name is screened by a fundamental quality gate. The same list goes to every subscriber; nothing is tailored to anyone.</p>
+    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px"><b style="color:var(--ink)">This is trading, not investing.</b> We are not describing companies to own for years. We are describing a price condition that, historically, tended to be followed by a move over the next one to three months. The stock's long-term story is not the point; the setup is.</p>
+    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px"><b style="color:var(--ink)">This is research, not advice.</b> We are a publisher. We are not a broker-dealer or an investment adviser; we don't execute trades, hold money, or know your situation. Nothing here says buy, sell, or how much. The board marks a <b style="color:var(--ink)">signal date</b> — the evening a name qualified — and from there every decision is yours.</p>
+    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px"><b style="color:var(--ink)">Who it's for.</b> People with a job and a life who want a few deliberate trades a month, held for weeks, chosen from a vetted list rather than a feed. <b style="color:var(--ink)">Who it isn't for.</b> Day traders, anyone who wants to be told what to do, or anyone who can't sit through a dip without selling.</p>
+  </div></section>
+
+  <section class="block" id="hb-life"><div class="wrap">
+    <div class="kicker">3 · The life of a setup</div>
+    <h2 class="section">Active, Out of Range, Retired</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">A name spends about four weeks on the live board and then moves to the track record. Three stages, and the data has something to say about each.</p>
+    <div class="cols3" style="margin-top:18px">
+      <div class="fcard"><div class="ico">🟢</div><h3>Active</h3><p>Under four weeks old and still within a few percent of the signal — or below it. The setup is, in our terms, still ripe. Names that are <i>down</i> from the signal are still Active on purpose: in our data, entries near or below the line did better than entries after the move had started.</p></div>
+      <div class="fcard"><div class="ico">📈</div><h3>Out of Range</h3><p>Under four weeks old but already up more than a few percent. The move has happened. We keep these visible so you can see how signals play out — not as an invitation to chase. Chasing is the single easiest way to turn a good setup into a bad trade.</p></div>
+      <div class="fcard"><div class="ico">📁</div><h3>Retired</h3><p>Four weeks after the signal, the name leaves the board and lands on the Track Record with its actual two- and four-week returns and its worst dip. Every name retires — winners, losers, and the ones that went nowhere. Nothing is quietly dropped.</p></div>
+    </div>
+    <p class="muted" style="max-width:74ch; margin-top:18px; font-size:16px"><b style="color:var(--ink)">Why four weeks.</b> Across our retired setups, the median time to the peak has been about three weeks, and most of the move that was going to happen had happened by week four. The window is a reporting choice grounded in that pattern — it is not a holding rule. Our own research holds far longer (twelve to twenty-four weeks) and the twelve-week returns appear on the Track Record as they mature.</p>
+    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px"><b style="color:var(--ink)">What retirement doesn't mean.</b> A retired name is not a sell signal, any more than an Active name is a buy signal. The board tracks a <i>window</i>; what you do inside or beyond it is yours.</p>
+  </div></section>
+
+  <section class="block" id="hb-ten"><div class="wrap">
+    <div class="kicker">4 · The board in ten minutes</div>
+    <h2 class="section">The evening routine we use ourselves</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">The board refreshes after each close. This is how we read it — once, in the evening, in about ten minutes. Described, not prescribed.</p>
+    <ol class="muted" style="max-width:74ch; margin-top:14px; font-size:16px; padding-left:22px; line-height:1.7">
+      <li style="margin-bottom:10px"><b style="color:var(--ink)">The regime bar first.</b> SPY and QQQ against their own history. Green means the market has recently reset; yellow, extended but ordinary; orange, stretched. In our data the same setups did several times better entered after a reset than entered stretched. This is context for how bold to be, never a trigger.</li>
+      <li style="margin-bottom:10px"><b style="color:var(--ink)">New names, then the 💎 filter.</b> Anything with a NEW badge qualified this week. Collapse to High-Quality only. The gate exists so that when a name dips — and nearly all of them dip — you're holding a business sound enough to sit through it.</li>
+      <li style="margin-bottom:10px"><b style="color:var(--ink)">Phoenix or Cruise, and the Swing Score.</b> Phoenix is the bigger, slower move that tests you harder on the way; Cruise is the smaller, quicker one. The score is conviction: how strongly the conditions matched. Higher is better; it is not a forecast.</li>
+      <li style="margin-bottom:10px"><b style="color:var(--ink)">Pulse @ Add and Pulse now.</b> How the name was moving against the market when it qualified, and how it is moving tonight. A tie-breaker between names, not a reason on its own.</li>
+      <li style="margin-bottom:10px"><b style="color:var(--ink)">Click the ticker.</b> The shape of the move since the signal — peak, worst dip, where it is now — as percentages. This is where you check whether a name is still near its signal or has already run.</li>
+      <li style="margin-bottom:10px"><b style="color:var(--ink)">What we ignore.</b> The intraday chart. The news. Anything that happened before tonight's close. The board is built on daily closes, and reading it more than once a day adds noise, not information.</li>
+    </ol>
+    <p class="faint" style="max-width:74ch; margin-top:14px; font-size:14px">Then close the tab. A few deliberate looks a week is the point of the product. If you find yourself checking hourly, you are reading it wrong — the <a data-nav="psychology" style="color:var(--primary); font-weight:600">psychology page</a> is about why.</p>
+  </div></section>
+
+  <section class="block" id="hb-tested"><div class="wrap">
+    <div class="kicker">5 · What we tested and rejected</div>
+    <h2 class="section">Three studies, one conclusion</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Most swing-trading playbooks come with the same three tools: a stop-loss, a profit target, and a rule for getting out when the trade "looks wrong." We tested each of them on our own signals — thousands of them, across years — before deciding whether to build them into the product. All three failed.</p>
+    <div class="cols3" style="margin-top:18px">
+      <div class="fcard"><div class="ico">🛑</div><h3>Stop-losses</h3><p>Every stop level we tested, from tight to loose, <b style="color:var(--ink)">reduced</b> returns. The reason is on the psychology page: nearly every winner dips first, and a stop sells the dip.</p></div>
+      <div class="fcard"><div class="ico">🎯</div><h3>Profit targets</h3><p>Taking gains at a fixed level cut the expectancy of the whole book. The setups' edge comes from the minority that keep running, and a target sells exactly those.</p></div>
+      <div class="fcard"><div class="ico">🌧️</div><h3>Warning lights</h3><p>Three definitions of "conditions are changing" mid-trade, tested on 8,974 signals. None predicted weaker returns ahead. <a data-nav="psychology" style="color:var(--primary); font-weight:600">The chop is the toll.</a></p></div>
+    </div>
+    <p class="muted" style="max-width:74ch; margin-top:18px; font-size:16px"><b style="color:var(--ink)">The conclusion we drew for ourselves:</b> at this horizon, risk control that happens <i>during</i> a trade — stops, targets, exit signals — cost more than it saved. The risk control that survived testing happens <i>before</i> the trade: position sizes small enough that a bad dip, or a total loss, does not matter. That is why the board carries no exits, no targets and no warning lights, and why the psychology page keeps returning to sizing.</p>
+    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px"><b style="color:var(--ink)">One more finding that surprised us.</b> The model's score tends to <i>fall</i> after a signal works. That is not the setup deteriorating; it is the markdown closing — the very thing the model was looking for going away because the stock recovered. A falling score after entry is what winning looks like in this system.</p>
+    <p class="faint" style="max-width:74ch; margin-top:14px; font-size:14px">All of this is hypothetical, backtested research (2019–2026, no transaction costs, survivorship bias applies). It describes what we found and what we chose not to build. It is not a recommendation to trade without stops, or to hold anything — every exit is a personal decision with real risk of loss.</p>
+  </div></section>
+
+  <section class="block" id="hb-record"><div class="wrap">
+    <div class="kicker">8 · Reading the track record honestly</div>
+    <h2 class="section">What the numbers are, and what they aren't</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">The <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a> shows every retired setup, winners and losers alike. Four things to hold in mind while reading it:</p>
+    <ul class="muted" style="max-width:74ch; margin-top:14px; font-size:16px; padding-left:22px; line-height:1.7">
+      <li style="margin-bottom:10px"><b style="color:var(--ink)">Peak is not a return.</b> "Touched +10%" means the price reached that level at its best point. Nobody sells the exact top. The two-week and four-week columns are real close-to-close figures; the peak is a ceiling, not an outcome.</li>
+      <li style="margin-bottom:10px"><b style="color:var(--ink)">It's paper.</b> Every name is tracked from its signal at one share, with no costs, no slippage and no exits. It measures the setup, not a trader.</li>
+      <li style="margin-bottom:10px"><b style="color:var(--ink)">Survivorship bias applies.</b> The model was built on today's stocks — the ones that survived to be listed. That flatters any backtest, ours included. The live book, running since July 2026, is the honest test, and it is still young.</li>
+      <li style="margin-bottom:10px"><b style="color:var(--ink)">The headline is a monthly snapshot.</b> The big numbers on the home page are frozen on the last trading day of each month and never restated. The Track Record page recomputes nightly, so the two can differ by a point or two. That is deliberate — a headline shouldn't wobble daily.</li>
+    </ul>
+  </div></section>
+
+  <section class="block" id="hb-gloss"><div class="wrap">
+    <div class="kicker">9 · Glossary</div>
+    <h2 class="section">Every term on the board</h2>
+    <div class="cols3" style="margin-top:18px">
+      <div class="fcard"><h3>Signal date</h3><p>The evening a name qualified and was added. Not a buy instruction.</p></div>
+      <div class="fcard"><h3>Phoenix / Cruise</h3><p>The two setup types. Phoenix: the bigger, slower recovery move. Cruise: the smaller, quicker breather inside a trend.</p></div>
+      <div class="fcard"><h3>Swing Score</h3><p>Conviction — how strongly the conditions matched the model. Higher is stronger; it is not a forecast.</p></div>
+      <div class="fcard"><h3>Quality gate</h3><p>A fundamental screen: 💎 High-Quality, ◆ Watch, △ Higher-risk. The reason you can hold a dip.</p></div>
+      <div class="fcard"><h3>Pulse</h3><p>How the name is moving against the broad market: Strong, Neutral or Weak. Shown at the signal date and now.</p></div>
+      <div class="fcard"><h3>Regime</h3><p>Where SPY and QQQ sit against their own history: Green (reset), Yellow (extended), Orange (stretched), Red (below trend).</p></div>
+      <div class="fcard"><h3>Peak ▲ (MFE)</h3><p>The best level the price touched since the signal, as a percentage. Hypothetical, not earned.</p></div>
+      <div class="fcard"><h3>Max Dip ▼</h3><p>The worst level below the signal price in the first four weeks. What you would have had to sit through.</p></div>
+      <div class="fcard"><h3>Active / Out of Range / Retired</h3><p>Still near the signal · already ran · past the four-week window and on the Track Record.</p></div>
+    </div>
+    <div class="disc" style="margin-top:26px">The Handbook is educational and describes our own approach and research. It is not investment advice, not a recommendation to buy, sell, hold or size any position, and not tailored to anyone. All figures are hypothetical and paper-tracked. Know your own situation and consider a licensed professional.</div>
   </div></section>
 </div>
 
