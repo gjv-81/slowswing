@@ -70,7 +70,7 @@
   .navmenu a{font-size:14px; color:var(--body); padding:9px 12px; border-radius:8px; cursor:pointer; white-space:nowrap; font-weight:500}
   .navmenu a:hover{background:var(--panel2); color:var(--primary)}
   .navmenu .mdesc{display:block; font-size:11.5px; color:var(--faint); font-weight:400; margin-top:1px}
-  section[id^="how-"],section[id^="psy-"],section[id^="hb-"]{scroll-margin-top:86px}
+  section[id^="how-"],section[id^="psy-"],section[id^="hb-"],#regime,#agetabs,#tabs,#qtabs,#boardFilters,#trackStats{scroll-margin-top:100px}
 
   /* ---- On this page: inline topic chips (every width) + floating rail (wide screens) ---- */
   .toc-inline{display:flex; flex-wrap:wrap; gap:8px; margin-top:22px}
@@ -83,6 +83,9 @@
   .pagetoc a:hover{color:var(--ink)}
   .pagetoc a.on{color:var(--primary); font-weight:700; border-left-color:var(--primary)}
   @media (min-width:1560px){ .pagetoc.show{display:block} }
+  .gl-see{margin:10px 0 0; font-size:12.5px; color:var(--faint)}
+  .gl-see a{color:var(--primary); font-weight:650; white-space:nowrap}
+  .gl-see a:hover{text-decoration:underline}
   /* SPY regime bar */
   .regimebar{border:1px solid var(--line2); border-left:4px solid var(--primary); border-radius:var(--radius); background:linear-gradient(180deg,#fff,var(--panel2)); padding:20px 24px; margin-bottom:22px; box-shadow:0 10px 30px -22px rgba(14,42,43,.3)}
   .rb-title{font-size:16px; font-weight:750; color:var(--ink); margin-bottom:14px}
@@ -820,7 +823,7 @@
       <div class="updated"><span class="liveflag">● LIVE</span> Updated <span id="upd">Sep 4, 2026</span> · next refresh after tonight's close<div style="margin-top:12px"><a class="btn btn-primary" data-tour style="font-size:13px; padding:9px 16px; cursor:pointer">▶ Take the 30-sec tour</a></div></div>
     </div>
 
-    <div class="regimebar">
+    <div class="regimebar" id="regime">
       <div class="rb-title">📡 Market regime <span class="faint" style="font-weight:400">· context for sizing, not a trade trigger — how stretched the S&P 500 is vs its own recent history (<a data-nav="how" data-scroll="how-regime" style="color:var(--primary); font-weight:600">how we read it</a>)</span></div>
       <div class="rb-cells">
         <div class="rb-cell" data-sym="spy"><span class="rb-tk">SPY</span><span class="rb-px">—</span><span class="rb-pill">—</span><span class="rb-atr">—</span><span class="rb-info" tabindex="0" aria-label="What the market dial means">i<span class="rb-tip">We grade how far the S&P 500 sits above its long-term trend against its own last three years. A more stretched reading doesn't predict a decline — most stretched periods resolve quietly — but historically the market's worst multi-week drawdowns began from the most-stretched zone. Extra awareness, not advice.</span></span></div>
@@ -1153,15 +1156,15 @@
     <div class="kicker">9 · Glossary</div>
     <h2 class="section">Every term on the board</h2>
     <div class="cols3" style="margin-top:18px">
-      <div class="fcard"><h3>Signal date</h3><p>The evening a name qualified and was added. Not a buy instruction.</p></div>
-      <div class="fcard"><h3>Phoenix / Cruise</h3><p>The two setup types. Phoenix: the bigger, slower recovery move. Cruise: the smaller, quicker breather inside a trend.</p></div>
-      <div class="fcard"><h3>Swing Score</h3><p>Conviction — how strongly the conditions matched the model. Higher is stronger; it is not a forecast.</p></div>
-      <div class="fcard"><h3>Quality gate</h3><p>A fundamental screen: 💎 High-Quality, ◆ Watch, △ Higher-risk. The reason you can hold a dip.</p></div>
-      <div class="fcard"><h3>Pulse</h3><p>How the name is moving against the broad market: Strong, Neutral or Weak. Shown at the signal date and now.</p></div>
-      <div class="fcard"><h3>Regime</h3><p>Where SPY and QQQ sit against their own history: Green (reset), Yellow (extended), Orange (stretched), Red (below trend).</p></div>
-      <div class="fcard"><h3>Peak ▲ (MFE)</h3><p>The best level the price touched since the signal, as a percentage. Hypothetical, not earned.</p></div>
-      <div class="fcard"><h3>Max Dip ▼</h3><p>The worst level below the signal price in the first four weeks. What you would have had to sit through.</p></div>
-      <div class="fcard"><h3>Active / Out of Range / Retired</h3><p>Still near the signal · already ran · past the four-week window and on the Track Record.</p></div>
+      <div class="fcard"><h3>Signal date</h3><p>The evening a name qualified and was added. Not a buy instruction.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="agetabs" data-age="active">Active board →</a> · <a data-nav="how" data-scroll="how-read">How to read a signal →</a></p></div>
+      <div class="fcard"><h3>Phoenix / Cruise</h3><p>The two setup types. Phoenix: the bigger, slower recovery move. Cruise: the smaller, quicker breather inside a trend.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="phoenix">Phoenix on the board →</a> · <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="cruise">Cruise on the board →</a> · <a data-nav="how" data-scroll="how-boards">The two setups →</a></p></div>
+      <div class="fcard"><h3>Swing Score</h3><p>Conviction — how strongly the conditions matched the model. Higher is stronger; it is not a forecast.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="boardFilters" data-age="active">Filter the board by score →</a> · <a data-nav="how" data-scroll="how-read">What the score means →</a></p></div>
+      <div class="fcard"><h3>Quality gate</h3><p>A fundamental screen: 💎 High-Quality, ◆ Watch, △ Higher-risk. The reason you can hold a dip.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="qtabs" data-age="active">💎 High-quality only →</a> · <a data-nav="how" data-scroll="how-gate">How the gate works →</a></p></div>
+      <div class="fcard"><h3>Pulse</h3><p>How the name is moving against the broad market: Strong, Neutral or Weak. Shown at the signal date and now.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="boardFilters" data-age="active">Filter by Pulse →</a> · <a data-nav="how" data-scroll="how-read">Where it shows →</a></p></div>
+      <div class="fcard"><h3>Regime</h3><p>Where SPY and QQQ sit against their own history: Green (reset), Yellow (extended), Orange (stretched), Red (below trend).</p><p class="gl-see">See it: <a data-nav="board" data-scroll="regime">Today's regime bar →</a> · <a data-nav="how" data-scroll="how-regime">How we read it →</a></p></div>
+      <div class="fcard"><h3>Peak ▲ (MFE)</h3><p>The best level the price touched since the signal, as a percentage. Hypothetical, not earned.</p><p class="gl-see">See it: <a data-nav="track" data-scroll="trackStats">Track Record →</a> · <a data-nav="how" data-scroll="how-read">On every card →</a></p></div>
+      <div class="fcard"><h3>Max Dip ▼</h3><p>The worst level below the signal price in the first four weeks. What you would have had to sit through.</p><p class="gl-see">See it: <a data-nav="track" data-scroll="trackStats">Track Record →</a> · <a data-nav="psychology" data-scroll="psy-chop">Why we sit through it →</a></p></div>
+      <div class="fcard"><h3>Active / Out of Range / Retired</h3><p>Still near the signal · already ran · past the four-week window and on the Track Record.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="agetabs" data-age="active">Active board →</a> · <a data-nav="board" data-scroll="agetabs" data-age="extended">Out of Range →</a> · <a data-nav="track" data-scroll="trackStats">Retired (Track Record) →</a></p></div>
     </div>
     <div class="disc" style="margin-top:26px">The Handbook is educational and describes our own approach and research. It is not investment advice, not a recommendation to buy, sell, hold or size any position, and not tailored to anyone. All figures are hypothetical and paper-tracked. Know your own situation and consider a licensed professional.</div>
   </div></section>
@@ -2144,6 +2147,9 @@ document.addEventListener('click', e=>{
   e.preventDefault();
   const nav=a.dataset.nav, sc=a.dataset.scroll;
   showPage(nav);   // gating happens on the board page itself, not in the router
+  // Optional presets for board deep-links (glossary etc.): pick the setup tab / age tab first.
+  if(a.dataset.age){ const t=document.querySelector('#agetabs .tab[data-age="'+a.dataset.age+'"]'); if(t && !t.classList.contains('active')) t.click(); }
+  if(a.dataset.setup){ const t=document.querySelector('#tabs .tab[data-k="'+a.dataset.setup+'"]'); if(t && !t.classList.contains('active')) t.click(); }
   if(sc){ const el=document.getElementById(sc); if(el) setTimeout(()=>el.scrollIntoView({behavior:'smooth', block:'start'}), 70); }
 });
 showPage(location.hash.slice(1) || 'home');
