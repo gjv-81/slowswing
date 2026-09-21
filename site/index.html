@@ -70,7 +70,19 @@
   .navmenu a{font-size:14px; color:var(--body); padding:9px 12px; border-radius:8px; cursor:pointer; white-space:nowrap; font-weight:500}
   .navmenu a:hover{background:var(--panel2); color:var(--primary)}
   .navmenu .mdesc{display:block; font-size:11.5px; color:var(--faint); font-weight:400; margin-top:1px}
-  section[id^="how-"]{scroll-margin-top:86px}
+  section[id^="how-"],section[id^="psy-"],section[id^="hb-"]{scroll-margin-top:86px}
+
+  /* ---- On this page: inline topic chips (every width) + floating rail (wide screens) ---- */
+  .toc-inline{display:flex; flex-wrap:wrap; gap:8px; margin-top:22px}
+  .toc-inline a{font-size:13px; font-weight:600; color:var(--primary); border:1px solid var(--line); border-radius:999px; padding:6px 13px; background:#fff; white-space:nowrap}
+  .toc-inline a:hover{border-color:var(--primary); background:#f0faf8}
+  .pagetoc{display:none; position:fixed; top:140px; left:calc(50% + 592px); width:200px; z-index:20;
+    font-size:13px; line-height:1.35; border-left:2px solid var(--line); padding-left:14px}
+  .pagetoc .toc-head{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:700; margin-bottom:10px}
+  .pagetoc a{display:block; color:var(--muted); padding:5px 0; margin-left:-16px; padding-left:14px; border-left:2px solid transparent; transition:color .15s,border-color .15s}
+  .pagetoc a:hover{color:var(--ink)}
+  .pagetoc a.on{color:var(--primary); font-weight:700; border-left-color:var(--primary)}
+  @media (min-width:1560px){ .pagetoc.show{display:block} }
   /* SPY regime bar */
   .regimebar{border:1px solid var(--line2); border-left:4px solid var(--primary); border-radius:var(--radius); background:linear-gradient(180deg,#fff,var(--panel2)); padding:20px 24px; margin-bottom:22px; box-shadow:0 10px 30px -22px rgba(14,42,43,.3)}
   .rb-title{font-size:16px; font-weight:750; color:var(--ink); margin-bottom:14px}
@@ -999,10 +1011,11 @@
       <div class="kicker">Trading Psychology</div>
       <h2 class="section" style="max-width:22ch">The trader matters more than the trade.</h2>
       <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">You can be handed the best setups in the world and still lose money — because trading is won or lost in the head, not on the chart. The Slow Swing is a tool; how you use it is what decides your results. This is the mindset we build the product around, and the part no scanner can do for you.</p>
+      <div class="toc-inline" data-toc-inline="psychology"></div>
     </div>
   </div></section>
 
-  <section class="block"><div class="wrap">
+  <section class="block" id="psy-three"><div class="wrap">
     <div class="kicker">The three things that matter most</div>
     <div class="cols3" style="margin-top:20px">
       <div class="fcard"><div class="ico">🎯</div><h3>Discipline</h3><p>Winners aren't the ones with a secret — they're the ones who follow a consistent method without improvising. Use The Slow Swing as your first filter or a second opinion to anchor your process.</p></div>
@@ -1011,14 +1024,14 @@
     </div>
   </div></section>
 
-  <section class="block"><div class="wrap">
+  <section class="block" id="psy-method"><div class="wrap">
     <div class="kicker">01 · Methodology &amp; discipline</div>
     <h2 class="section">A method you actually follow beats a better method you don't</h2>
     <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Every trader — winning or losing — has a methodology. What separates the successful ones isn't a cleverer secret; it's the <b style="color:var(--ink)">discipline to follow their method consistently</b>, without improvising the moment emotions flare. A repeatable process quietly removes the thousand small, emotional decisions that erode returns over time.</p>
     <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">That's where The Slow Swing fits. It's a disciplined, unemotional filter that runs the same way every single night. Use it as your <b style="color:var(--ink)">first filter</b> — a vetted shortlist to begin your own research from — or as a <b style="color:var(--ink)">second opinion</b> after your own screen. Either way, it anchors your process in something consistent, instead of a gut feeling that changes with your mood.</p>
   </div></section>
 
-  <section class="block"><div class="wrap">
+  <section class="block" id="psy-emotion"><div class="wrap">
     <div class="kicker">02 · Emotional control</div>
     <h2 class="section">Winners are made in the uncomfortable middle</h2>
     <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">The biggest difference between a winning trade and a losing one is rarely the entry — it's the <b style="color:var(--ink)">grit to hold through the uncomfortable stretch</b> in between. Nobody can predict the next move. There are simply too many variables acting on a stock at once for anyone to know which way it goes next, and pretending otherwise is exactly how people get shaken out at the worst possible moment.</p>
@@ -1027,7 +1040,7 @@
     <p class="faint" style="max-width:74ch; margin-top:14px; font-size:14px">Conviction is not stubbornness. It's grounded in the company's quality — not in a refusal to ever be wrong. If the reason you owned it genuinely breaks, that's a different situation from ordinary volatility.</p>
   </div></section>
 
-  <section class="block"><div class="wrap">
+  <section class="block" id="psy-chop"><div class="wrap">
     <div class="kicker">02½ · The chop</div>
     <h2 class="section">The chop is the toll, not a signal</h2>
     <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Your stock runs up 12%. Then it gives half of it back in a week. The chart looks sick. Everything in you says: <i>get out while you're still green.</i></p>
@@ -1045,7 +1058,7 @@
     <p class="faint" style="max-width:74ch; margin-top:14px; font-size:14px">Hypothetical, backtested research (2019–2026, overlapping windows, no transaction costs, survivorship bias applies — today's constituents only). Past patterns can stop working. This describes what we found, not what you should do with a position; when and whether to sell is yours. Never bet money you can't afford to see dip.</p>
   </div></section>
 
-  <section class="block"><div class="wrap">
+  <section class="block" id="psy-risk"><div class="wrap">
     <div class="kicker">03 · Risk appetite</div>
     <h2 class="section">Know your risk — and live to trade tomorrow</h2>
     <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Before any of this, understand your own <b style="color:var(--ink)">risk appetite</b> — how much you can lose without it affecting your sleep or your judgment. And don't trust any system, including ours, on the strength of past performance. Trust isn't claimed; it's <b style="color:var(--ink)">built slowly, through your own experience</b> using it.</p>
@@ -1495,6 +1508,7 @@
 <div class="modal-ov" id="modal"><div class="modal-card"><button class="modal-close" id="modalClose">✕</button><div id="modalBody"></div></div></div>
 <div class="tour-ov" id="tourOv"><div class="tour-hole" id="tourHole"></div><div class="tour-tip" id="tourTip"></div></div>
 
+<aside class="pagetoc" id="pagetoc" aria-label="On this page"></aside>
 <script src="posts.js"></script>
 <script>
 let DATA = [];            // filled from the live feed; deliberately NOT baked in
@@ -2077,6 +2091,36 @@ function maybeRefreshFeed(){
 document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='visible'){ maybeRefreshFeed(); checkForNewVersion(location.hash.slice(1)); } });
 checkForNewVersion();                              // record the version we booted with
 
+
+// ---- "On this page" topic links: built from each section's kicker, so it never drifts from the content.
+const TOC_PAGES={psychology:'section[id^="psy-"]', handbook:'section[id^="hb-"]'};
+let _tocObs=null;
+function tocLabel(sec){
+  const k=sec.querySelector('.kicker'); let t=(k?k.textContent:sec.id).trim();
+  return t.replace(/^[0-9½.]+\s*·\s*/,'');           // "02½ · The chop" -> "The chop"
+}
+function buildToc(page){
+  const rail=document.getElementById('pagetoc'); if(!rail) return;
+  if(_tocObs){ _tocObs.disconnect(); _tocObs=null; }
+  const sel=TOC_PAGES[page];
+  if(!sel){ rail.classList.remove('show'); rail.innerHTML=''; return; }
+  const secs=[...document.querySelectorAll('.page[data-page="'+page+'"] '+sel)];
+  const links=secs.map(sec=>'<a data-nav="'+page+'" data-scroll="'+sec.id+'" data-toc="'+sec.id+'">'+tocLabel(sec)+'</a>').join('');
+  rail.innerHTML='<div class="toc-head">On this page</div>'+links;
+  rail.classList.add('show');
+  const inline=document.querySelector('.toc-inline[data-toc-inline="'+page+'"]');
+  if(inline) inline.innerHTML=secs.map(sec=>'<a data-nav="'+page+'" data-scroll="'+sec.id+'">'+tocLabel(sec)+' ↓</a>').join('');
+  // highlight the section currently in view
+  const mark=id=>rail.querySelectorAll('a[data-toc]').forEach(a=>a.classList.toggle('on', a.dataset.toc===id));
+  if('IntersectionObserver' in window){
+    _tocObs=new IntersectionObserver(ents=>{
+      const vis=ents.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);
+      if(vis.length) mark(vis[0].target.id);
+    },{rootMargin:'-90px 0px -60% 0px', threshold:0});
+    secs.forEach(sec=>_tocObs.observe(sec));
+  }
+  if(secs.length) mark(secs[0].id);
+}
 function showPage(name){
   checkForNewVersion(name); maybeRefreshFeed();
   if(name==='blog' && typeof backToBlog==='function') backToBlog();
@@ -2087,6 +2131,7 @@ function showPage(name){
   document.querySelectorAll('.navlinks a').forEach(a=>a.classList.toggle('active', a.dataset.nav===name));
   window.scrollTo({top:0, behavior:'auto'});
   try{ if(location.hash.slice(1)!==name) history.replaceState(null,'','#'+name); }catch(e){}
+  buildToc(name);
 }
 // Delegated, NOT bound per element. querySelectorAll('[data-nav]') at load time
 // only ever sees the markup that exists then — so every link rendered later was
