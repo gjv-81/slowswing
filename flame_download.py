@@ -32,7 +32,8 @@ import warnings; warnings.filterwarnings("ignore")
 
 HERE = Path(__file__).resolve().parent
 DATA = HERE / "daily_data_v2"
-OUT  = HERE / "options_pilot"
+CRUISE = "--cruise" in sys.argv          # B2/S2 signal set instead of DLB/D200G
+OUT  = HERE / ("options_pilot_cruise" if CRUISE else "options_pilot")
 BASE = "http://127.0.0.1:25503/v3/option/history"
 PAUSE = 3.2                       # 20 req/min free tier -> ~3s spacing
 BACK_TD, FWD_TD = 45, 65          # trading days around each signal to fetch
@@ -72,7 +73,10 @@ def find_signals():
             f["mom40"]=C/C.shift(40)-1
             score=sum(W[k]*z(f[k],k) for k in W)
             oh=f["high52"]*100; dpct=(C/sma-1)*100
-            mask=(score>=2)&(oh<=-25)                 # DLB or D200G (any side of line)
+            if CRUISE:
+                mask=(score>=2)&(oh>-25)              # B2 (-25..-10) + S2 (>-10)
+            else:
+                mask=(score>=2)&(oh<=-25)             # DLB or D200G (any side of line)
             m=mask&~mask.shift(1,fill_value=False)
             idxs=np.where(m&(C>=10))[0]
             last=-99; keep=[]
@@ -95,12 +99,23 @@ def find_signals():
     return sigs
 
 def _get(url, params):
+    """GET with retries — a network wobble must never kill an hours-long run."""
     import requests
-    r=requests.get(url, params=params, timeout=120)
-    time.sleep(PAUSE)
-    if r.status_code!=200:
-        return None, f"HTTP {r.status_code}: {r.text[:200]}"
-    return r.text, None
+    last_err="unknown"
+    for attempt in range(3):
+        try:
+            r=requests.get(url, params=params, timeout=120)
+            time.sleep(PAUSE)
+            if r.status_code==200:
+                return r.text, None
+            last_err=f"HTTP {r.status_code}: {r.text[:200]}"
+            if r.status_code in (400,403,472):   # permanent for this request — don't retry
+                return None,last_err
+        except Exception as e:
+            last_err=f"{type(e).__name__}: {e}"
+            time.sleep(PAUSE)
+        time.sleep(10*(attempt+1))               # back off before retrying
+    return None,last_err
 
 def _cols(df):
     """map likely column names case-insensitively"""
@@ -177,6 +192,7 @@ def fetch_ticker(t, start, end, test=False):
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--test",action="store_true",help="one ticker, one chunk, print schema")
+    ap.add_argument("--cruise",action="store_true",help="B2/S2 signal set instead of DLB/D200G")
     a=ap.parse_args()
     OUT.mkdir(exist_ok=True)
     print("Building signal set from daily_data_v2/ (free-tier year only) ...")
@@ -205,8 +221,9 @@ def main():
         t=os.path.splitext(os.path.basename(fp))[0]
         d=pd.read_csv(fp); d["ticker"]=t; rows.append(d)
     if rows:
-        pd.concat(rows).to_csv(HERE/"options_pilot_daily.csv",index=False)
-        print(f"\nDONE: {done} tickers -> options_pilot_daily.csv"
+        combined="options_pilot_cruise_daily.csv" if CRUISE else "options_pilot_daily.csv"
+        pd.concat(rows).to_csv(HERE/combined,index=False)
+        print(f"\nDONE: {done} tickers -> {combined}"
               f"\nNext: python3.12 flame_backtest.py")
 
 if __name__=="__main__":

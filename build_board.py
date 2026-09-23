@@ -426,15 +426,39 @@ def build() -> int:
                 mae = round(min(mae, chg), 2)
         out_names.append(public_only({**r, "pc": pc, "chg": chg, "mfe": mfe, "mae": mae}))
 
-    total = len(rows)
+    # The ratio is over LIVE names only. Retired names are stamped with the
+    # session by construction, so counting them made the denominator lie:
+    # 2026-09-22 had every one of the 83 live names stale (vendor hadn't posted
+    # the day's bar yet) but 83/246 = 33.7% slipped under the 34% guard, the
+    # stale names were dropped one by one, and the site published a board with
+    # 0 active / 0 extended. Over live names that night was 100% stale.
+    total = len(live)
     stale_ratio = len(stale) / total if total else 1.0
     if stale:
         shown = ", ".join(stale[:12]) + (f" …(+{len(stale)-12} more)" if len(stale) > 12 else "")
-        print(f"! stale/missing ({len(stale)}/{total}): {shown}")
+        print(f"! stale/missing ({len(stale)}/{total} live names): {shown}")
     if stale_ratio > STALE_ABORT_RATIO:
-        print(f"! {stale_ratio:.0%} stale (> {STALE_ABORT_RATIO:.0%}) — NOT writing board.json. "
+        print(f"! {stale_ratio:.0%} of live names stale (> {STALE_ABORT_RATIO:.0%}) — NOT writing board.json. "
               f"Yesterday's board stays live.")
         return 1
+    # Below the guard, a stale live name still must not vanish from the board:
+    # a setup that was Active last night is still a setup tonight. Carry it with
+    # the workbook's own last price (never newer than the scan) rather than drop it.
+    if stale:
+        carried = 0
+        for r in live:
+            t = r["t"].upper()
+            bar = bars.get(t)
+            if (bar is None or bar.date != session) and r.get("_last") is not None:
+                pe = _num(r.get("pe")); pc = round(float(r["_last"]), 4)
+                chg = round((pc / pe - 1.0) * 100, 1) if pe else None
+                mfe, mae = _num(r.get("mfe")), _num(r.get("mae"))
+                if chg is not None:
+                    if mfe is not None: mfe = round(max(mfe, chg), 2)
+                    if mae is not None: mae = round(min(mae, chg), 2)
+                out_names.append(public_only({**r, "pc": pc, "chg": chg, "mfe": mfe, "mae": mae}))
+                carried += 1
+        print(f"# {carried} stale live names carried with workbook prices")
 
     # Market-regime header: SPY/QQQ price + Healthy/Extended/Weak, from regime.json
     # (written by build_regime.py). Null-safe: the site shows a neutral bar if absent.
