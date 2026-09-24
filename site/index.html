@@ -144,6 +144,12 @@
   section.block:first-child{border-top:none}
 
   /* HERO */
+  .hero-pill{display:inline-flex; align-items:center; gap:6px; margin:0 auto 20px; padding:8px 16px 8px 12px; border-radius:999px; background:#fff; border:1px solid var(--line); box-shadow:0 4px 14px -8px rgba(15,118,110,.35); font-size:13.5px; color:var(--muted); font-weight:600; white-space:nowrap}
+  .hero-pill b{color:var(--ink)}
+  .hero-pill .hp-chk{display:inline-grid; place-items:center; width:18px; height:18px; border-radius:50%; background:var(--primary); color:#fff; font-size:11px; font-weight:800}
+  .hero-pill .hp-go{color:var(--primary); font-weight:700}
+  .hero-pill:hover{border-color:var(--primary)}
+  @media (max-width:560px){ .hero-pill{white-space:normal; font-size:12.5px; padding:8px 12px} }
   .hero{padding:78px 0 64px; background:linear-gradient(180deg,var(--primary-tint),#fff 78%); position:relative; overflow:hidden}
   .herogrid{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center}
   .pill{display:inline-flex; gap:8px; align-items:center; font-size:13px; color:var(--primary); border:1px solid var(--line2); background:#fff; padding:6px 13px; border-radius:999px; font-weight:600}
@@ -653,6 +659,7 @@
 <div class="page active" data-page="home">
   <header class="hero"><div class="wrap">
     <div style="text-align:center; margin:2px auto 18px; max-width:88ch">
+      <a class="hero-pill" data-signup data-plan="monthly"><span class="hp-chk">✓</span> 30 days free &nbsp;·&nbsp; <b>No card required</b> &nbsp;·&nbsp; <span class="hp-go">Start your trial →</span></a>
       <div style="margin:0 auto; font-size:clamp(21px,3.9vw,34px); line-height:1.15; letter-spacing:-.02em; color:var(--ink); font-weight:800">Cut through the noise. Find the setups that matter.</div>
       <h2 style="margin:16px auto 0; max-width:32ch; font-size:clamp(17px,2.5vw,23px); line-height:1.3; letter-spacing:-.01em; color:var(--ink); font-weight:700">A nightly shortlist of stocks whose setups look ripe.</h2>
       <p class="muted" style="margin:8px auto 0; max-width:58ch; font-size:15.5px">Educational research for swing traders. This is trading, not investing — setups held for weeks, not minutes or years.</p>
