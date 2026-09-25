@@ -1697,7 +1697,7 @@ function listHTML(items){
         <td><span class="lt-q ${d.q}">${qsym} ${qtxt}</span></td>
         <td><span class="lt-pulse"><span class="lt-dot" style="background:${pic}"></span>${plabel}</span></td>
         <td>${rn?`<span class="lt-pulse"><span class="lt-dot" style="background:${rn[1]}"></span>${rn[2]}</span>`:`<span class="faint">—</span>`}</td>
-        <td class="faint">${d.phase==="pending"?`<span class="pendnote">enters at next open</span>`:(d.date||"—")}</td>
+        <td class="faint">${d.phase==="pending"?`<span class="pendnote" title="Signal fired after tonight's close — enters at the next open">Next open</span>`:(d.date||"—")}</td>
         <td>${dialCell(d.dial)}</td>
         ${showPe?`<td class="muted">${money(d.pe)}</td>`:''}
         <td>${chgCell(d.chg)}</td>
