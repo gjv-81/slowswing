@@ -69,7 +69,7 @@ NAMES_PATH = HERE / "names.json"              # optional {ticker: "Company Name"
 OUTPUT_PATH = HERE / "board.json"
 
 # Which positions make the public board:
-PHASE_INCLUDE = {"Active", "Extended", "Retired"}  # lifecycle phases from the pipeline's `phase` column
+PHASE_INCLUDE = {"Pending", "Active", "Extended", "Retired"}  # lifecycle phases from the pipeline's `phase` column
 INCLUDE_QUALGATES = {"PASS", "WATCH", "FAIL"} # show the full book (all tiers). Narrow to {"PASS","WATCH"} to hide FAIL.
 DEDUPE_TICKERS = True                          # one row per ticker (a ticker can be entered twice: original + re-qual)
 DEDUPE_KEEP = "recent"                         # which entry wins: "recent" (freshest) | "score" (strongest) | "first" (original)
@@ -372,6 +372,10 @@ def build() -> int:
     # record is frozen at retirement, so it keeps the workbook's own last price —
     # never stale, never a vendor request. That is the difference between ~64
     # requests a night and ~240.
+    # PENDING = signal fired tonight, fills at the next open. Published with no
+    # price fields at all (nothing has happened yet); never a vendor request.
+    pending = [r for r in rows if str(r.get("phase", "")).lower() == "pending"]
+    rows = [r for r in rows if str(r.get("phase", "")).lower() != "pending"]
     live = [r for r in rows if str(r.get("phase", "")).lower() != "retired"]
     names = [r["t"].upper() for r in live]
     want = list(dict.fromkeys(names + list(REGIME_TICKERS)))
@@ -403,6 +407,12 @@ def build() -> int:
     print(f"# session={session}  provider={provider}  names={len(rows)}")
 
     out_names, stale = [], []
+    for r in pending:
+        out_names.append(public_only({**r, "chg": None, "mfe": None, "mae": None, "md4": None,
+                                      "wk2": None, "wk4": None, "wk12": None, "dtp": None,
+                                      "d5": None, "d10": None, "rsn": None}))
+    if pending:
+        print(f"# pending (signal tonight, enters at next open): {', '.join(r['t'] for r in pending)}")
     for r in rows:
         t = r["t"].upper()
         bar = bars.get(t)
@@ -489,6 +499,7 @@ def build() -> int:
         "market": market,
         "names": out_names,
         "counts": {"total": len(out_names),
+                   "pending": sum(1 for n in out_names if n.get("phase") == "pending"),
                    "active": sum(1 for n in out_names if n.get("phase") == "active"),
                    "extended": sum(1 for n in out_names if n.get("phase") == "extended"),
                    "retired": sum(1 for n in out_names if n.get("phase") == "retired")},

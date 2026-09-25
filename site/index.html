@@ -258,6 +258,9 @@
   .newflag{display:inline-block; font-size:6px; font-weight:800; letter-spacing:.06em; color:#3a2c00; background:#eab308; padding:1px 4px; border-radius:4px; vertical-align:middle; position:relative; top:-2px}
   .whatmeans{font-size:12.5px; color:var(--muted); margin-top:14px; padding-top:13px; border-top:1px dashed var(--line2)}
   .card-sc{margin-top:10px; font-size:11px; color:var(--muted); font-weight:600; letter-spacing:.01em}
+  .newflag.pend{background:#f59e0b; color:#3a2200}
+  .pendnote{font-size:11px; color:#b45309; font-weight:700; white-space:nowrap}
+  .card-sc.pending{background:#fff7e6; color:#7c4a03; border:1px solid #fcd58a; border-radius:8px; padding:7px 10px}
   .card-sc .sc-tag{text-transform:uppercase; letter-spacing:.06em; font-size:9px; font-weight:800; opacity:.9; margin-right:7px}
   /* ---- Annotated "how to read a card" ---- */
   .annowrap{display:grid; grid-template-columns:1fr auto 1fr; gap:20px; align-items:center; max-width:1060px; margin:24px auto 0}
@@ -841,7 +844,7 @@
     <div class="tabs" id="agetabs" style="margin-bottom:16px">
       <div class="tab active" data-age="active">🟢 Active board</div>
       <div class="tab" data-age="extended">📈 Out of Range</div>
-      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = under 4 weeks old and still within +5% of the signal (or below) — a valid entry today. Switch to <b style="color:var(--muted)">Out of Range</b> for names that already ran +5%. After 4 weeks, setups move to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span>
+      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = under 4 weeks old and still within +5% of the signal (or below) — a valid entry today. <b style="color:#b45309">Pending</b> = signal fired after tonight's close; it enters at the next open, so there is no price or scorecard yet. Switch to <b style="color:var(--muted)">Out of Range</b> for names that already ran +5%. After 4 weeks, setups move to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span>
     </div>
 
     <div class="setupintro">
@@ -908,6 +911,16 @@
         <div><div style="font-size:27px; font-weight:800; color:var(--primary); line-height:1.1" id="rc3">—</div><div style="font-size:12.5px; color:var(--body); margin-top:2px">reached <b>+5%</b> with a dip under 1% first <span class="faint" id="rc3n"></span></div></div>
       </div>
       <div style="font-size:11px; color:var(--faint); border-top:1px solid rgba(15,118,110,.18); padding-top:10px; margin-top:13px">"Dip" is the deepest move below the signal price, counted only up to the first touch of that level. Reaching a level is a hypothetical peak, not a return anyone captured — no one sells the exact top. Computed each evening across all retired setups; paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>
+    </div>
+    <div class="tabs" id="ttabs">
+      <div class="tab active" data-k="all">All setups</div>
+      <div class="tab" data-k="phoenix">Phoenix</div>
+      <div class="tab" data-k="cruise">Cruise</div>
+    </div>
+    <div class="tabs" id="tqtabs" style="margin-top:-4px">
+      <div class="tab active" data-q="all" style="font-size:13px">Show everything</div>
+      <div class="tab" data-q="pass" style="font-size:13px">💎 High-quality only</div>
+      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px">💎 = cleared our fundamental quality gate · ◆ = watch · △ = higher-risk / speculative &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span>
     </div>
     <div class="filterbar" id="trackFilters">
       <label>Sector <select id="fSectorT" class="fsel"><option value="">All sectors</option></select></label>
@@ -1606,7 +1619,7 @@ const NEW_SINCE = weekStartMs(REF);
 function isNew(dateStr){ return dateStr && dateStr!=="—" && dval(dateStr) >= NEW_SINCE; }
 const EXT_PCT = 5;   // Active = current price within +5% of the setup (or below); Out of Range = more than +5% above
 function extPct(d){ return (d.pe && d.pc!=null) ? (d.pc/d.pe-1)*100 : 0; }
-function newBadge(d){ return isNew(d.date) ? ' <span class="newflag">NEW</span>' : ''; }
+function newBadge(d){ if(d.phase==="pending") return ' <span class="newflag pend" title="Signal fired after tonight\'s close — enters at the next open. No price yet.">PENDING</span>'; return isNew(d.date) ? ' <span class="newflag">NEW</span>' : ''; }
 function defDir(k){ return ["score","date","pe","pc","chg","mfe","mae","wk2","wk4","wk12","md4"].includes(k) ? -1 : 1; }
 function colval(d,k){
   switch(k){
@@ -1638,7 +1651,7 @@ function applyFilters(base,sec,pul,dia,sco){
 function filtered(){
   let base = curSearch
     ? DATA.filter(d=>d.phase!=="retired").filter(d=>(d.t+" "+d.n).toLowerCase().includes(curSearch))
-    : DATA.filter(d=>d.phase===curAge).filter(d=>curSetup==="all"||d.setup===curSetup).filter(d=>curQ==="all"||d.q==="pass");
+    : DATA.filter(d=>d.phase===curAge || (curAge==="active" && d.phase==="pending")).filter(d=>curSetup==="all"||d.setup===curSetup).filter(d=>curQ==="all"||d.q==="pass");
   base=applyFilters(base,fSector,fPulse,fDial,fScore);
   // newest signal first (what GJ asked for), then quality gate, then score
   return base.sort((a,b)=>(dval(b.date)-dval(a.date))||(QRANK[a.q]-QRANK[b.q])||(b.score-a.score));
@@ -1662,7 +1675,7 @@ function cardsHTML(items){
         <span class="badge">${d.profile}</span>
         ${rsBadge(d.rs)}${rsNowBadge(d.rsn)}
       </div>
-      <div class="card-sc"><span class="sc-tag">📊 Setup Scorecard</span> Peak ${mfeCell(d.mfe)} · Max dip ${maeCell(d.md4)}${d.wk2!=null?` · 2wk ${retCell(d.wk2)}`:''} <span class="faint">· since <b style="font-weight:700; color:var(--ink)">${d.date}</b></span>${d.dial?` <span class="faint">·</span> ${dialCell(d.dial)} <span class="faint">at add</span>`:''}</div>
+      ${d.phase==="pending"?`<div class="card-sc pending"><span class="sc-tag">⏳ Pending</span> Signal fired after tonight's close · enters at the next open · scorecard starts then</div>`:`<div class="card-sc"><span class="sc-tag">📊 Setup Scorecard</span> Peak ${mfeCell(d.mfe)} · Max dip ${maeCell(d.md4)}${d.wk2!=null?` · 2wk ${retCell(d.wk2)}`:''} <span class="faint">· since <b style="font-weight:700; color:var(--ink)">${d.date}</b></span>${d.dial?` <span class="faint">·</span> ${dialCell(d.dial)} <span class="faint">at add</span>`:''}</div>`}
     </div>`;
   }).join('');
 }
@@ -1684,7 +1697,7 @@ function listHTML(items){
         <td><span class="lt-q ${d.q}">${qsym} ${qtxt}</span></td>
         <td><span class="lt-pulse"><span class="lt-dot" style="background:${pic}"></span>${plabel}</span></td>
         <td>${rn?`<span class="lt-pulse"><span class="lt-dot" style="background:${rn[1]}"></span>${rn[2]}</span>`:`<span class="faint">—</span>`}</td>
-        <td class="faint">${d.date||"—"}</td>
+        <td class="faint">${d.phase==="pending"?`<span class="pendnote">enters at next open</span>`:(d.date||"—")}</td>
         <td>${dialCell(d.dial)}</td>
         ${showPe?`<td class="muted">${money(d.pe)}</td>`:''}
         <td>${chgCell(d.chg)}</td>
@@ -1736,8 +1749,9 @@ function render(){
     return;
   }
   let items=filtered();
-  if(curView==="list"){ if(sorts.length) items=items.slice().sort(cmp); el.className=""; el.innerHTML=listHTML(items); }
-  else { el.className="grid"; el.innerHTML=cardsHTML(items); }
+  const isP=d=>d.phase==="pending"?0:1;   // pending rows always on top, whatever the sort
+  if(curView==="list"){ if(sorts.length) items=items.slice().sort(cmp); items=items.slice().sort((a,b)=>isP(a)-isP(b)); el.className=""; el.innerHTML=listHTML(items); }
+  else { items=items.slice().sort((a,b)=>isP(a)-isP(b)); el.className="grid"; el.innerHTML=cardsHTML(items); }
   document.getElementById('count').textContent=items.length;
   renderTrStats(items);
 }
@@ -1794,7 +1808,9 @@ const _tsi=document.getElementById('trackSearch'); if(_tsi) _tsi.addEventListene
   bind('fPulseT',e=>{ tPulse=e.target.value; renderTrack(); });
   bind('fDialT',e=>{ tDial=e.target.value; renderTrack(); });
   bind('fScoreT',e=>{ tScore=parseFloat(e.target.value)||0; renderTrack(); });
-  const tcb=document.getElementById('fClearT'); if(tcb) tcb.addEventListener('click',()=>{ tSector="";tPulse="";tDial="";tScore=0; ['fSectorT','fPulseT','fDialT'].forEach(i=>{const s=document.getElementById(i);if(s)s.value="";}); const sc=document.getElementById('fScoreT'); if(sc)sc.value="0"; const ts=document.getElementById('trackSearch'); if(ts){ts.value="";trackSearch="";} renderTrack(); });
+  document.querySelectorAll('#ttabs .tab').forEach(tab=>tab.addEventListener('click',()=>{ document.querySelectorAll('#ttabs .tab').forEach(t=>t.classList.remove('active')); tab.classList.add('active'); tSetup=tab.dataset.k; renderTrack(); }));
+  document.querySelectorAll('#tqtabs .tab').forEach(tab=>tab.addEventListener('click',()=>{ document.querySelectorAll('#tqtabs .tab').forEach(t=>t.classList.remove('active')); tab.classList.add('active'); tQ=tab.dataset.q; renderTrack(); }));
+  const tcb=document.getElementById('fClearT'); if(tcb) tcb.addEventListener('click',()=>{ tSector="";tPulse="";tDial="";tScore=0; tSetup="all"; tQ="all"; document.querySelectorAll('#ttabs .tab, #tqtabs .tab').forEach(t=>t.classList.toggle('active', t.dataset.k==='all'||t.dataset.q==='all')); ['fSectorT','fPulseT','fDialT'].forEach(i=>{const s=document.getElementById(i);if(s)s.value="";}); const sc=document.getElementById('fScoreT'); if(sc)sc.value="0"; const ts=document.getElementById('trackSearch'); if(ts){ts.value="";trackSearch="";} renderTrack(); });
 })();
 document.querySelectorAll('#agetabs .tab').forEach(tab=>tab.addEventListener('click',()=>{
   document.querySelectorAll('#agetabs .tab').forEach(t=>t.classList.remove('active')); tab.classList.add('active'); curAge=tab.dataset.age;
@@ -1888,12 +1904,12 @@ function renderStats(){
 }
 
 // ---- Track Record page (retired positions) ----
-let tsorts=[{key:"date", dir:-1}];
+let tsorts=[{key:"date", dir:-1}], tSetup="all", tQ="all";
 function tcmp(a,b){ for(const s of tsorts){ const av=colval(a,s.key), bv=colval(b,s.key); let r=(typeof av==="string")?av.localeCompare(bv):(av-bv); if(r) return s.dir*r; } return dval(b.date)-dval(a.date); }
 function renderTrack(){
   const all=DATA.filter(d=>d.phase==="retired").sort((a,b)=>dval(b.date)-dval(a.date));
   let items=trackSearch?all.filter(d=>(d.t+" "+d.n).toLowerCase().includes(trackSearch)):all.slice();
-  items=applyFilters(items,tSector,tPulse,tDial,tScore);
+  items=applyFilters(items,tSector,tPulse,tDial,tScore).filter(d=>tSetup==="all"||d.setup===tSetup).filter(d=>tQ==="all"||d.q==="pass");
   if(tsorts.length) items=items.slice().sort(tcmp);
   const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:0;
   const tc=document.getElementById('trackCount'); if(tc) tc.textContent=items.length;

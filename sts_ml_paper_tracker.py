@@ -158,7 +158,33 @@ def main():
         df = px[t]
         after = df[df.index >= tr["entry_date"]]
         if len(after) == 0:
-            rows.append(base | dict(status="PENDING",
+            # PENDING = signal fired tonight, fills at the next open. Classify it
+            # PROVISIONALLY off the signal close so the board can publish the
+            # name the same evening (setup, WR, dial). Re-classified at the fill.
+            _h = df.dropna(subset=["Close"])
+            _px = float(_h["Close"].iloc[-1]) if len(_h) else np.nan
+            _sc = pd.to_numeric(tr.get("score_at_entry"), errors="coerce")
+            _sma = float(_h["Close"].rolling(200).mean().iloc[-1]) if len(_h) >= 200 else np.nan
+            _d200 = (_px / _sma - 1) * 100 if _sma == _sma else np.nan
+            _wash = float(((_h["Close"] / _h["Close"].rolling(200).mean() - 1) * 100).iloc[-40:].min()) if len(_h) >= 240 else np.nan
+            _wr = ""
+            if (_d200 == _d200) and (-10 <= _d200 <= 0) and _wash == _wash:
+                _wr = "WR40" if _wash <= -40 else "WR30" if _wash <= -30 else "WR20" if _wash <= -20 else ""
+            if len(_h) >= 253 and _px == _px:
+                _h52 = _px / float(_h["High"].rolling(252).max().iloc[-1]) - 1
+                _deep, _mid = _h52 <= -0.25, (-0.25 < _h52 <= -0.10)
+                if _deep and _px > _sma:
+                    _setup = "D200G" if (pd.notna(_sc) and _sc >= 2) else "D200"
+                elif pd.notna(_sc) and _sc >= 2:
+                    _setup = "B2" if _mid else ("S2" if _h52 > -0.10 else "DLB")
+                else:
+                    _setup = "-"
+            else:
+                _setup = "young"
+            rows.append(base | dict(status="PENDING", phase="Pending", setup=_setup, wr=_wr,
+                                    dial=spy_dial(_h.index[-1]) if len(_h) else "?",
+                                    dist200_pct=round(_d200, 1) if _d200 == _d200 else np.nan,
+                                    wash_min8w=round(_wash, 1) if _wash == _wash else np.nan,
                                     entry_date=tr["entry_date"].date())); continue
         e_date = after.index[0]
         _has_px = pd.notna(tr.get("entry_price")) and str(tr.get("entry_price")).strip() != ""
