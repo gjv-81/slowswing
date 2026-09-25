@@ -1888,10 +1888,13 @@ function renderStats(){
 }
 
 // ---- Track Record page (retired positions) ----
+let tsorts=[{key:"date", dir:-1}];
+function tcmp(a,b){ for(const s of tsorts){ const av=colval(a,s.key), bv=colval(b,s.key); let r=(typeof av==="string")?av.localeCompare(bv):(av-bv); if(r) return s.dir*r; } return dval(b.date)-dval(a.date); }
 function renderTrack(){
   const all=DATA.filter(d=>d.phase==="retired").sort((a,b)=>dval(b.date)-dval(a.date));
   let items=trackSearch?all.filter(d=>(d.t+" "+d.n).toLowerCase().includes(trackSearch)):all.slice();
   items=applyFilters(items,tSector,tPulse,tDial,tScore);
+  if(tsorts.length) items=items.slice().sort(tcmp);
   const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:0;
   const tc=document.getElementById('trackCount'); if(tc) tc.textContent=items.length;
   const w4=all.map(d=>d.wk4).filter(v=>v!=null), w2=all.map(d=>d.wk2).filter(v=>v!=null), dips=all.map(d=>d.md4).filter(v=>v!=null);
@@ -1968,11 +1971,26 @@ function renderTrack(){
       <td>${maeCell(d.md4)}</td>
     </tr>`;
   }).join('');
-  const heads=['Ticker','Sector','Setup','Q','Signal','Regime @ Add','2wk','4wk','12wk','Peak ▲','Max Dip ▼'].map(h=>`<th>${h}</th>`).join('');
+  const TCOLS=[["t","Ticker"],["sector","Sector"],["setup","Setup"],["q","Q"],["date","Signal"],["dial","Regime @ Add"],["wk2","2wk"],["wk4","4wk"],["wk12","12wk"],["mfe","Peak ▲"],["md4","Max Dip ▼"]];
+  const heads=TCOLS.map(([k,label])=>{
+    const si=tsorts.findIndex(s=>s.key===k); const active=si>=0;
+    const prio=(active&&tsorts.length>1)?`<span class="prio">${PRIO[si]}</span>`:"";
+    const arrow=active?(tsorts[si].dir>0?" ▲":" ▼"):"";
+    return `<th data-sort="${k}" class="${active?"sorted":""}">${label}${prio}<span class="arr">${arrow}</span></th>`;
+  }).join('');
+  const tip=`<div class="sorttip"><b>Tip:</b> click a header to sort · <b>Shift-click</b> a second header for a two-level sort${(tsorts.length&&!(tsorts.length===1&&tsorts[0].key==="date"&&tsorts[0].dir===-1))?` · <span class="clearsort" id="tclearsort">clear sort ✕</span>`:""}</div>`;
   const body=document.getElementById('trackBody');
-  if(body) body.innerHTML=`<div class="listwrap"><table class="ltable"><thead><tr>${heads}</tr></thead><tbody>${rows}</tbody></table></div>`;
+  if(body) body.innerHTML=`${tip}<div class="listwrap"><table class="ltable"><thead><tr>${heads}</tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 renderTrack();
+{ const tb=document.getElementById('trackBody'); if(tb) tb.addEventListener('click', e=>{
+  if(e.target.closest('#tclearsort')){ tsorts=[{key:"date", dir:-1}]; renderTrack(); return; }
+  const th=e.target.closest('th[data-sort]'); if(!th) return;
+  const k=th.dataset.sort; const idx=tsorts.findIndex(s=>s.key===k);
+  if(e.shiftKey){ if(idx>=0){ tsorts[idx].dir=-tsorts[idx].dir; } else { tsorts.push({key:k,dir:defDir(k)}); } }
+  else { if(tsorts.length===1&&tsorts[0].key===k){ tsorts[0].dir=-tsorts[0].dir; } else { tsorts=[{key:k,dir:defDir(k)}]; } }
+  renderTrack();
+}); }
 
 // ---- Blog / The Slow Swing Journal ----
 // To add a post: drop an object into POSTS (newest first). cat.cls = start|case|lesson|note.

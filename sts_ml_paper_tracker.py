@@ -147,7 +147,8 @@ def main():
         return "O" if p > 90 else ("Y" if p >= 50 else "G")
 
     rows, missing = [], []
-    for _, tr in trades.iterrows():
+    fills = {}     # trade-row index -> (fill date, fill price) for rows filled tonight
+    for _i, tr in trades.iterrows():
         t = tr["ticker"]
         base = dict(ticker=t, score_at_entry=tr.get("score_at_entry", np.nan),
                     rs_at_entry=tr.get("rs_at_entry", np.nan),
@@ -160,8 +161,22 @@ def main():
             rows.append(base | dict(status="PENDING",
                                     entry_date=tr["entry_date"].date())); continue
         e_date = after.index[0]
-        e_px = float(tr["entry_price"]) if pd.notna(tr.get("entry_price")) and str(tr.get("entry_price")).strip() != "" \
-               else float(after["Open"].iloc[0])
+        _has_px = pd.notna(tr.get("entry_price")) and str(tr.get("entry_price")).strip() != ""
+        e_px = float(tr["entry_price"]) if _has_px else float(after["Open"].iloc[0])
+        # FREEZE the fill. Without this the entry is re-derived from Yahoo every
+        # night, so a missing bar later (2026-09-23: Yahoo returned no 09-22 bar
+        # for COO/MPWR) silently moved the entry a day and changed the price.
+        # Only freeze when the fill landed on the first trading day on/after the
+        # intended entry date (per SPY's calendar). If that bar is missing tonight,
+        # the fill would be a day late and a wrong price — leave it unfrozen and
+        # let a later night, with the bar present, freeze the right one.
+        if not _has_px:
+            _cal = spy.index[spy.index >= tr["entry_date"]]
+            if len(_cal) and e_date == _cal[0]:
+                fills[_i] = (e_date.strftime("%Y-%m-%d"), round(e_px, 4))
+            else:
+                print(f"  WARNING: {t} fill {e_date.date()} is not the first session on/after "
+                      f"{tr['entry_date'].date()} — bar missing tonight? not freezing.")
         sh = float(tr["shares"])
 
         # ── setup-code classification at entry (D200G/D200/M2/N2/DLB) ──
@@ -288,6 +303,14 @@ def main():
             spy_wk12_pct=round(spy_w12, 2) if not math.isnan(spy_w12) else np.nan,
             excess_pct=round(ret - spy_ret, 2),
             flag="CATASTROPHE" if ret <= CATASTROPHE else ("dipping" if mae <= -13 else "")))
+    if fills:
+        raw = pd.read_csv(TRADES_CSV, dtype=str, keep_default_na=False)
+        for _i, (fd, fp) in fills.items():
+            raw.loc[_i, "entry_date"] = fd
+            raw.loc[_i, "entry_price"] = f"{fp:g}"
+        raw.to_csv(TRADES_CSV, index=False)
+        print(f"  froze {len(fills)} new fill(s) into {os.path.basename(TRADES_CSV)}: "
+              + ", ".join(f"{trades.loc[i,'ticker']}@{fp:g} ({fd})" for i,(fd,fp) in fills.items()))
     pos = pd.DataFrame(rows)
     act = pos[pos["status"].isin(["OPEN", "CLOSED"])].copy() if len(pos) else pos
 
