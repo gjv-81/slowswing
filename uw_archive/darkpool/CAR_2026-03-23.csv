@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1299,CAR,107.28,1278196,2026-03-23T20:52:12Z,False,139356.72,prior_reference_price,105,107.59,extended_hours_trade,L,100,5,27410556415739,,regular,2026-03-23T20:52:12Z
+1083,CAR,107.28,1275884,2026-03-23T20:08:51Z,False,116184.24,average_price_trade,107.29,109,extended_hours_trade,L,6,1,27410553814229,,regular,2026-03-23T20:08:51Z
+1345,CAR,107.28,1274479,2026-03-23T20:00:45Z,False,144291.60,prior_reference_price,107.29,109,extended_hours_trade,L,6,1,27410553328779,,regular,2026-03-23T20:00:45Z
+1502,CAR,107.28,1272992,2026-03-23T20:00:09Z,False,161134.56,average_price_trade,107.29,108.95,extended_hours_trade,L,1,1,27410553292123,,regular,2026-03-23T20:00:09Z

@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6394,BWA,52.39,2517952,2026-04-07T20:11:15Z,False,334981.66,prior_reference_price,51.37,53.23,extended_hours_trade,L,100,38,29304634535910,,regular,2026-04-07T20:11:15Z
+48685,BWA,52.39,2509199,2026-04-07T20:00:41Z,False,2550607.15,prior_reference_price,50.33,53.23,extended_hours_trade,L,100,17,29304633902203,,regular,2026-04-07T20:00:41Z
+2272,BWA,52.39,2460514,2026-04-07T20:00:36Z,False,119030.08,prior_reference_price,50.33,53.23,extended_hours_trade,L,100,17,29304633897375,,regular,2026-04-07T20:00:36Z
+7088,BWA,52.39,2455342,2026-04-07T20:00:25Z,False,371340.32,prior_reference_price,0,0,extended_hours_trade,L,0,0,29304633886461,,regular,2026-04-07T20:00:25Z
+2950,BWA,52.3897,1672978,2026-04-07T19:56:07Z,False,154549.6150,average_price_trade,52.37,52.39,,L,60,250,29304633627985,derivative_priced,regular,2026-04-07T19:56:07Z
+2000,BWA,52.212,1451254,2026-04-07T19:41:46Z,False,104424.000,,52.23,52.24,,L,32,18,29304632767424,,regular,2026-04-07T19:41:46Z
+4400,BWA,53.04,18867,2026-04-07T13:30:00Z,False,233376.00,,50.13,53.94,,L,100,100,29304610461474,,regular,2026-04-07T13:30:00Z

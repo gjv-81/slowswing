@@ -1,0 +1,14 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+861,CRL,159.19,597827,2026-03-24T20:03:24Z,False,137062.59,prior_reference_price,161.24,157,extended_hours_trade,L,19,25,31233074380544,,regular,2026-03-24T20:03:24Z
+708,CRL,159.19,595902,2026-03-24T20:00:30Z,False,112706.52,prior_reference_price,161.24,157,extended_hours_trade,L,19,25,31233074206834,,regular,2026-03-24T20:00:30Z
+730,CRL,159.19,595094,2026-03-24T20:00:30Z,False,116208.70,prior_reference_price,161.24,157,extended_hours_trade,L,19,25,31233074206827,,regular,2026-03-24T20:00:30Z
+864,CRL,159.19,594364,2026-03-24T20:00:30Z,False,137540.16,prior_reference_price,161.24,157,extended_hours_trade,L,19,25,31233074206811,,regular,2026-03-24T20:00:30Z
+960,CRL,159.19,592714,2026-03-24T20:00:30Z,False,152822.40,prior_reference_price,161.24,157,extended_hours_trade,L,19,25,31233074206696,,regular,2026-03-24T20:00:30Z
+1200,CRL,159.19,591754,2026-03-24T20:00:30Z,False,191028.00,prior_reference_price,161.24,157,extended_hours_trade,L,19,25,31233074206691,,regular,2026-03-24T20:00:30Z
+794,CRL,159.19,590533,2026-03-24T20:00:30Z,False,126396.86,prior_reference_price,161.24,157,extended_hours_trade,L,19,25,31233074206681,,regular,2026-03-24T20:00:30Z
+1190,CRL,159.19,589739,2026-03-24T20:00:30Z,False,189436.10,prior_reference_price,161.24,157,extended_hours_trade,L,19,25,31233074206680,,regular,2026-03-24T20:00:30Z
+5900,CRL,159.19,588477,2026-03-24T20:00:15Z,False,939221.00,average_price_trade,161.24,157,extended_hours_trade,L,17,25,31233074192070,,regular,2026-03-24T20:00:15Z
+654,CRL,159.19,581833,2026-03-24T20:00:02Z,False,104110.26,,162,144.03,extended_hours_trade,L,10,100,31233074179303,,regular,2026-03-24T20:00:02Z
+905,CRL,159.715,291961,2026-03-24T19:44:41Z,False,144542.075,,159.8,159.63,,L,41,402,31233073258459,,regular,2026-03-24T19:44:41Z
+800,CRL,160.93,220586,2026-03-24T18:40:43Z,False,128744.00,,161.17,160.78,,L,1,11,31233069419726,,regular,2026-03-24T18:40:43Z
+5100,CRL,156.085,22328,2026-03-24T13:45:06Z,False,796033.500,,156.59,155.3,,L,22,49,31233051682941,,regular,2026-03-24T13:45:06Z

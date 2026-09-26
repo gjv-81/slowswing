@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4009,AAP,43.73,524541,2024-12-24T18:00:05Z,False,175313.57,,41.87,44,extended_hours_trade,L,1,100,46805180532296,,,
+5000,AAP,43.6011,241697,2024-12-24T17:00:14Z,False,218005.5000,,43.60,43.64,,L,112,207,43214247747752,,,
+2500,AAP,43.47,195407,2024-12-24T16:31:58Z,False,108675.00,,43.47,43.52,,L,39,5,41518801334484,,,
+2500,AAP,43.8999,133509,2024-12-24T16:01:42Z,False,109749.7500,,43.85,43.90,,L,5,63,39702454726845,,,

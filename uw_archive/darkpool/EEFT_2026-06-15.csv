@@ -1,0 +1,16 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3539,EEFT,66.9,650424,2026-06-15T20:00:26Z,False,236759.1,prior_reference_price,69.1,65.79,extended_hours_trade,L,6,4,30305361267525,,regular,2026-06-15T20:00:26Z
+1553,EEFT,66.9,646885,2026-06-15T20:00:26Z,False,103895.7,prior_reference_price,69.1,65.79,extended_hours_trade,L,6,4,30305361267485,,regular,2026-06-15T20:00:26Z
+1822,EEFT,66.9,645204,2026-06-15T20:00:26Z,False,121891.8,prior_reference_price,69.1,65.79,extended_hours_trade,L,6,4,30305361266837,,regular,2026-06-15T20:00:26Z
+1940,EEFT,66.9,641979,2026-06-15T20:00:26Z,False,129786.0,prior_reference_price,69.1,65.79,extended_hours_trade,L,6,4,30305361266583,,regular,2026-06-15T20:00:25Z
+33800,EEFT,66.73,444870,2026-06-15T19:50:45Z,False,2255474.00,contingent_trade,66.76,66.68,,L,75,1,30305360686126,qualified_contingent_trade,regular,2026-06-15T19:50:45Z
+3300,EEFT,66.77,409356,2026-06-15T19:50:04Z,False,220341.00,contingent_trade,66.82,66.73,,L,6,180,30305360645342,qualified_contingent_trade,regular,2026-06-15T19:50:04Z
+15700,EEFT,66.9,346499,2026-06-15T18:32:49Z,False,1050330.0,average_price_trade,67.04,66.93,,L,400,5,30305356009579,,regular,2026-06-15T18:32:48Z
+6100,EEFT,66.93,278442,2026-06-15T18:09:24Z,False,408273.00,contingent_trade,67.01,66.93,,L,141,159,30305354604862,qualified_contingent_trade,regular,2026-06-15T18:09:24Z
+36400,EEFT,67.01,272342,2026-06-15T18:09:18Z,True,2439164.00,contingent_trade,67.01,66.93,,L,141,159,30305354598837,qualified_contingent_trade,regular,2026-06-15T18:09:18Z
+15700,EEFT,67.24,222814,2026-06-15T17:54:02Z,False,1055668.00,contingent_trade,67.36,67.29,,L,20,4,30305353683384,qualified_contingent_trade,regular,2026-06-15T17:54:02Z
+15400,EEFT,67.24,207099,2026-06-15T17:53:56Z,False,1035496.00,contingent_trade,67.36,67.29,,L,20,4,30305353676703,qualified_contingent_trade,regular,2026-06-15T17:53:56Z
+1673,EEFT,67.775,174499,2026-06-15T17:30:18Z,False,113387.575,,67.81,67.74,,L,100,157,30305352259361,,regular,2026-06-15T17:30:18Z
+2000,EEFT,67.8,169104,2026-06-15T17:24:09Z,False,135600.0,,67.85,67.76,,L,5,49,30305351890436,,regular,2026-06-15T17:24:09Z
+1737,EEFT,68.09,99042,2026-06-15T15:35:33Z,False,118272.33,,68.14,68.04,,L,1,51,30305345373803,,regular,2026-06-15T15:35:33Z
+2187,EEFT,68.07,95435,2026-06-15T15:35:30Z,False,148869.09,,68.06,67.94,,L,74,30,30305345370672,,regular,2026-06-15T15:35:30Z

@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+42704,CVLT,87.81,924238,2026-02-11T22:38:16Z,False,3749838.24,prior_reference_price,89.55,84,extended_hours_trade,L,22,1,31825789160017,,regular,2026-02-11T22:38:16Z
+1825,CVLT,87.81,875768,2026-02-11T21:00:08Z,False,160253.25,,88.8,86,extended_hours_trade,L,2,5,31825783271971,,regular,2026-02-11T21:00:08Z
+3000,CVLT,87.85,765311,2026-02-11T20:59:30Z,False,263550.00,contingent_trade,87.85,87.8,,L,2154,1404,31825783234338,qualified_contingent_trade,regular,2026-02-11T20:59:30Z
+3000,CVLT,88,752896,2026-02-11T20:59:19Z,False,264000,contingent_trade,87.85,87.8,,L,1178,1238,31825783223139,qualified_contingent_trade,regular,2026-02-11T20:59:19Z
+14800,CVLT,88.18,569348,2026-02-11T20:19:17Z,False,1305064.00,,88.21,88.09,,L,2,11,31825780820968,,regular,2026-02-11T20:19:17Z
+3000,CVLT,88.44,529160,2026-02-11T20:05:28Z,False,265320.00,contingent_trade,88.37,88.22,,L,2,2,31825779991659,qualified_contingent_trade,regular,2026-02-11T20:05:28Z
+11100,CVLT,88.17,517637,2026-02-11T20:00:48Z,False,978687.00,,88.26,88.12,,L,81,2,31825779711667,,regular,2026-02-11T20:00:48Z
+2200,CVLT,88.8,455758,2026-02-11T19:20:04Z,False,195360.0,contingent_trade,88.62,88.53,,L,3,8,31825777267388,qualified_contingent_trade,regular,2026-02-11T19:20:04Z
+1551,CVLT,88.12,413976,2026-02-11T18:49:06Z,False,136674.12,,88.24,88.12,,L,50,325,31825775409904,,regular,2026-02-11T18:49:06Z
+1300,CVLT,88.15,407196,2026-02-11T18:45:57Z,False,114595.00,contingent_trade,88.08,87.99,,L,1,54,31825775221079,qualified_contingent_trade,regular,2026-02-11T18:45:57Z
+5423,CVLT,86.77,189488,2026-02-11T16:26:46Z,False,470553.71,,86.82,86.65,,L,13,14,31825766870219,,regular,2026-02-11T16:26:46Z
+8374,CVLT,87.54,8424,2026-02-11T13:01:42Z,False,733059.96,average_price_trade,92.84,85.54,extended_hours_trade,L,114,114,31825754565936,,regular,2026-02-11T13:01:42Z

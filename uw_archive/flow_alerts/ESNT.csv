@@ -1,0 +1,5 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_singleleg,has_multileg,has_floor,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,expiry_count
+put,ESNT,,2026-09-15T15:15:42.083412Z,,,,3.2,1,217,2026-09-18,70,ESNT260918P00070000,,,48320,,66.94,10,0.424581158801241,0.424581158801241,True,False,False,False,False,151,RepeatedHits,48320,0,217,1
+put,ESNT,,2026-09-15T15:15:39.279525Z,,,,3.2,1,66,2026-09-18,70,ESNT260918P00070000,,,21120,,67.14,9,0.534613485456695,0.534613485456695,True,False,False,False,False,66,RepeatedHits,21120,0,66,1
+call,ESNT,,2026-08-10T14:14:17.674318Z,,,,1.9,206,102,2026-10-16,70,ESNT261016C00070000,,,19377,,67.8,20,0.227298816309637,0.227298816309637,True,False,False,False,False,102,RepeatedHits,0,19377,0.495145631067961,1
+put,ESNT,,2025-09-11T19:08:10.726932Z,,,,2.02,31,500,2025-10-17,65,ESNT251017P00065000,,,101000,,63.92,2,0.173673745587176,0.173673745587176,True,False,True,False,False,500,LowHistoricVolumeFloor,0,101000,16.1290322580645,1

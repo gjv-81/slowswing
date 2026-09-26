@@ -1,0 +1,7 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2025-12-26T14:40:05.539000Z,2025-12-26,EXP,3,0,0,3,0,0,230,0,2120.00,2120.00,0,0,0,3,0,0,0,0,0,0,0
+2025-12-26T14:55:53.289000Z,2025-12-26,EXP,9,0,8,1,0,0,240,0,726.00,62.00,0,664.00,0,2,0,0,0,0,0,0,0
+2025-12-26T16:22:29.048000Z,2025-12-26,EXP,12,0,3,9,0,0,250,0,1447.00,1206.00,0,241.00,0,5,0,0,0,0,0,0,0
+2025-12-26T14:30:07.019000Z,2025-12-26,EXP,2,0,1,1,0,0,260,0,215.00,50.00,0,165.00,0,2,0,0,0,0,0,0,0
+2025-12-26T14:30:03.999000Z,2025-12-26,EXP,1,0,0,1,0,0,270,0,105.00,105.00,0,0,0,1,0,0,0,0,0,0,0
+2025-12-26T14:30:02.988000Z,2025-12-26,EXP,7,0,1,6,0,0,280,0,320.00,275.00,0,45.00,0,3,0,0,0,0,0,0,0

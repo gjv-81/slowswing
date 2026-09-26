@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+66269,BBWI,38.75,2086378,2025-02-05T22:11:34Z,False,2567923.75,prior_reference_price,38.28,39.06,extended_hours_trade,L,99,99,61894583224576,,,
+4013,BBWI,38.75,2014367,2025-02-05T21:00:35Z,False,155503.75,prior_reference_price,38.15,40.44,extended_hours_trade,L,3,30,57635534077003,,,
+10064,BBWI,38.75,2007207,2025-02-05T21:00:02Z,False,389980.00,,37.47,40.28,extended_hours_trade,L,100,65,57602358902044,,,
+3514,BBWI,38.6712,1392604,2025-02-05T20:55:07Z,False,135890.5968,average_price_trade,38.68,38.70,,L,292,330,57307114693553,derivative_priced,,
+2697,BBWI,38.55,142899,2025-02-05T15:01:49Z,False,103969.35,,38.52,38.59,,L,81,62,36109723839009,,,

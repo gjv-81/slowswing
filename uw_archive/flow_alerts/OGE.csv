@@ -1,0 +1,6 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,has_singleleg,expiry_count
+call,OGE,,2026-07-14T15:20:50.842523Z,,,,5.3,65,179,2026-09-18,45,OGE260918C00045000,,,11130,,49.645,10,0.231930025932539,0.231930025932539,False,False,False,False,21,RepeatedHits,8480,0,2.75384615384615,True,1
+call,OGE,,2026-03-03T20:14:38.980302Z,,,,4.9,57,33,2026-06-18,45,OGE260618C00045000,,,16170,,48.96,10,0.236558510077746,0.236558510077746,False,False,True,False,33,RepeatedHits,0,16170,0.578947368421053,True,1
+call,OGE,,2025-04-09T18:14:23.332789Z,,,,1.25,228,83,2025-06-20,45,OGE250620C00045000,,,10375,,42.97,10,0.270342995723878,0.270342995723878,False,False,False,False,83,RepeatedHits,10375,0,0.364035087719298,True,1
+call,OGE,,2024-09-04T16:03:13.156401Z,,,,2.55,552,66,2024-12-20,40,OGE241220C00040000,,,16830,,39.95,12,,,False,False,False,False,66,RepeatedHits,0,16830,0.119565217391304,True,1
+put,OGE,,2024-04-18T16:56:40.990227Z,,,,0.75,208,340,2024-09-20,30,OGE240920P00030000,,,15000,,32.929,13,,,False,False,False,False,200,RepeatedHits,12150,2850,1.63461538461538,True,1

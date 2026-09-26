@@ -1,0 +1,3 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5000,CNX,36.77,691135,2024-12-26T22:04:07Z,False,183850.00,,36.32,36.98,extended_hours_trade,L,50,50,61447281771958,,,
+4900,CNX,36.54,684258,2024-12-26T22:03:17Z,False,179046.00,,36.32,36.64,extended_hours_trade,L,3,50,61397988544479,,,

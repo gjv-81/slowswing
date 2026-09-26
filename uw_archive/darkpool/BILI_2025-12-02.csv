@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3899,BILI,25.82,1202360,2025-12-02T21:20:00Z,False,100672.18,prior_reference_price,25.77,25.98,extended_hours_trade,L,100,200,0,,regular,
+5050,BILI,25.82,1197647,2025-12-02T21:00:04Z,False,130391.00,,25.77,26,extended_hours_trade,L,487,200,0,,regular,
+11356,BILI,25.82,1192204,2025-12-02T21:00:04Z,False,293211.92,,25.77,26,extended_hours_trade,L,487,200,0,,regular,
+15118,BILI,25.82,1180848,2025-12-02T21:00:01Z,False,390346.76,,25.77,26,extended_hours_trade,L,487,200,0,,regular,
+4891,BILI,25.7,571205,2025-12-02T16:34:50Z,False,125698.7,,25.7,25.71,,L,102,289,0,,regular,
+4700,BILI,26,402250,2025-12-02T15:36:10Z,False,122200,,26,26.02,,L,153,387,0,,regular,

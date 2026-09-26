@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+194825,BILI,15.46,2010353,2026-09-15T21:37:58Z,False,3011994.50,average_price_trade,15.4,15.8,extended_hours_trade,L,3,100,38959726220972,,regular,2026-09-15T21:37:58Z
+16570,BILI,15.46,1808563,2026-09-15T20:00:06Z,False,256172.20,,15.4,15.59,extended_hours_trade,L,300,201,38959720348386,,regular,2026-09-15T20:00:03Z
+9510,BILI,15.4599,1453991,2026-09-15T19:33:31Z,False,147023.6490,,15.45,15.46,,L,450,3182,38959718753455,,regular,2026-09-15T19:33:31Z
+10000,BILI,15.45,90030,2026-09-15T13:32:43Z,False,154500.00,,15.43,15.46,,L,300,300,38959697105292,,regular,2026-09-15T13:32:43Z

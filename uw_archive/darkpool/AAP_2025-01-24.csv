@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+16576,AAP,48.44,1326630,2025-01-24T21:53:37Z,False,802941.44,prior_reference_price,47.40,48.60,extended_hours_trade,L,200,100,60817502118599,,,
+8834,AAP,48.44,1308692,2025-01-24T21:06:32Z,False,427918.96,,47.40,50.42,extended_hours_trade,L,257,100,57992208791451,,,
+5550,AAP,48.44,1296609,2025-01-24T21:00:24Z,False,268842.00,prior_reference_price,47.40,60,extended_hours_trade,L,1,100,57624322984303,,,
+3000,AAP,48.185,658052,2025-01-24T19:49:40Z,False,144555.000,,48.14,48.22,,L,372,5,53380172969660,,,
+2439,AAP,48.2199,648400,2025-01-24T19:47:52Z,False,117608.3361,,48.16,48.22,,L,225,290,53272328918728,,,
+9261,AAP,48.05,564944,2025-01-24T19:05:33Z,False,444991.05,,48.04,48.08,,L,77,1,50733603254513,,,
+15050,AAP,47.9195,335358,2025-01-24T17:23:37Z,False,721188.4750,contingent_trade,48.27,48.30,,L,6,99,44617419934278,qualified_contingent_trade,,
+4000,AAP,47.70,263559,2025-01-24T16:52:10Z,False,190800.00,,47.64,47.73,,L,77,528,42730219639358,,,

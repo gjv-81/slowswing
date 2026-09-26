@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1952,AKAM,96.91,540926,2024-12-24T18:00:01Z,False,189168.32,,95,96.94,extended_hours_trade,L,11,59,46801718971884,,,
+1378,AKAM,96.91,391494,2024-12-24T18:00:00Z,False,133541.98,,96.96,96.99,extended_hours_trade,L,1101,1291,46800431698530,,,
+22800,AKAM,96.72,208200,2024-12-24T16:56:49Z,False,2205216.00,,96.72,96.75,,L,300,5,43009667698879,,,
+22800,AKAM,96.73,185276,2024-12-24T16:56:42Z,False,2205444.00,,96.72,96.76,,L,140,5,43002775589757,,,
+1300,AKAM,96.25,46655,2024-12-24T14:56:15Z,False,125125.00,,96.24,96.39,,L,100,100,35775883972028,,,

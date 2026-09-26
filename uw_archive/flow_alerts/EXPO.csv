@@ -1,0 +1,10 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_singleleg,has_multileg,has_floor,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,expiry_count
+call,EXPO,,2025-12-22T15:55:34.866760Z,,,,6.4,52,33,2026-06-18,75,EXPO260618C00075000,,,21120,,72.97,7,0.357003703085485,0.357003703085485,True,False,False,False,False,33,RepeatedHits,21120,0,0.634615384615385,1
+put,EXPO,,2025-10-27T15:44:26.251406Z,,,,6.5,2,150,2026-03-20,70,EXPO260320P00070000,,,32500,,68.56,8,0.333864941652794,0.333864941652794,True,False,False,False,False,50,RepeatedHits,0,32500,75,1
+put,EXPO,,2025-10-27T14:14:48.617013Z,,,,6.5,2,100,2026-03-20,70,EXPO260320P00070000,,,32500,,68.77,6,0.339877630057823,0.339877630057823,True,False,False,True,False,50,RepeatedHits,24700,7800,50,1
+put,EXPO,,2025-10-27T14:14:33.167973Z,,,,6.5,2,45,2026-03-20,70,EXPO260320P00070000,,,29245,,68.93,15,0.344390813030082,0.351193564717528,True,False,False,False,False,45,RepeatedHitsDescendingFill,0,29245,22.5,1
+call,EXPO,,2024-10-16T16:05:24.858571Z,,,,7.5,1,106,2025-03-21,120,EXPO250321C00120000,,,25500,,114.994,9,,,True,False,False,False,False,34,RepeatedHits,0,13500,106,1
+call,EXPO,,2024-08-22T14:19:54.846732Z,,,,7.5,0,53,2024-12-20,105,EXPO241220C00105000,,,39753,,103.79,12,,,True,False,False,True,False,53,RepeatedHits,35253,4500,0,1
+put,EXPO,,2023-11-06T19:26:38.903883Z,,,,4,0,95,2024-06-21,70,EXPO240621P00070000,,,14000,,72.595,9,,,True,False,False,False,False,35,RepeatedHits,800,13200,0,1
+put,EXPO,,2023-11-06T19:01:48.962400Z,,,,4,0,60,2024-06-21,70,EXPO240621P00070000,,,11600,,72.67,7,,,True,False,False,False,False,29,RepeatedHits,0,11600,0,1
+put,EXPO,,2023-11-06T15:50:49.414297Z,,,,3.6,0,31,2024-06-21,70,EXPO240621P00070000,,,11160,,73.08,6,,,True,False,False,False,False,31,RepeatedHits,0,11160,0,1

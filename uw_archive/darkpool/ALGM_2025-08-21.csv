@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5550,ALGM,30.88,788133,2025-08-21T20:00:01Z,False,171384.00,,31.01,30.16,extended_hours_trade,L,50,66,57601924419670,,regular,
+3875,ALGM,30.70,365254,2025-08-21T17:27:51Z,False,118962.50,,30.68,30.66,,L,100,44,48471630637041,,regular,
+4289,ALGM,30.41,47682,2025-08-21T13:47:52Z,False,130428.49,,30.43,30.37,,L,1,100,35272717287958,,regular,
+15000,ALGM,30.41,43137,2025-08-21T13:47:52Z,False,456150.00,,30.43,30.37,,L,1,100,35272526915562,,regular,

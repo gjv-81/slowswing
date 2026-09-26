@@ -1,0 +1,9 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,underlying_price,vega,total_premium,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,has_singleleg,expiry_count
+call,ASB,,2026-09-18T16:18:32.620327Z,,,,1.85,3,74,2027-03-19,30,ASB270319C00030000,,,29.47,,10545,5,0.216125375920059,0.216125375920059,False,False,True,False,57,RepeatedHits,0,10360,24.6666666666667,True,1
+call,ASB,,2026-08-13T13:30:59.793738Z,,,,2.48,1072,124,2026-09-18,30,ASB260918C00030000,,,32.34,,25574,14,0.149206592367961,0.167301402728022,False,False,False,False,103,RepeatedHitsAscendingFill,4396,18238,0.115671641791045,True,1
+call,ASB,,2026-08-06T16:09:43.324350Z,,,,1.85,382,154,2026-09-18,30,ASB260918C00030000,,,31.315,,10736,11,0.228004148461528,0.228004148461528,False,False,False,False,58,RepeatedHits,8271,1170,0.403141361256544,True,1
+put,ASB,,2024-02-01T15:51:36.967472Z,,,,1.95,0,177,2024-09-20,20,ASB240920P00020000,,,20.355,,34515,8,,,False,False,False,False,177,RepeatedHits,0,34515,0,True,1
+call,ASB,,2023-11-03T16:03:24.578359Z,,,,1.3,11,1170,2024-03-15,17.5,ASB240315C00017500,,,17.57,,34450,5,,,False,False,False,False,265,RepeatedHits,0,34450,106.363636363636,True,1
+call,ASB,,2023-11-03T16:03:18.955823Z,,,,1.3,11,905,2024-03-15,17.5,ASB240315C00017500,,,17.57,,41600,7,,,False,False,False,False,320,RepeatedHits,0,41600,82.2727272727273,True,1
+call,ASB,,2023-11-03T15:00:16.547769Z,,,,1.25,11,500,2024-03-15,17.5,ASB240315C00017500,,,17.51,,29375,7,,,False,False,False,False,235,RepeatedHits,0,29375,45.4545454545455,True,1
+call,ASB,,2023-11-03T15:00:06.974247Z,,,,1.25,11,185,2024-03-15,17.5,ASB240315C00017500,,,17.5,,23125,8,,,False,False,False,False,185,RepeatedHits,0,23125,16.8181818181818,True,1

@@ -101,7 +101,7 @@ GTLB,PASS,GROWTH,PASS/GS,66.4,2026-09-23,1.1,0.484,4,7.26,2.7,-1.5,0.0,-7.4,Tech
 HAL,WATCH,NEW-IPO,WATCH/IPO,54.8,2026-08-25,1.1,0.139,4,3.46,5.9,6.0,0.78,13.9,Energy,<3yr public history,
 HOOD,FAIL,GROWTH,FAIL/GS,30.2,2026-09-23,1.1,0.098,4,2.74,1.4,,1.27,46.8,Financial Services,"rev +52%/yr, profitable",
 HPE,FAIL,LEVERAGED,FAIL/LEV,28.1,2026-09-23,1.1,0.137,4,1.45,0.8,9.4,0.98,4.8,Technology,distress/leverage flag,Altman-Z 1.45 in distress zone (<1.81)
-HPQ,FAIL,LEVERAGED,FAIL/LEV,53.7,2026-08-26,1.1,0.273,5,1.7,10.3,5.8,-31.45,6.6,Technology,distress/leverage flag,Altman-Z 1.70 in distress zone (<1.81)
+HPQ,FAIL,LEVERAGED,FAIL/LEV,53.6,2026-09-26,1.1,0.273,5,1.72,9.9,5.8,-31.45,6.6,Technology,distress/leverage flag,Altman-Z 1.72 in distress zone (<1.81)
 HUM,FAIL,CORE,FAIL,28.6,2026-08-28,1.1,,4,,0.8,3.5,0.7,,Healthcare,mature / stable,
 HUT,FAIL,SPECULATIVE,FAIL/SPEC,12.7,2026-09-23,1.1,0.046,3,6.9,-6.2,-9.0,0.3,-41.4,Financial Services,pre-commercial (P/S 54),Operating margin negative (-41.4%) and FCF not positive | Interest coverage -9.0x < 1.0x and FCF not positive | Burning cash and unprofitable (FCF<0 and NI<0)
 ILMN,PASS,DECLINING,PASS/DECL,85.3,2026-09-14,1.1,0.432,8,6.28,3.0,11.8,0.94,18.8,Healthcare,revenue -1% YoY,

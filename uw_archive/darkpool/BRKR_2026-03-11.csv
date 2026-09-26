@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5106,BRKR,36.81,1198659,2026-03-11T20:01:29Z,False,187951.86,prior_reference_price,35.97,43.77,extended_hours_trade,L,100,50,31336153480919,,regular,2026-03-11T20:01:29Z
+2817,BRKR,36.81,1193553,2026-03-11T20:01:09Z,False,103693.77,prior_reference_price,35.97,40,extended_hours_trade,L,25,50,31336153461606,,regular,2026-03-11T20:01:09Z
+23196,BRKR,36.81,1188294,2026-03-11T20:00:38Z,False,853844.76,prior_reference_price,36.1,39.99,extended_hours_trade,L,30,3,31336153430418,,regular,2026-03-11T20:00:38Z
+3991,BRKR,36.88,869658,2026-03-11T19:56:19Z,False,147188.08,,36.88,36.9,,L,1732,528,31336153170746,,regular,2026-03-11T19:56:19Z
+27606,BRKR,36.73,324387,2026-03-11T15:59:27Z,False,1013968.38,,36.67,36.72,,L,1,73,31336138958862,intermarket_sweep,regular,2026-03-11T15:59:27Z
+3610,BRKR,36.725,250748,2026-03-11T15:36:05Z,False,132577.250,,36.7,36.74,,L,8,200,31336137556971,,regular,2026-03-11T15:36:05Z
+5000,BRKR,36.775,229337,2026-03-11T15:23:49Z,False,183875.000,,36.73,36.79,,L,21,200,31336136821435,,regular,2026-03-11T15:23:49Z
+3266,BRKR,36.88,123959,2026-03-11T14:43:17Z,False,120450.08,,36.77,36.87,,L,6,102,31336134388773,,regular,2026-03-11T14:43:17Z

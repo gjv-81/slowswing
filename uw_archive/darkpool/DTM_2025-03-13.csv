@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4990,DTM,93.28,950516,2025-03-13T20:00:34Z,False,465467.20,,81.32,100,extended_hours_trade,L,1,100,57634955962029,,,
+2002,DTM,93.33,945305,2025-03-13T20:00:30Z,False,186846.66,prior_reference_price,81.32,100,extended_hours_trade,L,1,100,57630082657893,,,
+3000,DTM,93.33,943303,2025-03-13T20:00:30Z,False,279990.00,prior_reference_price,81.32,100,extended_hours_trade,L,1,100,57630074935139,,,
+14900,DTM,93.33,940153,2025-03-13T20:00:29Z,False,1390617.00,prior_reference_price,81.32,100,extended_hours_trade,L,1,100,57629938920535,,,
+1135,DTM,93.33,925253,2025-03-13T20:00:29Z,False,105929.55,prior_reference_price,81.32,100,extended_hours_trade,L,1,100,57629934226829,,,
+1100,DTM,92.7809,616984,2025-03-13T19:43:48Z,False,102058.9900,average_price_trade,92.79,92.92,,L,108,53,56628112062039,derivative_priced,,
+1156,DTM,92.9015,360713,2025-03-13T17:41:17Z,False,107394.1340,,92.87,92.94,,L,20,174,49277624296044,,,
+2400,DTM,93.39,318862,2025-03-13T17:06:56Z,False,224136.00,,93.22,93.39,,L,200,112,47216333707258,,,
+2000,DTM,92.575,159085,2025-03-13T15:16:30Z,False,185150.000,,92.49,92.66,,L,432,80,40590089560041,,,
+1200,DTM,92.94,78297,2025-03-13T14:06:38Z,False,111528.00,,92.70,93.26,,L,124,100,36398936084354,,,

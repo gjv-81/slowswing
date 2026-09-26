@@ -1,0 +1,7 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2024-12-10T15:42:49.490000Z,2024-12-10,XRAY,6,0,6,0,0,0,15,0,2736.00,0,0,2736.00,0,1,0,2736.00,1,6,0,0,0
+2024-12-10T19:29:23.839000Z,2024-12-10,XRAY,5,65,0,5,60,2,17.5,2040.00,1925.00,1925.00,44.00,0,1856.00,2,7,1925.00,2,5,0,0,0
+2024-12-10T20:51:02.856000Z,2024-12-10,XRAY,3089,222,2113,358,216,5,20,30251.00,526089.00,60908.00,1334.00,356826.00,28802.00,138,17,0,0,0,30251.00,17,222
+2024-12-10T20:52:48.075000Z,2024-12-10,XRAY,7,8,5,1,4,4,22.5,3392.00,172.00,78.00,1772.00,79.00,1620.00,7,2,0,0,0,3392.00,2,8
+2024-12-10T17:11:12.399000Z,2024-12-10,XRAY,1,2,0,1,0,1,25,1237.00,44.00,44.00,607.00,0,0,1,2,0,0,0,1237.00,2,2
+2024-12-10T17:23:33.827000Z,2024-12-10,XRAY,8,0,0,8,0,0,30,0,56.00,56.00,0,0,0,1,0,0,0,0,0,0,0

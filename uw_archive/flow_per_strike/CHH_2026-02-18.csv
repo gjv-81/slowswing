@@ -1,0 +1,7 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2026-02-18T19:13:14.749000Z,2026-02-18,CHH,20,0,0,20,0,0,85,0,51200.00,51200.00,0,0,0,1,0,51200.00,1,20,0,0,0
+2026-02-18T18:58:48.835000Z,2026-02-18,CHH,2,1,2,0,1,0,90,360.00,5136.00,0,0,5136.00,360.00,1,1,5136.00,1,2,0,0,0
+2026-02-18T19:19:19.438000Z,2026-02-18,CHH,0,1,0,0,0,1,95,295.00,0,0,295.00,0,0,0,1,0,0,0,0,0,0
+2026-02-18T20:24:49.575000Z,2026-02-18,CHH,187,1,53,91,0,0,110,415.00,58027.00,27833.00,0,15529.00,0,79,1,27170.00,36,88,0,0,0
+2026-02-18T18:20:00.450000Z,2026-02-18,CHH,5,6,0,4,2,2,115,3258.00,584.00,424.00,1360.00,0,1028.00,4,4,0,0,0,3258.00,4,6
+2026-02-18T20:49:50.018000Z,2026-02-18,CHH,214,0,46,166,0,0,120,0,20935.00,15860.00,0,4855.00,0,157,0,0,0,0,0,0,0

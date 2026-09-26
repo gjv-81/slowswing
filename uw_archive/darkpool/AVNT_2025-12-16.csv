@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+14600,AVNT,30.5,856141,2025-12-16T22:33:03Z,False,445300.0,prior_reference_price,30.75,30.08,extended_hours_trade,L,75,75,31443536757205,,regular,
+5032,AVNT,30.5,840109,2025-12-16T21:02:53Z,False,153476.0,prior_reference_price,37.16,29.91,extended_hours_trade,L,44,66,31443531347063,,regular,
+5600,AVNT,30.5,833061,2025-12-16T21:01:58Z,False,170800.0,prior_reference_price,37.16,0,extended_hours_trade,L,44,0,31443531292509,,regular,
+4286,AVNT,30.5,824251,2025-12-16T21:01:00Z,False,130723.0,prior_reference_price,37.16,0,extended_hours_trade,L,44,0,31443531234814,,regular,
+22719,AVNT,30.5,814648,2025-12-16T21:00:08Z,False,692929.5,average_price_trade,30.52,30.5,extended_hours_trade,L,40,100,31443531182422,,regular,
+4111,AVNT,30.48,50060,2025-12-16T15:07:19Z,False,125303.28,,30.59,30.51,,L,15,143,31443510013603,,regular,
+5433,AVNT,30.45,37165,2025-12-16T15:03:33Z,False,165434.85,,30.51,30.41,,L,100,6,31443509787951,,regular,
+4131,AVNT,30.45,31030,2025-12-16T15:03:33Z,False,125788.95,,30.51,30.41,,L,100,6,31443509787945,,regular,

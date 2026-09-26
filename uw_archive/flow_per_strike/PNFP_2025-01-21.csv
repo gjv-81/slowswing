@@ -1,0 +1,8 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2025-01-21T15:41:30.236000Z,2025-01-21,PNFP,1,0,1,0,0,0,110,0,1280.00,0,0,1280.00,0,1,0,1280.00,1,1,0,0,0
+2025-01-21T18:46:17.801000Z,2025-01-21,PNFP,2,0,0,2,0,0,115,0,1570.00,1570.00,0,0,0,1,0,1570.00,1,2,0,0,0
+2025-01-21T20:51:51.015000Z,2025-01-21,PNFP,3,8,1,2,3,5,120,3087.00,1480.00,980.00,1941.00,500.00,1146.00,3,5,1480.00,3,3,0,0,0
+2025-01-21T20:57:26.742000Z,2025-01-21,PNFP,12,1,11,1,1,0,125,940.00,2988.00,215.00,0,2773.00,940.00,10,1,0,0,0,940.00,1,1
+2025-01-21T16:55:15.375000Z,2025-01-21,PNFP,5,0,5,0,0,0,130,0,560.00,0,0,560.00,0,1,0,0,0,0,0,0,0
+2025-01-21T20:37:48.702000Z,2025-01-21,PNFP,2,0,0,2,0,0,135,0,643.00,643.00,0,0,0,2,0,0,0,0,0,0,0
+2025-01-21T16:56:00.483000Z,2025-01-21,PNFP,2,0,0,0,0,0,160,0,10.00,0,0,0,0,1,0,0,0,0,0,0,0

@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1016,ALGN,157.84,407347,2025-12-24T18:47:00Z,False,160365.44,,160.22,156.28,extended_hours_trade,L,70,1,31194415091343,,regular,
+700,ALGN,158.53,306080,2025-12-24T17:37:13Z,False,110971.00,,158.55,158.43,,L,1,201,31194410904796,,regular,
+84477,ALGN,156.76,84482,2025-12-24T13:00:01Z,False,13242614.52,average_price_trade,158.5,155.01,extended_hours_trade,L,140,291,31194394272742,,seller,

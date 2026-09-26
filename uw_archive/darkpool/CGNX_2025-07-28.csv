@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+10247,CGNX,34.63,1644732,2025-07-28T20:00:11Z,False,354853.61,prior_reference_price,34,34.64,extended_hours_trade,L,286,25,57611863206526,,regular,
+5006,CGNX,34.63,1634350,2025-07-28T20:00:11Z,False,173357.78,prior_reference_price,34,34.64,extended_hours_trade,L,286,25,57611852188976,,regular,
+3000,CGNX,34.63,1629160,2025-07-28T20:00:11Z,False,103890.00,prior_reference_price,34,34.64,extended_hours_trade,L,286,25,57611829801037,,regular,
+3849,CGNX,34.55,912469,2025-07-28T19:54:40Z,False,132982.95,,34.53,34.54,,L,1275,335,57280047013270,,regular,
+2900,CGNX,34.4916,865841,2025-07-28T19:52:46Z,False,100025.6400,average_price_trade,34.51,34.52,,L,54,1131,57166292003504,derivative_priced,regular,
+3100,CGNX,34.4979,812278,2025-07-28T19:47:39Z,False,106943.4900,average_price_trade,34.50,34.52,,L,495,708,56859847937504,derivative_priced,regular,

@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+183240,CZR,23.56,2464860,2026-01-02T21:00:08Z,False,4317134.40,average_price_trade,23.64,23.56,extended_hours_trade,L,2750,700,35150087958594,,regular,
+4574,CZR,23.3898,899760,2026-01-02T17:55:24Z,False,106984.9452,,23.4,23.39,,L,353,540,35150076875379,,regular,
+5500,CZR,23.215,340712,2026-01-02T15:29:36Z,False,127682.500,,23.22,23.21,,L,208,130,35150068126536,,regular,

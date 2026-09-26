@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5791,AAP,61.34,1113274,2025-10-03T20:10:00Z,False,355219.94,prior_reference_price,61.2,66.24,extended_hours_trade,L,97,30,0,,regular,
+9521,AAP,61.34,1099948,2025-10-03T20:00:33Z,False,584018.14,prior_reference_price,61.2,66.24,extended_hours_trade,L,97,30,0,,regular,
+2663,AAP,61.695,545622,2025-10-03T19:18:12Z,False,164293.785,,61.68,61.72,,L,223,4,0,,regular,
+1644,AAP,61.73,460685,2025-10-03T18:36:58Z,False,101484.12,,61.68,61.73,,L,254,3,0,,regular,
+3700,AAP,61.91,361391,2025-10-03T17:33:55Z,False,229067.00,,61.87,61.93,,L,97,14,0,,regular,
+2850,AAP,62.035,295833,2025-10-03T16:38:18Z,False,176799.750,,62.01,62.07,,L,105,16,0,,regular,
+2293,AAP,61.93,156284,2025-10-03T14:43:13Z,False,142005.49,,61.9,61.93,,L,20,114,0,,regular,
+2207,AAP,61.93,153991,2025-10-03T14:43:13Z,False,136679.51,,61.9,61.93,,L,20,114,0,,regular,
+3600,AAP,61.7799,98640,2025-10-03T14:19:56Z,False,222407.6400,,61.64,61.72,,L,16,102,0,,regular,

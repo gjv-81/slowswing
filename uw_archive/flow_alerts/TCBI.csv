@@ -1,0 +1,9 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,has_singleleg,expiry_count
+put,TCBI,,2026-05-01T19:41:14.656198Z,,,,2.1,151,113,2026-05-15,100,TCBI260515P00100000,,,10077,,101.58,17,0.358415416513155,0.358415416513155,False,False,False,False,48,RepeatedHits,0,10077,0.748344370860927,True,1
+put,TCBI,,2025-09-16T19:45:21.743927Z,,,,1.66,2,100,2025-09-19,85,TCBI250919P00085000,,,11816,,84.02,11,0.357037536713848,0.357037536713848,False,False,False,False,71,RepeatedHits,0,11816,50,True,1
+put,TCBI,,2024-11-04T18:38:32.442173Z,,,,2.6,1,700,2024-12-20,70,TCBI241220P00070000,,,182000,,76.39,4,,,True,False,False,False,700,LowHistoricVolumeFloor,0,182000,700,True,1
+put,TCBI,,2024-02-16T20:52:39.366522Z,,,,2,293,57,2024-03-15,60,TCBI240315P00060000,,,11400,,59.73,14,,,False,False,False,False,57,RepeatedHits,0,11400,0.194539249146758,True,1
+put,TCBI,,2024-01-30T16:17:47.425649Z,,,,1.15,1,156,2024-03-15,60,TCBI240315P00060000,,,14145,,63.7,20,,,False,False,False,False,123,RepeatedHits,13915,115,156,True,1
+put,TCBI,,2024-01-22T15:52:06.161851Z,,,,3.55,9,400,2024-03-15,65,TCBI240315P00065000,,,142000,,63.5,2,,,True,True,False,True,400,LowHistoricVolumeFloor,142000,0,44.4444444444444,False,1
+put,TCBI,,2023-11-15T18:08:26.104851Z,,,,1.35,63,375,2023-12-15,55,TCBI231215P00055000,,,50625,,56.64,6,,,False,False,False,False,375,RepeatedHits,0,50625,5.95238095238095,True,1
+call,TCBI,,2023-04-20T19:41:50.272251Z,,,,2.6,18,300,2023-06-16,55,TCBI230616C00055000,,,78000,,52.8,12,,,False,False,False,False,300,RepeatedHits,78000,0,16.6666666666667,True,1

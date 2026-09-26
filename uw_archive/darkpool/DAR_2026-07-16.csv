@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+18224,DAR,61.18,2008038,2026-07-16T21:20:41Z,False,1114944.32,average_price_trade,60,63.63,extended_hours_trade,L,4,33,29493617262958,,regular,2026-07-16T21:20:41Z
+2485,DAR,61.18,1986464,2026-07-16T20:00:38Z,False,152032.30,prior_reference_price,0,63.63,extended_hours_trade,L,4,0,29493612460450,,regular,2026-07-16T20:00:38Z
+4529,DAR,61.18,1981188,2026-07-16T20:00:38Z,False,277084.22,prior_reference_price,0,63.63,extended_hours_trade,L,4,0,29493612460440,,regular,2026-07-16T20:00:38Z
+1892,DAR,61.18,1973612,2026-07-16T20:00:08Z,False,115752.56,average_price_trade,61.18,62.13,extended_hours_trade,L,100,81,29493612430443,,regular,2026-07-16T20:00:08Z
+3000,DAR,61.37,1024908,2026-07-16T19:22:12Z,False,184110.00,,61.37,61.43,,L,30,759,29493610154067,,regular,2026-07-16T19:22:12Z
+58866,DAR,61.25,753961,2026-07-16T17:59:40Z,False,3605542.50,,61.4,61.48,,L,332,206,29493605201680,intermarket_sweep,regular,2026-07-16T17:59:39Z
+2999,DAR,61.7399,435500,2026-07-16T15:57:59Z,False,185157.9601,,61.65,61.73,,L,28,14,29493597901287,,regular,2026-07-16T15:57:59Z
+24200,DAR,61.85,225441,2026-07-16T14:26:58Z,False,1496770.00,,61.8,61.91,,L,10,90,29493592439803,intermarket_sweep,regular,2026-07-16T14:26:57Z
+1800,DAR,61.815,185840,2026-07-16T14:24:18Z,False,111267.000,,61.71,61.87,,L,46,180,29493592279911,,regular,2026-07-16T14:24:18Z

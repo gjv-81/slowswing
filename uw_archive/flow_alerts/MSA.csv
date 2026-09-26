@@ -1,0 +1,2 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_singleleg,has_multileg,has_floor,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,expiry_count
+call,MSA,,2023-09-11T19:15:15.222817Z,,,,6.7,0,51,2023-10-20,170,MSA231020C00170000,,,34170,,171.66,5,,,True,False,False,False,False,51,RepeatedHits,34170,0,0,1

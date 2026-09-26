@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+15620,CXT,49.14,1427914,2026-06-29T21:57:15Z,False,767566.80,average_price_trade,39.51,59.34,extended_hours_trade,L,100,100,25391925689887,,regular,2026-06-29T21:57:15Z
+359179,CXT,49.14,1412294,2026-06-29T21:39:25Z,False,17650056.06,prior_reference_price,39.51,59.34,extended_hours_trade,L,100,100,25391924619883,,regular,2026-06-29T21:39:25Z
+2903,CXT,49.14,1053115,2026-06-29T21:29:30Z,False,142653.42,average_price_trade,39.51,59.34,extended_hours_trade_late_or_out_of_sequence,L,100,100,25391924024197,,regular,2026-06-29T21:29:18Z
+3645,CXT,49.14,1050022,2026-06-29T20:00:40Z,False,179115.30,prior_reference_price,39.32,59.59,extended_hours_trade,L,100,100,25391918694891,,regular,2026-06-29T20:00:40Z
+2324,CXT,49.14,1042002,2026-06-29T20:00:40Z,False,114201.36,prior_reference_price,39.32,59.59,extended_hours_trade,L,100,100,25391918694615,,regular,2026-06-29T20:00:40Z
+2330,CXT,49.14,1036999,2026-06-29T20:00:40Z,False,114496.20,prior_reference_price,39.32,59.59,extended_hours_trade,L,100,100,25391918694369,,regular,2026-06-29T20:00:40Z
+2075,CXT,49.14,1034330,2026-06-29T20:00:39Z,False,101965.50,prior_reference_price,39.32,59.59,extended_hours_trade,L,100,100,25391918693938,,regular,2026-06-29T20:00:39Z
+2574,CXT,49.14,1032255,2026-06-29T20:00:39Z,False,126486.36,prior_reference_price,39.32,59.59,extended_hours_trade,L,100,100,25391918693408,,regular,2026-06-29T20:00:39Z
+3215,CXT,49.31,453919,2026-06-29T19:03:30Z,False,158531.65,,49.38,49.52,,L,200,255,25391915263984,,regular,2026-06-29T19:03:30Z
+2847,CXT,49.2,374300,2026-06-29T18:25:40Z,False,140072.4,,49.14,49.23,,L,2,351,25391912994094,,regular,2026-06-29T18:25:40Z
+6259,CXT,48.72,250348,2026-06-29T16:45:52Z,False,304938.48,,48.62,48.9,,L,45,310,25391907006315,,regular,2026-06-29T16:45:52Z
+2986,CXT,48.9,233880,2026-06-29T16:45:52Z,False,146015.4,,48.9,49.01,,L,6,23,25391907006087,,regular,2026-06-29T16:45:52Z

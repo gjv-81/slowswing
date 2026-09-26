@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6300,BEKE,18.4,3787438,2026-02-02T21:04:43Z,False,115920.0,prior_reference_price,18.66,18.3,extended_hours_trade,L,2570,100,24502864306909,,regular,2026-02-02T21:04:43Z
+6400,BEKE,18.4,3781138,2026-02-02T21:04:37Z,False,117760.0,prior_reference_price,18.66,18.3,extended_hours_trade,L,2570,100,24502864301393,,regular,2026-02-02T21:04:37Z
+7908,BEKE,18.4,3772903,2026-02-02T21:00:42Z,False,145507.2,prior_reference_price,18.41,18.4,extended_hours_trade,L,1600,2520,24502864066196,,regular,2026-02-02T21:00:42Z
+13798,BEKE,18.4,3763202,2026-02-02T21:00:42Z,False,253883.2,prior_reference_price,18.41,18.4,extended_hours_trade,L,1600,2520,24502864066049,,regular,2026-02-02T21:00:42Z
+5467,BEKE,18.49,38001,2026-02-02T14:30:18Z,False,101084.83,,18.55,18.42,,L,200,400,24502840642548,,regular,2026-02-02T14:30:18Z

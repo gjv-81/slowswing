@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+16903,AAP,41.25,1483798,2025-12-26T23:05:49Z,False,697248.75,average_price_trade,38.78,42.01,extended_hours_trade,L,4,1,31722711597615,,regular,
+4167,AAP,41.25,1463360,2025-12-26T21:00:12Z,False,171888.75,prior_reference_price,37.22,43.29,extended_hours_trade,L,5,100,31722704061162,,regular,
+7700,AAP,41.25,1459193,2025-12-26T21:00:12Z,False,317625.00,prior_reference_price,37.22,43.29,extended_hours_trade,L,5,100,31722704061145,,regular,
+6934,AAP,41.32,842303,2025-12-26T20:24:08Z,False,286512.88,,41.28,41.31,,L,219,101,31722701896492,,regular,
+3885,AAP,41.1455,389188,2025-12-26T16:08:30Z,False,159850.2675,,40.91,41.2,,L,11,342,31722686558753,,regular,
+4614,AAP,40.785,306767,2025-12-26T15:36:41Z,False,188181.990,,40.78,40.85,,L,15,34,31722684649440,,regular,
+4441,AAP,41.06,179201,2025-12-26T15:01:52Z,False,182347.46,,40.88,41.08,,L,15,211,31722682561112,,regular,

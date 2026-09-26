@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+12373,DOCN,45.9,1360497,2025-12-18T21:00:28Z,False,567920.7,prior_reference_price,46.12,45.81,extended_hours_trade,L,16,10,23021100335488,,regular,
+3100,DOCN,45.8802,929181,2025-12-18T20:54:55Z,False,142228.6200,average_price_trade,45.83,45.77,,L,115,100,23021100002053,derivative_priced,regular,
+2190,DOCN,45.665,703650,2025-12-18T20:09:22Z,False,100006.350,,45.68,45.66,,L,11,20,23021097269240,,regular,
+3493,DOCN,45.77,413230,2025-12-18T17:43:28Z,False,159874.61,,45.8,45.73,,L,16,278,23021088515504,,regular,
+4303,DOCN,45.73,155156,2025-12-18T15:38:01Z,False,196776.19,,45.8,45.6,,L,5,17,23021080987981,,regular,
+2200,DOCN,45.62,133807,2025-12-18T15:32:53Z,False,100364.00,,45.66,45.55,,L,2,2,23021080679718,,regular,
+6511,DOCN,44.6799,72377,2025-12-18T14:51:16Z,False,290910.8289,,44.63,44.17,,L,15,34,23021078182989,,regular,

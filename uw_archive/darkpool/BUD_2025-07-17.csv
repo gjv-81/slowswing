@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1550,BUD,67.79,931143,2025-07-17T19:55:35Z,False,105074.50,,67.79,67.81,,L,508,226,57335363482081,,regular,
+2000,BUD,67.51,362138,2025-07-17T14:50:16Z,False,135020.00,,67.51,67.53,,L,286,180,39016223984949,,regular,
+1800,BUD,67.4295,186332,2025-07-17T14:06:25Z,False,121373.1000,,67.39,67.43,,L,216,1441,36385802932344,,regular,

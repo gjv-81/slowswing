@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4000,CE,53.97,1003663,2026-06-04T20:00:38Z,False,215880.00,prior_reference_price,0,56.1,extended_hours_trade,L,33,0,32366945581649,,regular,2026-06-04T20:00:38Z
+7129,CE,53.97,996508,2026-06-04T20:00:38Z,False,384752.13,prior_reference_price,0,56.1,extended_hours_trade,L,33,0,32366945581047,,regular,2026-06-04T20:00:38Z
+3059,CE,54.46,330997,2026-06-04T16:50:32Z,False,166593.14,,54.36,54.46,,L,120,200,32366934175518,,regular,2026-06-04T16:50:32Z
+2000,CE,54.37,290612,2026-06-04T16:29:30Z,False,108740.00,,54.3,54.39,,L,110,136,32366932913227,,regular,2026-06-04T16:29:30Z
+3000,CE,54.405,237607,2026-06-04T15:41:13Z,False,163215.000,,54.35,54.46,,L,121,100,32366930016369,,regular,2026-06-04T15:41:13Z
+5000,CE,54.95,136896,2026-06-04T14:39:32Z,False,274750.00,contingent_trade,54.85,54.95,,L,308,310,32366926314891,qualified_contingent_trade,regular,2026-06-04T14:39:32Z
+2824,CE,55.17,52867,2026-06-04T13:59:01Z,False,155800.08,,54.88,55.17,,L,200,340,32366923883903,,regular,2026-06-04T13:59:01Z
+2200,CE,54.6,21013,2026-06-04T13:31:10Z,False,120120.0,,54.68,55.64,,L,41,37,32366922213475,,regular,2026-06-04T13:31:10Z

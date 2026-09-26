@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+63874,CPRI,17.41,2565654,2025-06-09T20:56:44Z,False,1112046.34,prior_reference_price,17,17.75,extended_hours_trade,L,125,125,61004828095678,,,
+35299,CPRI,17.41,2493273,2025-06-09T20:00:31Z,False,614555.59,prior_reference_price,17,17.59,extended_hours_trade,L,30,125,57631786566072,,,
+10900,CPRI,17.41,2456195,2025-06-09T20:00:04Z,False,189769.00,,16.30,19.66,extended_hours_trade,L,4,4,57604547829573,,,
+14700,CPRI,17.31,193826,2025-06-09T13:59:17Z,False,254457.00,,17.24,17.31,,L,122,419,35957176695049,,,

@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1038,DTM,99.99,422129,2024-12-27T21:00:28Z,False,103789.62,prior_reference_price,98.05,101.93,extended_hours_trade,L,16,4,57628677110166,,,
+1200,DTM,99.9815,282533,2024-12-27T20:54:49Z,False,119977.8000,average_price_trade,99.99,100.06,,L,782,3,57289887048191,derivative_priced,,
+2834,DTM,99.52,202015,2024-12-27T20:10:00Z,False,282039.68,,99.48,99.56,,L,336,108,54600241833745,,,
+1200,DTM,98.98,89542,2024-12-27T17:12:56Z,False,118776.00,,98.89,99.06,,L,10,76,43976644113492,,,
+1343,DTM,98.9663,80647,2024-12-27T17:08:01Z,False,132911.7409,,98.66,98.99,,L,236,8,43681083120024,,,
+1250,DTM,99.66,65779,2024-12-27T16:46:40Z,False,124575.00,,99.61,99.77,,L,2,21,42400707321386,,,
+1522,DTM,99.77,34241,2024-12-27T15:32:06Z,False,151849.94,,99.77,100.13,,L,66,14,37926036613285,,,

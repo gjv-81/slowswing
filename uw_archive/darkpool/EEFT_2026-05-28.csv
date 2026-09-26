@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+10965,EEFT,70.58,602196,2026-05-28T20:16:38Z,False,773909.70,prior_reference_price,67.7,71.2,extended_hours_trade,L,6,2,30305362238852,,regular,2026-05-28T20:16:38Z
+15700,EEFT,70.58,591228,2026-05-28T20:09:51Z,False,1108106.00,average_price_trade,67.7,71.2,extended_hours_trade,L,6,2,30305361832359,,regular,2026-05-28T20:09:50Z
+15700,EEFT,70.58,575528,2026-05-28T20:09:36Z,False,1108106.00,average_price_trade,67.7,71.2,extended_hours_trade,L,6,2,30305361817358,,regular,2026-05-28T20:09:35Z
+4225,EEFT,70.58,559826,2026-05-28T20:01:01Z,False,298200.50,prior_reference_price,67.7,71.2,extended_hours_trade,L,6,2,30305361301923,,regular,2026-05-28T20:01:01Z
+4321,EEFT,70.58,555601,2026-05-28T20:00:51Z,False,304976.18,prior_reference_price,67.7,71.2,extended_hours_trade,L,6,2,30305361291859,,regular,2026-05-28T20:00:51Z
+6419,EEFT,70.58,551237,2026-05-28T20:00:08Z,False,453053.02,,67.7,71.2,extended_hours_trade,L,6,2,30305361248989,,regular,2026-05-28T20:00:08Z
+2127,EEFT,70.58,544680,2026-05-28T20:00:08Z,False,150123.66,,67.7,71.2,extended_hours_trade,L,6,2,30305361248970,,regular,2026-05-28T20:00:08Z
+6638,EEFT,70.0501,370638,2026-05-28T19:23:57Z,False,464992.5638,,70.11,70.16,,L,20,3,30305359078198,,regular,2026-05-28T19:23:57Z
+1750,EEFT,69.96,226964,2026-05-28T17:08:14Z,False,122430.00,,69.91,69.96,,L,21,18,30305350934855,,regular,2026-05-28T17:08:14Z
+5500,EEFT,70,177526,2026-05-28T16:04:55Z,False,385000,contingent_trade,69.9,69.99,,L,15,16,30305347135651,qualified_contingent_trade,regular,2026-05-28T16:04:54Z
+4700,EEFT,70.2,151879,2026-05-28T15:16:38Z,False,329940.0,contingent_trade,70.19,70.25,,L,406,100,30305344239026,qualified_contingent_trade,regular,2026-05-28T15:16:36Z
+1960,EEFT,70.1699,144518,2026-05-28T15:12:42Z,False,137533.0040,,70.07,70.19,,L,129,16,30305344002996,,regular,2026-05-28T15:12:42Z

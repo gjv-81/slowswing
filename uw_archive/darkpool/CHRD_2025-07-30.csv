@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6286,CHRD,111.90,605519,2025-07-30T22:21:38Z,False,703403.40,prior_reference_price,110,113.65,extended_hours_trade,L,10,1,66098169699117,,regular,
+1229,CHRD,111.90,599082,2025-07-30T20:31:15Z,False,137525.10,prior_reference_price,109.73,113.65,extended_hours_trade,L,10,8,59475260193269,,regular,
+2312,CHRD,111.90,597016,2025-07-30T20:00:24Z,False,258712.80,prior_reference_price,108,113.65,extended_hours_trade,L,10,300,57624029127614,,regular,
+2459,CHRD,111.90,593807,2025-07-30T20:00:05Z,False,275162.10,,108,113.65,extended_hours_trade,L,10,300,57605999272053,,regular,
+975,CHRD,111.90,509949,2025-07-30T20:00:00Z,False,109102.50,,111.84,111.95,extended_hours_trade,L,390,200,57600120351541,,regular,
+1400,CHRD,111.6356,442505,2025-07-30T19:55:23Z,False,156289.8400,average_price_trade,111.64,111.84,,L,15,24,57323385074849,derivative_priced,regular,
+5300,CHRD,112.465,231749,2025-07-30T18:16:00Z,False,596064.500,,112.36,112.48,,L,5,33,51360116923040,,regular,
+1000,CHRD,112.47,36444,2025-07-30T13:51:33Z,False,112470.00,,112.52,112.84,,L,179,1,35493749708865,,regular,
+3147,CHRD,112.71,31867,2025-07-30T13:49:23Z,False,354698.37,,112.50,112.92,,L,14,14,35363795299628,,regular,
+4206,CHRD,112.71,28594,2025-07-30T13:49:23Z,False,474058.26,,112.50,112.92,,L,14,14,35363788318216,,regular,

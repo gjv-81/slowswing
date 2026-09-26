@@ -1,0 +1,4 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,has_singleleg,expiry_count
+put,UMBF,,2026-08-31T18:06:31.276232Z,,,,5.62,0,500,2026-10-16,145,UMBF261016P00145000,,,281000,,142.145,2,0.219035951539327,0.219035951539327,True,False,False,False,500,LowHistoricVolumeFloor,0,281000,0,True,1
+call,UMBF,,2026-01-21T15:02:47.076535Z,,,,9.9,1,59,2026-09-18,130,UMBF260918C00130000,,,46530,,125.18,8,0.292990079014838,0.292990079014838,False,False,True,False,47,RepeatedHits,0,46530,59,True,1
+call,UMBF,,2023-03-21T18:26:53.796959Z,,,,4.3,20,250,2023-04-21,65,UMBF230421C00065000,,,106250,,64.02,2,,,True,False,False,False,250,LowHistoricVolumeFloor,106250,0,12.5,True,1

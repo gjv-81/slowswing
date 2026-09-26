@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6900,CACI,514.31,100027,2025-10-14T20:00:11Z,False,3548739.00,average_price_trade,579.67,462.32,extended_hours_trade,L,5,3,0,,regular,
+435,CACI,514.31,93035,2025-10-14T20:00:05Z,False,223724.85,,514.22,514.01,extended_hours_trade,L,5,44,0,,regular,
+194,CACI,515.47,62150,2025-10-14T19:56:10Z,False,100001.18,,515.56,514.51,,L,99,1,0,,regular,
+200,CACI,509.72,20549,2025-10-14T15:47:58Z,False,101944.00,,510.35,509,,2,11,1,0,,regular,
+200,CACI,509.12,20261,2025-10-14T15:47:58Z,False,101824.00,,510.35,509,,L,11,1,0,,regular,
+200,CACI,508.97,11207,2025-10-14T14:33:57Z,False,101794.00,contingent_trade,510.61,508.42,,L,8,2,0,qualified_contingent_trade,regular,
+250,CACI,509.415,3383,2025-10-14T13:40:01Z,False,127353.750,,511.5,503.94,,L,8,8,0,,regular,
+300,CACI,505.505,2848,2025-10-14T13:32:35Z,False,151651.500,,511.5,506.95,,L,8,1,0,,regular,
+300,CACI,505.505,1848,2025-10-14T13:32:35Z,False,151651.500,,511.5,506.95,,L,8,1,0,,regular,
+200,CACI,505.505,1538,2025-10-14T13:32:35Z,False,101101.000,,511.5,506.95,,L,8,1,0,,regular,

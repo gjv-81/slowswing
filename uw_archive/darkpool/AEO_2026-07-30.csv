@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6741,AEO,17.31,2382326,2026-07-30T20:00:50Z,False,116686.71,prior_reference_price,17.48,17.05,extended_hours_trade,L,1,100,29549447046613,,regular,2026-07-30T20:00:50Z
+6553,AEO,17.31,2353988,2026-07-30T20:00:44Z,False,113432.43,prior_reference_price,17.48,17.05,extended_hours_trade,L,1,100,29549447040933,,regular,2026-07-30T20:00:44Z
+6000,AEO,17.39,457985,2026-07-30T14:55:41Z,False,104340.00,contingent_trade,17.2,17.18,,L,2,500,29549428738442,qualified_contingent_trade,regular,2026-07-30T14:55:41Z

@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4400,ALGN,158.37,503106,2025-12-26T22:24:10Z,False,696828.00,prior_reference_price,159.18,156.47,extended_hours_trade,L,1,82,31194428121520,,regular,
+702,ALGN,158.37,498491,2025-12-26T21:01:50Z,False,111175.74,prior_reference_price,159.18,156.47,extended_hours_trade,L,1,31,31194423181391,,regular,
+800,ALGN,158.3157,344681,2025-12-26T20:56:18Z,False,126652.5600,average_price_trade,158.3,158.27,,L,199,110,31194422849451,derivative_priced,regular,
+1053,ALGN,158.305,340959,2025-12-26T20:56:06Z,False,166695.165,,158.31,158.27,,L,31,153,31194422837320,,regular,
+900,ALGN,158.3816,326556,2025-12-26T20:54:03Z,False,142543.4400,average_price_trade,158.33,158.25,,L,17,15,31194422714271,derivative_priced,regular,
+1000,ALGN,158.4259,315149,2025-12-26T20:49:59Z,False,158425.9000,average_price_trade,158.46,158.2,,L,50,1,31194422469984,derivative_priced,regular,
+962,ALGN,157.61,204599,2025-12-26T19:16:19Z,False,151620.82,,157.58,157.34,,L,6,166,31194416849989,,regular,
+1000,ALGN,157.66,162900,2025-12-26T18:07:13Z,False,157660.00,,157.7,157.5,,L,1,216,31194412704340,,regular,
+675,ALGN,157.125,146669,2025-12-26T17:56:07Z,False,106059.375,,157.21,157.01,,L,19,239,31194412037862,,regular,
+2000,ALGN,157.27,114271,2025-12-26T17:08:19Z,False,314540.00,,157.44,157.27,,L,1,288,31194409170064,,regular,
+1235,ALGN,157.45,82386,2025-12-26T16:21:27Z,False,194450.75,,157.5,157.39,,L,23,61,31194406358456,,regular,

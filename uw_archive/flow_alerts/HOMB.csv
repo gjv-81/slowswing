@@ -1,0 +1,4 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,has_singleleg,expiry_count
+call,HOMB,,2025-12-08T17:58:01.730124Z,,,,4.1,13,279,2026-03-20,25,HOMB260320C00025000,,,113980,,28.59,15,0.307571031553396,0.307571031553396,False,False,False,False,278,RepeatedHits,0,4510,21.4615384615385,True,1
+put,HOMB,,2025-01-31T20:45:22.549532Z,,,,1,10,129,2025-03-21,30,HOMB250321P00030000,,,11700,,30.22,23,,,False,False,False,False,117,RepeatedHits,11700,0,12.9,True,1
+call,HOMB,,2024-05-29T17:04:09.370324Z,,,,1.65,21,240,2024-09-20,22.5,HOMB240920C00022500,,,39600,,23.02,18,,,False,False,True,False,240,RepeatedHits,37950,0,11.4285714285714,True,1

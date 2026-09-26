@@ -1,0 +1,5 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2024-12-20T20:16:29.461000Z,2024-12-20,VICR,26,0,16,10,0,0,45,0,12620.00,5500.00,0,7120.00,0,4,0,12620.00,4,26,0,0,0
+2024-12-20T20:53:35.256000Z,2024-12-20,VICR,26,31,0,26,1,30,50,9418.00,6436.00,6436.00,9245.00,0,173.00,4,7,6400.00,2,20,9418.00,7,31
+2024-12-20T20:33:24.940000Z,2024-12-20,VICR,22,10,20,2,8,1,55,7633.00,2358.00,8.00,790.00,2350.00,6073.00,3,10,0,0,0,7633.00,10,10
+2024-12-20T17:31:37.691000Z,2024-12-20,VICR,1,1,0,1,1,0,60,1160.00,42.00,42.00,0,0,1160.00,1,1,0,0,0,1160.00,1,1

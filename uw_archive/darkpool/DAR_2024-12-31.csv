@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+48900,DAR,33.69,1257668,2024-12-31T21:01:42Z,False,1647441.00,prior_reference_price,34.33,33.45,extended_hours_trade,L,291,2000,57702055245127,,,
+13192,DAR,33.69,1201215,2024-12-31T21:00:21Z,False,444438.48,prior_reference_price,36,33.45,extended_hours_trade,L,2,2000,57621109370211,,,
+15208,DAR,33.69,1185952,2024-12-31T21:00:20Z,False,512357.52,prior_reference_price,36,33.45,extended_hours_trade,L,2,2000,57620989075721,,,
+73588,DAR,33.69,1169472,2024-12-31T21:00:08Z,False,2479179.72,average_price_trade,36,33.45,extended_hours_trade,L,2,2000,57608117241233,,,
+3764,DAR,33.61,280957,2024-12-31T17:14:50Z,False,126508.04,,33.64,33.61,,L,69,21,44090816785345,,,
+3700,DAR,33.685,205575,2024-12-31T16:39:20Z,False,124634.500,,33.72,33.65,,L,114,5,41960433805509,,,
+3569,DAR,33.40,41386,2024-12-31T14:48:17Z,False,119204.60,,33.40,33.23,,L,1,223,35297880389995,,,

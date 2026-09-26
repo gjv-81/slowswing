@@ -1,0 +1,16 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6865,ALGM,29.946,2347377,2026-03-20T20:24:21Z,False,205579.290,average_price_trade,30.92,28.96,extended_hours_trade,L,1,10,24004645678747,,regular,2026-03-20T20:24:21Z
+33615,ALGM,29.95,2340512,2026-03-20T20:21:55Z,False,1006769.25,prior_reference_price,30.92,28.96,extended_hours_trade,L,1,10,24004645532776,,regular,2026-03-20T20:21:55Z
+4106,ALGM,29.948,2306897,2026-03-20T20:21:05Z,False,122966.488,prior_reference_price,30.92,28.96,extended_hours_trade,L,1,10,24004645483318,,regular,2026-03-20T20:21:05Z
+19309,ALGM,29.95,2296804,2026-03-20T20:05:31Z,False,578304.55,prior_reference_price,30.92,28.96,extended_hours_trade,L,1,10,24004644548632,,regular,2026-03-20T20:05:31Z
+4999,ALGM,29.95,2274519,2026-03-20T20:03:20Z,False,149720.05,,30.92,28.96,extended_hours_trade,L,1,10,24004644417638,,regular,2026-03-20T20:03:20Z
+17235,ALGM,29.95,2269165,2026-03-20T20:02:14Z,False,516188.25,prior_reference_price,30.92,28.96,extended_hours_trade,L,1,10,24004644351611,,regular,2026-03-20T20:02:14Z
+5446,ALGM,29.95,2249029,2026-03-20T20:01:19Z,False,163107.70,prior_reference_price,30.92,29.25,extended_hours_trade,L,1,3,24004644297295,,regular,2026-03-20T20:01:19Z
+3644,ALGM,29.95,2243321,2026-03-20T20:01:18Z,False,109137.80,prior_reference_price,30.92,29.25,extended_hours_trade,L,1,3,24004644296220,,regular,2026-03-20T20:01:18Z
+6681,ALGM,29.95,2235553,2026-03-20T20:00:44Z,False,200095.95,prior_reference_price,30.35,29.68,extended_hours_trade,L,100,1000,24004644262229,,regular,2026-03-20T20:00:44Z
+8722,ALGM,29.95,2226088,2026-03-20T20:00:44Z,False,261223.90,prior_reference_price,30.35,29.68,extended_hours_trade,L,100,1000,24004644262157,,regular,2026-03-20T20:00:44Z
+17109,ALGM,29.95,2215054,2026-03-20T20:00:44Z,False,512414.55,prior_reference_price,30.35,29.68,extended_hours_trade,L,100,1000,24004644262137,,regular,2026-03-20T20:00:44Z
+4025,ALGM,29.95,2190919,2026-03-20T20:00:44Z,False,120548.75,prior_reference_price,30.35,29.68,extended_hours_trade,L,100,1000,24004644261506,,regular,2026-03-20T20:00:44Z
+3577,ALGM,29.95,2178985,2026-03-20T20:00:07Z,False,107131.15,average_price_trade,30.35,29.5,extended_hours_trade,L,100,29,24004644225233,,regular,2026-03-20T20:00:07Z
+3288,ALGM,30.42,335305,2026-03-20T15:58:32Z,False,100020.96,,30.41,30.35,,L,10,345,24004629729872,,regular,2026-03-20T15:58:32Z
+3400,ALGM,30.515,207181,2026-03-20T14:42:04Z,False,103751.000,,30.59,30.53,,L,5,238,24004625141440,,regular,2026-03-20T14:42:04Z

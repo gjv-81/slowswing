@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3284,BWA,42.97,1330088,2025-10-20T21:35:56Z,False,141113.48,,43.37,42.66,extended_hours_trade_late_or_out_of_sequence,L,74,74,0,,regular,
+7700,BWA,42.97,1325993,2025-10-20T20:00:44Z,False,330869.00,prior_reference_price,44.5,0,extended_hours_trade,L,41,0,0,,regular,
+3068,BWA,42.97,1317420,2025-10-20T20:00:30Z,False,131831.96,prior_reference_price,44.5,0,extended_hours_trade,L,41,0,0,,regular,
+3385,BWA,42.97,1314352,2025-10-20T20:00:30Z,False,145453.45,prior_reference_price,44.5,0,extended_hours_trade,L,41,0,0,,regular,
+3036,BWA,42.985,786325,2025-10-20T19:54:18Z,False,130502.460,,42.99,42.98,,L,338,103,0,,regular,
+2380,BWA,42.91,674245,2025-10-20T19:45:28Z,False,102125.80,,42.92,42.9,,L,197,133,0,,regular,
+7014,BWA,42.9,257206,2025-10-20T15:14:50Z,False,300900.6,,42.93,42.9,,L,287,111,0,,regular,
+6583,BWA,42.97,221615,2025-10-20T15:06:46Z,False,282871.51,,42.97,42.96,,L,6,158,0,,regular,
+4292,BWA,43,156660,2025-10-20T14:29:56Z,False,184556,,43.03,43,,L,112,91,0,,regular,
+2580,BWA,42.6332,100062,2025-10-20T14:07:41Z,False,109993.6560,,42.65,42.62,,L,204,4,0,,regular,
+3046,BWA,42.725,47647,2025-10-20T13:49:54Z,False,130140.350,,42.75,42.7,,L,300,100,0,,regular,

@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1214,APPF,156.64,169807,2026-04-07T20:00:35Z,False,190160.96,prior_reference_price,150.15,159.69,extended_hours_trade,L,12,1,36241006079643,,regular,2026-04-07T20:00:35Z
+1000,APPF,157.545,102452,2026-04-07T19:19:34Z,False,157545.000,,157.4,157.71,,L,40,2,36241003618261,,regular,2026-04-07T19:19:34Z
+2080,APPF,158.005,87306,2026-04-07T18:37:49Z,False,328650.400,,157.52,158.06,,L,10,24,36241001113540,,regular,2026-04-07T18:37:49Z
+899,APPF,159.395,34813,2026-04-07T16:08:56Z,False,143296.105,,159.14,159.48,,L,8,1,36240992180330,,regular,2026-04-07T16:08:56Z
+633,APPF,158.76,13221,2026-04-07T14:45:34Z,False,100495.08,,157.69,158.37,,L,2,8,36240987177699,,regular,2026-04-07T14:45:34Z

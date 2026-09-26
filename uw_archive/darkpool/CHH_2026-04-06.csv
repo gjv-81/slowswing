@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1923,CHH,105.84,435654,2026-04-06T20:01:32Z,False,203530.32,,120.5,91.3,extended_hours_trade,L,100,100,30593124141481,,regular,2026-04-06T20:01:32Z
+1044,CHH,105.84,433508,2026-04-06T20:01:16Z,False,110496.96,,120.5,91.3,extended_hours_trade,L,100,100,30593124125979,,regular,2026-04-06T20:01:16Z
+3012,CHH,105.84,431741,2026-04-06T20:00:28Z,False,318790.08,prior_reference_price,121,90.85,extended_hours_trade,L,100,100,30593124077513,,regular,2026-04-06T20:00:28Z
+1246,CHH,105.84,428391,2026-04-06T20:00:28Z,False,131876.64,prior_reference_price,121,90.85,extended_hours_trade,L,100,100,30593124077509,,regular,2026-04-06T20:00:28Z
+1417,CHH,105.84,427145,2026-04-06T20:00:27Z,False,149975.28,prior_reference_price,121,90.85,extended_hours_trade,L,100,100,30593124077255,,regular,2026-04-06T20:00:27Z
+1379,CHH,105.84,425728,2026-04-06T20:00:27Z,False,145953.36,prior_reference_price,121,90.85,extended_hours_trade,L,100,100,30593124077188,,regular,2026-04-06T20:00:27Z
+1124,CHH,105.84,424349,2026-04-06T20:00:27Z,False,118964.16,prior_reference_price,121,90.85,extended_hours_trade,L,100,100,30593124077185,,regular,2026-04-06T20:00:27Z
+1200,CHH,105.84,423225,2026-04-06T20:00:27Z,False,127008.00,prior_reference_price,121,90.85,extended_hours_trade,L,100,100,30593124077182,,regular,2026-04-06T20:00:27Z
+1971,CHH,104.18,102236,2026-04-06T16:05:43Z,False,205338.78,,104.35,104.26,,L,20,8,30593109992770,,regular,2026-04-06T16:05:43Z

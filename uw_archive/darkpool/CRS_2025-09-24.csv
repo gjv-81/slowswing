@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+26431,CRS,233.39,845252,2025-09-24T22:06:46Z,False,6168731.09,prior_reference_price,210.36,248,extended_hours_trade,L,2,100,0,,regular,
+660,CRS,233.5831,397513,2025-09-24T19:57:31Z,False,154164.8460,average_price_trade,233.31,233.56,,L,523,43,0,derivative_priced,regular,
+700,CRS,234.0547,355197,2025-09-24T19:51:47Z,False,163838.2900,average_price_trade,233.94,234.25,,L,215,4,0,,regular,
+1001,CRS,234.7999,314182,2025-09-24T19:40:10Z,False,235034.6999,,234.68,234.93,,L,4,10,0,,regular,
+1001,CRS,234.34,281873,2025-09-24T19:13:08Z,False,234574.34,,234.23,234.57,,L,106,19,0,,regular,
+700,CRS,234.2911,263450,2025-09-24T18:54:48Z,False,164003.7700,,234.26,234.41,,L,3,6,0,,regular,
+600,CRS,234.76,240578,2025-09-24T18:40:37Z,False,140856.00,,234.48,234.68,,L,14,1,0,,regular,
+500,CRS,238.65,130272,2025-09-24T15:47:19Z,False,119325.00,average_price_trade,237.35,237.9,,L,110,25,0,derivative_priced,regular,
+522,CRS,239.295,73720,2025-09-24T14:38:22Z,False,124911.990,,238.99,239.34,,L,1,76,0,,regular,
+2000,CRS,239.3699,68671,2025-09-24T14:34:06Z,False,478739.8000,,238.49,239.37,,L,6,40,0,,regular,
+500,CRS,240,25311,2025-09-24T13:53:31Z,False,120000,,239.76,240.43,,L,2500,18,0,,regular,

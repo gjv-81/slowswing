@@ -1,0 +1,16 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3888,BILI,26.505,2073434,2026-03-17T18:33:30Z,False,103051.440,,26.5,26.51,,L,49,100,38959715152284,,regular,2026-03-17T18:33:30Z
+5856,BILI,26.5,2032048,2026-03-17T18:23:23Z,False,155184.0,contingent_trade,26.49,26.5,,L,34,120,38959714545314,qualified_contingent_trade,regular,2026-03-17T18:23:23Z
+5760,BILI,26.5,2018722,2026-03-17T18:23:00Z,False,152640.0,contingent_trade,26.5,26.52,,L,108,268,38959714522691,qualified_contingent_trade,regular,2026-03-17T18:23:00Z
+6240,BILI,26.5,2012962,2026-03-17T18:23:00Z,False,165360.0,contingent_trade,26.5,26.52,,L,108,268,38959714522688,qualified_contingent_trade,regular,2026-03-17T18:23:00Z
+6240,BILI,26.5625,2000962,2026-03-17T18:23:00Z,False,165750.0000,contingent_trade,26.5,26.52,,L,108,268,38959714522675,qualified_contingent_trade,regular,2026-03-17T18:23:00Z
+5328,BILI,26.5,1992761,2026-03-17T18:22:38Z,False,141192.0,contingent_trade,26.49,26.5,,L,34,21,38959714500344,qualified_contingent_trade,regular,2026-03-17T18:22:38Z
+4608,BILI,26.5,1985417,2026-03-17T18:22:38Z,False,122112.0,contingent_trade,26.49,26.5,,L,34,21,38959714500341,qualified_contingent_trade,regular,2026-03-17T18:22:38Z
+4000,BILI,26.541,1972809,2026-03-17T18:22:38Z,False,106164.000,contingent_trade,26.49,26.5,,L,34,21,38959714500327,qualified_contingent_trade,regular,2026-03-17T18:22:38Z
+8000,BILI,26.541,1980809,2026-03-17T18:22:38Z,False,212328.000,contingent_trade,26.49,26.5,,L,34,21,38959714500327,qualified_contingent_trade,regular,2026-03-17T18:22:38Z
+10320,BILI,26.5,1967129,2026-03-17T18:22:38Z,False,273480.0,contingent_trade,26.49,26.5,,L,34,21,38959714500233,qualified_contingent_trade,regular,2026-03-17T18:22:38Z
+8000,BILI,26.5408,1952809,2026-03-17T18:22:38Z,False,212326.4000,contingent_trade,26.49,26.5,,L,34,21,38959714500224,qualified_contingent_trade,regular,2026-03-17T18:22:38Z
+4000,BILI,26.5408,1956809,2026-03-17T18:22:38Z,False,106163.2000,contingent_trade,26.49,26.5,,L,34,21,38959714500224,qualified_contingent_trade,regular,2026-03-17T18:22:38Z
+9630,BILI,26.399,1659362,2026-03-17T16:40:04Z,False,254222.370,,26.38,26.4,,L,2,100,38959708346773,,regular,2026-03-17T16:40:04Z
+9000,BILI,26.2899,1215765,2026-03-17T16:17:34Z,False,236609.1000,,26.25,26.29,,L,330,20,38959706996208,,regular,2026-03-17T16:17:34Z
+7223,BILI,26.05,45293,2026-03-17T12:11:50Z,False,188159.15,,25.98,26.06,extended_hours_trade,L,78,177,38959692252753,,regular,2026-03-17T12:11:50Z

@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6881,BSY,35.12,1146629,2026-09-02T20:00:20Z,False,241660.72,prior_reference_price,34.85,35.35,extended_hours_trade,L,35,20,24971011879903,,regular,2026-09-02T20:00:20Z
+3800,BSY,35.12,883391,2026-09-02T20:00:00Z,False,133456.00,,35.12,35.15,extended_hours_trade,L,9280,300,24971011859168,,regular,2026-09-02T20:00:00Z
+2900,BSY,35.26,229366,2026-09-02T15:51:23Z,False,102254.00,,35.25,35.28,,L,140,25,24970996942747,,regular,2026-09-02T15:51:23Z

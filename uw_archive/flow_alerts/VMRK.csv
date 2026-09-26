@@ -1,0 +1,3 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,underlying_price,vega,total_premium,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,has_singleleg,expiry_count
+call,VMRK,,2026-09-15T18:33:51.499168Z,,,,0.78,26,600,2026-12-18,72.5,VMRK261218C00072500,,,65.4,,46800,2,0.20692989840702,0.20692989840702,True,False,False,True,600,RepeatedHits,0,46800,23.0769230769231,True,1
+put,VMRK,,2026-08-20T14:34:31.566041Z,,,,0.85,0,159,2027-04-16,50,VMRK270416P00050000,,,65.58,,13515,20,0.313910634411028,0.313910634411028,False,False,True,False,159,RepeatedHits,0,13515,0,True,1

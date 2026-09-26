@@ -1,0 +1,5 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2026-02-19T18:46:03.232000Z,2026-02-19,TFX,0,1,0,0,0,1,80,40.00,0,0,40.00,0,0,0,1,0,0,0,0,0,0
+2026-02-19T20:23:49.902000Z,2026-02-19,TFX,188,0,0,179,0,0,100,0,381732.00,363337.00,0,0,0,23,0,381732.00,23,188,0,0,0
+2026-02-19T20:23:13.488000Z,2026-02-19,TFX,191,0,187,3,0,0,105,0,327019.00,5061.00,0,320333.00,0,25,0,327019.00,25,191,0,0,0
+2026-02-19T20:56:41.305000Z,2026-02-19,TFX,2,0,2,0,0,0,110,0,1025.00,0,0,1025.00,0,2,0,1025.00,2,2,0,0,0

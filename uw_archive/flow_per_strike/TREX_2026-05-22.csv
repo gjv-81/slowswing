@@ -1,0 +1,7 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2026-05-22T19:40:40.963000Z,2026-05-22,TREX,59,0,47,10,0,0,40,0,9645.00,1600.00,0,7725.00,0,5,0,0,0,0,0,0,0
+2026-05-22T17:54:07.951000Z,2026-05-22,TREX,50,0,15,28,0,0,42.5,0,4057.00,1990.00,0,1612.00,0,5,0,0,0,0,0,0,0
+2026-05-22T19:02:27.574000Z,2026-05-22,TREX,3,0,0,3,0,0,45,0,476.00,476.00,0,0,0,2,0,0,0,0,0,0,0
+2026-05-22T16:10:29.693000Z,2026-05-22,TREX,106,0,2,102,0,0,47.5,0,22028.00,21148.00,0,440.00,0,22,0,0,0,0,0,0,0
+2026-05-22T15:51:40.359000Z,2026-05-22,TREX,11,0,11,0,0,0,50,0,1678.00,0,0,1678.00,0,3,0,0,0,0,0,0,0
+2026-05-22T15:18:28.207000Z,2026-05-22,TREX,1,0,0,1,0,0,52.5,0,130.00,130.00,0,0,0,1,0,0,0,0,0,0,0

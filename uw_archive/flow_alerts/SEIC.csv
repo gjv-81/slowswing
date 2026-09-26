@@ -1,0 +1,10 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,has_singleleg,expiry_count
+call,SEIC,,2026-08-21T17:12:08.279589Z,,,,4.95,8,620,2026-09-18,105,SEIC260918C00105000,,,247500,,108.55,4,0.218722430414421,0.218722430414421,True,True,False,False,500,FloorTradeLargeCap,0,0,77.5,False,2
+put,SEIC,,2026-03-06T20:56:09.858100Z,,,,2.65,90,91,2026-06-18,75,SEIC260618P00075000,,,10865,,81.425,28,0.31673554973322,0.31673554973322,False,False,True,False,41,RepeatedHits,10865,0,1.01111111111111,True,1
+put,SEIC,,2026-02-12T17:39:09.585330Z,,,,5.19,0,90,2026-06-18,75,SEIC260618P00075000,,,12979,,77.01,21,0.341798570691119,0.347494185302034,False,False,False,False,25,RepeatedHitsDescendingFill,0,12979,0,True,1
+put,SEIC,,2026-02-12T17:39:03.377707Z,,,,5.18,0,65,2026-06-18,75,SEIC260618P00075000,,,10870,,77.01,21,0.341798570691119,0.347494185302034,False,False,False,False,21,RepeatedHitsDescendingFill,8790,520,0,True,1
+call,SEIC,,2024-11-26T16:37:29.408344Z,,,,3.5,412,75,2024-12-20,80,SEIC241220C00080000,,,26085,,82.03,8,,,False,False,False,False,75,RepeatedHitsDescendingFill,0,26085,0.182038834951456,True,1
+call,SEIC,,2024-11-14T18:52:21.026951Z,,,,3,492,177,2024-12-20,80,SEIC241220C00080000,,,53092,,81.54,45,,,False,False,True,False,177,RepeatedHits,19500,33592,0.359756097560976,True,1
+call,SEIC,,2024-10-17T19:49:53.559325Z,,,,3.6,36,115,2025-03-21,75,SEIC250321C00075000,,,21960,,73.36,7,,,False,False,False,False,61,RepeatedHits,21960,0,3.19444444444444,True,1
+call,SEIC,,2024-10-17T19:49:41.747750Z,,,,3.5,36,54,2025-03-21,75,SEIC250321C00075000,,,18200,,73.33,9,,,False,False,False,False,52,RepeatedHits,18200,0,1.5,True,1
+put,SEIC,,2024-07-17T17:47:56.676478Z,,,,0.8,0,171,2024-07-19,70,SEIC240719P00070000,,,12160,,69.395,31,,,False,False,False,False,152,RepeatedHits,0,12160,0,True,1

@@ -1,0 +1,7 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2025-04-21T15:21:25.960000Z,2025-04-21,XRAY,6,0,0,5,0,0,7.5,0,3171.00,2636.00,0,0,0,6,0,3171.00,6,6,0,0,0
+2025-04-21T17:38:26.699000Z,2025-04-21,XRAY,0,2,0,0,2,0,10,30.00,0,0,0,0,30.00,0,2,0,0,0,0,0,0
+2025-04-21T19:55:26.589000Z,2025-04-21,XRAY,0,82,0,0,22,60,12.5,11683.00,0,0,8384.00,0,3299.00,0,14,0,0,0,0,0,0
+2025-04-21T19:52:04.539000Z,2025-04-21,XRAY,86,29,85,0,29,0,15,7349.00,4275.00,0,0,4200.00,7349.00,3,2,0,0,0,7349.00,2,29
+2025-04-21T13:42:06.282000Z,2025-04-21,XRAY,5,0,3,2,0,0,17.5,0,182.00,70.00,0,112.00,0,3,0,0,0,0,0,0,0
+2025-04-21T15:03:54.320000Z,2025-04-21,XRAY,10,0,0,10,0,0,20,0,50.00,50.00,0,0,0,1,0,0,0,0,0,0,0

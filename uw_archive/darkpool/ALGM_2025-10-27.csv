@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+145770,ALGM,30.48,3006835,2025-10-27T20:51:07Z,False,4443069.60,average_price_trade,30.42,31.06,extended_hours_trade,L,54,1,0,,regular,
+211000,ALGM,30.48,2858597,2025-10-27T20:00:40Z,False,6431280.00,prior_reference_price,30,32,extended_hours_trade,L,30,1000,0,,regular,
+3945,ALGM,30.24,1380004,2025-10-27T18:18:01Z,False,119296.80,,30.23,30.25,,L,31,2,0,,regular,
+3945,ALGM,30.231,1375315,2025-10-27T18:17:57Z,False,119261.295,,30.22,30.24,,L,251,919,0,,regular,
+3945,ALGM,30.23,1370588,2025-10-27T18:17:55Z,False,119257.35,,30.22,30.24,,L,251,919,0,,regular,
+16300,ALGM,30.28,1286350,2025-10-27T17:59:19Z,False,493564.00,,30.28,30.31,,L,10,200,0,,regular,
+7790,ALGM,30.28,1269973,2025-10-27T17:59:19Z,False,235881.20,,30.28,30.31,,L,10,200,0,,regular,
+3366,ALGM,31.71,376858,2025-10-27T14:41:37Z,False,106735.86,,31.69,31.73,,L,200,100,0,,regular,
+4000,ALGM,32,72942,2025-10-27T13:37:33Z,False,128000,,31.86,32.04,,L,1743,6,0,,regular,
+3800,ALGM,32.125,51993,2025-10-27T13:35:40Z,False,122075.000,,32.09,32.19,,L,6,1,0,,regular,

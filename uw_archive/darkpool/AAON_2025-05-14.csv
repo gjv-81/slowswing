@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2466,AAON,104.89,355127,2025-05-14T20:03:05Z,False,258658.74,prior_reference_price,103.35,106.92,extended_hours_trade,L,15,1,57785707207958,,,
+3215,AAON,104.89,350835,2025-05-14T20:00:47Z,False,337221.35,prior_reference_price,103.40,106.92,extended_hours_trade,L,15,5,57647537967576,,,
+3155,AAON,104.89,346245,2025-05-14T20:00:09Z,False,330927.95,,103.40,114.90,extended_hours_trade,L,2,5,57609097130243,,,
+1000,AAON,105.0107,264566,2025-05-14T19:56:33Z,False,105010.7000,average_price_trade,105.01,105.06,,L,158,627,57393754672535,derivative_priced,,
+1121,AAON,104.8178,230980,2025-05-14T19:48:06Z,False,117500.7538,,104.78,104.85,,L,200,534,56886156677431,,,
+2200,AAON,104.7351,225042,2025-05-14T19:44:41Z,False,230417.2200,average_price_trade,104.64,104.73,,L,156,57,56681356645973,derivative_priced,,

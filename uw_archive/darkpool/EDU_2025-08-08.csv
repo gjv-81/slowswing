@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4542,EDU,45.58,1177967,2025-08-08T20:00:14Z,False,207024.36,prior_reference_price,45.48,46.45,extended_hours_trade,L,15,100,57614931480898,,regular,
+3092,EDU,45.7805,953055,2025-08-08T19:40:10Z,False,141553.3060,average_price_trade,45.72,45.75,,L,135,602,56410304047674,derivative_priced,regular,
+4570,EDU,45.8599,913549,2025-08-08T19:20:50Z,False,209579.7430,average_price_trade,45.85,45.91,,L,1,301,55250356889522,,regular,
+5000,EDU,45.54,382988,2025-08-08T16:03:57Z,False,227700.00,,45.52,45.58,,L,211,32,43437200058774,,regular,
+6000,EDU,45.54,391938,2025-08-08T16:03:57Z,False,273240.00,,45.52,45.58,,L,211,32,43437200555148,,regular,
+2300,EDU,45.605,201314,2025-08-08T15:07:53Z,False,104891.500,,45.58,45.63,,L,189,180,40073361170453,,regular,
+46300,EDU,45.60,132289,2025-08-08T14:49:45Z,False,2111280.00,,45.55,45.63,,L,100,100,38985376694426,,regular,

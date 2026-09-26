@@ -1,0 +1,5 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,underlying_price,vega,total_premium,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,has_singleleg,expiry_count
+call,CUZ,,2026-07-16T19:04:41.646948Z,,,,2.54,17,1475,2026-08-21,30,CUZ260821C00030000,,,31.985,,374650,2,0.31330163321926,0.31330163321926,True,True,False,True,1475,FloorTradeMidCap,0,374650,86.7647058823529,False,2
+call,CUZ,,2026-06-09T14:36:39.855294Z,,,,0.5,55,1153,2026-07-17,30,CUZ260717C00030000,,,29.085,,10000,22,0.231716347127016,0.231716347127016,False,False,False,False,200,RepeatedHits,0,10000,20.9636363636364,True,1
+call,CUZ,,2026-06-09T14:36:10.579079Z,,,,0.5,55,943,2026-07-17,30,CUZ260717C00030000,,,29.08,,30700,5,0.232223429150817,0.232223429150817,False,False,False,False,614,RepeatedHits,0,30700,17.1454545454545,True,1
+call,CUZ,,2026-06-09T14:36:09.776668Z,,,,0.5,55,248,2026-07-17,30,CUZ260717C00030000,,,29.1,,12300,23,0.23019290549817,0.23019290549817,False,False,True,False,246,RepeatedHits,0,7200,4.50909090909091,True,1

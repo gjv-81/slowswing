@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6315,AMKR,20.99,1549793,2025-06-30T20:58:04Z,False,132551.85,prior_reference_price,20.99,21.12,extended_hours_trade,L,20,5,61084355049081,,regular,
+8300,AMKR,20.99,1529449,2025-06-30T20:00:17Z,False,174217.00,prior_reference_price,20.90,21.12,extended_hours_trade,L,20,1,57617671404392,,regular,
+8900,AMKR,21,962497,2025-06-30T19:38:41Z,False,186900,,21,21.01,,L,1032,159,56321195368851,,regular,
+7000,AMKR,21.01,866158,2025-06-30T19:21:53Z,False,147070.00,,21,21.01,,L,371,429,55313940988310,,regular,
+9075,AMKR,20.995,791300,2025-06-30T18:59:54Z,False,190529.625,,20.99,21,,L,158,362,53994187725389,,regular,

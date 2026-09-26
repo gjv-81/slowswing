@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+16618,CVLT,93.92,554280,2026-04-24T21:25:54Z,False,1560762.56,prior_reference_price,92.1,95,extended_hours_trade,L,1,21,31825784818033,,regular,2026-04-24T21:25:54Z
+1674,CVLT,93.92,537644,2026-04-24T20:01:26Z,False,157222.08,prior_reference_price,92.1,95,extended_hours_trade,L,1,21,31825779749946,,regular,2026-04-24T20:01:26Z
+1138,CVLT,93.92,534514,2026-04-24T20:00:32Z,False,106880.96,prior_reference_price,90.05,95,extended_hours_trade,L,1,300,31825779696322,,regular,2026-04-24T20:00:32Z
+5422,CVLT,93.92,533376,2026-04-24T20:00:32Z,False,509234.24,prior_reference_price,90.05,95,extended_hours_trade,L,1,300,31825779696210,,regular,2026-04-24T20:00:32Z
+2719,CVLT,94.1429,368098,2026-04-24T19:53:38Z,False,255974.5451,average_price_trade,94.12,94.21,,L,10,14,31825779282198,,regular,2026-04-24T19:53:38Z
+1527,CVLT,94.1609,338665,2026-04-24T19:43:20Z,False,143783.6943,average_price_trade,94.09,94.25,,L,112,121,31825778663742,,regular,2026-04-24T19:43:20Z
+1183,CVLT,94.0983,315932,2026-04-24T19:33:20Z,False,111318.2889,average_price_trade,94.04,94.25,,L,388,606,31825778064090,,regular,2026-04-24T19:33:20Z
+2252,CVLT,92.44,222892,2026-04-24T17:35:45Z,False,208174.88,,92.56,93,,L,5,65,31825771008528,,regular,2026-04-24T17:35:45Z
+3700,CVLT,92.09,191229,2026-04-24T16:58:51Z,False,340733.00,contingent_trade,92.27,92.5,,L,101,8,31825768794538,qualified_contingent_trade,regular,2026-04-24T16:58:51Z
+13300,CVLT,91.98,186022,2026-04-24T16:56:54Z,False,1223334.00,contingent_trade,92,92.32,,L,209,1,31825768677532,qualified_contingent_trade,regular,2026-04-24T16:56:54Z
+4200,CVLT,91.36,89961,2026-04-24T14:25:18Z,False,383712.00,contingent_trade,90.87,91.03,,L,16,1,31825759581611,qualified_contingent_trade,regular,2026-04-24T14:25:18Z
+1313,CVLT,91.13,39517,2026-04-24T13:38:42Z,False,119653.69,,90.82,91.97,,L,5,3,31825756785796,,regular,2026-04-24T13:38:42Z

@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+7129,AEIS,198.54,280503,2025-11-17T23:04:00Z,False,1415391.66,prior_reference_price,194.71,202.41,extended_hours_trade,L,8,6,0,,regular,
+1353,AEIS,198.54,273340,2025-11-17T21:01:55Z,False,268624.62,prior_reference_price,193.99,202.41,extended_hours_trade,L,8,1,0,,regular,
+626,AEIS,198.54,271971,2025-11-17T21:00:30Z,False,124286.04,prior_reference_price,193.99,210,extended_hours_trade,L,50,1,0,,regular,
+5300,AEIS,198.54,271172,2025-11-17T21:00:09Z,False,1052262.00,,193.99,210,extended_hours_trade,L,50,1,0,,regular,
+1107,AEIS,198.54,265098,2025-11-17T21:00:05Z,False,219783.78,,193.99,210,extended_hours_trade,L,50,1,0,,regular,
+2583,AEIS,198.54,263891,2025-11-17T21:00:05Z,False,512828.82,,193.99,210,extended_hours_trade,L,50,1,0,,regular,
+1000,AEIS,199.12,95180,2025-11-17T19:22:39Z,False,199120.00,,199.13,200.09,,L,107,20,0,,regular,
+495,AEIS,202.53,32130,2025-11-17T15:32:01Z,False,100252.35,,201.47,202.9,,L,5,64,0,,regular,
+600,AEIS,200.675,24176,2025-11-17T15:20:50Z,False,120405.000,,200.68,201.42,,L,1,10,0,,regular,
+2140,AEIS,202.405,13040,2025-11-17T14:58:53Z,False,433146.700,,202.15,204.57,,L,4,11,0,,regular,

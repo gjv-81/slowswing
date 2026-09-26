@@ -1,0 +1,8 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2025-04-01T17:26:48.639000Z,2025-04-01,SYNA,0,1,0,0,1,0,40,53.00,0,0,0,0,53.00,0,1,0,0,0,0,0,0
+2025-04-01T19:45:31.314000Z,2025-04-01,SYNA,0,2,0,0,1,1,55,448.00,0,0,195.00,0,253.00,0,2,0,0,0,0,0,0
+2025-04-01T19:45:31.314000Z,2025-04-01,SYNA,0,4,0,0,0,3,60,1926.00,0,0,1476.00,0,0,0,4,0,0,0,0,0,0
+2025-04-01T19:39:14.513000Z,2025-04-01,SYNA,135,0,127,5,0,0,65,0,24375.00,850.00,0,22970.00,0,9,0,0,0,0,0,0,0
+2025-04-01T15:37:29.221000Z,2025-04-01,SYNA,9,0,6,3,0,0,70,0,1856.00,506.00,0,1350.00,0,4,0,0,0,0,0,0,0
+2025-04-01T16:02:06.106000Z,2025-04-01,SYNA,4,0,4,0,0,0,75,0,302.00,0,0,302.00,0,3,0,0,0,0,0,0,0
+2025-04-01T13:31:16.554000Z,2025-04-01,SYNA,1,0,0,1,0,0,80,0,71.00,71.00,0,0,0,1,0,0,0,0,0,0,0

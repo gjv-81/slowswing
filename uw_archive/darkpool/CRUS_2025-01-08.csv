@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+10635,CRUS,105.20,635825,2025-01-08T22:08:20Z,False,1118802.00,average_price_trade,103.16,107.24,extended_hours_trade,L,15,3,61700379519530,,,
+2856,CRUS,105.20,625190,2025-01-08T21:44:38Z,False,300451.20,prior_reference_price,103.16,107.24,extended_hours_trade,L,15,3,60278014564976,,,
+1442,CRUS,105.20,622334,2025-01-08T21:44:37Z,False,151698.40,prior_reference_price,103.16,107.24,extended_hours_trade,L,15,3,60277996959390,,,
+1146,CRUS,105.20,618191,2025-01-08T21:00:09Z,False,120559.20,,105,105.42,extended_hours_trade,L,1900,1900,57609051554295,,,
+1000,CRUS,103.35,109756,2025-01-08T15:59:02Z,False,103350.00,,103.10,103.48,,L,22,483,39542669948350,,,
+1000,CRUS,103.29,60809,2025-01-08T15:08:01Z,False,103290.00,,103.19,103.40,,L,20,3,36481626514390,,,
+2183,CRUS,103.41,38637,2025-01-08T14:56:37Z,False,225744.03,,103.01,103.51,,L,33,303,35797487699133,,,
+1022,CRUS,103.41,39659,2025-01-08T14:56:37Z,False,105685.02,,103.01,103.51,,L,33,303,35797488013132,,,

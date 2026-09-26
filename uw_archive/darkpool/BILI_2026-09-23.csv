@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+10000,BILI,15.04,2329378,2026-09-23T19:46:15Z,False,150400.00,contingent_trade,15.04,15.05,,L,2706,1246,38959719517406,qualified_contingent_trade,regular,2026-09-23T19:46:15Z
+18700,BILI,15.09,2137068,2026-09-23T19:31:42Z,False,282183.00,contingent_trade,15.05,15.06,,L,2088,923,38959718644140,qualified_contingent_trade,regular,2026-09-23T19:31:42Z
+21100,BILI,15.09,2052145,2026-09-23T19:27:39Z,False,318399.00,contingent_trade,15.05,15.06,,L,983,785,38959718401863,qualified_contingent_trade,regular,2026-09-23T19:27:39Z
+17000,BILI,15.08,1892775,2026-09-23T19:08:26Z,False,256360.00,contingent_trade,15.03,15.04,,L,1407,675,38959717248267,qualified_contingent_trade,regular,2026-09-23T19:08:26Z
+9700,BILI,15.01,1469583,2026-09-23T17:50:04Z,False,145597.00,contingent_trade,15.01,15.02,,L,908,717,38959712546831,qualified_contingent_trade,regular,2026-09-23T17:50:04Z
+7200,BILI,15.04,1406117,2026-09-23T17:47:57Z,False,108288.00,contingent_trade,14.98,14.99,,L,964,265,38959712419861,qualified_contingent_trade,regular,2026-09-23T17:47:57Z
+7400,BILI,14.99,1140801,2026-09-23T17:18:18Z,False,110926.00,contingent_trade,14.95,14.96,,L,1000,1234,38959710640933,qualified_contingent_trade,regular,2026-09-23T17:18:18Z
+10000,BILI,15.02,689676,2026-09-23T16:26:25Z,False,150200.00,,15.01,15.02,,L,1383,693,38959707527493,,regular,2026-09-23T16:26:25Z
+7500,BILI,15.06,659241,2026-09-23T16:15:53Z,False,112950.00,contingent_trade,15,15.01,,L,935,539,38959706895283,qualified_contingent_trade,regular,2026-09-23T16:15:53Z
+9200,BILI,15.0301,493742,2026-09-23T14:57:30Z,False,138276.9200,,15.02,15.03,,L,252,723,38959702192198,,regular,2026-09-23T14:57:30Z
+7900,BILI,15.03,211330,2026-09-23T13:58:06Z,False,118737.00,,15.03,15.04,,L,1028,356,38959698628751,,regular,2026-09-23T13:58:06Z

@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+9161,BILI,25.31,3012966,2025-11-19T21:00:10Z,False,231864.91,prior_reference_price,25.4,25.29,extended_hours_trade,L,3,194,0,,regular,
+4000,BILI,25.537,2503639,2025-11-19T20:39:39Z,False,102148.000,,25.54,25.52,,L,77,137,0,,regular,
+5499,BILI,25.5299,2483295,2025-11-19T20:37:17Z,False,140388.9201,,25.53,25.51,,L,1244,612,0,,regular,
+1000000,BILI,25.372,2362343,2025-11-19T20:07:00Z,False,25372000.000,contingent_trade,25.4,25.37,,L,386,106,0,qualified_contingent_trade,regular,
+31200,BILI,25.25,751548,2025-11-19T16:42:05Z,False,787800.00,,25.26,25.25,,L,55,155,0,,regular,
+4793,BILI,25.2259,677089,2025-11-19T16:39:50Z,False,120907.7387,,25.23,25.22,,L,1,150,0,,regular,
+4374,BILI,25.2803,650102,2025-11-19T16:36:49Z,False,110576.0322,,25.31,25.29,,L,30,10,0,,regular,
+4600,BILI,25.535,415084,2025-11-19T15:51:09Z,False,117461.000,,25.56,25.54,,L,1,280,0,,regular,
+4700,BILI,25.52,355667,2025-11-19T15:36:33Z,False,119944.00,,25.54,25.52,,L,231,102,0,,regular,

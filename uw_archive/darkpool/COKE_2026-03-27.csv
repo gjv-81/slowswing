@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1000,COKE,181.6297,410662,2026-03-27T21:46:39Z,False,181629.7000,,176,185,extended_hours_trade,L,20,200,26908048509231,,regular,2026-03-27T21:46:39Z
+3598,COKE,181.3,409653,2026-03-27T20:34:12Z,False,652317.4,,176,185,extended_hours_trade,L,20,200,26908044162196,,regular,2026-03-27T20:34:12Z
+701,COKE,181.3,405831,2026-03-27T20:00:57Z,False,127091.3,prior_reference_price,176,184.25,extended_hours_trade,L,2,200,26908042166673,,regular,2026-03-27T20:00:57Z
+896,COKE,181.3,404522,2026-03-27T20:00:33Z,False,162444.8,prior_reference_price,176.6,184.25,extended_hours_trade,L,2,1,26908042143051,,regular,2026-03-27T20:00:33Z
+2087,COKE,184.52,90059,2026-03-27T15:35:34Z,False,385093.24,,184.48,184.8,,L,16,5,26908026244394,,regular,2026-03-27T15:35:34Z
+950,COKE,181.8,56602,2026-03-27T14:54:44Z,False,172710.0,,181.61,182,,L,13,75,26908023793842,,regular,2026-03-27T14:54:44Z
+561,COKE,181.185,21581,2026-03-27T13:46:34Z,False,101644.785,,180.56,182.13,,L,8,26,26908019704267,,regular,2026-03-27T13:46:34Z

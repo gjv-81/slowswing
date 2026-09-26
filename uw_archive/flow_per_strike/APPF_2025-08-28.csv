@@ -1,0 +1,5 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2025-08-28T19:24:02.278000Z,2025-08-28,APPF,4,2,2,2,0,2,280,2350.00,3240.00,1580.00,2350.00,1660.00,0,4,2,0,0,0,2350.00,2,2
+2025-08-28T18:59:15.608000Z,2025-08-28,APPF,404,3,404,0,0,3,300,9990.00,1102704.00,0,9990.00,1102704.00,0,4,1,0,0,0,9990.00,1,3
+2025-08-28T19:39:31.864000Z,2025-08-28,APPF,1,0,1,0,0,0,320,0,1969.00,0,0,1969.00,0,1,0,0,0,0,0,0,0
+2025-08-28T19:39:31.864000Z,2025-08-28,APPF,1,0,0,1,0,0,360,0,993.00,993.00,0,0,0,1,0,0,0,0,0,0,0

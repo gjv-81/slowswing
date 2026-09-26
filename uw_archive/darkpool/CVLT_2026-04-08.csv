@@ -1,0 +1,17 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+39797,CVLT,79.07,886106,2026-04-08T21:47:54Z,False,3146748.79,prior_reference_price,79.39,78.52,extended_hours_trade,L,99,99,31825786137465,,regular,2026-04-08T21:47:54Z
+3500,CVLT,79.15,846292,2026-04-08T20:11:31Z,False,277025.00,average_price_trade,81,73,extended_hours_trade,L,6,1,31825780355058,,regular,2026-04-08T20:11:31Z
+2033,CVLT,79.07,841529,2026-04-08T20:02:32Z,False,160749.31,prior_reference_price,81,73,extended_hours_trade,L,6,1,31825779815423,,regular,2026-04-08T20:02:32Z
+42403,CVLT,79.07,838146,2026-04-08T20:01:07Z,False,3352805.21,prior_reference_price,81,73,extended_hours_trade,L,6,1,31825779731044,,regular,2026-04-08T20:01:07Z
+1674,CVLT,79.07,795743,2026-04-08T20:00:57Z,False,132363.18,prior_reference_price,81,73,extended_hours_trade,L,6,1,31825779720968,,regular,2026-04-08T20:00:57Z
+4861,CVLT,79.07,793876,2026-04-08T20:00:48Z,False,384359.27,prior_reference_price,81,73,extended_hours_trade,L,6,1,31825779711516,,regular,2026-04-08T20:00:48Z
+4800,CVLT,79.07,789015,2026-04-08T20:00:48Z,False,379536.00,prior_reference_price,81,73,extended_hours_trade,L,6,1,31825779711512,,regular,2026-04-08T20:00:48Z
+1508,CVLT,79.07,782951,2026-04-08T20:00:46Z,False,119237.56,prior_reference_price,81,73,extended_hours_trade,L,6,1,31825779709935,,regular,2026-04-08T20:00:46Z
+1679,CVLT,79.07,622542,2026-04-08T20:00:00Z,False,132758.53,,79.4,78.88,extended_hours_trade,L,415,415,31825779664194,,regular,2026-04-08T20:00:00Z
+5000,CVLT,78.85,435952,2026-04-08T19:30:17Z,False,394250.00,,78.86,78.73,,L,6,5,31825777881297,,regular,2026-04-08T19:30:17Z
+18200,CVLT,78.41,350654,2026-04-08T18:46:54Z,False,1427062.00,contingent_trade,78.55,78.48,,L,19,59,31825775278036,qualified_contingent_trade,regular,2026-04-08T18:46:54Z
+1900,CVLT,79.58,219859,2026-04-08T16:58:32Z,False,151202.00,contingent_trade,79.34,79.23,,L,6,61,31825768776189,qualified_contingent_trade,regular,2026-04-08T16:58:32Z
+8400,CVLT,80.81,171095,2026-04-08T15:41:18Z,False,678804.00,contingent_trade,80.65,80.23,,L,5,4,31825764141472,qualified_contingent_trade,regular,2026-04-08T15:41:18Z
+1773,CVLT,80,154653,2026-04-08T15:32:25Z,False,141840,contingent_trade,80.34,79.98,,L,65,10,31825763608443,qualified_contingent_trade,regular,2026-04-08T15:32:25Z
+3900,CVLT,80.54,136361,2026-04-08T15:17:43Z,False,314106.00,,80.78,80.29,,L,17,312,31825762727084,,regular,2026-04-08T15:17:43Z
+2400,CVLT,79.93,112643,2026-04-08T14:58:52Z,False,191832.00,,80.32,80.05,,L,16,5,31825761595972,,regular,2026-04-08T14:58:52Z

@@ -1,0 +1,15 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+35400,EEFT,74.64,876561,2026-04-23T20:28:48Z,False,2642256.00,average_price_trade,73.3,75.4,extended_hours_trade,L,2,2,30305362969355,,regular,2026-04-23T20:28:48Z
+8900,EEFT,74.64,841161,2026-04-23T20:28:37Z,False,664296.00,average_price_trade,73.3,75.4,extended_hours_trade,L,2,2,30305362958355,,regular,2026-04-23T20:28:37Z
+1938,EEFT,74.64,830947,2026-04-23T20:00:18Z,False,144652.32,prior_reference_price,73.3,75.4,extended_hours_trade,L,2,2,30305361259469,,regular,2026-04-23T20:00:18Z
+4249,EEFT,74.64,828861,2026-04-23T20:00:18Z,False,317145.36,prior_reference_price,73.3,75.4,extended_hours_trade,L,2,2,30305361258742,,regular,2026-04-23T20:00:18Z
+8900,EEFT,74.2,651699,2026-04-23T19:54:14Z,False,660380.0,contingent_trade,74.18,74.26,,L,212,60,30305360894762,qualified_contingent_trade,regular,2026-04-23T19:54:14Z
+15700,EEFT,74.09,497036,2026-04-23T19:03:04Z,False,1163213.00,contingent_trade,74.09,74.33,,L,11,556,30305357824684,qualified_contingent_trade,regular,2026-04-23T19:03:04Z
+23300,EEFT,74.36,490770,2026-04-23T18:57:07Z,False,1732588.00,contingent_trade,74.03,74.24,,L,39,305,30305357467971,qualified_contingent_trade,regular,2026-04-23T18:57:07Z
+15700,EEFT,74.03,467470,2026-04-23T18:56:57Z,True,1162271.00,contingent_trade,74.04,74.24,,L,39,51,30305357457976,qualified_contingent_trade,regular,2026-04-23T18:56:57Z
+3500,EEFT,75.7,245927,2026-04-23T15:53:30Z,False,264950.0,contingent_trade,75.58,75.7,,L,108,12,30305346451022,qualified_contingent_trade,regular,2026-04-23T15:53:30Z
+1760,EEFT,75.83,218429,2026-04-23T15:41:44Z,False,133460.80,,75.77,75.92,,L,105,3,30305345744734,,regular,2026-04-23T15:41:44Z
+5900,EEFT,76.2,158604,2026-04-23T15:04:43Z,False,449580.0,,76.09,76.26,,L,201,1,30305343524426,,regular,2026-04-23T15:04:43Z
+8100,EEFT,76.5,140812,2026-04-23T14:54:55Z,False,619650.0,contingent_trade,76.38,76.55,,L,5,230,30305342936189,qualified_contingent_trade,regular,2026-04-23T14:54:55Z
+2677,EEFT,76.61,118808,2026-04-23T14:41:32Z,False,205084.97,,76.41,76.57,,L,10,10,30305342133230,,regular,2026-04-23T14:41:32Z
+1766,EEFT,76.0112,96597,2026-04-23T14:23:17Z,False,134235.7792,,75.97,76.33,,L,110,4,30305341038288,,regular,2026-04-23T14:23:17Z

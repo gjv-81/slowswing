@@ -1,0 +1,9 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,vega,theo,total_premium,underlying_price,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,has_singleleg,expiry_count
+call,WTFC,,2025-01-16T14:59:41.406504Z,,,,9,1375,83,2025-03-21,130,WTFC250321C00130000,,,,74700,133.12,9,,,False,False,False,False,83,RepeatedHits,0,74700,0.0603636363636364,True,1
+call,WTFC,,2024-12-09T16:24:48.516159Z,,,,9.99,1038,12,2025-03-21,130,WTFC250321C00130000,,,,11990,134.38,6,,,False,False,True,False,12,RepeatedHitsAscendingFill,11990,0,0.0115606936416185,True,1
+call,WTFC,,2024-12-09T16:24:48.516159Z,,,,10,1038,24,2025-03-21,130,WTFC250321C00130000,,,,12000,134.38,5,,,False,False,True,False,12,RepeatedHits,12000,0,0.023121387283237,True,1
+call,WTFC,,2024-11-22T17:16:20.070616Z,,,,9.9,31,17,2025-01-17,135,WTFC250117C00135000,,,,14850,135.975,6,,,False,False,False,False,15,RepeatedHits,0,14850,0.548387096774194,True,1
+call,WTFC,,2024-11-07T17:36:36.187650Z,,,,9,10,998,2025-03-21,130,WTFC250321C00130000,,,,94500,129.05,8,,,False,False,False,False,105,RepeatedHits,0,94500,99.8,True,1
+call,WTFC,,2024-11-07T17:14:22.166195Z,,,,9,10,893,2025-03-21,130,WTFC250321C00130000,,,,83700,128.83,9,,,False,False,False,False,93,RepeatedHits,0,83700,89.3,True,1
+call,WTFC,,2024-11-07T16:28:02.701688Z,,,,8.5,10,405,2025-03-21,130,WTFC250321C00130000,,,,323000,127.84,25,,,False,False,True,False,380,RepeatedHits,144500,164900,40.5,True,1
+put,WTFC,,2024-07-17T19:59:52.135189Z,,,,5.6,0,50,2024-08-16,115,WTFC240816P00115000,,,,22400,111.69,8,,,False,False,False,False,40,RepeatedHits,0,22400,0,True,1

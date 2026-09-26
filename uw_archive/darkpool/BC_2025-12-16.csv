@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5000,BC,74,790964,2025-12-16T22:35:54Z,False,370000,prior_reference_price,73.93,74.11,extended_hours_trade,L,1,1,25241604153256,,regular,
+1878,BC,74,785961,2025-12-16T21:09:26Z,False,138972,,72.56,0,extended_hours_trade,L,0,27,25241598965408,,regular,
+2654,BC,74,784082,2025-12-16T21:04:15Z,False,196396,,72.56,0,extended_hours_trade,L,0,27,25241598654251,,regular,
+3158,BC,74,780964,2025-12-16T21:02:49Z,False,233692,prior_reference_price,67.65,0,extended_hours_trade,L,0,10,25241598567754,,regular,
+10598,BC,74,777617,2025-12-16T21:02:23Z,False,784252,,67.65,0,extended_hours_trade,L,0,10,25241598542047,,regular,
+2400,BC,74.005,586665,2025-12-16T20:58:56Z,False,177612.000,,74,74.04,,L,95,14,25241598335443,,regular,
+10000,BC,73.775,62092,2025-12-16T15:37:18Z,False,737750.000,,73.6,73.92,,L,7,103,25241579036865,,regular,
+1381,BC,73.47,21575,2025-12-16T15:11:52Z,False,101462.07,,73.47,74.24,,L,195,107,25241577511495,,regular,
+1900,BC,73.855,18916,2025-12-16T15:09:07Z,False,140324.500,,73.85,74.24,,L,95,67,25241577346582,,regular,
+1400,BC,73.725,15156,2025-12-16T15:06:47Z,False,103215.000,,73.29,74.24,,L,95,23,25241577205793,,regular,
+1500,BC,73.79,13270,2025-12-16T15:04:18Z,False,110685.00,,73.29,74.24,,L,95,23,25241577056667,,regular,

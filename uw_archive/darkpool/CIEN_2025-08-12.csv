@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1253,CIEN,96.40,1488421,2025-08-12T20:44:19Z,False,120789.20,,95.23,96.66,extended_hours_trade,L,10,10,60259260931376,,regular,
+1247,CIEN,96.40,1487168,2025-08-12T20:43:53Z,False,120210.80,,83.25,96.66,extended_hours_trade,L,10,100,60233748858812,,regular,
+124957,CIEN,96.40,1485921,2025-08-12T20:31:54Z,False,12045854.80,prior_reference_price,83.25,96.66,extended_hours_trade,L,10,100,59514331511011,,regular,
+2089,CIEN,96.40,1357908,2025-08-12T20:00:31Z,False,201379.60,prior_reference_price,75.72,0,extended_hours_trade,L,0,15,57631873172216,,regular,
+1978,CIEN,96.40,1355819,2025-08-12T20:00:31Z,False,190679.20,prior_reference_price,75.72,0,extended_hours_trade,L,0,15,57631869806779,,regular,
+1100,CIEN,96.40,1353641,2025-08-12T20:00:31Z,False,106040.00,prior_reference_price,75.72,0,extended_hours_trade,L,0,15,57631865808430,,regular,
+5653,CIEN,96.40,1351977,2025-08-12T20:00:31Z,False,544949.20,prior_reference_price,75.72,0,extended_hours_trade,L,0,15,57631830062351,,regular,
+3863,CIEN,96.40,1344819,2025-08-12T20:00:29Z,False,372393.20,prior_reference_price,75.72,0,extended_hours_trade,L,0,15,57629538224842,,regular,
+1050,CIEN,96.385,513177,2025-08-12T18:04:55Z,False,101204.250,,96.38,96.42,,L,1,18,50695833062082,,regular,
+1300,CIEN,95.96,396937,2025-08-12T17:04:01Z,False,124748.00,,95.94,95.96,,L,100,141,47041512289776,,regular,
+2000,CIEN,94.215,21017,2025-08-12T13:38:19Z,False,188430.000,,94.01,94.42,,L,5,1,34699970965486,,regular,

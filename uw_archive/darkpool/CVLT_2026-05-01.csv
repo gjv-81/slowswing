@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1300,CVLT,99.57,555382,2026-05-01T20:01:29Z,False,129441.00,prior_reference_price,102,98,extended_hours_trade,L,10,1,31825779752865,,regular,2026-05-01T20:01:29Z
+1232,CVLT,99.57,553938,2026-05-01T20:01:12Z,False,122670.24,prior_reference_price,102,98,extended_hours_trade,L,10,1,31825779736060,,regular,2026-05-01T20:01:12Z
+1544,CVLT,99.57,551144,2026-05-01T20:00:15Z,False,153736.08,prior_reference_price,100.16,98,extended_hours_trade,L,250,1,31825779678789,,regular,2026-05-01T20:00:15Z
+1882,CVLT,99.8101,233010,2026-05-01T18:02:29Z,False,187842.6082,,100.16,99.91,,L,364,1,31825772612956,,regular,2026-05-01T18:02:29Z
+1337,CVLT,99.82,205872,2026-05-01T17:30:00Z,False,133459.34,,99.91,99.75,,L,10,10,31825770663815,,regular,2026-05-01T17:30:00Z
+1978,CVLT,99.46,67026,2026-05-01T14:23:30Z,False,196731.88,,99.46,98.98,,L,217,2,31825759473768,,regular,2026-05-01T14:23:30Z
+1481,CVLT,101.595,20340,2026-05-01T13:35:58Z,False,150462.195,,102.18,101.02,,L,108,10,31825756622034,,regular,2026-05-01T13:35:58Z

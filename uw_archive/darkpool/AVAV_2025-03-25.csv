@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1600,AVAV,131.20,319606,2025-03-25T20:49:05Z,False,209920.00,prior_reference_price,130,131.55,extended_hours_trade,L,25,1,60545131638778,,,
+3588,AVAV,131.20,315429,2025-03-25T20:00:09Z,False,470745.60,,130,131.50,extended_hours_trade,L,1,1,57609653100178,,,
+1147,AVAV,130.465,173090,2025-03-25T18:54:14Z,False,149643.355,,130.38,130.59,,L,104,34,53654014013581,,,
+1178,AVAV,130.45,164571,2025-03-25T18:40:34Z,False,153670.10,,130.13,130.43,,L,2,18,52834462289528,,,
+1000,AVAV,129.0217,107636,2025-03-25T16:23:55Z,False,129021.7000,,128.93,129.17,,L,10,30,44635901964900,,,
+1165,AVAV,130,3155,2025-03-25T13:30:00Z,False,151450,,129.81,130,,L,100,1,34200664371942,derivative_priced,,

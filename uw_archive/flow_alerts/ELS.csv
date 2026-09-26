@@ -1,0 +1,8 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,has_singleleg,volume_oi_ratio,expiry_count
+put,ELS,,2026-04-22T18:15:25.239944Z,,,,1.18,0,1500,2026-06-18,60,ELS260618P00060000,,,177000,,62.45,2,0.230076191442034,0.230076191442034,True,False,False,False,1500,LowHistoricVolumeFloor,177000,0,True,0,1
+call,ELS,,2026-03-30T14:12:36.977506Z,,,,3.5,151,95,2026-08-21,65,ELS260821C00065000,,,27300,,62.8,14,0.281031583406244,0.281031583406244,False,False,False,False,78,RepeatedHits,0,27300,True,0.629139072847682,1
+call,ELS,,2026-03-30T14:09:21.107120Z,,,,0.61,29,1270,2026-04-17,65,ELS260417C00065000,,,76860,,62.755,2,0.257005528749584,0.257005528749584,True,False,False,False,1260,LowHistoricVolumeFloor,0,76860,True,43.7931034482759,1
+call,ELS,,2025-10-09T14:26:41.119717Z,,,,2.7,2397,46,2026-02-20,65,ELS260220C00065000,,,10260,,63.45,9,0.219095628047963,0.219095628047963,False,False,False,False,38,RepeatedHits,0,10260,True,0.0191906549853984,1
+call,ELS,,2025-04-03T18:16:15.223966Z,,,,1.56,37,1800,2025-05-16,70,ELS250516C00070000,,,280000,,68.39,2,0.238404032820162,0.243895234952423,True,False,False,True,1800,LowHistoricVolumeFloor,280000,0,True,48.6486486486486,1
+put,ELS,,2024-10-09T13:31:31.854744Z,,,,2.95,0,51,2025-02-21,65,ELS250221P00065000,,,15045,,65.595,9,,,False,False,False,False,51,RepeatedHits,0,15045,True,0,1
+put,ELS,,2022-10-17T19:56:34.507198Z,,,,1.2,8,1022,2022-10-21,60,ELS221021P00060000,,,74025,,62.4867,16,,,False,False,True,False,650,RepeatedHitsAscendingFill,46200,27825,True,127.75,1

@@ -1,0 +1,8 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,has_singleleg,expiry_count
+put,GATX,,2026-08-03T18:02:03.918867Z,,,,9.4,0,38,2026-09-18,185,GATX260918P00185000,,,35720,,180.26,14,0.283738580196939,0.283738580196939,False,False,False,False,38,RepeatedHits,0,35720,0,True,1
+put,GATX,,2026-05-26T15:37:25.158197Z,,,,4.9,5,50,2026-09-18,155,GATX260918P00155000,,,23520,,169.5,20,0.293636726387354,0.293636726387354,False,False,False,False,48,RepeatedHits,0,23520,10,True,1
+put,GATX,,2024-05-23T17:22:52.166551Z,,,,2.4,0,49,2024-09-20,125,GATX240920P00125000,,,11760,,135.82,17,,,False,False,False,False,49,RepeatedHits,0,11760,0,True,1
+call,GATX,,2024-03-21T17:27:43.181628Z,,,,4.1,0,37,2024-05-17,135,GATX240517C00135000,,,15170,,131.62,13,,,False,False,False,False,37,RepeatedHits,15170,0,0,True,1
+call,GATX,,2024-03-08T16:49:59.550717Z,,,,5.6,0,40,2024-09-20,145,GATX240920C00145000,,,22660,,134.55,19,,,False,False,False,False,40,RepeatedHitsDescendingFill,22660,0,0,True,1
+call,GATX,,2022-09-23T14:27:28.823319Z,,,,1.55,0,1000,2022-10-21,95,GATX221021C00095000,,,62000,,90.52,2,,,True,False,False,False,400,LowHistoricVolumeFloor,62000,0,0,True,1
+call,GATX,,2022-09-23T14:22:18.997640Z,,,,2,0,270,2022-10-21,95,GATX221021C00095000,,,54000,,91.59,41,,,False,False,False,False,270,RepeatedHits,6000,48000,0,True,1

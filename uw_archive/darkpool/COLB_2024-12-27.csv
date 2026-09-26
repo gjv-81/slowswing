@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6483,COLB,27.14,908918,2024-12-27T21:01:00Z,False,175948.62,prior_reference_price,0,0,extended_hours_trade,L,0,0,57660562674165,,,
+4220,COLB,27.14,899857,2024-12-27T21:00:12Z,False,114530.80,prior_reference_price,30,26.69,extended_hours_trade,L,4000,100,57612850577262,,,
+94008,COLB,27.10,620299,2024-12-27T20:56:56Z,False,2547616.80,,27.10,27.09,,L,572,559,57416089861195,,,

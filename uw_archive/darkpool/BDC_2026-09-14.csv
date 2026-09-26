@@ -1,0 +1,15 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1119,BDC,113.41,734940,2026-09-14T20:00:53Z,False,126905.79,prior_reference_price,0,102.5,extended_hours_trade,L,0,24,29416303063458,,regular,2026-09-14T20:00:53Z
+1320,BDC,113.41,733821,2026-09-14T20:00:49Z,False,149701.20,prior_reference_price,0,102.5,extended_hours_trade,L,0,24,29416303059466,,regular,2026-09-14T20:00:49Z
+1864,BDC,113.41,732501,2026-09-14T20:00:45Z,False,211396.24,prior_reference_price,0,102.5,extended_hours_trade,L,0,24,29416303055806,,regular,2026-09-14T20:00:45Z
+2220,BDC,113.41,730637,2026-09-14T20:00:42Z,False,251770.20,prior_reference_price,0,102.5,extended_hours_trade,L,0,24,29416303052501,,regular,2026-09-14T20:00:42Z
+4093,BDC,113.41,728417,2026-09-14T20:00:41Z,False,464187.13,prior_reference_price,0,102.5,extended_hours_trade,L,0,24,29416303051448,,regular,2026-09-14T20:00:41Z
+1600,BDC,113.41,724288,2026-09-14T20:00:23Z,False,181456.00,prior_reference_price,0,102.5,extended_hours_trade,L,0,24,29416303033887,,regular,2026-09-14T20:00:23Z
+1862,BDC,113.41,722688,2026-09-14T20:00:23Z,False,211169.42,prior_reference_price,0,102.5,extended_hours_trade,L,0,24,29416303033723,,regular,2026-09-14T20:00:23Z
+1195,BDC,113.41,720638,2026-09-14T20:00:23Z,False,135524.95,prior_reference_price,0,102.5,extended_hours_trade,L,0,24,29416303033474,,regular,2026-09-14T20:00:23Z
+1042,BDC,113.41,718922,2026-09-14T20:00:22Z,False,118173.22,prior_reference_price,0,102.5,extended_hours_trade,L,0,24,29416303032978,,regular,2026-09-14T20:00:22Z
+2936,BDC,113.41,716954,2026-09-14T20:00:22Z,False,332971.76,prior_reference_price,0,102.5,extended_hours_trade,L,0,24,29416303032518,,regular,2026-09-14T20:00:22Z
+2744,BDC,113.76,525888,2026-09-14T19:26:26Z,False,312157.44,,113.83,113.68,,L,1,12,29416300996995,,regular,2026-09-14T19:26:26Z
+1428,BDC,113.895,499780,2026-09-14T19:19:07Z,False,162642.060,,114.11,113.84,,L,61,3,29416300557692,,regular,2026-09-14T19:19:07Z
+7384,BDC,113.985,493648,2026-09-14T19:19:07Z,False,841665.240,,114.11,113.84,,L,61,3,29416300557669,,regular,2026-09-14T19:19:07Z
+1300,BDC,113.83,413701,2026-09-14T18:39:44Z,False,147979.00,,114.02,113.85,,L,146,1,29416298194826,,regular,2026-09-14T18:39:44Z

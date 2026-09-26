@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2520,CRSP,50.9457,1334648,2025-12-18T22:22:33Z,False,128383.1640,average_price_trade,54.75,54.83,extended_hours_trade,L,4,26,37087123154374,,regular,
+2016,CRSP,54.84,1327004,2025-12-18T21:01:41Z,False,110557.44,prior_reference_price,54.84,55.37,extended_hours_trade,L,20,2106,37087118302435,,regular,
+3492,CRSP,54.84,1320427,2025-12-18T21:00:27Z,False,191501.28,prior_reference_price,54.78,55.04,extended_hours_trade,L,495,10,37087118228262,,regular,
+9039,CRSP,54.84,1314419,2025-12-18T21:00:23Z,False,495698.76,prior_reference_price,54.78,55.04,extended_hours_trade,L,495,10,37087118224710,,regular,
+2769,CRSP,55.26,950279,2025-12-18T20:23:30Z,False,153014.94,,55.26,55.36,,L,289,248,37087116011176,,regular,
+3433,CRSP,55.5999,648347,2025-12-18T18:15:21Z,False,190874.4567,,55.44,55.6,,L,204,128,37087108322018,,regular,
+4500,CRSP,55.3701,503837,2025-12-18T17:09:25Z,False,249165.4500,,55.37,55.5,,L,415,102,37087104366200,,regular,
+2665,CRSP,56.3,179642,2025-12-18T14:59:22Z,False,150039.5,,55.88,56.3,,L,2,21,37087096563098,,regular,
+3700,CRSP,56.3,176682,2025-12-18T14:59:21Z,False,208310.0,,55.88,56.3,,L,2,21,37087096562831,,regular,
+1800,CRSP,56.13,59170,2025-12-18T14:33:17Z,False,101034.00,,56.13,56.46,,L,11,11,37087094998141,,regular,

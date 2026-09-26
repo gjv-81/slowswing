@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3891,BIO,319.08,223746,2026-01-08T21:06:13Z,False,1241540.28,,0,270,extended_hours_trade,L,0,3,25207239033674,,regular,2026-01-08T21:06:13Z
+3270,BIO,319.08,219823,2026-01-08T21:00:50Z,False,1043391.60,prior_reference_price,0,270,extended_hours_trade,L,0,3,25207238710234,,regular,2026-01-08T21:00:50Z
+629,BIO,319.08,216553,2026-01-08T21:00:47Z,False,200701.32,prior_reference_price,0,270,extended_hours_trade,L,0,3,25207238707769,,regular,2026-01-08T21:00:47Z
+570,BIO,319.08,215610,2026-01-08T21:00:47Z,False,181875.60,prior_reference_price,0,270,extended_hours_trade,L,0,3,25207238707537,,regular,2026-01-08T21:00:47Z
+445,BIO,319.08,214945,2026-01-08T21:00:34Z,False,141990.60,prior_reference_price,0,270,extended_hours_trade,L,0,3,25207238694758,,regular,2026-01-08T21:00:34Z
+514,BIO,319.08,214500,2026-01-08T21:00:28Z,False,164007.12,prior_reference_price,0,270,extended_hours_trade,L,0,3,25207238688659,,regular,2026-01-08T21:00:28Z
+1000,BIO,314.83,76800,2026-01-08T20:06:47Z,False,314830.00,,315.92,314.83,,L,188,1,25207235467491,,regular,2026-01-08T20:06:47Z
+820,BIO,320.21,24002,2026-01-08T16:12:52Z,False,262572.20,,320.8,319.62,,L,85,84,25207221432970,,regular,2026-01-08T16:12:52Z
+775,BIO,323.795,5404,2026-01-08T14:46:24Z,False,250941.125,,325.01,322.04,,L,1,1,25207216244970,,regular,2026-01-08T14:46:24Z

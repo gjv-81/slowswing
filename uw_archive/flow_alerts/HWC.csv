@@ -1,0 +1,3 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_singleleg,has_multileg,has_floor,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,expiry_count
+call,HWC,,2026-06-02T18:48:30.686747Z,,,,0.75,3,335,2026-08-21,75,HWC260821C00075000,,,17635,,68.82,9,0.21019438681306,0.211281363913375,True,False,False,False,False,235,RepeatedHitsDescendingFill,17635,0,111.666666666667,1
+put,HWC,,2023-10-06T15:16:32.390843Z,,,,1.75,80,165,2023-11-17,35,HWC231117P00035000,,,28075,,35.56,9,,,True,False,False,False,False,160,RepeatedHits,17400,0,2.0625,1

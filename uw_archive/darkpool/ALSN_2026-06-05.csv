@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+41168,ALSN,115.75,694140,2026-06-05T21:22:28Z,False,4765196.00,average_price_trade,113.5,118.04,extended_hours_trade,L,16,17,33157224473144,,regular,2026-06-05T21:22:27Z
+10240,ALSN,115.75,652972,2026-06-05T21:06:42Z,False,1185280.00,average_price_trade,113.5,118.04,extended_hours_trade,L,16,17,33157223527190,,regular,2026-06-05T21:06:41Z
+1871,ALSN,115.75,642721,2026-06-05T20:00:45Z,False,216568.25,prior_reference_price,101.07,134.94,extended_hours_trade,L,100,100,33157219570576,,regular,2026-06-05T20:00:45Z
+24325,ALSN,115.75,640850,2026-06-05T20:00:43Z,False,2815618.75,prior_reference_price,101.07,134.94,extended_hours_trade,L,100,100,33157219568273,,regular,2026-06-05T20:00:43Z
+24454,ALSN,115.75,616525,2026-06-05T20:00:38Z,False,2830550.50,prior_reference_price,101.07,134.94,extended_hours_trade,L,100,100,33157219564069,,regular,2026-06-05T20:00:38Z
+3360,ALSN,115.75,592047,2026-06-05T20:00:30Z,False,388920.00,prior_reference_price,0,0,extended_hours_trade,L,0,0,33157219555633,,regular,2026-06-05T20:00:30Z
+902,ALSN,116.26,236046,2026-06-05T17:49:17Z,False,104866.52,,116.22,116.3,,L,142,104,33157211683040,,regular,2026-06-05T17:49:17Z
+1272,ALSN,117.43,80091,2026-06-05T14:45:20Z,False,149370.96,,117.26,117.7,,L,26,111,33157200645937,,regular,2026-06-05T14:45:20Z
+2389,ALSN,117.385,66438,2026-06-05T14:31:12Z,False,280432.765,,117.25,117.61,,L,100,52,33157199798033,,regular,2026-06-05T14:31:12Z

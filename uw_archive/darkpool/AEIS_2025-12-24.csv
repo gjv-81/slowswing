@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+9880,AEIS,217.23,69743,2025-12-24T19:56:54Z,False,2146232.40,average_price_trade,217.97,217.55,extended_hours_trade,L,99,42,29669705895037,,regular,
+798,AEIS,218.285,14668,2025-12-24T16:14:04Z,False,174191.430,,218.58,218.04,,L,8,18,29669692525001,,regular,
+600,AEIS,218.852,6556,2025-12-24T15:04:14Z,False,131311.200,,218.98,217.68,,L,44,1,29669688335261,,regular,

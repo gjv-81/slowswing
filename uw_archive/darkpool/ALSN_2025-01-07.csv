@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1101,ALSN,110.25,397996,2025-01-07T21:00:26Z,False,121385.25,prior_reference_price,100.52,213.13,extended_hours_trade,L,20,10,57626448831927,,,
+7600,ALSN,110.25,396595,2025-01-07T21:00:26Z,False,837900.00,prior_reference_price,100.52,213.13,extended_hours_trade,L,20,10,57626433718913,,,
+1000,ALSN,110.25,387959,2025-01-07T21:00:26Z,False,110250.00,prior_reference_price,100.52,213.13,extended_hours_trade,L,20,10,57626381580106,,,
+3730,ALSN,110.4001,183626,2025-01-07T20:03:39Z,False,411792.3730,,110.42,110.58,,L,20,2,54219151618294,,,

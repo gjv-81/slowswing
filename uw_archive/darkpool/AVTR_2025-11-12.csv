@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+14135,AVTR,11.55,6337434,2025-11-12T21:38:56Z,False,163259.25,prior_reference_price,11.3,11.84,extended_hours_trade,L,211,221,0,,regular,
+11546,AVTR,11.55,6275114,2025-11-12T21:00:30Z,False,133356.30,prior_reference_price,10.11,13.4,extended_hours_trade,L,100,100,0,,regular,
+9400,AVTR,11.68,3133454,2025-11-12T20:15:13Z,False,109792.00,,11.67,11.68,,L,505,2051,0,,regular,
+10000,AVTR,11.67,2383437,2025-11-12T18:36:59Z,False,116700.00,,11.66,11.67,,L,2682,833,0,,regular,
+10000,AVTR,11.675,2371956,2025-11-12T18:36:59Z,False,116750.000,,11.66,11.67,,L,2682,833,0,,regular,
+18859,AVTR,11.675,2116855,2025-11-12T18:12:21Z,False,220178.825,,11.67,11.68,,L,2828,1266,0,,regular,
+15500,AVTR,11.645,1898302,2025-11-12T17:43:30Z,False,180497.500,,11.64,11.65,,L,668,734,0,,regular,
+9500,AVTR,11.675,1575112,2025-11-12T17:08:04Z,False,110912.500,,11.67,11.68,,L,807,360,0,,regular,

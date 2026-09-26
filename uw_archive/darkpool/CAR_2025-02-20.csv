@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1348,CAR,93.83,777128,2025-02-20T21:01:00Z,False,126482.84,prior_reference_price,92.16,98,extended_hours_trade,L,1,10,57660629713784,,,
+3077,CAR,93.83,775329,2025-02-20T21:00:19Z,False,288714.91,prior_reference_price,92.16,98,extended_hours_trade,L,1,10,57619378484740,,,
+120000,CAR,93.83,772193,2025-02-20T21:00:16Z,False,11259600.00,prior_reference_price,92.16,98,extended_hours_trade,L,1,10,57616092329736,,,
+2847,CAR,93.83,652193,2025-02-20T21:00:16Z,False,267134.01,prior_reference_price,92.16,98,extended_hours_trade,L,1,10,57616090480055,,,
+1166,CAR,94.3948,367461,2025-02-20T20:57:14Z,False,110064.3368,average_price_trade,94.16,94.26,,L,912,401,57434527697952,derivative_priced,,
+1224,CAR,94.6479,335173,2025-02-20T20:52:14Z,False,115849.0296,average_price_trade,94.54,94.64,,L,37,480,57134518053657,derivative_priced,,
+2523,CAR,94.51,157188,2025-02-20T17:43:48Z,False,238448.73,,94.42,94.60,,L,225,172,45828044588214,,,

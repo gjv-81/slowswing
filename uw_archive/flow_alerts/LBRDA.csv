@@ -1,0 +1,8 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,has_singleleg,expiry_count
+call,LBRDA,,2025-06-10T14:38:16.870048Z,,,,1.25,0,146,2025-06-20,95,LBRDA250620C00095000,,,18250,,95.26,7,0.177267774725522,0.177267774725522,False,False,False,False,146,RepeatedHits,0,18250,0,True,1
+call,LBRDA,,2024-02-23T19:15:28.936777Z,,,,3.7,1638,101,2024-03-15,60,LBRDA240315C00060000,,,36260,,62.31,7,,,False,False,False,False,98,RepeatedHits,12580,23680,0.0616605616605617,True,1
+call,LBRDA,,2024-02-22T17:10:51.647013Z,,,,2.3,1502,60,2024-03-15,60,LBRDA240315C00060000,,,13334,,59.96,9,,,False,False,False,False,58,RepeatedHits,0,13334,0.0399467376830892,True,1
+call,LBRDA,,2024-02-20T20:00:42.821999Z,,,,3.4,1001,386,2024-03-15,60,LBRDA240315C00060000,,,22100,,61.18,6,,,False,False,False,False,65,RepeatedHits,20400,1700,0.385614385614386,True,1
+call,LBRDA,,2024-02-14T18:02:39.020676Z,,,,3,547,465,2024-03-15,60,LBRDA240315C00060000,,,27600,,59.9,5,,,False,False,False,False,92,RepeatedHits,16500,11100,0.850091407678245,True,1
+call,LBRDA,,2024-02-14T17:28:47.293203Z,,,,3,547,365,2024-03-15,60,LBRDA240315C00060000,,,26097,,60,10,,,False,False,True,False,87,RepeatedHits,0,26097,0.6672760511883,True,1
+call,LBRDA,,2024-02-14T16:18:31.666917Z,,,,3.1,547,165,2024-03-15,60,LBRDA240315C00060000,,,12710,,60.03,7,,,False,False,True,False,41,RepeatedHits,0,12710,0.301645338208409,True,1

@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+214518,CAR,99.9,1485650,2026-03-20T20:33:01Z,False,21430348.2,average_price_trade,98.28,106,extended_hours_trade,L,1,1,27410555264497,,regular,2026-03-20T20:33:01Z
+214518,CAR,99.9,1484573,2026-03-20T20:17:29Z,True,21430348.2,average_price_trade,98.28,106,extended_hours_trade,L,1,1,27410554333066,,regular,2026-03-20T20:17:29Z
+5157,CAR,99.9005,1483888,2026-03-20T20:11:04Z,False,515186.8785,average_price_trade,98.28,106,extended_hours_trade,L,1,1,27410553948023,,regular,2026-03-20T20:11:04Z
+1200,CAR,99.9,1477263,2026-03-20T20:07:55Z,False,119880.0,prior_reference_price,98.28,106,extended_hours_trade,L,1,1,27410553758113,,regular,2026-03-20T20:07:55Z
+2508,CAR,99.9,1474520,2026-03-20T20:02:57Z,False,250549.2,prior_reference_price,98.28,106,extended_hours_trade,L,1,1,27410553460338,,regular,2026-03-20T20:02:57Z
+4576,CAR,99.9,1472012,2026-03-20T20:02:57Z,False,457142.4,prior_reference_price,98.28,106,extended_hours_trade,L,1,1,27410553460283,,regular,2026-03-20T20:02:57Z
+6060,CAR,99.9,1466513,2026-03-20T20:00:20Z,False,605394.0,average_price_trade,99.28,102.46,extended_hours_trade,L,100,100,27410553303555,,regular,2026-03-20T20:00:20Z
+214518,CAR,99.9,1460453,2026-03-20T20:00:17Z,True,21430348.2,average_price_trade,99.28,102.46,extended_hours_trade,L,100,100,27410553300754,,regular,2026-03-20T20:00:17Z
+1300,CAR,99.96,884868,2026-03-20T19:59:13Z,False,129948.00,,99.67,99.93,,L,97,40,27410553236176,,regular,2026-03-20T19:59:13Z
+1284,CAR,100.17,802994,2026-03-20T19:52:50Z,False,128618.28,,99.84,100.45,,L,337,191,27410552853604,,regular,2026-03-20T19:52:50Z
+1980,CAR,99.9,615226,2026-03-20T18:57:19Z,False,197802.0,,99.89,100.09,,L,326,314,27410549522489,,regular,2026-03-20T18:57:19Z
+1520,CAR,100.325,584630,2026-03-20T18:15:36Z,False,152494.000,,100.28,100.51,,L,33,1,27410547019613,,regular,2026-03-20T18:15:36Z

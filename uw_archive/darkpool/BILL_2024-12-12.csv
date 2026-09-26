@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+8365,BILL,89.81,1186053,2024-12-12T21:13:12Z,False,751260.65,average_price_trade,88.07,91.55,extended_hours_trade,L,18,4,58392722568356,,,
+13000,BILL,89.81,1177687,2024-12-12T21:01:14Z,False,1167530.00,prior_reference_price,88.07,91.55,extended_hours_trade,L,18,4,57674171200539,,,
+2709,BILL,89.81,1163760,2024-12-12T21:00:32Z,False,243295.29,prior_reference_price,45,0,extended_hours_trade,L,0,10,57632852747012,,,
+2280,BILL,89.81,1161051,2024-12-12T21:00:32Z,False,204766.80,prior_reference_price,45,0,extended_hours_trade,L,0,10,57632851743148,,,
+3814,BILL,89.81,1158462,2024-12-12T21:00:09Z,False,342535.34,,45,0,extended_hours_trade,L,0,10,57609422858400,,,
+2450,BILL,89.81,1154013,2024-12-12T21:00:02Z,False,220034.50,,45,0,extended_hours_trade,L,0,10,57602415477771,,,
+27600,BILL,89.72,748350,2024-12-12T20:47:17Z,False,2476272.00,contingent_trade,89.60,89.68,,L,40,12,56837581351180,qualified_contingent_trade,,
+1800,BILL,90.17,459355,2024-12-12T19:56:19Z,False,162306.00,,90.10,90.16,,L,24,7,53779687801405,,,
+2000,BILL,89.9599,364826,2024-12-12T18:31:38Z,False,179919.8000,,89.84,89.96,,L,15,38,48698328372952,,,
+2000,BILL,89.97,360051,2024-12-12T18:28:41Z,False,179940.00,,89.88,89.96,,L,9,113,48521772986722,,,
+10300,BILL,89.16,93832,2024-12-12T15:16:23Z,False,918348.00,contingent_trade,88.89,89.16,,L,101,206,36983459841921,qualified_contingent_trade,,
+1700,BILL,89.385,38152,2024-12-12T14:56:03Z,False,151954.500,,89.31,89.49,,L,100,21,35763411416342,,,

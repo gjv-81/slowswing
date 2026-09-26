@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+9433,CZR,25.68,4537522,2025-08-18T20:00:07Z,False,242239.44,,25.90,25.35,extended_hours_trade,L,10000,105,57607085494101,,regular,
+8855,CZR,25.68,4522672,2025-08-18T20:00:06Z,False,227396.40,,25.90,25.35,extended_hours_trade,L,10000,105,57606892302621,,regular,
+5284,CZR,25.68,4527956,2025-08-18T20:00:06Z,False,135693.12,,25.90,25.35,extended_hours_trade,L,10000,105,57606892749656,,regular,
+15200,CZR,25.68,3652465,2025-08-18T20:00:00Z,False,390336.00,,25.68,25.66,extended_hours_trade,L,5200,30337,57600573385965,,regular,
+17667,CZR,25.68,3635980,2025-08-18T20:00:00Z,False,453688.56,,25.68,25.66,extended_hours_trade,L,5200,30337,57600546303721,,regular,
+4795,CZR,25.51,1687147,2025-08-18T16:46:03Z,False,122320.45,,25.52,25.51,,L,391,121,45963617159564,,regular,
+497874,CZR,25.60,981695,2025-08-18T14:35:26Z,False,12745574.40,,25.71,25.70,,L,126,417,38126930148753,intermarket_sweep,regular,
+7540,CZR,25.565,373468,2025-08-18T14:20:55Z,False,192760.100,,25.57,25.56,,L,380,32,37255388023625,,regular,
+5882,CZR,25.5132,131297,2025-08-18T13:45:36Z,False,150068.6424,,25.53,25.50,,L,250,400,35136997991208,,regular,

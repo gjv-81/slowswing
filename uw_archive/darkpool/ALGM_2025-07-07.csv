@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+15420,ALGM,35.40,1292972,2025-07-07T20:00:11Z,False,545868.00,prior_reference_price,36.50,35,extended_hours_trade,L,10,8,57611662679862,,regular,
+8692,ALGM,35.40,1274066,2025-07-07T20:00:11Z,False,307696.80,prior_reference_price,36.50,35,extended_hours_trade,L,10,8,57611626746876,,regular,
+6300,ALGM,35.435,972258,2025-07-07T19:58:03Z,False,223240.500,,35.44,35.43,,L,306,1217,57483603231423,,regular,

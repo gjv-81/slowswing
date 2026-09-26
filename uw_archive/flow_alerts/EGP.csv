@@ -1,0 +1,5 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,has_singleleg,volume_oi_ratio,expiry_count
+put,EGP,,2026-08-06T17:49:30.483067Z,,,,5.8,1,21,2026-09-18,200,EGP260918P00200000,,,12180,,199.74,13,0.224032156144262,0.224032156144262,False,False,False,False,21,RepeatedHits,0,12180,True,21,1
+call,EGP,,2026-07-16T18:15:00.214709Z,,,,7.7,0,57,2027-03-19,240,EGP270319C00240000,,,43890,,221.28,17,0.174170071019188,0.174170071019188,False,False,False,False,57,RepeatedHits,0,43890,True,0,1
+put,EGP,,2025-12-02T20:56:33.193789Z,,,,3,0,316,2026-01-16,175,EGP260116P00175000,,,32100,,179.4,10,0.197670940711036,0.197670940711036,False,False,False,False,107,RepeatedHits,19800,12300,True,0,1
+put,EGP,,2025-07-24T14:52:03.035363Z,,,,3.32,2,550,2025-09-19,165,EGP250919P00165000,,,182600,,166.49,2,0.154041954073846,0.154041954073846,True,False,False,False,550,LowHistoricVolumeFloor,182600,0,True,275,1

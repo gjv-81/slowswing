@@ -1,0 +1,7 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2026-06-22T18:08:13.974000Z,2026-06-22,TTEK,0,4,0,0,2,2,17.5,57.00,0,0,40.00,0,17.00,0,4,0,0,0,0,0,0
+2026-06-22T17:24:47.409000Z,2026-06-22,TTEK,1,0,1,0,0,0,22.5,0,508.00,0,0,508.00,0,1,0,508.00,1,1,0,0,0
+2026-06-22T17:09:13.189000Z,2026-06-22,TTEK,1,11,0,1,11,0,25,1004.00,360.00,360.00,0,0,1004.00,1,4,360.00,1,1,0,0,0
+2026-06-22T19:04:30.599000Z,2026-06-22,TTEK,212,1,9,201,0,1,30,490.00,8661.00,7655.00,490.00,946.00,0,16,1,0,0,0,490.00,1,1
+2026-06-22T19:04:26.740000Z,2026-06-22,TTEK,151,0,92,59,0,0,35,0,15490.00,6260.00,0,9230.00,0,7,0,0,0,0,0,0,0
+2026-06-22T13:50:46.372000Z,2026-06-22,TTEK,1,0,0,1,0,0,40,0,1.00,1.00,0,0,0,1,0,0,0,0,0,0,0

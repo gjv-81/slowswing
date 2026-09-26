@@ -1,0 +1,2 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2025-12-24T17:58:37.514000Z,2025-12-24,NOVT,50,0,50,0,0,0,120,0,30000.00,0,0,30000.00,0,1,0,30000.00,1,50,0,0,0

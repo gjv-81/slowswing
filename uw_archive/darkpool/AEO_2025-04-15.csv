@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+252563,AEO,10.35,6057809,2025-04-15T20:29:27Z,False,2614027.05,prior_reference_price,10.26,10.97,extended_hours_trade,L,1,200,59367586228755,,,
+137700,AEO,10.35,5788222,2025-04-15T20:00:30Z,False,1425195.00,prior_reference_price,9.91,10.97,extended_hours_trade,L,1,1,57630933628448,,,
+10853,AEO,10.35,5650521,2025-04-15T20:00:30Z,False,112328.55,prior_reference_price,9.91,10.97,extended_hours_trade,L,1,1,57630929732762,,,
+20000,AEO,10.36,4610786,2025-04-15T19:59:42Z,False,207200.00,,10.36,10.37,,L,3338,229,57582002051504,,,
+17002,AEO,10.3627,3829001,2025-04-15T19:49:27Z,False,176186.6254,average_price_trade,10.37,10.38,,L,1100,3608,56967044674128,derivative_priced,,
+10091,AEO,10.375,3810083,2025-04-15T19:49:19Z,False,104694.125,,10.37,10.38,,L,944,3108,56959521363494,,,
+13096,AEO,10.355,3571746,2025-04-15T19:37:05Z,False,135609.080,,10.35,10.36,,L,2669,1400,56225533398484,,,
+12890,AEO,10.335,2786740,2025-04-15T18:36:04Z,False,133218.150,,10.33,10.34,,L,1075,706,52564621348986,,,

@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3028,CHRD,108.72,473633,2025-07-25T20:00:10Z,False,329204.16,prior_reference_price,111.20,108.20,extended_hours_trade,L,6,2,57610656452890,,regular,
+933,CHRD,108.72,468808,2025-07-25T20:00:10Z,False,101435.76,prior_reference_price,108.98,108.38,extended_hours_trade,L,1835,1763,57610133008239,,regular,
+2014,CHRD,108.72,467873,2025-07-25T20:00:04Z,False,218962.08,,108.98,108.38,extended_hours_trade,L,1835,1763,57604259106317,,regular,
+1085,CHRD,109.2645,333483,2025-07-25T19:48:53Z,False,118551.9825,,109.29,109.18,,L,7,116,56933180765140,,regular,
+1114,CHRD,109.43,161426,2025-07-25T16:15:37Z,False,121905.02,,109.43,109.17,,L,1,118,44137626833804,,regular,
+3000,CHRD,108.7101,70536,2025-07-25T14:25:56Z,False,326130.3000,,108.98,108.83,,L,100,5,37556112807123,,regular,
+1000,CHRD,108.86,56339,2025-07-25T14:14:22Z,False,108860.00,contingent_trade,108.84,108.50,,L,30,10,36862091849300,qualified_contingent_trade,regular,
+1495,CHRD,108.8215,28437,2025-07-25T13:50:56Z,False,162688.1425,,108.95,108.76,,L,15,34,35456303923890,,regular,
+1000,CHRD,108.94,19303,2025-07-25T13:48:40Z,False,108940.00,contingent_trade,109.12,109,,L,1,4,35320927967933,qualified_contingent_trade,regular,
+3160,CHRD,109.49,12411,2025-07-25T13:39:59Z,False,345988.40,,109.72,109.06,,L,1,10,34799201584606,,regular,

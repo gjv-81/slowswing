@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2800,CRSP,47.09,1073937,2026-03-25T20:00:36Z,False,131852.00,prior_reference_price,48.1,47.05,extended_hours_trade,L,10,160,37087114637473,,regular,2026-03-25T20:00:36Z
+3000,CRSP,47.46,521501,2026-03-25T18:01:23Z,False,142380.00,,47.46,47.3,,L,229,142,37087107484696,,regular,2026-03-25T18:01:23Z
+3804,CRSP,48.0615,197152,2026-03-25T14:08:15Z,False,182825.9460,,48.2,48.06,,L,300,13,37087093496049,,regular,2026-03-25T14:08:15Z

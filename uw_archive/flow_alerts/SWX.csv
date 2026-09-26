@@ -1,0 +1,5 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,has_singleleg,volume_oi_ratio,expiry_count
+call,SWX,,2026-03-19T19:45:01.394141Z,,,,7,1,17,2026-10-16,85,SWX261016C00085000,,,11900,,86.36,5,0.23996606678767,0.23996606678767,False,False,False,False,17,RepeatedHits,8400,3500,True,17,1
+put,SWX,,2025-01-27T16:02:31.062271Z,,,,2.65,143,143,2025-02-21,75,SWX250221P00075000,,,37895,,73.2499,6,,,False,False,True,False,143,RepeatedHits,37895,0,True,1,1
+put,SWX,,2024-10-30T15:01:51.730384Z,,,,4.9,160,106,2025-01-17,75,SWX250117P00075000,,,16660,,73.925,5,,,False,False,True,False,34,RepeatedHits,0,16660,True,0.6625,1
+put,SWX,,2024-09-05T15:16:02.598772Z,,,,2.25,3,84,2024-10-18,70,SWX241018P00070000,,,11750,,70.7,5,,,False,False,True,False,54,RepeatedHitsDescendingFill,0,11750,True,28,1

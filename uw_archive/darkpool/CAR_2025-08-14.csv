@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1247,CAR,158.32,586716,2025-08-14T20:04:52Z,False,197425.04,,200,154.01,extended_hours_trade,L,1,10,57892416809660,,regular,
+1000,CAR,158.3437,409165,2025-08-14T19:52:03Z,False,158343.7000,,158.39,158.24,,L,435,81,57123438515109,,regular,
+2184,CAR,159.58,277668,2025-08-14T18:33:57Z,False,348522.72,,159.70,159.54,,L,205,1,52437347997731,,regular,
+1000,CAR,161.095,56968,2025-08-14T14:15:16Z,False,161095.000,,161.64,160.55,,L,300,18,36916473791840,,regular,

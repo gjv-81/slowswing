@@ -1,0 +1,9 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_singleleg,has_multileg,has_floor,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,expiry_count
+call,REG,,2026-04-27T13:34:14.759720Z,,,,4.29,3,100,2026-10-16,80,REG261016C00080000,,,42945,,80.42,17,0.184384859928016,0.182100203186991,True,False,False,False,False,100,RepeatedHitsAscendingFill,42945,0,33.3333333333333,1
+call,REG,,2025-02-24T19:42:15.591695Z,,,,1.1,216,98,2025-03-21,75,REG250321C00075000,,,10450,,74.255,7,0.184754698906814,0.184754698906814,True,False,False,False,False,95,RepeatedHits,2200,8250,0.453703703703704,1
+put,REG,,2024-04-04T20:06:40.537843Z,,,,2,2310,815,2024-10-18,55,REG241018P00055000,,,45600,,58.97,7,,,True,False,False,False,False,228,RepeatedHits,21600,24000,0.352813852813853,1
+put,REG,,2024-04-04T19:49:35.665096Z,,,,2,2310,318,2024-10-18,55,REG241018P00055000,,,63400,,58.99,14,,,True,False,False,False,False,317,RepeatedHits,42000,21400,0.137662337662338,1
+put,REG,,2024-04-02T14:53:31.438421Z,,,,2,5,1400,2024-10-18,55,REG241018P00055000,,,40000,,59.33,6,,,True,False,False,False,False,200,RepeatedHits,39600,400,280,1
+put,REG,,2024-04-02T14:53:12.538877Z,,,,2,5,1000,2024-10-18,55,REG241018P00055000,,,40000,,59.33,15,,,True,False,False,False,False,200,RepeatedHits,40000,0,200,1
+put,REG,,2024-04-02T14:52:51.401403Z,,,,2,5,800,2024-10-18,55,REG241018P00055000,,,40000,,59.275,7,,,True,False,False,True,False,200,RepeatedHits,4000,36000,160,1
+call,REG,,2022-11-17T18:00:18.105247Z,,,,5.5,0,127,2022-12-16,60,REG221216C00060000,,,69850,,64.51,2,,,False,True,True,False,True,127,LowHistoricVolumeFloor,69850,0,0,2

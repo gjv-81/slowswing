@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2518,EEFT,73.2,679385,2026-08-14T20:00:15Z,False,184317.6,prior_reference_price,77,71.99,extended_hours_trade,L,50,5,30305361256174,,regular,2026-08-14T20:00:15Z
+7560,EEFT,73.2,676842,2026-08-14T20:00:15Z,False,553392.0,prior_reference_price,77,71.99,extended_hours_trade,L,50,5,30305361255603,,regular,2026-08-14T20:00:15Z
+3923,EEFT,73.2,669282,2026-08-14T20:00:14Z,False,287163.6,prior_reference_price,77,71.99,extended_hours_trade,L,50,5,30305361254903,,regular,2026-08-14T20:00:14Z
+1399,EEFT,73.2,665330,2026-08-14T20:00:13Z,False,102406.8,prior_reference_price,77,71.99,extended_hours_trade,L,50,5,30305361254456,,regular,2026-08-14T20:00:13Z
+66700,EEFT,73.2,663931,2026-08-14T20:00:06Z,False,4882440.0,average_price_trade,77,71.99,extended_hours_trade,L,50,5,30305361247287,,regular,2026-08-14T20:00:06Z
+78700,EEFT,73.12,489075,2026-08-14T19:47:57Z,False,5754544.00,contingent_trade,73.19,73.05,,L,186,147,30305360518312,qualified_contingent_trade,regular,2026-08-14T19:47:57Z
+59000,EEFT,73.15,410364,2026-08-14T19:47:47Z,False,4315850.00,contingent_trade,73.19,73.05,,L,204,112,30305360508311,qualified_contingent_trade,regular,2026-08-14T19:47:46Z
+39400,EEFT,73.15,350760,2026-08-14T19:47:34Z,False,2882110.00,contingent_trade,73.19,73.05,,L,186,112,30305360495310,qualified_contingent_trade,regular,2026-08-14T19:47:33Z
+2000,EEFT,72.7,222029,2026-08-14T18:03:55Z,False,145400.0,,72.69,72.59,,L,36,142,30305354275795,,regular,2026-08-14T18:03:55Z
+20500,EEFT,72.67,171062,2026-08-14T16:30:17Z,False,1489735.00,contingent_trade,72.66,72.42,,L,6,11,30305348657903,qualified_contingent_trade,regular,2026-08-14T16:30:16Z
+19700,EEFT,72.66,150375,2026-08-14T16:29:39Z,False,1431402.00,contingent_trade,72.66,72.42,,L,16,11,30305348619993,qualified_contingent_trade,regular,2026-08-14T16:29:38Z
+1949,EEFT,74.06,15772,2026-08-14T13:49:30Z,False,144342.94,,74.56,73.64,,L,10,10,30305339011006,,regular,2026-08-14T13:49:30Z

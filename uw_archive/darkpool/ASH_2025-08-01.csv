@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2726,ASH,50.50,804484,2025-08-01T20:00:16Z,False,137663.00,prior_reference_price,49.66,72.29,extended_hours_trade,L,1,100,57616515150058,,regular,
+4987,ASH,50.315,95758,2025-08-01T14:12:20Z,False,250920.905,,50.23,50.40,,L,26,52,36740653402497,,regular,
+2066,ASH,49.98,66310,2025-08-01T14:02:46Z,False,103258.68,,49.88,50.08,,L,284,1,36166093878976,,regular,

@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2619,CHRD,109.84,484972,2025-08-28T21:36:55Z,False,287670.96,prior_reference_price,109.30,111.58,extended_hours_trade,L,8,43,63415669419777,,regular,
+1372,CHRD,109.84,482327,2025-08-28T20:32:05Z,False,150700.48,prior_reference_price,109.30,111.58,extended_hours_trade,L,8,45,59525518887702,,regular,
+1879,CHRD,109.84,479494,2025-08-28T20:00:15Z,False,206389.36,prior_reference_price,109.30,110.49,extended_hours_trade,L,3,45,57615039016256,,regular,
+1141,CHRD,109.84,477530,2025-08-28T20:00:15Z,False,125327.44,prior_reference_price,109.30,110.49,extended_hours_trade,L,3,45,57615029621384,,regular,
+963,CHRD,109.605,212475,2025-08-28T17:58:03Z,False,105549.615,,109.55,109.66,,L,236,273,50283136050441,,regular,
+948,CHRD,108.9061,191879,2025-08-28T17:31:57Z,False,103242.9828,,108.90,108.95,,L,111,4,48717288661773,,regular,
+1288,CHRD,109.1036,162764,2025-08-28T16:38:15Z,False,140525.4368,,109.03,109.13,,L,4,28,45495239061125,,regular,
+1155,CHRD,108.29,53723,2025-08-28T14:28:28Z,False,125074.95,,108.05,108.29,,L,118,1,37708488341761,,regular,
+1345,CHRD,108.29,52568,2025-08-28T14:28:28Z,False,145650.05,,108.05,108.29,,L,118,1,37708487980302,,regular,
+3219,CHRD,107.80,13297,2025-08-28T13:43:16Z,False,347008.20,,107.61,108.21,,L,104,45,34996025551983,,regular,

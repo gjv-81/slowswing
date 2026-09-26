@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1853,AGCO,112.65,597346,2026-03-30T20:01:35Z,False,208740.45,prior_reference_price,114.85,44.81,extended_hours_trade,L,17,1,28823597619244,,regular,2026-03-30T20:01:35Z
+914,AGCO,112.65,595493,2026-03-30T20:01:11Z,False,102962.10,prior_reference_price,114.85,44.81,extended_hours_trade,L,17,1,28823597595149,,regular,2026-03-30T20:01:11Z
+2911,AGCO,112.65,594579,2026-03-30T20:00:57Z,False,327924.15,prior_reference_price,114.85,44.81,extended_hours_trade,L,17,1,28823597581040,,regular,2026-03-30T20:00:57Z
+5938,AGCO,112.65,589415,2026-03-30T20:00:34Z,False,668915.70,prior_reference_price,0,44.81,extended_hours_trade,L,0,1,28823597558233,,regular,2026-03-30T20:00:34Z
+995,AGCO,112.65,583477,2026-03-30T20:00:34Z,False,112086.75,prior_reference_price,0,44.81,extended_hours_trade,L,0,1,28823597558227,,regular,2026-03-30T20:00:34Z
+2630,AGCO,112.65,581029,2026-03-30T20:00:34Z,False,296269.50,prior_reference_price,0,44.81,extended_hours_trade,L,0,1,28823597558034,,regular,2026-03-30T20:00:34Z
+914,AGCO,112.65,577265,2026-03-30T20:00:32Z,False,102962.10,prior_reference_price,0,44.81,extended_hours_trade,L,0,1,28823597556352,,regular,2026-03-30T20:00:32Z
+1937,AGCO,112.65,576070,2026-03-30T20:00:06Z,False,218203.05,,0,0,extended_hours_trade,L,0,0,28823597529991,,regular,2026-03-30T20:00:06Z
+1845,AGCO,112.06,111873,2026-03-30T17:35:30Z,False,206750.70,,112.27,111.93,,L,1,23,28823588854163,,regular,2026-03-30T17:35:30Z
+1061,AGCO,112.5473,24519,2026-03-30T13:59:45Z,False,119412.6853,,112.97,112.27,,L,10,41,28823575908891,,regular,2026-03-30T13:59:45Z
+980,AGCO,111.91,18478,2026-03-30T13:49:30Z,False,109671.80,,112.54,111.83,,L,2,2,28823575294225,,regular,2026-03-30T13:49:30Z
+2107,AGCO,114.8877,6271,2026-03-30T13:30:06Z,False,242068.3839,,115.4,114.05,,L,14,1,28823574130073,,regular,2026-03-30T13:30:06Z

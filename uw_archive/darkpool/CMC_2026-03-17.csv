@@ -1,0 +1,14 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2014,CMC,61.95,995076,2026-03-17T20:06:02Z,False,124767.30,,60.75,63.16,extended_hours_trade,L,31,32,25353264310948,,regular,2026-03-17T20:06:02Z
+4795,CMC,61.95,992166,2026-03-17T20:02:12Z,False,297050.25,prior_reference_price,60.75,63.16,extended_hours_trade,L,31,32,25353264080985,,regular,2026-03-17T20:02:12Z
+1743,CMC,61.95,987109,2026-03-17T20:00:58Z,False,107978.85,prior_reference_price,60.25,63.16,extended_hours_trade,L,31,5,25353264006807,,regular,2026-03-17T20:00:58Z
+3713,CMC,61.95,985366,2026-03-17T20:00:49Z,False,230020.35,prior_reference_price,60.25,63.16,extended_hours_trade,L,31,5,25353263998200,,regular,2026-03-17T20:00:49Z
+2264,CMC,61.95,980254,2026-03-17T20:00:44Z,False,140254.80,prior_reference_price,60.25,0,extended_hours_trade,L,0,5,25353263992925,,regular,2026-03-17T20:00:44Z
+2298,CMC,61.95,974270,2026-03-17T20:00:44Z,False,142361.10,prior_reference_price,60.25,0,extended_hours_trade,L,0,5,25353263992814,,regular,2026-03-17T20:00:44Z
+4507,CMC,61.95,971277,2026-03-17T20:00:37Z,False,279208.65,prior_reference_price,60.25,0,extended_hours_trade,L,0,5,25353263985358,,regular,2026-03-17T20:00:37Z
+7648,CMC,61.95,966770,2026-03-17T20:00:32Z,False,473793.60,prior_reference_price,60.25,0,extended_hours_trade,L,0,5,25353263980869,,regular,2026-03-17T20:00:32Z
+43400,CMC,61.95,959121,2026-03-17T20:00:10Z,False,2688630.00,average_price_trade,60.25,0,extended_hours_trade,L,0,5,25353263958788,,regular,2026-03-17T20:00:10Z
+2622,CMC,61.91,535239,2026-03-17T19:40:11Z,False,162328.02,,61.91,61.94,,L,244,10,25353262760115,,regular,2026-03-17T19:40:11Z
+18123,CMC,61.81,410594,2026-03-17T18:32:14Z,False,1120182.63,,61.82,61.93,,L,119,118,25353258682970,,regular,2026-03-17T18:32:14Z
+9251,CMC,61.81,419845,2026-03-17T18:32:14Z,False,571804.31,,61.82,61.93,,L,119,118,25353258682970,,regular,2026-03-17T18:32:14Z
+1795,CMC,62.05,342681,2026-03-17T18:24:27Z,False,111379.75,,62.03,62.08,,L,55,66,25353258215891,,regular,2026-03-17T18:24:27Z

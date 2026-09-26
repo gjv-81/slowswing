@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+18594,CROX,78.85,1456810,2025-11-07T21:00:16Z,False,1466136.90,prior_reference_price,78.5,79.3,extended_hours_trade,L,25,100,0,,regular,
+10844,CROX,79.14,864798,2025-11-07T20:20:01Z,False,858194.16,,79.18,79.23,,L,13,1,0,,regular,
+1433,CROX,79.05,795144,2025-11-07T20:00:52Z,False,113278.65,,79.05,79.14,,L,316,100,0,,regular,
+1400,CROX,78.83,723152,2025-11-07T19:39:17Z,False,110362.00,contingent_trade,78.79,78.89,,L,5,49,0,qualified_contingent_trade,regular,
+1700,CROX,77.9318,646197,2025-11-07T19:00:51Z,False,132484.0600,,77.93,77.97,,L,51,300,0,,regular,
+4000,CROX,78,640005,2025-11-07T18:58:22Z,False,312000,,77.91,78,,L,139,10,0,,regular,
+1400,CROX,77.85,573759,2025-11-07T18:28:42Z,False,108990.00,,77.76,77.85,,L,53,1,0,,regular,
+1410,CROX,77.79,456241,2025-11-07T17:28:09Z,False,109683.90,,77.73,77.8,,L,15,10,0,,regular,
+1997,CROX,78.04,447732,2025-11-07T17:26:21Z,False,155845.88,,77.92,78.02,,L,13,55,0,,regular,
+2600,CROX,77.91,435106,2025-11-07T17:24:41Z,False,202566.00,contingent_trade,77.89,77.98,,L,13,2,0,qualified_contingent_trade,regular,
+1300,CROX,78.2201,64277,2025-11-07T14:47:46Z,False,101686.1300,,78.22,78.3,,L,100,143,0,,regular,

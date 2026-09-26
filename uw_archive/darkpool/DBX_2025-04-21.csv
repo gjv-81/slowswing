@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5400,DBX,26.67,3285019,2025-04-21T20:00:08Z,False,144018.00,,28,26,extended_hours_trade,L,29,50,57608807578682,,,
+11786,DBX,26.67,3278323,2025-04-21T20:00:08Z,False,314332.62,,28,26,extended_hours_trade,L,29,50,57608778482265,,,
+10190,DBX,26.67,3265375,2025-04-21T20:00:08Z,False,271767.30,,28,26,extended_hours_trade,L,29,50,57608774404250,,,
+7767,DBX,26.755,1707467,2025-04-21T19:02:05Z,False,207806.085,,26.76,26.75,,L,300,301,54125915198018,,,
+15200,DBX,26.765,1693003,2025-04-21T19:02:05Z,False,406828.000,,26.77,26.76,,L,217,465,54125248777638,,,
+15400,DBX,26.755,1628468,2025-04-21T18:55:21Z,False,412027.000,,26.74,26.73,,L,317,330,53721902460022,,,
+15400,DBX,26.775,1608992,2025-04-21T18:55:10Z,False,412335.000,,26.78,26.77,,L,838,571,53710893933032,,,
+5274,DBX,26.68,777041,2025-04-21T15:57:00Z,False,140710.32,contingent_trade,26.56,26.55,,L,72,607,43020842442746,qualified_contingent_trade,,
+9126,DBX,26.68,771767,2025-04-21T15:56:58Z,False,243481.68,contingent_trade,26.56,26.55,,L,72,607,43018218814271,qualified_contingent_trade,,
+8763,DBX,27.11,8772,2025-04-21T12:26:09Z,False,237564.93,average_price_trade,28,23.78,extended_hours_trade,L,5,100,30369533066293,,,

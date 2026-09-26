@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2378,COLM,60.24,553762,2026-03-04T21:00:15Z,False,143250.72,prior_reference_price,59.91,62.8,extended_hours_trade,L,1,2,30674732043060,,regular,2026-03-04T21:00:15Z
+1764,COLM,60.59,100755,2026-03-04T17:14:52Z,False,106880.76,,60.69,60.72,,L,1,310,30674718520078,,regular,2026-03-04T17:14:52Z
+4536,COLM,59.475,17106,2026-03-04T14:55:14Z,False,269778.600,,59.35,59.6,,L,100,200,30674710142083,,regular,2026-03-04T14:55:14Z

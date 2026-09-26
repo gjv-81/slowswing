@@ -1,0 +1,7 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2025-01-02T17:52:04.884000Z,2025-01-02,VICR,21,0,12,9,0,0,40,0,18530.00,7920.00,0,10610.00,0,12,0,18530.00,12,21,0,0,0
+2025-01-02T18:11:57.077000Z,2025-01-02,VICR,0,16,0,0,6,10,45,6410.00,0,0,3980.00,0,2430.00,0,9,0,0,0,0,0,0
+2025-01-02T19:50:00.308000Z,2025-01-02,VICR,103,17,48,37,10,6,50,8775.00,23616.00,7850.00,2525.00,12846.00,5740.00,30,12,0,0,0,8775.00,12,17
+2025-01-02T20:22:05.055000Z,2025-01-02,VICR,9,14,0,9,13,1,55,13040.00,4390.00,4390.00,1180.00,0,11860.00,7,4,0,0,0,13040.00,4,14
+2025-01-02T16:29:46.523000Z,2025-01-02,VICR,14,0,14,0,0,0,60,0,5220.00,0,0,5220.00,0,7,0,0,0,0,0,0,0
+2025-01-02T17:29:48.945000Z,2025-01-02,VICR,9,0,0,9,0,0,65,0,2340.00,2340.00,0,0,0,1,0,0,0,0,0,0,0

@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1088564,BEKE,16.89,4722093,2026-02-23T21:03:20Z,False,18385845.96,prior_reference_price,16.96,16.81,extended_hours_trade,L,55,3,24502864224301,,regular,2026-02-23T21:03:20Z
+61436,BEKE,16.89,3633529,2026-02-23T21:03:01Z,False,1037654.04,prior_reference_price,16.96,16.81,extended_hours_trade,L,55,3,24502864205443,,regular,2026-02-23T21:03:01Z
+8047,BEKE,16.89,3570007,2026-02-23T21:00:43Z,False,135913.83,prior_reference_price,16.96,16.81,extended_hours_trade,L,362,3,24502864066684,,regular,2026-02-23T21:00:43Z
+6305,BEKE,16.88,2703150,2026-02-23T20:55:56Z,False,106428.40,,16.88,16.87,,L,4535,4476,24502863780275,,regular,2026-02-23T20:55:56Z
+6500,BEKE,16.9,1545434,2026-02-23T18:11:18Z,False,109850.0,,16.89,16.88,,L,300,451,24502853902661,,regular,2026-02-23T18:11:18Z
+197704,BEKE,17.27,199351,2026-02-23T13:05:55Z,False,3414348.08,average_price_trade,17.5,17.04,extended_hours_trade,L,80,100,24502835578875,,regular,2026-02-23T13:05:55Z

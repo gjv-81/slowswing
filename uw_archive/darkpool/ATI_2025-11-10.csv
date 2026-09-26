@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1540,ATI,98.1,948173,2025-11-10T21:25:56Z,False,151074.0,prior_reference_price,96.2,100.04,extended_hours_trade,L,16,9,0,,regular,
+1054,ATI,98.1,944280,2025-11-10T21:00:30Z,False,103397.4,prior_reference_price,81,0,extended_hours_trade,L,0,1,0,,regular,
+1223,ATI,98.1,942170,2025-11-10T21:00:30Z,False,119976.3,prior_reference_price,81,0,extended_hours_trade,L,0,1,0,,regular,
+1720,ATI,98.1,940078,2025-11-10T21:00:30Z,False,168732.0,prior_reference_price,81,0,extended_hours_trade,L,0,1,0,,regular,
+1031,ATI,98.1,934603,2025-11-10T21:00:06Z,False,101141.1,,0,0,extended_hours_trade,L,0,0,0,,regular,
+1200,ATI,98.115,754535,2025-11-10T20:59:37Z,False,117738.000,,98.1,98.16,,L,104,151,0,,regular,
+9500,ATI,98.26,317288,2025-11-10T18:33:27Z,False,933470.00,,98.2,98.28,,L,1,200,0,,regular,
+2058,ATI,98.005,271995,2025-11-10T18:05:06Z,False,201694.290,,97.99,98.06,,L,6,84,0,,regular,
+2664,ATI,97.005,222164,2025-11-10T17:00:00Z,False,258421.320,,96.95,97.06,,L,303,151,0,,regular,
+2500,ATI,96.425,107040,2025-11-10T15:42:48Z,False,241062.500,,96.26,96.56,,L,2,137,0,,regular,
+1900,ATI,97.335,78611,2025-11-10T15:13:36Z,False,184936.500,,97.2,97.48,,L,107,500,0,,regular,
+1300,ATI,98.39,15656,2025-11-10T14:35:37Z,False,127907.00,,98.13,98.73,,L,152,80,0,,regular,

@@ -1,0 +1,3 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,has_singleleg,volume_oi_ratio,expiry_count
+call,MZTI,,2025-09-29T16:06:10.906810Z,,,,2.1,1,50,2026-03-20,200,MZTI260320C00200000,,,10500,,170.9,5,0.217553677358854,0.217553677358854,False,False,False,False,50,RepeatedHits,0,10500,True,50,1
+put,MZTI,,2025-08-21T19:45:30.188775Z,,,,4.9,22,72,2025-09-19,180,MZTI250919P00180000,,,14700,,178.175,13,0.195188258317336,0.195188258317336,False,False,False,False,30,RepeatedHits,0,14700,True,3.27272727272727,1

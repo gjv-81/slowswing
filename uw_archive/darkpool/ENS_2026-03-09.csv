@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+759,ENS,161.6,560079,2026-03-09T20:02:24Z,False,122654.4,prior_reference_price,164.75,158.48,extended_hours_trade,L,12,12,32246686603323,,regular,2026-03-09T20:02:24Z
+769,ENS,161.6,559320,2026-03-09T20:02:24Z,False,124270.4,prior_reference_price,164.75,158.48,extended_hours_trade,L,12,12,32246686603269,,regular,2026-03-09T20:02:24Z
+4647,ENS,161.6,556003,2026-03-09T20:00:33Z,False,750955.2,prior_reference_price,0,155.9,extended_hours_trade,L,0,2,32246686492255,,regular,2026-03-09T20:00:33Z
+888,ENS,161.6,551247,2026-03-09T20:00:33Z,False,143500.8,prior_reference_price,0,155.9,extended_hours_trade,L,0,2,32246686492033,,regular,2026-03-09T20:00:33Z
+900,ENS,161.75,395796,2026-03-09T19:58:01Z,False,145575.00,,161.74,161.55,,L,40,240,32246686339874,,regular,2026-03-09T19:58:01Z
+700,ENS,158.22,268581,2026-03-09T18:53:43Z,False,110754.00,,158.3,158.08,,L,3,100,32246682481574,,regular,2026-03-09T18:53:43Z
+945,ENS,156.7565,224807,2026-03-09T17:48:23Z,False,148134.8925,,156.96,156.75,,L,16,20,32246678562182,,regular,2026-03-09T17:48:23Z
+922,ENS,151.7,33384,2026-03-09T13:51:36Z,False,139867.4,,152.82,151.32,,L,105,400,32246664355142,,regular,2026-03-09T13:51:36Z
+700,ENS,150.8,7563,2026-03-09T13:30:01Z,False,105560.0,,153.9,148.99,,L,100,52,32246663059556,,regular,2026-03-09T13:30:01Z

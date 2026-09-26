@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+81247,ARWR,14.73,1601708,2025-03-25T20:02:05Z,False,1196768.31,prior_reference_price,14.51,15.50,extended_hours_trade,L,469,10,57725236748298,,,
+9247,ARWR,14.73,1495756,2025-03-25T20:00:10Z,False,136208.31,prior_reference_price,14.51,15.50,extended_hours_trade,L,469,10,57610266861878,,,
+16538,ARWR,14.73,1482020,2025-03-25T20:00:10Z,False,243604.74,prior_reference_price,14.51,15.50,extended_hours_trade,L,469,10,57610249813824,,,
+31670,ARWR,14.73,1465482,2025-03-25T20:00:06Z,False,466499.10,average_price_trade,14.51,15.50,extended_hours_trade,L,469,10,57606058886734,,,
+8850,ARWR,14.5999,887810,2025-03-25T19:55:27Z,False,129209.1150,,14.59,14.60,,L,1342,397,57327999515139,,,

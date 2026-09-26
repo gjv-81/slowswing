@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+138400,BBWI,19.62,5375408,2025-12-18T22:40:54Z,False,2715408.00,prior_reference_price,19.77,19.3,extended_hours_trade,L,74,74,27109915227168,,regular,
+28300,BBWI,19.62,5235910,2025-12-18T21:07:00Z,False,555246.00,average_price_trade,19.9,18.95,extended_hours_trade,L,50,368,27109909592379,,regular,
+6494,BBWI,19.62,5204780,2025-12-18T21:01:10Z,False,127412.28,prior_reference_price,19.9,14.92,extended_hours_trade,L,50,500,27109909243078,,regular,
+14424,BBWI,19.62,5193422,2025-12-18T21:00:30Z,False,282998.88,prior_reference_price,19.9,14.92,extended_hours_trade,L,50,500,27109909202851,,regular,
+38930,BBWI,19.62,5178666,2025-12-18T21:00:30Z,False,763806.60,prior_reference_price,19.9,14.92,extended_hours_trade,L,50,500,27109909202846,,regular,
+8400,BBWI,19.7612,2828269,2025-12-18T20:21:38Z,False,165994.0800,,19.77,19.76,,L,110,326,27109906870641,,regular,
+44889,BBWI,19.755,2778176,2025-12-18T20:19:42Z,False,886782.195,,19.76,19.75,,L,103,1046,27109906754359,,regular,
+9714,BBWI,19.94,1240634,2025-12-18T16:54:17Z,False,193697.16,,19.93,19.92,,L,922,200,27109894430021,,regular,
+25547,BBWI,19.8,846463,2025-12-18T15:54:30Z,False,505830.6,,19.81,19.8,,L,154,145,27109890842618,intermarket_sweep,regular,
+5310,BBWI,19.76,465809,2025-12-18T15:19:06Z,False,104925.60,,19.75,19.74,,L,200,445,27109888719039,,regular,
+21910,BBWI,19.785,220516,2025-12-18T14:51:45Z,False,433489.350,,19.84,19.81,,L,438,410,27109887077812,,regular,

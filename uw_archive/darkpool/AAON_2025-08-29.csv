@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+8107,AAON,82.95,861103,2025-08-29T20:02:44Z,False,672475.65,prior_reference_price,81.99,90,extended_hours_trade,L,7,100,57764942712431,,regular,
+1672,AAON,82.95,852376,2025-08-29T20:02:26Z,False,138692.40,prior_reference_price,81.99,90,extended_hours_trade,L,7,100,57746421897319,,regular,
+18148,AAON,82.95,850654,2025-08-29T20:02:10Z,False,1505376.60,prior_reference_price,81.99,90,extended_hours_trade,L,7,100,57730232703507,,regular,
+5060,AAON,82.95,832506,2025-08-29T20:01:56Z,False,419727.00,prior_reference_price,81.99,90,extended_hours_trade,L,7,100,57716578743368,,regular,
+7050,AAON,82.95,825105,2025-08-29T20:00:47Z,False,584797.50,prior_reference_price,81.99,87,extended_hours_trade,L,100,100,57647193156653,,regular,
+1395,AAON,82.95,818055,2025-08-29T20:00:34Z,False,115715.25,prior_reference_price,81.99,87,extended_hours_trade,L,100,100,57634317117539,,regular,
+2519,AAON,82.95,814011,2025-08-29T20:00:10Z,False,208951.05,,81.99,87,extended_hours_trade,L,100,100,57610122858814,,regular,
+2000,AAON,83.3145,429916,2025-08-29T18:57:13Z,False,166629.0000,,83.26,83.31,,L,24,86,53833507817745,,regular,
+1296,AAON,83.7551,280010,2025-08-29T17:09:59Z,False,108546.6096,,83.69,83.78,,L,1,100,47399017085532,,regular,
+5249,AAON,83.7129,107868,2025-08-29T14:38:35Z,False,439409.0121,,83.56,83.78,,L,40,46,38315338331973,,regular,
+2200,AAON,83.4157,92965,2025-08-29T14:31:02Z,False,183514.5400,,83.41,83.97,,L,54,116,37862128442642,,regular,
+1500,AAON,83.50,64893,2025-08-29T14:14:38Z,False,125250.00,,83.50,83.87,,L,109,516,36878778517023,,regular,

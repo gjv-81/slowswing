@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1786,CMC,61.17,1053922,2026-04-07T20:11:14Z,False,109249.62,prior_reference_price,55.12,62.36,extended_hours_trade,L,32,100,25353264622815,,regular,2026-04-07T20:11:14Z
+2333,CMC,61.17,1052083,2026-04-07T20:02:12Z,False,142709.61,prior_reference_price,0,62.36,extended_hours_trade,L,32,0,25353264080705,,regular,2026-04-07T20:02:12Z
+1695,CMC,61.17,1048317,2026-04-07T20:01:38Z,False,103683.15,prior_reference_price,0,62.36,extended_hours_trade,L,32,0,25353264047040,,regular,2026-04-07T20:01:38Z
+2502,CMC,61.17,1046622,2026-04-07T20:01:30Z,False,153047.34,prior_reference_price,0,62.36,extended_hours_trade,L,32,0,25353264039036,,regular,2026-04-07T20:01:30Z
+2820,CMC,61.17,1044120,2026-04-07T20:00:41Z,False,172499.40,prior_reference_price,0,62.36,extended_hours_trade,L,32,0,25353263989306,,regular,2026-04-07T20:00:41Z
+4882,CMC,61.17,1041082,2026-04-07T20:00:25Z,False,298631.94,prior_reference_price,0,0,extended_hours_trade,L,0,0,25353263973890,,regular,2026-04-07T20:00:25Z
+2837,CMC,61.17,1034446,2026-04-07T20:00:24Z,False,173539.29,prior_reference_price,0,0,extended_hours_trade,L,0,0,25353263972880,,regular,2026-04-07T20:00:24Z
+1648,CMC,60.81,507731,2026-04-07T18:40:12Z,False,100214.88,,60.78,60.84,,L,46,21,25353259160450,,regular,2026-04-07T18:40:12Z
+5169,CMC,60.79,471835,2026-04-07T18:08:56Z,False,314223.51,,60.85,60.99,,L,30,10,25353257285271,,regular,2026-04-07T18:08:56Z
+2023,CMC,60.79,466666,2026-04-07T18:08:56Z,False,122978.17,,60.85,60.99,,L,30,10,25353257285270,,regular,2026-04-07T18:08:56Z
+14331,CMC,61.04,48339,2026-04-07T13:58:09Z,False,874764.24,,60.93,61.17,,L,34,37,25353242237499,,regular,2026-04-07T13:58:09Z

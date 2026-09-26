@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5716,CAR,128.22,287287,2026-01-02T22:36:23Z,False,732905.52,prior_reference_price,127.4,130.5,extended_hours_trade,L,200,8,27410562666170,,regular,
+1700,CAR,128.22,281237,2026-01-02T21:01:03Z,False,217974.00,prior_reference_price,127.4,128.99,extended_hours_trade,L,375,8,27410556946853,,regular,
+2257,CAR,128.22,278896,2026-01-02T21:00:21Z,False,289392.54,prior_reference_price,127.4,128.99,extended_hours_trade,L,375,8,27410556904282,,regular,
+15003,CAR,128.22,274545,2026-01-02T21:00:07Z,False,1923684.66,average_price_trade,127.4,128.99,extended_hours_trade,L,375,8,27410556890999,,regular,
+784,CAR,129.27,100784,2026-01-02T18:13:28Z,False,101347.68,,129,129.34,,L,17,228,27410546891407,,regular,
+1000,CAR,129.1,26601,2026-01-02T14:45:58Z,False,129100.0,contingent_trade,128.46,129.44,,L,2,2,27410534441223,qualified_contingent_trade,regular,
+1300,CAR,129.09,25601,2026-01-02T14:45:56Z,False,167817.00,contingent_trade,128.46,129.44,,L,2,2,27410534439894,qualified_contingent_trade,regular,
+1100,CAR,129.08,24301,2026-01-02T14:45:55Z,False,141988.00,contingent_trade,128.46,129.45,,L,3,2,27410534438565,qualified_contingent_trade,regular,
+1100,CAR,129.09,23075,2026-01-02T14:44:50Z,False,141999.00,contingent_trade,128.46,129.46,,L,2,14,27410534373417,qualified_contingent_trade,regular,
+1200,CAR,129.09,21973,2026-01-02T14:44:49Z,False,154908.00,contingent_trade,128.46,129.46,,L,2,14,27410534372079,qualified_contingent_trade,regular,

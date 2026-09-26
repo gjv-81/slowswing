@@ -1,0 +1,7 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2026-04-10T19:38:02.859000Z,2026-04-10,DCI,2,0,0,2,0,0,65,0,5090.00,5090.00,0,0,0,2,0,5090.00,2,2,0,0,0
+2026-04-10T19:33:04.553000Z,2026-04-10,DCI,18,0,6,8,0,0,75,0,30574.00,13624.00,0,10150.00,0,10,0,30574.00,10,18,0,0,0
+2026-04-10T18:54:45.929000Z,2026-04-10,DCI,3,5,3,0,0,5,80,272.00,2928.00,0,272.00,2928.00,0,3,2,2928.00,3,3,0,0,0
+2026-04-10T19:38:41.793000Z,2026-04-10,DCI,1,0,0,0,0,0,85,0,500.00,0,0,0,0,1,0,500.00,1,1,0,0,0
+2026-04-10T19:38:41.793000Z,2026-04-10,DCI,5,0,0,2,0,0,90,0,1577.00,747.00,0,0,0,4,0,0,0,0,0,0,0
+2026-04-10T19:36:29.831000Z,2026-04-10,DCI,0,2,0,0,1,0,105,3630.00,0,0,0,0,1810.00,0,2,0,0,0,3630.00,2,2

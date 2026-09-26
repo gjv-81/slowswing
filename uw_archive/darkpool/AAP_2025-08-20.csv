@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+20816,AAP,56.56,1249359,2025-08-20T20:26:19Z,False,1177352.96,prior_reference_price,56.56,55.37,extended_hours_trade,L,4,45,59179829072544,,regular,
+3100,AAP,56.56,1226627,2025-08-20T20:00:19Z,False,175336.00,prior_reference_price,57.63,55.28,extended_hours_trade,L,200,442,57619423579533,,regular,
+2377,AAP,56.56,1223527,2025-08-20T20:00:19Z,False,134443.12,prior_reference_price,57.63,55.28,extended_hours_trade,L,200,442,57619382730931,,regular,
+4000,AAP,56.56,1214105,2025-08-20T20:00:19Z,False,226240.00,prior_reference_price,57.63,55.28,extended_hours_trade,L,200,442,57619048505230,,regular,
+1800,AAP,56.56,1210105,2025-08-20T20:00:19Z,False,101808.00,prior_reference_price,57.63,55.28,extended_hours_trade,L,200,442,57619044908063,,regular,
+33500,AAP,56.56,1208302,2025-08-20T20:00:08Z,False,1894760.00,average_price_trade,57.63,55.28,extended_hours_trade,L,200,442,57608689266367,,regular,
+5548,AAP,56.589,855797,2025-08-20T19:57:11Z,False,313955.772,,56.61,56.58,,L,100,14,57431789842550,,regular,
+1900,AAP,56.4936,829992,2025-08-20T19:56:06Z,False,107337.8400,average_price_trade,56.51,56.45,,L,100,17,57366469545314,derivative_priced,regular,
+3000,AAP,56.156,33902,2025-08-20T13:41:54Z,False,168468.000,,56.33,56.03,,L,10,100,34914291598682,,regular,
+2463,AAP,55.93,16296,2025-08-20T13:33:13Z,False,137755.59,,56.10,55.48,,L,20,55,34393156987275,,regular,

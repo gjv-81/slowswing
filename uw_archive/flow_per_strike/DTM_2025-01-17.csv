@@ -1,0 +1,6 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2025-01-17T14:30:30.580000Z,2025-01-17,DTM,4,1,0,0,0,1,90,195.00,9040.00,0,195.00,0,0,1,1,9040.00,1,4,0,0,0
+2025-01-17T18:37:33.936000Z,2025-01-17,DTM,280,0,280,0,0,0,105,0,208810.00,0,0,208810.00,0,3,0,208810.00,3,280,0,0,0
+2025-01-17T19:57:34.115000Z,2025-01-17,DTM,1,1,0,1,0,1,110,238.00,638.00,638.00,238.00,0,0,1,1,638.00,1,1,0,0,0
+2025-01-17T20:40:57.483000Z,2025-01-17,DTM,22,24,20,2,10,14,115,8730.00,6280.00,480.00,6200.00,5800.00,2530.00,2,3,0,0,0,8730.00,3,24
+2025-01-17T18:37:33.936000Z,2025-01-17,DTM,292,0,210,82,0,0,120,0,34650.00,13510.00,0,21140.00,0,5,0,0,0,0,0,0,0

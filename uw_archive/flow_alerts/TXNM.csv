@@ -1,0 +1,8 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_singleleg,has_multileg,has_floor,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,expiry_count
+call,TXNM,,2025-03-11T16:20:34.485469Z,,,,2.55,1956,136,2025-03-21,50,TXNM250321C00050000,,,17340,,51.07,11,0.589994010363962,0.589994010363962,True,False,False,False,False,68,RepeatedHits,17085,255,0.0695296523517382,1
+call,TXNM,,2025-03-11T14:54:58.251636Z,,,,2.85,1956,46,2025-03-21,50,TXNM250321C00050000,,,12825,,51.375,11,0.624732879841573,0.624732879841573,True,False,False,False,False,45,RepeatedHits,12255,570,0.0235173824130879,1
+call,TXNM,,2025-02-21T17:29:58.569549Z,,,,3.7,1969,63,2025-03-21,50,TXNM250321C00050000,,,19252,,52.8,11,0.3508720654726942,0.3508720654726942,True,False,False,False,False,52,RepeatedHitsAscendingFill,19252,0,0.03199593702387,1
+call,TXNM,,2025-02-18T16:02:06.761473Z,,,,1.8,255,87,2025-02-21,50,TXNM250221C00050000,,,12969,,50.675,11,,,True,False,False,True,False,72,RepeatedHits,11169,1800,0.341176470588235,1
+call,TXNM,,2025-02-05T18:06:04.100286Z,,,,1.95,13,1505,2025-03-21,50,TXNM250321C00050000,,,97499,,49.31,31,,,True,False,False,False,False,500,RepeatedHits,0,97499,115.769230769231,1
+call,TXNM,,2025-02-05T15:31:53.011848Z,,,,2.45,16,600,2025-05-16,50,TXNM250516C00050000,,,30625,,49.01,7,,,True,False,False,False,False,125,RepeatedHits,0,30625,37.5,1
+call,TXNM,,2025-02-05T15:07:30.828243Z,,,,2.25,16,373,2025-05-16,50,TXNM250516C00050000,,,10125,,48.96,5,,,True,False,False,False,False,45,RepeatedHits,0,10125,23.3125,1

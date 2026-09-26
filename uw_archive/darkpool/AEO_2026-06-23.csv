@@ -1,0 +1,14 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+60661,AEO,17.73,3745692,2026-06-23T21:39:33Z,False,1075519.53,average_price_trade,17.68,18.12,extended_hours_trade,L,274,56,29549452970403,,regular,2026-06-23T21:39:33Z
+27896,AEO,17.73,3684954,2026-06-23T20:08:56Z,False,494596.08,prior_reference_price,17.68,18.12,extended_hours_trade,L,219,56,29549447532586,,regular,2026-06-23T20:08:56Z
+7450,AEO,17.73,3657050,2026-06-23T20:00:44Z,False,132088.50,prior_reference_price,17.68,18.5,extended_hours_trade,L,800,56,29549447041133,,regular,2026-06-23T20:00:44Z
+8900,AEO,17.73,3648531,2026-06-23T20:00:44Z,False,157797.00,prior_reference_price,17.68,18.5,extended_hours_trade,L,800,56,29549447041125,,regular,2026-06-23T20:00:44Z
+7304,AEO,17.73,3638085,2026-06-23T20:00:44Z,False,129499.92,prior_reference_price,17.68,18.5,extended_hours_trade,L,800,56,29549447041105,,regular,2026-06-23T20:00:44Z
+12986,AEO,17.73,3629781,2026-06-23T20:00:44Z,False,230241.78,prior_reference_price,17.68,18.5,extended_hours_trade,L,800,56,29549447041097,,regular,2026-06-23T20:00:44Z
+28543,AEO,17.73,3616795,2026-06-23T20:00:44Z,False,506067.39,prior_reference_price,17.68,18.5,extended_hours_trade,L,800,56,29549447041089,,regular,2026-06-23T20:00:44Z
+10900,AEO,17.73,3588252,2026-06-23T20:00:44Z,False,193257.00,prior_reference_price,17.68,18.5,extended_hours_trade,L,800,56,29549447040942,,regular,2026-06-23T20:00:44Z
+86634,AEO,17.86,1913992,2026-06-23T19:29:57Z,False,1547283.24,,17.86,17.87,,L,400,144,29549445193500,,regular,2026-06-23T19:29:56Z
+7700,AEO,17.82,1412643,2026-06-23T18:27:05Z,False,137214.00,,17.83,17.84,,L,573,1721,29549441422104,,regular,2026-06-23T18:27:05Z
+11000,AEO,17.8,1392908,2026-06-23T18:27:00Z,False,195800.0,,17.82,17.83,,L,571,12,29549441416991,,regular,2026-06-23T18:27:00Z
+22700,AEO,17.79,698844,2026-06-23T15:26:26Z,False,403833.00,contingent_trade,17.79,17.81,,L,182,100,29549430582993,qualified_contingent_trade,regular,2026-06-23T15:26:26Z
+22600,AEO,17.79,721444,2026-06-23T15:26:26Z,False,402054.00,contingent_trade,17.79,17.81,,L,182,100,29549430582993,qualified_contingent_trade,regular,2026-06-23T15:26:26Z

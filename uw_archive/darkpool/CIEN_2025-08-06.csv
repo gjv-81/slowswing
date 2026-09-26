@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6520,CIEN,94.31,1359797,2025-08-06T20:00:31Z,False,614901.20,prior_reference_price,99.05,87.21,extended_hours_trade,L,100,100,57631079471504,,regular,
+2366,CIEN,94.31,1351865,2025-08-06T20:00:26Z,False,223137.46,prior_reference_price,99.05,87.21,extended_hours_trade,L,100,100,57626111452314,,regular,
+15129,CIEN,93.95,1014768,2025-08-06T19:48:47Z,False,1421369.55,,93.98,93.90,,L,100,54,56927268051970,,regular,
+3600,CIEN,93.95,999539,2025-08-06T19:48:47Z,False,338220.00,,94,93.95,,L,10,1,56927255814171,,regular,
+1219,CIEN,93.6414,711808,2025-08-06T19:06:32Z,False,114148.8666,,93.68,93.60,,L,32,100,54392508691042,,regular,
+1200,CIEN,93.58,620978,2025-08-06T18:25:05Z,False,112296.00,,93.58,93.53,,L,100,100,51905021503900,,regular,
+1500,CIEN,92.86,435283,2025-08-06T16:33:37Z,False,139290.00,,92.99,92.87,,L,200,11,45217122895334,,regular,
+7860,CIEN,93.02,391997,2025-08-06T16:14:37Z,False,731137.20,,93.15,93.05,,L,6,18,44077652542503,intermarket_sweep,regular,

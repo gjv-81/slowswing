@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+22414,AAP,56.32,1148500,2025-10-27T20:36:05Z,False,1262356.48,prior_reference_price,54.4,61.13,extended_hours_trade,L,100,2,0,,regular,
+16864,AAP,56.32,1124565,2025-10-27T20:00:25Z,False,949780.48,prior_reference_price,54.4,0,extended_hours_trade,L,0,2,0,,regular,
+21198,AAP,56.32,1107518,2025-10-27T20:00:25Z,False,1193871.36,prior_reference_price,54.4,0,extended_hours_trade,L,0,2,0,,regular,
+3941,AAP,55.87,577236,2025-10-27T19:21:15Z,False,220183.67,,55.8,55.86,,L,2,217,0,,regular,
+2000,AAP,54.99,196331,2025-10-27T14:54:10Z,False,109980.00,,54.96,55.1,,L,18,100,0,,regular,

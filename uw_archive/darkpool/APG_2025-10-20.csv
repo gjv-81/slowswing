@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+461295,APG,34.82,1635843,2025-10-20T21:20:12Z,False,16062291.90,average_price_trade,38.69,33,extended_hours_trade,L,100,1,0,,regular,
+14431,APG,34.82,1174547,2025-10-20T21:18:37Z,False,502487.42,,38.69,33,extended_hours_trade_late_or_out_of_sequence,L,100,1,0,,regular,
+3340,APG,34.82,1157176,2025-10-20T20:00:37Z,False,116298.80,prior_reference_price,0,33,extended_hours_trade,L,0,1,0,,regular,
+3495,APG,34.96,629873,2025-10-20T19:35:51Z,False,122185.20,,34.97,34.96,,L,116,2,0,,regular,
+3012,APG,35.0305,571111,2025-10-20T19:23:16Z,False,105511.8660,,35.04,35.02,,L,296,205,0,,regular,
+4000,APG,34.8696,167760,2025-10-20T14:23:47Z,False,139478.4000,,34.89,34.83,,L,106,258,0,,regular,
+4944,APG,34.725,133150,2025-10-20T14:08:50Z,False,171680.400,,34.75,34.71,,L,102,100,0,,regular,

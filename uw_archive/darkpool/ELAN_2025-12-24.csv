@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6896,ELAN,22.38,2787947,2025-12-24T19:35:09Z,False,154332.48,prior_reference_price,22.15,22.61,extended_hours_trade,L,1,1,39492294796094,,regular,
+16696,ELAN,22.38,2781051,2025-12-24T19:30:26Z,False,373656.48,prior_reference_price,22.15,22.61,extended_hours_trade,L,1,1,39492294512897,,regular,
+196007,ELAN,22.385,1509085,2025-12-24T16:37:11Z,False,4387616.695,,22.38,22.39,,L,232,243,39492284118692,intermarket_sweep,regular,
+21491,ELAN,22.415,1127964,2025-12-24T16:14:04Z,False,481720.765,,22.41,22.42,,L,261,127,39492282730960,,regular,
+248300,ELAN,22.405,740233,2025-12-24T15:35:41Z,False,5563161.500,,22.37,22.39,,L,332,382,39492280428019,intermarket_sweep,regular,
+11855,ELAN,22.395,223944,2025-12-24T14:58:35Z,False,265492.725,,22.39,22.4,,L,305,202,39492278202230,,regular,
+6509,ELAN,22.3495,114106,2025-12-24T14:44:48Z,False,145472.8955,,22.32,22.35,,L,51,313,39492277375233,,regular,

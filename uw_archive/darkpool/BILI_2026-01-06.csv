@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+256359,BILI,27.3,2237732,2026-01-06T21:58:47Z,False,6998600.7,average_price_trade,27.25,27.35,extended_hours_trade,L,134,100,38959727469450,,regular,
+3700,BILI,27.3,1976474,2026-01-06T21:00:49Z,False,101010.0,prior_reference_price,27.26,27.31,extended_hours_trade,L,556,100,38959723991928,,regular,
+11970,BILI,27.3,1972444,2026-01-06T21:00:49Z,False,326781.0,prior_reference_price,27.26,27.31,extended_hours_trade,L,556,100,38959723991485,,regular,
+5000,BILI,27.32,1234823,2026-01-06T18:58:02Z,False,136600.00,,27.31,27.32,,L,149,472,38959716624765,,regular,
+61000,BILI,27.2625,1208448,2026-01-06T18:50:03Z,False,1663012.5000,contingent_trade,27.28,27.29,,L,190,1420,38959716145854,qualified_contingent_trade,regular,
+45926,BILI,27.36,622731,2026-01-06T15:45:43Z,False,1256535.36,,27.37,27.38,,L,7,46,38959705085423,,regular,
+5000,BILI,27.5217,308962,2026-01-06T15:16:32Z,False,137608.5000,contingent_trade,27.48,27.49,,L,277,139,38959703334797,qualified_contingent_trade,regular,
+5750,BILI,27.5,303962,2026-01-06T15:16:32Z,False,158125.0,contingent_trade,27.48,27.49,,L,277,139,38959703334708,qualified_contingent_trade,regular,
+5000,BILI,27.5217,297462,2026-01-06T15:16:32Z,False,137608.5000,contingent_trade,27.48,27.49,,L,277,139,38959703334694,qualified_contingent_trade,regular,

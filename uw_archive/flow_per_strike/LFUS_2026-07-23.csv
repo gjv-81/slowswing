@@ -1,0 +1,6 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2026-07-23T15:20:59.033000Z,2026-07-23,LFUS,1,0,0,1,0,0,320,0,11975.00,11975.00,0,0,0,1,0,0,0,0,0,0,0
+2026-07-23T15:20:59.033000Z,2026-07-23,LFUS,2,0,2,0,0,0,340,0,22978.00,0,0,22978.00,0,2,0,0,0,0,0,0,0
+2026-07-23T14:59:59.403000Z,2026-07-23,LFUS,1,21,1,0,13,8,350,57197.00,11800.00,0,21942.00,11800.00,35255.00,1,9,0,0,0,57197.00,9,21
+2026-07-23T17:18:50.314000Z,2026-07-23,LFUS,1,0,0,1,0,0,480,0,890.00,890.00,0,0,0,1,0,890.00,1,1,0,0,0
+2026-07-23T15:20:17.912000Z,2026-07-23,LFUS,24,0,24,0,0,0,520,0,61670.00,0,0,61670.00,0,11,0,61670.00,11,24,0,0,0

@@ -1,0 +1,5 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2025-11-24T18:21:22.299000Z,2025-11-24,WEX,0,1,0,0,1,0,125,90.00,0,0,0,0,90.00,0,1,0,0,0,0,0,0
+2025-11-24T18:22:37.920000Z,2025-11-24,WEX,0,4,0,0,2,2,130,460.00,0,0,160.00,0,300.00,0,3,0,0,0,0,0,0
+2025-11-24T15:30:18.186000Z,2025-11-24,WEX,10,0,10,0,0,0,155,0,1550.00,0,0,1550.00,0,1,0,0,0,0,0,0,0
+2025-11-24T19:53:14.805000Z,2025-11-24,WEX,15,0,2,13,0,0,160,0,3176.00,1236.00,0,1940.00,0,5,0,0,0,0,0,0,0

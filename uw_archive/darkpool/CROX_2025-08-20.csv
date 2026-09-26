@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+11943,CROX,83.72,1422093,2025-08-20T20:01:45Z,False,999867.96,,83.58,84.50,extended_hours_trade,L,458,24,57705401775051,,regular,
+23000,CROX,83.72,1410150,2025-08-20T20:01:03Z,False,1925560.00,prior_reference_price,83.58,84,extended_hours_trade,L,2,24,57663107512147,,regular,
+1300,CROX,83.72,1385718,2025-08-20T20:00:13Z,False,108836.00,prior_reference_price,83.58,84,extended_hours_trade,L,2,24,57613587800057,,regular,
+7500,CROX,83.72,1384418,2025-08-20T20:00:13Z,False,627900.00,prior_reference_price,83.58,84,extended_hours_trade,L,2,24,57613583317833,,regular,
+1300,CROX,83.72,1375779,2025-08-20T20:00:13Z,False,108836.00,prior_reference_price,83.58,84,extended_hours_trade,L,2,24,57613543862197,,regular,
+18800,CROX,83.72,1374358,2025-08-20T20:00:13Z,False,1573936.00,prior_reference_price,83.58,84,extended_hours_trade,L,2,24,57613538255493,,regular,
+1243,CROX,83.72,1355558,2025-08-20T20:00:01Z,False,104063.96,,83.58,83.89,extended_hours_trade,L,2385,24,57601956496946,,regular,
+1500,CROX,83.47,820767,2025-08-20T18:51:42Z,False,125205.00,,83.46,83.48,,L,3,53,53502918041607,,regular,
+1942,CROX,83.17,597189,2025-08-20T17:00:00Z,False,161516.14,,83.13,83.20,,L,17,148,46800634287626,,regular,
+2262,CROX,83.07,474790,2025-08-20T15:53:14Z,False,187904.34,,83.06,83.14,,L,3,204,42794713339721,,regular,
+1599,CROX,82.67,139229,2025-08-20T14:05:29Z,False,132189.33,,82.66,82.85,,L,1,241,36329717863713,,regular,

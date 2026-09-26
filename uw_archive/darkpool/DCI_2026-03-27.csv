@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3861,DCI,83.87,500393,2026-03-27T21:18:24Z,False,323822.07,prior_reference_price,82.24,85.53,extended_hours_trade,L,23,24,25460642835305,,regular,2026-03-27T21:18:24Z
+8151,DCI,83.87,496530,2026-03-27T20:34:12Z,False,683624.37,,82.24,85.53,extended_hours_trade,L,23,24,25460640183363,,regular,2026-03-27T20:34:12Z
+2778,DCI,83.87,486809,2026-03-27T20:01:23Z,False,232990.86,prior_reference_price,82.24,85.53,extended_hours_trade,L,23,24,25460638214368,,regular,2026-03-27T20:01:23Z
+6143,DCI,83.87,483761,2026-03-27T20:00:49Z,False,515213.41,prior_reference_price,81.28,85.53,extended_hours_trade,L,23,1,25460638179910,,regular,2026-03-27T20:00:49Z
+1254,DCI,83.87,477618,2026-03-27T20:00:49Z,False,105172.98,prior_reference_price,81.28,85.53,extended_hours_trade,L,23,1,25460638179909,,regular,2026-03-27T20:00:49Z
+2545,DCI,83.87,475645,2026-03-27T20:00:49Z,False,213449.15,prior_reference_price,81.28,85.53,extended_hours_trade,L,23,1,25460638179841,,regular,2026-03-27T20:00:49Z
+1800,DCI,84.55,209089,2026-03-27T17:46:34Z,False,152190.00,contingent_trade,84.48,84.56,,L,3,12,25460630124912,qualified_contingent_trade,regular,2026-03-27T17:46:34Z
+2800,DCI,84.55,211889,2026-03-27T17:46:34Z,False,236740.00,contingent_trade,84.48,84.56,,L,3,12,25460630124912,qualified_contingent_trade,regular,2026-03-27T17:46:34Z
+1647,DCI,84.8355,171280,2026-03-27T17:00:17Z,False,139724.0685,,84.79,84.91,,L,5,10,25460627347776,,regular,2026-03-27T17:00:17Z
+1406,DCI,84.98,156767,2026-03-27T16:41:07Z,False,119481.88,,84.82,84.99,,L,2,2,25460626198218,,regular,2026-03-27T16:41:07Z
+2000,DCI,84.19,68821,2026-03-27T15:19:46Z,False,168380.00,,84.18,84.29,,L,23,34,25460621317419,,regular,2026-03-27T15:19:46Z
+2346,DCI,84.54,33031,2026-03-27T14:25:43Z,False,198330.84,,84.23,84.68,,L,5,22,25460618074372,,regular,2026-03-27T14:25:43Z

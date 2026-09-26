@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4674,BXP,80.15,762143,2024-12-03T21:11:34Z,False,374621.10,average_price_trade,78.60,81.70,extended_hours_trade,L,20,5,58294803939179,,,
+5816,BXP,80.15,757469,2024-12-03T21:10:00Z,False,466152.40,prior_reference_price,78.60,81.70,extended_hours_trade,L,20,5,58200160007318,,,
+3096,BXP,80.15,751304,2024-12-03T21:03:12Z,False,248144.40,prior_reference_price,78.60,81.70,extended_hours_trade,L,20,5,57792210988075,,,
+3171,BXP,80.15,748208,2024-12-03T21:03:10Z,False,254155.65,prior_reference_price,78.60,81.70,extended_hours_trade,L,20,5,57790407501615,,,
+4969,BXP,80.15,744963,2024-12-03T21:03:05Z,False,398265.35,prior_reference_price,78.60,81.70,extended_hours_trade,L,20,5,57785163017695,,,
+1855,BXP,80.15,737515,2024-12-03T21:02:40Z,False,148678.25,prior_reference_price,78.60,81.70,extended_hours_trade,L,20,5,57760943206312,,,
+1925,BXP,80.25,95693,2024-12-03T15:41:10Z,False,154481.25,,80.25,80.30,,L,3,15,38470843791423,,,
+1900,BXP,80.59,62047,2024-12-03T15:14:06Z,False,153121.00,,80.59,80.69,,L,13,67,36846374561276,,,

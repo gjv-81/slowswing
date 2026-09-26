@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+26800,ELAN,23.27,1773349,2025-11-28T19:25:39Z,False,623636.00,prior_reference_price,20,0,extended_hours_trade,L,0,1,0,,regular,
+47226,ELAN,23.27,1746549,2025-11-28T19:25:39Z,False,1098949.02,prior_reference_price,20,0,extended_hours_trade,L,0,1,0,,regular,
+5893,ELAN,23.27,137435,2025-11-28T15:06:52Z,False,137130.11,,23.27,23.28,,L,228,104,0,,regular,

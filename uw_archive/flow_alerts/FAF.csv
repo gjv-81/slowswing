@@ -1,0 +1,11 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_singleleg,has_multileg,has_floor,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,expiry_count
+call,FAF,,2026-09-18T19:16:39.475962Z,,,,3.1,0,34,2026-11-20,70,FAF261120C00070000,,,10540,,69.37,15,0.277352247344499,0.277352247344499,True,False,False,False,False,34,RepeatedHits,0,10540,0,1
+put,FAF,,2026-02-23T15:55:29.474656Z,,,,5.5,0,21,2026-10-16,65,FAF261016P00065000,,,11550,,67.02,18,0.309312938851062,0.309312938851062,True,False,False,True,False,21,RepeatedHits,0,11550,0,1
+put,FAF,,2026-01-12T14:58:26.023115Z,,,,0.45,543,521,2026-01-16,55,FAF260116P00055000,,,16065,,59.03,7,0.751000493328147,0.751000493328147,True,False,False,False,False,357,RepeatedHits,16065,0,0.959484346224678,1
+put,FAF,,2024-01-23T15:16:09.691273Z,,,,1.5,38,1627,2024-02-16,60,FAF240216P00060000,,,67050,,60.96,19,,,True,False,False,False,False,447,RepeatedHits,0,67050,42.8157894736842,1
+put,FAF,,2024-01-23T15:16:02.069372Z,,,,1.5,38,1180,2024-02-16,60,FAF240216P00060000,,,80550,,61.06,11,,,True,False,False,False,False,537,RepeatedHits,300,80250,31.0526315789474,1
+put,FAF,,2024-01-23T15:15:59.265507Z,,,,1.5,38,643,2024-02-16,60,FAF240216P00060000,,,42160,,61.175,27,,,True,False,False,False,False,286,RepeatedHitsAscendingFill,750,41410,16.9210526315789,1
+put,FAF,,2024-01-23T15:15:55.460332Z,,,,1.2,38,336,2024-02-16,60,FAF240216P00060000,,,15720,,61.175,8,,,True,False,False,False,False,131,RepeatedHits,2520,12840,8.8421052631579,1
+put,FAF,,2024-01-23T15:15:51.377447Z,,,,1.15,38,205,2024-02-16,60,FAF240216P00060000,,,23230,,61.175,14,,,True,False,False,False,False,202,RepeatedHits,0,23230,5.39473684210526,1
+put,FAF,,2023-12-28T17:30:27.334591Z,,,,2.6,0,125,2024-02-16,65,FAF240216P00065000,,,15600,,64.98,6,,,True,False,False,False,False,60,RepeatedHits,0,15600,0,1
+call,FAF,,2023-02-02T18:57:15.367030Z,,,,2.5,7,254,2023-04-21,65,FAF230421C00065000,,,61000,,64.56,12,,,True,False,False,True,False,244,RepeatedHits,36000,25000,36.2857142857143,1

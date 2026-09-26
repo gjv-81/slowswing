@@ -1,0 +1,14 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+10457,EEFT,66.03,823460,2026-09-18T20:15:22Z,False,690475.71,prior_reference_price,66.05,66.8,extended_hours_trade,L,1000,100,30305362163000,,regular,2026-09-18T20:15:22Z
+13038,EEFT,66.0304,809031,2026-09-18T20:08:28Z,False,860904.3552,average_price_trade,66.05,66.8,extended_hours_trade,L,1000,100,30305361748804,,regular,2026-09-18T20:08:28Z
+7700,EEFT,66.03,795031,2026-09-18T20:01:48Z,False,508431.00,average_price_trade,64.98,66.8,extended_hours_trade,L,1000,5,30305361348583,,regular,2026-09-18T20:01:47Z
+9290,EEFT,66.03,787128,2026-09-18T20:00:37Z,False,613418.70,prior_reference_price,65.63,66.56,extended_hours_trade,L,100,100,30305361277863,,regular,2026-09-18T20:00:37Z
+3770,EEFT,66.03,777838,2026-09-18T20:00:36Z,False,248933.10,prior_reference_price,65.63,66.56,extended_hours_trade,L,100,100,30305361277094,,regular,2026-09-18T20:00:36Z
+3127,EEFT,66.03,774068,2026-09-18T20:00:35Z,False,206475.81,prior_reference_price,65.63,66.56,extended_hours_trade,L,100,100,30305361276153,,regular,2026-09-18T20:00:35Z
+2093,EEFT,66.03,769622,2026-09-18T20:00:21Z,False,138200.79,prior_reference_price,65.63,66.56,extended_hours_trade,L,100,100,30305361262287,,regular,2026-09-18T20:00:21Z
+2728,EEFT,66.03,767529,2026-09-18T20:00:21Z,False,180129.84,prior_reference_price,65.63,66.56,extended_hours_trade,L,100,100,30305361262285,,regular,2026-09-18T20:00:21Z
+4665,EEFT,66.03,764769,2026-09-18T20:00:20Z,False,308029.95,prior_reference_price,65.63,66.56,extended_hours_trade,L,100,100,30305361261432,,regular,2026-09-18T20:00:20Z
+1796,EEFT,66.03,760104,2026-09-18T20:00:20Z,False,118589.88,prior_reference_price,65.63,66.56,extended_hours_trade,L,100,100,30305361261429,,regular,2026-09-18T20:00:20Z
+1814,EEFT,66.605,235018,2026-09-18T17:26:21Z,False,120821.470,,66.63,66.66,,L,1,48,30305352022350,,regular,2026-09-18T17:26:21Z
+2191,EEFT,66.6111,160196,2026-09-18T15:58:28Z,False,145944.9201,,66.61,66.69,,L,17,154,30305346749363,,regular,2026-09-18T15:58:28Z
+11600,EEFT,66.53,132905,2026-09-18T15:07:20Z,False,771748.00,contingent_trade,66.65,66.73,,L,120,27,30305343680914,qualified_contingent_trade,regular,2026-09-18T15:07:20Z

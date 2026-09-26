@@ -1,0 +1,5 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,vega,theo,underlying_price,total_premium,trade_count,iv_end,iv_start,has_singleleg,has_multileg,total_size,has_floor,has_sweep,all_opening_trades,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,expiry_count
+call,UFPI,,2025-10-29T15:00:33.020446Z,,,,2,28,377,2025-11-21,95,UFPI251121C00095000,,,,90.66,65800,13,0.406627218989406,0.406627218989406,True,False,329,False,False,False,RepeatedHits,65800,0,13.4642857142857,1
+call,UFPI,,2025-01-27T18:02:22.795934Z,,,,2.95,1,100,2025-02-21,120,UFPI250221C00120000,,,,118.69,14750,5,,,True,False,50,False,False,False,RepeatedHits,0,5900,100,1
+call,UFPI,,2023-09-26T18:33:11.528604Z,,,,3.7,98,77,2024-01-19,110,UFPI240119C00110000,,,,100.88,28491,14,,,True,False,77,False,False,False,RepeatedHits,17391,11100,0.785714285714286,1
+call,UFPI,,2023-07-13T17:26:51.974213Z,,,,1.45,0,226,2024-01-19,120,UFPI240119C00120000,,,,97.85,26970,16,,,True,False,186,False,False,False,RepeatedHits,0,26970,0,1

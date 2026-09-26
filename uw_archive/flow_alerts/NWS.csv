@@ -1,0 +1,4 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_singleleg,has_multileg,has_floor,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,volume_oi_ratio,expiry_count
+call,NWS,,2026-08-05T19:47:30.979982Z,,,,3.31,10,420,2026-08-21,30,NWS260821C00030000,,,19848,,33.08,6,0.421152182266644,0.421152182266644,True,False,False,False,False,60,RepeatedHitsDescendingFill,19848,0,42,1
+put,NWS,,2024-11-15T20:11:09.963158Z,,,,0.5,0,1750,2024-12-20,30,NWS241220P00030000,,,11000,,31.68,24,,,True,False,False,False,False,220,RepeatedHits,0,11000,0,1
+put,NWS,,2024-11-15T16:55:02.711117Z,,,,0.5,0,1500,2024-12-20,30,NWS241220P00030000,,,75000,,32.03,4,,,True,False,True,False,False,1500,LowHistoricVolumeFloor,75000,0,0,1

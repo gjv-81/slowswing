@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2694,CHDN,99.2,743227,2025-10-31T20:47:34Z,False,267244.8,prior_reference_price,98.94,99.64,extended_hours_trade,L,5,5,0,,regular,
+3501,CHDN,99.2,739163,2025-10-31T20:02:21Z,False,347299.2,,94,101.16,extended_hours_trade,L,16,5,0,,regular,
+2526,CHDN,99.2,733781,2025-10-31T20:00:06Z,False,250579.2,,99.25,99.31,extended_hours_trade,L,581,896,0,,regular,
+21893,CHDN,99.99,107308,2025-10-31T15:23:01Z,False,2189081.07,,99.51,99.65,,L,1,100,0,,regular,
+1978,CHDN,98.885,35563,2025-10-31T14:21:43Z,False,195594.530,,98.75,99.02,,L,31,120,0,,regular,

@@ -1,0 +1,8 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2025-09-25T15:07:20.561000Z,2025-09-25,KRYS,0,5,0,0,0,5,140,2950.00,0,0,2950.00,0,0,0,1,0,0,0,0,0,0
+2025-09-25T14:28:11.012000Z,2025-09-25,KRYS,1,0,0,1,0,0,145,0,1850.00,1850.00,0,0,0,1,0,1850.00,1,1,0,0,0
+2025-09-25T16:44:03.171000Z,2025-09-25,KRYS,1,0,1,0,0,0,150,0,3450.00,0,0,3450.00,0,1,0,3450.00,1,1,0,0,0
+2025-09-25T15:16:13.346000Z,2025-09-25,KRYS,1,0,1,0,0,0,155,0,2500.00,0,0,2500.00,0,1,0,2500.00,1,1,0,0,0
+2025-09-25T15:20:34.558000Z,2025-09-25,KRYS,2,0,0,1,0,0,165,0,2960.00,2570.00,0,0,0,2,0,0,0,0,0,0,0
+2025-09-25T15:58:13.748000Z,2025-09-25,KRYS,1,0,0,1,0,0,170,0,360.00,360.00,0,0,0,1,0,0,0,0,0,0,0
+2025-09-25T17:19:06.125000Z,2025-09-25,KRYS,480,0,234,229,0,0,220,0,6538.00,4963.00,0,1475.00,0,56,0,0,0,0,0,0,0

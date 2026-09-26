@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6000,CRSP,49.7,1296373,2026-04-07T20:52:47Z,False,298200.0,,49,49.88,extended_hours_trade,L,2,1,37087117767963,,regular,2026-04-07T20:52:47Z
+17500,CRSP,49.7,1290268,2026-04-07T20:50:01Z,False,869750.0,,49,49.88,extended_hours_trade,L,2,1,37087117602956,,regular,2026-04-07T20:50:01Z
+56083,CRSP,49.7,1270216,2026-04-07T20:02:52Z,False,2787325.1,,49,49.88,extended_hours_trade,L,2,1,37087114773841,,regular,2026-04-07T20:02:52Z
+2070,CRSP,49.7,1212745,2026-04-07T20:02:14Z,False,102879.0,prior_reference_price,49,49.88,extended_hours_trade,L,2,1,37087114735957,,regular,2026-04-07T20:02:14Z
+2304,CRSP,49.7,1210475,2026-04-07T20:01:27Z,False,114508.8,prior_reference_price,49,49.88,extended_hours_trade,L,2,1,37087114688386,,regular,2026-04-07T20:01:27Z
+2442,CRSP,49.7,1206672,2026-04-07T20:01:02Z,False,121367.4,prior_reference_price,49,49.88,extended_hours_trade,L,2,1,37087114663193,,regular,2026-04-07T20:01:02Z
+2265,CRSP,49.7,1201416,2026-04-07T20:00:09Z,False,112570.5,,49.62,49.88,extended_hours_trade,L,135,10,37087114610793,,regular,2026-04-07T20:00:09Z
+3402,CRSP,49.7,1081408,2026-04-07T20:00:00Z,False,169079.4,,49.62,49.88,extended_hours_trade,L,135,10,37087114601235,,regular,2026-04-07T20:00:00Z
+4700,CRSP,49,832061,2026-04-07T19:06:02Z,False,230300,,48.95,49.04,,L,9,22,37087111363560,,regular,2026-04-07T19:06:02Z
+44400,CRSP,48.43,153860,2026-04-07T13:40:52Z,False,2150292.00,contingent_trade,48.24,48.43,,L,100,12,37087091853170,qualified_contingent_trade,regular,2026-04-07T13:40:52Z
+25500,CRSP,48.43,108026,2026-04-07T13:39:48Z,False,1234965.00,contingent_trade,48.2,48.43,,L,310,173,37087091789603,qualified_contingent_trade,regular,2026-04-07T13:39:48Z

@@ -1,0 +1,4 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2025-04-17T16:25:07.540000Z,2025-04-17,FOX,1,0,1,0,0,0,25,0,1990.00,0,0,1990.00,0,1,0,1990.00,1,1,0,0,0
+2025-04-17T19:53:14.398000Z,2025-04-17,FOX,25,24,25,0,1,23,45,1680.00,750.00,0,1460.00,750.00,220.00,1,7,0,0,0,1645.00,6,23
+2025-04-17T18:38:38.825000Z,2025-04-17,FOX,21,0,1,20,0,0,55,0,250.00,200.00,0,50.00,0,3,0,0,0,0,0,0,0

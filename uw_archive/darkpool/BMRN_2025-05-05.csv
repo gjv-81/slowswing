@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+7760,BMRN,62.06,1214352,2025-05-05T20:43:27Z,False,481585.60,prior_reference_price,61.50,63.26,extended_hours_trade,L,26,70,60207316600328,,,
+7141,BMRN,62.06,1206592,2025-05-05T20:43:27Z,False,443170.46,prior_reference_price,61.50,63.26,extended_hours_trade,L,26,70,60207309083138,,,
+6400,BMRN,62.06,1198386,2025-05-05T20:00:09Z,False,397184.00,,61.98,62.22,extended_hours_trade,L,3220,3220,57609923724486,,,
+2871,BMRN,62.06,1191323,2025-05-05T20:00:09Z,False,178174.26,,61.98,62.22,extended_hours_trade,L,3220,3220,57609914143426,,,
+2100,BMRN,62.1793,821785,2025-05-05T19:51:30Z,False,130576.5300,average_price_trade,62.14,62.19,,L,28,10,57090149310705,derivative_priced,,
+2680,BMRN,62.28,648366,2025-05-05T19:07:54Z,False,166910.40,,62.24,62.28,,L,248,161,54474536678135,,,
+2400,BMRN,62.1509,338713,2025-05-05T16:26:41Z,False,149162.1600,,62.15,62.23,,L,48,359,44801675012009,,,
+3077,BMRN,61.83,102915,2025-05-05T14:07:03Z,False,190250.91,,61.76,61.90,,L,232,15,36423294911289,,,

@@ -1,0 +1,4 @@
+type,ticker,iv,created_at,delta,theta,gamma,price,open_interest,volume,expiry,strike,option_chain,rho,theo,total_premium,vega,underlying_price,trade_count,iv_end,iv_start,has_floor,has_multileg,has_sweep,all_opening_trades,total_size,alert_rule,total_bid_side_prem,total_ask_side_prem,has_singleleg,volume_oi_ratio,expiry_count
+call,SR,,2026-06-02T14:46:57.175604Z,,,,0.25,88,1144,2026-06-18,90,SR260618C00090000,,,24979,,81.825,8,0.241333787538929,0.336608515976187,False,False,False,False,1000,RepeatedHitsAscendingFill,5,24974,True,13,1
+call,SR,,2026-04-07T14:30:15.012684Z,,,,0.25,0,1484,2026-04-17,100,SR260417C00100000,,,25000,,93.7101,7,0.312347697977358,0.312347697977358,False,False,True,False,1000,RepeatedHits,0,200,True,0,1
+call,SR,,2024-01-09T20:23:01.122085Z,,,,0.9,660,123,2024-02-16,65,SR240216C00065000,,,11070,,61.99,5,,,False,False,False,False,123,RepeatedHits,11070,0,True,0.186363636363636,1

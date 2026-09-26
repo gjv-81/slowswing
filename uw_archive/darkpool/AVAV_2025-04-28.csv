@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+994,AVAV,149.71,226359,2025-04-28T20:00:14Z,False,148811.74,prior_reference_price,152,148.76,extended_hours_trade,L,10,57,57614006240478,,,
+10245,AVAV,149.71,225365,2025-04-28T20:00:13Z,False,1533778.95,prior_reference_price,152,148.76,extended_hours_trade,L,10,57,57613545536642,,,
+971,AVAV,149.71,214777,2025-04-28T20:00:13Z,False,145368.41,prior_reference_price,152,148.76,extended_hours_trade,L,10,57,57613249474621,,,

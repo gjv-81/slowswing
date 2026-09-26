@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5702,CE,45.48,1735438,2026-08-31T21:34:02Z,False,259326.96,prior_reference_price,44,46.28,extended_hours_trade,L,302,2,32366951185576,,regular,2026-08-31T21:34:02Z
+4300,CE,45.48,1729736,2026-08-31T21:29:43Z,False,195564.00,prior_reference_price,44,46.28,extended_hours_trade,L,302,2,32366950926329,,regular,2026-08-31T21:29:43Z
+283505,CE,45.4755,1725431,2026-08-31T20:08:06Z,False,12892531.6275,prior_reference_price,44,46.28,extended_hours_trade,L,151,2,32366946028825,,regular,2026-08-31T20:08:06Z
+3980,CE,45.4768,1441926,2026-08-31T20:07:53Z,False,180997.6640,prior_reference_price,44,46.28,extended_hours_trade,L,151,2,32366946016186,,regular,2026-08-31T20:07:52Z
+17200,CE,45.48,1434578,2026-08-31T20:00:40Z,False,782256.00,prior_reference_price,44,49.32,extended_hours_trade,L,35,2,32366945582966,,regular,2026-08-31T20:00:40Z
+14526,CE,45.48,1414281,2026-08-31T20:00:37Z,False,660642.48,prior_reference_price,44,49.32,extended_hours_trade,L,35,2,32366945580488,,regular,2026-08-31T20:00:37Z
+4133,CE,45.48,1399755,2026-08-31T20:00:37Z,False,187968.84,prior_reference_price,44,49.32,extended_hours_trade,L,35,2,32366945580484,,regular,2026-08-31T20:00:37Z
+10515,CE,45.48,1392177,2026-08-31T20:00:37Z,False,478222.20,prior_reference_price,44,49.32,extended_hours_trade,L,35,2,32366945580131,,regular,2026-08-31T20:00:37Z
+4079,CE,45.335,770927,2026-08-31T19:54:08Z,False,184921.465,,45.32,45.34,,L,36,103,32366945191397,,regular,2026-08-31T19:54:08Z
+4800,CE,45.165,391949,2026-08-31T18:01:24Z,False,216792.000,,45.13,45.18,,L,24,15,32366938427590,,regular,2026-08-31T18:01:24Z
+2903,CE,45.365,144860,2026-08-31T14:40:44Z,False,131694.595,,45.31,45.42,,L,10,100,32366926387143,,regular,2026-08-31T14:40:44Z
+5000,CE,45.9,41288,2026-08-31T13:35:42Z,False,229500.0,,45.24,45.92,,L,1,30,32366922485628,,regular,2026-08-31T13:35:42Z

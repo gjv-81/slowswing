@@ -1,0 +1,15 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3080,ARW,214.73,410926,2026-09-09T21:55:46Z,False,661368.40,average_price_trade,214.03,215.55,extended_hours_trade,L,38,38,25121342660741,,regular,2026-09-09T21:55:46Z
+9300,ARW,214.73,407846,2026-09-09T21:35:49Z,False,1996989.00,prior_reference_price,214.03,215.55,extended_hours_trade,L,38,38,25121341464170,,regular,2026-09-09T21:35:49Z
+609,ARW,214.73,398175,2026-09-09T20:00:58Z,False,130770.57,prior_reference_price,203,218.92,extended_hours_trade,L,9,25,25121335772934,,regular,2026-09-09T20:00:58Z
+1333,ARW,214.73,397165,2026-09-09T20:00:58Z,False,286235.09,prior_reference_price,203,218.92,extended_hours_trade,L,9,25,25121335772921,,regular,2026-09-09T20:00:58Z
+1370,ARW,214.73,395718,2026-09-09T20:00:58Z,False,294180.10,prior_reference_price,203,218.92,extended_hours_trade,L,9,25,25121335772907,,regular,2026-09-09T20:00:58Z
+687,ARW,214.73,393844,2026-09-09T20:00:58Z,False,147519.51,prior_reference_price,203,218.92,extended_hours_trade,L,9,25,25121335772866,,regular,2026-09-09T20:00:58Z
+1770,ARW,214.73,392602,2026-09-09T20:00:58Z,False,380072.10,prior_reference_price,203,218.92,extended_hours_trade,L,9,25,25121335772814,,regular,2026-09-09T20:00:58Z
+1570,ARW,214.73,390427,2026-09-09T20:00:58Z,False,337126.10,prior_reference_price,203,218.92,extended_hours_trade,L,9,25,25121335772804,,regular,2026-09-09T20:00:58Z
+1449,ARW,214.73,388817,2026-09-09T20:00:32Z,False,311143.77,prior_reference_price,203,218.92,extended_hours_trade,L,9,25,25121335747236,,regular,2026-09-09T20:00:32Z
+649,ARW,215.9585,112030,2026-09-09T16:44:58Z,False,140157.0665,,215.95,216.08,,L,5,100,25121324012692,,regular,2026-09-09T16:44:58Z
+739,ARW,215.8741,107863,2026-09-09T16:35:55Z,False,159530.9599,,215.41,215.8,,L,4,1,25121323470200,,regular,2026-09-09T16:35:55Z
+1100,ARW,215.83,44041,2026-09-09T14:18:17Z,False,237413.00,,215.83,216.84,,L,20,100,25121315212245,,regular,2026-09-09T14:18:17Z
+1748,ARW,215.435,21869,2026-09-09T13:30:11Z,False,376580.380,,212.8,218.79,,L,9,1,25121312326129,,regular,2026-09-09T13:30:11Z
+17674,ARW,217.41,17708,2026-09-09T11:48:48Z,False,3842504.34,average_price_trade,212.8,218.79,extended_hours_trade,L,9,1,25121306242551,,regular,2026-09-09T11:48:46Z

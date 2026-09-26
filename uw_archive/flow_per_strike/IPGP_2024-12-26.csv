@@ -1,0 +1,7 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2024-12-26T15:42:51.202000Z,2024-12-26,IPGP,0,1,0,0,1,0,75,185.00,0,0,0,0,185.00,0,1,0,0,0,0,0,0
+2024-12-26T20:37:55.811000Z,2024-12-26,IPGP,1,0,0,0,0,0,80,0,115.00,0,0,0,0,1,0,0,0,0,0,0,0
+2024-12-26T15:01:34.995000Z,2024-12-26,IPGP,8,0,0,8,0,0,90,0,184.00,184.00,0,0,0,1,0,0,0,0,0,0,0
+2024-12-26T14:30:02.892000Z,2024-12-26,IPGP,1,0,1,0,0,0,105,0,180.00,0,0,180.00,0,1,0,0,0,0,0,0,0
+2024-12-26T14:30:02.892000Z,2024-12-26,IPGP,1,0,1,0,0,0,110,0,130.00,0,0,130.00,0,1,0,0,0,0,0,0,0
+2024-12-26T14:30:02.892000Z,2024-12-26,IPGP,1,0,1,0,0,0,115,0,95.00,0,0,95.00,0,1,0,0,0,0,0,0,0

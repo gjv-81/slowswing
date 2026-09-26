@@ -1,0 +1,8 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2026-05-19T18:58:22.330000Z,2026-05-19,ERIE,2,0,1,0,0,0,200,0,6705.00,0,0,3350.00,0,2,0,6705.00,2,2,0,0,0
+2026-05-19T13:47:43.393000Z,2026-05-19,ERIE,10,0,10,0,0,0,210,0,25200.00,0,0,25200.00,0,2,0,25200.00,2,10,0,0,0
+2026-05-19T18:59:54.222000Z,2026-05-19,ERIE,2,0,2,0,0,0,220,0,5410.00,0,0,5410.00,0,2,0,5410.00,2,2,0,0,0
+2026-05-19T15:29:15.043000Z,2026-05-19,ERIE,13,0,0,13,0,0,230,0,16820.00,16820.00,0,0,0,3,0,0,0,0,0,0,0
+2026-05-19T19:31:46.259000Z,2026-05-19,ERIE,11,0,10,1,0,0,240,0,4080.00,580.00,0,3500.00,0,2,0,0,0,0,0,0,0
+2026-05-19T14:33:09.853000Z,2026-05-19,ERIE,12,0,11,1,0,0,250,0,1858.00,168.00,0,1690.00,0,3,0,0,0,0,0,0,0
+2026-05-19T19:23:41.679000Z,2026-05-19,ERIE,1,0,0,1,0,0,300,0,85.00,85.00,0,0,0,1,0,0,0,0,0,0,0

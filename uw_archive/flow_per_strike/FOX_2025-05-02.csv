@@ -1,0 +1,2 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2025-05-02T19:55:59.693000Z,2025-05-02,FOX,10,41,9,1,1,40,45,4755.00,2966.00,536.00,4600.00,2430.00,155.00,4,3,2966.00,4,10,0,0,0

@@ -1,0 +1,5 @@
+timestamp,date,ticker,call_volume,put_volume,call_volume_ask_side,call_volume_bid_side,put_volume_ask_side,put_volume_bid_side,strike,put_premium,call_premium,call_premium_bid_side,put_premium_bid_side,call_premium_ask_side,put_premium_ask_side,call_trades,put_trades,call_otm_premium,call_otm_trades,call_otm_volume,put_otm_premium,put_otm_trades,put_otm_volume
+2025-01-28T16:35:18.820000Z,2025-01-28,IRDM,1,4,0,1,0,4,25,95.00,572.00,572.00,95.00,0,0,1,2,572.00,1,1,0,0,0
+2025-01-28T20:35:04.048000Z,2025-01-28,IRDM,8,38,2,6,26,10,30,8679.00,1527.00,1197.00,2013.00,330.00,6121.00,6,18,1527.00,6,8,210.00,1,1
+2025-01-28T20:51:53.596000Z,2025-01-28,IRDM,117,0,95,21,0,0,35,0,7147.00,3449.00,0,3493.00,0,44,0,0,0,0,0,0,0
+2025-01-28T19:43:23.737000Z,2025-01-28,IRDM,59,0,40,9,0,0,40,0,455.00,45.00,0,360.00,0,3,0,0,0,0,0,0,0

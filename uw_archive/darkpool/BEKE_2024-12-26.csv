@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+92597,BEKE,18.52,2936635,2024-12-26T21:37:24Z,False,1714896.44,prior_reference_price,18.35,18.70,extended_hours_trade,L,5500,98,59844181884686,,,
+9679,BEKE,18.52,2841527,2024-12-26T21:00:24Z,False,179255.08,prior_reference_price,18.35,18.70,extended_hours_trade,L,5500,98,57624489278077,,,
+11400,BEKE,18.461,177564,2024-12-26T14:35:01Z,False,210455.400,,18.46,18.49,,L,332,300,34501178673285,,,

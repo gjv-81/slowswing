@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1600,AGCO,117.51,562435,2026-04-27T20:00:47Z,False,188016.00,prior_reference_price,117.44,119.84,extended_hours_trade,L,16,200,28823597570728,,regular,2026-04-27T20:00:47Z
+888,AGCO,117.51,559490,2026-04-27T20:00:47Z,False,104348.88,prior_reference_price,117.44,119.84,extended_hours_trade,L,16,200,28823597570619,,regular,2026-04-27T20:00:47Z
+3445,AGCO,117.51,558602,2026-04-27T20:00:47Z,False,404821.95,prior_reference_price,117.44,119.84,extended_hours_trade,L,16,200,28823597570618,,regular,2026-04-27T20:00:47Z
+1200,AGCO,117.62,401620,2026-04-27T19:59:31Z,False,141144.00,,117.62,117.71,,L,24,210,28823597495345,,regular,2026-04-27T19:59:31Z
+861,AGCO,116.595,51585,2026-04-27T14:28:41Z,False,100388.295,,116.49,116.84,,L,148,20,28823577645347,,regular,2026-04-27T14:28:41Z
+1348,AGCO,117.82,36208,2026-04-27T14:02:34Z,False,158821.36,,117.43,118.2,,L,2,20,28823576077852,,regular,2026-04-27T14:02:34Z

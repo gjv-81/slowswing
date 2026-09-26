@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+31600,CPRI,15.43,3455564,2026-08-10T21:29:21Z,False,487588.00,prior_reference_price,15.16,15.58,extended_hours_trade,L,74,74,33990448541665,,regular,2026-08-10T21:29:21Z
+7560,CPRI,15.43,3415287,2026-08-10T20:04:08Z,False,116650.80,,14.9,15.44,extended_hours_trade,L,462,30,33990443428783,,regular,2026-08-10T20:04:08Z
+15800,CPRI,15.12,1253285,2026-08-10T17:30:17Z,False,238896.00,,15.12,15.14,,L,102,222,33990434198043,,regular,2026-08-10T17:30:17Z
+7902,CPRI,15.3297,737538,2026-08-10T15:30:35Z,False,121135.2894,,15.32,15.33,,L,449,1539,33990427015923,,regular,2026-08-10T15:30:35Z

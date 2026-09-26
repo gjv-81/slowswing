@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+75813,AAP,42.64,1735473,2024-12-03T21:46:52Z,False,3232666.32,average_price_trade,41.54,44,extended_hours_trade,L,100,5,60412328816246,,,
+3284,AAP,42.64,1655906,2024-12-03T21:00:21Z,False,140029.76,prior_reference_price,41.42,44.87,extended_hours_trade,L,5,5,57621277755922,,,
+2600,AAP,42.64,1649496,2024-12-03T21:00:21Z,False,110864.00,prior_reference_price,41.42,44.87,extended_hours_trade,L,5,5,57621167050598,,,
+7279,AAP,42.64,1646834,2024-12-03T21:00:21Z,False,310376.56,prior_reference_price,41.42,44.87,extended_hours_trade,L,5,5,57621152706356,,,
+31300,AAP,42.64,1639457,2024-12-03T21:00:09Z,False,1334632.00,average_price_trade,41.65,43.78,extended_hours_trade,L,100,100,57609335271825,,,
+2982,AAP,42.64,1604093,2024-12-03T21:00:02Z,False,127152.48,,41.65,43.78,extended_hours_trade,L,100,100,57602578310840,,,
+3015,AAP,42.7195,1149902,2024-12-03T20:57:57Z,False,128799.2925,average_price_trade,42.78,42.80,,L,135,76,57477933779976,derivative_priced,,
+2400,AAP,42.755,1083831,2024-12-03T20:57:10Z,False,102612.000,,42.75,42.77,,L,546,1,57430981573389,,,
+3100,AAP,42.5664,915158,2024-12-03T20:52:58Z,False,131955.8400,average_price_trade,42.59,42.60,,L,453,101,57178007377999,derivative_priced,,
+5957,AAP,42.18,410971,2024-12-03T17:26:04Z,False,251266.26,,42.15,42.19,,L,5,400,44764868499814,,,
+3813,AAP,42.27,380279,2024-12-03T17:09:09Z,False,161175.51,,42.25,42.29,,L,4,8,43749566521067,,,
+5937,AAP,41.975,307668,2024-12-03T16:28:22Z,False,249205.575,,41.96,41.98,,L,41,296,41302958621771,,,

@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2500,ALK,51.2695,1716510,2025-07-03T20:57:31Z,False,128173.7500,,50.75,51.05,extended_hours_trade,L,6,99,61051202911215,,regular,
+5630,ALK,51.05,1713055,2025-07-03T17:45:35Z,False,287411.50,,50.77,51.05,extended_hours_trade,L,3,74,49535365936144,,regular,
+17800,ALK,51.05,1707265,2025-07-03T17:01:13Z,False,908690.00,prior_reference_price,50.69,51.05,extended_hours_trade,L,3,20,46873698190194,,regular,
+2000,ALK,51.3998,808007,2025-07-03T16:33:39Z,False,102799.6000,,51.35,51.39,,L,2,286,45219942765708,,regular,
+2350,ALK,51.41,793908,2025-07-03T16:31:27Z,False,120813.50,,51.40,51.43,,L,302,1,45087466047824,,regular,
+2705,ALK,51.905,363868,2025-07-03T14:31:38Z,False,140403.025,,51.89,51.93,,L,33,81,37898769585751,,regular,
+5076,ALK,51.74,113974,2025-07-03T13:53:36Z,False,262632.24,,51.71,51.77,,L,197,100,35616473233260,,regular,

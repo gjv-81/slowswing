@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+8640,CGNX,30.24,1848875,2025-06-05T20:00:12Z,False,261273.60,prior_reference_price,30.24,30.80,extended_hours_trade,L,30,200,57612733938334,,,
+6350,CGNX,30.24,1838517,2025-06-05T20:00:12Z,False,192024.00,prior_reference_price,30.24,30.80,extended_hours_trade,L,30,200,57612574997021,,,
+6219,CGNX,30.24,1829936,2025-06-05T20:00:05Z,False,188062.56,,30.24,30.30,extended_hours_trade,L,6610,200,57605532475779,,,
+12437,CGNX,30.24,1821089,2025-06-05T20:00:01Z,False,376094.88,,30.24,30.30,extended_hours_trade,L,6610,200,57601568510242,,,
+4096,CGNX,29.97,83443,2025-06-05T14:04:56Z,False,122757.12,,29.93,29.95,,L,638,100,36296079310080,,,

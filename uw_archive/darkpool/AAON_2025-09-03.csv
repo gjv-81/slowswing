@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1700,AAON,80.25,462220,2025-09-03T20:00:11Z,False,136425.00,prior_reference_price,86,79.80,extended_hours_trade,L,1,5,57611840537588,,regular,
+2870,AAON,80.25,460300,2025-09-03T20:00:11Z,False,230317.50,prior_reference_price,86,79.80,extended_hours_trade,L,1,5,57611811931552,,regular,
+2660,AAON,80.25,455723,2025-09-03T20:00:11Z,False,213465.00,prior_reference_price,86,79.80,extended_hours_trade,L,1,5,57611662545446,,regular,
+1750,AAON,80.25,453063,2025-09-03T20:00:11Z,False,140437.50,prior_reference_price,86,79.80,extended_hours_trade,L,1,5,57611656351067,,regular,
+3004,AAON,80.25,451313,2025-09-03T20:00:06Z,False,241071.00,average_price_trade,86,79.80,extended_hours_trade,L,1,5,57606311206288,,regular,
+1604,AAON,80.1036,302528,2025-09-03T19:54:12Z,False,128486.1744,,80.14,80.08,,L,132,5,57252290329035,,regular,
+6145,AAON,80.1553,169372,2025-09-03T18:10:11Z,False,492554.3185,,80.21,80.15,,L,1,42,51011051375288,,regular,

@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+11845,ELAN,20.07,3813569,2025-10-09T20:00:35Z,False,237729.15,prior_reference_price,0,22.2,extended_hours_trade,L,40,0,0,,regular,
+28279,ELAN,20.07,3801724,2025-10-09T20:00:35Z,False,567559.53,prior_reference_price,0,22.2,extended_hours_trade,L,40,0,0,,regular,
+6097,ELAN,20.07,3772905,2025-10-09T20:00:08Z,False,122366.79,,0,22.2,extended_hours_trade,L,40,0,0,,regular,
+11900,ELAN,20.055,3219993,2025-10-09T19:59:52Z,False,238654.500,,0,22.2,,L,40,0,0,,regular,
+5042,ELAN,20.1275,2564291,2025-10-09T19:54:38Z,False,101482.8550,average_price_trade,20.12,20.13,,L,2501,3041,0,,regular,
+51790,ELAN,20.215,1902154,2025-10-09T19:17:15Z,False,1046934.850,,20.21,20.22,,L,404,712,0,,regular,
+12396,ELAN,20.285,1335468,2025-10-09T17:50:04Z,False,251452.860,,20.28,20.29,,L,500,1128,0,,regular,
+6670,ELAN,20.4159,199084,2025-10-09T14:07:13Z,False,136174.0530,,20.41,20.42,,L,6,240,0,,regular,
+6153,ELAN,20.4399,176818,2025-10-09T14:04:13Z,False,125766.7047,,20.43,20.44,,L,32,116,0,,regular,

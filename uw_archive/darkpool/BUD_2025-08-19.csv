@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5088,BUD,62.24,1525286,2025-08-19T20:00:26Z,False,316677.12,prior_reference_price,62,62.84,extended_hours_trade,L,10,370,57626599158239,,regular,
+7139,BUD,62.24,1520198,2025-08-19T20:00:26Z,False,444331.36,prior_reference_price,62,62.84,extended_hours_trade,L,10,370,57626595714697,,regular,
+4181,BUD,62.235,1339025,2025-08-19T19:57:38Z,False,260204.535,,62.23,62.24,,L,400,338,57458456422858,,regular,
+2380,BUD,62.15,1001596,2025-08-19T18:07:44Z,False,147917.00,,62.15,62.16,,L,399,25,50864792179256,,regular,
+5100,BUD,62.1105,686953,2025-08-19T15:52:57Z,False,316763.5500,,62.11,62.12,,L,37,25,42777922648573,,regular,
+3900,BUD,62.115,673779,2025-08-19T15:47:50Z,False,242248.500,average_price_trade,62.12,62.13,,L,367,7,42470356565692,,regular,
+3700,BUD,62.1401,653386,2025-08-19T15:43:27Z,False,229918.3700,,62.15,62.17,,L,315,25,42207431249167,,regular,
+1775,BUD,62.3307,204254,2025-08-19T13:53:14Z,False,110636.9925,,62.34,62.35,,L,171,50,35594594107324,,regular,
+1860,BUD,62.40,88598,2025-08-19T13:40:52Z,False,116064.00,,62.40,62.42,,L,400,1950,34852862868330,,regular,
