@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+8114,LSCC,50.88,2179214,2025-07-07T20:20:00Z,False,412840.32,prior_reference_price,47,51.15,extended_hours_trade,L,1,86,58800699722332,,regular,
+2644,LSCC,50.88,2169865,2025-07-07T20:00:46Z,False,134526.72,prior_reference_price,48.59,51.15,extended_hours_trade,L,3,10,57646960772377,,regular,
+4985,LSCC,50.88,2167221,2025-07-07T20:00:44Z,False,253636.80,prior_reference_price,50.28,51.15,extended_hours_trade,L,3,1,57644480413133,,regular,
+5033,LSCC,50.88,2162022,2025-07-07T20:00:33Z,False,256079.04,prior_reference_price,50.28,51.15,extended_hours_trade,L,3,1,57633635973506,,regular,
+3178,LSCC,50.88,2156989,2025-07-07T20:00:33Z,False,161696.64,prior_reference_price,50.28,51.15,extended_hours_trade,L,3,1,57633626917218,,regular,
+3066,LSCC,50.88,2152712,2025-07-07T20:00:32Z,False,155998.08,prior_reference_price,50.28,51.15,extended_hours_trade,L,3,1,57632005837427,,regular,
+3093,LSCC,50.88,2149646,2025-07-07T20:00:32Z,False,157371.84,prior_reference_price,50.28,51.15,extended_hours_trade,L,3,1,57632003609425,,regular,
+8560,LSCC,50.88,2144347,2025-07-07T20:00:02Z,False,435532.80,,50.28,51.15,extended_hours_trade,L,3,1,57602934902277,,regular,
+2100,LSCC,50.9484,1021682,2025-07-07T19:35:38Z,False,106991.6400,average_price_trade,50.95,50.97,,L,3,1,56138664770435,derivative_priced,regular,
+3365,LSCC,51.013,368696,2025-07-07T15:48:17Z,False,171658.745,,51.01,51.15,,L,62,207,42497784369969,,regular,
+4369,LSCC,51.72,115542,2025-07-07T14:06:00Z,False,225964.68,,51.56,51.72,,L,224,25,36360699661652,,regular,
+2640,LSCC,51.26,20358,2025-07-07T13:32:00Z,False,135326.40,,51.07,51.45,,L,59,83,34320541609784,,regular,

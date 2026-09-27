@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+8567,EXEL,37.86,1608476,2025-08-20T20:26:53Z,324346.62,False,prior_reference_price,38,37.10,extended_hours_trade,L,100,8,59213389145905,,regular,
+25039,EXEL,37.86,1599895,2025-08-20T20:01:45Z,947976.54,False,,38,37.10,extended_hours_trade,L,100,8,57705322861446,,regular,
+22386,EXEL,37.86,1574856,2025-08-20T20:01:18Z,847533.96,False,prior_reference_price,38,37.40,extended_hours_trade,L,100,10,57678114652773,,regular,
+7870,EXEL,37.86,1548319,2025-08-20T20:00:36Z,297958.20,False,prior_reference_price,38,37.50,extended_hours_trade,L,100,100,57636982260168,,regular,
+4734,EXEL,37.86,1535613,2025-08-20T20:00:14Z,179229.24,False,prior_reference_price,38,37.50,extended_hours_trade,L,100,100,57614401875794,,regular,
+3031,EXEL,37.86,1530799,2025-08-20T20:00:14Z,114753.66,False,prior_reference_price,38,37.50,extended_hours_trade,L,100,100,57614393358750,,regular,
+26653,EXEL,37.86,1526746,2025-08-20T20:00:06Z,1009082.58,False,average_price_trade,37.93,37.83,extended_hours_trade,L,5280,5280,57606666898259,,regular,
+3095,EXEL,37.86,1499980,2025-08-20T20:00:00Z,117176.70,False,,37.93,37.83,extended_hours_trade,L,5280,5280,57600879627374,,regular,
+3896,EXEL,37.97,506686,2025-08-20T17:24:42Z,147931.12,False,,37.96,37.93,,L,66,10,48282995924858,,regular,
+2800,EXEL,37.89,489698,2025-08-20T17:22:33Z,106092.00,False,,37.90,37.88,,L,7,111,48153958645722,,regular,

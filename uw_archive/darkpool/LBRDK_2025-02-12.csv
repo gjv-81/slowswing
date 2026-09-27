@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1089504,LBRDK,79.46,1408521,2025-02-12T21:14:12Z,86571987.84,False,prior_reference_price,80,66.53,extended_hours_trade,L,2,100,58452106106570,,,
+3518,LBRDK,79.46,315340,2025-02-12T21:00:02Z,279540.28,False,,79.63,79.25,extended_hours_trade,L,2515,2515,57602923877362,,,
+1542,LBRDK,79.29,193746,2025-02-12T20:27:47Z,122265.18,False,,79.35,79.24,,L,554,29,55667616949116,,,
+1700,LBRDK,79.105,15199,2025-02-12T15:04:59Z,134478.500,False,,79.13,78.95,,L,30,111,36299106099708,,,

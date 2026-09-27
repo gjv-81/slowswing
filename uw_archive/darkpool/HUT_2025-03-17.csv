@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+63314,HUT,12.945,3173157,2025-03-17T20:36:52Z,819599.730,False,average_price_trade,12.96,12.92,extended_hours_trade,L,100,101,59812345463539,,,
+7831,HUT,12.95,3085525,2025-03-17T20:00:11Z,101411.45,False,prior_reference_price,13,12.92,extended_hours_trade,L,6,101,57611051601444,,,
+26700,HUT,12.55,1448126,2025-03-17T16:41:26Z,335085.00,False,,12.56,12.55,,L,2119,154,45686220142352,,,
+8000,HUT,12.5684,1384075,2025-03-17T16:36:23Z,100547.2000,False,,12.57,12.56,,L,100,1,45383590768696,,,
+27700,HUT,12.75,1157145,2025-03-17T16:10:10Z,353175.00,False,,12.75,12.74,,L,260,1425,43810652989439,,,
+13638,HUT,12.71,291967,2025-03-17T13:43:53Z,173338.98,False,,12.72,12.71,,L,200,700,35033320256351,,,

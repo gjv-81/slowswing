@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2400,IPGP,78.53,229934,2024-12-10T21:02:17Z,188472.00,False,prior_reference_price,83.21,78.01,extended_hours_trade,L,50,1,57737873939111,,,
+1386,IPGP,78.53,226289,2024-12-10T21:01:33Z,108842.58,False,prior_reference_price,83.21,78.01,extended_hours_trade,L,50,1,57693244390014,,,
+2391,IPGP,79.7201,11692,2024-12-10T14:49:39Z,190610.7591,False,,80.35,79.72,,L,10,20,35379556526497,,,

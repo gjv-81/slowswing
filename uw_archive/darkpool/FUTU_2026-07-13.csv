@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1569,FUTU,96.35,766600,2026-07-13T20:00:08Z,151173.15,False,,96.5,96.33,extended_hours_trade,L,105,212,39831598711351,,regular,2026-07-13T20:00:08Z
+1414,FUTU,96.35,719973,2026-07-13T20:00:00Z,136238.90,False,,96.45,96.33,extended_hours_trade,L,4,212,39831598703503,,regular,2026-07-13T20:00:00Z
+1588,FUTU,96.41,167921,2026-07-13T14:08:28Z,153099.08,False,,96.42,96.11,,L,100,6,39831577611718,,regular,2026-07-13T14:08:28Z
+6900,FUTU,97.14,128309,2026-07-13T13:48:39Z,670266.00,False,,97.22,96.97,,L,110,1,39831576422496,,regular,2026-07-13T13:48:39Z
+2000,FUTU,97.8,85386,2026-07-13T13:37:04Z,195600.0,False,,98.06,97.8,,L,10,220,39831575727177,,regular,2026-07-13T13:37:04Z

@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+500,KNSL,455.42,102908,2025-03-14T20:00:28Z,227710.00,False,prior_reference_price,458,439.30,extended_hours_trade,L,5,87,57628019404245,,,
+673,KNSL,455.42,102408,2025-03-14T20:00:27Z,306497.66,False,prior_reference_price,458,439.30,extended_hours_trade,L,5,87,57627965391048,,,
+960,KNSL,452.9786,66896,2025-03-14T19:45:03Z,434859.4560,False,average_price_trade,453.02,452.63,,L,16,4,56703017509869,derivative_priced,,
+252,KNSL,451.9999,45506,2025-03-14T17:45:42Z,113903.9748,False,,451.80,450.92,,L,43,27,49542805153742,,,
+222,KNSL,452.207,44699,2025-03-14T17:38:35Z,100389.954,False,,452.22,451.54,,L,71,14,49115739937762,,,
+225,KNSL,453.285,29416,2025-03-14T15:55:33Z,101989.125,False,,453.71,452.82,,L,7,4,42933213499648,,,
+451,KNSL,448.1733,6289,2025-03-14T14:06:48Z,202126.1583,False,,446,442.58,,L,12,34,36408891905199,,,

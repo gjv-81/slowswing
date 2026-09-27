@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1300,GMED,88.76,153321,2025-12-24T17:17:00Z,115388.00,False,,88.83,88.72,,L,27,2,32036223281646,,regular,
+1200,GMED,88.92,70171,2025-12-24T15:47:25Z,106704.00,False,,88.89,88.67,,L,2,3,32036217906453,,regular,
+1200,GMED,88.85,37230,2025-12-24T15:07:42Z,106620.00,False,,88.81,88.68,,L,10,8,32036215523253,,regular,
+1200,GMED,89.215,14098,2025-12-24T14:40:26Z,107058.000,False,,89.28,88.95,,L,11,3,32036213887776,,regular,
+1200,GMED,89.14,12148,2025-12-24T14:39:10Z,106968.00,False,,89.28,88.69,,L,11,20,32036213810895,,regular,
+1200,GMED,89.2,7640,2025-12-24T14:34:31Z,107040.0,False,,89.28,88.69,,L,10,20,32036213532718,,regular,
+1200,GMED,89.21,6019,2025-12-24T14:32:43Z,107052.00,False,,89.26,88.69,,L,51,20,32036213424495,,regular,

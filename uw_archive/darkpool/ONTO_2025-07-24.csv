@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1794,ONTO,98.25,1101259,2025-07-24T20:00:46Z,176260.50,False,prior_reference_price,103.66,95.55,extended_hours_trade,L,2,1,57646351424023,,regular,
+5788,ONTO,98.25,1097796,2025-07-24T20:00:33Z,568671.00,False,prior_reference_price,103.66,95.55,extended_hours_trade,L,2,1,57633690051122,,regular,
+3356,ONTO,98.25,1091399,2025-07-24T20:00:33Z,329727.00,False,prior_reference_price,103.66,95.55,extended_hours_trade,L,2,1,57633332559120,,regular,
+4600,ONTO,98.25,1087987,2025-07-24T20:00:33Z,451950.00,False,prior_reference_price,103.66,95.55,extended_hours_trade,L,2,1,57633273125321,,regular,
+2183,ONTO,98.2081,865476,2025-07-24T19:58:50Z,214388.2823,False,average_price_trade,98.35,98.32,,L,152,223,57530906045473,derivative_priced,regular,
+1269,ONTO,97.8481,817710,2025-07-24T19:54:06Z,124169.2389,False,average_price_trade,98.07,98.01,,L,217,30,57246897103075,derivative_priced,regular,
+10900,ONTO,97.27,413800,2025-07-24T17:38:15Z,1060243.00,False,,97.35,97.21,,L,80,6,49095877609815,,regular,
+1162,ONTO,97.0309,304228,2025-07-24T16:23:16Z,112749.9058,False,,97.11,97.01,,L,201,204,44596120786427,,regular,
+1350,ONTO,97.84,204923,2025-07-24T15:06:54Z,132084.00,False,,97.93,97.84,,L,18,99,40014752694688,,regular,
+2150,ONTO,97.775,186939,2025-07-24T14:59:46Z,210216.250,False,,97.87,97.68,,L,221,137,39586281312664,,regular,
+3000,ONTO,97,55012,2025-07-24T13:52:26Z,291000,False,,97.28,96.95,,L,200,12,35546257513913,,regular,

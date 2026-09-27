@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2821,KNX,45.8,1733401,2025-11-26T21:00:13Z,129201.8,False,prior_reference_price,0,0,extended_hours_trade,L,0,0,0,,regular,
+4230,KNX,45.8,1728680,2025-11-26T21:00:13Z,193734.0,False,prior_reference_price,0,0,extended_hours_trade,L,0,0,0,,regular,
+5671,KNX,45.8,1722167,2025-11-26T21:00:13Z,259731.8,False,prior_reference_price,0,0,extended_hours_trade,L,0,0,0,,regular,
+10000,KNX,45.96,634741,2025-11-26T18:59:29Z,459600.00,False,,45.98,45.95,,L,110,34,0,,regular,
+6382,KNX,46.135,247246,2025-11-26T15:42:34Z,294433.570,False,,46.18,46.09,,L,112,104,0,,regular,
+5000,KNX,46.16,221024,2025-11-26T15:35:36Z,230800.00,False,,46.15,46.1,,L,25,51,0,,regular,
+2986,KNX,46.11,189724,2025-11-26T15:23:39Z,137684.46,False,,46.1,46,,L,12,100,0,,regular,
+4891,KNX,45.7,118144,2025-11-26T14:49:43Z,223518.7,False,,45.68,45.55,,L,60,95,0,,regular,
+5000,KNX,45.435,86963,2025-11-26T14:44:34Z,227175.000,False,,45.53,45.34,,L,100,23,0,,regular,
+8700,KNX,45.3025,35496,2025-11-26T14:38:27Z,394131.7500,False,,45.39,45.11,,L,100,8,0,,regular,

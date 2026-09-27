@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6000,GMED,94.38,561508,2026-04-23T20:00:33Z,False,566280.00,prior_reference_price,93.5,96.86,extended_hours_trade,L,2,12,32036233093939,,regular,2026-04-23T20:00:33Z
+1650,GMED,94.38,553179,2026-04-23T20:00:32Z,False,155727.00,prior_reference_price,93.5,96.86,extended_hours_trade,L,2,12,32036233093624,,regular,2026-04-23T20:00:32Z
+42741,GMED,94.38,550500,2026-04-23T20:00:10Z,False,4033895.58,average_price_trade,92.14,96.86,extended_hours_trade,L,2,3,32036233071635,,regular,2026-04-23T20:00:10Z
+5139,GMED,94.595,243879,2026-04-23T18:59:28Z,False,486123.705,,94.51,94.68,,L,396,193,32036229429484,,regular,2026-04-23T18:59:28Z
+1226,GMED,94.535,207094,2026-04-23T18:17:23Z,False,115899.910,,94.42,94.61,,L,5,39,32036226904290,,regular,2026-04-23T18:17:23Z
+3100,GMED,95.155,65915,2026-04-23T14:47:55Z,False,294980.500,,94.9,95.33,,L,220,46,32036214336497,,regular,2026-04-23T14:47:55Z

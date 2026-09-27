@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3000,JEF,42.84,1342824,2025-04-17T20:00:35Z,128520.00,False,prior_reference_price,43.67,42,extended_hours_trade,L,38,50,57635916078797,,,
+3903,JEF,42.84,1339824,2025-04-17T20:00:16Z,167204.52,False,prior_reference_price,44.20,42,extended_hours_trade,L,5,50,57616625815004,,,
+5295,JEF,42.84,1332003,2025-04-17T20:00:16Z,226837.80,False,prior_reference_price,44.20,42,extended_hours_trade,L,5,50,57616476545570,,,
+3790,JEF,43.12,706469,2025-04-17T19:26:48Z,163424.80,False,,43.16,43.08,,L,14,175,55608843266830,,,
+32500,JEF,43.406,341176,2025-04-17T17:16:13Z,1410695.000,False,contingent_trade,43.45,43.37,,L,100,41,47773615602768,qualified_contingent_trade,,
+6000,JEF,43.57,297180,2025-04-17T17:09:11Z,261420.00,False,,43.60,43.54,,L,5,408,47351287699278,,,
+2900,JEF,42.975,118713,2025-04-17T14:56:22Z,124627.500,False,,43.02,42.95,,L,14,19,39382034066110,,,

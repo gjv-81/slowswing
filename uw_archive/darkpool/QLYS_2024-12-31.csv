@@ -1,0 +1,5 @@
+size,ticker,price,volume,canceled,premium,executed_at,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5064,QLYS,140.22,161264,False,710074.08,2024-12-31T22:08:47Z,average_price_trade,140.22,137.51,extended_hours_trade,L,1,2,61727474089897,,,
+2100,QLYS,140.22,154969,False,294462.00,2024-12-31T21:00:02Z,,142.41,135,extended_hours_trade,L,100,10,57602951586039,,,
+1698,QLYS,140.22,151884,False,238093.56,2024-12-31T21:00:02Z,,142.41,135,extended_hours_trade,L,100,10,57602939480804,,,
+720,QLYS,140.5105,24254,False,101167.5600,2024-12-31T16:46:45Z,,140.48,140.21,,L,33,26,42405712791082,,,

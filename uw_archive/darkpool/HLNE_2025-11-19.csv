@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+858,HLNE,125.27,560608,2025-11-19T21:00:11Z,107481.66,False,prior_reference_price,125.97,124.59,extended_hours_trade,L,295,295,0,,regular,
+2948,HLNE,125.27,558384,2025-11-19T21:00:11Z,369295.96,False,prior_reference_price,125.97,124.59,extended_hours_trade,L,295,295,0,,regular,
+1690,HLNE,125.27,495450,2025-11-19T21:00:01Z,211706.30,False,,125.97,124.59,extended_hours_trade,L,295,295,0,,regular,
+1300,HLNE,125.5525,453544,2025-11-19T20:56:57Z,163218.2500,False,average_price_trade,125.42,125.31,,L,307,153,0,derivative_priced,regular,
+2500,HLNE,123,177982,2025-11-19T17:48:07Z,307500,False,,123.5,123.11,,L,32,1,0,,regular,
+2793,HLNE,123.1226,103633,2025-11-19T16:52:26Z,343881.4218,False,,123.96,123.29,,L,34,10,0,,regular,
+2134,HLNE,123.1309,100012,2025-11-19T16:51:11Z,262761.3406,False,,123.8,123.23,,L,10,3,0,,regular,
+883,HLNE,124.76,24187,2025-11-19T15:19:53Z,110163.08,False,,125.5,124.7,,L,108,9,0,,regular,
+1000,HLNE,125.125,17057,2025-11-19T15:15:57Z,125125.000,False,,125.81,124.24,,L,22,187,0,,regular,
+1191,HLNE,124.9,16057,2025-11-19T15:15:57Z,148755.9,False,,125.81,124.24,,L,22,187,0,,regular,

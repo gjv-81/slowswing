@@ -1,0 +1,16 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2012,HAE,58.576,1259988,2026-03-20T20:24:21Z,False,117854.912,average_price_trade,57.45,59.72,extended_hours_trade,L,33,34,26852208995902,,regular,2026-03-20T20:24:21Z
+20441,HAE,58.5805,1257611,2026-03-20T20:19:29Z,False,1197444.0005,average_price_trade,57.45,59.72,extended_hours_trade,L,33,34,26852208703928,,regular,2026-03-20T20:19:29Z
+20113,HAE,58.58,1237170,2026-03-20T20:14:07Z,False,1178219.54,average_price_trade,57.45,59.72,extended_hours_trade,L,33,34,26852208382436,,regular,2026-03-20T20:14:07Z
+2497,HAE,58.5805,1217057,2026-03-20T20:11:04Z,False,146275.5085,average_price_trade,57.45,59.72,extended_hours_trade,L,33,34,26852208198887,,regular,2026-03-20T20:11:04Z
+28300,HAE,58.58,1212455,2026-03-20T20:03:37Z,False,1657814.00,prior_reference_price,57.45,59.72,extended_hours_trade,L,33,34,26852207752399,,regular,2026-03-20T20:03:37Z
+28400,HAE,58.58,1182935,2026-03-20T20:03:29Z,False,1663672.00,prior_reference_price,57.45,59.72,extended_hours_trade,L,33,34,26852207744354,,regular,2026-03-20T20:03:29Z
+4412,HAE,58.58,1154372,2026-03-20T20:02:54Z,False,258454.96,prior_reference_price,57.45,59.72,extended_hours_trade,L,33,34,26852207709343,,regular,2026-03-20T20:02:54Z
+15110,HAE,58.58,1147010,2026-03-20T20:01:30Z,False,885143.80,prior_reference_price,56.32,59.72,extended_hours_trade,L,33,72,26852207624874,,regular,2026-03-20T20:01:30Z
+202700,HAE,58.58,1131900,2026-03-20T20:00:55Z,False,11874166.00,prior_reference_price,56.32,0,extended_hours_trade,L,0,72,26852207590529,,regular,2026-03-20T20:00:55Z
+9695,HAE,58.58,929200,2026-03-20T20:00:55Z,False,567933.10,prior_reference_price,56.32,0,extended_hours_trade,L,0,72,26852207589712,,regular,2026-03-20T20:00:55Z
+2088,HAE,58.58,916852,2026-03-20T20:00:40Z,False,122315.04,prior_reference_price,56.32,0,extended_hours_trade,L,0,72,26852207574730,,regular,2026-03-20T20:00:40Z
+2702,HAE,58.09,244801,2026-03-20T18:47:14Z,False,156959.18,,58,58.13,,L,7,2,26852203169016,,regular,2026-03-20T18:47:14Z
+4500,HAE,57.92,214457,2026-03-20T17:16:38Z,False,260640.00,average_price_trade,57.92,58.05,,L,28,30,26852197732905,,regular,2026-03-20T17:16:38Z
+8200,HAE,58.65,124550,2026-03-20T15:35:50Z,False,480930.00,contingent_trade,58.59,58.7,,L,100,12,26852191685329,qualified_contingent_trade,regular,2026-03-20T15:35:50Z
+1893,HAE,58.78,49937,2026-03-20T13:34:28Z,False,111270.54,,58.21,59.19,,L,5,5,26852184402935,,regular,2026-03-20T13:34:28Z

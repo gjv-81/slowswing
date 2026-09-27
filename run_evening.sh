@@ -92,6 +92,13 @@ send_telegram(sys.argv[1])
 PYEOF
 fi
 
+# --- fast-lane flame scan (added 2026-09-27) ---
+# Fully automated ask-side flame check on tonight's quiet S2/B2 candidates.
+# Exits quietly if no UW token file exists (.env_uw_live / .env_uw), so this
+# line is safe to keep here before the personal API account is active.
+echo "----- fast-lane flame scan -----" >> "$LOG" 2>&1
+"$PY" "$DIR/uw_flame_live.py" >> "$LOG" 2>&1
+
 # --- nightly push to GitHub (added 2026-09-18) ---
 # The cloud copy (github.com/gjv-81/slowswing, private) is never more than a
 # day old, so troubleshooting can happen without the laptop. .gitignore keeps

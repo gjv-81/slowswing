@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3009,NXT,43.05,1471378,2025-04-01T21:15:16Z,129537.45,False,,43.50,42.21,extended_hours_trade,L,90,21,62116112609683,,,
+32901,NXT,43.05,1468243,2025-04-01T20:40:10Z,1416388.05,False,prior_reference_price,43.50,42.21,extended_hours_trade,L,90,21,60010121244946,,,
+3187,NXT,43.05,1431700,2025-04-01T20:02:04Z,137200.35,False,prior_reference_price,43.50,42.21,extended_hours_trade,L,90,21,57724462052403,,,
+8278,NXT,43.05,1424403,2025-04-01T20:00:11Z,356367.90,False,prior_reference_price,43.50,41.05,extended_hours_trade,L,90,10,57611990061675,,,
+24622,NXT,43.05,1413434,2025-04-01T20:00:11Z,1059977.10,False,prior_reference_price,43.50,41.05,extended_hours_trade,L,90,10,57611637298202,,,
+2695,NXT,43.05,1386432,2025-04-01T20:00:02Z,116019.75,False,,43.20,42.90,extended_hours_trade,L,4645,4645,57602509825575,,,
+28830,NXT,42.60,776983,2025-04-01T18:23:58Z,1228158.00,False,,42.64,42.59,,L,535,41,51838300359811,,,
+3327,NXT,42.625,372952,2025-04-01T15:12:13Z,141813.375,False,,42.64,42.59,,L,10,178,40333728931336,,,
+9900,NXT,41.79,200210,2025-04-01T14:19:53Z,413721.00,False,,41.78,41.72,,L,31,11,37193581257195,,,
+3359,NXT,42.38,15858,2025-04-01T13:30:03Z,142354.42,False,,42.57,42.16,,L,13,1,34203527503915,,,

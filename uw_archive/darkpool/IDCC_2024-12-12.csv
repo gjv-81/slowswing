@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+12100,IDCC,195.86,438665,2024-12-12T22:28:11Z,2369906.00,False,prior_reference_price,196.51,173.96,extended_hours_trade,L,7,100,62891454087239,,,
+30600,IDCC,195.86,426565,2024-12-12T22:28:11Z,5993316.00,False,prior_reference_price,196.51,173.96,extended_hours_trade,L,7,100,62891452919095,,,
+1266,IDCC,195.86,395593,2024-12-12T21:00:54Z,247958.76,False,prior_reference_price,300,158.58,extended_hours_trade,L,17,15,57654157972059,,,
+1022,IDCC,195.86,392978,2024-12-12T21:00:05Z,200168.92,False,,196.59,195.30,extended_hours_trade,L,1020,1020,57605961383283,,,
+1524,IDCC,195.86,293661,2024-12-12T21:00:00Z,298490.64,False,,195.97,195.86,extended_hours_trade,L,88,710,57600241245559,,,
+3756,IDCC,196.795,12389,2024-12-12T14:51:33Z,739162.020,False,,197,196.04,,L,32,101,35493091397359,,,

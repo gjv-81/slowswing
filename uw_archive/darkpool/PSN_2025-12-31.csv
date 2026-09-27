@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+20560,PSN,61.8,583974,2025-12-31T22:57:00Z,False,1270608.0,average_price_trade,61.24,67.57,extended_hours_trade,L,100,15,40007702982464,,regular,
+16368,PSN,61.8,563409,2025-12-31T22:25:58Z,False,1011542.4,prior_reference_price,61.42,62.23,extended_hours_trade,L,74,74,40007701120340,,regular,
+2219,PSN,61.8,545527,2025-12-31T21:04:21Z,False,137134.2,prior_reference_price,61.24,85,extended_hours_trade,L,2,15,40007696224195,,regular,
+2614,PSN,61.8,541435,2025-12-31T21:02:58Z,False,161545.2,prior_reference_price,0,85,extended_hours_trade,L,2,0,40007696140252,,regular,
+3930,PSN,61.8,534177,2025-12-31T21:00:22Z,False,242874.0,prior_reference_price,0,85,extended_hours_trade,L,2,0,40007695984589,,regular,
+4329,PSN,61.8,530195,2025-12-31T21:00:22Z,False,267532.2,prior_reference_price,0,85,extended_hours_trade,L,2,0,40007695984578,,regular,
+1631,PSN,61.8,525866,2025-12-31T21:00:22Z,False,100795.8,prior_reference_price,0,85,extended_hours_trade,L,2,0,40007695984573,,regular,
+2000,PSN,61.7965,385078,2025-12-31T20:58:34Z,False,123593.0000,,61.8,61.83,,L,300,26,40007695877027,,regular,
+3668,PSN,62.1,219222,2025-12-31T19:25:00Z,False,227782.8,,62.06,62.09,,L,9,1,40007690262933,,regular,
+3448,PSN,62.1677,199621,2025-12-31T18:57:18Z,False,214354.2296,,62.16,62.18,,L,10,84,40007688601147,,regular,
+1850,PSN,62.204,138321,2025-12-31T17:21:11Z,False,115077.400,,62.16,62.24,,L,110,1,40007682833274,,regular,

@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+8530,PENN,21.18,2101147,2026-07-27T20:00:21Z,False,180665.40,prior_reference_price,20.88,22,extended_hours_trade,L,344,1,29592396690938,,regular,2026-07-27T20:00:21Z
+7836,PENN,21.18,2092617,2026-07-27T20:00:21Z,False,165966.48,prior_reference_price,20.88,22,extended_hours_trade,L,344,1,29592396690935,,regular,2026-07-27T20:00:21Z
+7819,PENN,21.106,729199,2026-07-27T17:21:12Z,False,165027.814,,21.1,21.11,,L,100,720,29592387141594,,regular,2026-07-27T17:21:11Z
+6639,PENN,21.0599,256802,2026-07-27T14:42:38Z,False,139816.6761,,21.06,21.08,,L,116,53,29592377627962,,regular,2026-07-27T14:42:38Z
+8018,PENN,21.095,220090,2026-07-27T14:34:52Z,False,169139.710,,21.09,21.11,,L,585,6,29592377161823,,regular,2026-07-27T14:34:52Z
+5048,PENN,20.8699,98147,2026-07-27T13:54:55Z,False,105351.2552,,20.85,20.87,,L,224,311,29592374764642,,regular,2026-07-27T13:54:55Z
+7555,PENN,20.77,7556,2026-07-27T11:21:13Z,False,156917.35,,20.2,20.99,extended_hours_trade,L,25,5,29592365542913,,regular,2026-07-27T11:21:13Z

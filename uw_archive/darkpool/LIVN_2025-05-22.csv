@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+15517,LIVN,43.18,677238,2025-05-22T21:02:58Z,False,670024.06,average_price_trade,42.34,43.28,extended_hours_trade,L,2,21,61378321366183,,,
+10283,LIVN,43.18,661721,2025-05-22T21:02:50Z,False,444019.94,average_price_trade,42.34,43.28,extended_hours_trade,L,2,21,61370297793339,,,
+16165,LIVN,43.18,661073,2025-05-22T20:26:19Z,False,698004.70,average_price_trade,42.34,43.28,extended_hours_trade,L,2,21,59179528530720,,,
+9635,LIVN,43.18,644908,2025-05-22T20:26:17Z,True,416039.30,average_price_trade,42.34,43.28,extended_hours_trade,L,2,21,59177094533359,,,
+25800,LIVN,43.21,635114,2025-05-22T20:08:25Z,False,1114818.00,average_price_trade,42.34,43.28,extended_hours_trade,L,2,21,58105633466536,,,
+45400,LIVN,43.20,609314,2025-05-22T20:07:55Z,False,1961280.00,average_price_trade,42.34,43.28,extended_hours_trade,L,2,21,58075874717151,,,
+7989,LIVN,43.18,558804,2025-05-22T20:00:04Z,False,344965.02,,38.17,43.28,extended_hours_trade,L,2,10,57604863496781,,,
+2338,LIVN,42.8107,139856,2025-05-22T16:45:10Z,False,100091.4166,,42.82,42.86,,L,21,51,45910526504250,,,
+2400,LIVN,42.85,132029,2025-05-22T16:33:05Z,False,102840.00,,42.79,42.90,,L,55,100,45185290915677,,,

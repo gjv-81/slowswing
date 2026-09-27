@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1363,GNRC,169.99,531939,2025-10-02T20:02:05Z,231696.37,False,prior_reference_price,169.99,168,extended_hours_trade,L,2,50,0,,regular,
+930,GNRC,169.99,529589,2025-10-02T20:00:28Z,158090.70,False,prior_reference_price,169.99,168,extended_hours_trade,L,2,50,0,,regular,
+1645,GNRC,169.99,528553,2025-10-02T20:00:28Z,279633.55,False,prior_reference_price,169.99,168,extended_hours_trade,L,2,50,0,,regular,
+1291,GNRC,169.99,526227,2025-10-02T20:00:28Z,219457.09,False,prior_reference_price,169.99,168,extended_hours_trade,L,2,50,0,,regular,
+3652,GNRC,169.99,524679,2025-10-02T20:00:07Z,620803.48,False,,171.89,168,extended_hours_trade,L,1000,50,0,,regular,
+975,GNRC,169.4,324482,2025-10-02T19:16:25Z,165165.0,False,,169.48,169.4,,L,6,100,0,,regular,
+600,GNRC,169.49,296534,2025-10-02T18:54:39Z,101694.00,False,,169.64,169.41,,L,40,22,0,,regular,
+1000,GNRC,169.7,189530,2025-10-02T16:20:44Z,169700.0,False,,169.67,169.27,,L,24,3,0,,regular,
+5000,GNRC,168.7701,77648,2025-10-02T14:14:41Z,843850.5000,False,,169.47,169,,L,40,18,0,,regular,
+2895,GNRC,168.7801,69360,2025-10-02T14:14:20Z,488618.3895,False,,169.29,168.91,,L,229,42,0,,regular,
+1800,GNRC,169.27,31302,2025-10-02T13:54:03Z,304686.00,False,,169.28,168.91,,L,206,32,0,,regular,

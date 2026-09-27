@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+7458,MKSI,161.82,417282,2025-12-30T22:56:33Z,False,1206853.56,average_price_trade,160,164.47,extended_hours_trade,L,4,11,30640379283283,,regular,
+768,MKSI,161.82,409824,2025-12-30T22:20:42Z,False,124277.76,prior_reference_price,160.9,162.74,extended_hours_trade,L,99,99,30640377132020,,regular,
+1134,MKSI,161.82,408768,2025-12-30T21:00:18Z,False,183503.88,prior_reference_price,160,164.47,extended_hours_trade,L,4,11,30640372308400,,regular,
+760,MKSI,161.82,406998,2025-12-30T21:00:16Z,False,122983.20,prior_reference_price,160,164.47,extended_hours_trade,L,4,11,30640372306259,,regular,
+768,MKSI,162.5,214514,2025-12-30T20:28:36Z,False,124800.0,,162.4,162.64,,L,17,37,30640370406232,,regular,
+5700,MKSI,162.4,152125,2025-12-30T19:03:35Z,False,925680.0,contingent_trade,162.32,162.5,,L,101,32,30640365305000,qualified_contingent_trade,regular,
+823,MKSI,161.97,111802,2025-12-30T18:03:59Z,False,133301.31,,162.13,162.3,,L,20,3,30640361729020,,regular,
+1000,MKSI,162.725,99415,2025-12-30T17:37:46Z,False,162725.000,,162.62,162.84,,L,62,26,30640360156220,,regular,
+2378,MKSI,162.5201,98260,2025-12-30T17:37:46Z,False,386472.7978,,162.62,162.84,,L,62,26,30640360156037,,regular,
+2423,MKSI,163.555,49841,2025-12-30T16:00:01Z,False,396293.765,,163.43,163.57,,L,4,4,30640354290758,,regular,
+699,MKSI,162.69,25465,2025-12-30T15:17:36Z,False,113720.31,,162.21,162.81,,L,2,7,30640351746017,,regular,
+811,MKSI,163.24,15451,2025-12-30T15:04:48Z,False,132387.64,,162.86,163.6,,L,46,1,30640350978214,,regular,

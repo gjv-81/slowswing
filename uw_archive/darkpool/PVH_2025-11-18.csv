@@ -1,0 +1,11 @@
+size,ticker,price,volume,canceled,premium,executed_at,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2571,PVH,73.67,736367,False,189405.57,2025-11-18T21:01:37Z,prior_reference_price,89.42,71.44,extended_hours_trade,L,7,53,0,,regular,
+5997,PVH,73.67,732782,False,441798.99,2025-11-18T21:01:14Z,prior_reference_price,89.42,71.44,extended_hours_trade,L,7,53,0,,regular,
+2351,PVH,74.335,377707,False,174761.585,2025-11-18T20:11:00Z,,74.35,74.2,,L,1,13,0,,regular,
+3603,PVH,74.39,369045,False,268027.17,2025-11-18T20:09:57Z,,74.47,74.31,,L,518,4,0,,regular,
+2192,PVH,74.47,297400,False,163238.24,2025-11-18T18:52:33Z,,74.63,74.39,,L,100,50,0,,regular,
+2000,PVH,74.42,291715,False,148840.00,2025-11-18T18:47:25Z,,74.54,74.42,,L,4,4,0,,regular,
+1837,PVH,73.621,259192,False,135241.777,2025-11-18T18:00:43Z,,73.72,73.64,,L,46,10,0,,regular,
+2000,PVH,73,218085,False,146000,2025-11-18T17:22:16Z,,73.03,72.98,,L,4,28,0,,regular,
+3600,PVH,74.21,132489,False,267156.00,2025-11-18T15:56:53Z,,74.39,74.04,,L,44,104,0,,regular,
+2900,PVH,74.635,33424,False,216441.500,2025-11-18T14:44:51Z,,74.98,74.27,,L,4,104,0,,regular,

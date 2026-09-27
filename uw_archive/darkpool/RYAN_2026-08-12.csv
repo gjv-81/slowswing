@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+45498,RYAN,42.87,1421320,2026-08-12T20:47:13Z,False,1950499.26,average_price_trade,43.79,41.95,extended_hours_trade,L,79,83,22183580917396,,regular,2026-08-12T20:47:12Z
+65000,RYAN,42.87,1375540,2026-08-12T20:00:39Z,False,2786550.00,prior_reference_price,48.06,36.83,extended_hours_trade,L,100,100,22183578123379,,regular,2026-08-12T20:00:39Z
+2870,RYAN,42.87,1309583,2026-08-12T20:00:37Z,False,123036.90,prior_reference_price,48.06,36.83,extended_hours_trade,L,100,100,22183578121577,,regular,2026-08-12T20:00:37Z
+3842,RYAN,42.87,1306613,2026-08-12T20:00:37Z,False,164706.54,prior_reference_price,48.06,36.83,extended_hours_trade,L,100,100,22183578121567,,regular,2026-08-12T20:00:37Z
+2600,RYAN,42.8491,995535,2026-08-12T19:56:20Z,False,111407.6600,average_price_trade,42.84,42.81,,L,25,291,22183577864236,derivative_priced,regular,2026-08-12T19:56:20Z
+4273,RYAN,42.0251,341553,2026-08-12T16:45:38Z,False,179573.2523,,42.05,42.01,,L,168,5,22183566422481,,regular,2026-08-12T16:45:38Z
+5051,RYAN,41.775,217431,2026-08-12T15:25:13Z,False,211005.525,,41.81,41.7,,L,168,6,22183561597037,,regular,2026-08-12T15:25:13Z
+2710,RYAN,41.665,203242,2026-08-12T15:18:18Z,False,112912.150,,41.69,41.64,,L,1,99,22183561182488,,regular,2026-08-12T15:18:18Z

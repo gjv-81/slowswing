@@ -1,0 +1,3 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2147,LBRDA,55.2,180774,2026-02-09T21:00:09Z,False,118514.4,,55.05,55.21,extended_hours_trade,L,25,525,35223102403912,,regular,2026-02-09T21:00:09Z
+15000,LBRDA,54.9,60150,2026-02-09T15:55:48Z,False,823500.0,,54.86,54.95,,L,2,101,35223084142823,,regular,2026-02-09T15:55:48Z

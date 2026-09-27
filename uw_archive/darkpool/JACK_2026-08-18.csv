@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+7546,JACK,16.63,475475,2026-08-18T17:26:13Z,125489.98,False,,16.68,16.64,,L,309,93,28106328758377,,regular,2026-08-18T17:26:13Z
+14700,JACK,16.82,158070,2026-08-18T14:39:40Z,247254.00,False,,16.88,16.81,,L,103,243,28106318765150,,regular,2026-08-18T14:39:39Z
+14681,JACK,16.99,129588,2026-08-18T14:39:39Z,249430.19,False,,16.95,16.93,,L,70,100,28106318764347,,regular,2026-08-18T14:39:39Z

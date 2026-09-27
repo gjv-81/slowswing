@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2274,HALO,47.74,992528,2025-01-03T21:01:00Z,108560.76,False,prior_reference_price,69,46.25,extended_hours_trade,L,2,2200,57660587759476,,,
+2129,HALO,47.74,989650,2025-01-03T21:01:00Z,101638.46,False,prior_reference_price,69,46.25,extended_hours_trade,L,2,2200,57660564814599,,,
+10200,HALO,47.74,981331,2025-01-03T21:00:05Z,486948.00,False,,49.50,46.25,extended_hours_trade,L,100,2200,57605292413891,,,
+2402,HALO,47.975,618016,2025-01-03T20:21:10Z,115235.950,False,,48,47.96,,L,179,50,55270271031168,,,
+9800,HALO,47.90,566235,2025-01-03T19:56:02Z,469420.00,False,contingent_trade,47.89,47.87,,L,77,191,53762119783730,qualified_contingent_trade,,
+9800,HALO,48.10,410951,2025-01-03T18:08:19Z,471380.00,False,contingent_trade,48.11,48.08,sold_out_of_sequence,L,1,136,47299655888911,qualified_contingent_trade,,
+6107,HALO,48.23,259896,2025-01-03T16:44:30Z,294540.61,False,,48.26,48.21,,L,278,10,42270931111967,,,
+5601,HALO,48.085,240429,2025-01-03T16:42:37Z,269324.085,False,,48.10,48.08,,L,184,5,42157719304858,,,

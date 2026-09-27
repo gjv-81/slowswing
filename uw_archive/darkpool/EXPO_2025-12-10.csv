@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4788,EXPO,71.33,467081,2025-12-10T21:05:43Z,341528.04,False,prior_reference_price,72.74,70.07,extended_hours_trade,L,27,1,0,,regular,
+15441,EXPO,71.33,462293,2025-12-10T21:04:24Z,1101406.53,False,prior_reference_price,72.74,70.07,extended_hours_trade,L,27,1,0,,regular,
+20432,EXPO,71.33,446852,2025-12-10T21:04:24Z,1457414.56,False,prior_reference_price,72.74,70.07,extended_hours_trade,L,27,1,0,,regular,
+3191,EXPO,71.33,424216,2025-12-10T21:00:07Z,227614.03,False,,78.5,70.07,extended_hours_trade,L,2,1,0,,regular,
+5700,EXPO,71.33,418791,2025-12-10T21:00:07Z,406581.00,False,,78.5,70.07,extended_hours_trade,L,2,1,0,,regular,
+18022,EXPO,71.33,411187,2025-12-10T21:00:06Z,1285509.26,False,average_price_trade,78.5,70.07,extended_hours_trade,L,2,1,0,,regular,
+2293,EXPO,71.6801,193221,2025-12-10T20:29:59Z,164362.4693,False,,71.83,71.68,,L,20,182,0,,regular,
+2222,EXPO,71.0378,135529,2025-12-10T19:32:57Z,157845.9916,False,,71.12,71,,L,54,343,0,,regular,
+2575,EXPO,71.165,122159,2025-12-10T19:17:17Z,183249.875,False,,71.25,71.06,,L,15,9,0,,regular,
+1467,EXPO,70.605,77309,2025-12-10T17:37:52Z,103577.535,False,,70.8,70.57,,L,15,9,0,,regular,
+4723,EXPO,70.8603,50549,2025-12-10T16:52:08Z,334673.1969,False,,70.99,70.85,,L,12,31,0,,regular,
+4474,EXPO,70.7901,17186,2025-12-10T15:06:01Z,316714.9074,False,,71.27,71.02,,L,205,20,0,,regular,

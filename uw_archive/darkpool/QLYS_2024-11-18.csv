@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4621,QLYS,143.86,419009,2024-11-18T21:55:01Z,False,664777.06,,162.57,142.91,extended_hours_trade,L,100,5,60901507377405,,,
+1791,QLYS,143.86,414293,2024-11-18T21:20:00Z,False,257653.26,prior_reference_price,162.57,136.47,extended_hours_trade,L,100,117,58800535975371,,,
+9749,QLYS,144.348,412501,2024-11-18T21:06:24Z,False,1407248.652,average_price_trade,164,136.47,extended_hours_trade,L,1,117,57984928320224,,,
+4500,QLYS,143.86,402291,2024-11-18T21:02:18Z,False,647370.00,prior_reference_price,164,136.47,extended_hours_trade,L,1,117,57738453255499,,,
+1765,QLYS,143.86,397558,2024-11-18T21:01:48Z,False,253912.90,prior_reference_price,164,136.47,extended_hours_trade,L,1,117,57708417498561,,,
+850,QLYS,143.86,297508,2024-11-18T20:56:24Z,False,122281.00,,143.88,143.82,,L,53,100,57384556638351,,,
+700,QLYS,144.725,173148,2024-11-18T19:03:57Z,False,101307.500,,144.80,144.71,,L,16,32,50637155314221,,,
+4699,QLYS,146.19,24470,2024-11-18T15:09:03Z,False,686946.81,,146.10,145.70,,L,16,100,36543672015385,,,

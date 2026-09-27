@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+7836,MTDR,40.04,2185916,2025-05-07T20:01:50Z,313753.44,False,prior_reference_price,40.82,38.40,extended_hours_trade,L,41,2,57710480975837,,,
+3192,MTDR,40.04,2171588,2025-05-07T20:00:31Z,127807.68,False,prior_reference_price,42,38.40,extended_hours_trade,L,1,2,57631462428780,,,
+2921,MTDR,40.04,2166975,2025-05-07T20:00:31Z,116956.84,False,prior_reference_price,42,38.40,extended_hours_trade,L,1,2,57631428946835,,,
+3496,MTDR,40.04,2162993,2025-05-07T20:00:31Z,139979.84,False,prior_reference_price,42,38.40,extended_hours_trade,L,1,2,57631414564607,,,
+6975,MTDR,40.04,2156483,2025-05-07T20:00:31Z,279279.00,False,prior_reference_price,42,38.40,extended_hours_trade,L,1,2,57631320065492,,,
+3312,MTDR,40.04,2149508,2025-05-07T20:00:07Z,132612.48,False,,42,38.40,extended_hours_trade,L,1,2,57607444699572,,,
+8100,MTDR,39.44,985131,2025-05-07T18:11:20Z,319464.00,False,,39.48,39.43,,L,8,100,51080218087195,,,
+11700,MTDR,39.87,633416,2025-05-07T16:54:00Z,466479.00,False,,39.89,39.85,,L,100,59,46440778238596,,,
+3454,MTDR,39.72,441034,2025-05-07T15:51:59Z,137192.88,False,,39.77,39.72,,L,100,305,42719953301555,,,
+4594,MTDR,39.7204,436932,2025-05-07T15:51:57Z,182475.5176,False,,39.77,39.72,,L,100,49,42717296782007,,,
+3250,MTDR,40.07,28864,2025-05-07T13:34:35Z,130227.50,False,,40.34,40.08,,L,4,500,34475573625186,,,
+8584,MTDR,40.33,8836,2025-05-07T13:18:11Z,346192.72,False,,41.25,40.44,extended_hours_trade,L,2,4,33491532549343,,,

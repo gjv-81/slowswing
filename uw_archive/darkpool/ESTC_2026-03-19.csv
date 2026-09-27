@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+8517,ESTC,55.15,1619012,2026-03-19T21:51:16Z,False,469712.55,average_price_trade,54.09,55.52,extended_hours_trade_late_or_out_of_sequence,L,100,36,39548137537572,,regular,2026-03-19T21:51:16Z
+188239,ESTC,55.15,1610492,2026-03-19T20:52:57Z,False,10381380.85,prior_reference_price,54.09,55.52,extended_hours_trade,L,100,36,39548134039351,,regular,2026-03-19T20:52:57Z
+5504,ESTC,55.15,1420742,2026-03-19T20:01:22Z,False,303545.60,prior_reference_price,52.97,55.52,extended_hours_trade,L,100,3,39548130943716,,regular,2026-03-19T20:01:22Z
+4190,ESTC,55.15,1412287,2026-03-19T20:00:30Z,False,231078.50,prior_reference_price,54,57,extended_hours_trade,L,10,50,39548130891877,,regular,2026-03-19T20:00:30Z
+5773,ESTC,55.15,1406763,2026-03-19T20:00:30Z,False,318380.95,prior_reference_price,54,57,extended_hours_trade,L,10,50,39548130891653,,regular,2026-03-19T20:00:30Z
+2208,ESTC,55.15,1399193,2026-03-19T20:00:05Z,False,121771.20,,54,57,extended_hours_trade,L,10,50,39548130867557,,regular,2026-03-19T20:00:05Z
+2500,ESTC,55.2776,1142380,2026-03-19T19:58:57Z,False,138194.0000,average_price_trade,55.3,55.32,,L,299,305,39548130798756,derivative_priced,regular,2026-03-19T19:58:57Z
+2100,ESTC,55.1769,950428,2026-03-19T19:48:54Z,False,115871.4900,average_price_trade,55.24,55.26,,L,260,40,39548130195886,derivative_priced,regular,2026-03-19T19:48:54Z
+2000,ESTC,54.54,172652,2026-03-19T14:15:03Z,False,109080.00,,54.42,54.55,,L,157,100,39548110165094,,regular,2026-03-19T14:15:03Z
+2500,ESTC,56.166,29814,2026-03-19T13:35:47Z,False,140415.000,,56.08,56.34,,L,10,4,39548107809192,,regular,2026-03-19T13:35:47Z
+2500,ESTC,55.5705,17569,2026-03-19T13:30:46Z,False,138926.2500,,55.53,56.49,,L,109,110,39548107508270,,regular,2026-03-19T13:30:46Z

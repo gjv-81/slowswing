@@ -1,0 +1,3 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+118619,PBF,30.36,3447211,2025-12-12T22:11:40Z,False,3601272.84,average_price_trade,27.56,30.95,extended_hours_trade,L,64,100,0,,regular,
+13488,PBF,30.36,3324221,2025-12-12T21:00:39Z,False,409495.68,prior_reference_price,0,0,extended_hours_trade,L,0,0,0,,regular,

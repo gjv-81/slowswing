@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5273,OLED,143.63,441025,2025-09-30T20:41:22Z,False,757360.99,,142,146.36,extended_hours_trade,L,11,25,0,,regular,
+711,OLED,143.63,434689,2025-09-30T20:02:24Z,False,102120.93,prior_reference_price,142,165,extended_hours_trade,L,6,25,0,,regular,
+1200,OLED,141.95,118095,2025-09-30T17:14:31Z,False,170340.00,,142.04,142.25,,L,10,25,0,,regular,
+729,OLED,142.39,51728,2025-09-30T15:10:59Z,False,103802.31,,142.25,142.53,,L,7,1,0,,regular,
+1200,OLED,144.65,24511,2025-09-30T14:06:54Z,False,173580.00,,144.65,145.25,,L,12,103,0,,regular,
+1370,OLED,145.43,19924,2025-09-30T14:00:36Z,False,199239.10,,145.24,145.62,,L,149,201,0,,regular,

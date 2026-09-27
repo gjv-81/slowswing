@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+8116,KBR,35.51,1579787,2026-07-14T20:00:31Z,288199.16,False,prior_reference_price,0,33.55,extended_hours_trade,L,0,3,32676183219741,,regular,2026-07-14T20:00:31Z
+4200,KBR,35.91,545589,2026-07-14T16:37:41Z,150822.00,False,,35.94,35.87,,L,45,246,32676171049276,,regular,2026-07-14T16:37:41Z
+5414,KBR,35.86,477929,2026-07-14T16:24:43Z,194146.04,False,,35.87,35.85,,L,189,12,32676170271313,,regular,2026-07-14T16:24:43Z
+4029,KBR,35.21,46693,2026-07-14T13:43:45Z,141861.09,False,,35.31,35.2,,L,100,100,32676160613257,,regular,2026-07-14T13:43:45Z

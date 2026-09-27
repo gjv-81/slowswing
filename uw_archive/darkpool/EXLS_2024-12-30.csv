@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+12757,EXLS,44.26,564045,2024-12-30T21:00:10Z,564624.82,False,,44.59,39.98,extended_hours_trade,L,57,1,57610195005004,,,
+5467,EXLS,44.33,206477,2024-12-30T18:13:31Z,242352.11,False,,44.37,44.35,,L,135,1,47611618093062,,,
+2910,EXLS,44.25,151133,2024-12-30T17:12:11Z,128767.50,False,,44.27,44.23,,L,112,27,43931066356583,,,
+2513,EXLS,44.2199,112276,2024-12-30T16:40:13Z,111124.6087,False,,44.22,44.17,,L,17,3,42013534589413,,,
+2900,EXLS,44.14,106058,2024-12-30T16:35:55Z,128006.00,False,,44.16,44.13,,L,138,400,41755777853199,,,

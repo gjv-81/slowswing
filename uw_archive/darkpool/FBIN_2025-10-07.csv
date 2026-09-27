@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+15225,FBIN,51.01,916004,2025-10-07T20:02:12Z,False,776627.25,,50,52.02,extended_hours_trade,L,32,10,0,,regular,
+27065,FBIN,51.01,899775,2025-10-07T20:00:45Z,False,1380585.65,prior_reference_price,50,52.02,extended_hours_trade,L,32,10,0,,regular,
+3000,FBIN,51.01,872710,2025-10-07T20:00:19Z,False,153030.00,prior_reference_price,50,52.02,extended_hours_trade,L,32,10,0,,regular,
+3821,FBIN,51.01,868786,2025-10-07T20:00:19Z,False,194909.21,prior_reference_price,50,52.02,extended_hours_trade,L,32,10,0,,regular,
+4100,FBIN,51.01,860765,2025-10-07T20:00:18Z,False,209141.00,prior_reference_price,50,52.02,extended_hours_trade,L,32,10,0,,regular,
+2234,FBIN,51.01,855313,2025-10-07T20:00:18Z,False,113956.34,prior_reference_price,50,52.02,extended_hours_trade,L,32,10,0,,regular,
+4485,FBIN,51.0201,670790,2025-10-07T19:59:24Z,False,228825.1485,,51.09,51.1,,L,563,20,0,,regular,
+2289,FBIN,51.0422,246648,2025-10-07T16:53:27Z,False,116835.5958,,51.02,51.06,,L,7,100,0,,regular,

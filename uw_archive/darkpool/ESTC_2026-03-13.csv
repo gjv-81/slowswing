@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+282400,ESTC,51.49,2035228,2026-03-13T20:03:45Z,14540776.00,False,prior_reference_price,52.02,51.07,extended_hours_trade,L,100,200,39548131087008,,regular,2026-03-13T20:03:45Z
+282500,ESTC,51.49,1752828,2026-03-13T20:03:39Z,14545925.00,False,prior_reference_price,52.02,51.07,extended_hours_trade,L,100,200,39548131081280,,regular,2026-03-13T20:03:39Z
+2575,ESTC,51.49,1466987,2026-03-13T20:00:22Z,132586.75,False,prior_reference_price,54.5,51,extended_hours_trade,L,500,50,39548130884195,,regular,2026-03-13T20:00:22Z
+10500,ESTC,51.49,1464412,2026-03-13T20:00:22Z,540645.00,False,prior_reference_price,54.5,51,extended_hours_trade,L,500,50,39548130884090,,regular,2026-03-13T20:00:22Z
+31106,ESTC,51.49,1453812,2026-03-13T20:00:22Z,1601647.94,False,prior_reference_price,54.5,51,extended_hours_trade,L,500,50,39548130884066,,regular,2026-03-13T20:00:22Z
+2112,ESTC,51.2917,927636,2026-03-13T19:39:35Z,108328.0704,False,,51.31,51.28,,L,201,290,39548129637318,,regular,2026-03-13T19:39:35Z
+4000,ESTC,51.5699,491229,2026-03-13T16:54:14Z,206279.6000,False,contingent_trade,51.55,51.46,,L,1,1,39548119715832,qualified_contingent_trade,regular,2026-03-13T16:54:14Z
+4258,ESTC,51.236,424134,2026-03-13T16:19:30Z,218162.888,False,,51.34,51.18,,L,1,41,39548117632191,,regular,2026-03-13T16:19:30Z
+1999,ESTC,52.36,203254,2026-03-13T14:45:50Z,104667.64,False,,52.44,52.33,,L,240,1,39548112012462,,regular,2026-03-13T14:45:50Z
+2141,ESTC,52.135,68106,2026-03-13T13:51:05Z,111621.035,False,,52.24,51.95,,L,101,106,39548108727166,,regular,2026-03-13T13:51:05Z

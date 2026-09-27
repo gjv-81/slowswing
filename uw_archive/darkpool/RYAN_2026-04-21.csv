@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3689,RYAN,38.25,1352918,2026-04-21T20:01:35Z,False,141104.25,prior_reference_price,0,34.75,extended_hours_trade,L,0,6,22183578179028,,regular,2026-04-21T20:01:35Z
+3432,RYAN,38.25,1345472,2026-04-21T20:00:41Z,False,131274.00,prior_reference_price,0,34.75,extended_hours_trade,L,0,6,22183578125466,,regular,2026-04-21T20:00:41Z
+66163,RYAN,38.2,749234,2026-04-21T19:18:22Z,False,2527426.6,,38.28,38.26,,L,19,139,22183575585968,intermarket_sweep,regular,2026-04-21T19:18:22Z
+2984,RYAN,37.73,471237,2026-04-21T17:19:09Z,False,112586.32,,37.72,37.66,,L,2,27,22183568433696,,regular,2026-04-21T17:19:09Z
+24800,RYAN,38,233911,2026-04-21T15:33:25Z,False,942400,,37.92,37.87,,L,101,9,22183562088885,intermarket_sweep,regular,2026-04-21T15:33:25Z
+2693,RYAN,38.455,40451,2026-04-21T13:57:40Z,False,103559.315,,38.64,38.35,,L,133,501,22183556344191,,regular,2026-04-21T13:57:40Z
+2700,RYAN,38.205,26212,2026-04-21T13:45:53Z,False,103153.500,,38.35,38.01,,L,92,12,22183555637648,,regular,2026-04-21T13:45:53Z

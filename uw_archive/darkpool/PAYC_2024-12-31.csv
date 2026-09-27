@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+652,PAYC,204.97,313222,2024-12-31T21:11:40Z,133640.44,False,,265,201.01,extended_hours_trade,L,2,1,58300680768695,,,
+652,PAYC,204.97,313172,2024-12-31T21:05:07Z,133640.44,True,,265,201.01,extended_hours_trade,L,2,1,57907908528849,,,
+535,PAYC,204.97,312518,2024-12-31T21:02:44Z,109658.95,False,prior_reference_price,265,177.77,extended_hours_trade,L,2,10,57764088043554,,,
+1220,PAYC,204.97,311442,2024-12-31T21:01:05Z,250063.40,False,prior_reference_price,0,177.77,extended_hours_trade,L,0,10,57665347615419,,,
+9200,PAYC,204.97,309397,2024-12-31T21:00:23Z,1885724.00,False,prior_reference_price,0,177.77,extended_hours_trade,L,0,10,57623839182113,,,
+496,PAYC,204.97,300197,2024-12-31T21:00:23Z,101665.12,False,prior_reference_price,0,177.77,extended_hours_trade,L,0,10,57623836912979,,,
+500,PAYC,204.38,145918,2024-12-31T20:45:57Z,102190.00,False,,204.44,204.31,,L,30,6,56757543945602,,,
+605,PAYC,204.22,94326,2024-12-31T18:46:26Z,123553.10,False,,204.60,204.21,,L,3,5,49586379047585,,,
+889,PAYC,203.67,73542,2024-12-31T17:37:23Z,181062.63,False,,203.95,203.55,,L,16,133,45443498183656,,,
+889,PAYC,203.55,72503,2024-12-31T17:37:23Z,180955.95,False,,203.95,203.55,,L,123,102,45443496301214,,,

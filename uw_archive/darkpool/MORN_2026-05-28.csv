@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4270,MORN,180.11,390609,2026-05-28T20:55:32Z,False,769069.70,average_price_trade,176.63,183.62,extended_hours_trade,L,10,11,32255279725009,,regular,2026-05-28T20:55:31Z
+1049,MORN,180.11,386239,2026-05-28T20:00:16Z,False,188935.39,prior_reference_price,170,183.25,extended_hours_trade,L,1,3,32255276409362,,regular,2026-05-28T20:00:16Z
+558,MORN,180.11,384604,2026-05-28T20:00:15Z,False,100501.38,prior_reference_price,170,183.25,extended_hours_trade,L,1,3,32255276408933,,regular,2026-05-28T20:00:15Z
+2265,MORN,180.11,383687,2026-05-28T20:00:15Z,False,407949.15,prior_reference_price,170,183.25,extended_hours_trade,L,1,3,32255276408616,,regular,2026-05-28T20:00:15Z
+728,MORN,180.11,381117,2026-05-28T20:00:15Z,False,131120.08,prior_reference_price,170,183.25,extended_hours_trade,L,1,3,32255276408594,,regular,2026-05-28T20:00:15Z
+1034,MORN,180.11,380389,2026-05-28T20:00:15Z,False,186233.74,prior_reference_price,170,183.25,extended_hours_trade,L,1,3,32255276408590,,regular,2026-05-28T20:00:15Z
+15000,MORN,180.11,378651,2026-05-28T20:00:07Z,False,2701650.00,average_price_trade,179.26,180.96,extended_hours_trade,L,220,220,32255276400191,,regular,2026-05-28T20:00:06Z

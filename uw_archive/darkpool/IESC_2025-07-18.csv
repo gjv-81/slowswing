@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+938,IESC,327.15,416336,2025-07-18T20:00:14Z,306866.70,False,prior_reference_price,331,324.50,extended_hours_trade,L,23,1,57614807133951,,regular,
+324,IESC,325.895,75468,2025-07-18T17:53:34Z,105589.980,False,,326.81,326.22,,L,51,1,50014158275549,,regular,
+769,IESC,326.0959,68506,2025-07-18T17:23:56Z,250767.7471,False,,326,325,,L,24,30,48236185594662,,regular,
+400,IESC,331.185,45249,2025-07-18T16:02:17Z,132474.000,False,,332.19,330.97,,L,10,3,43337378354139,,regular,
+500,IESC,328.0956,29778,2025-07-18T15:05:35Z,164047.8000,False,,328.59,327.03,,L,3,13,39935633450459,,regular,
+320,IESC,328.59,28981,2025-07-18T15:04:23Z,105148.80,False,,328.59,327.03,,L,3,13,39863973005668,,regular,
+975,IESC,329.995,15461,2025-07-18T14:14:31Z,321745.125,False,,330.79,330,,L,16,5,36871908156425,,regular,

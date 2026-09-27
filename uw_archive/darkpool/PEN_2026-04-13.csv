@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+698,PEN,331.04,147075,2026-04-13T19:45:28Z,231065.92,False,,331.14,330.96,,L,28,14,36429983732881,,regular,2026-04-13T19:45:28Z
+2654,PEN,331.04,112146,2026-04-13T18:05:15Z,878580.16,False,,331.06,331.02,,L,51,3,36429977719862,,regular,2026-04-13T18:05:15Z
+7610,PEN,330.0837,14033,2026-04-13T13:47:30Z,2511936.9570,False,contingent_trade,330.43,329.98,,L,20,40,36429962254861,qualified_contingent_trade,regular,2026-04-13T13:47:30Z

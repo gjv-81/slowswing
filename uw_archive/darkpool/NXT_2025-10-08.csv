@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3710,NXT,78.5,893990,2025-10-08T20:00:37Z,291235.0,False,prior_reference_price,80,77.99,extended_hours_trade,L,500,4,0,,regular,
+1928,NXT,78.5,889866,2025-10-08T20:00:07Z,151348.0,False,,78.51,78.5,extended_hours_trade,L,612,665,0,,regular,
+1512,NXT,78.5,885513,2025-10-08T20:00:02Z,118692.0,False,,78.51,78.5,extended_hours_trade,L,612,665,0,,regular,
+2003,NXT,78.5,884001,2025-10-08T20:00:02Z,157235.5,False,,78.51,78.5,extended_hours_trade,L,612,665,0,,regular,
+3000,NXT,78.5,668631,2025-10-08T19:56:22Z,235500.0,False,,78.53,78.47,,L,63,19,0,,regular,
+1500,NXT,78.3318,540188,2025-10-08T19:34:23Z,117497.7000,False,average_price_trade,78.4,78.35,,L,270,33,0,derivative_priced,regular,
+7700,NXT,78.08,323000,2025-10-08T17:10:47Z,601216.00,False,,78.2,78.09,,L,105,1,0,,regular,
+1338,NXT,78.25,304077,2025-10-08T16:59:54Z,104698.50,False,,78.27,78.23,,L,1,40,0,,regular,
+1370,NXT,78.065,297232,2025-10-08T16:58:19Z,106949.050,False,,78.1,78.03,,L,106,142,0,,regular,
+5000,NXT,78.385,198587,2025-10-08T15:26:52Z,391925.000,False,,78.45,78.33,,L,151,22,0,,regular,

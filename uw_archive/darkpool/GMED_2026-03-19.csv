@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2279,GMED,86.3,822663,2026-03-19T21:51:15Z,196677.7,False,average_price_trade,87.89,84.73,extended_hours_trade_late_or_out_of_sequence,L,56,58,32036239736558,,regular,2026-03-19T21:51:15Z
+3695,GMED,86.3,820314,2026-03-19T20:52:56Z,318878.5,False,prior_reference_price,87.89,84.73,extended_hours_trade,L,45,46,32036236237362,,regular,2026-03-19T20:52:56Z
+18585,GMED,86.3,816138,2026-03-19T20:01:17Z,1603885.5,False,prior_reference_price,87.98,82.68,extended_hours_trade,L,22,16,32036233138758,,regular,2026-03-19T20:01:17Z
+4315,GMED,86.3,797403,2026-03-19T20:00:53Z,372384.5,False,prior_reference_price,92.5,82.68,extended_hours_trade,L,2,16,32036233113954,,regular,2026-03-19T20:00:53Z
+15700,GMED,86.3,790947,2026-03-19T20:00:50Z,1354910.0,False,prior_reference_price,92.5,82.68,extended_hours_trade,L,2,16,32036233111815,,regular,2026-03-19T20:00:50Z
+1700,GMED,86.3,774204,2026-03-19T20:00:50Z,146710.0,False,prior_reference_price,92.5,82.68,extended_hours_trade,L,2,16,32036233111754,,regular,2026-03-19T20:00:50Z
+1843,GMED,86.3,772503,2026-03-19T20:00:50Z,159050.9,False,prior_reference_price,92.5,82.68,extended_hours_trade,L,2,16,32036233111678,,regular,2026-03-19T20:00:50Z
+2042,GMED,86.3,770426,2026-03-19T20:00:50Z,176224.6,False,prior_reference_price,92.5,82.68,extended_hours_trade,L,2,16,32036233111505,,regular,2026-03-19T20:00:50Z
+2100,GMED,86.3,768384,2026-03-19T20:00:50Z,181230.0,False,prior_reference_price,92.5,82.68,extended_hours_trade,L,2,16,32036233111397,,regular,2026-03-19T20:00:50Z
+3387,GMED,85.346,278216,2026-03-19T18:53:08Z,289066.902,False,,85.41,85.34,,L,11,220,32036229049099,,regular,2026-03-19T18:53:08Z
+1510,GMED,85.8843,118777,2026-03-19T15:49:53Z,129685.2930,False,,86.01,85.84,,L,14,170,32036218054477,,regular,2026-03-19T15:49:53Z
+3092,GMED,85.995,104155,2026-03-19T15:38:38Z,265896.540,False,,86.08,85.91,,L,102,215,32036217379067,,regular,2026-03-19T15:38:38Z

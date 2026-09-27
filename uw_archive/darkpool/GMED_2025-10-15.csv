@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+20100,GMED,58.33,1062853,2025-10-15T21:59:41Z,1172433.00,False,prior_reference_price,58.76,57.88,extended_hours_trade,L,74,74,0,,regular,
+20906,GMED,58.33,1042753,2025-10-15T21:59:41Z,1219446.98,False,prior_reference_price,58.76,57.88,extended_hours_trade,L,74,74,0,,regular,
+5367,GMED,58.33,1017347,2025-10-15T20:00:24Z,313057.11,False,prior_reference_price,58.41,58.35,extended_hours_trade,L,49,24,0,,regular,
+6633,GMED,58.55,565534,2025-10-15T19:29:26Z,388362.15,False,,58.56,58.54,,L,300,174,0,,regular,
+1826,GMED,58.515,529461,2025-10-15T19:20:05Z,106848.390,False,,58.53,58.49,,L,303,604,0,,regular,
+1721,GMED,58.19,248310,2025-10-15T15:37:21Z,100144.99,False,,58.27,58.14,,L,172,1,0,,regular,
+7500,GMED,58.415,228510,2025-10-15T15:31:45Z,438112.500,False,,58.48,58.37,,L,158,9,0,,regular,
+2758,GMED,58.51,142808,2025-10-15T14:49:28Z,161370.58,False,,58.51,58.42,,L,347,33,0,,regular,
+1999,GMED,58.75,37972,2025-10-15T13:42:59Z,117441.25,False,,58.79,58.43,,L,100,11,0,,regular,

@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+26510,IRDM,16.7792,1695718,2025-11-07T21:04:38Z,False,444816.5920,prior_reference_price,16.74,16.91,extended_hours_trade,L,3,10,0,,regular,
+7309,IRDM,16.78,1654834,2025-11-07T21:00:00Z,False,122645.02,,16.78,16.91,extended_hours_trade,L,3,454,0,,regular,
+16000,IRDM,16.6,340803,2025-11-07T16:16:53Z,False,265600.0,,16.6,16.62,,L,54,282,0,,regular,

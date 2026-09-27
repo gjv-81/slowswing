@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+19901,HRB,44.03,2394377,2026-07-31T20:06:07Z,876241.03,False,prior_reference_price,81.63,35.01,extended_hours_trade,L,1,2,25211530395272,,regular,2026-07-31T20:06:07Z
+5807,HRB,44.03,2374476,2026-07-31T20:05:16Z,255682.21,False,prior_reference_price,81.63,35.01,extended_hours_trade,L,1,2,25211530344403,,regular,2026-07-31T20:05:16Z
+10439,HRB,44.03,2368661,2026-07-31T20:00:45Z,459629.17,False,prior_reference_price,81.63,35.01,extended_hours_trade,L,1,2,25211530073227,,regular,2026-07-31T20:00:45Z
+11304,HRB,44.03,2358118,2026-07-31T20:00:45Z,497715.12,False,prior_reference_price,81.63,35.01,extended_hours_trade,L,1,2,25211530072934,,regular,2026-07-31T20:00:45Z
+3552,HRB,44.03,2345427,2026-07-31T20:00:45Z,156394.56,False,prior_reference_price,81.63,35.01,extended_hours_trade,L,1,2,25211530072629,,regular,2026-07-31T20:00:45Z
+2661,HRB,44.03,2338723,2026-07-31T20:00:44Z,117163.83,False,prior_reference_price,81.63,35.01,extended_hours_trade,L,1,2,25211530072286,,regular,2026-07-31T20:00:44Z
+3700,HRB,44.03,2334536,2026-07-31T20:00:44Z,162911.00,False,prior_reference_price,81.63,35.01,extended_hours_trade,L,1,2,25211530072261,,regular,2026-07-31T20:00:44Z
+5430,HRB,44.03,2330836,2026-07-31T20:00:44Z,239082.90,False,prior_reference_price,81.63,35.01,extended_hours_trade,L,1,2,25211530072237,,regular,2026-07-31T20:00:44Z
+3060,HRB,44.0534,1432876,2026-07-31T19:55:06Z,134803.4040,False,average_price_trade,44.17,44.11,,L,2,102,25211529733888,derivative_priced,regular,2026-07-31T19:55:06Z
+3823,HRB,43.945,837425,2026-07-31T17:07:23Z,168001.735,False,,43.96,43.93,,L,4,100,25211519671478,,regular,2026-07-31T17:07:23Z
+6984,HRB,43.29,611959,2026-07-31T15:24:41Z,302337.36,False,,43.36,43.3,,L,50,51,25211513509374,,regular,2026-07-31T15:24:41Z
+8707,HRB,43.435,33390,2026-07-31T13:30:10Z,378188.545,False,,43.75,43.11,,L,10,100,25211506638103,,regular,2026-07-31T13:30:10Z

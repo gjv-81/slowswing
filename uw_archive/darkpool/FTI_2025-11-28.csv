@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3011,FTI,45.26,1432180,2025-11-28T18:00:06Z,False,136277.86,,45.24,45.26,extended_hours_trade,L,83,194,0,,regular,
+3700,FTI,45.34,518742,2025-11-28T16:15:41Z,False,167758.00,,45.34,45.35,,L,25,12,0,,regular,
+3250,FTI,45.15,173576,2025-11-28T14:59:06Z,False,146737.50,,45.13,45.17,,L,39,105,0,,regular,

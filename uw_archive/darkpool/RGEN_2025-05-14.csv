@@ -1,0 +1,12 @@
+size,ticker,price,volume,canceled,premium,executed_at,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+997,RGEN,128.04,497046,False,127655.88,2025-05-14T20:05:02Z,,128.87,125.56,extended_hours_trade,L,1,7,57902779646282,,,
+1626,RGEN,128.04,496047,False,208193.04,2025-05-14T20:03:09Z,prior_reference_price,128.87,125.56,extended_hours_trade,L,1,7,57789339619654,,,
+1899,RGEN,128.04,493319,False,243147.96,2025-05-14T20:02:01Z,prior_reference_price,128.87,125.56,extended_hours_trade,L,1,7,57721298637298,,,
+808,RGEN,128.04,490283,False,103456.32,2025-05-14T20:00:14Z,prior_reference_price,128.87,126.31,extended_hours_trade,L,1,1,57614047267018,,,
+2979,RGEN,128.04,489107,False,381431.16,2025-05-14T20:00:14Z,prior_reference_price,128.87,126.31,extended_hours_trade,L,1,1,57614002424696,,,
+1411,RGEN,128.04,486128,False,180664.44,2025-05-14T20:00:13Z,prior_reference_price,128.87,126.31,extended_hours_trade,L,1,1,57613998069817,,,
+2813,RGEN,128.04,483846,False,360176.52,2025-05-14T20:00:01Z,,128.87,126.31,extended_hours_trade,L,1,1,57601810077295,,,
+13210,RGEN,127.71,373959,False,1687049.10,2025-05-14T19:56:46Z,,127.76,127.66,,L,456,132,57406969810953,,,
+905,RGEN,127.71,359500,False,115577.55,2025-05-14T19:56:40Z,average_price_trade,127.76,127.66,,L,328,226,57400108068632,derivative_priced,,
+1367,RGEN,128.72,292294,False,175960.24,2025-05-14T19:37:17Z,,128.84,128.60,,L,44,100,56237978684879,,,
+1000,RGEN,129.03,7928,False,129030.00,2025-05-14T13:40:07Z,,131.33,130.06,,L,68,108,34807444057077,,,

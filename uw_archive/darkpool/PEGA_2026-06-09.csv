@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4182,PEGA,34.16,2129074,2026-06-09T20:00:39Z,False,142857.12,prior_reference_price,33.25,35,extended_hours_trade,L,2,10,30112087752031,,regular,2026-06-09T20:00:39Z
+3463,PEGA,34.16,2116718,2026-06-09T20:00:38Z,False,118296.08,prior_reference_price,33.25,35,extended_hours_trade,L,2,10,30112087750458,,regular,2026-06-09T20:00:38Z
+12500,PEGA,34.16,1899048,2026-06-09T20:00:00Z,False,427000.00,,34.15,34.16,extended_hours_trade,L,372,864,30112087712703,,regular,2026-06-09T20:00:00Z
+4500,PEGA,33.535,681377,2026-06-09T15:32:54Z,False,150907.500,,33.52,33.54,,L,47,161,30112071686436,,regular,2026-06-09T15:32:54Z
+13591,PEGA,34.89,172884,2026-06-09T14:01:21Z,False,474189.99,,34.84,34.91,,L,1,100,30112066193268,,regular,2026-06-09T14:01:21Z

@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+743,KRYS,275.64,207384,2026-02-27T22:21:11Z,204800.52,False,prior_reference_price,295.48,268.8,extended_hours_trade,L,1,10,38186634699863,,regular,2026-02-27T22:21:11Z
+535,KRYS,275.6111,206433,2026-02-27T21:11:53Z,147451.9385,False,prior_reference_price,295.48,268.8,extended_hours_trade,L,1,10,38186630541976,,regular,2026-02-27T21:11:53Z
+699,KRYS,275.5945,205796,2026-02-27T21:08:12Z,192640.5555,False,prior_reference_price,295.48,268.8,extended_hours_trade,L,1,10,38186630320968,,regular,2026-02-27T21:08:12Z
+1018,KRYS,275.639,205049,2026-02-27T21:04:03Z,280600.502,False,average_price_trade,295.48,268.8,extended_hours_trade,L,1,10,38186630071831,,regular,2026-02-27T21:04:03Z
+905,KRYS,275.6339,203731,2026-02-27T21:03:53Z,249448.6795,False,average_price_trade,295.48,268.8,extended_hours_trade,L,1,10,38186630062148,,regular,2026-02-27T21:03:53Z
+487,KRYS,275.639,202750,2026-02-27T21:03:32Z,134236.193,False,average_price_trade,295.48,268.8,extended_hours_trade,L,1,10,38186630041621,,regular,2026-02-27T21:03:32Z
+367,KRYS,275.64,201629,2026-02-27T21:01:34Z,101159.88,False,prior_reference_price,295.48,268.8,extended_hours_trade,L,1,10,38186629923094,,regular,2026-02-27T21:01:34Z
+1211,KRYS,275.64,201262,2026-02-27T21:01:30Z,333800.04,False,prior_reference_price,295.48,268.8,extended_hours_trade,L,1,10,38186629919523,,regular,2026-02-27T21:01:30Z
+673,KRYS,275.64,199088,2026-02-27T21:00:09Z,185505.72,False,,278.6,272.5,extended_hours_trade,L,1,28,38186629838722,,regular,2026-02-27T21:00:09Z
+776,KRYS,273.02,83680,2026-02-27T19:59:37Z,211863.52,False,,273.73,272.91,,L,50,20,38186626206542,,regular,2026-02-27T19:59:37Z
+400,KRYS,272.69,64575,2026-02-27T18:38:36Z,109076.00,False,,274.7,272.69,,L,51,300,38186621345088,,regular,2026-02-27T18:38:36Z
+476,KRYS,275.9,41866,2026-02-27T16:34:28Z,131328.4,False,,275.9,274.81,,L,48,10,38186613897424,,regular,2026-02-27T16:34:28Z

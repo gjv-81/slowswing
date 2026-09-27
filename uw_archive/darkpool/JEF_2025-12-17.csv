@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+7800,JEF,61.04,978849,2025-12-17T22:38:00Z,476112.00,False,prior_reference_price,60.89,59.94,extended_hours_trade,L,49,41,26487144795217,,regular,
+7800,JEF,61.04,978849,2025-12-17T22:36:59Z,476112.00,True,prior_reference_price,60.89,59.94,extended_hours_trade,L,49,41,26487144733724,,regular,
+5175,JEF,61.04,964385,2025-12-17T21:00:30Z,315882.00,False,prior_reference_price,61.05,61.02,extended_hours_trade,L,75,160,26487138944889,,regular,
+24900,JEF,61.04,958903,2025-12-17T21:00:30Z,1519896.00,False,prior_reference_price,61.05,61.02,extended_hours_trade,L,75,160,26487138944489,,regular,
+2393,JEF,61.04,932668,2025-12-17T21:00:29Z,146068.72,False,prior_reference_price,61.05,61.02,extended_hours_trade,L,75,160,26487138943881,,regular,
+4212,JEF,61.04,928357,2025-12-17T21:00:27Z,257100.48,False,prior_reference_price,61.05,61.02,extended_hours_trade,L,75,160,26487138942270,,regular,
+3150,JEF,60.925,591944,2025-12-17T20:45:07Z,191913.750,False,,60.94,60.91,,L,71,186,26487138022328,,regular,
+2730,JEF,60.8401,559637,2025-12-17T20:34:55Z,166093.4730,False,,60.86,60.81,,L,40,96,26487137409707,,regular,
+6162,JEF,60.64,425682,2025-12-17T19:04:57Z,373663.68,False,,60.64,60.6,,L,5,16,26487132012361,,regular,
+3685,JEF,60.5,402101,2025-12-17T19:03:53Z,222942.5,False,,60.5,60.4,,L,10,117,26487131948071,,regular,
+6315,JEF,60.5,408416,2025-12-17T19:03:53Z,382057.5,False,,60.5,60.4,,L,10,117,26487131948071,,regular,

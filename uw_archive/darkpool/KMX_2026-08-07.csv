@@ -1,0 +1,15 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+13878,KMX,58.18,1444304,2026-08-07T21:44:02Z,807422.04,False,average_price_trade,58.9,58,extended_hours_trade,L,5,30,31834375840153,,regular,2026-08-07T21:44:01Z
+90900,KMX,58.18,1430413,2026-08-07T20:59:18Z,5288562.00,False,average_price_trade,58.9,58,extended_hours_trade,L,5,30,31834373156675,,regular,2026-08-07T20:59:18Z
+90900,KMX,58.18,1430403,2026-08-07T20:49:21Z,5288562.00,True,average_price_trade,58.9,58,extended_hours_trade,L,5,30,31834372559684,,regular,2026-08-07T20:49:21Z
+103000,KMX,58.18,1442503,2026-08-07T20:15:02Z,5992540.00,True,average_price_trade,58.9,58,extended_hours_trade,L,5,30,31834370500866,,regular,2026-08-07T20:15:02Z
+2819,KMX,58.18,1339473,2026-08-07T20:00:27Z,164009.42,False,prior_reference_price,58.9,57.77,extended_hours_trade,L,5,100,31834369625540,,regular,2026-08-07T20:00:27Z
+1800,KMX,58.18,1336654,2026-08-07T20:00:27Z,104724.00,False,prior_reference_price,58.9,57.77,extended_hours_trade,L,5,100,31834369625536,,regular,2026-08-07T20:00:27Z
+2330,KMX,58.18,1333856,2026-08-07T20:00:27Z,135559.40,False,prior_reference_price,58.9,57.77,extended_hours_trade,L,5,100,31834369625489,,regular,2026-08-07T20:00:27Z
+6556,KMX,58.18,1331179,2026-08-07T20:00:25Z,381428.08,False,prior_reference_price,58.9,57.77,extended_hours_trade,L,5,100,31834369623478,,regular,2026-08-07T20:00:25Z
+20500,KMX,58.18,1324623,2026-08-07T20:00:25Z,1192690.00,False,prior_reference_price,58.9,57.77,extended_hours_trade,L,5,100,31834369623471,,regular,2026-08-07T20:00:25Z
+4888,KMX,58.18,1304123,2026-08-07T20:00:25Z,284383.84,False,prior_reference_price,58.9,57.77,extended_hours_trade,L,5,100,31834369623461,,regular,2026-08-07T20:00:25Z
+10613,KMX,58.18,1296775,2026-08-07T20:00:03Z,617464.34,False,,62.61,56.7,extended_hours_trade,L,100,15,31834369601665,,regular,2026-08-07T20:00:02Z
+2000,KMX,58.4003,199724,2026-08-07T16:13:08Z,116800.6000,False,,58.43,58.4,,L,82,231,31834355986662,,regular,2026-08-07T16:13:08Z
+6664,KMX,58.85,134522,2026-08-07T15:12:01Z,392176.40,False,,58.86,58.75,,L,5,58,31834352319161,,regular,2026-08-07T15:12:01Z
+1983,KMX,58.51,91853,2026-08-07T14:45:42Z,116025.33,False,,58.61,58.48,,L,1,164,31834350740583,,regular,2026-08-07T14:45:42Z

@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+21792,OPCH,21.3,1585051,2026-06-22T20:00:46Z,464169.6,False,prior_reference_price,21.69,19.5,extended_hours_trade,L,100,1,30133562595324,,regular,2026-06-22T20:00:46Z
+14490,OPCH,21.3,1562917,2026-06-22T20:00:13Z,308637.0,False,prior_reference_price,21.69,20.96,extended_hours_trade,L,100,20,30133562562618,,regular,2026-06-22T20:00:13Z
+11367,OPCH,21.3,1543861,2026-06-22T20:00:05Z,242117.1,False,average_price_trade,21.69,21.23,extended_hours_trade,L,100,1900,30133562554456,,regular,2026-06-22T20:00:05Z
+28000,OPCH,21.4,371555,2026-06-22T15:21:12Z,599200.0,False,,21.45,21.43,,L,140,238,30133545821595,,regular,2026-06-22T15:21:12Z

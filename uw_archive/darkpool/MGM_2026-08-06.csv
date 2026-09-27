@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+51681,MGM,44.7,2646071,2026-08-06T22:06:35Z,2310140.7,False,average_price_trade,45.4,44.6,extended_hours_trade,L,308,1,27904482117153,,regular,2026-08-06T22:06:34Z
+15376,MGM,44.7,2593813,2026-08-06T20:23:00Z,687307.2,False,prior_reference_price,45.23,43.5,extended_hours_trade,L,154,100,27904475902730,,regular,2026-08-06T20:23:00Z
+15376,MGM,44.7,2593813,2026-08-06T20:19:33Z,687307.2,True,prior_reference_price,45.23,43.5,extended_hours_trade,L,154,100,27904475695492,,regular,2026-08-06T20:19:33Z
+8822,MGM,44.7,2576622,2026-08-06T20:00:40Z,394343.4,False,prior_reference_price,0,43.5,extended_hours_trade,L,0,100,27904474562613,,regular,2026-08-06T20:00:40Z
+2451,MGM,44.7,2564878,2026-08-06T20:00:31Z,109559.7,False,prior_reference_price,0,43.5,extended_hours_trade,L,0,100,27904474553518,,regular,2026-08-06T20:00:31Z
+7302,MGM,44.7,2562427,2026-08-06T20:00:29Z,326399.4,False,prior_reference_price,0,43.5,extended_hours_trade,L,0,100,27904474551613,,regular,2026-08-06T20:00:29Z
+3000,MGM,44.765,1358329,2026-08-06T19:17:02Z,134295.000,False,,44.79,44.75,,L,100,82,27904471944221,,regular,2026-08-06T19:17:02Z
+8921,MGM,44.79,1019297,2026-08-06T17:42:33Z,399571.59,False,,44.85,44.84,,L,106,2,27904466275955,,regular,2026-08-06T17:42:33Z
+2700,MGM,44.94,120273,2026-08-06T13:44:39Z,121338.00,False,,45,44.85,,L,150,277,27904452001257,,regular,2026-08-06T13:44:39Z

@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+19002,FMC,13.88,2611035,2026-02-24T22:31:20Z,263747.76,False,prior_reference_price,13.95,13.6,extended_hours_trade,L,20,200,25593791197676,,regular,2026-02-24T22:31:20Z
+11807,FMC,13.88,2560185,2026-02-24T21:00:30Z,163881.16,False,prior_reference_price,13.95,13.6,extended_hours_trade,L,20,200,25593785747754,,regular,2026-02-24T21:00:30Z
+73569,FMC,13.78,1569480,2026-02-24T20:24:21Z,1013780.82,False,,13.81,13.78,,L,143,401,25593783577933,,regular,2026-02-24T20:24:21Z
+9300,FMC,13.78,1173946,2026-02-24T18:53:21Z,128154.00,False,,13.78,13.77,,L,271,366,25593778117973,,regular,2026-02-24T18:53:21Z
+27965,FMC,13.71,863287,2026-02-24T17:20:37Z,383400.15,False,,13.71,13.7,,L,245,35,25593772554827,,regular,2026-02-24T17:20:37Z
+169204,FMC,13.66,169438,2026-02-24T13:00:08Z,2311326.64,False,average_price_trade,13.95,13.6,extended_hours_trade,L,2384,200,25593756925125,,regular,2026-02-24T13:00:08Z

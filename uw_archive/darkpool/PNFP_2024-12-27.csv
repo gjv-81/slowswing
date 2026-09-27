@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1322,PNFP,114.21,265069,2024-12-27T21:00:14Z,150985.62,False,prior_reference_price,132.87,108,extended_hours_trade,L,1,1,57614681078526,,,
+10825,PNFP,113.50,64252,2024-12-27T16:54:35Z,1228637.50,False,,113.72,113.27,,L,158,5,42875296957485,,,
+1000,PNFP,115.30,9887,2024-12-27T15:04:31Z,115300.00,False,,115.42,115.01,,L,20,400,36271957721628,,,

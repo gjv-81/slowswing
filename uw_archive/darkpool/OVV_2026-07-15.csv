@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4293,OVV,56.0501,2313840,2026-07-15T21:12:26Z,False,240623.0793,average_price_trade,56.05,57.14,extended_hours_trade,L,35,15,34733476869111,,regular,2026-07-15T21:12:25Z
+2400,OVV,56.05,2309547,2026-07-15T20:45:36Z,False,134520.00,prior_reference_price,56.05,57.14,extended_hours_trade,L,35,15,34733475258817,,regular,2026-07-15T20:45:36Z
+4424,OVV,56.05,2305827,2026-07-15T20:00:36Z,False,247965.20,prior_reference_price,0,56.06,extended_hours_trade,L,40,0,34733472559712,,regular,2026-07-15T20:00:36Z
+2970,OVV,56.05,2298296,2026-07-15T20:00:36Z,False,166468.50,prior_reference_price,0,56.06,extended_hours_trade,L,40,0,34733472559658,,regular,2026-07-15T20:00:36Z
+3435,OVV,56.05,2293318,2026-07-15T20:00:33Z,False,192531.75,prior_reference_price,0,56.06,extended_hours_trade,L,40,0,34733472555838,,regular,2026-07-15T20:00:33Z
+75800,OVV,56.05,2289881,2026-07-15T20:00:09Z,False,4248590.00,average_price_trade,0,0,extended_hours_trade,L,0,0,34733472532573,,regular,2026-07-15T20:00:09Z
+7300,OVV,56.05,2212774,2026-07-15T20:00:02Z,False,409165.00,,53.23,60.14,extended_hours_trade,L,100,100,34733472525745,,regular,2026-07-15T20:00:02Z
+4000,OVV,56.1628,1617917,2026-07-15T19:57:31Z,False,224651.2000,average_price_trade,56.12,56.13,,L,5,119,34733472374265,derivative_priced,regular,2026-07-15T19:57:31Z
+2200,OVV,56.1461,1491736,2026-07-15T19:53:25Z,False,123521.4200,average_price_trade,56.15,56.17,,L,104,180,34733472128386,derivative_priced,regular,2026-07-15T19:53:25Z
+1835,OVV,56.21,1403384,2026-07-15T19:46:06Z,False,103145.35,,56.21,56.24,,L,104,172,34733471689477,,regular,2026-07-15T19:46:06Z
+3473,OVV,56.665,45149,2026-07-15T13:34:53Z,False,196797.545,,56.56,56.72,,L,20,1,34733449415772,,regular,2026-07-15T13:34:53Z
+10790,OVV,56.36,26238,2026-07-15T13:30:12Z,False,608124.40,,56.14,56.6,,L,100,150,34733449135526,,regular,2026-07-15T13:30:12Z

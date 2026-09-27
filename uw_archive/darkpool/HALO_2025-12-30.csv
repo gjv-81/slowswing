@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1965,HALO,67.7,859963,2025-12-30T21:01:12Z,False,133030.5,prior_reference_price,67,67.77,extended_hours_trade,L,1,10,31739883990066,,regular,
+3567,HALO,67.7,855382,2025-12-30T21:00:09Z,False,241485.9,,67,67.77,extended_hours_trade,L,1,10,31739883927142,,regular,
+1600,HALO,67.54,246753,2025-12-30T17:43:34Z,False,108064.00,,67.51,67.58,,L,122,6,31739872131804,,regular,
+2188,HALO,68.45,45614,2025-12-30T14:55:14Z,False,149768.60,,68.35,68.45,,L,446,100,31739862031692,,regular,

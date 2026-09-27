@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5000,HRB,42.75,1588967,2026-07-17T22:10:37Z,213750.00,False,,42.75,41.85,extended_hours_trade,L,139,99,25211537864835,,regular,2026-07-17T22:10:37Z
+159145,HRB,42.06,1583061,2026-07-17T20:01:54Z,6693638.70,False,average_price_trade,42.82,41.45,extended_hours_trade,L,372,384,25211530141941,,regular,2026-07-17T20:01:54Z
+2380,HRB,42.08,1418263,2026-07-17T20:00:38Z,100150.40,False,prior_reference_price,42.86,39.99,extended_hours_trade,L,10,1,25211530066178,,regular,2026-07-17T20:00:38Z
+18374,HRB,42.08,1413575,2026-07-17T20:00:38Z,773177.92,False,prior_reference_price,42.86,39.99,extended_hours_trade,L,10,1,25211530065727,,regular,2026-07-17T20:00:38Z
+3100,HRB,42.0251,928191,2026-07-17T19:53:24Z,130277.8100,False,average_price_trade,41.99,41.95,,L,8,393,25211529631638,derivative_priced,regular,2026-07-17T19:53:24Z
+2563,HRB,42.67,41076,2026-07-17T13:50:09Z,109363.21,False,,42.74,42.59,,L,44,130,25211507837311,,regular,2026-07-17T13:50:09Z
+4392,HRB,42.675,32732,2026-07-17T13:46:21Z,187428.600,False,,42.82,42.58,,L,284,145,25211507609368,,regular,2026-07-17T13:46:21Z

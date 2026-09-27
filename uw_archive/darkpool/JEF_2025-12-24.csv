@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1940,JEF,63.9225,212480,2025-12-24T17:20:29Z,False,124009.6500,,63.9,63.94,,L,9,55,26487125744067,,regular,
+2684,JEF,63.775,166314,2025-12-24T16:46:48Z,False,171172.100,,63.73,63.8,,L,6,54,26487123723033,,regular,
+3292,JEF,63.765,159344,2025-12-24T16:43:05Z,False,209914.380,,63.73,63.77,,L,6,67,26487123499806,,regular,

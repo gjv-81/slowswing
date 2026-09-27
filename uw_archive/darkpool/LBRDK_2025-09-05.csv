@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+100401,LBRDK,59.98,1240473,2025-09-05T20:00:56Z,False,6022051.98,prior_reference_price,58.82,60,extended_hours_trade,L,200,215,57656399114396,,regular,
+14554,LBRDK,59.98,1135379,2025-09-05T20:00:02Z,False,872948.92,,58.50,60,extended_hours_trade,L,200,201,57602080502585,,regular,
+83444,LBRDK,59.95,833786,2025-09-05T16:50:12Z,False,5002467.80,average_price_trade,59.94,60.01,,L,4,139,46212320166284,derivative_priced,regular,
+3345,LBRDK,60.10,704395,2025-09-05T15:28:57Z,False,201034.50,,60.03,60.11,,L,16,18,41337039178758,,regular,
+250000,LBRDK,60.15,677796,2025-09-05T15:04:27Z,False,15037500.00,average_price_trade,60.07,60.20,,L,252,6,39867566399981,derivative_priced,regular,
+121904,LBRDK,60.90,361912,2025-09-05T14:09:44Z,False,7423953.60,average_price_trade,60.73,60.87,,L,101,300,36584258382032,derivative_priced,regular,
+150000,LBRDK,60.90,239970,2025-09-05T14:09:34Z,False,9135000.00,average_price_trade,60.72,60.87,,L,101,200,36574300587034,derivative_priced,regular,

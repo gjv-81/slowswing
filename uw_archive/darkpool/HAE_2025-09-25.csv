@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2111,HAE,47.67,1457368,2025-09-25T20:18:54Z,100631.37,False,,57.4,0,extended_hours_trade,L,35,0,0,,regular,
+3500,HAE,47.67,1451311,2025-09-25T20:00:21Z,166845.00,False,prior_reference_price,57.4,0,extended_hours_trade,L,35,0,0,,regular,
+3569,HAE,47.67,1445270,2025-09-25T20:00:21Z,170134.23,False,prior_reference_price,57.4,0,extended_hours_trade,L,35,0,0,,regular,
+6000,HAE,47.65,1004800,2025-09-25T19:29:15Z,285900.00,False,contingent_trade,47.65,47.6,,L,235,307,0,qualified_contingent_trade,regular,
+3000,HAE,48.0376,867755,2025-09-25T18:44:38Z,144112.8000,False,,48.15,48,,L,100,17,0,,regular,
+2900,HAE,48.96,589512,2025-09-25T16:33:26Z,141984.00,False,,49,48.94,,L,13,12,0,,regular,
+2900,HAE,48.83,557770,2025-09-25T16:26:06Z,141607.00,False,,48.87,48.78,,L,3,307,0,,regular,
+5400,HAE,48.83,554824,2025-09-25T16:26:05Z,263682.00,False,,48.87,48.78,,L,3,307,0,,regular,
+20600,HAE,48.53,521610,2025-09-25T16:15:38Z,999718.00,False,,48.56,48.5,,L,36,154,0,,regular,
+3040,HAE,49.085,200260,2025-09-25T14:42:34Z,149218.400,False,,49.12,49.04,,L,2,105,0,,regular,
+2305,HAE,49.09,190020,2025-09-25T14:39:13Z,113152.45,False,,49.2,49.09,,L,21,28,0,,regular,

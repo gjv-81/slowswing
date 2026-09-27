@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1000,IDCC,191.30,114321,2024-12-24T17:48:23Z,191300.00,False,,191.53,191.34,,L,14,10,46103210493492,,,
+22900,IDCC,190.93,73378,2024-12-24T16:25:29Z,4372297.00,False,contingent_trade,191.28,190.93,,L,1,147,41129308235209,qualified_contingent_trade,,
+1158,IDCC,190.064,13337,2024-12-24T14:48:13Z,220094.112,False,,191.26,189.43,,L,1,22,35293395584021,,,
+600,IDCC,192.75,3221,2024-12-24T14:30:01Z,115650.00,False,,192,190.05,,L,100,5,34201017819747,,,

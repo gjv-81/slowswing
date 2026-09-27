@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+31855,FTI,43.16,2110553,2025-11-13T21:55:56Z,1374861.80,False,average_price_trade,44,42.33,extended_hours_trade,L,38,30,0,,regular,
+2778,FTI,43.16,2078373,2025-11-13T21:01:45Z,119898.48,False,prior_reference_price,44,0,extended_hours_trade,L,38,0,0,,regular,
+3458,FTI,43.16,2070296,2025-11-13T21:00:34Z,149247.28,False,prior_reference_price,44.5,0,extended_hours_trade,L,100,0,0,,regular,
+2446,FTI,43.1137,1761945,2025-11-13T20:59:33Z,105456.1102,False,average_price_trade,43.13,43.12,,L,53,288,0,derivative_priced,regular,
+2900,FTI,42.985,969901,2025-11-13T19:04:53Z,124656.500,False,,42.99,42.97,,L,3,438,0,,regular,
+2400,FTI,42.98,965690,2025-11-13T19:04:01Z,103152.00,False,,43,42.96,,L,97,143,0,,regular,
+7200,FTI,42.99,958288,2025-11-13T19:03:09Z,309528.00,False,,43,42.98,,L,229,45,0,,regular,
+2500,FTI,43.4,306850,2025-11-13T15:47:23Z,108500.0,False,,43.43,43.37,,L,426,20,0,,regular,
+2500,FTI,43.4,185452,2025-11-13T15:37:53Z,108500.0,False,,43.44,43.37,,L,26,110,0,,regular,
+2376,FTI,43.2314,39278,2025-11-13T14:40:00Z,102717.8064,False,,43.38,43.19,,L,16,10,0,,regular,

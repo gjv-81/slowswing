@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+11118,FOX,49.2694,764732,2025-03-20T20:08:06Z,False,547777.1892,average_price_trade,48.90,50.41,extended_hours_trade,L,100,100,58086432551407,,,
+4075,FOX,49.40,751695,2025-03-20T20:02:23Z,False,201305.00,prior_reference_price,49.35,50.41,extended_hours_trade,L,100,100,57743488395520,,,
+5271,FOX,49.40,744243,2025-03-20T20:00:14Z,False,260387.40,prior_reference_price,49.31,49.53,extended_hours_trade,L,12,100,57614846927456,,,
+14533,FOX,49.40,738972,2025-03-20T20:00:14Z,False,717930.20,prior_reference_price,49.31,49.53,extended_hours_trade,L,12,100,57614845650904,,,
+2700,FOX,49.445,492979,2025-03-20T19:56:41Z,False,133501.500,,49.44,49.45,,L,858,455,57401046902230,,,
+5100,FOX,49.02,13963,2025-03-20T13:37:24Z,False,250002.00,,48.98,49.06,,L,100,102,34644891355978,,,

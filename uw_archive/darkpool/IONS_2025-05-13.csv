@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3487,IONS,32.53,1354265,2025-05-13T20:23:16Z,False,113432.11,average_price_trade,31.90,33.16,extended_hours_trade,L,51,28,58996897366322,,,
+6533,IONS,32.39,1350778,2025-05-13T20:14:54Z,False,211603.87,average_price_trade,31.90,33.16,extended_hours_trade,L,51,28,58494300530431,,,
+481100,IONS,32.53,1331609,2025-05-13T20:00:08Z,False,15650183.00,average_price_trade,32,33.23,extended_hours_trade,L,10,40,57608626789500,,,

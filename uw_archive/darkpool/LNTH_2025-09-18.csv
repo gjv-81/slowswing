@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3335,LNTH,51.56,1081955,2025-09-18T20:00:19Z,171952.60,False,prior_reference_price,52,50.9,extended_hours_trade,L,10,2,0,,regular,
+2023,LNTH,51.56,1076216,2025-09-18T20:00:02Z,104305.88,False,,52,50.9,extended_hours_trade,L,10,2,0,,regular,
+2243,LNTH,51.53,884649,2025-09-18T19:58:49Z,115581.79,False,,51.54,51.53,,L,76,370,0,,regular,
+11800,LNTH,51.4,640229,2025-09-18T18:54:38Z,606520.0,False,contingent_trade,51.47,51.39,,L,6,306,0,qualified_contingent_trade,regular,
+17700,LNTH,51.4,628136,2025-09-18T18:54:05Z,909780.0,False,contingent_trade,51.47,51.39,,L,6,16,0,qualified_contingent_trade,regular,
+17700,LNTH,51.1,526177,2025-09-18T18:02:58Z,904470.0,True,contingent_trade,51.07,51.04,,L,9,251,0,qualified_contingent_trade,regular,
+11800,LNTH,51.1,507884,2025-09-18T18:02:46Z,602980.0,True,contingent_trade,51.06,51.03,,L,6,100,0,qualified_contingent_trade,regular,
+41200,LNTH,51.2,489341,2025-09-18T17:57:47Z,2109440.0,False,contingent_trade,51.19,51.14,,L,3,244,0,qualified_contingent_trade,regular,
+2304,LNTH,51.4,282340,2025-09-18T16:15:38Z,118425.6,False,,51.43,51.37,,L,474,462,0,,regular,
+9222,LNTH,51.1,98194,2025-09-18T14:08:30Z,471244.2,False,,51.1,51.04,,L,6,55,0,,regular,

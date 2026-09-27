@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+61000,LIVN,33.85,1000152,2025-04-08T20:01:04Z,2064850.00,False,prior_reference_price,45,30,extended_hours_trade,L,5,1,57664655662424,,,
+6580,LIVN,33.85,853345,2025-04-08T20:00:00Z,222733.00,False,,33.88,33.84,extended_hours_trade,L,300,171,57600485182107,,,
+13500,LIVN,33.7975,620054,2025-04-08T19:24:43Z,456266.2500,False,,33.85,33.80,,L,117,73,55483259411887,,,
+3610,LIVN,34.2401,436796,2025-04-08T17:41:38Z,123606.7610,False,,34.28,34.24,,L,17,205,49298533236223,,,
+5000,LIVN,34.225,396869,2025-04-08T17:26:44Z,171125.000,False,,34.26,34.17,,L,65,334,48404177491657,,,
+8600,LIVN,35.10,128147,2025-04-08T15:01:11Z,301860.00,False,,35.10,34.95,,L,101,100,39671007069922,,,
+12400,LIVN,35.20,104321,2025-04-08T14:56:01Z,436480.00,False,contingent_trade,35.28,35.10,,L,103,105,39361707178380,qualified_contingent_trade,,

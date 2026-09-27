@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+203,MEDP,496.14,166807,2025-09-23T20:00:47Z,False,100716.42,prior_reference_price,491,505,extended_hours_trade,L,1,2,0,,regular,
+887,MEDP,496.14,166603,2025-09-23T20:00:23Z,False,440076.18,prior_reference_price,495.75,496.39,extended_hours_trade,L,11,52,0,,regular,
+204,MEDP,496.14,165714,2025-09-23T20:00:23Z,False,101212.56,prior_reference_price,495.75,496.39,extended_hours_trade,L,11,52,0,,regular,
+218,MEDP,496.14,165201,2025-09-23T20:00:22Z,False,108158.52,prior_reference_price,495.75,496.39,extended_hours_trade,L,11,52,0,,regular,
+400,MEDP,496.53,62866,2025-09-23T18:15:36Z,False,198612.00,,495.82,496.79,,L,3,40,0,,regular,
+566,MEDP,495.912,55943,2025-09-23T17:51:45Z,False,280686.192,,495.54,496.4,,L,69,14,0,,regular,
+440,MEDP,499.295,36938,2025-09-23T16:51:04Z,False,219689.800,,498.68,499.58,,L,1,4,0,,regular,
+549,MEDP,500.01,27088,2025-09-23T15:46:51Z,False,274505.49,,498.95,500.01,,L,7,18,0,,regular,
+700,MEDP,499.26,24628,2025-09-23T15:28:57Z,False,349482.00,,498.82,500.04,,L,119,4,0,,regular,
+300,MEDP,499.07,9780,2025-09-23T14:15:21Z,False,149721.00,,499.08,501,,L,5,42,0,,regular,
+214,MEDP,498.038,4642,2025-09-23T13:53:19Z,False,106580.132,,497.54,501,,L,6,38,0,,regular,
+296,MEDP,498.575,2859,2025-09-23T13:40:06Z,False,147578.200,,495.02,500,,L,4,27,0,,regular,

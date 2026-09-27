@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+39115,HAE,57.28,612667,2026-05-18T20:04:03Z,2240507.20,False,prior_reference_price,58.41,56.17,extended_hours_trade,L,34,35,26852207777740,,regular,2026-05-18T20:04:03Z
+2639,HAE,57.28,573260,2026-05-18T20:00:15Z,151161.92,False,prior_reference_price,0,0,extended_hours_trade,L,0,0,26852207549670,,regular,2026-05-18T20:00:15Z
+3952,HAE,57.28,569791,2026-05-18T20:00:15Z,226370.56,False,prior_reference_price,0,0,extended_hours_trade,L,0,0,26852207549659,,regular,2026-05-18T20:00:15Z
+3600,HAE,57.28,563135,2026-05-18T20:00:14Z,206208.00,False,prior_reference_price,0,0,extended_hours_trade,L,0,0,26852207549455,,regular,2026-05-18T20:00:14Z
+1791,HAE,57.28,558128,2026-05-18T20:00:14Z,102588.48,False,prior_reference_price,0,0,extended_hours_trade,L,0,0,26852207549443,,regular,2026-05-18T20:00:14Z
+2201,HAE,57.28,556337,2026-05-18T20:00:14Z,126073.28,False,prior_reference_price,0,0,extended_hours_trade,L,0,0,26852207549439,,regular,2026-05-18T20:00:14Z
+8946,HAE,57.28,553583,2026-05-18T20:00:02Z,512426.88,False,,0,53.39,extended_hours_trade,L,0,91,26852207537317,,regular,2026-05-18T20:00:02Z
+6400,HAE,57.3,412301,2026-05-18T19:57:47Z,366720.0,False,contingent_trade,57.34,57.26,,L,100,229,26852207402084,qualified_contingent_trade,regular,2026-05-18T19:57:46Z
+1800,HAE,57.25,339391,2026-05-18T19:28:34Z,103050.00,False,,57.3,57.07,,L,47,20,26852205648997,,regular,2026-05-18T19:28:34Z

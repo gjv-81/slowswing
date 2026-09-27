@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+624,JBHT,173.96,339594,2025-11-28T18:04:59Z,False,108551.04,average_price_trade,165.33,181.48,extended_hours_trade,L,4,100,0,,regular,
+674,JBHT,173.96,338959,2025-11-28T18:02:31Z,False,117249.04,prior_reference_price,165.33,181.48,extended_hours_trade,L,4,100,0,,regular,
+600,JBHT,174.025,247841,2025-11-28T17:59:30Z,False,104415.000,,173.93,174.08,,L,36,105,0,,regular,
+621,JBHT,174.675,103901,2025-11-28T16:27:52Z,False,108473.175,,174.53,174.72,,L,4,5,0,,regular,
+1058,JBHT,174.36,82268,2025-11-28T16:05:34Z,False,184472.88,,174.31,174.46,,L,3,11,0,,regular,
+4092,JBHT,174.125,7132,2025-11-28T14:34:10Z,False,712519.500,,173.39,174.88,,L,6,5,0,,regular,

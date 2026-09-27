@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+7654,NVST,19.24,1337886,2024-12-27T21:00:23Z,147262.96,False,prior_reference_price,23.02,15.53,extended_hours_trade,L,100,100,57623509267270,,,
+6515,NVST,19.19,207652,2024-12-27T16:16:01Z,125022.85,False,,19.19,19.17,,L,412,146,40561181039453,,,
+13800,NVST,19.21,149090,2024-12-27T15:46:34Z,265098.00,False,,19.23,19.20,,L,127,3,38794791215883,,,
+6894,NVST,19.315,50475,2024-12-27T15:02:41Z,133157.610,False,,19.35,19.28,,L,213,382,36161514447042,,,

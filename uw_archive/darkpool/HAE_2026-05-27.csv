@@ -1,0 +1,14 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+10300,HAE,67.2,1138080,2026-05-27T20:31:04Z,False,692160.0,average_price_trade,65.86,72.9,extended_hours_trade,L,100,30,26852209399404,,regular,2026-05-27T20:31:03Z
+5500,HAE,67.16,1127690,2026-05-27T20:03:51Z,False,369380.00,prior_reference_price,65.86,0,extended_hours_trade,L,0,30,26852207765626,,regular,2026-05-27T20:03:51Z
+5500,HAE,67.16,1122189,2026-05-27T20:03:44Z,False,369380.00,prior_reference_price,65.86,0,extended_hours_trade,L,0,30,26852207758967,,regular,2026-05-27T20:03:44Z
+1800,HAE,67.16,1116480,2026-05-27T20:00:40Z,False,120888.00,prior_reference_price,0,0,extended_hours_trade,L,0,0,26852207575204,,regular,2026-05-27T20:00:40Z
+1507,HAE,67.16,1113820,2026-05-27T20:00:23Z,False,101210.12,prior_reference_price,0,0,extended_hours_trade,L,0,0,26852207558479,,regular,2026-05-27T20:00:23Z
+17300,HAE,67.16,1112170,2026-05-27T20:00:23Z,False,1161868.00,prior_reference_price,0,0,extended_hours_trade,L,0,0,26852207558367,,regular,2026-05-27T20:00:23Z
+10269,HAE,67.16,1094533,2026-05-27T20:00:11Z,False,689666.04,average_price_trade,0,0,extended_hours_trade,L,0,0,26852207545907,,regular,2026-05-27T20:00:10Z
+10300,HAE,66.47,480711,2026-05-27T17:56:15Z,False,684641.00,contingent_trade,66.34,66.47,,L,7,200,26852200110206,qualified_contingent_trade,regular,2026-05-27T17:56:14Z
+2200,HAE,65.97,295687,2026-05-27T16:24:37Z,False,145134.00,,65.79,66.16,,L,32,6,26852194612045,,regular,2026-05-27T16:24:37Z
+8500,HAE,66.86,218381,2026-05-27T15:55:41Z,False,568310.00,contingent_trade,66.67,66.86,,L,156,1157,26852192876053,qualified_contingent_trade,regular,2026-05-27T15:55:40Z
+24100,HAE,66.205,145984,2026-05-27T14:56:17Z,False,1595540.500,,66.04,66.37,,L,3,94,26852189312495,,regular,2026-05-27T14:56:17Z
+9500,HAE,66.39,108865,2026-05-27T14:45:30Z,False,630705.00,,65.71,66.34,,L,90,300,26852188664765,,regular,2026-05-27T14:45:30Z
+2000,HAE,66.53,20858,2026-05-27T13:37:24Z,False,133060.00,,66.21,67.14,,L,10,48,26852184579557,,regular,2026-05-27T13:37:24Z

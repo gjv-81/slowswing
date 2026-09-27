@@ -15,9 +15,13 @@ HERE = Path(__file__).resolve().parent
 OUTDIR = HERE / "daily_data_v2"
 COLS = ["Open", "High", "Low", "Close", "Volume"]
 
+EXTDIR = HERE / "daily_data_ext"     # fast-lane expansion universe (refreshed too)
+
 def main():
     tickers = sorted({os.path.splitext(os.path.basename(f))[0].upper()
                       for f in glob.glob(str(OUTDIR / "*.csv"))} | {"SPY", "RSP"})
+    ext = sorted({os.path.splitext(os.path.basename(f))[0].upper()
+                  for f in glob.glob(str(EXTDIR / "*.csv"))} - set(tickers))
     if not tickers:
         raise SystemExit("daily_data_v2/ is empty — run build_universe.py first")
     import yfinance as yf
@@ -51,6 +55,32 @@ def main():
                 failed += 1
         print(f"  {min(i+CH, len(tickers))}/{len(tickers)} done")
     print(f"v2 refresh: {updated} updated, {failed} failed")
+    # ---- fast-lane expansion universe (daily_data_ext) — same merge, 1y window ----
+    if ext:
+        print(f"Refreshing {len(ext)} ext tickers ...")
+        eupd = 0
+        for i in range(0, len(ext), CH):
+            chunk = ext[i:i+CH]
+            try:
+                raw = yf.download(chunk, period="1y", progress=False,
+                                  auto_adjust=True, group_by="ticker", threads=True)
+            except Exception:
+                continue
+            for t in chunk:
+                try:
+                    f = (raw[t] if len(chunk) > 1 else raw).dropna()
+                    f = f[[c for c in COLS if c in f.columns]]
+                    if len(f) == 0: continue
+                    f.index = pd.to_datetime(f.index); f.index.name = "Date"
+                    path = EXTDIR / f"{t}.csv"
+                    old = pd.read_csv(path, index_col=0, parse_dates=True)
+                    old = old[[c for c in COLS if c in old.columns]]
+                    merged = pd.concat([old[old.index < f.index.min()], f]).sort_index()
+                    merged = merged[~merged.index.duplicated(keep="last")]
+                    merged.reset_index().to_csv(path, index=False)
+                    eupd += 1
+                except Exception: pass
+        print(f"ext refresh: {eupd} updated")
 
 if __name__ == "__main__":
     main()

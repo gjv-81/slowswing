@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6146,LEVI,22.44,2357751,2025-12-03T21:03:33Z,137916.24,False,prior_reference_price,23.01,22,extended_hours_trade,L,271,90,0,,regular,
+6146,LEVI,22.44,2348151,2025-12-03T21:03:33Z,137916.24,False,prior_reference_price,23.01,22,extended_hours_trade,L,271,90,0,,regular,
+243577,LEVI,22.44,2342005,2025-12-03T21:01:21Z,5465867.88,False,prior_reference_price,23.01,0,extended_hours_trade,L,271,0,0,,regular,
+86700,LEVI,22.44,2096718,2025-12-03T21:00:47Z,1945548.00,False,prior_reference_price,23.01,0,extended_hours_trade,L,271,0,0,,regular,
+6400,LEVI,22.44,1999290,2025-12-03T21:00:03Z,143616.00,False,,22.44,22.43,extended_hours_trade,L,8,605,0,,regular,
+9136,LEVI,22.52,1203436,2025-12-03T20:30:41Z,205742.72,False,,22.52,22.51,,L,43,227,0,,regular,
+11408,LEVI,22.285,353969,2025-12-03T15:51:53Z,254227.280,False,,22.31,22.29,,L,11,435,0,,regular,
+8531,LEVI,22.015,28902,2025-12-03T14:31:21Z,187809.965,False,,22.18,22,,L,667,10,0,,regular,

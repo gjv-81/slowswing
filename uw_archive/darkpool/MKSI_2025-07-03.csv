@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1022,MKSI,104.56,569352,2025-07-03T17:00:44Z,False,106860.32,prior_reference_price,101,107.50,extended_hours_trade,L,20,50,46844360934770,,regular,
+2600,MKSI,104.56,567607,2025-07-03T17:00:35Z,False,271856.00,prior_reference_price,101,107.50,extended_hours_trade,L,20,50,46835992737186,,regular,
+9800,MKSI,104.56,565007,2025-07-03T17:00:31Z,False,1024688.00,prior_reference_price,101,107.50,extended_hours_trade,L,20,50,46831510209250,,regular,
+2617,MKSI,104.56,555207,2025-07-03T17:00:27Z,False,273633.52,prior_reference_price,101,107.50,extended_hours_trade,L,20,50,46827876759311,,regular,
+1396,MKSI,104.5764,164749,2025-07-03T16:09:05Z,False,145988.6544,,104.49,104.64,,L,3,633,43745645247073,,regular,
+1332,MKSI,104.49,123821,2025-07-03T15:32:45Z,False,139180.68,,104.39,104.57,,L,6,367,41565187637586,,regular,
+1000,MKSI,104.4456,49540,2025-07-03T14:18:00Z,False,104445.6000,,104.26,104.65,,L,20,19,37080241605023,,regular,
+1000,MKSI,104.46,47961,2025-07-03T14:17:38Z,False,104460.00,,104.26,104.70,,L,76,16,37058202126151,,regular,
+1200,MKSI,105.035,34242,2025-07-03T14:04:59Z,False,126042.000,,104.90,105.10,,L,24,76,36299090066390,,regular,
+1000,MKSI,104.50,12534,2025-07-03T13:40:56Z,False,104500.00,,104.50,105.16,,L,105,323,34856139914912,,regular,

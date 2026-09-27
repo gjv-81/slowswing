@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+9594,LPX,83.57,1172314,2026-03-02T22:58:31Z,801770.58,False,prior_reference_price,84.17,82.9,extended_hours_trade,L,99,99,25928800277023,,regular,2026-03-02T22:58:31Z
+29765,LPX,83.57,1162420,2026-03-02T21:55:32Z,2487461.05,False,prior_reference_price,86,81.96,extended_hours_trade,L,5,24,25928796498421,,regular,2026-03-02T21:55:32Z
+7589,LPX,83.57,1130537,2026-03-02T21:00:36Z,634212.73,False,prior_reference_price,86,74.7,extended_hours_trade,L,5,1,25928793202270,,regular,2026-03-02T21:00:36Z
+1653,LPX,83.8551,890497,2026-03-02T20:58:04Z,138612.4803,False,average_price_trade,83.85,83.81,,L,193,4,25928793049986,derivative_priced,regular,2026-03-02T20:58:04Z
+2400,LPX,82.8,61893,2026-03-02T15:25:42Z,198720.0,False,,83.07,82.52,,L,222,100,25928773108067,,regular,2026-03-02T15:25:42Z
+1207,LPX,84.74,1217,2026-03-02T13:00:00Z,102281.18,False,average_price_trade,85,82.2,extended_hours_trade,L,200,18,25928764365973,,regular,2026-03-02T13:00:00Z

@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1569,MKSI,100.27,857532,2025-06-26T20:01:29Z,False,157323.63,prior_reference_price,98.32,100.90,extended_hours_trade,L,9,9,57689339865777,,,
+1171,MKSI,100.27,854895,2025-06-26T20:00:19Z,False,117416.17,prior_reference_price,98,100.78,extended_hours_trade,L,4,25,57619862363927,,,
+2826,MKSI,100.27,853724,2025-06-26T20:00:19Z,False,283363.02,prior_reference_price,98,100.78,extended_hours_trade,L,4,25,57619858277292,,,
+2106,MKSI,100.27,848951,2025-06-26T20:00:03Z,False,211168.62,,98,100.78,extended_hours_trade,L,4,25,57603118517840,,,
+1061,MKSI,99.635,244576,2025-06-26T18:02:38Z,False,105712.735,,99.60,99.72,,L,161,210,50558062226870,,,
+3700,MKSI,99.85,190097,2025-06-26T16:44:25Z,False,369445.00,contingent_trade,99.67,99.84,,L,2,96,45865603150376,qualified_contingent_trade,,
+1200,MKSI,100.06,100123,2025-06-26T15:02:19Z,False,120072.00,,100.02,100.20,,L,6,24,39739497854502,,,
+1900,MKSI,99.87,64046,2025-06-26T14:27:15Z,False,189753.00,,99.90,100.10,,L,63,16,37635728412461,,,
+3000,MKSI,99.14,36026,2025-06-26T14:00:40Z,False,297420.00,,99.14,99.41,,L,100,514,36040207050327,,,
+1500,MKSI,99.11,21700,2025-06-26T13:45:55Z,False,148665.00,,99,99.34,,L,100,3,35155129314050,,,

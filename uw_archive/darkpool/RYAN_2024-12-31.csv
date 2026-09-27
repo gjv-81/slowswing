@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2494,RYAN,64.16,755340,2024-12-31T21:00:32Z,False,160015.04,prior_reference_price,78.90,62,extended_hours_trade,L,35,3,57632005882642,,,
+2244,RYAN,63.87,435022,2024-12-31T20:47:49Z,False,143324.28,,64,63.90,,L,37,103,56869992889055,,,
+1805,RYAN,63.90,432512,2024-12-31T20:47:49Z,False,115339.50,,64,63.90,,L,37,103,56869988696736,,,
+5397,RYAN,63.87,415557,2024-12-31T20:45:47Z,False,344706.39,,63.92,63.83,,L,7,200,56747087613416,,,

@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+9117,MP,16.4714,855591,2024-12-24T18:01:36Z,False,150169.7538,average_price_trade,16.25,17.02,extended_hours_trade,L,100,100,46896398029789,,,
+7125,MP,16.365,111024,2024-12-24T14:57:06Z,False,116600.625,,16.36,16.37,,L,1,100,35826237619078,,,
+6116,MP,16.37,97876,2024-12-24T14:55:58Z,False,100118.92,,16.34,16.38,,L,69,376,35758325187534,,,
+6211,MP,16.25,51700,2024-12-24T14:38:40Z,False,100928.75,,16.31,16.38,,L,70,184,34720093227608,,,

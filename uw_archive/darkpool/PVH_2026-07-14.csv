@@ -1,0 +1,6 @@
+size,ticker,price,volume,canceled,premium,executed_at,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+10967,PVH,77.19,835408,False,846542.73,2026-07-14T20:44:40Z,average_price_trade,79,71.9,extended_hours_trade,L,1,72,26246619826378,,regular,2026-07-14T20:44:40Z
+10100,PVH,77.19,819631,False,779619.00,2026-07-14T20:03:19Z,prior_reference_price,79,71.9,extended_hours_trade,L,1,72,26246617345183,,regular,2026-07-14T20:03:19Z
+8385,PVH,77.19,806087,False,647238.15,2026-07-14T20:00:25Z,prior_reference_price,79,71.9,extended_hours_trade,L,1,72,26246617171136,,regular,2026-07-14T20:00:25Z
+2000,PVH,77.19,796717,False,154380.00,2026-07-14T20:00:24Z,prior_reference_price,79,71.9,extended_hours_trade,L,1,72,26246617170331,,regular,2026-07-14T20:00:24Z
+3000,PVH,77.19,794717,False,231570.00,2026-07-14T20:00:24Z,prior_reference_price,79,71.9,extended_hours_trade,L,1,72,26246617170321,,regular,2026-07-14T20:00:24Z

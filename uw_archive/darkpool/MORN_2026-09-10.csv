@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3177,MORN,193.15,275809,2026-09-10T20:00:11Z,False,613637.55,prior_reference_price,192.5,195.1,extended_hours_trade,L,1,6,32255276404629,,regular,2026-09-10T20:00:11Z
+9517,MORN,193.01,186473,2026-09-10T19:45:27Z,False,1836876.17,,192.79,193.25,,L,135,7,32255275520614,,regular,2026-09-10T19:45:27Z
+870,MORN,193.2,133586,2026-09-10T18:50:16Z,False,168084.0,,192.99,193.17,,L,20,130,32255272209379,,regular,2026-09-10T18:50:16Z
+580,MORN,193.9799,116572,2026-09-10T18:13:55Z,False,112508.3420,,193.37,193.98,,L,107,200,32255270028130,,regular,2026-09-10T18:13:55Z
+580,MORN,194.32,105058,2026-09-10T17:56:22Z,False,112705.60,,194.31,194.44,,L,44,70,32255268975446,,regular,2026-09-10T17:56:22Z

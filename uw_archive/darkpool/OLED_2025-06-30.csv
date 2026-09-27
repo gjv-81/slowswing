@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+799,OLED,154.25,352320,2025-06-30T23:54:47Z,123245.75,False,,156.52,153.50,extended_hours_trade,L,3,15,71687556598850,,regular,
+15367,OLED,154.46,350269,2025-06-30T20:57:05Z,2373586.82,False,,156.52,153.50,extended_hours_trade_late_or_out_of_sequence,L,3,15,61025465490969,,regular,
+769,OLED,154.461,334755,2025-06-30T20:02:55Z,118780.509,False,average_price_trade,156.52,153.50,extended_hours_trade,L,3,15,57775121682841,,regular,
+23952,OLED,154.46,333534,2025-06-30T20:02:26Z,3699625.92,False,prior_reference_price,156.52,153.50,extended_hours_trade,L,3,15,57746973568727,,regular,
+1116,OLED,154.46,309042,2025-06-30T20:01:01Z,172377.36,False,prior_reference_price,156.52,153.74,extended_hours_trade,L,3,12,57661937782809,,regular,
+1400,OLED,154.46,306525,2025-06-30T20:00:21Z,216244.00,False,prior_reference_price,156.50,153.74,extended_hours_trade,L,2,12,57621354516896,,regular,
+5695,OLED,154.46,304950,2025-06-30T20:00:21Z,879649.70,False,prior_reference_price,156.50,153.74,extended_hours_trade,L,2,12,57621127382004,,regular,
+1100,OLED,154.46,299011,2025-06-30T20:00:20Z,169906.00,False,prior_reference_price,156.50,153.74,extended_hours_trade,L,2,12,57620865556933,,regular,
+1340,OLED,155.3599,18755,2025-06-30T14:00:31Z,208182.2660,False,,155.35,154.95,,L,50,1,36031963156407,,regular,
+700,OLED,154.8543,8795,2025-06-30T13:36:00Z,108398.0100,False,,156.05,154,,L,725,4,34560916407031,,regular,

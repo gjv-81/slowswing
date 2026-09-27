@@ -1,0 +1,3 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+14049,RYAN,40.89,1049692,2026-07-21T20:49:09Z,False,574463.61,average_price_trade,41.61,40.28,extended_hours_trade,L,384,396,22183581033155,,regular,2026-07-21T20:49:08Z
+8320,RYAN,40.89,1029971,2026-07-21T20:00:48Z,False,340204.80,prior_reference_price,41.61,40.28,extended_hours_trade,L,384,396,22183578131972,,regular,2026-07-21T20:00:48Z

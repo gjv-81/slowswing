@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+14103,FBIN,38.85,1862034,2026-06-03T20:55:16Z,547901.55,False,prior_reference_price,39.9,38,extended_hours_trade,L,6,20,33891662249678,,regular,2026-06-03T20:55:16Z
+3000,FBIN,38.85,1847701,2026-06-03T20:00:30Z,116550.00,False,prior_reference_price,39.9,38,extended_hours_trade,L,6,20,33891658963450,,regular,2026-06-03T20:00:30Z
+6800,FBIN,38.85,1842139,2026-06-03T20:00:22Z,264180.00,False,prior_reference_price,39.9,38,extended_hours_trade,L,6,20,33891658955627,,regular,2026-06-03T20:00:22Z
+2703,FBIN,38.93,665159,2026-06-03T18:53:04Z,105227.79,False,,38.97,38.93,,L,101,95,33891654916790,,regular,2026-06-03T18:53:04Z
+6286,FBIN,38.94,511031,2026-06-03T18:09:26Z,244776.84,False,,38.94,38.9,,L,1,150,33891652299494,,regular,2026-06-03T18:09:26Z
+5000,FBIN,38.94,504022,2026-06-03T18:09:26Z,194700.00,False,,38.94,38.9,,L,1,150,33891652299472,,regular,2026-06-03T18:09:26Z
+3379,FBIN,38.75,471075,2026-06-03T18:02:08Z,130936.25,False,,38.78,38.77,,L,172,3,33891651860774,,regular,2026-06-03T18:02:08Z
+4200,FBIN,39.04,29510,2026-06-03T13:39:20Z,163968.00,False,,39.15,38.92,,L,10,100,33891636093410,,regular,2026-06-03T13:39:20Z

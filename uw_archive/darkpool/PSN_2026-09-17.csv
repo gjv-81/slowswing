@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+13972,PSN,46.17,785700,2026-09-17T21:43:25Z,645087.24,False,average_price_trade,47.07,46,extended_hours_trade,L,42,100,40007698567763,,regular,2026-09-17T21:43:25Z
+23036,PSN,46.17,771728,2026-09-17T20:46:05Z,1063572.12,False,average_price_trade,47.07,46,extended_hours_trade,L,42,100,40007695128201,,regular,2026-09-17T20:46:05Z
+9712,PSN,46.17,747204,2026-09-17T20:00:38Z,448403.04,False,prior_reference_price,0,46,extended_hours_trade,L,0,100,40007692400580,,regular,2026-09-17T20:00:38Z
+11300,PSN,46.17,737447,2026-09-17T20:00:38Z,521721.00,False,prior_reference_price,0,46,extended_hours_trade,L,0,100,40007692400568,,regular,2026-09-17T20:00:38Z
+3688,PSN,46.17,725747,2026-09-17T20:00:38Z,170274.96,False,prior_reference_price,0,46,extended_hours_trade,L,0,100,40007692400242,,regular,2026-09-17T20:00:37Z
+2884,PSN,47.12,279727,2026-09-17T17:30:07Z,135894.08,False,,47.12,47.06,,L,37,100,40007683370167,,regular,2026-09-17T17:30:07Z
+3230,PSN,47.09,24563,2026-09-17T13:41:36Z,152100.70,False,,47.26,46.89,,L,37,52,40007669658844,,regular,2026-09-17T13:41:36Z
+2500,PSN,46.98,3531,2026-09-17T13:16:13Z,117450.00,False,,50,45.3,extended_hours_trade,L,52,100,40007668136116,,regular,2026-09-17T13:16:13Z

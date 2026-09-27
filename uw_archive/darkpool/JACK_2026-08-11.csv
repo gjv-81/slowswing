@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+21600,JACK,18.1147,742888,2026-08-11T19:26:31Z,False,391277.5200,contingent_trade,17.8,17.83,,L,32,202,28106335976289,qualified_contingent_trade,regular,2026-08-11T19:26:31Z
+14000,JACK,17.88,626262,2026-08-11T19:00:10Z,False,250320.00,,17.91,17.95,,L,200,129,28106334395141,,regular,2026-08-11T19:00:10Z
+7704,JACK,17.88,610132,2026-08-11T19:00:10Z,False,137747.52,,17.93,17.96,,L,200,295,28106334395130,,regular,2026-08-11T19:00:10Z
+9300,JACK,18.08,468164,2026-08-11T18:08:31Z,False,168144.00,,18.07,18.12,,L,18,100,28106331296490,,regular,2026-08-11T18:08:31Z
+5792,JACK,18.21,404680,2026-08-11T17:48:26Z,False,105472.32,,18.2,18.22,,L,110,10,28106330091178,,regular,2026-08-11T17:48:26Z

@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6800,SAM,200,70690,2025-12-03T17:31:26Z,False,1360000,,200.44,199.89,,L,100,1,0,,regular,
+560,SAM,197.96,29871,2025-12-03T15:44:11Z,False,110857.60,,198.57,197.97,,L,3,1,0,,regular,
+2852,SAM,199.185,19912,2025-12-03T15:01:54Z,False,568075.620,,200,198.25,,L,52,4,0,,regular,
+779,SAM,198.935,13088,2025-12-03T14:47:57Z,False,154970.365,,199.5,198.37,,L,298,6,0,,regular,

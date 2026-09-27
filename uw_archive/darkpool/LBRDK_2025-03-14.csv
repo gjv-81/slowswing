@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+49700,LBRDK,80,155654,2025-03-14T14:20:17Z,3976000,False,,80.22,80.06,,L,107,300,37217009535789,intermarket_sweep,,
+2200,LBRDK,80.09,95955,2025-03-14T14:06:47Z,176198.00,False,,80.17,79.99,,L,15,41,36407400203200,,,
+50000,LBRDK,80,62722,2025-03-14T13:41:55Z,4000000,False,contingent_trade,79.84,79.64,,L,7,400,34915709410681,qualified_contingent_trade,,

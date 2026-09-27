@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+541,EVR,299.73,317151,2025-11-18T23:08:41Z,162153.93,False,prior_reference_price,305.57,293.95,extended_hours_trade,L,5,4,0,,regular,
+5470,EVR,299.73,316608,2025-11-18T21:27:18Z,1639523.10,False,,305.57,293.95,extended_hours_trade,L,5,4,0,,regular,
+509,EVR,299.73,305632,2025-11-18T21:00:35Z,152562.57,False,prior_reference_price,354,0,extended_hours_trade,L,6,0,0,,regular,
+432,EVR,299.78,219776,2025-11-18T20:58:20Z,129504.96,False,,300.13,299.73,,L,17,8,0,,regular,
+667,EVR,300.06,167619,2025-11-18T20:41:06Z,200140.02,False,,300.06,299.49,,L,62,50,0,,regular,
+421,EVR,299.9648,166520,2025-11-18T20:41:06Z,126285.1808,False,,300.06,299.49,,L,62,50,0,,regular,
+774,EVR,299.3903,111756,2025-11-18T19:11:17Z,231728.0922,False,,299.74,299.26,,L,2,74,0,,regular,
+1137,EVR,300,58185,2025-11-18T16:45:46Z,341100,False,,299.93,299.39,,L,4,2,0,,regular,
+789,EVR,296.4698,17886,2025-11-18T15:10:57Z,233914.6722,False,,296.29,294.04,,L,28,17,0,,regular,
+703,EVR,298.95,6593,2025-11-18T14:47:14Z,210161.85,False,,297.88,295.25,,L,6,24,0,,regular,

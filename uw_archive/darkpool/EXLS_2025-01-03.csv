@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+17326,EXLS,44.73,607427,2025-01-03T21:01:17Z,774991.98,False,prior_reference_price,45.60,43.86,extended_hours_trade,L,37,9,57677992703507,,,
+2705,EXLS,44.73,590101,2025-01-03T21:01:13Z,120994.65,False,prior_reference_price,45.60,43.86,extended_hours_trade,L,37,9,57673979580514,,,
+2365,EXLS,44.73,585252,2025-01-03T21:00:51Z,105786.45,False,prior_reference_price,0,35.85,extended_hours_trade,L,0,5,57651906091863,,,
+4570,EXLS,44.73,581126,2025-01-03T21:00:27Z,204416.10,False,prior_reference_price,0,35.85,extended_hours_trade,L,0,5,57627748893050,,,
+2657,EXLS,44.73,574779,2025-01-03T21:00:11Z,118847.61,False,prior_reference_price,47,43.15,extended_hours_trade,L,32,1,57611439987393,,,
+2680,EXLS,44.73,568582,2025-01-03T21:00:03Z,119876.40,False,,47,43.15,extended_hours_trade,L,32,1,57603307037203,,,
+2962,EXLS,44.55,269153,2025-01-03T19:47:32Z,131957.10,False,,44.55,44.50,,L,300,100,53252567996825,,,
+2283,EXLS,44.354,172394,2025-01-03T18:00:55Z,101260.182,False,,44.39,44.36,,L,306,25,46855353659333,,,
+10700,EXLS,44.32,79885,2025-01-03T16:25:28Z,474224.00,False,contingent_trade,44.34,44.29,,L,201,401,41128791402512,qualified_contingent_trade,,

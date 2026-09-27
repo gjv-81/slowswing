@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1856,MTZ,122.72,736775,2025-03-26T20:00:45Z,227768.32,False,prior_reference_price,145.11,104.09,extended_hours_trade,L,1,1,57645627872893,,,
+1046,MTZ,122.72,734765,2025-03-26T20:00:27Z,128365.12,False,prior_reference_price,145.11,104.09,extended_hours_trade,L,1,1,57627734205512,,,
+878,MTZ,122.72,733357,2025-03-26T20:00:27Z,107748.16,False,prior_reference_price,145.11,104.09,extended_hours_trade,L,1,1,57627720082637,,,
+1226,MTZ,122.72,731650,2025-03-26T20:00:27Z,150454.72,False,prior_reference_price,145.11,104.09,extended_hours_trade,L,1,1,57627679829368,,,
+1300,MTZ,122.72,729325,2025-03-26T20:00:04Z,159536.00,False,,145.11,104.09,extended_hours_trade,L,1,1,57604955372500,,,
+1000,MTZ,125.61,144773,2025-03-26T14:54:39Z,125610.00,False,,125.57,125.21,,L,20,20,39279792061841,,,
+11707,MTZ,125,129412,2025-03-26T14:46:28Z,1463375,False,,124.91,124.60,,L,31,13,38788880281436,intermarket_sweep,,
+9600,MTZ,125,117177,2025-03-26T14:46:16Z,1200000,False,,124.91,124.49,,L,102,100,38776656528470,intermarket_sweep,,

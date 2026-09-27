@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3216,JEF,48.89,889820,2025-05-22T20:00:22Z,157230.24,False,prior_reference_price,50,47.12,extended_hours_trade,L,1,5,57622828444751,,,
+2261,JEF,48.92,382674,2025-05-22T18:33:07Z,110608.12,False,,48.94,48.91,,L,53,144,52387323576793,,,
+2494,JEF,47.95,32026,2025-05-22T13:48:13Z,119587.30,False,,48.09,47.91,,L,448,100,35293707189953,,,

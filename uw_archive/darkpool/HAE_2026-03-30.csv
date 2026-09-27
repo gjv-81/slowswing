@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2488,HAE,54.93,557686,2026-03-30T20:00:23Z,136665.84,False,prior_reference_price,65,51,extended_hours_trade,L,50,1,26852207558328,,regular,2026-03-30T20:00:23Z
+5474,HAE,54.93,554922,2026-03-30T20:00:23Z,300686.82,False,prior_reference_price,65,51,extended_hours_trade,L,50,1,26852207558319,,regular,2026-03-30T20:00:23Z
+1916,HAE,54.775,347768,2026-03-30T19:29:47Z,104948.900,False,,54.78,54.76,,L,85,13,26852205722168,,regular,2026-03-30T19:29:47Z
+18100,HAE,55,249340,2026-03-30T16:58:57Z,995500,False,contingent_trade,55.09,54.98,,L,4,17,26852196672495,qualified_contingent_trade,regular,2026-03-30T16:58:57Z
+18100,HAE,55.01,231228,2026-03-30T16:58:38Z,995681.00,False,contingent_trade,55.09,54.98,,L,4,17,26852196653494,qualified_contingent_trade,regular,2026-03-30T16:58:38Z
+12800,HAE,55.1,194138,2026-03-30T16:35:19Z,705280.0,False,contingent_trade,55.1,55.02,,L,113,23,26852195253940,qualified_contingent_trade,regular,2026-03-30T16:35:19Z
+17100,HAE,55.21,177139,2026-03-30T16:24:37Z,944091.00,False,contingent_trade,55.2,55.12,,L,41,13,26852194611940,qualified_contingent_trade,regular,2026-03-30T16:24:37Z
+2507,HAE,54.04,2728,2026-03-30T12:44:33Z,135478.28,False,average_price_trade,67.49,52,extended_hours_trade,L,25,15,26852181408520,,regular,2026-03-30T12:44:33Z

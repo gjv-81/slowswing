@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1204,IDCC,350.89,192690,2025-12-15T21:00:34Z,422471.56,False,prior_reference_price,363.97,345,extended_hours_trade,L,6,6,33092798650272,,regular,
+1241,IDCC,350.89,191484,2025-12-15T21:00:06Z,435454.49,False,average_price_trade,363.97,345,extended_hours_trade,L,6,6,33092798621844,,regular,
+1223,IDCC,350.89,189662,2025-12-15T21:00:05Z,429138.47,False,,363.97,345,extended_hours_trade,L,6,6,33092798621520,,regular,
+1382,IDCC,350.89,188087,2025-12-15T21:00:05Z,484929.98,False,,363.97,345,extended_hours_trade,L,6,6,33092798621487,,regular,
+330,IDCC,350.89,186698,2025-12-15T21:00:02Z,115793.70,False,,363.97,345,extended_hours_trade,L,6,6,33092798617747,,regular,
+760,IDCC,352.213,100528,2025-12-15T20:54:14Z,267681.880,False,,352.85,352.03,,L,8,27,33092798269944,,regular,
+858,IDCC,354.06,30698,2025-12-15T16:19:47Z,303783.48,False,,355.1,353.65,,L,3,4,33092781802726,,regular,
+567,IDCC,354.228,25832,2025-12-15T16:03:42Z,200847.276,False,,355.96,354.44,,L,22,3,33092780838259,,regular,
+398,IDCC,351.4051,17369,2025-12-15T15:28:01Z,139859.2298,False,,352.62,351.01,,L,20,5,33092778697073,,regular,
+340,IDCC,357.2651,5922,2025-12-15T14:47:22Z,121470.1340,False,,357.68,355.28,,L,3,1,33092776258171,,regular,
+340,IDCC,357.275,4775,2025-12-15T14:39:47Z,121473.500,False,,357.68,355,,L,3,5,33092775803041,,regular,

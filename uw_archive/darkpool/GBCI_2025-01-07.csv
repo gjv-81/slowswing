@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3454,GBCI,49.54,696297,2025-01-07T21:02:40Z,False,171111.16,prior_reference_price,48.58,60.27,extended_hours_trade,L,2,8,57760050350953,,,
+15898,GBCI,49.54,690429,2025-01-07T21:01:41Z,False,787586.92,prior_reference_price,30,60.27,extended_hours_trade,L,2,22,57701586214264,,,
+4119,GBCI,49.54,667501,2025-01-07T21:00:19Z,False,204055.26,prior_reference_price,30,60.27,extended_hours_trade,L,2,22,57619361558713,,,
+16300,GBCI,49.54,662830,2025-01-07T21:00:11Z,False,807502.00,average_price_trade,30,60.27,extended_hours_trade,L,2,22,57611482296627,,,
+8564,GBCI,49.54,643771,2025-01-07T21:00:02Z,False,424260.56,,30,60.27,extended_hours_trade,L,2,22,57602577418679,,,
+4102,GBCI,49.84,23526,2025-01-07T15:03:13Z,False,204443.68,,49.83,49.98,,L,134,18,36193345845372,,,

@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1958,LSCC,53.65,2217327,2025-07-08T20:01:16Z,105046.70,False,prior_reference_price,54,52.28,extended_hours_trade,L,20,1,57676948601210,,regular,
+3527,LSCC,53.65,2214985,2025-07-08T20:00:40Z,189223.55,False,prior_reference_price,54,52.28,extended_hours_trade,L,20,1,57640926549757,,regular,
+7442,LSCC,53.65,2210043,2025-07-08T20:00:10Z,399263.30,False,prior_reference_price,54,52.28,extended_hours_trade,L,20,1,57610705011624,,regular,
+5033,LSCC,53.65,2200563,2025-07-08T20:00:10Z,270020.45,False,prior_reference_price,54,52.28,extended_hours_trade,L,20,1,57610663248274,,regular,
+2500,LSCC,53.65,2194012,2025-07-08T20:00:03Z,134125.00,False,,54,52.28,extended_hours_trade,L,20,1,57603711475605,,regular,
+2815,LSCC,53.65,2189102,2025-07-08T20:00:01Z,151024.75,False,,54,52.28,extended_hours_trade,L,20,1,57601290005275,,regular,
+2000,LSCC,53.72,642892,2025-07-08T15:58:34Z,107440.00,False,,53.72,53.65,,L,35,100,43114822223283,,regular,
+2000,LSCC,53.6711,640565,2025-07-08T15:58:24Z,107342.2000,False,,53.72,53.65,,L,35,200,43104874765482,,regular,
+2000,LSCC,53.9177,612092,2025-07-08T15:50:09Z,107835.4000,False,,53.93,53.85,,L,105,175,42609171490932,,regular,
+2000,LSCC,53.9299,609992,2025-07-08T15:50:06Z,107859.8000,False,,53.93,53.85,,L,105,75,42606862123133,,regular,
+1900,LSCC,53.67,350394,2025-07-08T15:05:17Z,101973.00,False,,53.73,53.60,,L,256,101,39917349096340,,regular,

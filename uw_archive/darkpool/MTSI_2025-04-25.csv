@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+941,MTSI,106.28,323949,2025-04-25T20:06:06Z,False,100009.48,average_price_trade,104.23,108.33,extended_hours_trade,L,15,8,57966129629257,,,
+16725,MTSI,106.28,323008,2025-04-25T20:05:59Z,False,1777533.00,average_price_trade,104.23,108.33,extended_hours_trade,L,15,8,57959048456956,,,
+10834,MTSI,106.28,306283,2025-04-25T20:05:51Z,False,1151437.52,average_price_trade,104.23,108.33,extended_hours_trade,L,15,8,57951362475955,,,
+959,MTSI,106.28,295055,2025-04-25T20:00:42Z,False,101922.52,prior_reference_price,97,109.87,extended_hours_trade,L,60,100,57642719985419,,,
+2305,MTSI,106.28,293459,2025-04-25T20:00:12Z,False,244975.40,prior_reference_price,97,109.87,extended_hours_trade,L,60,100,57612035599392,,,
+1259,MTSI,106.0102,190877,2025-04-25T19:38:34Z,False,133466.8418,,106.04,106.23,,L,55,3,56314863193151,,,
+9700,MTSI,106.36,167897,2025-04-25T19:16:35Z,False,1031692.00,contingent_trade,106.20,106.36,,L,100,1,54995905069622,qualified_contingent_trade,,
+20000,MTSI,106.34,158015,2025-04-25T19:16:23Z,False,2126800.00,contingent_trade,106.15,106.30,,L,3,8,54983511841641,qualified_contingent_trade,,

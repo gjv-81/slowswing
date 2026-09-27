@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3238,MKSI,163.4,197064,2025-12-24T19:56:54Z,False,529089.2,average_price_trade,162.58,164.25,extended_hours_trade,L,74,1,30640368503983,,regular,
+2044,MKSI,163.29,126267,2025-12-24T17:42:24Z,False,333764.76,,163.29,163.57,,L,184,276,30640360434482,,regular,
+1288,MKSI,163.35,16500,2025-12-24T15:04:30Z,False,210394.80,,163.06,163.63,,L,8,1,30640350959920,,regular,

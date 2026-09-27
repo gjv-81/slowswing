@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2001,PSN,96.56,519889,2024-12-13T21:00:44Z,False,193216.56,prior_reference_price,95,0,extended_hours_trade,L,0,10,57644964157841,,,
+4933,PSN,96.56,516874,2024-12-13T21:00:19Z,False,476330.48,prior_reference_price,95,0,extended_hours_trade,L,0,10,57619464848948,,,
+1167,PSN,96.56,511388,2024-12-13T21:00:18Z,False,112685.52,prior_reference_price,95,0,extended_hours_trade,L,0,10,57618675236031,,,
+1140,PSN,96.56,510221,2024-12-13T21:00:18Z,False,110078.40,prior_reference_price,95,0,extended_hours_trade,L,0,10,57618616196231,,,
+1800,PSN,96.595,52727,2024-12-13T15:24:11Z,False,173871.000,,96.47,96.73,,L,69,5,37451338523272,,,
+8516,PSN,97,19831,2024-12-13T14:17:15Z,False,826052,average_price_trade,97,97.70,extended_hours_trade,L,21,40,33435158119146,,,
+11000,PSN,97,11274,2024-12-13T13:46:38Z,False,1067000,,97,100,extended_hours_trade,L,1,40,31598896784434,,,

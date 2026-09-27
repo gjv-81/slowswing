@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3648,EXEL,33.30,1675902,2024-12-31T21:01:59Z,121478.40,False,prior_reference_price,33.95,32.65,extended_hours_trade,L,50,12,57719846004384,,,
+13899,EXEL,33.30,1671876,2024-12-31T21:00:57Z,462836.70,False,prior_reference_price,33.95,26,extended_hours_trade,L,50,21,57657474611053,,,
+39500,EXEL,33.30,1657977,2024-12-31T21:00:57Z,1315350.00,False,prior_reference_price,33.95,26,extended_hours_trade,L,50,21,57657424778771,,,
+3655,EXEL,33.30,1616797,2024-12-31T21:00:20Z,121711.50,False,average_price_trade,34.71,30,extended_hours_trade,L,2,5,57620204684105,,,
+7522,EXEL,33.30,1609959,2024-12-31T21:00:14Z,250482.60,False,prior_reference_price,34.71,32.65,extended_hours_trade,L,2,20,57614067330574,,,
+3001,EXEL,33.55,344547,2024-12-31T18:39:35Z,100683.55,False,,33.57,33.55,,L,379,719,49175318501314,,,

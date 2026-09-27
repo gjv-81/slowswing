@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+22900,LNTH,89.60,640921,2025-02-03T21:11:26Z,2051840.00,False,average_price_trade,90.42,88.40,extended_hours_trade,L,75,1,58286151176990,,,
+13700,LNTH,89.50,617999,2025-02-03T21:09:47Z,1226150.00,False,average_price_trade,90.42,88.40,extended_hours_trade,L,75,1,58187266162071,,,
+2898,LNTH,89.54,603746,2025-02-03T21:01:29Z,259486.92,False,prior_reference_price,90.42,88.40,extended_hours_trade,L,75,1,57689827748445,,,
+3031,LNTH,89.54,599674,2025-02-03T21:01:01Z,271395.74,False,prior_reference_price,90.42,88.40,extended_hours_trade,L,75,1,57661528846484,,,
+2861,LNTH,89.54,594485,2025-02-03T21:00:08Z,256173.94,False,,89.81,89.27,extended_hours_trade,L,2235,2235,57608141117155,,,
+3999,LNTH,89.54,591349,2025-02-03T21:00:08Z,358070.46,False,,89.81,89.27,extended_hours_trade,L,2235,2235,57608136508402,,,
+3510,LNTH,89.54,585879,2025-02-03T21:00:07Z,314285.40,False,,89.81,89.27,extended_hours_trade,L,2235,2235,57607974662521,,,

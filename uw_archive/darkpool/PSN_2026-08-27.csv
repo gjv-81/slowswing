@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+18626,PSN,49.28,553784,2026-08-27T20:45:40Z,917889.28,False,average_price_trade,49.69,47.07,extended_hours_trade,L,3,5,40007695103147,,regular,2026-08-27T20:45:40Z
+2453,PSN,49.28,534966,2026-08-27T20:00:33Z,120883.84,False,prior_reference_price,49.69,47.07,extended_hours_trade,L,3,5,40007692396191,,regular,2026-08-27T20:00:33Z
+7400,PSN,49.44,333913,2026-08-27T19:36:00Z,365856.00,False,contingent_trade,49.46,49.4,,L,111,120,40007690922996,qualified_contingent_trade,regular,2026-08-27T19:35:59Z
+7400,PSN,49.44,326466,2026-08-27T19:35:52Z,365856.00,False,contingent_trade,49.43,49.39,,L,66,360,40007690915033,qualified_contingent_trade,regular,2026-08-27T19:35:51Z
+15900,PSN,49.22,307915,2026-08-27T19:26:39Z,782598.00,False,contingent_trade,49.22,49.17,,L,243,100,40007690362010,qualified_contingent_trade,regular,2026-08-27T19:26:38Z
+3110,PSN,49.15,261422,2026-08-27T18:56:37Z,152856.50,False,,49.18,49.12,,L,78,84,40007688559931,,regular,2026-08-27T18:56:37Z

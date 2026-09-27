@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+23649,RMBS,55.15,528206,2025-01-03T21:44:15Z,False,1304242.35,average_price_trade,55.99,55.15,extended_hours_trade,L,50,6,60255786464933,,,
+15157,RMBS,55.15,502511,2025-01-03T21:01:33Z,False,835908.55,prior_reference_price,55.99,54.26,extended_hours_trade,L,50,184,57693058460088,,,
+1832,RMBS,55.15,487168,2025-01-03T21:01:29Z,False,101034.80,prior_reference_price,55.99,54.26,extended_hours_trade,L,50,184,57689037688679,,,
+4523,RMBS,55.15,482727,2025-01-03T21:00:13Z,False,249443.45,prior_reference_price,55.99,53.06,extended_hours_trade,L,50,1,57613562951194,,,
+3888,RMBS,55.15,478204,2025-01-03T21:00:13Z,False,214423.20,prior_reference_price,55.99,53.06,extended_hours_trade,L,50,1,57613561387417,,,
+2089,RMBS,55.15,472742,2025-01-03T21:00:11Z,False,115208.35,prior_reference_price,55.99,53.06,extended_hours_trade,L,50,1,57611819326874,,,
+1838,RMBS,55.1802,230140,2025-01-03T19:51:18Z,False,101421.2076,,55.21,55.18,,L,36,112,53478950301965,,,
+9239,RMBS,54.91,191193,2025-01-03T18:55:00Z,False,507313.49,,55,54.91,,L,351,264,50100487240309,,,
+2177,RMBS,54.0799,91852,2025-01-03T16:34:56Z,False,117731.9423,,54.08,53.97,,L,407,112,41696603040389,,,
+2823,RMBS,54.0799,89675,2025-01-03T16:34:56Z,False,152667.5577,,54.08,53.97,,L,407,112,41696602677188,,,
+4403,RMBS,54.30,27595,2025-01-03T14:57:37Z,False,239082.90,,54.42,54.17,,L,2,108,35857714666786,,,

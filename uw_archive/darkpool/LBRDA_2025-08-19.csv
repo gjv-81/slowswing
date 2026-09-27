@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6500,LBRDA,60.96,274422,2025-08-19T22:08:37Z,False,396240.00,prior_reference_price,58.63,63.29,extended_hours_trade,L,60,70,65317314296218,,regular,
+33900,LBRDA,60.96,267922,2025-08-19T22:08:37Z,False,2066544.00,prior_reference_price,58.63,63.29,extended_hours_trade,L,60,70,65317304460456,,regular,
+2145,LBRDA,60.96,233437,2025-08-19T20:00:11Z,False,130759.20,prior_reference_price,59.07,61.11,extended_hours_trade,L,100,100,57611112525018,,regular,
+110597,LBRDA,60.73,186453,2025-08-19T17:07:58Z,False,6716555.81,contingent_trade,60.67,60.78,,L,140,101,47278055117464,qualified_contingent_trade,regular,

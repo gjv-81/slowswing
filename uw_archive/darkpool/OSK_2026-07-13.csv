@@ -1,0 +1,15 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+930,OSK,145.85,557363,2026-07-13T20:00:37Z,135640.50,False,prior_reference_price,162.99,136,extended_hours_trade,L,30,29,27805690312059,,regular,2026-07-13T20:00:37Z
+3324,OSK,145.85,556399,2026-07-13T20:00:28Z,484805.40,False,prior_reference_price,161.23,136,extended_hours_trade,L,100,29,27805690302506,,regular,2026-07-13T20:00:28Z
+1900,OSK,145.85,553043,2026-07-13T20:00:27Z,277115.00,False,prior_reference_price,161.23,136,extended_hours_trade,L,100,29,27805690302302,,regular,2026-07-13T20:00:27Z
+700,OSK,145.85,551143,2026-07-13T20:00:27Z,102095.00,False,prior_reference_price,161.23,136,extended_hours_trade,L,100,29,27805690302233,,regular,2026-07-13T20:00:27Z
+3272,OSK,145.85,549248,2026-07-13T20:00:27Z,477221.20,False,prior_reference_price,161.23,136,extended_hours_trade,L,100,29,27805690301972,,regular,2026-07-13T20:00:27Z
+1624,OSK,145.85,545667,2026-07-13T20:00:27Z,236860.40,False,prior_reference_price,161.23,136,extended_hours_trade,L,100,29,27805690301792,,regular,2026-07-13T20:00:27Z
+1837,OSK,145.85,543713,2026-07-13T20:00:27Z,267926.45,False,prior_reference_price,161.23,136,extended_hours_trade,L,100,29,27805690301580,,regular,2026-07-13T20:00:27Z
+1000,OSK,145.85,541876,2026-07-13T20:00:27Z,145850.00,False,prior_reference_price,161.23,136,extended_hours_trade,L,100,29,27805690301474,,regular,2026-07-13T20:00:27Z
+1410,OSK,145.85,540876,2026-07-13T20:00:27Z,205648.50,False,prior_reference_price,161.23,136,extended_hours_trade,L,100,29,27805690301414,,regular,2026-07-13T20:00:27Z
+800,OSK,146.0594,417186,2026-07-13T19:58:53Z,116847.5200,False,average_price_trade,145.81,145.64,,L,120,110,27805690207575,derivative_priced,regular,2026-07-13T19:58:53Z
+950,OSK,146.0773,416386,2026-07-13T19:58:53Z,138773.4350,False,average_price_trade,145.81,145.64,,L,120,110,27805690207568,derivative_priced,regular,2026-07-13T19:58:53Z
+1095,OSK,144.59,248722,2026-07-13T18:56:01Z,158326.05,False,,144.64,144.48,,L,23,248,27805686435546,,regular,2026-07-13T18:56:01Z
+1099,OSK,146.3499,93715,2026-07-13T15:50:25Z,160838.5401,False,,146.35,146.18,,L,100,323,27805675299955,,regular,2026-07-13T15:50:25Z
+1602,OSK,145.93,13223,2026-07-13T13:42:31Z,233779.86,False,,146.51,144.95,,L,1,27,27805667625511,,regular,2026-07-13T13:42:31Z

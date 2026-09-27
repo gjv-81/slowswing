@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1490,LBRDA,74.36,84420,2024-12-31T21:00:04Z,110796.40,False,,84.97,71.24,extended_hours_trade,L,100,5,57604794833335,,,
+3530,LBRDA,74.3101,73638,2024-12-31T20:56:31Z,262314.6530,False,,74.42,74.31,,L,33,250,57391457533674,,,
+3400,LBRDA,74.23,33001,2024-12-31T17:34:19Z,252382.00,False,,74.25,74.14,,L,8,310,45259205247872,,,
+3700,LBRDA,74.12,28715,2024-12-31T17:34:17Z,274244.00,False,,74.24,74.12,,L,200,349,45257872258408,,,

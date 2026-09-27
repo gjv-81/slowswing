@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+53300,LBRDK,52.97,1281673,2026-02-23T21:05:58Z,False,2823301.00,prior_reference_price,51.88,54.02,extended_hours_trade,L,37,38,43486619830757,,regular,2026-02-23T21:05:58Z
+53300,LBRDK,52.97,1228373,2026-02-23T21:05:50Z,False,2823301.00,prior_reference_price,51.88,54.02,extended_hours_trade,L,37,38,43486619822990,,regular,2026-02-23T21:05:50Z
+52272,LBRDK,52.7821,1222987,2026-02-23T21:01:03Z,False,2759025.9312,,52.77,52.91,extended_hours_trade,L,200,181,43486619535849,,regular,2026-02-23T21:01:03Z
+25000,LBRDK,52.9,638629,2026-02-23T18:38:43Z,False,1322500.0,contingent_trade,52.83,52.84,,L,30,132,43486610995833,qualified_contingent_trade,regular,2026-02-23T18:38:43Z

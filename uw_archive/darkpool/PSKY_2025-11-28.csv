@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+12085,PSKY,15.93,1415173,2025-11-28T17:37:59Z,192514.05,False,,15.93,15.92,,L,706,439,0,,regular,
+7444,PSKY,15.73,408945,2025-11-28T15:21:36Z,117094.12,False,,15.75,15.74,,L,186,211,0,,regular,
+7900,PSKY,15.61,68066,2025-11-28T14:34:36Z,123319.00,False,,15.68,15.61,,L,1120,601,0,,regular,

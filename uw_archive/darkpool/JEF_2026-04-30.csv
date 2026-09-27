@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+56867,JEF,48.22,1900817,2026-04-30T21:21:35Z,2742126.74,False,prior_reference_price,48.93,47.52,extended_hours_trade,L,102,104,26487140210318,,regular,2026-04-30T21:21:35Z
+2210,JEF,48.22,1836249,2026-04-30T20:00:20Z,106566.20,False,prior_reference_price,49.5,46.6,extended_hours_trade,L,1000,1000,26487135335156,,regular,2026-04-30T20:00:20Z
+3232,JEF,48.24,884371,2026-04-30T18:23:51Z,155911.68,False,,48.27,48.24,,L,4,200,26487129545463,,regular,2026-04-30T18:23:51Z
+3404,JEF,48.4,733233,2026-04-30T17:33:27Z,164753.6,False,,48.4,48.39,,L,7,100,26487126521480,,regular,2026-04-30T17:33:27Z
+3800,JEF,48.07,262175,2026-04-30T14:41:18Z,182666.00,False,,48.09,48.04,,L,200,16,26487116193000,,regular,2026-04-30T14:41:18Z

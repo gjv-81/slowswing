@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+9300,HLNE,96.27,443217,2026-09-14T22:03:58Z,False,895311.00,prior_reference_price,94.39,98.15,extended_hours_trade,L,20,21,37718482231857,,regular,2026-09-14T22:03:58Z
+9300,HLNE,96.27,443217,2026-09-14T21:24:49Z,True,895311.00,average_price_trade,94.39,98.15,extended_hours_trade,L,20,21,37718479883374,,regular,2026-09-14T21:24:49Z
+1716,HLNE,96.27,433917,2026-09-14T21:19:53Z,False,165199.32,prior_reference_price,94.39,98.15,extended_hours_trade,L,20,21,37718479586923,,regular,2026-09-14T21:19:53Z
+11561,HLNE,96.27,432201,2026-09-14T20:54:56Z,False,1112977.47,prior_reference_price,94.39,98.15,extended_hours_trade,L,20,21,37718478090085,,regular,2026-09-14T20:54:56Z
+1043,HLNE,96.27,420629,2026-09-14T20:00:45Z,False,100409.61,prior_reference_price,96,110,extended_hours_trade,L,525,10,37718474838789,,regular,2026-09-14T20:00:45Z
+1860,HLNE,96.27,419586,2026-09-14T20:00:45Z,False,179062.20,prior_reference_price,96,110,extended_hours_trade,L,525,10,37718474838748,,regular,2026-09-14T20:00:45Z
+3459,HLNE,96.27,417687,2026-09-14T20:00:12Z,False,332997.93,prior_reference_price,96,110,extended_hours_trade,L,526,10,37718474805810,,regular,2026-09-14T20:00:12Z
+1486,HLNE,95.875,221323,2026-09-14T19:24:52Z,False,142470.250,,95.76,95.97,,L,19,1,37718472685478,,regular,2026-09-14T19:24:52Z
+1050,HLNE,95.375,51910,2026-09-14T14:49:03Z,False,100143.750,,95.29,95.54,,L,39,37,37718456136564,,regular,2026-09-14T14:49:03Z
+7370,HLNE,95.2,16698,2026-09-14T13:30:10Z,False,701624.0,,94.5,95.75,,L,33,530,37718451404084,,regular,2026-09-14T13:30:10Z
+1287,HLNE,95.2,8986,2026-09-14T13:30:10Z,False,122522.4,,94.5,95.75,,L,33,530,37718451404051,,regular,2026-09-14T13:30:10Z

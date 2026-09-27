@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3887,ETSY,45.79,3022971,2025-04-23T20:06:09Z,177985.73,False,,46.60,45.57,extended_hours_trade,2,400,12,57969340962151,,,
+4300,ETSY,45.79,3016766,2025-04-23T20:00:07Z,196897.00,False,,45.94,45.62,extended_hours_trade,2,4365,4365,57607209803389,,,
+3046,ETSY,45.79,3008501,2025-04-23T20:00:07Z,139476.34,False,,45.94,45.62,extended_hours_trade,2,4365,4365,57607096456975,,,
+2400,ETSY,46.0065,2067484,2025-04-23T19:51:00Z,110415.6000,False,average_price_trade,45.98,45.94,,2,275,244,57060348012396,derivative_priced,,
+2500,ETSY,46.1329,1806083,2025-04-23T19:27:54Z,115332.2500,False,average_price_trade,46.13,46.11,,2,205,1,55674683433883,derivative_priced,,
+4200,ETSY,46.32,1321654,2025-04-23T17:32:51Z,194544.00,False,,46.35,46.30,,L,20,401,48771602314922,,,
+3300,ETSY,46.31,1259074,2025-04-23T17:18:24Z,152823.00,False,,46.31,46.29,,L,112,100,47904252056244,,,
+2300,ETSY,46.5894,271175,2025-04-23T14:10:11Z,107155.6200,False,average_price_trade,46.63,46.58,,L,15,6,36611949441013,derivative_priced,,

@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5756,GWRE,174.62,249877,2024-12-24T21:27:42Z,1005112.72,False,average_price_trade,175,174.30,extended_hours_trade,L,10,5,59262096622737,,,
+5756,GWRE,174.62,249876,2024-12-24T21:06:52Z,1005112.72,True,average_price_trade,175,174.30,extended_hours_trade,L,10,5,58012666617930,,,
+5100,GWRE,174.79,167905,2024-12-24T17:39:08Z,891429.00,False,contingent_trade,174.80,174.65,,L,71,112,45548287358773,qualified_contingent_trade,,
+5800,GWRE,174.60,160818,2024-12-24T17:36:34Z,1012680.00,False,contingent_trade,174.69,174.57,,L,46,10,45394476436668,qualified_contingent_trade,,
+5600,GWRE,174.55,154921,2024-12-24T17:36:14Z,977480.00,False,contingent_trade,174.69,174.57,,L,46,10,45374598593953,qualified_contingent_trade,,
+5300,GWRE,174.70,129921,2024-12-24T17:08:16Z,925910.00,False,contingent_trade,174.79,174.64,,L,105,2,43696511539740,qualified_contingent_trade,,
+5600,GWRE,174.75,124453,2024-12-24T17:08:01Z,978600.00,False,contingent_trade,174.79,174.64,,L,208,2,43681818151129,qualified_contingent_trade,,
+1239,GWRE,174.39,99870,2024-12-24T16:46:14Z,216069.21,False,,174.47,174.35,,L,41,12,42374524805691,,,
+5000,GWRE,174.2919,81906,2024-12-24T16:29:27Z,871459.5000,False,,174.47,174.29,,L,6,5,41367620846739,,,
+1216,GWRE,173.7006,67449,2024-12-24T16:11:43Z,211219.9296,False,,173.90,173.71,,L,160,1,40303141116498,,,
+584,GWRE,173.7006,66233,2024-12-24T16:11:43Z,101441.1504,False,,173.90,173.71,,L,160,1,40303140751194,,,
+3700,GWRE,173.33,36110,2024-12-24T15:27:40Z,641321.00,False,contingent_trade,173.33,173.20,,L,11,12,37660359167468,qualified_contingent_trade,,

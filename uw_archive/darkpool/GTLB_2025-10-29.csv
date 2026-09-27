@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3324,GTLB,48.03,1963741,2025-10-29T20:41:13Z,159651.72,False,prior_reference_price,48.07,47.77,extended_hours_trade,L,98,5,0,,regular,
+21978,GTLB,48.03,1959562,2025-10-29T20:03:55Z,1055603.34,False,prior_reference_price,48.73,47.77,extended_hours_trade,L,1,5,0,,regular,
+4676,GTLB,48.03,1936745,2025-10-29T20:00:19Z,224588.28,False,prior_reference_price,48.73,47.92,extended_hours_trade,L,1,200,0,,regular,
+5201,GTLB,48.03,1929202,2025-10-29T20:00:19Z,249804.03,False,prior_reference_price,48.73,47.92,extended_hours_trade,L,1,200,0,,regular,
+2700,GTLB,47.98,1034479,2025-10-29T18:42:07Z,129546.00,False,,48.08,47.98,,L,108,16,0,,regular,
+2100,GTLB,47.98,1031679,2025-10-29T18:42:07Z,100758.00,False,,48.08,47.98,,L,108,16,0,,regular,
+3878,GTLB,48.5,723306,2025-10-29T17:35:09Z,188083.0,False,,48.52,48.48,,L,155,19,0,,regular,
+3558,GTLB,48.345,539037,2025-10-29T16:11:25Z,172011.510,False,,48.36,48.33,,L,361,165,0,,regular,
+5600,GTLB,47.87,233741,2025-10-29T14:11:50Z,268072.00,False,,47.91,47.88,,L,50,7,0,,regular,
+2500,GTLB,47.815,110434,2025-10-29T13:37:20Z,119537.500,False,,47.91,47.71,,L,200,140,0,,regular,
+2200,GTLB,47.865,90809,2025-10-29T13:33:56Z,105303.000,False,,48.14,47.77,,L,58,6,0,,regular,

@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+16668,QLYS,113.67,852418,2026-06-16T20:59:06Z,False,1894651.56,average_price_trade,115.89,112.9,extended_hours_trade,L,17,380,31301797200180,,regular,2026-06-16T20:59:06Z
+5645,QLYS,113.67,835684,2026-06-16T20:01:49Z,False,641667.15,prior_reference_price,115.89,112.9,extended_hours_trade,L,17,380,31301793762802,,regular,2026-06-16T20:01:49Z
+1000,QLYS,113.67,829710,2026-06-16T20:00:10Z,False,113670.00,prior_reference_price,117.5,112.9,extended_hours_trade,L,1,380,31301793663977,,regular,2026-06-16T20:00:10Z
+1993,QLYS,113.67,827298,2026-06-16T20:00:10Z,False,226544.31,prior_reference_price,117.5,112.9,extended_hours_trade,L,1,380,31301793663893,,regular,2026-06-16T20:00:10Z
+1490,QLYS,113.48,247765,2026-06-16T16:43:40Z,False,169085.20,,113.61,113.35,,L,189,10,31301781873512,,regular,2026-06-16T16:43:40Z
+1140,QLYS,113.33,231472,2026-06-16T16:35:43Z,False,129196.20,,113.61,113.26,,L,124,67,31301781396900,,regular,2026-06-16T16:35:43Z

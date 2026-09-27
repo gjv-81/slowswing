@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+12300,PSN,53.4,594955,2026-07-01T19:40:30Z,656820.0,False,,53.46,53.39,,L,32,1,40007691193170,,regular,2026-07-01T19:40:30Z
+1930,PSN,53.71,49661,2026-07-01T14:07:27Z,103660.30,False,,53.71,53.43,,L,164,10,40007671210042,,regular,2026-07-01T14:07:27Z
+3081,PSN,53.0551,36433,2026-07-01T13:53:10Z,163462.7631,False,,53.7,53.07,,L,50,10,40007670352861,,regular,2026-07-01T13:53:10Z

@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2566,PVH,68.98,1066370,2025-04-30T20:14:16Z,177002.68,False,prior_reference_price,92.50,65.65,extended_hours_trade,L,1,10,58456561104387,,,
+1797,PVH,68.98,1063800,2025-04-30T20:04:02Z,123957.06,False,prior_reference_price,92.50,65.65,extended_hours_trade,L,1,10,57842421236234,,,
+6687,PVH,68.98,1059331,2025-04-30T20:00:51Z,461269.26,False,prior_reference_price,94.84,65.65,extended_hours_trade,L,1,10,57651024644881,,,
+7115,PVH,68.98,1051430,2025-04-30T20:00:28Z,490792.70,False,prior_reference_price,94.84,65.65,extended_hours_trade,L,1,10,57628190723985,,,
+6766,PVH,68.98,1044114,2025-04-30T20:00:28Z,466718.68,False,prior_reference_price,94.84,65.65,extended_hours_trade,L,1,10,57628115250396,,,
+8353,PVH,68.98,1035913,2025-04-30T20:00:27Z,576189.94,False,prior_reference_price,94.84,65.65,extended_hours_trade,L,1,10,57627907918132,,,
+1515,PVH,68.98,1027519,2025-04-30T20:00:06Z,104504.70,False,,69.01,68.93,extended_hours_trade,L,100,26,57606585665506,,,
+2000,PVH,69.0715,641596,2025-04-30T19:54:56Z,138143.0000,False,average_price_trade,69.09,69.04,,L,129,60,57296512708052,derivative_priced,,
+2000,PVH,67.60,152336,2025-04-30T14:42:09Z,135200.00,False,,67.65,67.47,,L,5,1,38529763733586,,,
+2000,PVH,67.70,148353,2025-04-30T14:41:01Z,135400.00,False,,67.72,67.61,,L,154,19,38461791415886,,,
+4400,PVH,67.58,88690,2025-04-30T14:03:30Z,297352.00,False,,67.58,67.36,,L,11,12,36210005048952,,,

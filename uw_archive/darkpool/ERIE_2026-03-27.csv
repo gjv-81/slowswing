@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+515,ERIE,240.87,134081,2026-03-27T20:02:49Z,124048.05,False,prior_reference_price,245.57,0,extended_hours_trade,L,25,0,29605281740565,,regular,2026-03-27T20:02:49Z
+800,ERIE,240.87,131488,2026-03-27T20:00:07Z,192696.00,False,,247,225,extended_hours_trade,L,4,2,29605281578956,,regular,2026-03-27T20:00:07Z
+510,ERIE,242.14,54971,2026-03-27T18:55:14Z,123491.40,False,,242.32,241.96,,L,7,21,29605277685476,,regular,2026-03-27T18:55:14Z
+427,ERIE,243.13,38237,2026-03-27T17:35:38Z,103816.51,False,,243.05,242.68,,L,5,40,29605272909569,,regular,2026-03-27T17:35:38Z
+523,ERIE,242.775,32625,2026-03-27T17:08:58Z,126971.325,False,,243.06,242.54,,L,5,4,29605271309660,,regular,2026-03-27T17:08:58Z
+823,ERIE,243.1205,25630,2026-03-27T16:34:43Z,200088.1715,False,,243.5,242.91,,L,5,4,29605269254712,,regular,2026-03-27T16:34:43Z

@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2444,OLED,87.54,705292,2026-06-25T20:00:50Z,False,213947.76,prior_reference_price,85.86,91.18,extended_hours_trade,L,1,45,30021893449327,,regular,2026-06-25T20:00:50Z
+1305,OLED,87.54,702848,2026-06-25T20:00:50Z,False,114239.70,prior_reference_price,85.86,91.18,extended_hours_trade,L,1,45,30021893449314,,regular,2026-06-25T20:00:50Z
+1600,OLED,87.54,700985,2026-06-25T20:00:49Z,False,140064.00,prior_reference_price,85.86,91.18,extended_hours_trade,L,1,45,30021893448942,,regular,2026-06-25T20:00:49Z
+2999,OLED,87.54,699185,2026-06-25T20:00:46Z,False,262532.46,prior_reference_price,85.86,91.18,extended_hours_trade,L,1,45,30021893445347,,regular,2026-06-25T20:00:46Z
+1239,OLED,87.54,696183,2026-06-25T20:00:11Z,False,108462.06,prior_reference_price,86.08,90.5,extended_hours_trade,L,50,3,30021893410354,,regular,2026-06-25T20:00:11Z
+2100,OLED,88.72,308320,2026-06-25T18:06:46Z,False,186312.00,,88.61,88.81,,L,6,10,30021886605562,,regular,2026-06-25T18:06:46Z
+1319,OLED,89.04,292363,2026-06-25T17:54:37Z,False,117443.76,,89,89.06,,L,6,469,30021885876174,,regular,2026-06-25T17:54:37Z
+1582,OLED,88.3151,150841,2026-06-25T15:36:11Z,False,139714.4882,,88.17,88.52,,L,20,84,30021877570881,,regular,2026-06-25T15:36:11Z
+1803,OLED,88.5299,141657,2026-06-25T15:24:39Z,False,159619.4097,,88.26,88.35,,L,150,14,30021876878628,,regular,2026-06-25T15:24:39Z

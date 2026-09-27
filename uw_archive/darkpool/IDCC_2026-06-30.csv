@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2398,IDCC,283.13,298558,2026-06-30T21:55:15Z,678945.74,False,average_price_trade,313.57,256,extended_hours_trade,L,40,50,33092801931429,,regular,2026-06-30T21:55:15Z
+857,IDCC,283.13,295940,2026-06-30T20:00:42Z,242642.41,False,prior_reference_price,288.88,268,extended_hours_trade,L,100,50,33092795057769,,regular,2026-06-30T20:00:42Z
+468,IDCC,283.13,295041,2026-06-30T20:00:31Z,132504.84,False,prior_reference_price,288.88,269.77,extended_hours_trade,L,100,2,33092795047136,,regular,2026-06-30T20:00:31Z
+1223,IDCC,283.13,294573,2026-06-30T20:00:31Z,346267.99,False,prior_reference_price,288.88,269.77,extended_hours_trade,L,100,2,33092795047074,,regular,2026-06-30T20:00:31Z
+733,IDCC,283.13,293258,2026-06-30T20:00:30Z,207534.29,False,prior_reference_price,288.88,269.77,extended_hours_trade,L,100,2,33092795046608,,regular,2026-06-30T20:00:30Z
+405,IDCC,283.39,168901,2026-06-30T19:59:12Z,114772.95,False,,283.59,283.19,,L,431,64,33092794967860,,regular,2026-06-30T19:59:12Z
+480,IDCC,283.49,77441,2026-06-30T17:57:32Z,136075.20,False,,283.4,283.04,,L,62,2,33092787668101,,regular,2026-06-30T17:57:32Z
+1471,IDCC,278.64,17502,2026-06-30T15:05:02Z,409879.44,False,,279.47,278.67,,L,51,37,33092777318038,,regular,2026-06-30T15:05:02Z

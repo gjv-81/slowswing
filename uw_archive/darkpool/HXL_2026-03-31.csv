@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1285,HXL,80.929,1542987,2026-03-31T20:03:51Z,103993.765,False,average_price_trade,82.7,61.2,extended_hours_trade,L,30,1,27298884364970,,regular,2026-03-31T20:03:51Z
+1449,HXL,80.93,1541702,2026-03-31T20:02:38Z,117267.57,False,prior_reference_price,82.7,61.2,extended_hours_trade,L,30,1,27298884291533,,regular,2026-03-31T20:02:38Z
+1297,HXL,80.93,1538087,2026-03-31T20:00:48Z,104966.21,False,prior_reference_price,82.7,61.2,extended_hours_trade,L,30,1,27298884182245,,regular,2026-03-31T20:00:48Z
+3611,HXL,80.93,1535620,2026-03-31T20:00:23Z,292238.23,False,prior_reference_price,82.7,61.2,extended_hours_trade,L,30,1,27298884156896,,regular,2026-03-31T20:00:23Z
+1300,HXL,80.93,1529440,2026-03-31T20:00:23Z,105209.00,False,prior_reference_price,82.7,61.2,extended_hours_trade,L,30,1,27298884156756,,regular,2026-03-31T20:00:23Z
+1300,HXL,79.865,670143,2026-03-31T15:20:17Z,103824.500,False,,79.95,79.75,,L,20,7,27298867350626,,regular,2026-03-31T15:20:17Z
+2217,HXL,78.675,45928,2026-03-31T14:12:35Z,174422.475,False,,78.77,78.55,,L,61,5,27298863289129,,regular,2026-03-31T14:12:35Z
+2350,HXL,78.165,10789,2026-03-31T13:45:39Z,183687.750,False,,78.63,78.14,,L,103,1,27298861672607,,regular,2026-03-31T13:45:39Z

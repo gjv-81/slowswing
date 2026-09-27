@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4080,PSN,82.69,795920,2025-12-01T21:01:10Z,337375.20,False,prior_reference_price,0,0,extended_hours_trade,L,0,0,0,,regular,
+6965,PSN,82.69,790812,2025-12-01T21:00:38Z,575935.85,False,prior_reference_price,84.42,81.26,extended_hours_trade,L,100,400,0,,regular,
+2199,PSN,82.69,783712,2025-12-01T21:00:31Z,181835.31,False,prior_reference_price,84.42,81.26,extended_hours_trade,L,100,400,0,,regular,
+2398,PSN,82.69,781513,2025-12-01T21:00:31Z,198290.62,False,prior_reference_price,84.42,81.26,extended_hours_trade,L,100,400,0,,regular,
+1525,PSN,82.69,779115,2025-12-01T21:00:31Z,126102.25,False,prior_reference_price,84.42,81.26,extended_hours_trade,L,100,400,0,,regular,
+2400,PSN,82.69,776610,2025-12-01T21:00:31Z,198456.00,False,prior_reference_price,84.42,81.26,extended_hours_trade,L,100,400,0,,regular,
+3249,PSN,82.69,774210,2025-12-01T21:00:31Z,268659.81,False,prior_reference_price,84.42,81.26,extended_hours_trade,L,100,400,0,,regular,
+3816,PSN,82.69,770961,2025-12-01T21:00:31Z,315545.04,False,prior_reference_price,84.42,81.26,extended_hours_trade,L,100,400,0,,regular,
+2874,PSN,83.11,417561,2025-12-01T20:01:25Z,238858.14,False,,83.44,83.34,,L,100,21,0,,regular,
+2166,PSN,84.46,146100,2025-12-01T18:10:00Z,182940.36,False,,84.56,84.36,,L,335,116,0,,regular,
+1200,PSN,84.585,141008,2025-12-01T18:05:39Z,101502.000,False,,84.67,84.51,,L,338,18,0,,regular,
+2177,PSN,84.5245,65614,2025-12-01T16:03:18Z,184009.8365,False,,84.58,84.52,,L,101,3,0,,regular,

@@ -1,0 +1,16 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2401,PSN,46.94,1015745,2026-09-14T20:00:43Z,112702.94,False,prior_reference_price,50,45.61,extended_hours_trade,L,52,1,40007692406115,,regular,2026-09-14T20:00:43Z
+5020,PSN,46.94,1009724,2026-09-14T20:00:31Z,235638.80,False,prior_reference_price,50,45.61,extended_hours_trade,L,52,1,40007692393270,,regular,2026-09-14T20:00:31Z
+4157,PSN,46.94,1004704,2026-09-14T20:00:31Z,195129.58,False,prior_reference_price,50,45.61,extended_hours_trade,L,52,1,40007692393267,,regular,2026-09-14T20:00:31Z
+8558,PSN,46.94,1000547,2026-09-14T20:00:31Z,401712.52,False,prior_reference_price,50,45.61,extended_hours_trade,L,52,1,40007692393260,,regular,2026-09-14T20:00:31Z
+2571,PSN,46.92,809232,2026-09-14T19:59:10Z,120631.32,False,,46.93,46.91,,L,22,185,40007692312803,,regular,2026-09-14T19:59:10Z
+9016,PSN,46.6976,399325,2026-09-14T16:14:57Z,421025.5616,False,contingent_trade,47.26,47.19,,L,223,13,40007678859837,qualified_contingent_trade,regular,2026-09-14T16:14:56Z
+4884,PSN,46.6976,390306,2026-09-14T16:14:44Z,228071.0784,False,contingent_trade,47.26,47.19,,L,223,13,40007678846976,qualified_contingent_trade,regular,2026-09-14T16:14:43Z
+6600,PSN,47.26,384357,2026-09-14T16:11:59Z,311916.00,False,contingent_trade,47.27,47.16,,L,193,120,40007678681828,qualified_contingent_trade,regular,2026-09-14T16:11:58Z
+6600,PSN,47.26,377750,2026-09-14T16:11:48Z,311916.00,False,contingent_trade,47.27,47.16,,L,193,120,40007678671079,qualified_contingent_trade,regular,2026-09-14T16:11:47Z
+13200,PSN,47.27,371097,2026-09-14T16:11:38Z,623964.00,False,contingent_trade,47.26,47.16,,L,36,311,40007678660475,qualified_contingent_trade,regular,2026-09-14T16:11:37Z
+6700,PSN,47.27,357753,2026-09-14T16:11:27Z,316709.00,False,contingent_trade,47.26,47.16,,L,36,311,40007678650091,qualified_contingent_trade,regular,2026-09-14T16:11:26Z
+39800,PSN,47.17,347932,2026-09-14T16:11:17Z,1877366.00,False,contingent_trade,47.17,47.14,,L,125,4,40007678639792,qualified_contingent_trade,regular,2026-09-14T16:11:16Z
+21416,PSN,46.82,128529,2026-09-14T14:02:44Z,1002697.12,False,,47.03,46.85,,L,40,77,40007670927158,,regular,2026-09-14T14:02:44Z
+2650,PSN,46.9,88832,2026-09-14T14:02:44Z,124285.0,False,,47.05,46.9,,L,41,316,40007670926912,,regular,2026-09-14T14:02:44Z
+2647,PSN,46.931,84750,2026-09-14T14:02:44Z,124226.357,False,,47.05,46.9,,L,41,316,40007670926899,,regular,2026-09-14T14:02:44Z

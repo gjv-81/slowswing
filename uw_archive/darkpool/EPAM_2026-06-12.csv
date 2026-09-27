@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2208,EPAM,95.38,844139,2026-06-12T20:00:15Z,210599.04,False,prior_reference_price,99.9,92.5,extended_hours_trade,L,49,1,32646118432834,,regular,2026-06-12T20:00:15Z
+4009,EPAM,94.305,260050,2026-06-12T16:09:07Z,378068.745,False,,94.49,94.12,,L,100,278,32646104564662,,regular,2026-06-12T16:09:07Z
+1796,EPAM,95,169306,2026-06-12T15:00:04Z,170620,False,,95.1,94.7,,L,2,112,32646100421366,,regular,2026-06-12T15:00:03Z
+23433,EPAM,94.49,143734,2026-06-12T14:48:56Z,2214184.17,False,,94.48,94.27,,L,220,42,32646099753063,intermarket_sweep,regular,2026-06-12T14:48:56Z
+3026,EPAM,93.9501,100315,2026-06-12T14:38:02Z,284293.0026,False,,94.2,94.04,,L,201,45,32646099099096,,regular,2026-06-12T14:38:02Z
+1896,EPAM,93.715,81487,2026-06-12T14:30:32Z,177683.640,False,,93.81,93.51,,L,10,100,32646098648962,,regular,2026-06-12T14:30:32Z

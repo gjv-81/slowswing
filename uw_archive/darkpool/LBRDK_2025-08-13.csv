@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2986,LBRDK,61.35,1473201,2025-08-13T20:00:04Z,183191.10,False,,62.34,60.81,extended_hours_trade,L,200,1991,57604278436985,,regular,
+1852,LBRDK,61.35,1470175,2025-08-13T20:00:04Z,113620.20,False,,62.34,60.81,extended_hours_trade,L,200,1991,57604277340699,,regular,
+1988,LBRDK,61.35,1468004,2025-08-13T20:00:04Z,121963.80,False,,62.34,60.81,extended_hours_trade,L,200,1991,57604274316379,,regular,
+3714,LBRDK,61.35,1465590,2025-08-13T20:00:01Z,227853.90,False,,62.34,60.81,extended_hours_trade,L,200,1991,57601239772677,,regular,
+7518,LBRDK,61.3123,703932,2025-08-13T18:17:08Z,460945.8714,False,contingent_trade,61.38,61.33,,L,100,273,51428293275505,qualified_contingent_trade,regular,
+7500,LBRDK,61.1518,604488,2025-08-13T17:54:16Z,458638.5000,False,contingent_trade,61.21,61.16,,L,101,201,50056214501864,qualified_contingent_trade,regular,
+6000,LBRDK,61.2999,492857,2025-08-13T16:57:41Z,367799.4000,False,,61.32,61.22,,L,100,56,46661021149471,,regular,
+5000,LBRDK,61.1872,454909,2025-08-13T16:48:48Z,305936.0000,False,contingent_trade,61.27,61.19,,L,2,210,46128233346897,qualified_contingent_trade,regular,
+1650,LBRDK,60.88,330376,2025-08-13T15:37:56Z,100452.00,False,,60.91,60.85,,L,100,366,41876856630998,,regular,
+4000,LBRDK,61.11,213970,2025-08-13T14:49:34Z,244440.00,False,,61.15,61.05,,L,5,100,38974073793662,,regular,

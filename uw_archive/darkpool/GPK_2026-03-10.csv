@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+36000,GPK,10.45,3172984,2026-03-10T19:05:34Z,376200.00,False,,10.46,10.45,,L,1800,480,33105676652073,,regular,2026-03-10T19:05:34Z
+9670,GPK,10.38,2768207,2026-03-10T18:40:51Z,100374.60,False,,10.38,10.37,,L,1029,920,33105675168849,,regular,2026-03-10T18:40:51Z
+10000,GPK,10.54,648023,2026-03-10T14:36:41Z,105400.00,False,,10.54,10.53,,L,304,789,33105660519495,,regular,2026-03-10T14:36:41Z

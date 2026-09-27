@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4905,PEGA,54.32,777614,2025-11-26T21:04:59Z,266439.60,False,prior_reference_price,55.6,53.35,extended_hours_trade,L,4,2,0,,regular,
+2344,PEGA,54.32,772583,2025-11-26T21:02:27Z,127326.08,False,prior_reference_price,55.6,53.35,extended_hours_trade,L,4,2,0,,regular,
+13364,PEGA,54.32,766901,2025-11-26T21:00:33Z,725932.48,False,prior_reference_price,54.82,53.74,extended_hours_trade,L,1,20,0,,regular,
+9808,PEGA,54.32,753537,2025-11-26T21:00:33Z,532770.56,False,prior_reference_price,54.82,53.74,extended_hours_trade,L,1,20,0,,regular,
+2230,PEGA,54.32,743729,2025-11-26T21:00:33Z,121133.60,False,prior_reference_price,54.82,53.74,extended_hours_trade,L,1,20,0,,regular,
+2059,PEGA,54.45,505212,2025-11-26T20:50:23Z,112112.55,False,,54.47,54.44,,L,352,133,0,,regular,
+3000,PEGA,54.25,306007,2025-11-26T18:10:35Z,162750.00,False,,54.28,54.19,,L,45,104,0,,regular,
+2458,PEGA,54.2,220218,2025-11-26T17:01:58Z,133223.6,False,,54.2,54.12,,L,389,1,0,,regular,
+2000,PEGA,54.47,35381,2025-11-26T14:50:54Z,108940.00,False,,54.48,54.31,,L,104,147,0,,regular,

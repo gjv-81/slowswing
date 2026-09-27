@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+889,KRYS,145.86,189775,2025-08-20T20:00:08Z,129669.54,False,,146.62,144.90,extended_hours_trade,L,1365,1365,57608892230524,,regular,
+1540,KRYS,145.76,116811,2025-08-20T18:29:32Z,224470.40,False,,145.76,145.39,,L,102,12,52172457866920,,regular,
+7600,KRYS,146.68,81826,2025-08-20T16:26:43Z,1114768.00,False,,146.52,145.84,,L,68,1,44803013798516,,regular,
+7600,KRYS,146,51886,2025-08-20T16:00:05Z,1109600,False,,145.96,144.98,,L,19,25,43205860282709,,regular,
+1600,KRYS,146,54086,2025-08-20T16:00:05Z,233600,False,,145.96,144.98,,L,19,25,43205860664392,,regular,

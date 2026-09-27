@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2240,PEN,316.36,290696,2026-06-24T21:43:46Z,708646.40,False,average_price_trade,319.92,310.25,extended_hours_trade,L,17,6,36429990831004,,regular,2026-06-24T21:43:45Z
+3877,PEN,316.36,288456,2026-06-24T21:23:49Z,1226527.72,False,prior_reference_price,319.92,310.25,extended_hours_trade,L,17,6,36429989634571,,regular,2026-06-24T21:23:49Z
+739,PEN,316.36,284579,2026-06-24T21:11:11Z,233790.04,False,prior_reference_price,319.92,310.25,extended_hours_trade,L,17,6,36429988876133,,regular,2026-06-24T21:11:11Z
+358,PEN,316.36,283193,2026-06-24T20:00:44Z,113256.88,False,prior_reference_price,318.42,315,extended_hours_trade,L,100,100,36429984648947,,regular,2026-06-24T20:00:44Z
+1497,PEN,316.36,282835,2026-06-24T20:00:43Z,473590.92,False,prior_reference_price,318.42,315,extended_hours_trade,L,100,100,36429984648522,,regular,2026-06-24T20:00:43Z
+800,PEN,318,56762,2026-06-24T14:58:23Z,254400,False,,318.08,317.97,,L,15,10,36429966507980,,regular,2026-06-24T14:58:23Z
+500,PEN,317.97,47682,2026-06-24T14:42:02Z,158985.00,False,,318.08,317.78,,L,6,5,36429965527359,,regular,2026-06-24T14:42:02Z
+320,PEN,318.055,15618,2026-06-24T14:01:34Z,101777.600,False,,318.15,317.92,,L,10,5,36429963099566,,regular,2026-06-24T14:01:34Z

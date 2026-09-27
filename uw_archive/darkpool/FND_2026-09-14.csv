@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3771,FND,48.13,1752693,2026-09-14T20:00:45Z,181498.23,False,prior_reference_price,48.49,47.19,extended_hours_trade,L,50,42,37645460395372,,regular,2026-09-14T20:00:45Z
+10460,FND,48.13,1745773,2026-09-14T20:00:45Z,503439.80,False,prior_reference_price,48.49,47.19,extended_hours_trade,L,50,42,37645460395296,,regular,2026-09-14T20:00:45Z
+4851,FND,48.13,1734317,2026-09-14T20:00:38Z,233478.63,False,prior_reference_price,48.49,46.47,extended_hours_trade,L,50,100,37645460387710,,regular,2026-09-14T20:00:38Z
+4918,FND,48.13,1729466,2026-09-14T20:00:35Z,236703.34,False,prior_reference_price,48.49,46.47,extended_hours_trade,L,50,100,37645460385300,,regular,2026-09-14T20:00:35Z
+7800,FND,47.68,819914,2026-09-14T18:28:13Z,371904.00,False,,47.69,47.67,,L,38,200,37645454843124,,regular,2026-09-14T18:28:13Z
+3817,FND,47.87,729216,2026-09-14T17:57:06Z,182719.79,False,,47.85,47.83,,L,158,101,37645452975572,,regular,2026-09-14T17:57:06Z
+3294,FND,47.79,367095,2026-09-14T15:54:21Z,157420.26,False,,47.81,47.74,,L,14,146,37645445611283,,regular,2026-09-14T15:54:21Z
+10459,FND,47.54,187077,2026-09-14T14:52:21Z,497220.86,False,,47.62,47.55,,L,15,20,37645441891409,,regular,2026-09-14T14:52:21Z

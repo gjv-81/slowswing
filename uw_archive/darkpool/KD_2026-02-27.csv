@@ -1,0 +1,14 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+13274,KD,12.33,4452708,2026-02-27T21:14:03Z,163668.42,False,prior_reference_price,12.46,11.98,extended_hours_trade,L,80,250,21522157563579,,regular,2026-02-27T21:14:03Z
+12000,KD,12.33,4439433,2026-02-27T21:10:48Z,147960.00,False,prior_reference_price,12.46,11.98,extended_hours_trade,L,80,250,21522157369118,,regular,2026-02-27T21:10:48Z
+18609,KD,12.328,4425518,2026-02-27T21:08:11Z,229411.752,False,prior_reference_price,12.46,12.34,extended_hours_trade,L,80,10,21522157212237,,regular,2026-02-27T21:08:11Z
+31494,KD,12.3291,4403339,2026-02-27T21:06:06Z,388292.6754,False,prior_reference_price,12.46,11.98,extended_hours_trade,L,80,250,21522157086926,,regular,2026-02-27T21:06:06Z
+16368,KD,12.33,4371845,2026-02-27T21:05:04Z,201817.44,False,prior_reference_price,12.46,11.98,extended_hours_trade,L,80,250,21522157024710,,regular,2026-02-27T21:05:04Z
+25663,KD,12.33,4354698,2026-02-27T21:04:02Z,316424.79,False,prior_reference_price,12.46,11.98,extended_hours_trade,L,80,250,21522156963198,,regular,2026-02-27T21:04:02Z
+20222,KD,12.33,4304399,2026-02-27T21:00:56Z,249337.26,False,prior_reference_price,12.46,11.98,extended_hours_trade,L,80,250,21522156776443,,regular,2026-02-27T21:00:56Z
+11600,KD,12.33,4277066,2026-02-27T21:00:32Z,143028.00,False,prior_reference_price,12.46,11.98,extended_hours_trade,L,80,250,21522156753086,,regular,2026-02-27T21:00:32Z
+9186,KD,12.33,4265466,2026-02-27T21:00:32Z,113263.38,False,prior_reference_price,12.46,11.98,extended_hours_trade,L,80,250,21522156753037,,regular,2026-02-27T21:00:32Z
+54683,KD,12.33,4249159,2026-02-27T21:00:32Z,674241.39,False,prior_reference_price,12.46,11.98,extended_hours_trade,L,80,250,21522156752742,,regular,2026-02-27T21:00:32Z
+9400,KD,12.3514,2614220,2026-02-27T20:56:24Z,116103.1600,False,average_price_trade,12.33,12.32,,L,5735,1185,21522156505101,derivative_priced,regular,2026-02-27T20:56:24Z
+8440,KD,12.345,847684,2026-02-27T16:32:16Z,104191.800,False,,12.35,12.34,,L,102,188,21522140656596,,regular,2026-02-27T16:32:16Z
+9000,KD,12.205,409534,2026-02-27T15:20:53Z,109845.000,False,,12.21,12.18,,L,6,89,21522136373587,,regular,2026-02-27T15:20:53Z

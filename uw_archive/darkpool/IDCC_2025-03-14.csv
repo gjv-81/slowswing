@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5434,IDCC,217.09,396129,2025-03-14T20:33:45Z,False,1179667.06,prior_reference_price,214.50,217.10,extended_hours_trade,L,4,25,59625770922021,,,
+2130,IDCC,217.09,390695,2025-03-14T20:33:45Z,False,462401.70,prior_reference_price,214.50,217.10,extended_hours_trade,L,4,25,59625768291250,,,
+566,IDCC,217.09,388041,2025-03-14T20:00:56Z,False,122872.94,prior_reference_price,214.50,218.80,extended_hours_trade,L,12,25,57656142003839,,,
+1610,IDCC,217.09,386542,2025-03-14T20:00:15Z,False,349514.90,prior_reference_price,212.50,218.80,extended_hours_trade,L,12,12,57615762874430,,,
+875,IDCC,217.09,384807,2025-03-14T20:00:15Z,False,189953.75,prior_reference_price,212.50,218.80,extended_hours_trade,L,12,12,57615580409086,,,
+600,IDCC,217.09,383932,2025-03-14T20:00:15Z,False,130254.00,prior_reference_price,212.50,218.80,extended_hours_trade,L,12,12,57615577917513,,,
+603,IDCC,217.09,383332,2025-03-14T20:00:15Z,False,130905.27,prior_reference_price,212.50,218.80,extended_hours_trade,L,12,12,57615573739263,,,
+500,IDCC,215.25,101510,2025-03-14T15:32:15Z,False,107625.00,,215.35,215.95,,L,149,1,41535198677952,,,
+1000,IDCC,214.47,88896,2025-03-14T15:14:48Z,False,214470.00,,214.32,214.87,,L,10,35,40488510771711,,,
+500,IDCC,210,30273,2025-03-14T13:35:23Z,False,105000,,209.50,211.68,,L,104,12,34523029854535,,,
+22275,IDCC,208.23,22452,2025-03-14T12:00:16Z,False,4638323.25,average_price_trade,206.11,217.02,extended_hours_trade,L,56,56,28816040951817,,,

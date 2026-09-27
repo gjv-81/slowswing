@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2793,OLED,156.80,415411,2025-07-01T20:28:18Z,False,437942.40,prior_reference_price,156.41,159.90,extended_hours_trade,L,10,4,59298867875303,,regular,
+704,OLED,156.80,412618,2025-07-01T20:20:00Z,False,110387.20,prior_reference_price,156.41,159.90,extended_hours_trade,L,10,4,58800262112171,,regular,
+8710,OLED,156.80,411900,2025-07-01T20:02:44Z,False,1365728.00,prior_reference_price,156.41,159.90,extended_hours_trade,L,10,5,57764042449036,,regular,
+890,OLED,156.80,403170,2025-07-01T20:02:23Z,False,139552.00,prior_reference_price,156.41,159.90,extended_hours_trade,L,10,5,57743215244165,,regular,
+2729,OLED,156.80,401602,2025-07-01T20:00:17Z,False,427907.20,prior_reference_price,156.41,159.80,extended_hours_trade,L,1,5,57617422439503,,regular,
+4000,OLED,156.80,398014,2025-07-01T20:00:08Z,False,627200.00,average_price_trade,156.41,159.80,extended_hours_trade,L,1,5,57608221829645,,regular,
+1400,OLED,156.80,394014,2025-07-01T20:00:08Z,False,219520.00,average_price_trade,156.41,159.80,extended_hours_trade,L,1,5,57608205573792,,regular,
+1000,OLED,158.2746,137747,2025-07-01T16:42:19Z,False,158274.6000,,158.24,158.43,,L,100,5,45739086446533,,regular,

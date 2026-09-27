@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+35520,JACK,35.03,1054747,2025-03-05T21:53:51Z,1244265.60,False,prior_reference_price,36.50,35.01,extended_hours_trade,L,1,50,60831191317230,,,
+10894,JACK,35.03,1014790,2025-03-05T21:01:02Z,381616.82,False,prior_reference_price,36.01,35.01,extended_hours_trade,L,5,50,57662520171250,,,
+140800,JACK,35.03,1002273,2025-03-05T21:00:10Z,4932224.00,False,prior_reference_price,35.05,35.02,extended_hours_trade,L,177,20,57610789448697,,,
+2869,JACK,35.03,861446,2025-03-05T21:00:10Z,100501.07,False,prior_reference_price,35.05,35.02,extended_hours_trade,L,177,20,57610762029303,,,
+3000,JACK,35.0501,623379,2025-03-05T20:58:56Z,105150.3000,False,,35.07,35.05,,L,780,407,57536785807596,,,
+3000,JACK,35.31,302332,2025-03-05T18:31:08Z,105930.00,False,,35.31,35.25,,L,44,320,48668348771034,,,

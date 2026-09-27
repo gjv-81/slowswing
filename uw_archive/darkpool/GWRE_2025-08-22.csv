@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_bid,nbbo_ask,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+30112,GWRE,213.99,514973,2025-08-22T20:05:34Z,False,6443666.88,prior_reference_price,213.81,218.23,extended_hours_trade,L,7,15,57934305872569,,regular,
+1003,GWRE,213.99,484462,2025-08-22T20:00:27Z,False,214631.97,prior_reference_price,213.81,0,extended_hours_trade,L,0,15,57627908466129,,regular,
+494,GWRE,213.99,482898,2025-08-22T20:00:27Z,False,105711.06,prior_reference_price,213.81,0,extended_hours_trade,L,0,15,57627787138393,,regular,
+1566,GWRE,213.99,482404,2025-08-22T20:00:27Z,False,335108.34,prior_reference_price,213.81,0,extended_hours_trade,L,0,15,57627784318932,,regular,
+500,GWRE,213.90,404111,2025-08-22T19:59:23Z,False,106950.00,,213.87,214.01,,L,135,5,57563469429233,,regular,
+766,GWRE,213.79,388525,2025-08-22T19:58:30Z,False,163763.14,,213.69,213.79,,L,2,49,57510124007519,,regular,
+2628,GWRE,213.651,313039,2025-08-22T19:31:17Z,False,561474.828,,213.69,213.93,,L,9,48,55877866219811,,regular,
+600,GWRE,213.54,148460,2025-08-22T16:39:59Z,False,128124.00,,213.06,213.54,,L,98,32,45599960783609,,regular,
+854,GWRE,213.945,117393,2025-08-22T16:01:27Z,False,182709.030,,213.83,214.20,,L,158,12,43287207696979,,regular,
+500,GWRE,214.075,38564,2025-08-22T14:04:28Z,False,107037.500,,213.45,214.80,,L,303,4,36268884428089,,regular,
