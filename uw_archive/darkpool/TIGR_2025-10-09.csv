@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+21785,TIGR,10.17,3046080,2025-10-09T21:28:15Z,221553.45,False,prior_reference_price,10.21,10.17,extended_hours_trade,L,60,30,0,,regular,
+67900,TIGR,10.1714,3018600,2025-10-09T20:12:49Z,690638.0600,False,,10.21,10.16,extended_hours_trade,L,50,1505,0,,regular,
+10856,TIGR,10.19,2680170,2025-10-09T19:42:06Z,110622.64,False,,10.2,10.19,,L,511,742,0,,regular,
+50000,TIGR,10.15,2385301,2025-10-09T18:23:32Z,507500.00,False,contingent_trade,10.15,10.14,,L,366,2,0,qualified_contingent_trade,regular,
+14100,TIGR,10.11,1863035,2025-10-09T15:52:08Z,142551.00,False,,10.12,10.11,,L,1104,3767,0,,regular,
+10000,TIGR,10.2699,763080,2025-10-09T14:06:35Z,102699.0000,False,,10.27,10.26,,L,900,569,0,,regular,

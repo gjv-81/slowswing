@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1566,SMTC,77.44,1096489,2026-01-06T21:00:35Z,121271.04,False,prior_reference_price,77.41,77.4,extended_hours_trade,L,2,395,26353994964127,,regular,
+3472,SMTC,77.44,1091307,2026-01-06T21:00:24Z,268871.68,False,prior_reference_price,77.41,77.4,extended_hours_trade,L,2,395,26353994953089,,regular,
+1629,SMTC,77.44,1087439,2026-01-06T21:00:24Z,126149.76,False,prior_reference_price,77.41,77.4,extended_hours_trade,L,2,395,26353994952913,,regular,
+1550,SMTC,77.44,1085715,2026-01-06T21:00:06Z,120032.00,False,,77.41,77.4,extended_hours_trade,L,2,395,26353994934777,,regular,
+1300,SMTC,77.2352,751507,2026-01-06T20:54:58Z,100405.7600,False,average_price_trade,77.5,77.44,,L,530,11,26353994626542,derivative_priced,regular,
+1400,SMTC,76.96,566829,2026-01-06T20:30:40Z,107744.00,False,,77.04,76.9,,L,186,11,26353993168270,,regular,
+9638,SMTC,77.07,553347,2026-01-06T20:30:11Z,742800.66,False,,77.18,76.97,,L,440,71,26353993140010,,regular,
+1373,SMTC,76.73,393844,2026-01-06T19:22:19Z,105350.29,False,,76.7,76.62,,L,7,193,26353989067832,,regular,
+2000,SMTC,75.4,131748,2026-01-06T15:45:44Z,150800.0,False,,75.4,75.28,,L,3,2,26353976072257,,regular,
+1950,SMTC,76.15,81591,2026-01-06T15:25:03Z,148492.50,False,,76.15,75.92,,L,28,2,26353974831993,,regular,
+1455,SMTC,75.81,47727,2026-01-06T15:07:24Z,110303.55,False,,76.01,75.81,,L,6,1,26353973772332,,regular,

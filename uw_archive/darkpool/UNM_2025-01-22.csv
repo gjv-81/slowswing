@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+9717,UNM,75.34,724221,2025-01-22T21:41:30Z,732078.78,False,,76.26,74.58,extended_hours_trade,L,131,134,60090808233387,,,
+1829,UNM,75.34,714401,2025-01-22T21:01:23Z,137796.86,False,prior_reference_price,84.47,68.25,extended_hours_trade,L,100,100,57683031491260,,,
+1500,UNM,75.34,708076,2025-01-22T21:00:17Z,113010.00,False,prior_reference_price,85.91,60.02,extended_hours_trade,L,1,3,57617901611499,,,
+2965,UNM,75.34,706576,2025-01-22T21:00:17Z,223383.10,False,prior_reference_price,85.91,60.02,extended_hours_trade,L,1,3,57617898078224,,,
+1351,UNM,75.34,701115,2025-01-22T21:00:03Z,101784.34,False,,79.85,71.53,extended_hours_trade,L,100,100,57603276712718,,,
+1600,UNM,75.3181,477192,2025-01-22T20:55:52Z,120508.9600,False,average_price_trade,75.32,75.31,,L,20,108,57352767931933,derivative_priced,,
+1836,UNM,75.304,470427,2025-01-22T20:55:39Z,138258.144,False,,75.32,75.30,,L,115,104,57339980085192,,,
+2350,UNM,75.6701,389823,2025-01-22T20:31:00Z,177824.7350,False,,75.71,75.67,,L,8,31,55860262661308,,,
+7021,UNM,75.45,7126,2025-01-22T13:09:01Z,529734.45,False,,84.65,69.05,extended_hours_trade,L,100,100,29341167326280,,,

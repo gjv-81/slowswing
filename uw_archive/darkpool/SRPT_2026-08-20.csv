@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+495729,SRPT,19.22,2910246,2026-08-20T21:10:36Z,False,9527911.38,average_price_trade,19.29,19.05,extended_hours_trade,L,7317,1,28681867839486,,regular,2026-08-20T21:10:36Z
+6800,SRPT,19.226,2410830,2026-08-20T20:13:13Z,False,130736.800,,19.29,18.9,extended_hours_trade,L,7317,1,28681864396531,,regular,2026-08-20T20:13:13Z
+6800,SRPT,19.22,2403898,2026-08-20T20:13:13Z,False,130696.00,,19.29,18.9,extended_hours_trade,L,7317,1,28681864396530,,regular,2026-08-20T20:13:13Z
+16161,SRPT,19.22,2392345,2026-08-20T20:01:29Z,False,310614.42,,19.08,18.9,extended_hours_trade,L,4,1,28681863692059,,regular,2026-08-20T20:01:29Z
+28300,SRPT,19.22,2373811,2026-08-20T20:00:40Z,False,543926.00,prior_reference_price,19.29,19,extended_hours_trade,L,7898,100,28681863642889,,regular,2026-08-20T20:00:40Z
+5570,SRPT,19.22,2334329,2026-08-20T20:00:11Z,False,107055.40,prior_reference_price,19.25,19,extended_hours_trade,L,500,100,28681863614595,,regular,2026-08-20T20:00:11Z
+14021,SRPT,19.22,2327425,2026-08-20T20:00:11Z,False,269483.62,prior_reference_price,19.25,19,extended_hours_trade,L,500,100,28681863614577,,regular,2026-08-20T20:00:11Z
+26193,SRPT,19.22,2313404,2026-08-20T20:00:11Z,False,503429.46,prior_reference_price,19.25,19,extended_hours_trade,L,500,100,28681863614576,,regular,2026-08-20T20:00:11Z
+55062,SRPT,19.22,2287211,2026-08-20T20:00:06Z,False,1058291.64,average_price_trade,19.25,19,extended_hours_trade,L,500,100,28681863609003,,regular,2026-08-20T20:00:06Z
+25000,SRPT,18.85,1295097,2026-08-20T18:58:11Z,False,471250.00,,18.85,18.83,,L,337,36,28681859893739,,regular,2026-08-20T18:58:09Z
+12900,SRPT,18.77,761614,2026-08-20T16:25:19Z,False,242133.00,,18.79,18.78,,L,10,246,28681850721745,,regular,2026-08-20T16:25:19Z

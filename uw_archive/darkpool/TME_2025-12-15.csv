@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+8813,TME,17.88,3529783,2025-12-15T21:00:35Z,157576.44,False,prior_reference_price,17.91,17.9,extended_hours_trade,L,6837,1835,39702753319490,,regular,
+7921,TME,18.145,710812,2025-12-15T15:31:06Z,143726.545,False,,18.1,18.09,sold_out_of_sequence,L,159,220,39702733550710,,regular,
+6000,TME,18.17,99818,2025-12-15T14:31:34Z,109020.00,False,,18.18,18.15,,L,500,122,39702729978253,,regular,

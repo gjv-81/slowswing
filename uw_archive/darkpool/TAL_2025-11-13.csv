@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+121112,TAL,11.42,2483567,2025-11-13T21:55:55Z,False,1383099.04,average_price_trade,12,11.36,extended_hours_trade,L,361,100,0,,regular,
+269705,TAL,11.42,2361519,2025-11-13T21:34:32Z,False,3080031.10,prior_reference_price,12,11.36,extended_hours_trade,L,361,100,0,,regular,
+43037,TAL,11.42,2091814,2025-11-13T21:34:32Z,False,491482.54,prior_reference_price,12,11.36,extended_hours_trade,L,361,100,0,,regular,
+65300,TAL,11.42,2048435,2025-11-13T21:01:24Z,False,745726.00,prior_reference_price,12,11.36,extended_hours_trade,L,361,100,0,,regular,
+68565,TAL,11.42,1983135,2025-11-13T21:01:14Z,False,783012.30,prior_reference_price,12,11.36,extended_hours_trade,L,361,100,0,,regular,
+31677,TAL,11.42,1913825,2025-11-13T21:00:32Z,False,361751.34,prior_reference_price,12,11.36,extended_hours_trade,L,361,100,0,,regular,
+66739,TAL,11.42,1882148,2025-11-13T21:00:32Z,False,762159.38,prior_reference_price,12,11.36,extended_hours_trade,L,361,100,0,,regular,
+27636,TAL,11.42,1813139,2025-11-13T21:00:31Z,False,315603.12,prior_reference_price,12,11.36,extended_hours_trade,L,361,100,0,,regular,
+21582,TAL,11.42,1785303,2025-11-13T21:00:23Z,False,246466.44,prior_reference_price,11.43,11.42,extended_hours_trade,L,304,608,0,,regular,

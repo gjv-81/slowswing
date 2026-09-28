@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1900,SHAK,82.56,1450290,2025-04-15T20:01:11Z,156864.00,False,prior_reference_price,84.16,80.96,extended_hours_trade,L,20,11,57671820685442,,,
+3364,SHAK,82.56,1444176,2025-04-15T20:00:21Z,277731.84,False,prior_reference_price,90,0.01,extended_hours_trade,L,30,500,57621328282432,,,
+106752,SHAK,82.56,1440736,2025-04-15T20:00:21Z,8813445.12,False,prior_reference_price,90,0.01,extended_hours_trade,L,30,500,57621246476420,,,
+1900,SHAK,81.9291,498560,2025-04-15T17:47:45Z,155665.2900,False,,82.03,81.86,,L,1,292,49665521586979,,,
+3600,SHAK,82.40,425005,2025-04-15T17:12:09Z,296640.00,False,contingent_trade,82.49,82.40,,L,101,178,47529228270946,qualified_contingent_trade,,
+1400,SHAK,82.58,415926,2025-04-15T17:08:26Z,115612.00,False,contingent_trade,82.58,82.38,,L,213,78,47306432328042,qualified_contingent_trade,,
+22304,SHAK,84,193548,2025-04-15T14:41:07Z,1873536,False,,84.14,83.86,,L,101,131,38467537399511,,,
+14161,SHAK,84,101268,2025-04-15T13:54:51Z,1189524,False,,84.01,83.75,,L,31,100,35691557133535,,,
+33201,SHAK,84,80244,2025-04-15T13:51:54Z,2788884,False,,84.32,83.92,,L,3,13,35514588586807,,,

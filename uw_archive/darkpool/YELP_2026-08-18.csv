@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+7600,YELP,23.36,1040120,2026-08-18T20:05:17Z,177536.00,False,prior_reference_price,23.89,23.26,extended_hours_trade,L,62,245,32616053963480,,regular,2026-08-18T20:05:17Z
+9717,YELP,23.36,1031918,2026-08-18T20:00:43Z,226989.12,False,prior_reference_price,30.53,23.26,extended_hours_trade,L,10,245,32616053689160,,regular,2026-08-18T20:00:43Z
+10097,YELP,23.36,1019528,2026-08-18T20:00:34Z,235865.92,False,prior_reference_price,30.53,23.26,extended_hours_trade,L,10,245,32616053680168,,regular,2026-08-18T20:00:34Z
+5486,YELP,23.36,1003187,2026-08-18T20:00:33Z,128152.96,False,prior_reference_price,30.53,23.26,extended_hours_trade,L,10,245,32616053679519,,regular,2026-08-18T20:00:33Z
+14327,YELP,23.36,997401,2026-08-18T20:00:33Z,334678.72,False,prior_reference_price,30.53,23.26,extended_hours_trade,L,10,245,32616053679515,,regular,2026-08-18T20:00:33Z
+4906,YELP,23.74,143308,2026-08-18T14:58:34Z,116468.44,False,,23.79,23.73,,L,240,100,32616035560023,,regular,2026-08-18T14:58:34Z
+5000,YELP,23.325,61804,2026-08-18T14:06:57Z,116625.000,False,,23.36,23.26,,L,10,681,32616032462952,,regular,2026-08-18T14:06:57Z
+5000,YELP,23.4,33064,2026-08-18T13:50:53Z,117000.0,False,,23.46,23.35,,L,102,100,32616031499263,,regular,2026-08-18T13:50:53Z

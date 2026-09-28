@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+11505,SRPT,21.03,2655621,2026-08-31T20:10:45Z,False,241950.15,average_price_trade,21.15,20.5,extended_hours_trade,L,5,100,28681864248526,,regular,2026-08-31T20:10:45Z
+42100,SRPT,21.03,2641289,2026-08-31T20:00:44Z,False,885363.00,prior_reference_price,21.15,20.5,extended_hours_trade,L,5,100,28681863646784,,regular,2026-08-31T20:00:44Z
+15579,SRPT,21.03,2597930,2026-08-31T20:00:35Z,False,327626.37,prior_reference_price,21.15,20.5,extended_hours_trade,L,5,100,28681863637983,,regular,2026-08-31T20:00:35Z
+22913,SRPT,21.03,2582351,2026-08-31T20:00:35Z,False,481860.39,prior_reference_price,21.15,20.5,extended_hours_trade,L,5,100,28681863637970,,regular,2026-08-31T20:00:35Z
+14971,SRPT,21.03,2559438,2026-08-31T20:00:35Z,False,314840.13,prior_reference_price,21.15,20.5,extended_hours_trade,L,5,100,28681863637960,,regular,2026-08-31T20:00:35Z
+10545,SRPT,20.89,1369875,2026-08-31T19:45:19Z,False,220285.05,,20.9,20.88,,L,305,960,28681862722295,,regular,2026-08-31T19:45:19Z
+6829,SRPT,20.97,798966,2026-08-31T17:19:26Z,False,143204.13,,20.95,20.94,,L,400,202,28681853969140,,regular,2026-08-31T17:19:26Z
+7206,SRPT,20.93,496111,2026-08-31T15:51:54Z,False,150821.58,,20.94,20.93,,L,64,108,28681848716998,,regular,2026-08-31T15:51:54Z

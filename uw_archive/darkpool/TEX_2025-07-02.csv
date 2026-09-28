@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2500,TEX,49.93,831590,2025-07-02T20:01:28Z,124825.00,False,prior_reference_price,109,0,extended_hours_trade,L,5,0,57688517391553,,regular,
+3680,TEX,49.93,829090,2025-07-02T20:01:00Z,183742.40,False,prior_reference_price,109,0,extended_hours_trade,L,5,0,57660389153925,,regular,
+2224,TEX,49.93,819520,2025-07-02T20:00:04Z,111044.32,False,,109,0,extended_hours_trade,L,5,0,57604948217249,,regular,
+24666,TEX,49.37,254262,2025-07-02T16:20:55Z,1217760.42,False,,49.44,49.37,,L,63,82,44455223178501,,regular,
+16274,TEX,49.37,270612,2025-07-02T16:20:55Z,803447.38,False,,49.44,49.37,,L,63,82,44455223538600,,regular,
+3672,TEX,49.1925,129959,2025-07-02T14:55:49Z,180634.8600,False,,49.23,49.19,,L,73,88,39349543458636,,regular,

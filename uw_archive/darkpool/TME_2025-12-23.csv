@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+398597,TME,17.58,3846180,2025-12-23T23:01:25Z,7007335.26,False,average_price_trade,17.85,17.5,extended_hours_trade,L,25,315,39702760569614,,regular,
+55600,TME,17.58,3437271,2025-12-23T21:31:48Z,977448.00,False,average_price_trade,17.85,17.5,extended_hours_trade,L,25,315,39702755192489,,regular,
+19635,TME,17.58,3378350,2025-12-23T21:00:22Z,345183.30,False,prior_reference_price,17.57,17.56,extended_hours_trade,L,1417,1544,39702753307121,,regular,
+10370,TME,17.58,3358615,2025-12-23T21:00:22Z,182304.60,False,prior_reference_price,17.57,17.56,extended_hours_trade,L,1417,1544,39702753307086,,regular,
+29273,TME,17.58,3347919,2025-12-23T21:00:22Z,514619.34,False,prior_reference_price,17.57,17.56,extended_hours_trade,L,1417,1544,39702753306949,,regular,
+7800,TME,17.545,2665084,2025-12-23T20:56:09Z,136851.000,False,,17.55,17.54,,L,926,1317,39702753053530,,regular,
+7998,TME,17.59,1927972,2025-12-23T19:43:24Z,140684.82,False,,17.59,17.58,,L,670,426,39702748688683,,regular,
+9166,TME,17.62,1594207,2025-12-23T18:29:14Z,161504.92,False,,17.64,17.63,,L,427,932,39702744238462,,regular,
+20653,TME,17.6,1494480,2025-12-23T18:10:11Z,363492.8,False,,17.61,17.6,,L,108,305,39702743095343,,regular,
+9700,TME,17.515,1037684,2025-12-23T16:49:19Z,169895.500,False,,17.53,17.52,,L,200,300,39702738243890,,regular,
+15600,TME,17.555,653520,2025-12-23T16:09:14Z,273858.000,False,,17.56,17.55,,L,404,1664,39702735838970,,regular,

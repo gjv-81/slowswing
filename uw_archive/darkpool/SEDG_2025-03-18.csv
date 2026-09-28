@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+20277,SEDG,16.88,1998681,2025-03-18T20:28:03Z,False,342275.76,prior_reference_price,17.18,16.66,extended_hours_trade,L,50,200,59283897940940,,,
+6500,SEDG,16.50,967401,2025-03-18T15:53:52Z,False,107250.00,,16.50,16.48,,L,327,1,42832122370172,,,
+21900,SEDG,16.78,820167,2025-03-18T15:13:20Z,False,367482.00,contingent_trade,16.81,16.78,,L,110,70,40400043313255,qualified_contingent_trade,,
+13157,SEDG,16.815,745051,2025-03-18T15:02:24Z,False,221234.955,,16.82,16.81,,L,276,179,39744294001877,,,
+7999,SEDG,16.6407,510397,2025-03-18T14:20:35Z,False,133108.9593,,16.69,16.64,,L,514,100,37235064175530,,,

@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+222481,UNM,73.33,1471622,2025-01-15T22:25:13Z,False,16314531.73,average_price_trade,75.50,71.91,extended_hours_trade,L,1,5,62713116967221,,,
+222481,UNM,73.33,1466946,2025-01-15T21:00:16Z,True,16314531.73,average_price_trade,75.50,60.02,extended_hours_trade,L,1,3,57616109930862,,,
+2663,UNM,73.33,1243316,2025-01-15T21:00:15Z,False,195277.79,prior_reference_price,75.50,60.02,extended_hours_trade,L,1,3,57615928463567,,,
+1737,UNM,73.33,1240653,2025-01-15T21:00:15Z,False,127374.21,prior_reference_price,75.50,60.02,extended_hours_trade,L,1,3,57615901674398,,,
+5092,UNM,73.33,1238781,2025-01-15T21:00:15Z,False,373396.36,prior_reference_price,75.50,60.02,extended_hours_trade,L,1,3,57615897462038,,,
+1870,UNM,73.33,1232107,2025-01-15T21:00:15Z,False,137127.10,prior_reference_price,75.50,60.02,extended_hours_trade,L,1,3,57615820080494,,,
+125500,UNM,73.33,1229936,2025-01-15T21:00:15Z,False,9202915.00,average_price_trade,75.50,60.02,extended_hours_trade,L,1,3,57615796520732,,,
+4922,UNM,73.33,1104361,2025-01-15T21:00:03Z,False,360930.26,,75.50,60.02,extended_hours_trade,L,1,3,57603528536366,,,
+1500,UNM,73,226034,2025-01-15T16:14:07Z,False,109500,,73.04,72.96,,L,344,111,40447734271352,,,
+2198,UNM,73.6246,62291,2025-01-15T14:49:35Z,False,161826.8708,,73.79,73.60,,L,100,109,35375307945316,,,
+1700,UNM,73.3301,46600,2025-01-15T14:39:38Z,False,124661.1700,,73.74,73.44,,L,100,100,34778968128334,,,

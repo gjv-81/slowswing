@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2687,TFX,107.47,903418,2025-11-18T21:01:18Z,False,288771.89,prior_reference_price,0,0,extended_hours_trade,L,0,0,0,,regular,
+1127,TFX,107.47,899802,2025-11-18T21:00:53Z,False,121118.69,prior_reference_price,0,0,extended_hours_trade,L,0,0,0,,regular,
+3583,TFX,107.47,896110,2025-11-18T21:00:23Z,False,385065.01,prior_reference_price,0,0,extended_hours_trade,L,0,0,0,,regular,
+2347,TFX,107.47,898457,2025-11-18T21:00:23Z,False,252232.09,prior_reference_price,0,0,extended_hours_trade,L,0,0,0,,regular,
+10399,TFX,107.47,890307,2025-11-18T21:00:23Z,False,1117580.53,prior_reference_price,0,0,extended_hours_trade,L,0,0,0,,regular,
+6900,TFX,107.47,879906,2025-11-18T21:00:12Z,False,741543.00,average_price_trade,107.47,107.4,extended_hours_trade,L,131,10,0,,regular,
+1000,TFX,107.5662,651542,2025-11-18T20:54:59Z,False,107566.2000,average_price_trade,107.66,107.56,,L,53,9,0,derivative_priced,regular,
+1501,TFX,107.46,591178,2025-11-18T20:44:46Z,False,161297.46,average_price_trade,107.46,107.32,,L,5,18,0,derivative_priced,regular,
+1137,TFX,108.48,440847,2025-11-18T19:41:15Z,False,123341.76,,108.39,108.2,,L,48,4,0,,regular,
+1158,TFX,106.455,272062,2025-11-18T17:54:30Z,False,123274.890,,106.54,106.29,,L,5,1,0,,regular,
+1564,TFX,104.41,94258,2025-11-18T15:51:05Z,False,163297.24,,104.68,104.41,,L,182,115,0,,regular,
+1083,TFX,104.45,74141,2025-11-18T15:31:32Z,False,113119.35,,104.77,104.41,,L,201,1,0,,regular,

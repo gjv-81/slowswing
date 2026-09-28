@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+8612,SRPT,17.44,3679912,2025-11-18T21:00:01Z,False,150193.28,,17.68,17.35,extended_hours_trade,L,10,25,0,,regular,
+19690,SRPT,17.24,2679183,2025-11-18T20:37:33Z,False,339455.60,,17.25,17.24,,L,329,250,0,,regular,
+5900,SRPT,17.5514,2171552,2025-11-18T19:27:07Z,False,103553.2600,,17.56,17.55,,L,215,214,0,,regular,
+20000,SRPT,17.35,1710360,2025-11-18T17:43:28Z,False,347000.00,contingent_trade,17.39,17.37,,L,10,541,0,qualified_contingent_trade,regular,
+9159,SRPT,17.29,1518734,2025-11-18T17:12:49Z,False,158359.11,,17.29,17.28,,L,1244,682,0,,regular,
+8700,SRPT,17.3399,1445039,2025-11-18T17:01:21Z,False,150857.1300,,17.34,17.32,,L,55,400,0,,regular,
+9000,SRPT,17.1107,697371,2025-11-18T15:21:05Z,False,153996.3000,,17.11,17.08,,L,94,438,0,,regular,
+6344,SRPT,17.04,675043,2025-11-18T15:20:33Z,False,108101.76,,17.11,17.05,,L,210,223,0,,regular,
+7448,SRPT,17.17,310610,2025-11-18T14:56:00Z,False,127882.16,,17.24,17.18,,L,100,200,0,,regular,
+6500,SRPT,17.4189,212672,2025-11-18T14:46:37Z,False,113222.8500,,17.47,17.46,,L,63,191,0,,regular,

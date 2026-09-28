@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1098,WTFC,130.04,292267,2025-02-07T21:02:13Z,142783.92,False,,132.56,127.52,extended_hours_trade,L,12,3,57733472587546,,,
+1059,WTFC,130.04,288583,2025-02-07T21:00:09Z,137712.36,False,,133.50,128.30,extended_hours_trade,L,300,5,57609630469909,,,
+4000,WTFC,130.36,119717,2025-02-07T18:31:38Z,521440.00,False,,130.48,130.36,,L,1,67,48698947860534,,,
+9270,WTFC,130.43,115676,2025-02-07T18:31:20Z,1209086.10,False,,130.44,130.36,,L,20,67,48680026402566,,,

@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3084,SYNA,66.45,228696,2025-07-25T20:00:05Z,204931.80,False,,66.60,66.16,extended_hours_trade,L,3005,3005,57605817244925,,regular,
+1727,SYNA,66.45,225392,2025-07-25T20:00:05Z,114759.15,False,,66.60,66.16,extended_hours_trade,L,3005,3005,57605802771546,,regular,
+4000,SYNA,66.425,174721,2025-07-25T19:59:20Z,265700.000,False,,66.45,66.40,,L,100,557,57560890442253,,regular,
+1534,SYNA,65.7264,5479,2025-07-25T13:45:47Z,100824.2976,False,,65.85,65.59,,L,100,1,35147811401901,,regular,

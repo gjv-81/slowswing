@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+98450,VIAV,18.3,1889004,2025-12-23T23:01:25Z,False,1801635.0,average_price_trade,19.02,18.25,extended_hours_trade,L,131,10,29369069255373,,regular,
+256200,VIAV,18.3,1790554,2025-12-23T22:37:47Z,False,4688460.0,prior_reference_price,19.02,18.25,extended_hours_trade,L,131,10,29369067837110,,regular,
+256200,VIAV,18.3,1790554,2025-12-23T22:28:17Z,True,4688460.0,prior_reference_price,19.02,18.25,extended_hours_trade,L,131,10,29369067267125,,regular,
+7488,VIAV,18.3,1532258,2025-12-23T21:01:37Z,False,137030.4,prior_reference_price,20,18.25,extended_hours_trade,L,100,10,29369062067344,,regular,
+265600,VIAV,18.3,1512072,2025-12-23T21:00:06Z,False,4860480.0,average_price_trade,19.75,18.25,extended_hours_trade,L,107,10,29369061976528,,regular,
+68200,VIAV,18.25,503325,2025-12-23T17:54:57Z,False,1244650.00,contingent_trade,18.23,18.21,,L,1013,417,29369050867317,qualified_contingent_trade,regular,
+68200,VIAV,18.31,247642,2025-12-23T15:42:05Z,False,1248742.00,contingent_trade,18.32,18.31,,L,201,198,29369042895624,qualified_contingent_trade,regular,

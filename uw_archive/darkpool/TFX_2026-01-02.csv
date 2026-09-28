@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3296,TFX,122.4,546691,2026-01-02T22:36:22Z,False,403430.4,prior_reference_price,135.48,120.04,extended_hours_trade,L,100,16,26504324566523,,regular,
+29567,TFX,122.4,543395,2026-01-02T22:05:00Z,False,3619000.8,prior_reference_price,135.48,120.04,extended_hours_trade,L,100,16,26504322684085,,regular,
+192372,TFX,122.4,513828,2026-01-02T21:23:47Z,False,23546332.8,prior_reference_price,135.48,120.04,extended_hours_trade,L,100,16,26504320210714,,regular,
+879,TFX,122.4,319736,2026-01-02T21:00:19Z,False,107589.6,prior_reference_price,0,0,extended_hours_trade,L,0,0,26504318803248,,regular,
+1691,TFX,122.4,318857,2026-01-02T21:00:19Z,False,206978.4,prior_reference_price,0,0,extended_hours_trade,L,0,0,26504318803244,,regular,
+1180,TFX,122.4,315264,2026-01-02T21:00:19Z,False,144432.0,prior_reference_price,0,0,extended_hours_trade,L,0,0,26504318803166,,regular,
+998,TFX,121.56,91055,2026-01-02T17:40:10Z,False,121316.88,,121.9,121.46,,L,27,1,26504306794388,,regular,
+918,TFX,122.5,11942,2026-01-02T14:58:42Z,False,112455.0,,122.63,122.23,,L,27,23,26504297106447,,regular,
+2037,TFX,122.5,13979,2026-01-02T14:58:42Z,False,249532.5,,122.63,122.23,,L,27,23,26504297106447,,regular,
+1400,TFX,121.77,3378,2026-01-02T14:30:10Z,False,170478.00,,122.62,121.04,,L,3,1,26504295394220,,regular,

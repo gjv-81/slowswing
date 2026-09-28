@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+48250,TREX,41.42,2401369,2026-02-27T22:21:11Z,1998515.00,False,prior_reference_price,42.24,40.62,extended_hours_trade,L,47,49,30936729904756,,regular,2026-02-27T22:21:11Z
+3216,TREX,41.4243,2352648,2026-02-27T21:11:53Z,133220.5488,False,prior_reference_price,42.24,40.62,extended_hours_trade,L,47,49,30936725746344,,regular,2026-02-27T21:11:53Z
+58222,TREX,41.42,2347627,2026-02-27T21:05:18Z,2411555.24,False,prior_reference_price,42.24,40.62,extended_hours_trade,L,47,49,30936725351919,,regular,2026-02-27T21:05:18Z
+3208,TREX,41.419,2287554,2026-02-27T21:04:58Z,132872.152,False,average_price_trade,42.24,40.62,extended_hours_trade,L,47,49,30936725331157,,regular,2026-02-27T21:04:58Z
+12460,TREX,41.42,2278199,2026-02-27T21:03:29Z,516093.20,False,prior_reference_price,42.24,40.62,extended_hours_trade,L,47,49,30936725242606,,regular,2026-02-27T21:03:29Z
+2466,TREX,41.42,2265345,2026-02-27T21:02:41Z,102141.72,False,prior_reference_price,42.24,40.62,extended_hours_trade,L,47,49,30936725194974,,regular,2026-02-27T21:02:41Z
+3844,TREX,41.42,2262281,2026-02-27T21:00:20Z,159218.48,False,prior_reference_price,44.25,15,extended_hours_trade,L,25,10,30936725053426,,regular,2026-02-27T21:00:20Z
+2800,TREX,41.42,2254542,2026-02-27T21:00:20Z,115976.00,False,prior_reference_price,44.25,15,extended_hours_trade,L,25,10,30936725053348,,regular,2026-02-27T21:00:20Z
+8100,TREX,41.42,2248413,2026-02-27T21:00:19Z,335502.00,False,prior_reference_price,44.25,15,extended_hours_trade,L,25,10,30936725052919,,regular,2026-02-27T21:00:19Z
+2456,TREX,41.42,2237927,2026-02-27T21:00:19Z,101727.52,False,prior_reference_price,44.25,15,extended_hours_trade,L,25,10,30936725052849,,regular,2026-02-27T21:00:19Z
+3077,TREX,41.59,1302720,2026-02-27T20:50:18Z,127972.43,False,,41.64,41.58,,L,130,27,30936724451919,,regular,2026-02-27T20:50:18Z
+5619,TREX,41.3317,1151303,2026-02-27T20:44:39Z,232242.8223,False,,41.35,41.32,,L,96,237,30936724112765,,regular,2026-02-27T20:44:39Z

@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4105,URBN,73.57,611908,2025-07-03T17:23:27Z,302004.85,False,,74.69,70.50,extended_hours_trade,L,100,100,48207573761369,,regular,
+1890,URBN,73.57,606402,2025-07-03T17:00:54Z,139047.30,False,prior_reference_price,74,72.20,extended_hours_trade,L,1,801,46854111413278,,regular,
+2310,URBN,73.57,603733,2025-07-03T17:00:07Z,169946.70,False,average_price_trade,74,72.20,extended_hours_trade,L,1,801,46807721771978,,regular,
+2100,URBN,73.57,601423,2025-07-03T17:00:01Z,154497.00,False,,74,72.20,extended_hours_trade,L,1,801,46801324761282,,regular,
+1600,URBN,73.6737,450622,2025-07-03T16:54:55Z,117877.9200,False,average_price_trade,73.79,73.76,,L,285,42,46495320249883,derivative_priced,regular,
+4843,URBN,73.625,386001,2025-07-03T16:43:17Z,356565.875,False,,73.64,73.61,,L,30,16,45797564498036,,regular,
+4484,URBN,73.445,312659,2025-07-03T16:15:53Z,329327.380,False,,73.47,73.44,,L,29,2,44153479848914,,regular,
+2700,URBN,73.209,163844,2025-07-03T14:56:42Z,197664.300,False,,73.27,73.20,,L,20,8,39402620785812,,regular,
+4381,URBN,73.15,63174,2025-07-03T14:04:14Z,320470.15,False,,73.15,73.04,,L,4,13,36254572768454,,regular,

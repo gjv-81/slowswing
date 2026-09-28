@@ -1,0 +1,16 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3084,VAL,74.59,1001814,2026-07-07T20:52:13Z,230035.56,False,prior_reference_price,76.04,73.15,extended_hours_trade,L,26,27,22222235922785,,regular,2026-07-07T20:52:13Z
+4100,VAL,74.5,998123,2026-07-07T20:00:33Z,305450.0,False,,75.39,0,extended_hours_trade,L,133,0,22222232822643,,regular,2026-07-07T20:00:33Z
+4515,VAL,74.59,991857,2026-07-07T20:00:23Z,336773.85,False,prior_reference_price,0,0,extended_hours_trade,L,0,0,22222232813380,,regular,2026-07-07T20:00:23Z
+7761,VAL,74.59,987342,2026-07-07T20:00:23Z,578892.99,False,prior_reference_price,0,0,extended_hours_trade,L,0,0,22222232813378,,regular,2026-07-07T20:00:23Z
+294300,VAL,74.59,979578,2026-07-07T20:00:09Z,21951837.00,False,average_price_trade,74.7,0,extended_hours_trade,L,33,0,22222232798562,,regular,2026-07-07T20:00:08Z
+2500,VAL,74.5463,496857,2026-07-07T19:53:34Z,186365.7500,False,average_price_trade,75.17,75.11,,L,745,100,22222232404194,,regular,2026-07-07T19:53:34Z
+5000,VAL,74.3537,490933,2026-07-07T19:53:02Z,371768.5000,False,average_price_trade,75.16,75.1,,L,68,200,22222232372066,,regular,2026-07-07T19:53:02Z
+12500,VAL,75.03,450550,2026-07-07T19:50:52Z,937875.00,False,contingent_trade,75.15,74.98,,L,460,100,22222232241684,qualified_contingent_trade,regular,2026-07-07T19:50:52Z
+10000,VAL,75.03,422138,2026-07-07T19:48:20Z,750300.00,False,contingent_trade,75.16,75.04,,L,20,200,22222232089739,qualified_contingent_trade,regular,2026-07-07T19:48:20Z
+5000,VAL,75.63,322263,2026-07-07T19:19:23Z,378150.00,False,contingent_trade,75.65,75.51,,L,60,179,22222230352874,qualified_contingent_trade,regular,2026-07-07T19:19:23Z
+1969,VAL,74.4901,252016,2026-07-07T18:51:57Z,146671.0069,False,,74.64,74.42,,L,135,122,22222228707306,,regular,2026-07-07T18:51:57Z
+5000,VAL,74.24,214597,2026-07-07T18:10:04Z,371200.00,False,contingent_trade,74.24,74.11,,L,15,60,22222226194202,qualified_contingent_trade,regular,2026-07-07T18:10:04Z
+5000,VAL,74.3,76606,2026-07-07T14:23:53Z,371500.0,False,contingent_trade,74.5,74.26,,L,8,101,22222212622542,qualified_contingent_trade,regular,2026-07-07T14:23:53Z
+5000,VAL,74.15,57774,2026-07-07T14:07:47Z,370750.00,False,contingent_trade,74.13,73.9,,L,19,10,22222211656672,qualified_contingent_trade,regular,2026-07-07T14:07:47Z
+6000,VAL,74.015,37902,2026-07-07T13:48:30Z,444090.000,False,,74.21,73.9,,L,152,50,22222210500008,,regular,2026-07-07T13:48:30Z

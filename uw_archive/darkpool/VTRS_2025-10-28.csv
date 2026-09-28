@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+294415,VTRS,10.3221,7204343,2025-10-28T20:18:31Z,3038981.0715,False,average_price_trade,10.31,10.25,extended_hours_trade,L,2,21,0,,regular,
+47800,VTRS,10.29,6909459,2025-10-28T20:05:42Z,491862.00,False,average_price_trade,10.31,10.25,extended_hours_trade,L,2,21,0,,regular,
+16356,VTRS,10.29,6853679,2025-10-28T20:02:40Z,168303.24,False,prior_reference_price,10.29,10.25,extended_hours_trade,L,2,21,0,,regular,
+11369,VTRS,10.29,6818059,2025-10-28T20:01:08Z,116987.01,False,prior_reference_price,10.38,10.25,extended_hours_trade,L,73,21,0,,regular,
+9740,VTRS,10.29,6780814,2025-10-28T20:00:06Z,100224.60,False,,10.38,10.25,extended_hours_trade,L,73,21,0,,regular,
+10000,VTRS,10.3799,1811319,2025-10-28T15:39:54Z,103799.0000,False,contingent_trade,10.35,10.34,,L,6666,2165,0,qualified_contingent_trade,regular,
+10000,VTRS,10.36,1801319,2025-10-28T15:39:54Z,103600.00,False,contingent_trade,10.35,10.34,,L,6666,2165,0,qualified_contingent_trade,regular,
+10902,VTRS,10.34,1773072,2025-10-28T15:35:05Z,112726.68,False,,10.35,10.34,,L,7358,3314,0,,regular,
+9800,VTRS,10.3857,1420815,2025-10-28T15:04:15Z,101779.8600,False,,10.39,10.38,,L,7579,945,0,,regular,
+20000,VTRS,10.33,605217,2025-10-28T14:04:15Z,206600.00,False,,10.34,10.33,,L,4949,10671,0,,regular,
+42900,VTRS,10.345,246526,2025-10-28T13:49:56Z,443800.500,False,,10.35,10.34,,L,2330,2155,0,,regular,

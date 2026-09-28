@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+17379,TRIP,17.48,1384426,2025-02-06T21:00:09Z,303784.92,False,,18,16.84,extended_hours_trade,L,138,200,57609868666848,,,
+6341,TRIP,17.48,1367047,2025-02-06T21:00:09Z,110840.68,False,,18,16.84,extended_hours_trade,L,138,200,57609866382465,,,
+13878,TRIP,17.255,850278,2025-02-06T20:21:20Z,239464.890,False,,17.26,17.25,,L,355,125,55280303383389,,,

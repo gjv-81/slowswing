@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+7267,TLN,203.46,649546,2025-04-17T20:27:36Z,1478543.82,False,prior_reference_price,207.39,199.53,extended_hours_trade,L,8,4,59256062908495,,,
+17013,TLN,203.46,642211,2025-04-17T20:07:51Z,3461464.98,False,prior_reference_price,207.39,199.53,extended_hours_trade,L,8,4,58071380743943,,,
+681,TLN,202.77,427596,2025-04-17T19:56:54Z,138086.37,False,,202.98,202.46,,L,1000,1227,57414648947638,,,
+600,TLN,202.80,413211,2025-04-17T19:55:29Z,121680.00,False,,203.08,202.54,,L,228,57,57329384975905,,,
+500,TLN,202.6777,404616,2025-04-17T19:54:54Z,101338.8500,False,average_price_trade,203.90,203.28,,L,15,2,57294954896532,derivative_priced,,
+1000,TLN,202.6777,403716,2025-04-17T19:54:54Z,202677.7000,False,average_price_trade,203.90,203.28,,L,15,2,57294951171905,derivative_priced,,
+701,TLN,202.6695,402481,2025-04-17T19:54:51Z,142071.3195,False,average_price_trade,203.90,203.28,,L,15,32,57291591323399,derivative_priced,,
+773,TLN,203.63,357510,2025-04-17T19:37:48Z,157405.99,False,,203.63,202.95,,L,200,226,56268085191220,,,
+600,TLN,203.4498,354551,2025-04-17T19:36:40Z,122069.8800,False,average_price_trade,203.98,203.13,,L,106,11,56200240758980,derivative_priced,,
+5000,TLN,203.06,80281,2025-04-17T14:31:32Z,1015300.00,False,,203.73,202.56,,L,6,8,37892299337360,,,

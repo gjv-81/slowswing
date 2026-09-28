@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+489,THC,216.84,189384,2025-11-28T18:00:41Z,False,106034.76,prior_reference_price,221.97,211.16,extended_hours_trade,L,1,100,0,,regular,
+634,THC,216.84,188556,2025-11-28T18:00:03Z,False,137476.56,,216.92,216.51,extended_hours_trade,L,3,35,0,,regular,
+4293,THC,217.155,57310,2025-11-28T16:06:47Z,False,932246.415,,217.29,216.98,,L,1,20,0,,regular,
+500,THC,215.8,27528,2025-11-28T15:08:31Z,False,107900.0,,216.04,215.63,,L,1,20,0,,regular,
+700,THC,216.55,4069,2025-11-28T14:33:56Z,False,151585.00,,218.89,216.55,,L,2,20,0,,regular,

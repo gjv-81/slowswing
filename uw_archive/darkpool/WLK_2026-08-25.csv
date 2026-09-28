@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+8640,WLK,74.8,536381,2026-08-25T20:00:23Z,646272.0,False,prior_reference_price,0,69.69,extended_hours_trade,L,0,75,32074887790053,,regular,2026-08-25T20:00:23Z
+1825,WLK,74.8,526441,2026-08-25T20:00:23Z,136510.0,False,prior_reference_price,0,69.69,extended_hours_trade,L,0,75,32074887790033,,regular,2026-08-25T20:00:23Z
+6874,WLK,74.8,523908,2026-08-25T20:00:23Z,514175.2,False,prior_reference_price,0,69.69,extended_hours_trade,L,0,75,32074887789949,,regular,2026-08-25T20:00:23Z
+1635,WLK,74.8749,341197,2026-08-25T19:58:52Z,122420.4615,False,average_price_trade,74.86,74.82,,L,181,309,32074887699346,derivative_priced,regular,2026-08-25T19:58:52Z
+1504,WLK,74.9235,305805,2026-08-25T19:56:52Z,112684.9440,False,average_price_trade,75,74.94,,L,138,1,32074887579366,derivative_priced,regular,2026-08-25T19:56:52Z
+9035,WLK,75.5351,20033,2026-08-25T13:31:08Z,682459.6285,False,prior_reference_price,75.49,74.87,,L,70,36,32074864434899,derivative_priced,regular,2026-08-25T13:31:08Z
+4965,WLK,75.5351,10998,2026-08-25T13:31:08Z,375031.7715,False,prior_reference_price,75.49,74.87,,L,70,36,32074864434863,derivative_priced,regular,2026-08-25T13:31:08Z

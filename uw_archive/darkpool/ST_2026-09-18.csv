@@ -1,0 +1,17 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+16215,ST,41.95,1713282,2026-09-18T20:34:59Z,False,680219.25,prior_reference_price,42.42,41.8,extended_hours_trade,L,10,10,33591013321741,,regular,2026-09-18T20:34:59Z
+6035,ST,41.95,1695180,2026-09-18T20:19:47Z,False,253168.25,prior_reference_price,42.42,41.8,extended_hours_trade,L,10,10,33591012409110,,regular,2026-09-18T20:19:47Z
+6565,ST,41.95,1687726,2026-09-18T20:13:37Z,False,275401.75,,42.42,41.8,extended_hours_trade,L,10,10,33591012039157,,regular,2026-09-18T20:13:37Z
+6885,ST,41.95,1681161,2026-09-18T20:13:01Z,False,288825.75,prior_reference_price,42.42,41.8,extended_hours_trade,L,10,10,33591012003172,,regular,2026-09-18T20:13:01Z
+3500,ST,41.95,1674114,2026-09-18T20:11:51Z,False,146825.00,prior_reference_price,42.42,41.8,extended_hours_trade,L,10,10,33591011933296,,regular,2026-09-18T20:11:50Z
+4110,ST,41.95,1664241,2026-09-18T20:01:04Z,False,172414.50,prior_reference_price,42.32,41.9,extended_hours_trade,L,10,10,33591011287009,,regular,2026-09-18T20:01:04Z
+20031,ST,41.95,1660131,2026-09-18T20:01:02Z,False,840300.45,prior_reference_price,42.32,41.9,extended_hours_trade,L,10,10,33591011284488,,regular,2026-09-18T20:01:02Z
+6888,ST,41.95,1640100,2026-09-18T20:01:00Z,False,288951.60,,42.32,41.9,extended_hours_trade,L,10,10,33591011282599,,regular,2026-09-18T20:01:00Z
+9131,ST,41.95,1633212,2026-09-18T20:00:57Z,False,383045.45,prior_reference_price,42.32,41.9,extended_hours_trade,L,10,10,33591011279372,,regular,2026-09-18T20:00:57Z
+14455,ST,41.95,1624081,2026-09-18T20:00:53Z,False,606387.25,prior_reference_price,42.32,41.9,extended_hours_trade,L,10,10,33591011275285,,regular,2026-09-18T20:00:53Z
+3036,ST,41.95,1609310,2026-09-18T20:00:49Z,False,127360.20,prior_reference_price,42.32,41.9,extended_hours_trade,L,10,10,33591011271746,,regular,2026-09-18T20:00:49Z
+4056,ST,41.95,1605849,2026-09-18T20:00:49Z,False,170149.20,prior_reference_price,42.32,41.9,extended_hours_trade,L,10,10,33591011271545,,regular,2026-09-18T20:00:49Z
+19188,ST,41.95,1600087,2026-09-18T20:00:49Z,False,804936.60,prior_reference_price,42.29,41.93,extended_hours_trade,L,10,10,33591011271302,,regular,2026-09-18T20:00:49Z
+3849,ST,41.95,1580601,2026-09-18T20:00:09Z,False,161465.55,average_price_trade,42.27,41.93,extended_hours_trade,L,10,10,33591011231405,,regular,2026-09-18T20:00:09Z
+2727,ST,41.95,1576564,2026-09-18T20:00:05Z,False,114397.65,,42.27,41.93,extended_hours_trade,L,10,10,33591011227797,,regular,2026-09-18T20:00:03Z
+8724,ST,41.95,1573837,2026-09-18T20:00:04Z,False,365971.80,,42.27,41.66,extended_hours_trade,L,10,10,33591011226629,,regular,2026-09-18T20:00:03Z

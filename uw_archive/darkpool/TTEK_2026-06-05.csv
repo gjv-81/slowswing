@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+18334,TTEK,27.9,2632929,2026-06-05T21:55:16Z,False,511518.6,prior_reference_price,28.45,27.36,extended_hours_trade,L,70,73,28329683200739,,regular,2026-06-05T21:55:16Z
+118212,TTEK,28.0359,2614395,2026-06-05T20:06:15Z,False,3314179.8108,,28.45,27.36,extended_hours_trade,L,70,73,28329676659877,,regular,2026-06-05T20:06:14Z
+4727,TTEK,27.9,2495220,2026-06-05T20:00:19Z,False,131883.3,prior_reference_price,29,27.89,extended_hours_trade,L,200,438,28329676304346,,regular,2026-06-05T20:00:19Z
+3965,TTEK,27.9,2487345,2026-06-05T20:00:19Z,False,110623.5,prior_reference_price,29,27.89,extended_hours_trade,L,200,438,28329676304337,,regular,2026-06-05T20:00:19Z
+4036,TTEK,27.9,2483247,2026-06-05T20:00:19Z,False,112604.4,prior_reference_price,29,27.89,extended_hours_trade,L,200,438,28329676304322,,regular,2026-06-05T20:00:19Z
+5408,TTEK,27.9,2474246,2026-06-05T20:00:19Z,False,150883.2,prior_reference_price,29,27.89,extended_hours_trade,L,200,438,28329676303950,,regular,2026-06-05T20:00:19Z
+12092,TTEK,27.9,2468838,2026-06-05T20:00:19Z,False,337366.8,prior_reference_price,29,27.89,extended_hours_trade,L,200,438,28329676303944,,regular,2026-06-05T20:00:19Z
+4100,TTEK,27.93,1608444,2026-06-05T19:47:59Z,False,114513.00,contingent_trade,27.93,27.92,,L,1237,1883,28329675564373,qualified_contingent_trade,regular,2026-06-05T19:47:58Z
+63484,TTEK,27.94,1578517,2026-06-05T19:45:42Z,False,1773742.96,,27.95,27.94,,L,334,752,28329675427282,,regular,2026-06-05T19:45:42Z
+22400,TTEK,28.1,1125405,2026-06-05T18:40:31Z,False,629440.0,contingent_trade,28.11,28.1,,L,402,18,28329671515774,qualified_contingent_trade,regular,2026-06-05T18:40:31Z
+22400,TTEK,28.1,1099605,2026-06-05T18:40:10Z,False,629440.0,contingent_trade,28.1,28.09,,L,210,696,28329671494866,qualified_contingent_trade,regular,2026-06-05T18:40:10Z
+12986,TTEK,28.145,410741,2026-06-05T15:14:26Z,False,365490.970,,28.15,28.13,,L,79,1025,28329659150621,,regular,2026-06-05T15:14:26Z

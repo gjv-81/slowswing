@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+202068,VIAV,17.44,5124338,2025-11-05T21:00:06Z,False,3524065.92,average_price_trade,17.45,17.44,extended_hours_trade,L,5520,6456,0,,regular,
+27029,VIAV,17.405,3709110,2025-11-05T20:48:29Z,False,470439.745,,17.41,17.4,,L,1930,847,0,,regular,
+54171,VIAV,17.59,2830898,2025-11-05T20:15:17Z,False,952867.89,,17.63,17.62,,L,1400,440,0,intermarket_sweep,regular,
+70900,VIAV,17.535,2625129,2025-11-05T20:09:59Z,False,1243231.500,,17.54,17.53,,L,500,400,0,,regular,
+6256,VIAV,17.5199,2534378,2025-11-05T20:08:49Z,False,109604.4944,,17.54,17.53,,L,500,1000,0,,regular,
+7500,VIAV,17.5295,2066105,2025-11-05T18:54:54Z,False,131471.2500,,17.53,17.52,,L,791,813,0,,regular,
+48900,VIAV,17.25,1103510,2025-11-05T16:29:29Z,False,843525.00,,17.26,17.25,,L,300,1200,0,,regular,
+6200,VIAV,17.325,874629,2025-11-05T16:01:56Z,False,107415.000,,17.33,17.32,,L,335,837,0,,regular,
+7000,VIAV,17.28,667464,2025-11-05T15:46:28Z,False,120960.00,,17.28,17.27,,L,395,573,0,,regular,
+7000,VIAV,17.19,465365,2025-11-05T15:23:47Z,False,120330.00,,17.19,17.18,,L,181,349,0,,regular,
+7000,VIAV,17.13,448314,2025-11-05T15:22:15Z,False,119910.00,,17.13,17.12,,L,612,308,0,,regular,

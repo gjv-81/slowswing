@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+33300,TREX,35.08,1017682,2025-12-31T22:19:01Z,1168164.00,False,prior_reference_price,35.45,33.77,extended_hours_trade,L,70,100,30936729774890,,regular,
+4126,TREX,35.08,980916,2025-12-31T21:02:35Z,144740.08,False,prior_reference_price,35.46,33.77,extended_hours_trade,L,42,100,30936725188218,,regular,
+4566,TREX,35.08,973740,2025-12-31T21:01:10Z,160175.28,False,,65.5,33.77,extended_hours_trade,L,181,100,30936725103919,,regular,
+5316,TREX,35.08,969174,2025-12-31T21:01:09Z,186485.28,False,prior_reference_price,65.5,33.77,extended_hours_trade,L,181,100,30936725102826,,regular,
+3000,TREX,35.08,951432,2025-12-31T21:00:02Z,105240.00,False,,35.09,35.06,extended_hours_trade,L,161,215,30936725035905,,regular,
+4600,TREX,35.08,947672,2025-12-31T21:00:02Z,161368.00,False,,35.09,35.06,extended_hours_trade,L,161,215,30936725035469,,regular,
+6000,TREX,35.02,639840,2025-12-31T20:52:52Z,210120.00,False,,35.04,35.02,,L,711,100,30936724605518,,regular,
+3000,TREX,35.09,595645,2025-12-31T20:47:36Z,105270.00,False,,35.09,35.08,,L,113,15,30936724289232,,regular,
+2976,TREX,35.495,92085,2025-12-31T15:26:06Z,105633.120,False,,35.51,35.48,,L,8,78,30936704999415,,regular,
+10495,TREX,35.51,25871,2025-12-31T14:36:53Z,372677.45,False,,35.66,35.28,,L,50,56,30936702046474,,regular,
+4142,TREX,35.32,8314,2025-12-31T14:30:44Z,146295.44,False,,35.56,35.13,,L,25,100,30936701677387,,regular,

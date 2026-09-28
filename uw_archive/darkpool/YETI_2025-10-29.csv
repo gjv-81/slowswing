@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+10080,YETI,34.58,1106274,2025-10-29T20:38:56Z,348566.40,False,prior_reference_price,37.99,31.46,extended_hours_trade,L,100,100,0,,regular,
+4310,YETI,34.58,1089435,2025-10-29T20:00:27Z,149039.80,False,prior_reference_price,101.39,0,extended_hours_trade,L,50,0,0,,regular,
+5825,YETI,34.59,622241,2025-10-29T19:06:18Z,201486.75,False,,34.64,34.54,,L,207,140,0,,regular,
+3219,YETI,35.28,66678,2025-10-29T14:09:49Z,113566.32,False,,35.4,35.22,,L,112,7,0,,regular,

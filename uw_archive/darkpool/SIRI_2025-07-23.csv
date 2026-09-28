@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+20248,SIRI,24.36,2049630,2025-07-23T20:31:11Z,493241.28,False,prior_reference_price,24.50,24.13,extended_hours_trade,L,514,11,59471938341870,,regular,
+14285,SIRI,24.36,2021958,2025-07-23T20:00:05Z,347982.60,False,,24.50,24.25,extended_hours_trade,L,1227,3000,57605376878473,,regular,
+8114,SIRI,24.36,2001807,2025-07-23T20:00:05Z,197657.04,False,,24.50,24.25,extended_hours_trade,L,1227,3000,57605219734861,,regular,
+7000,SIRI,24.3241,1421349,2025-07-23T19:51:44Z,170268.7000,False,,24.33,24.32,,L,695,1084,57104528655302,,regular,
+5677,SIRI,24.06,94371,2025-07-23T13:36:14Z,136588.62,False,,24.13,24.07,,L,2,111,34574490103540,,regular,
+4498,SIRI,24.15,45562,2025-07-23T13:30:10Z,108626.70,False,,24.19,24.10,,L,325,2,34210449342368,,regular,

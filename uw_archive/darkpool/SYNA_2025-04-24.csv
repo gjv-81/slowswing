@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1862,SYNA,56.13,617428,2025-04-24T20:01:32Z,104514.06,False,prior_reference_price,56.45,55.04,extended_hours_trade,L,1,16,57692275450466,,,
+2321,SYNA,56.13,614186,2025-04-24T20:00:07Z,130277.73,False,,56.45,53.12,extended_hours_trade,L,1,140,57607536108596,,,
+2588,SYNA,56.13,609894,2025-04-24T20:00:05Z,145264.44,False,average_price_trade,56.45,53.12,extended_hours_trade,L,1,140,57605868129798,,,
+5900,SYNA,55.90,304591,2025-04-24T17:34:28Z,329810.00,False,contingent_trade,55.94,55.80,,L,152,206,48868711698962,qualified_contingent_trade,,
+6500,SYNA,55.95,269199,2025-04-24T16:54:09Z,363675.00,False,contingent_trade,55.87,55.75,,L,38,2,46449909983216,qualified_contingent_trade,,
+20000,SYNA,55.50,147842,2025-04-24T14:35:08Z,1110000.00,False,,55.75,55.41,,L,155,7,38108035920064,,,
+31320,SYNA,55.30,122876,2025-04-24T14:23:01Z,1731996.00,False,,55.61,55.41,,L,7,28,37381500077898,intermarket_sweep,,
+20000,SYNA,55.50,78503,2025-04-24T14:07:44Z,1110000.00,False,,55.75,55.56,,L,208,8,36464949236213,,,
+20000,SYNA,55.25,51318,2025-04-24T13:58:09Z,1105000.00,False,,55.40,55.16,,L,4,33,35889417368511,,,

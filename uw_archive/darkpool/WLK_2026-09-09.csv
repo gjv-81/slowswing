@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+10400,WLK,71.78,846412,2026-09-09T20:00:41Z,False,746512.00,prior_reference_price,0,70.05,extended_hours_trade,L,0,5,32074887807798,,regular,2026-09-09T20:00:41Z
+4622,WLK,71.78,835533,2026-09-09T20:00:30Z,False,331767.16,prior_reference_price,0,70.05,extended_hours_trade,L,0,5,32074887797195,,regular,2026-09-09T20:00:30Z
+7115,WLK,71.78,830672,2026-09-09T20:00:30Z,False,510714.70,prior_reference_price,0,70.05,extended_hours_trade,L,0,5,32074887796872,,regular,2026-09-09T20:00:30Z
+1763,WLK,71.78,821722,2026-09-09T20:00:29Z,False,126548.14,prior_reference_price,0,70.05,extended_hours_trade,L,0,5,32074887795975,,regular,2026-09-09T20:00:29Z
+1733,WLK,71.78,818912,2026-09-09T20:00:04Z,False,124394.74,,0,70,extended_hours_trade,L,0,75,32074887770921,,regular,2026-09-09T20:00:02Z
+1719,WLK,72.285,483230,2026-09-09T19:29:29Z,False,124257.915,,72.33,72.26,,L,30,209,32074885936505,,regular,2026-09-09T19:29:29Z
+3400,WLK,72.5,221606,2026-09-09T14:43:35Z,False,246500.0,,72.59,72.43,,L,20,134,32074868782043,,regular,2026-09-09T14:43:35Z
+2725,WLK,71.13,123606,2026-09-09T13:58:15Z,False,193829.25,,71.35,71.01,,L,10,19,32074866061793,,regular,2026-09-09T13:58:15Z
+5000,WLK,71.0173,79402,2026-09-09T13:56:08Z,False,355086.5000,,71.01,70.75,,L,1570,30,32074865935459,,regular,2026-09-09T13:56:08Z

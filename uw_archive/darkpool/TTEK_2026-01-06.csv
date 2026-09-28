@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+105000,TTEK,34.77,1946193,2026-01-06T21:05:57Z,3650850.00,False,,0,34.1,extended_hours_trade,L,0,58,28329680241712,,regular,
+2972,TTEK,34.77,1839598,2026-01-06T21:01:56Z,103336.44,False,prior_reference_price,0,0,extended_hours_trade,L,0,0,28329680001319,,regular,
+4934,TTEK,34.77,1830011,2026-01-06T21:00:04Z,171555.18,False,,34.77,34.76,extended_hours_trade,L,7107,6422,28329679889098,,regular,
+82500,TTEK,34.72,1149075,2026-01-06T20:40:58Z,2864400.00,False,contingent_trade,34.72,34.7,,L,612,364,28329678742564,qualified_contingent_trade,regular,
+102200,TTEK,34.86,1033187,2026-01-06T20:35:11Z,3562692.00,False,,34.82,34.78,,L,215,921,28329678395820,,regular,
+54960,TTEK,34.9,916746,2026-01-06T20:31:44Z,1918104.0,False,contingent_trade,34.9,34.88,,L,388,772,28329678189371,qualified_contingent_trade,regular,
+30640,TTEK,34.9,861786,2026-01-06T20:31:42Z,1069336.0,False,contingent_trade,34.9,34.88,,L,388,772,28329678186909,qualified_contingent_trade,regular,
+6361,TTEK,34.66,580963,2026-01-06T18:52:03Z,220472.26,False,,34.67,34.65,,L,51,104,28329672207844,,regular,
+4900,TTEK,34.625,571601,2026-01-06T18:51:48Z,169662.500,False,,34.64,34.62,,L,160,4,28329672193332,,regular,
+18500,TTEK,34.56,478973,2026-01-06T18:15:49Z,639360.00,False,,34.6,34.56,,L,714,398,28329670033446,,regular,
+3202,TTEK,34.48,199420,2026-01-06T16:09:03Z,110404.96,False,,34.51,34.49,,L,75,24,28329662427969,,regular,
+4539,TTEK,34.68,43217,2026-01-06T14:49:12Z,157412.52,False,,34.72,34.63,,L,1,20,28329657637399,,regular,

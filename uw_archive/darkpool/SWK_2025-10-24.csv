@@ -1,0 +1,13 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1849,SWK,70.21,1218262,2025-10-24T20:20:00Z,129818.29,False,prior_reference_price,71.04,70,extended_hours_trade,L,21,50,0,,regular,
+3236,SWK,70.21,1206701,2025-10-24T20:00:30Z,227199.56,False,prior_reference_price,73.25,70,extended_hours_trade,L,3,50,0,,regular,
+1620,SWK,70.21,1201397,2025-10-24T20:00:02Z,113740.20,False,,70.22,70.19,extended_hours_trade,L,8,49,0,,regular,
+1800,SWK,70.21,1199777,2025-10-24T20:00:02Z,126378.00,False,,70.22,70.19,extended_hours_trade,L,8,49,0,,regular,
+3900,SWK,70.315,491318,2025-10-24T18:01:34Z,274228.500,False,,70.35,70.31,,L,98,64,0,,regular,
+2941,SWK,70.38,412280,2025-10-24T17:08:57Z,206987.58,False,,70.4,70.36,,L,112,100,0,,regular,
+2400,SWK,70.62,337444,2025-10-24T16:06:56Z,169488.00,False,contingent_trade,70.67,70.62,,L,117,105,0,qualified_contingent_trade,regular,
+2200,SWK,70.44,283816,2025-10-24T15:40:10Z,154968.00,False,contingent_trade,70.51,70.49,,L,23,5,0,qualified_contingent_trade,regular,
+2500,SWK,70.62,267584,2025-10-24T15:33:31Z,176550.00,False,contingent_trade,70.62,70.58,,L,4,46,0,qualified_contingent_trade,regular,
+2500,SWK,70.64,264966,2025-10-24T15:33:24Z,176600.00,False,contingent_trade,70.62,70.58,,L,4,46,0,qualified_contingent_trade,regular,
+1750,SWK,71.03,81394,2025-10-24T14:00:18Z,124302.50,False,,71.07,70.99,,L,11,100,0,,regular,
+1700,SWK,71.17,52838,2025-10-24T13:49:18Z,120989.00,False,,71.25,71.08,,L,4,104,0,,regular,

@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+9363,VIAV,11.41,1222560,2025-04-02T20:00:54Z,False,106831.83,prior_reference_price,12.60,10.21,extended_hours_trade,L,100,14,57654831231674,,,
+21038,VIAV,11.41,1203309,2025-04-02T20:00:10Z,False,240043.58,,12.60,10.21,extended_hours_trade,L,100,14,57610096340642,,,
+26937,VIAV,11.41,1179333,2025-04-02T20:00:05Z,False,307351.17,average_price_trade,12.60,10.21,extended_hours_trade,L,100,14,57605945426916,,,

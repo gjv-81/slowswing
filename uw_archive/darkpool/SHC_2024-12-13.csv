@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+9000,SHC,13.185,529717,2024-12-13T20:41:45Z,118665.000,False,,13.19,13.18,,L,844,430,56505724340965,,,
+10000,SHC,13.08,363972,2024-12-13T18:28:06Z,130800.00,False,,13.09,13.07,,L,1115,379,48486435510594,,,
+10700,SHC,13.23,260051,2024-12-13T17:14:47Z,141561.00,False,,13.24,13.23,,L,305,3284,44087774185773,,,

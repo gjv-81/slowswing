@@ -1,0 +1,14 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+55891,YETI,35.5,1557745,2026-03-20T20:27:38Z,False,1984130.5,prior_reference_price,39.62,33.75,extended_hours_trade,L,100,1,39608262062021,,regular,2026-03-20T20:27:38Z
+5051,YETI,35.496,1501852,2026-03-20T20:24:21Z,False,179290.296,average_price_trade,39.62,33.75,extended_hours_trade,L,100,1,39608261865053,,regular,2026-03-20T20:24:21Z
+4504,YETI,35.498,1496801,2026-03-20T20:21:07Z,False,159882.992,prior_reference_price,39.78,33.75,extended_hours_trade,L,100,1,39608261671285,,regular,2026-03-20T20:21:07Z
+3900,YETI,35.5004,1488332,2026-03-20T20:10:12Z,False,138451.5600,average_price_trade,44,33.75,extended_hours_trade,L,1,1,39608261016514,,regular,2026-03-20T20:10:12Z
+4531,YETI,35.5,1481978,2026-03-20T20:07:51Z,False,160850.5,prior_reference_price,44,33.75,extended_hours_trade,L,1,1,39608260875214,,regular,2026-03-20T20:07:51Z
+3012,YETI,35.5,1471132,2026-03-20T20:02:11Z,False,106926.0,prior_reference_price,44,33.75,extended_hours_trade,L,1,1,39608260535311,,regular,2026-03-20T20:02:11Z
+3394,YETI,35.5,1468120,2026-03-20T20:01:57Z,False,120487.0,prior_reference_price,44,33.75,extended_hours_trade,L,1,1,39608260521186,,regular,2026-03-20T20:01:57Z
+34268,YETI,35.5,1463643,2026-03-20T20:01:50Z,False,1216514.0,prior_reference_price,44,33.75,extended_hours_trade,L,1,1,39608260513713,,regular,2026-03-20T20:01:50Z
+11571,YETI,35.5,1428855,2026-03-20T20:01:23Z,False,410770.5,prior_reference_price,44,33.75,extended_hours_trade,L,1,1,39608260487681,,regular,2026-03-20T20:01:23Z
+50000,YETI,35.29,668679,2026-03-20T19:42:25Z,False,1764500.00,,35.32,35.28,,L,53,326,39608259348875,,regular,2026-03-20T19:42:25Z
+15340,YETI,35.7,346933,2026-03-20T18:20:59Z,False,547638.0,,35.78,35.69,,L,100,20,39608254462783,,regular,2026-03-20T18:20:59Z
+10000,YETI,35.685,312886,2026-03-20T18:14:26Z,False,356850.000,,35.74,35.71,,L,235,63,39608254070239,,regular,2026-03-20T18:14:26Z
+3000,YETI,35.755,241071,2026-03-20T17:39:29Z,False,107265.000,,35.77,35.74,,L,245,212,39608251973706,,regular,2026-03-20T17:39:29Z

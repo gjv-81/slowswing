@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+9800,ZION,57.86,1023493,2025-01-31T21:01:55Z,False,567028.00,,58.74,56.74,extended_hours_trade_late_or_out_of_sequence,L,68,7,57715674116263,,seller,
+9600,ZION,57.86,1013693,2025-01-31T21:00:27Z,False,555456.00,prior_reference_price,59.76,56.38,extended_hours_trade,L,100,110,57627529723205,,,
+10604,ZION,57.86,1001532,2025-01-31T21:00:12Z,False,613547.44,prior_reference_price,59.76,56.38,extended_hours_trade,L,100,110,57612941064136,,,
+18285,ZION,57.86,986075,2025-01-31T21:00:06Z,False,1057970.10,,59.76,56.38,extended_hours_trade,L,100,110,57606442714431,,,
+2926,ZION,57.86,967790,2025-01-31T21:00:06Z,False,169298.36,,59.76,56.38,extended_hours_trade,L,100,110,57606432043827,,,
+2399,ZION,57.86,962256,2025-01-31T21:00:06Z,False,138806.14,,59.76,56.38,extended_hours_trade,L,100,110,57606356713243,,,
+2400,ZION,57.91,584758,2025-01-31T20:48:55Z,False,138984.00,,57.92,57.90,,L,340,105,56935869489260,,,
+3000,ZION,57.91,582358,2025-01-31T20:48:55Z,False,173730.00,,57.92,57.90,,L,340,105,56935867627653,,,
+10000,ZION,58.30,221705,2025-01-31T17:51:19Z,False,583000.00,,58.32,58.28,,L,88,272,46279911369882,,,

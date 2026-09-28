@@ -28,9 +28,9 @@ AVAV,FAIL,GROWTH,FAIL/GS,28.4,2026-09-23,1.1,0.088,2,4.09,-2.1,-53.4,0.19,-3.6,I
 AVGO,PASS,CORE,PASS,73.2,2026-09-27,1.1,0.253,8,12.3,1.6,8.1,0.8,40.8,Technology,mature / stable,
 AXON,WATCH,GROWTH,WATCH/GS,50.5,2026-09-23,1.1,0.237,4,6.87,0.2,1.2,0.59,-2.2,Industrials,"rev +33%/yr, profitable",
 BABA,FAIL,LEVERAGED,FAIL/LEV,31.2,2026-09-25,1.1,0.213,3,1.59,-18.4,14.2,0.27,5.8,Consumer Cyclical,distress/leverage flag,Altman-Z 1.59 in distress zone (<1.81)
-BAX,FAIL,CORE,FAIL,36.3,2026-08-28,1.1,0.168,4,2.29,2.4,-0.7,1.6,1.6,Healthcare,mature / stable,
+BAX,FAIL,CORE,FAIL,36.3,2026-09-28,1.1,0.168,4,2.24,2.7,-0.7,1.6,1.6,Healthcare,mature / stable,
 BBWI,PASS,DECLINING,PASS/DECL,69.0,2026-09-23,1.1,0.629,5,2.22,25.2,4.2,-3.87,15.4,Consumer Cyclical,revenue -0% YoY,
-BIDU,FAIL,LEVERAGED,FAIL/LEV,17.4,2026-08-28,1.1,0.126,2,1.21,-50.0,3.4,0.36,8.0,Communication Services,distress/leverage flag,"Altman-Z 1.21 in distress zone (<1.81) | Piotroski F-score 2/9 (<=2, fundamentally weak)"
+BIDU,FAIL,LEVERAGED,FAIL/LEV,17.4,2026-09-28,1.1,0.126,2,1.2,-55.5,3.4,0.36,8.0,Communication Services,distress/leverage flag,"Altman-Z 1.20 in distress zone (<1.81) | Piotroski F-score 2/9 (<=2, fundamentally weak)"
 BILI,FAIL,LEVERAGED,FAIL/LEV,69.2,2026-09-25,1.1,0.27,7,0.3,87.2,9.0,0.63,3.7,Communication Services,distress/leverage flag,Altman-Z 0.30 in distress zone (<1.81)
 BLDR,WATCH,DECLINING,WATCH/DECL,52.6,2026-09-23,1.1,0.411,4,2.3,13.4,2.9,1.17,5.2,Industrials,revenue -7% YoY,
 BROS,FAIL,GROWTH,FAIL/GS,43.3,2026-09-19,1.1,0.141,6,2.39,1.0,5.8,1.6,9.8,Consumer Cyclical,"rev +28%/yr, profitable",
@@ -102,11 +102,12 @@ HAL,WATCH,NEW-IPO,WATCH/IPO,54.8,2026-08-25,1.1,0.139,4,3.46,5.9,6.0,0.78,13.9,E
 HOOD,FAIL,GROWTH,FAIL/GS,30.2,2026-09-23,1.1,0.098,4,2.74,1.4,,1.27,46.8,Financial Services,"rev +52%/yr, profitable",
 HPE,FAIL,LEVERAGED,FAIL/LEV,28.1,2026-09-23,1.1,0.137,4,1.45,0.8,9.4,0.98,4.8,Technology,distress/leverage flag,Altman-Z 1.45 in distress zone (<1.81)
 HPQ,FAIL,LEVERAGED,FAIL/LEV,53.6,2026-09-26,1.1,0.273,5,1.72,9.9,5.8,-31.45,6.6,Technology,distress/leverage flag,Altman-Z 1.72 in distress zone (<1.81)
-HUM,FAIL,CORE,FAIL,28.6,2026-08-28,1.1,,4,,0.8,3.5,0.7,,Healthcare,mature / stable,
+HUM,FAIL,CORE,FAIL,28.6,2026-09-28,1.1,,4,,0.8,3.5,0.7,,Healthcare,mature / stable,
 HUT,FAIL,SPECULATIVE,FAIL/SPEC,12.7,2026-09-23,1.1,0.046,3,6.9,-6.2,-9.0,0.3,-41.4,Financial Services,pre-commercial (P/S 54),Operating margin negative (-41.4%) and FCF not positive | Interest coverage -9.0x < 1.0x and FCF not positive | Burning cash and unprofitable (FCF<0 and NI<0)
 ILMN,PASS,DECLINING,PASS/DECL,85.3,2026-09-14,1.1,0.432,8,6.28,3.0,11.8,0.94,18.8,Healthcare,revenue -1% YoY,
 INTC,FAIL,DECLINING,FAIL/DECL,44.6,2026-09-23,1.1,0.087,6,5.34,-0.8,2.4,0.41,-0.0,Technology,revenue -0% YoY,Operating margin negative (-0.0%) and FCF not positive | Burning cash and unprofitable (FCF<0 and NI<0)
 INTU,PASS,CORE,PASS,93.2,2026-09-23,1.1,0.467,8,4.62,11.2,24.5,0.44,28.8,Technology,mature / stable,
+IONS,FAIL,GROWTH,FAIL/GS,29.4,2026-09-28,1.1,0.263,4,1.2,-4.3,-3.5,4.22,-40.4,Healthcare,"rev +34%/yr, not yet FCF-safe",Altman-Z 1.20 in distress zone (<1.81) | Operating margin negative (-40.4%) and FCF not positive | Interest coverage -3.5x < 1.0x and FCF not positive | Burning cash and unprofitable (FCF<0 and NI<0)
 IP,FAIL,GROWTH,FAIL/GS,26.9,2026-09-23,1.1,0.184,4,1.12,-0.8,-5.1,0.7,-0.0,Consumer Cyclical,"rev +49%/yr, not yet FCF-safe",Altman-Z 1.12 in distress zone (<1.81) | Operating margin negative (-0.0%) and FCF not positive | Interest coverage -5.1x < 1.0x and FCF not positive | Burning cash and unprofitable (FCF<0 and NI<0)
 IRDM,WATCH,CORE,WATCH,57.8,2026-09-23,1.1,0.246,7,1.98,5.9,2.6,3.81,27.1,Communication Services,mature / stable,
 IT,PASS,CORE,PASS,77.6,2026-09-23,1.1,0.55,6,3.28,10.4,8.7,10.47,18.1,Technology,mature / stable,
@@ -133,6 +134,7 @@ LYFT,FAIL,LEVERAGED,FAIL/LEV,45.4,2026-09-27,1.1,0.29,4,-0.09,19.8,-1.6,0.39,-3.
 MARA,FAIL,GROWTH,FAIL/GS,12.6,2026-09-23,1.1,0.1,2,0.11,-23.5,-27.3,1.05,-90.6,Financial Services,"rev +38%/yr, not yet FCF-safe","Piotroski F-score 2/9 (<=2, fundamentally weak) | Operating margin negative (-90.6%) and FCF not positive | Interest coverage -27.3x < 1.0x and FCF not positive | Burning cash and unprofitable (FCF<0 and NI<0)"
 MCHP,WATCH,CORE,WATCH,53.5,2026-09-08,1.1,0.189,6,4.03,2.2,2.3,0.86,11.2,Technology,mature / stable,
 MDB,PASS,GROWTH,PASS/GS,75.6,2026-09-02,1.1,0.47,6,23.14,1.7,-16.8,0.01,-5.6,Technology,"rev +24%/yr, not yet FCF-safe",
+MELI,PASS,GROWTH,PASS/GS,65.2,2026-09-28,1.1,0.301,5,2.69,12.4,18.8,1.69,11.1,Consumer Cyclical,"rev +39%/yr, profitable",
 MGM,FAIL,LEVERAGED,FAIL/LEV,48.6,2026-09-23,1.1,0.188,6,0.73,15.1,1.7,12.91,7.6,Consumer Cyclical,distress/leverage flag,Altman-Z 0.73 in distress zone (<1.81)
 MOH,WATCH,CORE,WATCH,50.5,2026-09-04,1.1,0.262,4,4.35,-6.1,4.1,0.97,1.7,Healthcare,mature / stable,
 MORN,PASS,CORE,PASS,76.6,2026-09-21,1.1,0.416,6,3.95,5.9,13.5,1.03,20.6,Financial Services,mature / stable,
@@ -148,7 +150,7 @@ MU,WATCH,GROWTH,WATCH/GS,60.8,2026-09-23,1.1,0.18,7,27.3,0.1,21.2,0.28,26.2,Tech
 NBIS,FAIL,SPECULATIVE,FAIL/SPEC,44.1,2026-09-23,1.1,0.029,6,5.46,-6.0,1.2,1.08,-115.5,Communication Services,pre-commercial (P/S 116),Operating margin negative (-115.5%) and FCF not positive
 NCLH,FAIL,CORE,FAIL,30.2,2026-09-23,1.1,0.186,5,,-18.0,1.4,6.61,15.9,Consumer Cyclical,mature / stable,
 NET,FAIL,SPECULATIVE,FAIL/SPEC,48.1,2026-09-07,1.1,0.268,4,13.51,0.3,-9.6,2.41,-9.6,Technology,pre-commercial (P/S 46),
-NFLX,PASS,CORE,PASS,81.0,2026-08-28,1.1,0.394,7,9.74,2.8,17.4,0.54,29.5,Communication Services,mature / stable,
+NFLX,PASS,CORE,PASS,82.0,2026-09-28,1.1,0.394,7,8.69,3.3,17.4,0.54,29.5,Communication Services,mature / stable,
 NOW,PASS,CORE,PASS,68.2,2026-09-23,1.1,0.395,4,7.76,3.1,99.3,0.19,13.7,Technology,mature / stable,
 NTAP,PASS,CORE,PASS,82.4,2026-09-23,1.1,0.456,8,3.86,4.8,16.1,2.02,24.5,Technology,mature / stable,
 NTR,WATCH,CORE,WATCH,58.2,2026-08-25,1.1,0.16,8,1.94,5.7,5.2,0.47,14.4,Basic Materials,mature / stable,
@@ -172,7 +174,7 @@ PL,FAIL,GROWTH,FAIL/GS,15.2,2026-09-23,1.1,0.151,2,1.87,0.9,-69.5,2.45,-30.9,Ind
 PLNT,FAIL,LEVERAGED,FAIL/LEV,65.8,2026-09-19,1.1,0.222,7,1.13,6.8,3.9,-6.01,29.8,Consumer Cyclical,distress/leverage flag,Altman-Z 1.13 in distress zone (<1.81)
 PLTR,PASS,SPECULATIVE,PASS/SPEC,80.0,2026-09-06,1.1,0.414,8,179.4,0.5,6.2,0.03,31.6,Technology,pre-commercial (P/S 94),
 PODD,PASS,GROWTH,PASS/GS,81.2,2026-08-30,1.1,0.608,6,5.46,3.5,6.7,0.63,17.5,Healthcare,"rev +31%/yr, profitable",
-POOL,PASS,DECLINING,PASS/DECL,74.1,2026-08-28,1.1,0.434,5,4.22,4.5,12.4,1.3,11.0,Industrials,revenue -0% YoY,
+POOL,PASS,DECLINING,PASS/DECL,74.8,2026-09-28,1.1,0.434,5,4.01,5.2,12.4,1.3,11.0,Industrials,revenue -0% YoY,
 PSKY,FAIL,LEVERAGED,FAIL/LEV,32.6,2026-09-23,1.1,0.188,4,0.78,4.4,-6.2,0.95,5.5,Communication Services,distress/leverage flag,Altman-Z 0.78 in distress zone (<1.81)
 PSX,PASS,DECLINING,PASS/DECL,65.7,2026-09-19,1.1,0.177,7,4.29,2.5,6.0,0.68,2.6,Energy,revenue -8% YoY,
 PTC,PASS,CORE,PASS,87.2,2026-09-25,1.1,0.347,9,4.58,5.7,12.9,0.36,36.4,Technology,mature / stable,

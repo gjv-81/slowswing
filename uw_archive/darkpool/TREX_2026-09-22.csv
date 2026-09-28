@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2670,TREX,44.13,1637687,2026-09-22T20:00:35Z,False,117827.10,prior_reference_price,0,40,extended_hours_trade,L,0,1,30936721468734,,regular,2026-09-22T20:00:35Z
+3284,TREX,44.13,1633181,2026-09-22T20:00:35Z,False,144922.92,prior_reference_price,0,40,extended_hours_trade,L,0,1,30936721468685,,regular,2026-09-22T20:00:35Z
+4300,TREX,44.13,1628725,2026-09-22T20:00:35Z,False,189759.00,prior_reference_price,0,40,extended_hours_trade,L,0,1,30936721468593,,regular,2026-09-22T20:00:35Z
+2446,TREX,44.13,1621738,2026-09-22T20:00:35Z,False,107941.98,prior_reference_price,0,40,extended_hours_trade,L,0,1,30936721468580,,regular,2026-09-22T20:00:35Z
+10743,TREX,44.13,1616648,2026-09-22T20:00:11Z,False,474088.59,average_price_trade,0,0,extended_hours_trade,L,0,0,30936721444929,,regular,2026-09-22T20:00:11Z
+8919,TREX,44.31,798331,2026-09-22T18:14:42Z,False,395200.89,,44.35,44.25,,L,40,142,30936715115192,,regular,2026-09-22T18:14:42Z
+6475,TREX,44.49,756328,2026-09-22T17:58:05Z,False,288072.75,,44.52,44.46,,L,94,304,30936714118479,,regular,2026-09-22T17:58:05Z
+5539,TREX,44.46,691036,2026-09-22T17:39:05Z,False,246263.94,,44.46,44.42,,L,270,6,30936712978134,,regular,2026-09-22T17:39:05Z
+5015,TREX,43.99,553712,2026-09-22T16:30:47Z,False,220609.85,,43.99,43.94,,L,60,121,30936708880645,,regular,2026-09-22T16:30:47Z
+22032,TREX,44.045,109379,2026-09-22T14:00:49Z,False,970399.440,,44.1,43.91,,L,6,20,30936699882948,,regular,2026-09-22T14:00:49Z

@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+10741,SMG,65.33,787586,2025-02-18T21:38:46Z,False,701709.53,prior_reference_price,70.95,59.97,extended_hours_trade,L,30,50,59926930662527,,,
+1900,SMG,65.33,761965,2025-02-18T21:00:31Z,False,124127.00,prior_reference_price,70.95,59.97,extended_hours_trade,L,30,50,57631160172433,,,
+11600,SMG,65.33,773565,2025-02-18T21:00:31Z,False,757828.00,prior_reference_price,70.95,59.97,extended_hours_trade,L,30,50,57631160434440,,,
+1592,SMG,65.43,133529,2025-02-18T16:10:08Z,False,104164.56,,65.43,65.30,,L,32,101,40208434949950,,,
+2500,SMG,66.05,9732,2025-02-18T14:30:17Z,False,165125.00,,66.50,65.97,sold_out_of_sequence,L,10,6,34217524270540,,,

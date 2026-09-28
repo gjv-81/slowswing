@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+35100,UMBF,121.62,1135819,2025-01-28T21:45:58Z,4268862.00,False,average_price_trade,126,123,extended_hours_trade,L,100,93,60358623223809,,,
+55172,UMBF,121.62,1100709,2025-01-28T21:34:45Z,6710018.64,False,prior_reference_price,126,124.42,extended_hours_trade,L,100,3,59685557288591,,,
+27658,UMBF,121.62,1045537,2025-01-28T21:34:45Z,3363765.96,False,prior_reference_price,126,124.42,extended_hours_trade,L,100,3,59685227751188,,,
+2758,UMBF,121.62,1012690,2025-01-28T21:01:06Z,335427.96,False,prior_reference_price,127.99,85,extended_hours_trade,L,11500,9,57666196128403,,,
+935,UMBF,121.62,1009924,2025-01-28T21:00:45Z,113714.70,False,prior_reference_price,127.99,85,extended_hours_trade,L,11500,9,57645115031526,,,
+2450,UMBF,121.62,1006662,2025-01-28T21:00:05Z,297969.00,False,,127.99,111.11,extended_hours_trade,L,11500,20,57605853729225,,,
+1695,UMBF,121.62,1004184,2025-01-28T21:00:05Z,206145.90,False,,127.99,111.11,extended_hours_trade,L,11500,20,57605847014013,,,
+847,UMBF,121.62,1002018,2025-01-28T21:00:05Z,103012.14,False,,127.99,111.11,extended_hours_trade,L,11500,20,57605831214533,,,
+1200,UMBF,121.62,1000626,2025-01-28T21:00:05Z,145944.00,False,,127.99,111.11,extended_hours_trade,L,11500,20,57605816691617,,,
+10364,UMBF,121.15,391968,2025-01-28T17:30:50Z,1255598.60,False,,121.16,121.06,,L,166,220,45050866947820,intermarket_sweep,,
+1560,UMBF,120.73,190423,2025-01-28T16:36:16Z,188338.80,False,,120.70,120.58,,L,20,400,41776168037579,,,

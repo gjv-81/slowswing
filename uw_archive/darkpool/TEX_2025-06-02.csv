@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+6757,TEX,44.06,937837,2025-06-02T20:00:15Z,297713.42,False,prior_reference_price,48.79,0,extended_hours_trade,L,11,0,57615050970200,,,
+5754,TEX,44.955,23817,2025-06-02T13:30:12Z,258671.070,False,,45.08,44.78,,L,112,2,34212907578914,,,
+12145,TEX,45.01,12157,2025-06-02T13:03:49Z,546646.45,False,average_price_trade,54.87,44.50,extended_hours_trade,L,100,1,32629001743694,,,

@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1394,SYNA,82.07,524410,2026-01-09T21:00:07Z,False,114405.58,,90,80,extended_hours_trade,L,36,1,28209420807840,,regular,2026-01-09T21:00:07Z
+34900,SYNA,82.12,414778,2026-01-09T20:59:47Z,False,2865988.00,,90,80,,L,36,1,28209420787459,,regular,2026-01-09T20:59:47Z
+1541,SYNA,82.1051,370583,2026-01-09T20:59:35Z,False,126523.9591,average_price_trade,82.04,81.98,,L,660,58,28209420776094,derivative_priced,regular,2026-01-09T20:59:35Z
+1210,SYNA,82.72,253600,2026-01-09T20:40:02Z,False,100091.20,,82.84,82.6,,L,427,1,28209419602330,,regular,2026-01-09T20:40:02Z
+2450,SYNA,82.95,136438,2026-01-09T18:03:40Z,False,203227.50,,83.06,82.94,,L,10,6,28209410220207,,regular,2026-01-09T18:03:40Z

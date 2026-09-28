@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2943,TAP,42.55,2102011,2026-05-22T20:00:27Z,125224.65,False,prior_reference_price,43.8,41.65,extended_hours_trade,L,50,1,25379033779425,,regular,2026-05-22T20:00:27Z
+2866,TAP,42.55,2094774,2026-05-22T20:00:03Z,121948.30,False,,43.8,41.65,extended_hours_trade,L,50,1,25379033755648,,regular,2026-05-22T20:00:02Z
+3180,TAP,42.48,1343624,2026-05-22T19:53:03Z,135086.40,False,,42.49,42.47,,L,85,359,25379033335432,,regular,2026-05-22T19:53:03Z
+3524,TAP,42.495,921868,2026-05-22T18:19:10Z,149752.380,False,,42.5,42.48,,L,1,160,25379027703038,,regular,2026-05-22T18:19:10Z
+141800,TAP,42.11,491607,2026-05-22T15:08:06Z,5971198.00,False,,42.15,42.12,,L,48,11,25379016238176,intermarket_sweep,regular,2026-05-22T15:08:06Z

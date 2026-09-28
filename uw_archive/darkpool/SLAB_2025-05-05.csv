@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1700,SLAB,107.01,249478,2025-05-05T20:00:09Z,181917.00,False,,107.47,106.56,extended_hours_trade,L,1865,1865,57609060881651,,,
+1064,SLAB,107.01,247007,2025-05-05T20:00:02Z,113858.64,False,,107.47,106.56,extended_hours_trade,L,1865,1865,57602408576710,,,
+1452,SLAB,106.96,44661,2025-05-05T13:55:10Z,155305.92,False,,107.26,106.30,,L,7,1,35710086627413,,,
+1485,SLAB,105.47,34811,2025-05-05T13:43:40Z,156622.95,False,,105.75,105.20,,L,100,1,35020482526325,,,
+7800,SLAB,103.3134,17309,2025-05-05T13:30:51Z,805844.5200,False,,104.10,103.45,,L,10,6,34251868679883,,,

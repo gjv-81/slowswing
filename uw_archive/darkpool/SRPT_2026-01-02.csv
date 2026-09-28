@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4813,SRPT,21.31,1891685,2026-01-02T22:36:23Z,False,102565.03,prior_reference_price,21.26,21.1,extended_hours_trade,L,159,501,28681872986257,,regular,
+8987,SRPT,21.31,1881591,2026-01-02T21:00:05Z,False,191512.97,,21.42,21.1,extended_hours_trade,L,1420,501,28681867208505,,regular,
+16437,SRPT,21.31,1872604,2026-01-02T21:00:05Z,False,350272.47,,21.42,21.1,extended_hours_trade,L,1420,501,28681867208504,,regular,
+5000,SRPT,21.325,1228615,2026-01-02T20:48:21Z,False,106625.000,,21.33,21.32,,L,265,819,28681866503870,,regular,
+24900,SRPT,21.31,1083579,2026-01-02T20:14:14Z,False,530619.00,contingent_trade,21.31,21.3,,L,438,532,28681864457026,qualified_contingent_trade,regular,
+5000,SRPT,21.53,613665,2026-01-02T17:09:39Z,False,107650.00,,21.54,21.52,,L,306,246,28681853382634,,regular,
+14391,SRPT,21.705,451612,2026-01-02T16:22:11Z,False,312356.655,,21.71,21.7,,L,105,207,28681850534192,,regular,
+5400,SRPT,21.8401,184356,2026-01-02T15:03:53Z,False,117936.5400,,21.89,21.84,,L,6,200,28681845836082,,regular,
+7303,SRPT,21.9399,152046,2026-01-02T14:59:39Z,False,160227.0897,,21.94,21.9,,L,214,1,28681845582245,,regular,

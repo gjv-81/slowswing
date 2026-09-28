@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2497,URBN,53.70,1424328,2025-05-05T20:00:08Z,False,134088.90,,53.85,53.47,extended_hours_trade,L,3725,3725,57608901068625,,,
+2585,URBN,53.70,1246508,2025-05-05T20:00:00Z,False,138814.50,,53.69,53.66,extended_hours_trade,L,100,6603,57600127864427,,,
+6500,URBN,54,503398,2025-05-05T17:43:58Z,False,351000,,54.06,54.02,,L,22,184,49438837305459,,,

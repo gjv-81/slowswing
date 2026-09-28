@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+31913,TXNM,56.8,413578,2025-09-09T16:57:55Z,False,1812658.4,,56.78,56.76,,L,118,150,0,intermarket_sweep,regular,
+50000,TXNM,56.8,286925,2025-09-09T15:31:29Z,False,2840000.0,,56.8,56.79,,L,2,783,0,,regular,
+38500,TXNM,56.8,218749,2025-09-09T15:27:10Z,False,2186800.0,,56.81,56.79,,L,100,92,0,,regular,
+3196,TXNM,56.68,49276,2025-09-09T13:45:14Z,False,181149.28,,56.69,56.68,,L,1,2477,0,,regular,
+17134,TXNM,56.665,35069,2025-09-09T13:41:32Z,False,970898.110,average_price_trade,56.7,56.67,,L,101,100,0,derivative_priced,seller,

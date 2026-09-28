@@ -1,0 +1,14 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+10444,WLK,69.07,720930,2026-09-18T20:21:05Z,False,721367.08,prior_reference_price,72.87,68.28,extended_hours_trade,L,72,1,32074889032513,,regular,2026-09-18T20:21:05Z
+2370,WLK,69.07,710479,2026-09-18T20:15:09Z,False,163695.90,prior_reference_price,72.87,68.28,extended_hours_trade,L,72,1,32074888676485,,regular,2026-09-18T20:15:09Z
+3313,WLK,69.07,707326,2026-09-18T20:13:37Z,False,228828.91,,72.87,68.28,extended_hours_trade,L,72,1,32074888583675,,regular,2026-09-18T20:13:37Z
+1616,WLK,69.07,701428,2026-09-18T20:01:06Z,False,111617.12,prior_reference_price,72.87,68.28,extended_hours_trade,L,72,1,32074887833436,,regular,2026-09-18T20:01:06Z
+6484,WLK,69.07,699812,2026-09-18T20:00:55Z,False,447849.88,prior_reference_price,72.87,68.28,extended_hours_trade,L,72,1,32074887822414,,regular,2026-09-18T20:00:55Z
+3057,WLK,69.07,692562,2026-09-18T20:00:53Z,False,211146.99,prior_reference_price,72.87,68.28,extended_hours_trade,L,72,1,32074887819809,,regular,2026-09-18T20:00:53Z
+2396,WLK,69.07,689505,2026-09-18T20:00:50Z,False,165491.72,prior_reference_price,72.87,68.28,extended_hours_trade,L,72,1,32074887816629,,regular,2026-09-18T20:00:50Z
+2400,WLK,69.07,687109,2026-09-18T20:00:31Z,False,165768.00,prior_reference_price,72.87,68.28,extended_hours_trade,L,72,1,32074887798267,,regular,2026-09-18T20:00:31Z
+2871,WLK,69.07,681272,2026-09-18T20:00:29Z,False,198299.97,prior_reference_price,72.87,68.28,extended_hours_trade,L,72,1,32074887796430,,regular,2026-09-18T20:00:29Z
+4000,WLK,69.07,249148,2026-09-18T18:52:43Z,False,276280.00,,69.07,68.98,,L,265,15,32074883730489,,regular,2026-09-18T18:52:43Z
+1884,WLK,69.08,242715,2026-09-18T18:50:58Z,False,130146.72,,69.08,69.02,,L,210,292,32074883625098,,regular,2026-09-18T18:50:58Z
+12560,WLK,69.14,152470,2026-09-18T15:54:31Z,False,868398.40,,69.08,69.03,,L,20,49,32074873037724,,regular,2026-09-18T15:54:31Z
+7507,WLK,68.81,120653,2026-09-18T15:35:34Z,False,516556.67,,69.02,68.93,,L,216,210,32074871900690,,regular,2026-09-18T15:35:34Z

@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2489,TCOM,63.58,1561848,2025-04-02T20:12:59Z,158250.62,False,prior_reference_price,63.80,63.33,extended_hours_trade,L,10,16,58379799642490,,,
+2340,TCOM,63.58,1557589,2025-04-02T20:00:36Z,148777.20,False,prior_reference_price,63.80,63.33,extended_hours_trade,L,10,16,57636949226683,,,
+4454,TCOM,63.58,1554775,2025-04-02T20:00:13Z,283185.32,False,prior_reference_price,63.80,63.33,extended_hours_trade,L,10,16,57613753904731,,,
+7123,TCOM,63.58,1550066,2025-04-02T20:00:13Z,452880.34,False,prior_reference_price,63.80,63.33,extended_hours_trade,L,10,16,57613690543724,,,
+16477,TCOM,63.40,1212530,2025-04-02T19:06:56Z,1044641.80,False,contingent_trade,63.41,63.38,,L,35,50,54416388812023,qualified_contingent_trade,,
+9523,TCOM,63.40,1195819,2025-04-02T19:06:42Z,603758.20,False,contingent_trade,63.41,63.38,,L,35,50,54402550876569,qualified_contingent_trade,,
+3000,TCOM,63.43,1119970,2025-04-02T18:42:00Z,190290.00,False,,63.46,63.43,,L,30,88,52920356692145,,,
+3002,TCOM,63.20,1081330,2025-04-02T18:24:11Z,189726.40,False,,63.24,63.21,,L,208,3,51851766727665,,,
+25200,TCOM,63.40,763235,2025-04-02T16:25:15Z,1597680.00,False,contingent_trade,63.42,63.37,,L,106,261,44715031750094,qualified_contingent_trade,,
+2345,TCOM,62.82,470389,2025-04-02T15:07:48Z,147312.90,False,,62.84,62.80,,L,365,38,40068493376977,,,

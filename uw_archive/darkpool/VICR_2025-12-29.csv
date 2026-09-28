@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+21077,VICR,112,364112,2025-12-29T21:00:54Z,False,2360624,prior_reference_price,112,111.76,extended_hours_trade,L,495,70,27668254975124,,regular,
+1494,VICR,112,342791,2025-12-29T21:00:04Z,False,167328,,112,111.76,extended_hours_trade,L,495,70,27668254924832,,regular,
+1941,VICR,112,341297,2025-12-29T21:00:03Z,False,217392,,112,111.76,extended_hours_trade,L,495,70,27668254924827,,regular,
+2300,VICR,112,304247,2025-12-29T21:00:00Z,False,257600,,112,111.76,extended_hours_trade,L,495,70,27668254921274,,regular,
+999,VICR,111.29,175274,2025-12-29T18:51:34Z,False,111178.71,,111.29,111.05,,L,20,201,27668247215406,,regular,
+1000,VICR,111.55,156860,2025-12-29T17:59:01Z,False,111550.00,,111.38,111.11,,L,50,8,27668244061959,,regular,
+1000,VICR,111.25,151354,2025-12-29T17:53:46Z,False,111250.00,,111.25,110.91,,L,29,30,27668243747019,,regular,
+1000,VICR,110.53,24487,2025-12-29T14:48:08Z,False,110530.00,,111.53,110,,L,204,53,27668232609518,,regular,
+982,VICR,110.1543,21849,2025-12-29T14:44:51Z,False,108171.5226,,111.55,110.8,,L,25,1,27668232412313,,regular,

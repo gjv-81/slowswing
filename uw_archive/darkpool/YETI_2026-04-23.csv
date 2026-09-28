@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+19243,YETI,39.92,698276,2026-04-23T20:03:54Z,768180.56,False,,0,39.03,extended_hours_trade,L,0,5,39608260637900,,regular,2026-04-23T20:03:54Z
+29365,YETI,39.69,233728,2026-04-23T17:45:57Z,1165496.85,False,,39.69,39.61,,L,2,20,39608252360777,,regular,2026-04-23T17:45:57Z
+3000,YETI,40.825,76070,2026-04-23T14:55:20Z,122475.000,False,,40.88,40.76,,L,101,8,39608242124106,,regular,2026-04-23T14:55:20Z
+2900,YETI,40.705,66805,2026-04-23T14:52:08Z,118044.500,False,,40.76,40.64,,L,21,6,39608241932706,,regular,2026-04-23T14:52:08Z

@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5620,TECH,63.79,1687995,2025-10-22T20:01:17Z,358499.80,False,prior_reference_price,64.64,62.55,extended_hours_trade,L,3,14,0,,regular,
+4734,TECH,63.79,1674595,2025-10-22T20:00:08Z,301981.86,False,,63.99,63.61,extended_hours_trade,L,565,565,0,,regular,
+3030,TECH,63.79,1669861,2025-10-22T20:00:08Z,193283.70,False,,63.99,63.61,extended_hours_trade,L,565,565,0,,regular,
+6849,TECH,63.79,1659376,2025-10-22T20:00:00Z,436897.71,False,,63.77,63.75,extended_hours_trade,L,1949,263,0,,regular,
+1600,TECH,63.755,1386228,2025-10-22T19:59:17Z,102008.000,False,,63.77,63.76,,L,2403,333,0,,regular,
+2656,TECH,63.865,1071988,2025-10-22T19:35:24Z,169625.440,False,,63.88,63.84,,L,55,222,0,,regular,
+1900,TECH,63.93,1062370,2025-10-22T19:35:11Z,121467.00,False,,63.93,63.89,,L,320,491,0,,regular,
+4719,TECH,63.6789,491258,2025-10-22T16:54:10Z,300500.7291,False,,63.71,63.65,,L,105,43,0,,regular,
+2765,TECH,63.555,225912,2025-10-22T14:44:00Z,175729.575,False,,63.6,63.53,,L,254,10,0,,regular,
+1600,TECH,64.38,51353,2025-10-22T13:39:37Z,103008.00,False,,64.53,64.29,,L,11,50,0,,regular,

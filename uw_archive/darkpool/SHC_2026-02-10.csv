@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+40255,SHC,17.46,1176333,2026-02-10T21:02:27Z,False,702852.30,prior_reference_price,0,16.75,extended_hours_trade,L,0,1,23892978815614,,regular,2026-02-10T21:02:27Z
+40222,SHC,17.46,1136078,2026-02-10T21:02:13Z,False,702276.12,prior_reference_price,0,16.75,extended_hours_trade,L,0,1,23892978801479,,regular,2026-02-10T21:02:13Z
+11897,SHC,17.46,1081843,2026-02-10T21:00:07Z,False,207721.62,,17.47,17.46,extended_hours_trade,L,1400,700,23892978675069,,regular,2026-02-10T21:00:07Z

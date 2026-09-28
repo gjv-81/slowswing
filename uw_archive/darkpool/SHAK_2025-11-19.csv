@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1529,SHAK,84.24,791472,2025-11-19T21:00:37Z,128802.96,False,prior_reference_price,93,81.55,extended_hours_trade,L,50,10,0,,regular,
+1200,SHAK,84.6482,502594,2025-11-19T20:53:14Z,101577.8400,False,average_price_trade,84.67,84.57,,L,2,10,0,derivative_priced,regular,
+1200,SHAK,84.95,449651,2025-11-19T20:39:04Z,101940.00,False,,85.1,84.95,,L,40,60,0,,regular,
+2475,SHAK,84.87,432399,2025-11-19T20:27:46Z,210053.25,False,,85.03,84.87,,L,38,102,0,,regular,
+1579,SHAK,84.405,315466,2025-11-19T18:55:41Z,133275.495,False,,84.53,84.2,,L,32,12,0,,regular,
+1600,SHAK,85.04,297581,2025-11-19T18:39:07Z,136064.00,False,contingent_trade,84.94,84.79,,L,100,27,0,qualified_contingent_trade,regular,
+4000,SHAK,84.8525,273823,2025-11-19T18:10:59Z,339410.0000,False,,84.88,84.57,,L,8,133,0,,regular,
+1379,SHAK,84.508,240645,2025-11-19T17:36:51Z,116536.532,False,,84.57,84.5,,L,5,15,0,,regular,
+4560,SHAK,85.18,178359,2025-11-19T16:52:52Z,388420.80,False,,85.33,85.18,,L,3,26,0,,regular,
+2700,SHAK,85.18,173262,2025-11-19T16:52:51Z,229986.00,False,,85.33,85.18,,L,3,26,0,,regular,
+9900,SHAK,85.18,170562,2025-11-19T16:52:51Z,843282.00,False,,85.33,85.18,,L,3,26,0,,regular,

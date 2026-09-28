@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+5553,SRPT,20.72,1856806,2026-02-02T21:00:18Z,False,115058.16,prior_reference_price,21,20.58,extended_hours_trade,L,150,1000,28681867221585,,regular,2026-02-02T21:00:18Z
+18885,SRPT,20.475,576806,2026-02-02T16:28:02Z,False,386670.375,,20.49,20.47,,L,386,66,28681850884886,,regular,2026-02-02T16:28:02Z
+8948,SRPT,20.449,525889,2026-02-02T16:22:57Z,False,182977.652,,20.38,20.36,,L,497,61,28681850580180,,regular,2026-02-02T16:22:57Z
+4904,SRPT,20.4,485121,2026-02-02T16:14:58Z,False,100041.6,,20.4,20.38,,L,100,112,28681850101053,,regular,2026-02-02T16:14:58Z

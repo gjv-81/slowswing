@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+37400,WEN,9.47,4878879,2025-09-17T20:01:00Z,False,354178.00,prior_reference_price,9.5,9.48,extended_hours_trade,L,100,100,0,,regular,
+33378,WEN,9.47,4804942,2025-09-17T20:00:06Z,False,316089.66,average_price_trade,9.5,9.48,extended_hours_trade,L,100,100,0,,regular,
+13250,WEN,9.47,4769751,2025-09-17T20:00:04Z,False,125477.50,,9.5,9.48,extended_hours_trade,L,100,100,0,,regular,
+15000,WEN,9.53,2173325,2025-09-17T18:52:04Z,False,142950.00,,9.53,9.52,,L,405,2239,0,,regular,
+13350,WEN,9.62,1430817,2025-09-17T17:37:15Z,False,128427.00,,9.62,9.61,,L,1129,858,0,,regular,
+13092,WEN,9.6599,968535,2025-09-17T15:55:59Z,False,126467.4108,,9.66,9.65,,L,501,1418,0,,regular,
+13634,WEN,9.6399,889483,2025-09-17T15:51:45Z,False,131430.3966,,9.64,9.63,,L,361,2516,0,,regular,
+11949,WEN,9.6299,872626,2025-09-17T15:50:50Z,False,115067.6751,,9.64,9.63,,L,815,2109,0,,regular,
+10579,WEN,9.6299,859477,2025-09-17T15:50:22Z,False,101874.7121,,9.63,9.62,,L,735,1153,0,,regular,
+10579,WEN,9.6299,848684,2025-09-17T15:49:55Z,False,101874.7121,,9.63,9.62,,L,685,1049,0,,regular,

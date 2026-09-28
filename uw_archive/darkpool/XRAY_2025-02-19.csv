@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+44884,XRAY,18.98,2108782,2025-02-19T21:35:20Z,851898.32,False,,19.27,18.80,extended_hours_trade,L,414,1000,59720343932809,,,
+19300,XRAY,18.98,2063894,2025-02-19T21:02:19Z,366314.00,False,prior_reference_price,19.27,18.80,extended_hours_trade,L,155,1000,57739286458802,,,
+6715,XRAY,18.98,2038080,2025-02-19T21:01:12Z,127450.70,False,prior_reference_price,19.35,18.80,extended_hours_trade,L,87,1000,57672244149123,,,
+33100,XRAY,18.98,2018964,2025-02-19T21:00:12Z,628238.00,False,prior_reference_price,20.40,18.80,extended_hours_trade,L,400,1000,57612701017367,,,
+5840,XRAY,18.84,328277,2025-02-19T15:37:11Z,110025.60,False,,18.85,18.84,,L,312,949,38231379523035,,,
+10000,XRAY,18.80,248368,2025-02-19T15:25:52Z,188000.00,False,,18.81,18.80,,L,430,426,37552863959409,,,

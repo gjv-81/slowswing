@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+8900,VFC,14.82,4888560,2025-09-24T20:00:03Z,False,131898.00,,14.82,14.81,extended_hours_trade,L,6540,1710,0,,regular,
+9200,VFC,14.8104,3989199,2025-09-24T19:56:14Z,False,136255.6800,average_price_trade,14.82,14.81,,L,1990,1758,0,derivative_priced,regular,
+7900,VFC,14.815,3695950,2025-09-24T19:51:47Z,False,117038.500,,14.82,14.81,,L,6010,2876,0,,regular,
+26400,VFC,14.72,3431044,2025-09-24T19:35:08Z,False,388608.00,,14.75,14.74,,L,2100,3326,0,,regular,
+20000,VFC,14.7401,3055176,2025-09-24T19:02:01Z,False,294802.0000,,14.75,14.74,,L,746,838,0,,regular,
+10000,VFC,14.76,2338622,2025-09-24T17:35:01Z,False,147600.00,,14.76,14.75,,L,1368,475,0,,regular,
+10900,VFC,14.705,964644,2025-09-24T14:40:31Z,False,160284.500,,14.71,14.7,,L,985,850,0,,regular,
+7750,VFC,14.658,312708,2025-09-24T13:46:14Z,False,113599.500,,14.69,14.68,,L,385,143,0,,regular,
+8125,VFC,14.79,188037,2025-09-24T13:38:06Z,False,120168.75,,14.8,14.78,,L,494,125,0,,regular,
+8055,VFC,14.76,131767,2025-09-24T13:33:00Z,False,118891.80,,14.76,14.71,,L,100,200,0,,regular,

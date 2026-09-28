@@ -1,0 +1,6 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2254,WLK,81.88,1177283,2026-01-28T21:00:16Z,184557.52,False,prior_reference_price,81.95,81.85,extended_hours_trade,L,10,19,32074891382776,,regular,2026-01-28T21:00:16Z
+14700,WLK,81.955,507980,2026-01-28T19:34:08Z,1204738.500,False,,82.23,81.53,,L,10,47,32074886215144,,regular,2026-01-28T19:34:08Z
+5400,WLK,82.48,238497,2026-01-28T17:04:06Z,445392.00,False,,82.6,82.48,,L,30,10,32074877212792,,regular,2026-01-28T17:04:06Z
+2700,WLK,81.995,98236,2026-01-28T15:40:47Z,221386.500,False,,82.2,81.79,,L,226,146,32074872213920,,regular,2026-01-28T15:40:47Z
+3400,WLK,81.565,81154,2026-01-28T15:33:41Z,277321.000,False,,81.82,81.29,,L,45,19,32074871788389,,regular,2026-01-28T15:33:41Z

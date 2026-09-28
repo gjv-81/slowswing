@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1775,SWKS,64.51,742455,2025-12-24T18:01:43Z,False,114505.25,prior_reference_price,64.82,64.15,extended_hours_trade,L,1,15,25035429271959,,regular,
+1653,SWKS,64.51,740680,2025-12-24T18:01:41Z,False,106635.03,prior_reference_price,64.82,64.15,extended_hours_trade,L,1,15,25035429270185,,regular,
+2186,SWKS,64.51,739027,2025-12-24T18:01:36Z,False,141018.86,prior_reference_price,64.82,64.15,extended_hours_trade,L,1,15,25035429264501,,regular,
+2023,SWKS,64.51,736725,2025-12-24T18:01:30Z,False,130503.73,prior_reference_price,64.82,64.15,extended_hours_trade,L,1,15,25035429258931,,regular,
+3753,SWKS,64.37,385836,2025-12-24T17:47:02Z,False,241580.61,,64.4,64.34,,L,57,516,25035428390895,,regular,
+6000,SWKS,64.3912,336700,2025-12-24T17:34:42Z,False,386347.2000,,64.38,64.35,,L,21,150,25035427651339,,regular,
+3600,SWKS,64.4,296885,2025-12-24T17:29:07Z,False,231840.0,,64.42,64.38,,L,1,344,25035427315866,,regular,
+5000,SWKS,64.26,100011,2025-12-24T15:12:19Z,False,321300.00,,64.28,64.24,,L,12,21,25035419107883,,regular,
+7228,SWKS,64.435,73038,2025-12-24T15:04:59Z,False,465736.180,,64.47,64.43,,L,190,65,25035418667691,,regular,

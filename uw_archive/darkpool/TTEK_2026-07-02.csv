@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+24500,TTEK,29.5896,2352489,2026-07-02T20:08:58Z,724945.2000,False,,30.49,29.32,extended_hours_trade,L,65,68,28329676823331,,regular,2026-07-02T20:08:58Z
+4970,TTEK,29.9,2327981,2026-07-02T20:03:02Z,148603.0,False,prior_reference_price,30.49,29.32,extended_hours_trade,L,65,68,28329676467407,,regular,2026-07-02T20:03:02Z
+3500,TTEK,29.9,2322867,2026-07-02T20:00:36Z,104650.0,False,prior_reference_price,30.05,29,extended_hours_trade,L,15,10,28329676321146,,regular,2026-07-02T20:00:36Z
+3756,TTEK,29.9,2319367,2026-07-02T20:00:36Z,112304.4,False,prior_reference_price,30.05,29,extended_hours_trade,L,15,10,28329676321091,,regular,2026-07-02T20:00:36Z
+14740,TTEK,29.9,2315611,2026-07-02T20:00:12Z,440726.0,False,prior_reference_price,30.05,29,extended_hours_trade,L,15,10,28329676296964,,regular,2026-07-02T20:00:12Z
+6785,TTEK,29.9,2298018,2026-07-02T20:00:12Z,202871.5,False,prior_reference_price,30.05,29,extended_hours_trade,L,15,10,28329676296533,,regular,2026-07-02T20:00:12Z
+5809,TTEK,29.9,2291230,2026-07-02T20:00:02Z,173689.1,False,,29.95,29.84,extended_hours_trade,L,1669,397,28329676287286,,regular,2026-07-02T20:00:01Z
+5312,TTEK,29.6499,775017,2026-07-02T17:17:35Z,157500.2688,False,,29.64,29.61,,L,1511,260,28329666540328,,regular,2026-07-02T17:17:35Z
+5000,TTEK,29.46,250510,2026-07-02T14:26:20Z,147300.00,False,,29.48,29.46,,L,114,343,28329656264497,,regular,2026-07-02T14:26:20Z

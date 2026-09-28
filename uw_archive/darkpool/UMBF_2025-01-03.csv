@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+11020,UMBF,113.25,308934,2025-01-03T21:44:15Z,False,1248015.00,average_price_trade,122.83,110.98,extended_hours_trade,L,100,3,60255588715472,,,
+2238,UMBF,113.25,295100,2025-01-03T21:00:05Z,False,253453.50,,0,85,extended_hours_trade,L,0,9,57605438616599,,,
+1522,UMBF,113.25,292862,2025-01-03T21:00:05Z,False,172366.50,,0,85,extended_hours_trade,L,0,9,57605423671200,,,
+954,UMBF,113.25,291257,2025-01-03T21:00:05Z,False,108040.50,,0,85,extended_hours_trade,L,0,9,57605413850252,,,

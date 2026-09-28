@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2857,WEX,142.11,427353,2025-06-10T21:02:10Z,406008.27,False,prior_reference_price,146.77,136.94,extended_hours_trade,L,6,10,61330621519139,,,
+1256,WEX,142.11,424296,2025-06-10T20:00:35Z,178490.16,False,prior_reference_price,159,126,extended_hours_trade,L,22,5,57635929495116,,,
+896,WEX,141.47,97532,2025-06-10T16:08:08Z,126757.12,False,,141.45,141.21,,L,30,3,43688206193877,,,
+1095,WEX,141.4931,95125,2025-06-10T16:05:51Z,154934.9445,False,,141.45,141.21,,L,20,3,43551857241775,,,
+1108,WEX,141.4931,94030,2025-06-10T16:05:51Z,156774.3548,False,,141.45,141.21,,L,20,3,43551856887045,,,
+1000,WEX,141.585,53897,2025-06-10T15:01:55Z,141585.000,False,,141.78,141.37,,L,5,100,39715123068789,,,

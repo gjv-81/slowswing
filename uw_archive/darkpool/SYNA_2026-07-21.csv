@@ -1,0 +1,9 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1220,SYNA,119.32,522917,2026-07-21T20:00:49Z,145570.40,False,prior_reference_price,120.52,117.45,extended_hours_trade,L,300,150,28209417249627,,regular,2026-07-21T20:00:49Z
+1820,SYNA,119.32,521665,2026-07-21T20:00:45Z,217162.40,False,prior_reference_price,120.52,117.45,extended_hours_trade,L,200,75,28209417245931,,regular,2026-07-21T20:00:45Z
+1206,SYNA,119.32,517169,2026-07-21T20:00:10Z,143899.92,False,prior_reference_price,120,117.45,extended_hours_trade,L,30,75,28209417210638,,regular,2026-07-21T20:00:10Z
+1077,SYNA,119.32,515929,2026-07-21T20:00:08Z,128507.64,False,,120,117.45,extended_hours_trade,L,30,75,28209417208253,,regular,2026-07-21T20:00:08Z
+1100,SYNA,119.43,405100,2026-07-21T19:51:15Z,131373.00,False,,119.43,119.16,,L,133,699,28209416675403,,regular,2026-07-21T19:51:15Z
+20600,SYNA,119.54,303935,2026-07-21T18:14:23Z,2462524.00,False,contingent_trade,119.58,119.48,,L,19,7,28209410863965,qualified_contingent_trade,regular,2026-07-21T18:14:23Z
+20600,SYNA,119.52,283312,2026-07-21T18:14:00Z,2462112.00,False,contingent_trade,119.67,119.48,,L,69,6,28209410840711,qualified_contingent_trade,regular,2026-07-21T18:14:00Z
+41100,SYNA,119.19,246360,2026-07-21T17:42:15Z,4898709.00,False,contingent_trade,119.26,119.07,,L,19,100,28209408936118,qualified_contingent_trade,regular,2026-07-21T17:42:15Z

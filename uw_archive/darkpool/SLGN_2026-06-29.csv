@@ -1,0 +1,3 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2192,SLGN,46.26,851479,2026-06-29T20:00:34Z,False,101401.92,prior_reference_price,50.35,29.05,extended_hours_trade,L,4,1,28462820304938,,regular,2026-06-29T20:00:34Z
+3922,SLGN,45.39,88728,2026-06-29T14:23:01Z,False,178019.58,,45.41,45.37,,L,100,26,28462800051741,,regular,2026-06-29T14:23:01Z

@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+40000,TRIP,15.85,1201877,2025-10-15T20:00:07Z,634000.00,False,average_price_trade,15.86,15.85,extended_hours_trade,L,475,643,0,,regular,
+30900,TRIP,15.85,1160655,2025-10-15T20:00:05Z,489765.00,False,,15.86,15.85,extended_hours_trade,L,475,643,0,,regular,
+10467,TRIP,15.85,1123992,2025-10-15T20:00:04Z,165901.95,False,,15.86,15.85,extended_hours_trade,L,475,643,0,,regular,
+6400,TRIP,15.93,592878,2025-10-15T18:56:32Z,101952.00,False,,15.94,15.92,,L,449,300,0,,regular,
+7800,TRIP,15.8998,542818,2025-10-15T18:32:35Z,124018.4400,False,,15.9,15.88,,L,477,290,0,,regular,
+11024,TRIP,15.86,491965,2025-10-15T18:09:10Z,174840.64,False,,15.87,15.86,,L,232,306,0,,regular,

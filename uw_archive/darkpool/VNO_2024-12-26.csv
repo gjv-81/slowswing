@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+3059,VNO,42.65,635383,2024-12-26T21:00:47Z,False,130466.35,prior_reference_price,0,0,extended_hours_trade,L,0,0,57647032972550,,,
+5457,VNO,42.65,627031,2024-12-26T21:00:12Z,False,232741.05,prior_reference_price,0,0,extended_hours_trade,L,0,0,57612858219940,,,
+2520,VNO,42.77,415705,2024-12-26T20:46:39Z,False,107780.40,,42.78,42.76,,L,60,107,56799176938694,,,

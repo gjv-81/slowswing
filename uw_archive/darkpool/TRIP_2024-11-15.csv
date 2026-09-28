@@ -1,0 +1,8 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+144707,TRIP,13.94,2279453,2024-11-15T21:55:03Z,2017215.58,False,,14.20,13.94,extended_hours_trade,L,50,18,60903486177329,,,
+28523,TRIP,13.94,2120205,2024-11-15T21:01:04Z,397610.62,False,prior_reference_price,14.26,13.88,extended_hours_trade,L,2,1000,57664612610117,,,
+9362,TRIP,13.94,2091299,2024-11-15T21:00:18Z,130506.28,False,prior_reference_price,14.26,13.88,extended_hours_trade,L,2,1000,57618837375299,,,
+8500,TRIP,13.96,826464,2024-11-15T18:27:58Z,118660.00,False,,13.97,13.96,,L,480,302,48478513178118,,,
+9600,TRIP,13.98,661408,2024-11-15T17:26:14Z,134208.00,False,,13.99,13.98,,L,1865,80,44774654842340,,,
+12840,TRIP,14.2439,268926,2024-11-15T15:39:07Z,182891.6760,False,contingent_trade,14.25,14.24,,L,200,139,38347133146626,qualified_contingent_trade,,
+21886,TRIP,14.475,137772,2024-11-15T15:07:14Z,316799.850,False,,14.48,14.47,,L,375,100,36434079848643,,,

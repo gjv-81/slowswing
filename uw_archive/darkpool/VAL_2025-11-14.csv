@@ -1,0 +1,5 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+1784,VAL,57.03,737945,2025-11-14T21:00:04Z,101741.52,False,,57.02,57,extended_hours_trade,L,100,100,0,,regular,
+2219,VAL,57.24,374005,2025-11-14T19:00:48Z,127015.56,False,,57.24,57.17,,L,130,101,0,,regular,
+2220,VAL,57.7917,235693,2025-11-14T17:02:06Z,128297.5740,False,,57.83,57.73,,L,100,200,0,,regular,
+2000,VAL,57.757,223697,2025-11-14T16:55:51Z,115514.000,False,,57.88,57.7,,L,101,300,0,,regular,

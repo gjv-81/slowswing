@@ -1,0 +1,7 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+4461,SITM,233.20,116849,2025-01-08T21:44:45Z,False,1040305.20,prior_reference_price,237.70,228.70,extended_hours_trade,L,7,1,60285525339110,,,
+791,SITM,233.20,112034,2025-01-08T21:01:22Z,False,184461.20,prior_reference_price,274.77,227,extended_hours_trade,L,1,2,57682472535938,,,
+1050,SITM,230.2544,32841,2025-01-08T16:31:07Z,False,241767.1200,,230.19,229.50,,L,14,3,41467636182789,,,
+1050,SITM,230.25,31791,2025-01-08T16:31:07Z,False,241762.50,,230.19,229.50,,L,14,3,41467635519809,,,
+1300,SITM,230.18,11752,2025-01-08T15:04:01Z,False,299234.00,,230.72,229.62,,L,1,30,36241608416588,,,
+1806,SITM,230.94,2069,2025-01-08T13:13:16Z,False,417077.64,average_price_trade,230.79,137.18,extended_hours_trade,L,120,100,29596718339602,,,

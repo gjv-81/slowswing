@@ -169,7 +169,11 @@ def main():
         if r is None: continue
         rec={**c,**r,"scan_date":today}
         rows.append(rec)
-        if r["flame"]: flames.append(rec)
+        # EXPANSION RULE (backtested 2026-09-28): S2 flames did NOT transfer to
+        # the ext universe (controls beat flames at d3-d5) — log them, never alert.
+        # B2 transferred strongly (61-68% win d1-d4) — full universe allowed.
+        if r["flame"] and not (c["setup"]=="S2" and c["univ"]=="ext"):
+            flames.append(rec)
         print(f"  {c['ticker']:6s} {c['setup']} ratio {r['ratio']:5.2f} {'🔥' if r['flame'] else ''}")
     if rows:
         pd.DataFrame(rows).to_csv(LOG,mode="a",header=not LOG.exists(),index=False)

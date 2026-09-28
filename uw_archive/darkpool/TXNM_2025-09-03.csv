@@ -1,0 +1,11 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2738,TXNM,56.69,524030,2025-09-03T20:01:48Z,False,155217.22,prior_reference_price,0,52.07,extended_hours_trade,L,0,20,57708693631725,,regular,
+7350,TXNM,56.69,519192,2025-09-03T20:00:26Z,False,416671.50,prior_reference_price,0,52.07,extended_hours_trade,L,0,20,57626326281802,,regular,
+5200,TXNM,56.69,507492,2025-09-03T20:00:08Z,False,294788.00,average_price_trade,0,52.07,extended_hours_trade,L,0,20,57608135122838,,regular,
+2952,TXNM,56.675,422209,2025-09-03T19:59:28Z,False,167304.600,,56.68,56.67,,L,348,425,57568112690246,,regular,
+2100,TXNM,56.715,313089,2025-09-03T19:04:18Z,False,119101.500,,56.72,56.71,,L,356,727,54258954344237,,regular,
+2171,TXNM,56.75,283814,2025-09-03T18:49:18Z,False,123204.25,,56.76,56.74,,L,100,120,53358948598130,,regular,
+9560,TXNM,56.71,153519,2025-09-03T15:27:18Z,False,542147.60,,56.72,56.70,,L,51,121,41238730229403,,regular,
+13941,TXNM,56.74,141507,2025-09-03T15:26:54Z,False,791012.34,,56.72,56.70,,L,100,68,41214023575801,,regular,
+1854,TXNM,56.735,113092,2025-09-03T14:59:28Z,False,105186.690,,56.74,56.73,,L,202,5,39568237918344,,regular,
+1900,TXNM,56.625,44309,2025-09-03T13:55:01Z,False,107587.500,,56.63,56.61,,L,143,238,35701820522275,,regular,

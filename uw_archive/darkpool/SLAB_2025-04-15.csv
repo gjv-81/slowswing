@@ -1,0 +1,4 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+18427,SLAB,91.60,304482,2025-04-15T20:29:22Z,False,1687913.20,prior_reference_price,93.37,90,extended_hours_trade,L,18,100,59362769625247,,,
+4100,SLAB,91.60,283901,2025-04-15T20:00:08Z,False,375560.00,average_price_trade,92.26,90.92,extended_hours_trade,L,2180,2180,57608131745227,,,
+28200,SLAB,91.60,279325,2025-04-15T20:00:06Z,False,2583120.00,average_price_trade,92.26,90.92,extended_hours_trade,L,2180,2180,57606257389717,,,

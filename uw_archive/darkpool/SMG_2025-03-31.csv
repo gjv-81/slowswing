@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,canceled,premium,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+8301,SMG,54.89,864206,2025-03-31T20:03:15Z,False,455641.89,prior_reference_price,55.95,54.10,extended_hours_trade,L,30,75,57795818038468,,,
+5542,SMG,54.89,855858,2025-03-31T20:01:54Z,False,304200.38,prior_reference_price,55.95,54.10,extended_hours_trade,L,30,75,57714624613184,,,
+6387,SMG,54.89,849975,2025-03-31T20:01:13Z,False,350582.43,prior_reference_price,55.95,54.10,extended_hours_trade,L,30,75,57673930216649,,,
+1875,SMG,54.89,834905,2025-03-31T20:00:24Z,False,102918.75,prior_reference_price,59.03,54.10,extended_hours_trade,L,10,75,57624704697430,,,
+2418,SMG,54.89,833030,2025-03-31T20:00:24Z,False,132724.02,prior_reference_price,59.03,54.10,extended_hours_trade,L,10,75,57624434818642,,,
+4478,SMG,54.89,830612,2025-03-31T20:00:24Z,False,245797.42,prior_reference_price,59.03,54.10,extended_hours_trade,L,10,75,57624332602431,,,
+2841,SMG,54.66,340651,2025-03-31T17:25:14Z,False,155289.06,,54.70,54.62,,L,46,35,48314028364673,,,
+28656,SMG,54.32,221956,2025-03-31T15:57:25Z,False,1556593.92,contingent_trade,54.38,54.25,,L,2,200,43045918531124,qualified_contingent_trade,,
+5384,SMG,54.155,183280,2025-03-31T15:42:56Z,False,291570.520,,54.22,54.07,,L,1,135,42176630864573,,,

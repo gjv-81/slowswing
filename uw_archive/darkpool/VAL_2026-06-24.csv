@@ -1,0 +1,12 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+2378,VAL,75.52,1144395,2026-06-24T21:23:26Z,179586.56,False,prior_reference_price,77.02,74.05,extended_hours_trade,L,25,27,22222237796194,,regular,2026-06-24T21:23:26Z
+5013,VAL,75.52,1141847,2026-06-24T20:10:11Z,378581.76,False,prior_reference_price,75.54,67.34,extended_hours_trade,L,6,100,22222233401248,,regular,2026-06-24T20:10:11Z
+13569,VAL,75.4667,1136825,2026-06-24T20:02:06Z,1024007.6523,False,,75.54,0,extended_hours_trade,L,6,0,22222232915580,,regular,2026-06-24T20:02:04Z
+10089,VAL,75.52,1122646,2026-06-24T20:00:48Z,761921.28,False,prior_reference_price,75.54,0,extended_hours_trade,L,6,0,22222232837995,,regular,2026-06-24T20:00:48Z
+3144,VAL,75.52,1110683,2026-06-24T20:00:21Z,237434.88,False,prior_reference_price,75.54,0,extended_hours_trade,L,6,0,22222232811128,,regular,2026-06-24T20:00:21Z
+3166,VAL,75.52,1107525,2026-06-24T20:00:21Z,239096.32,False,prior_reference_price,75.54,0,extended_hours_trade,L,6,0,22222232811120,,regular,2026-06-24T20:00:21Z
+1794,VAL,75.52,1104358,2026-06-24T20:00:21Z,135482.88,False,prior_reference_price,75.54,0,extended_hours_trade,L,6,0,22222232811117,,regular,2026-06-24T20:00:21Z
+1620,VAL,75.24,738318,2026-06-24T19:17:55Z,121888.80,False,,75.27,75.24,,L,3,15,22222230264563,,regular,2026-06-24T19:17:55Z
+2364,VAL,75.39,713475,2026-06-24T19:01:24Z,178221.96,False,,75.46,75.35,,L,20,255,22222229274314,,regular,2026-06-24T19:01:24Z
+4050,VAL,76.3955,515324,2026-06-24T17:00:00Z,309401.7750,False,,76.47,76.39,,L,10,332,22222221990256,,regular,2026-06-24T17:00:00Z
+3554,VAL,75.6,131426,2026-06-24T14:11:05Z,268682.4,False,,75.73,75.51,,L,10,100,22222211855121,,regular,2026-06-24T14:11:05Z

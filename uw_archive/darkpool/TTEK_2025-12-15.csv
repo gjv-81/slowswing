@@ -1,0 +1,10 @@
+size,ticker,price,volume,executed_at,premium,canceled,sale_cond_codes,nbbo_ask,nbbo_bid,ext_hour_sold_codes,market_center,nbbo_ask_quantity,nbbo_bid_quantity,tracking_id,trade_code,trade_settlement,trf_executed_at
+107257,TTEK,34.44,1611348,2025-12-15T22:58:56Z,3693931.08,False,average_price_trade,34.74,34.15,extended_hours_trade,L,99,99,28329687020781,,regular,
+10727,TTEK,34.44,1503984,2025-12-15T21:07:22Z,369437.88,False,,38.25,34,extended_hours_trade,L,35,12,28329680326882,,regular,
+18433,TTEK,34.44,1492863,2025-12-15T21:03:12Z,634832.52,False,,38.25,34,extended_hours_trade,L,35,12,28329680076591,,regular,
+5000,TTEK,34.44,1474231,2025-12-15T21:00:40Z,172200.00,False,prior_reference_price,37.7,34,extended_hours_trade,L,50,24,28329679924484,,regular,
+7203,TTEK,34.44,1458632,2025-12-15T21:00:02Z,248071.32,False,,37.7,34,extended_hours_trade,L,50,24,28329679887402,,regular,
+3400,TTEK,34.655,246249,2025-12-15T15:35:17Z,117827.000,False,,34.67,34.64,,L,115,161,28329660401491,,regular,
+3054,TTEK,34.72,144700,2025-12-15T15:14:17Z,106034.88,False,,34.75,34.66,,L,148,201,28329659142415,,regular,
+3327,TTEK,34.52,90526,2025-12-15T14:53:26Z,114848.04,False,,34.59,34.53,,L,280,1,28329657890694,,regular,
+13916,TTEK,34.65,34558,2025-12-15T14:37:34Z,482189.40,False,,34.74,34.36,,L,404,116,28329656939215,,regular,
