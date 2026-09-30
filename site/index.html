@@ -2340,7 +2340,10 @@ function simSeries(d){
   // Sessions actually elapsed since the signal (weekdays), never into the future.
   // A signal two sessions old draws two points; a retired one caps at ~45.
   let age=0; { const a=new Date(dval(d.date)), b=new Date(REF); while(a<b){ a.setDate(a.getDate()+1); const g=a.getDay(); if(g!==0&&g!==6) age++; } }
-  const post=Math.max(1, Math.min(age||20, 45));
+  // age 0 = the signal filled today: the only move so far is open -> close of
+  // that one session, drawn as a single step (labelled "close"), never a future.
+  const sameDay = age===0;
+  const post=Math.max(1, Math.min(age, 45));
   // Percent from the signal, not dollars. Every point in the old version was
   // pe x something, so dividing through by pe loses nothing and the chart stops
   // needing a price it is no longer allowed to show. 0% IS the signal date.
@@ -2372,14 +2375,14 @@ function simSeries(d){
     const jitter = (k2-k1>3 && t!==k1 && t!==k2) ? (rnd()-0.5)*1.2 : 0;
     pts.push(base+jitter);
   }
-  return {pts, sigIdx};
+  return {pts, sigIdx, sameDay};
 }
 const MONN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 function fmtDate(dt){ return MONN[dt.getMonth()]+" "+dt.getDate(); }
 function addTradingDays(base,n){ const d=new Date(base); const step=n>=0?1:-1; let c=0; while(c<Math.abs(n)){ d.setDate(d.getDate()+step); const g=d.getDay(); if(g!==0&&g!==6) c++; } return d; }
 function niceStep(range){ const raw=(range||1)/5; const p=Math.pow(10,Math.floor(Math.log10(raw||1))); const n=raw/p; return (n<1.5?1:n<3?2:n<7?5:10)*p; }
 function chartSVG(d){
-  const {pts,sigIdx}=simSeries(d);
+  const {pts,sigIdx,sameDay}=simSeries(d);
   const pct=pts;                       // already percent from the signal
   const W=620,H=300, padL=48,padR=18,padT=26,padB=30;
   // y gridlines by percent
@@ -2403,11 +2406,14 @@ function chartSVG(d){
   const nLast=pts.length-1, nTicks=6;
   let idxs=[]; for(let k=0;k<nTicks;k++){ idxs.push(Math.round(nLast*k/(nTicks-1))); }
   idxs.push(sigIdx); idxs=[...new Set(idxs)].sort((a,b)=>a-b);
+  if(sameDay) idxs=idxs.filter(i=>i!==nLast);   // one session: the signal tick says open→close
+  idxs=idxs.filter(i=>i===sigIdx || Math.abs(x(i)-x(sigIdx))>=(sameDay?70:34));   // no label colliding with the signal label
   let xlab=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" stroke="#d3dde2" stroke-width="1"/>`;
-  idxs.forEach(i=>{ const dt=addTradingDays(sig, i-sigIdx); const anchor=i===0?'start':i===nLast?'end':'middle';
+  idxs.forEach(i=>{ const dt=addTradingDays(sig, sameDay&&i===nLast ? 0 : i-sigIdx); const anchor=i===0?'start':i===nLast?'end':'middle';
     const xx=x(i).toFixed(1); const isSig=i===sigIdx;
+    const label = (sameDay&&isSig) ? fmtDate(dt)+' · open → close' : fmtDate(dt);
     xlab+=`<line x1="${xx}" y1="${H-padB}" x2="${xx}" y2="${H-padB+4}" stroke="${isSig?'#0f766e':'#c8d2d6'}" stroke-width="1"/>`;
-    xlab+=`<text x="${xx}" y="${H-padB+16}" fill="${isSig?'#0f766e':'#6b7a80'}" font-size="10" ${isSig?'font-weight="700"':''} text-anchor="${anchor}">${fmtDate(dt)}</text>`; });
+    xlab+=`<text x="${xx}" y="${H-padB+16}" fill="${isSig?'#0f766e':'#6b7a80'}" font-size="10" ${isSig?'font-weight="700"':''} text-anchor="${anchor}">${label}</text>`; });
   return `<svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block">
     <defs><linearGradient id="cg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".16"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>
     ${grid}
