@@ -870,7 +870,7 @@
     <div class="tabs" id="qtabs" style="margin-top:-4px">
       <div class="tab active" data-q="all" style="font-size:13px">Show everything</div>
       <div class="tab" data-q="pass" style="font-size:13px">💎 High-quality only</div>
-      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px">💎 = cleared our fundamental quality gate · ◆ = watch · △ = higher-risk / speculative &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span>
+      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px">💎 = cleared our fundamental quality gate · ◆ = watch (passed, with reservations) · names that fail the gate are never published &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span>
     </div>
 
     <div class="filterbar" id="boardFilters">
@@ -927,7 +927,7 @@
     <div class="tabs" id="tqtabs" style="margin-top:-4px">
       <div class="tab active" data-q="all" style="font-size:13px">Show everything</div>
       <div class="tab" data-q="pass" style="font-size:13px">💎 High-quality only</div>
-      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px">💎 = cleared our fundamental quality gate · ◆ = watch · △ = higher-risk / speculative &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span>
+      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px">💎 = cleared our fundamental quality gate · ◆ = watch (passed, with reservations) · names that fail the gate are never published &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span>
     </div>
     <div class="filterbar" id="trackFilters">
       <label>Sector <select id="fSectorT" class="fsel"><option value="">All sectors</option></select></label>
@@ -965,6 +965,11 @@
       <div class="step"><div class="num">02</div><h4>Validate</h4><p>Tested walk-forward, out-of-sample only. If it didn't hold on unseen data, it didn't make the cut.</p></div>
       <div class="step"><div class="num">03</div><h4>Screen</h4><p>Survivors pass the fundamental quality gate. Fragile businesses are removed before you ever see them.</p></div>
       <div class="step"><div class="num">04</div><h4>Forward-test</h4><p>Every signal is tracked live in a paper portfolio — so the numbers we trust are real-time, not just backtests.</p></div>
+    </div>
+    <div class="qgcard" style="margin-top:22px; max-width:74ch">
+      <div class="big">Our universe</div>
+      <p class="muted" style="margin:8px 0 0; font-size:15px">Mid- and large-cap U.S. stocks — S&amp;P 500 and S&amp;P 400 constituents — priced <b style="color:var(--ink)">$50 or more</b> at the signal, screened by our fundamental quality gate. We deliberately skip small caps and low-priced stocks: they move differently, trade thinner, and are where the disasters live.</p>
+      <p class="faint" style="margin:10px 0 0; font-size:12.5px">Methodology note, Sep 29, 2026: this published-universe rule was written into the pipeline on this date, while the site was in private beta. The track record and the monthly snapshot were recomputed on the same rule before the first monthly lock, so every figure on the site describes one universe. Any future change to the rule will be dated here the same way.</p>
     </div>
     <div class="disc" style="margin-top:26px"><b>We show our work.</b> Backtested figures are idealized — they exclude trading costs and carry survivorship bias — so we treat them as ceilings, not marketing. That's exactly why we track every signal live, in real time, in a transparent record that grows every day. We'd rather earn your trust with a real, evolving track record than a polished number we can't stand behind.</div>
   </div></section>
@@ -1119,7 +1124,7 @@
   <section class="block" id="hb-what"><div class="wrap">
     <div class="kicker">1 · What this is, and isn't</div>
     <h2 class="section">A research publication for swing traders</h2>
-    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Every evening after the close, a model we built scans the U.S. market and publishes a short list of stocks whose conditions look ripe for a swing — a move measured in <b style="color:var(--ink)">weeks</b>. Each name is screened by a fundamental quality gate. The same list goes to every subscriber; nothing is tailored to anyone.</p>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Every evening after the close, a model we built scans the U.S. market — mid- and large-caps priced $50 and above, never small caps or low-priced stocks — and publishes a short list of stocks whose conditions look ripe for a swing — a move measured in <b style="color:var(--ink)">weeks</b>. Each name is screened by a fundamental quality gate. The same list goes to every subscriber; nothing is tailored to anyone.</p>
     <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px"><b style="color:var(--ink)">This is trading, not investing.</b> We are not describing companies to own for years. We are describing a price condition that, historically, tended to be followed by a move over the next one to three months. The stock's long-term story is not the point; the setup is.</p>
     <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px"><b style="color:var(--ink)">This is research, not advice.</b> We are a publisher. We are not a broker-dealer or an investment adviser; we don't execute trades, hold money, or know your situation. Nothing here says buy, sell, or how much. The board marks a <b style="color:var(--ink)">signal date</b> — the evening a name qualified — and from there every decision is yours.</p>
     <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px"><b style="color:var(--ink)">Who it's for.</b> People with a job and a life who want a few deliberate trades a month, held for weeks, chosen from a vetted list rather than a feed. <b style="color:var(--ink)">Who it isn't for.</b> Day traders, anyone who wants to be told what to do, or anyone who can't sit through a dip without selling.</p>
@@ -1186,7 +1191,7 @@
       <div class="fcard"><h3>Signal date</h3><p>The evening a name qualified and was added. Not a buy instruction.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="agetabs" data-age="active">Active board →</a> · <a data-nav="how" data-scroll="how-read">How to read a signal →</a></p></div>
       <div class="fcard"><h3>Phoenix / Cruise</h3><p>The two setup types. Phoenix: the bigger, slower recovery move. Cruise: the smaller, quicker breather inside a trend.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="phoenix">Phoenix on the board →</a> · <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="cruise">Cruise on the board →</a> · <a data-nav="how" data-scroll="how-boards">The two setups →</a></p></div>
       <div class="fcard"><h3>Swing Score</h3><p>Conviction — how strongly the conditions matched the model. Higher is stronger; it is not a forecast.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="boardFilters" data-age="active">Filter the board by score →</a> · <a data-nav="how" data-scroll="how-read">What the score means →</a></p></div>
-      <div class="fcard"><h3>Quality gate</h3><p>A fundamental screen: 💎 High-Quality, ◆ Watch, △ Higher-risk. The reason you can hold a dip.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="qtabs" data-age="active">💎 High-quality only →</a> · <a data-nav="how" data-scroll="how-gate">How the gate works →</a></p></div>
+      <div class="fcard"><h3>Quality gate</h3><p>A fundamental screen every published name has passed: 💎 High-Quality or ◆ Watch. Names that fail it are tracked internally but never published. The reason you can hold a dip.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="qtabs" data-age="active">💎 High-quality only →</a> · <a data-nav="how" data-scroll="how-gate">How the gate works →</a></p></div>
       <div class="fcard"><h3>Pulse</h3><p>How the name is moving against the broad market: Strong, Neutral or Weak. Shown at the signal date and now.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="boardFilters" data-age="active">Filter by Pulse →</a> · <a data-nav="how" data-scroll="how-read">Where it shows →</a></p></div>
       <div class="fcard"><h3>Regime</h3><p>Where SPY and QQQ sit against their own history: Green (reset), Yellow (extended), Orange (stretched), Red (below trend).</p><p class="gl-see">See it: <a data-nav="board" data-scroll="regime">Today's regime bar →</a> · <a data-nav="how" data-scroll="how-regime">How we read it →</a></p></div>
       <div class="fcard"><h3>Peak ▲ (MFE)</h3><p>The best level the price touched since the signal, as a percentage. Hypothetical, not earned.</p><p class="gl-see">See it: <a data-nav="track" data-scroll="trackStats">Track Record →</a> · <a data-nav="how" data-scroll="how-read">On every card →</a></p></div>
@@ -1576,7 +1581,7 @@ const MEANS = {
 const QMETA = {
   pass:  {cls:"pass",  label:"💎 High-Quality"},
   watch: {cls:"watch", label:"◆ Watch"},
-  fail:  {cls:"fail",  label:"△ Higher-risk"}
+  fail:  {cls:"fail",  label:"Not published"}
 };
 const QRANK = {pass:0, watch:1, fail:2};
 const PULSE = { strong:["pulse-strong","var(--pass)","Strong"], neutral:["pulse-neutral","var(--faint)","Neutral"], weak:["pulse-weak","var(--fail)","Weak"] };
@@ -1697,7 +1702,7 @@ function listHTML(items){
   const rows=items.map(d=>{
     const [,pic,plabel]=PULSE[d.rs]||PULSE.neutral;
     const rn=d.rsn?(PULSE[d.rsn]||PULSE.neutral):null;
-    const qsym=d.q==="pass"?"💎":d.q==="watch"?"◆":"△"; const qtxt=d.q==="pass"?"High-Quality":d.q==="watch"?"Watch":"Higher-risk";
+    const qsym=d.q==="pass"?"💎":"◆"; const qtxt=d.q==="pass"?"High-Quality":"Watch";
     const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise";
     return `
       <tr class="${d.q==="pass"?"premium":""}">
@@ -1983,7 +1988,7 @@ function renderTrack(){
   }
   const rows=items.map(d=>{
     const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise";
-    const qsym=d.q==="pass"?"💎":d.q==="watch"?"◆":"△";
+    const qsym=d.q==="pass"?"💎":"◆";
     return `<tr>
       <td><div class="lt-tkr">${d.t}</div><div class="lt-co">${d.n}</div></td>
       <td class="lt-sector">${shortSector(d.sector)}</td>
@@ -2467,8 +2472,7 @@ function openExplainer(){
     `<div class="exp-k">The quality gate</div><div class="exp-h" style="font-size:22px">Every name clears a fundamental check first.</div><div style="display:flex; gap:12px; margin-top:18px; flex-wrap:wrap; justify-content:center">
         <div class="exp-badge"><div class="exp-badge-ic">💎</div><div class="exp-badge-t">High-Quality</div><div class="exp-badge-d">sound enough to hold through a dip</div></div>
         <div class="exp-badge"><div class="exp-badge-ic">◆</div><div class="exp-badge-t">Watch</div><div class="exp-badge-d">decent — do your homework</div></div>
-        <div class="exp-badge"><div class="exp-badge-ic">△</div><div class="exp-badge-t">Higher-risk</div><div class="exp-badge-d">speculative — smaller size</div></div>
-      </div><div class="exp-s">Only names that pass get published.</div>`,
+      </div><div class="exp-s">Names that fail the gate are never published.</div>`,
     `<div class="exp-h" style="font-size:22px">Sorted into two clear signals.</div><div style="margin-top:6px"><span class="exp-pill2" style="background:rgba(124,58,237,.32)">Phoenix</span><span class="exp-pill2" style="background:rgba(90,169,240,.32)">Cruise</span></div><div class="exp-s">Phoenix and Cruise — the two setup types our model sorts each signal into, each with its own character.</div>`,
     `<div class="exp-k">How one setup plays out</div>${journey}<div class="exp-s" style="max-width:42ch">Signal → a dip into the red → the climb. Peak <b style="color:#5ee0c8">+<span data-c="18">0</span>%</b> · worst dip <b style="color:#ff8f8f"><span data-c="-4">0</span>%</b> along the way. Hypothetical peak (MFE), not a return earned.</div>`,
     `<div class="exp-k">The Setup Scorecard</div><div class="exp-h" style="font-size:22px">You always see both sides.</div><div style="display:flex; gap:16px; margin-top:16px; flex-wrap:wrap; justify-content:center">

@@ -70,7 +70,14 @@ OUTPUT_PATH = HERE / "board.json"
 
 # Which positions make the public board:
 PHASE_INCLUDE = {"Pending", "Active", "Extended", "Retired"}  # lifecycle phases from the pipeline's `phase` column
-INCLUDE_QUALGATES = {"PASS", "WATCH", "FAIL"} # show the full book (all tiers). Narrow to {"PASS","WATCH"} to hide FAIL.
+INCLUDE_QUALGATES = {"PASS", "WATCH"}         # SITE SPEC (2026-09-29): FAIL-gate names are
+                                              # tracked internally, never published. Matches the
+                                              # original handoff ("filtered to PASS-gate") and
+                                              # the stated universe promise.
+MIN_ENTRY_PRICE = 50.0                        # SITE SPEC (2026-09-29): no names under $50 at
+                                              # entry — the universe promise made to users
+                                              # ("no small caps, nothing under $50"). Universe is
+                                              # S&P 500/400 so mid/large-cap by construction.
 DEDUPE_TICKERS = True                          # one row per ticker (a ticker can be entered twice: original + re-qual)
 DEDUPE_KEEP = "recent"                         # which entry wins: "recent" (freshest) | "score" (strongest) | "first" (original)
 
@@ -246,6 +253,12 @@ def rows_from_workbook(path: Path) -> list[dict]:
     tr = tr[_code.isin(PHOENIX_CODES | CRUISE_CODES)]
     tr = tr.assign(_q=tr["qualgate"].map(grade_q))
     tr = tr[tr["_q"].str.upper().isin(INCLUDE_QUALGATES)]
+    _pe = pd.to_numeric(tr["entry"], errors="coerce")
+    _cheap = tr[_pe < MIN_ENTRY_PRICE]
+    if len(_cheap):
+        print(f"# price gate: {len(_cheap)} rows under ${MIN_ENTRY_PRICE:.0f} not published "
+              f"({', '.join(_cheap['ticker'].astype(str).unique()[:12])})")
+    tr = tr[_pe >= MIN_ENTRY_PRICE]
 
     # Dedup ONLY the live buy-board (Active/Extended) to one row per ticker; keep
     # EVERY Retired trade — the honest track record needs the full history, including

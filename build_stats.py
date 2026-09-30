@@ -36,6 +36,8 @@ XLSX = HERE / "STS_holy_grail.xlsx"
 BARS = HERE / "daily_data_10y"
 OUT = HERE / "site" / "stats_history.json"
 PUBLISHED = {"D200G", "DLB", "B2"}          # same gate as build_board.py: Phoenix + Cruise only
+PUBLISHED_GATES = {"PASS", "WATCH"}         # SITE SPEC (2026-09-29): mirror build_board — no FAIL
+MIN_ENTRY_PRICE = 50.0                      # SITE SPEC (2026-09-29): mirror build_board — $50 floor
 WINDOW = dt.timedelta(days=28)              # the 4-week tracking window, calendar days
 
 
@@ -50,6 +52,9 @@ def load_positions():
     df = pd.read_excel(XLSX, sheet_name="Tracker")
     df["entry_date"] = pd.to_datetime(df["entry_date"], errors="coerce")
     df = df[df["entry_date"].notna() & df["setup"].isin(PUBLISHED)].copy()
+    _gate = df["qualgate"].astype(str).str.split("/").str[0].str.upper()
+    df = df[_gate.isin(PUBLISHED_GATES)]
+    df = df[pd.to_numeric(df["entry"], errors="coerce") >= MIN_ENTRY_PRICE]
     for c in ("entry", "wk4_ret_pct", "maxdip_4wk_pct", "mfe_pct", "dtp"):
         df[c] = pd.to_numeric(df[c], errors="coerce")
     df["ticker"] = df["ticker"].astype(str).str.upper()
