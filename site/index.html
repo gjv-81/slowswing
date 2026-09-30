@@ -2348,14 +2348,29 @@ function simSeries(d){
   for(let i=0;i<pre;i++){ const f=i/(pre-1); pts.push(((0.94+0.06*f)*(1+(rnd()-0.5)*0.02)-1)*100); }
   pts.push(0); const sigIdx=pts.length-1;
   const low=d.mae!=null?d.mae:0, peak=d.mfe!=null?d.mfe:0, end=d.chg!=null?d.chg:0;
-  const dipDay=Math.max(1,Math.min(4,Math.floor(post*0.25)));
-  const peakDay=Math.min(post, Math.max(dipDay+1, Math.min(post-1, d.dtp||Math.floor(post*0.6))));
+  // Anchor points after the signal: today's move is ALWAYS the last point. The
+  // peak sits on its recorded day (dtp) and the dip on a free day before it (or
+  // after it if the peak came first), but only when there is room — a signal two
+  // sessions old cannot show dip, peak and today as three separate days.
+  const anchors=new Map([[0,0],[post,end]]);
+  if(post>=2 && peak>end+0.05){
+    const pk=Math.max(1,Math.min(post-1, d.dtp||Math.round(post*0.6)));
+    anchors.set(pk,peak);
+  }
+  if(post>=3 && low<end-0.05 && low<0){
+    const pk=[...anchors.keys()].find(k=>k!==0&&k!==post);
+    let dp = pk==null ? Math.max(1,Math.min(4,Math.round(post*0.25)))
+           : (pk>1 ? Math.max(1,Math.min(pk-1,Math.round(pk*0.5))) : Math.min(post-1,pk+1));
+    if(dp>0 && dp<post && !anchors.has(dp)) anchors.set(dp,low);
+  }
+  const keys=[...anchors.keys()].sort((a,b)=>a-b);
   for(let t=1;t<=post;t++){
-    let base;
-    if(t<=dipDay) base=0+(low-0)*(t/dipDay);
-    else if(t<=peakDay) base=low+(peak-low)*((t-dipDay)/(peakDay-dipDay));
-    else base=peak+(end-peak)*((t-peakDay)/(post-peakDay));
-    pts.push(base+(rnd()-0.5)*1.2);
+    let k1=keys[0]; for(const k of keys){ if(k<=t) k1=k; }
+    const k2=keys.find(k=>k>=t) ?? post;
+    const v1=anchors.get(k1), v2=anchors.get(k2);
+    const base = k2===k1 ? v2 : v1+(v2-v1)*((t-k1)/(k2-k1));
+    const jitter = (k2-k1>3 && t!==k1 && t!==k2) ? (rnd()-0.5)*1.2 : 0;
+    pts.push(base+jitter);
   }
   return {pts, sigIdx};
 }
