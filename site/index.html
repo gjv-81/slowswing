@@ -1620,9 +1620,13 @@ function dval(s){
   if(t-now.getTime() > 40*864e5) t=new Date(y-1, MON[m]||0, parseInt(d)||1).getTime();
   return t;
 }
-const REF = new Date(2026,8,4);
+// "Today" for the board = the session the feed was built for (set once the feed
+// loads; falls back to the clock). Was a hard-coded date, which froze the NEW
+// badge on every name added since that week and let charts run into the future.
+let REF = new Date(); REF.setHours(0,0,0,0);
 function weekStartMs(ref){ const d=new Date(ref); const back=(d.getDay()+6)%7; d.setDate(d.getDate()-back); d.setHours(0,0,0,0); return d.getTime(); }
-const NEW_SINCE = weekStartMs(REF);
+let NEW_SINCE = weekStartMs(REF);
+function setRef(sessionDate){ if(!sessionDate) return; const [y,m,d]=String(sessionDate).split('-').map(Number); if(!y||!m||!d) return; REF=new Date(y,m-1,d); NEW_SINCE=weekStartMs(REF); }
 function isNew(dateStr){ return dateStr && dateStr!=="—" && dval(dateStr) >= NEW_SINCE; }
 const EXT_PCT = 5;   // Active = current price within +5% of the setup (or below); Out of Range = more than +5% above
 function extPct(d){ return (d.pe && d.pc!=null) ? (d.pc/d.pe-1)*100 : 0; }
@@ -2333,8 +2337,10 @@ document.addEventListener('click', e=>{
 function seedRand(str){ let h=2166136261; for(let i=0;i<str.length;i++){ h^=str.charCodeAt(i); h=Math.imul(h,16777619); } return ()=>{ h+=0x6D2B79F5; let t=Math.imul(h^h>>>15,1|h); t^=t+Math.imul(t^t>>>7,61|t); return ((t^t>>>14)>>>0)/4294967296; }; }
 function simSeries(d){
   const rnd=seedRand(d.t+d.date); const pre=15;
-  const age=Math.round((REF.getTime()-dval(d.date))/86400000);
-  const post=Math.max(6, Math.min(age||20, 45));
+  // Sessions actually elapsed since the signal (weekdays), never into the future.
+  // A signal two sessions old draws two points; a retired one caps at ~45.
+  let age=0; { const a=new Date(dval(d.date)), b=new Date(REF); while(a<b){ a.setDate(a.getDate()+1); const g=a.getDay(); if(g!==0&&g!==6) age++; } }
+  const post=Math.max(1, Math.min(age||20, 45));
   // Percent from the signal, not dollars. Every point in the old version was
   // pe x something, so dividing through by pe loses nothing and the chart stops
   // needing a price it is no longer allowed to show. 0% IS the signal date.
@@ -2343,7 +2349,7 @@ function simSeries(d){
   pts.push(0); const sigIdx=pts.length-1;
   const low=d.mae!=null?d.mae:0, peak=d.mfe!=null?d.mfe:0, end=d.chg!=null?d.chg:0;
   const dipDay=Math.max(1,Math.min(4,Math.floor(post*0.25)));
-  const peakDay=Math.max(dipDay+1,Math.min(post-1,d.dtp||Math.floor(post*0.6)));
+  const peakDay=Math.min(post, Math.max(dipDay+1, Math.min(post-1, d.dtp||Math.floor(post*0.6))));
   for(let t=1;t<=post;t++){
     let base;
     if(t<=dipDay) base=0+(low-0)*(t/dipDay);
@@ -2782,6 +2788,7 @@ async function loadBoard(){
     DATA = j.names;
     FEED_AT = Date.now();
     FEED_DATE = j.session_date || null;           // the session the feed was built for
+    setRef(FEED_DATE);
     REGIME = (j.regime && j.regime.spy) ? j.regime : null;
     DATA_STATE='ok';
   }catch(e){
