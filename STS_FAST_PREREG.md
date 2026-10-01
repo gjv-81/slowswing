@@ -1,6 +1,6 @@
 # PREREGISTRATION: STS Fast Lane (1 to 5 day model)
 
-*Draft written Sep 30 2026, BEFORE any of the new data (greek flow, IV rank history, 3 year greeks) has been compared with returns. Once GJ approves it, the text is frozen. Any later change is added as a dated amendment at the bottom, never edited in place.*
+*STATUS: APPROVED by GJ on Oct 1 2026 and FROZEN. Written Sep 30 2026, before any of the new data (greek flow, IV rank history, 3 year greeks) was compared with returns. Decisions confirmed at approval: the Stage 2 bar stays at +0.40% d3 excess after costs, and version 1 is long only. Any later change is added as a dated amendment at the bottom, never edited in place.*
 
 Companion files: STS_DATA_HANDOFF.md (datasets), STS_FLAME_UW_PREREG.md (template and flame history), STS_flame_final.xlsx and STS_flame_expansion.xlsx (flame results that form the benchmark).
 

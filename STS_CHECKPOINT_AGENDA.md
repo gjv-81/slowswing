@@ -34,3 +34,17 @@ First locks ~Oct 15; ~100+ checkpoints by ~Oct 20. All decisions on LOCKED
 
 Also due mid-Oct: fast-lane forward-test interim look (fast_lane_log.csv),
 UW personal account go/no-go for live flame trading.
+
+8. X200 / X200-G — plain X200 tested 2026-09-30 and RETIRED (4,326 signals:
+   12-wk excess +0.05%, 2-wk excess −0.03% — market-performing at every
+   horizon). X200-G (gap >= 5% within 10 bars of the cross) discovered
+   post-hoc same day: in-sample wk12 win 65%, excess ~+3%, positive 8/10
+   years (prereg: STS_X200G_PREREG.md). STATUS: observation logging LIVE as of
+   2026-09-30 (x200g_observe.py in run_evening.sh; first signal: COIN); promotion decided ~Q1 2027 on >= 20 live
+   12-week outcomes (bars: win >= 55%, excess >= +2%).
+
+9. SLOW-LANE UNIVERSE EXPANSION — slow_expand.py screens quality mid/large
+   caps ($50+, cap >= $2B, 3yr+, $10M/day) from the ext pool into
+   daily_data_slow_ext/. Fold into the merged universe HERE as part of the
+   single dated universe change (items 1 + 9 together).
+

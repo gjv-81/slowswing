@@ -13,6 +13,10 @@ rm -rf "$HOME/.cache/py-yfinance" 2>/dev/null
 
 # retry the run up to 3 times, 90s apart, so a brief loss of connection
 # self-heals instead of failing the whole evening
+# --- X200-G observation scan FIRST (logs tonight's signals; main message reads the log) ---
+echo "----- x200g observation -----" >> "$LOG" 2>&1
+"$PY" "$DIR/x200g_observe.py" >> "$LOG" 2>&1
+
 n=0
 while [ $n -lt 3 ]; do
   /usr/bin/caffeinate -i "$PY" "$DIR/sts_ml_evening.py" >> "$LOG" 2>&1

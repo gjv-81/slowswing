@@ -94,7 +94,8 @@ def main():
         if len(after)==0:
             # signal fired at the LATEST bar — entry is tomorrow. Not in the stats
             # yet, but it IS tonight's news: export for the Telegram summary.
-            if sig_date==d.index[-1] and float(d["Close"].iloc[-1])>=MIN_PRICE:
+            if (sig_date==d.index[-1] and float(d["Close"].iloc[-1])>=MIN_PRICE
+                    and (spy.index.max()-sig_date).days<=4):   # stale/delisted files can't be "tonight"
                 pending.append(dict(ticker=t,setup=setup,wr=wr,
                                     score=round(float(r0["score"]),1),sig_date=sig_date))
             continue

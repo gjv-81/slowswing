@@ -398,54 +398,64 @@ def main():
         hg_status = f"holy_grail error: {e}"
     print(hg_status)
 
-    # ── telegram summary ────────────────────────────────────────────────────
+    # ── telegram: NEW NAMES ONLY + SPY dial (redesigned 2026-09-30) ─────────
     def tag(r):
         s = str(r["setup"]) + (f"/{r['wr']}" if str(r.get("wr","")) else "")
-        return f"{r['ticker']}({s} {r['score']})"
-    freshtxt = "\n  ".join(tag(r) for r in fresh) if fresh else "none"
-    requaltxt = ", ".join(tag(r) for r in requal) if requal else "none"
+        return f"{r['ticker']}  ({s}  score {r['score']})"
+    freshtxt = "\n  ".join(tag(r) for r in fresh) if fresh else ""
+    requaltxt = "\n  ".join(tag(r)+"  [re-qual]" for r in requal) if requal else ""
 
-    # v2 new adds — written by run_v2_evening.sh (5:30pm) into v2_new_today.txt
-    v2txt = "not run today"
+    # v2 new adds — deduped against a 30-day alert history so a name that sat
+    # as "signal-tonight" for days never repeats in the message
+    v2txt = ""
+    hist_path = os.path.join(DIR, "v2_alerted_history.csv")
     try:
+        hist = {}
+        if os.path.exists(hist_path):
+            for ln in open(hist_path).read().splitlines():
+                p = ln.split(",")
+                if len(p) == 2: hist[p[0]] = p[1]
+        cutoff = (pd.Timestamp(today) - pd.Timedelta(days=30))
         v2lines = open(os.path.join(DIR, "v2_new_today.txt")).read().strip().splitlines()
         v2_asof = v2lines[0].replace("asof=", "")
+        names = []
         if (pd.Timestamp(today) - pd.Timestamp(v2_asof)).days <= 3:
-            names = []
             for ln in v2lines[1:]:
                 p = ln.split(",")
-                if len(p) >= 3: names.append(f"{p[0]}({p[1]} {p[2]})")
-            v2txt = ("\n  ".join(names) if names else "none") + f"  [as of {v2_asof}]"
+                if len(p) >= 3:
+                    t = p[0]
+                    if t in hist and pd.Timestamp(hist[t]) >= cutoff:
+                        continue                      # already alerted recently
+                    names.append(f"{t}  ({p[1]}  score {p[2]})")
+                    hist[t] = today
+        v2txt = "\n  ".join(names)
+        open(hist_path, "w").write("\n".join(f"{k},{v}" for k, v in hist.items()))
     except Exception:
         pass
 
-    # score buckets among TODAY'S qualifiers, per setup
-    def bucket_line(st):
-        g = qual[qual["setup"] == st]
-        if len(g) == 0: return f"  {st}: none"
-        b = pd.cut(g["score"], [2, 3, 5, 99], labels=["2-3", "3-5", "5+"], right=False)
-        c = b.value_counts()
-        return f"  {st}: n={len(g)} | 2-3:{int(c.get('2-3',0))}  3-5:{int(c.get('3-5',0))}  5+:{int(c.get('5+',0))}"
-    buckets = "\n".join(bucket_line(s) for s in ["DLB", "D200G", "B2"])
-
-    # every WR-tagged qualifier TONIGHT (new or already in the book) — the
-    # washout-recovery cohort is the strongest live cohort, so always surface it
-    wrq = qual[qual["wr"].astype(str).str.startswith("WR")]
-    wrtxt = ", ".join(f"{r.ticker}({r.setup}/{r.wr} {r.score})" for r in wrq.itertuples()) or "none"
+    # X200-G observation signals logged tonight (x200g_observe.py runs first)
+    xg = ""
+    try:
+        xl = pd.read_csv(os.path.join(DIR, "x200g_log.csv"))
+        xl = xl[xl["scan_date"] == today]
+        xg = "\n  ".join(f"{r.ticker}  (gap {r.gap}%, ${r.close})" for r in xl.itertuples())
+    except Exception:
+        pass
 
     import html as _html
     dial_icon = {"R": "🔴", "O": "🟠", "Y": "🟡", "G": "🟢"}.get(zone[0], "⚪")
     esc = _html.escape
-    msg = (f"🌙 <b>STS evening — {today.isoformat()}</b>\n"
-           f"\n{dial_icon} <b>SPY dial:</b> {esc(zone)}\n"
-           f"     stretch {stretch_now:+.1f}% vs 200d  ·  ATR {regime:+.1f}\n"
-           f"\n🆕 <b>New today — universe</b>\n  {esc(freshtxt)}\n"
-           f"\n🌐 <b>New today — v2 expanded</b>\n  {esc(v2txt)}\n"
-           f"\n🔁 <b>Re-qual:</b> {esc(requaltxt)}\n"
-           f"⭐ <b>WR watch:</b> {esc(wrtxt)}\n"
-           f"\n📊 <b>Score buckets</b> ({len(qual)} qualifiers)\n<code>{esc(buckets)}</code>\n"
-           f"\n✅ {esc(hg_status)}\n"
-           f"<code>{esc(tracker_tail)}</code>")
+    sections = []
+    if freshtxt:  sections.append(f"🆕 <b>New — slow lane</b>\n  {esc(freshtxt)}")
+    if requaltxt: sections.append(f"🔁 <b>Re-qualified</b>\n  {esc(requaltxt)}")
+    if v2txt:     sections.append(f"🌐 <b>New — v2 expanded</b>\n  {esc(v2txt)}")
+    if xg:        sections.append(f"👁 <b>X200-G</b> (observation only)\n  {esc(xg)}")
+    body = "\n\n".join(sections) if sections else "No new names tonight."
+    msg = (f"🌙 <b>STS — {today.isoformat()}</b>\n"
+           f"{dial_icon} {esc(zone)}\n"
+           f"\n{body}")
+    if "OK" not in hg_status:
+        msg += f"\n\n⚠️ {esc(hg_status)}"
     send_telegram(msg, html=True)
     print("\nDone.")
 

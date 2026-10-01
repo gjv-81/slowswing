@@ -124,3 +124,16 @@ original 6-feature score was ML-trained for the slow lane. Directions:
 - The slow lane's first 12-week checkpoints lock ~Oct 15 (100+ by ~Oct 20):
   the universe-merge decision and any new slow-lane tags (quiet-tape) ride
   on that review.
+
+
+---
+
+## 7. ADDENDUM Oct 1 2026: gap fill pulls (trial now finished)
+
+* `uw_archive/greek_flow_daily/` : 253 most liquid option names plus SPY, QQQ, IWM and the watchlist, Jan 2 2025 to Sep 30 2026 (437 days). One row per day: directional and total vega and delta flow, OTM portions, transactions, volume, and last 60 minutes of directional delta and vega flow. Built by `uw_harvest4.py` (resumable). Greek flow history does not exist before about Jan 2025.
+* `uw_archive/greek_exposure_2y/` : daily call and put gamma, delta, charm, vanna for about 1,670 names, from Sep 2023 (3 years). Built by `uw_harvest3.py`. Supersedes the 1 year `greek_exposure/` folder.
+* `uw_archive/iv_rank_hist/` : IV rank for about 1,680 names, Sep 2025 onward. The API gives at most 1 year; before that, use a realized volatility percentile proxy.
+* `options_volume` CANNOT be extended: the endpoint is capped at 500 rows with no date paging. The 11 files that appear to start in 2021 are thin names with gaps, not deeper history.
+* Quota note: the "resets 8pm ET" assumption was wrong for the trial; the daily 40k limit behaved like a rolling window. Check the response headers before planning a pull.
+* Not historically available at all: sweep urgency, sweep cluster counts (flow alerts are snapshot depth), Net Drift by expiry bucket, strike level GEX beyond the 17 watchlist names. Forward collection only, on a paid plan.
+* Research plan for these data: STS_FAST_PREREG.md (approved and frozen Oct 1 2026).

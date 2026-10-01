@@ -83,6 +83,7 @@
   .pagetoc a:hover{color:var(--ink)}
   .pagetoc a.on{color:var(--primary); font-weight:700; border-left-color:var(--primary)}
   @media (min-width:1560px){ .pagetoc.show{display:block} }
+  .thsub{display:block; font-size:9px; font-weight:600; letter-spacing:.02em; text-transform:none; color:var(--faint)}
   .gl-see{margin:10px 0 0; font-size:12.5px; color:var(--faint)}
   .gl-see a{color:var(--primary); font-weight:650; white-space:nowrap}
   .gl-see a:hover{text-decoration:underline}
@@ -1895,9 +1896,9 @@ function renderMonthly(){
   el.innerHTML=`<div class="bysetup">
     <div class="bs-k">Month by month <span style="font-weight:600; text-transform:none; letter-spacing:0; color:var(--faint)">(snapshot taken at each month end)</span></div>
     <div class="bs-d">Each row is the setups whose 4-week window finished in that month, measured on the last trading day of the month and never restated. The bottom line is everything to date — the figure on the home page.</div>
-    <table><thead><tr><th>Month</th><th>Touched<br>+5%</th><th>Touched<br>+10%</th><th>Touched<br>+20%</th><th>Avg<br>peak</th><th>Avg<br>4-wk</th><th>Positive<br>at 4 wk</th><th>Avg max<br>dip (4wk)</th><th>Median days<br>to peak</th></tr></thead>
+    <table><thead><tr><th>Month</th><th>Touched<br>+5%</th><th>Touched<br>+10%</th><th>Touched<br>+20%</th><th>Avg peak<br><span class="thsub">the ceiling</span></th><th>Held 4 wks,<br>no exit <span class="thsub">the floor</span></th><th>Positive<br>at 4 wk</th><th>Avg max<br>dip (4wk)</th><th>Median days<br>to peak</th></tr></thead>
     <tbody>${H.map(s=>row(s.label,s.month)).join('')}${row('All to date <span class="n">as of '+fmtFeedDate(last.as_of)+'</span>',last.cumulative,'cum')}</tbody></table>
-    <div class="bs-note">Hypothetical peak (MFE) — a level the price reached, not a return anyone earned — and actual 4-week close-to-close returns, from the signal price. Paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>
+    <div class="bs-note"><b>Read the two return columns as a range.</b> <b>Avg peak</b> is the best level reached — the room a setup gave you, known only in hindsight. <b>Held 4 wks, no exit</b> is what you got with no management at all: hold from the signal to retirement and do nothing. Where you land between them depends on your exit, and the exit is yours. Both are from the signal price; paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>
   </div>`;
 }
 function renderStats(){
@@ -1939,11 +1940,11 @@ function renderTrack(){
     <div class="trstat"><div class="v">${all.length}</div><div class="l">Retired setups</div></div>
     <div class="trstat"><div class="v up">${pk(t5)}%</div><div class="l">Touched +5% <span style="color:var(--faint)">(${t5}/${peaks.length})</span></div></div>
     <div class="trstat"><div class="v up">${pk(t10)}%</div><div class="l">Touched +10% <span style="color:var(--faint)">(${t10}/${peaks.length})</span></div></div>
-    <div class="trstat"><div class="v ${avg(w4)>=0?'up':'down'}">${avg(w4)>=0?'+':''}${avg(w4).toFixed(1)}%</div><div class="l">Avg 4-week return</div></div>
+    <div class="trstat"><div class="v ${avg(w4)>=0?'up':'down'}">${avg(w4)>=0?'+':''}${avg(w4).toFixed(1)}%</div><div class="l">Held 4 wks, no exit <span style="color:var(--faint)">(the floor)</span></div></div>
     <div class="trstat"><div class="v">${win4}%</div><div class="l">Positive at 4 weeks</div></div>
-    <div class="trstat"><div class="v ${avg(w2)>=0?'up':'down'}">${avg(w2)>=0?'+':''}${avg(w2).toFixed(1)}%</div><div class="l">Avg 2-week return</div></div>
+    <div class="trstat"><div class="v ${avg(w2)>=0?'up':'down'}">${avg(w2)>=0?'+':''}${avg(w2).toFixed(1)}%</div><div class="l">Held 2 wks, no exit</div></div>
     <div class="trstat"><div class="v down">${avg(dips).toFixed(1)}%</div><div class="l">Avg max dip (4wk)</div></div>
-    <div style="flex-basis:100%; font-size:11px; color:var(--faint); border-top:1px solid var(--line); padding-top:10px"><b>Touched +5% / +10%</b> counts setups whose price reached that level at its best point (peak / MFE) at any time while held — <b>not</b> a return anyone captured. No one sells the exact top; these are hindsight highs. The point is that these setups have real room to run — even a fraction of the peak, on the order of 7–8%, is a meaningful move. The return figures beside them are actual close-to-close at real horizons — not peak, not returns earned. Everything here is a percentage from the signal price, never a dollar price: our market-data licence doesn't cover republishing prices, and percentages are what let a $700 stock and a $25 stock sit in the same table (<a data-post="why-percentages-not-prices" style="color:var(--primary); font-weight:600; cursor:pointer">why we show moves, not prices</a>). Paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>`;
+    <div style="flex-basis:100%; font-size:11px; color:var(--faint); border-top:1px solid var(--line); padding-top:10px"><b>Touched +5% / +10%</b> counts setups whose price reached that level at its best point (peak / MFE) at any time while held — <b>not</b> a return anyone captured. No one sells the exact top; these are hindsight highs. The point is that these setups have real room to run — even a fraction of the peak, on the order of 7–8%, is a meaningful move. The <b>held, no exit</b> figures beside them are the opposite end: hold from the signal to that horizon and do nothing — the floor, with no skill applied. Your result lands between the two and depends on your exit. Everything here is a percentage from the signal price, never a dollar price: our market-data licence doesn't cover republishing prices, and percentages are what let a $700 stock and a $25 stock sit in the same table (<a data-post="why-percentages-not-prices" style="color:var(--primary); font-weight:600; cursor:pointer">why we show moves, not prices</a>). Paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>`;
   // "Did they run clean?" — from d5 / d10 (dip before the FIRST touch of +5% / +10%).
   // Denominator = setups that touched the level at all (d5/d10 present).
   {
@@ -1981,9 +1982,9 @@ function renderTrack(){
     bs.innerHTML=`<div class="bysetup">
       <div class="bs-k">Phoenix vs Cruise — how each setup has behaved <span style="font-weight:600; text-transform:none; letter-spacing:0; color:var(--faint)">(updated ${FEED_DATE?fmtFeedDate(FEED_DATE):'—'})</span></div>
       <div class="bs-d">The same retired setups, split by type. Read across a row: how often it reached each level at its best point, how far it went on average, and what it cost in patience along the way.</div>
-      <table><thead><tr><th>Setup</th><th>Touched<br>+5%</th><th>Touched<br>+10%</th><th>Touched<br>+20%</th><th>Avg<br>peak</th><th>Avg<br>2-wk</th><th>Avg<br>4-wk</th><th>Positive<br>at 4 wk</th><th>Avg max<br>dip (4wk)</th><th>Median days<br>to peak</th></tr></thead>
+      <table><thead><tr><th>Setup</th><th>Touched<br>+5%</th><th>Touched<br>+10%</th><th>Touched<br>+20%</th><th>Avg peak<br><span class="thsub">the ceiling</span></th><th>Held 2 wks,<br>no exit</th><th>Held 4 wks,<br>no exit <span class="thsub">the floor</span></th><th>Positive<br>at 4 wk</th><th>Avg max<br>dip (4wk)</th><th>Median days<br>to peak</th></tr></thead>
       <tbody>${row('phoenix','Phoenix','phoenix')}${row('cruise','Cruise','cruise')}</tbody></table>
-      <div class="bs-note">Hypothetical peak (MFE) and actual 2-/4-week returns across all retired setups of each type, from the signal price — levels the price reached, not returns anyone earned. Educational, not advice.</div>
+      <div class="bs-note">Peak is the ceiling (best level reached, hindsight). Held-with-no-exit is the floor (hold to the horizon, do nothing). Your result lands between them and depends on your exit. All from the signal price; hypothetical, not returns anyone earned. Educational, not advice.</div>
     </div>`;
   }
   const rows=items.map(d=>{
