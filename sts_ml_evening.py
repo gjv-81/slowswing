@@ -408,6 +408,7 @@ def main():
     # v2 new adds — deduped against a 30-day alert history so a name that sat
     # as "signal-tonight" for days never repeats in the message
     v2txt = ""
+    tonight_univ = {r["ticker"] for r in fresh} | {r["ticker"] for r in requal}
     hist_path = os.path.join(DIR, "v2_alerted_history.csv")
     try:
         hist = {}
@@ -424,6 +425,8 @@ def main():
                 p = ln.split(",")
                 if len(p) >= 3:
                     t = p[0]
+                    if t in tonight_univ:
+                        continue                      # universe section already shows it
                     if t in hist and pd.Timestamp(hist[t]) >= cutoff:
                         continue                      # already alerted recently
                     names.append(f"{t}  ({p[1]}  score {p[2]})")
@@ -446,13 +449,14 @@ def main():
     dial_icon = {"R": "🔴", "O": "🟠", "Y": "🟡", "G": "🟢"}.get(zone[0], "⚪")
     esc = _html.escape
     sections = []
-    if freshtxt:  sections.append(f"🆕 <b>New — slow lane</b>\n  {esc(freshtxt)}")
+    if freshtxt:  sections.append(f"🆕 <b>New — universe</b>\n  {esc(freshtxt)}")
     if requaltxt: sections.append(f"🔁 <b>Re-qualified</b>\n  {esc(requaltxt)}")
-    if v2txt:     sections.append(f"🌐 <b>New — v2 expanded</b>\n  {esc(v2txt)}")
+    if v2txt:     sections.append(f"🌐 <b>New — v2 only</b> (not in universe)\n  {esc(v2txt)}")
     if xg:        sections.append(f"👁 <b>X200-G</b> (observation only)\n  {esc(xg)}")
     body = "\n\n".join(sections) if sections else "No new names tonight."
     msg = (f"🌙 <b>STS — {today.isoformat()}</b>\n"
            f"{dial_icon} {esc(zone)}\n"
+           f"     stretch {stretch_now:+.1f}% vs 200d  ·  ATR {regime:+.1f}\n"
            f"\n{body}")
     if "OK" not in hg_status:
         msg += f"\n\n⚠️ {esc(hg_status)}"

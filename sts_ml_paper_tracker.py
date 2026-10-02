@@ -181,7 +181,7 @@ def main():
                     _setup = "-"
             else:
                 _setup = "young"
-            rows.append(base | dict(status="PENDING", phase="Pending", setup=_setup, wr=_wr,
+            rows.append(base | dict(status="PENDING", phase="Pending", setup=_setup, wr=_wr, last=_px,
                                     dial=spy_dial(_h.index[-1]) if len(_h) else "?",
                                     dist200_pct=round(_d200, 1) if _d200 == _d200 else np.nan,
                                     wash_min8w=round(_wash, 1) if _wash == _wash else np.nan,

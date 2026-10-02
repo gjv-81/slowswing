@@ -146,4 +146,27 @@ Each family is tested on price data alone over three eras: 2016 to 2019, 2020 to
 
 ## Amendment log
 
-*(empty; dated entries only, added after approval)*
+### Amendment 1, Oct 2 2026 (new variables from the literature review)
+
+*Disclosure: written AFTER the Stage 1 results (0 of 34 passed) were seen, and BEFORE any variable below was compared with returns. It changes no Stage 1 verdict and no existing bar. Source: GJ's literature review (Predictive Signals in Options Data, Options_Signal_Literature_Catalog.xlsx, Oct 1 2026).*
+
+**New features, screened with the Stage 1 rules, bar |t| at least 2.5 for all (no in house prior, and these are extra tests added after a failure):**
+
+* N1 Smirk level: 25 delta risk reversal (put IV minus call IV) on the Jan 15 2027 expiry (rr_skew_jan27). Every name shares the same expiry on a given day, so the daily cross sectional ranking is fair even though the maturity shortens over time. Expected sign: steeper smirk does worse (negative).
+* N2 Smirk change: 5 day change in N1. Expected sign negative.
+* N3 Implied minus realized volatility: UW 30 day implied volatility minus OUR OWN trailing 21 day realized volatility from prices. The UW realized_volatility column is NOT used, because on each row it measures the FUTURE window ending at unshifted_rv_date (lookahead). Expected sign positive (Bali and Hovakimian: realized minus implied predicts negatively).
+* N4 Implied volatility change: 5 day change in UW 30 day implied volatility. Sign not declared.
+* N5 Option to stock volume: log of 5 day average option contracts over 5 day average stock volume in hundreds of shares (Johnson and So). Expected sign negative.
+* N6 Borrow fee: daily fee rate as of day t (borrow_daily). Expected sign negative.
+* N7 Options activity before earnings: tested only as an event study inside the PEAD family (ask side call surge in the 5 sessions before the report vs PEAD events without it), not as a universal feature.
+
+**Borrow cost control (Muravyev, Pearson and Pollet 2025):** every result for N1 to N5 is also reported excluding each day's top 10% of names by borrow fee. Pass/fail is decided on the full sample, but a signal that loses more than two thirds of its spread without hard to borrow names is labelled a short constraint signal in the report.
+
+**Gamma reframed for Stage 3 (the literature says gamma predicts continuation vs reversal, not direction):** within each passing setup family, compare d3 excess return when net GEX is negative vs positive on the signal day. Declared hypothesis: continuation families (BO, SQ, GAP, PEAD) do better with negative GEX; reversal families (PB, WB) do better with positive GEX. Counts as supported if the difference is at least 0.30% at d3 in the declared direction in both halves; otherwise reported as null.
+
+**Earnings timing for PEAD, GAP and N7:** earnings_hist report_date and report_time. A pre market report makes that day the first reaction session; an after hours report makes the next session the first reaction session.
+
+**Dropped:** AVAR (option sentiment) has full history for only about 9 names and about 120 names since Jan 2026, too thin to test. The variance risk premium endpoint is redundant with N3.
+
+**Stage 2 linkage unchanged:** if any N feature passes, Stage 2 is built from the passing features under the original rules and bars.
+

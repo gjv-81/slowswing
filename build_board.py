@@ -253,7 +253,9 @@ def rows_from_workbook(path: Path) -> list[dict]:
     tr = tr[_code.isin(PHOENIX_CODES | CRUISE_CODES)]
     tr = tr.assign(_q=tr["qualgate"].map(grade_q))
     tr = tr[tr["_q"].str.upper().isin(INCLUDE_QUALGATES)]
-    _pe = pd.to_numeric(tr["entry"], errors="coerce")
+    # Pending rows (signal tonight, fill tomorrow) have no entry yet: judge them
+    # on the signal close, which the tracker stores in 'last' for pending rows.
+    _pe = pd.to_numeric(tr["entry"], errors="coerce").fillna(pd.to_numeric(tr["last"], errors="coerce"))
     _cheap = tr[_pe < MIN_ENTRY_PRICE]
     if len(_cheap):
         print(f"# price gate: {len(_cheap)} rows under ${MIN_ENTRY_PRICE:.0f} not published "
@@ -426,14 +428,16 @@ def build() -> int:
                                       "d5": None, "d10": None, "rsn": None}))
     if pending:
         print(f"# pending (signal tonight, enters at next open): {', '.join(r['t'] for r in pending)}")
+    retired_nobar = 0
     for r in rows:
         t = r["t"].upper()
         bar = bars.get(t)
-        if bar is None:
-            stale.append(f"{t}(no data)")
-            continue
-        if bar.date != session:
-            stale.append(f"{t}({bar.date})")
+        is_live = str(r.get("phase", "")).lower() != "retired"
+        if bar is None or bar.date != session:
+            if is_live:
+                stale.append(f"{t}({'no data' if bar is None else bar.date})")
+            else:
+                retired_nobar += 1          # frozen record with no price in the workbook: skip, never "stale"
             continue
         pe = _num(r.get("pe"))
         pc = round(float(bar.close), 4)
@@ -456,6 +460,8 @@ def build() -> int:
     # stale names were dropped one by one, and the site published a board with
     # 0 active / 0 extended. Over live names that night was 100% stale.
     total = len(live)
+    if retired_nobar:
+        print(f"# {retired_nobar} retired rows had no workbook price and were skipped")
     stale_ratio = len(stale) / total if total else 1.0
     if stale:
         shown = ", ".join(stale[:12]) + (f" …(+{len(stale)-12} more)" if len(stale) > 12 else "")

@@ -137,3 +137,12 @@ original 6-feature score was ML-trained for the slow lane. Directions:
 * Quota note: the "resets 8pm ET" assumption was wrong for the trial; the daily 40k limit behaved like a rolling window. Check the response headers before planning a pull.
 * Not historically available at all: sweep urgency, sweep cluster counts (flow alerts are snapshot depth), Net Drift by expiry bucket, strike level GEX beyond the 17 watchlist names. Forward collection only, on a paid plan.
 * Research plan for these data: STS_FAST_PREREG.md (approved and frozen Oct 1 2026).
+
+## 8. ADDENDUM Oct 2 2026: literature driven pulls (uw_harvest5.py)
+
+* `uw_archive/earnings_hist/` : 1,742 names, earnings history back to the 1990s with report time, expected move, pre and post moves.
+* `uw_archive/vol_realized_3y/` : 1,681 names, daily 30 day implied volatility, 3 years. WARNING: its realized_volatility column is FORWARD looking (window ends at unshifted_rv_date); compute trailing realized vol from prices instead.
+* `uw_archive/borrow_daily/` : 1,761 names, daily borrow fee, rebate and shares available since Oct 2023.
+* `uw_archive/rr_skew_jan27/` : 1,199 names, 25 delta risk reversal skew on the Jan 15 2027 expiry since Oct 2024 (expired expiries return nothing).
+* `uw_archive/option_sentiment/` : AVAR/VWKS; full history for only about 9 names, about 120 since Jan 2026. Too thin to use.
+* Amendment 1 in STS_FAST_PREREG.md defines how these are tested.
