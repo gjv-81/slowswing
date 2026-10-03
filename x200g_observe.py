@@ -70,7 +70,10 @@ def main():
         except Exception: pass
     if hits:
         df=pd.DataFrame(hits); df["signal_date"]=df["date"]; df["scan_date"]=today
-        df.to_csv(LOG,mode="a",header=not LOG.exists(),index=False)
+    else:
+        df=pd.DataFrame([dict(ticker="NO SIGNAL",close="",gap="",streak="",qqe="",
+                              date=today,signal_date=today,scan_date=today)])
+    df.to_csv(LOG,mode="a",header=not LOG.exists(),index=False)
     print(f"X200-G observation: {len(hits)} signal(s) tonight")
     for h in hits: print(f"  {h['ticker']} gap {h['gap']}% close ${h['close']}")
     # telegram removed 2026-09-30: X200-G now appears in the main evening message

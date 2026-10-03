@@ -440,7 +440,7 @@ def main():
     xg = ""
     try:
         xl = pd.read_csv(os.path.join(DIR, "x200g_log.csv"))
-        xl = xl[xl["scan_date"] == today]
+        xl = xl[(xl["scan_date"] == today) & (xl["ticker"] != "NO SIGNAL")]
         xg = "\n  ".join(f"{r.ticker}  (gap {r.gap}%, ${r.close})" for r in xl.itertuples())
     except Exception:
         pass
