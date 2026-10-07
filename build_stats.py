@@ -87,6 +87,31 @@ def peak_asof(row, asof: dt.date):
     return (row.mfe_pct if pd.notna(row.mfe_pct) else 0.0), (int(row.dtp) if pd.notna(row.dtp) else None)
 
 
+_spy = None
+def spy_wk4_for(row):
+    """SPY over the SAME window as the setup: entry-day open -> close 20 sessions
+    later (W4), i.e. what the index did while this setup was being held."""
+    global _spy
+    if _spy is None:
+        b = pd.read_csv(BARS / "SPY.csv", index_col=0, parse_dates=True).sort_index()
+        _spy = b[["Open", "Close"]].apply(pd.to_numeric, errors="coerce")
+    a = _spy[_spy.index.date >= row.entry_date.date()]
+    if len(a) <= 20:
+        return None
+    return (float(a["Close"].iloc[20]) / float(a["Open"].iloc[0]) - 1) * 100
+
+
+def spy_stats(df):
+    """Only the SPY-comparison keys, so they can be added to an existing snapshot
+    without touching anything already locked in it."""
+    v = pd.Series([x for x in (spy_wk4_for(r) for r in df.itertuples()) if x is not None])
+    w4 = df["wk4_ret_pct"].dropna()
+    if not len(v):
+        return {"spy_wk4": None, "excess_wk4": None}
+    sp = round(float(v.mean()), 1)
+    return {"spy_wk4": sp, "excess_wk4": (round(float(w4.mean()) - sp, 1) if len(w4) else None)}
+
+
 def stats(df, asof: dt.date):
     if not len(df):
         return None
@@ -101,6 +126,7 @@ def stats(df, asof: dt.date):
         "avg_wk4": r(w4.mean()) if len(w4) else None,
         "pos4": r((w4 > 0).mean() * 100) if len(w4) else None,
         "avg_md4": r(md.mean()) if len(md) else None,
+        **spy_stats(df),
     }
 
 
@@ -108,7 +134,36 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--asof", help="snapshot date YYYY-MM-DD (backfill)")
     ap.add_argument("--force", action="store_true", help="snapshot today even if not month end")
+    ap.add_argument("--augment-spy", action="store_true",
+                    help="add spy_wk4 / excess_wk4 to EXISTING snapshots (nothing else is touched)")
     a = ap.parse_args()
+
+    if a.augment_spy:
+        hist = json.loads(OUT.read_text())
+        df = load_positions()
+        completed = df["entry_date"].dt.date + WINDOW
+        for snap in hist["snapshots"]:
+            asof = dt.date.fromisoformat(snap["as_of"])
+            cum = df[completed <= asof]
+            month = df[(completed >= asof.replace(day=1)) & (completed <= asof)]
+            groups = {"cumulative": cum, "month": month,
+                      "phoenix": cum[cum["setup"].isin({"D200G", "DLB"})], "cruise": cum[cum["setup"].isin({"B2"})]}
+            for k, g in groups.items():
+                tgt = snap["by_setup"][k] if k in ("phoenix", "cruise") else snap[k]
+                if tgt is None:
+                    continue
+                if tgt.get("n") != len(g):
+                    print(f"  ! {snap['label']} {k}: n mismatch (snapshot {tgt.get('n')} vs now {len(g)}) — not augmented")
+                    continue
+                sp = spy_stats(g)
+                # excess from the snapshot's OWN locked avg_wk4, never from today's workbook
+                if sp["spy_wk4"] is not None and tgt.get("avg_wk4") is not None:
+                    sp["excess_wk4"] = round(tgt["avg_wk4"] - sp["spy_wk4"], 1)
+                tgt.update(sp)
+                print(f"  {snap['label']} {k}: SPY same windows {tgt['spy_wk4']}%  excess {tgt['excess_wk4']}")
+        OUT.write_text(json.dumps(hist, indent=1))
+        print(f"build_stats: augmented {len(hist['snapshots'])} snapshot(s) with SPY comparison -> {OUT.name}")
+        return 0
 
     today = dt.date.today()
     asof = dt.date.fromisoformat(a.asof) if a.asof else today

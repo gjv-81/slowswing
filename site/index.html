@@ -83,6 +83,9 @@
   .pagetoc a:hover{color:var(--ink)}
   .pagetoc a.on{color:var(--primary); font-weight:700; border-left-color:var(--primary)}
   @media (min-width:1560px){ .pagetoc.show{display:block} }
+  .agecell{font-size:11px; font-weight:700; padding:2px 7px; border-radius:999px; white-space:nowrap}
+  .agecell.fresh{background:#ecfdf3; color:#15803d}
+  .agecell.seasoned{background:#fff7e6; color:#b45309}
   .thsub{display:block; font-size:9px; font-weight:600; letter-spacing:.02em; text-transform:none; color:var(--faint)}
   .gl-see{margin:10px 0 0; font-size:12.5px; color:var(--faint)}
   .gl-see a{color:var(--primary); font-weight:650; white-space:nowrap}
@@ -849,10 +852,10 @@
       </div>
     </div>
 
-    <div class="tabs" id="agetabs" style="margin-bottom:16px">
+    <div class="tabs" id="agetabs" style="margin-bottom:10px">
       <div class="tab active" data-age="active">🟢 Active board</div>
       <div class="tab" data-age="extended">📈 Out of Range</div>
-      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = under 4 weeks old and still within +5% of the signal (or below) — a valid entry today. <b style="color:#b45309">Pending</b> = signal fired after tonight's close; it enters at the next open, so there is no price or scorecard yet. Switch to <b style="color:var(--muted)">Out of Range</b> for names that already ran +5%. After 4 weeks, setups move to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span>
+      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = has not yet traded +5% above the signal (names that are down included) — the setup is still ripe, for up to 12 weeks. <b style="color:#b45309">Pending</b> = signal fired after tonight's close; it enters at the next open, so there is no price or scorecard yet. Switch to <b style="color:var(--muted)">Out of Range</b> for names that have run +5%. A name that has run retires at the 4-week mark — or after 12 weeks if it never runs — to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span>
     </div>
 
     <div class="setupintro">
@@ -861,8 +864,14 @@
       <div class="si"><h3><span class="swatch" style="background:var(--cruise)"></span> Cruise</h3><p><b style="color:var(--ink)">The smaller, quicker move.</b> Established leaders taking a breather inside strength the model reads as still intact. They tend to pop sooner and settle sooner — less drama and less waiting, but a smaller move to work with.</p>
         <div style="margin-top:10px; padding-top:9px; border-top:1px solid var(--line); font-size:12.5px; color:var(--muted); line-height:1.6" id="statCruise">Computed from the track record once it loads.</div></div>
     </div>
-    <p style="max-width:82ch; margin:14px 0 0; font-size:13px; color:var(--body); line-height:1.7"><b style="color:var(--ink)">The difference isn't how often they work.</b> <span id="statBoth">Both reached +5% at peak most of the time</span> — the first move looks much the same. What separates them is <b>how far they go after that</b>: Cruise tends to pop and stall, Phoenix keeps running. That's why a Phoenix asks for more patience and a stronger stomach, and a Cruise asks for less of both. <span class="faint">Hypothetical peak (MFE) across all retired setups — a level the price reached, not a return anyone earned, and not advice.</span></p>
+    <p style="max-width:82ch; margin:14px 0 0; font-size:13px; color:var(--body); line-height:1.7"><b style="color:var(--ink)">The difference isn't how often they work.</b> <span id="statBoth">Both reached +5% at peak most of the time</span> — the first move looks much the same. What separates them is <b>how far they go after that</b>: Cruise tends to pop and stall, Phoenix keeps running. That's why a Phoenix asks for more patience and a stronger stomach, and a Cruise asks for less of both. <span class="faint">Hypothetical peak (MFE) across all setups past their 4-week mark — a level the price reached, not a return anyone earned, and not advice.</span></p>
 
+    <div class="tabs" id="freshtabs" style="margin-bottom:14px">
+      <div class="tab active" data-f="all" style="font-size:13px">All ages</div>
+      <div class="tab" data-f="fresh" style="font-size:13px">🌱 Fresh · under 4 wk</div>
+      <div class="tab" data-f="seasoned" style="font-size:13px">🌾 Seasoned · 4–12 wk</div>
+      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px">A setup stays <b style="color:var(--muted)">Active</b> until it has run +5% — for up to 12 weeks. Once it runs it moves to <b style="color:var(--muted)">Out of Range</b>, and retires once it is also four weeks past the signal. Price decides, not the calendar — see <a data-nav="how" data-scroll="how-boards" style="color:var(--primary); font-weight:600">the board, day to day</a>.</span>
+    </div>
     <div class="tabs" id="tabs">
       <div class="tab active" data-k="all">All setups</div>
       <div class="tab" data-k="phoenix">Phoenix</div>
@@ -903,14 +912,14 @@
     <div class="boardhead">
       <div>
         <div class="kicker">Honest track record · paper / hypothetical</div>
-        <h2 class="section">Every setup, four weeks later</h2>
-        <p class="muted" style="margin:6px 0 0; max-width:72ch">When a setup reaches the <b>4-week mark</b> it retires from the live board and lands here — with its <b>actual</b> 2-week and 4-week returns and the worst dip along the way. No cherry-picking: every retired name is shown, winners and losers alike.</p>
+        <h2 class="section">Every setup, once its window closes</h2>
+        <p class="muted" style="margin:6px 0 0; max-width:72ch">A setup retires here once it has <b>run +5% and passed the 4-week mark</b> — or after <b>12 weeks</b> if it never runs — with its <b>actual</b> 2-, 4- and (where held that long) 12-week returns, its peak and the worst dip along the way. Each figure locks at its own maturity and is never restated. No cherry-picking: every retired name is shown, winners and losers alike.</p>
       </div>
     </div>
     <div class="trstats" id="trackStats" style="display:flex"></div>
     <div id="trackBySetup"></div>
     <div id="trackMonthly"></div>
-    <div style="border:1px solid var(--line); border-left:3px solid var(--primary); border-radius:12px; padding:15px 18px; margin:14px 0; background:var(--primary-tint)">
+    <div id="runclean" style="border:1px solid var(--line); border-left:3px solid var(--primary); border-radius:12px; padding:15px 18px; margin:14px 0; background:var(--primary-tint)">
       <div style="font-size:11.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--primary-dark); font-weight:800; margin-bottom:3px">Did they run clean to the target? <span id="rcDate" style="font-weight:600; text-transform:none; letter-spacing:0; color:var(--faint)"></span></div>
       <div style="font-size:13px; color:var(--body); margin-bottom:13px; max-width:76ch">Of the retired setups that reached each level at their peak, how many got there having dipped only modestly on the way up — measured from the signal price to the first time the level was touched.</div>
       <div style="display:flex; gap:30px; flex-wrap:wrap">
@@ -918,7 +927,7 @@
         <div><div style="font-size:27px; font-weight:800; color:var(--primary); line-height:1.1" id="rc2">—</div><div style="font-size:12.5px; color:var(--body); margin-top:2px">reached <b>+10%</b> with a dip under 5% first <span class="faint" id="rc2n"></span></div></div>
         <div><div style="font-size:27px; font-weight:800; color:var(--primary); line-height:1.1" id="rc3">—</div><div style="font-size:12.5px; color:var(--body); margin-top:2px">reached <b>+5%</b> with a dip under 1% first <span class="faint" id="rc3n"></span></div></div>
       </div>
-      <div style="font-size:11px; color:var(--faint); border-top:1px solid rgba(15,118,110,.18); padding-top:10px; margin-top:13px">"Dip" is the deepest move below the signal price, counted only up to the first touch of that level. Reaching a level is a hypothetical peak, not a return anyone captured — no one sells the exact top. Computed each evening across all retired setups; paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>
+      <div style="font-size:11px; color:var(--faint); border-top:1px solid rgba(15,118,110,.18); padding-top:10px; margin-top:13px">"Dip" is the deepest move below the signal price, counted only up to the first touch of that level. Reaching a level is a hypothetical peak, not a return anyone captured — no one sells the exact top. Computed each evening across all setups past their 4-week mark, on the board or retired; paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>
     </div>
     <div class="tabs" id="ttabs">
       <div class="tab active" data-k="all">All setups</div>
@@ -971,6 +980,7 @@
       <div class="big">Our universe</div>
       <p class="muted" style="margin:8px 0 0; font-size:15px">Mid- and large-cap U.S. stocks — S&amp;P 500 and S&amp;P 400 constituents — priced <b style="color:var(--ink)">$50 or more</b> at the signal, screened by our fundamental quality gate. We deliberately skip small caps and low-priced stocks: they move differently, trade thinner, and are where the disasters live.</p>
       <p class="faint" style="margin:10px 0 0; font-size:12.5px">Methodology note, Sep 29, 2026: this published-universe rule was written into the pipeline on this date, while the site was in private beta. The track record and the monthly snapshot were recomputed on the same rule before the first monthly lock, so every figure on the site describes one universe. Any future change to the rule will be dated here the same way.</p>
+      <p class="faint" style="margin:10px 0 0; font-size:12.5px"><b>Update, Oct 7, 2026:</b> a setup now stays Active until it has run +5% above the signal, for up to 12 weeks — previously every name left the board at 4 weeks regardless. Once it runs it moves to Out of Range and retires at the 4-week mark (or at once, if it first runs after week 4); a name that never runs retires at 12 weeks. The setups we publish are designed around a 12-week horizon, and our research shows names still near their signal price after week 4 historically remained attractive — while names that had already run 5%+ did not. The monthly 4-week record is by entry date and is unaffected. Nothing in past records has been restated.</p>
     </div>
     <div class="disc" style="margin-top:26px"><b>We show our work.</b> Backtested figures are idealized — they exclude trading costs and carry survivorship bias — so we treat them as ceilings, not marketing. That's exactly why we track every signal live, in real time, in a transparent record that grows every day. We'd rather earn your trust with a real, evolving track record than a polished number we can't stand behind.</div>
   </div></section>
@@ -1134,13 +1144,13 @@
   <section class="block" id="hb-life"><div class="wrap">
     <div class="kicker">3 · The life of a setup</div>
     <h2 class="section">Active, Out of Range, Retired</h2>
-    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">A name spends about four weeks on the live board and then moves to the track record. Three stages, and the data has something to say about each.</p>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">A name stays on the live board until its move has happened and four weeks have passed since the signal; a name whose move never comes leaves at twelve weeks. Three stages, and the data has something to say about each.</p>
     <div class="cols3" style="margin-top:18px">
-      <div class="fcard"><div class="ico">🟢</div><h3>Active</h3><p>Under four weeks old and still within a few percent of the signal — or below it. The setup is, in our terms, still ripe. Names that are <i>down</i> from the signal are still Active on purpose: in our data, entries near or below the line did better than entries after the move had started.</p></div>
-      <div class="fcard"><div class="ico">📈</div><h3>Out of Range</h3><p>Under four weeks old but already up more than a few percent. The move has happened. We keep these visible so you can see how signals play out — not as an invitation to chase. Chasing is the single easiest way to turn a good setup into a bad trade.</p></div>
-      <div class="fcard"><div class="ico">📁</div><h3>Retired</h3><p>Four weeks after the signal, the name leaves the board and lands on the Track Record with its actual two- and four-week returns and its worst dip. Every name retires — winners, losers, and the ones that went nowhere. Nothing is quietly dropped.</p></div>
+      <div class="fcard"><div class="ico">🟢</div><h3>Active</h3><p>Has not yet traded 5% above the signal (its Peak is under 5%) — or is below it. The setup is, in our terms, still ripe, and it stays Active for up to twelve weeks. Price decides this, not the calendar: a name can be Active in week nine. Names that are <i>down</i> from the signal are still Active on purpose: in our data, entries near or below the line did better than entries after the move had started.</p></div>
+      <div class="fcard"><div class="ico">📈</div><h3>Out of Range</h3><p>Has traded 5% or more above the signal at least once — its Peak is 5% or more. The move has happened. We keep these visible so you can see how signals play out — not as an invitation to chase. Chasing is the single easiest way to turn a good setup into a bad trade.</p></div>
+      <div class="fcard"><div class="ico">📁</div><h3>Retired</h3><p>Once a name has run 5% and is four weeks past the signal — or twelve weeks after the signal if it never runs — it leaves the board and lands on the Track Record with its real returns, its peak and its worst dip. Every name retires — winners, losers, and the ones that went nowhere. Nothing is quietly dropped.</p></div>
     </div>
-    <p class="muted" style="max-width:74ch; margin-top:18px; font-size:16px"><b style="color:var(--ink)">Why four weeks.</b> Across our retired setups, the median time to the peak has been about three weeks, and most of the move that was going to happen had happened by week four. The window is a reporting choice grounded in that pattern — it is not a holding rule. Our own research holds far longer (twelve to twenty-four weeks) and the twelve-week returns appear on the Track Record as they mature.</p>
+    <p class="muted" style="max-width:74ch; margin-top:18px; font-size:16px"><b style="color:var(--ink)">Why the move decides, not the calendar.</b> The setups are built around a twelve-week horizon, and the board used to drop every name at four weeks. When we tested that on 4,865 historical signals, it was the wrong ruler: a name that was still near its signal price at week four went on to return about 6% over the following eight weeks on average, and names that were <i>down</i> more than 10% at week four did best of all — while names that had already run 5%+ by week four paid the least from there. The median low on the path comes around day five, and roughly one in five eventual +25% winners dipped more than 20% on the way. Dropping a name at four weeks was grading it at its statistically ugliest moment. So since Oct 7, 2026 a name stays Active until it has actually run; once it has, and the four-week mark has passed, it retires. This is a reporting window, not a holding rule.</p>
     <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px"><b style="color:var(--ink)">What retirement doesn't mean.</b> A retired name is not a sell signal, any more than an Active name is a buy signal. The board tracks a <i>window</i>; what you do inside or beyond it is yours.</p>
   </div></section>
 
@@ -1178,7 +1188,7 @@
     <h2 class="section">What the numbers are, and what they aren't</h2>
     <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">The <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a> shows every retired setup, winners and losers alike. Four things to hold in mind while reading it:</p>
     <ul class="muted" style="max-width:74ch; margin-top:14px; font-size:16px; padding-left:22px; line-height:1.7">
-      <li style="margin-bottom:10px"><b style="color:var(--ink)">Peak is not a return.</b> "Touched +10%" means the price reached that level at its best point. Nobody sells the exact top. The two-week and four-week columns are real close-to-close figures; the peak is a ceiling, not an outcome.</li>
+      <li style="margin-bottom:10px"><b style="color:var(--ink)">Peak is not a return.</b> "Touched +10%" means the price reached that level at its best point. Nobody sells the exact top. The two-, four- and twelve-week columns are real close-to-close figures; the peak is a ceiling, not an outcome.</li>
       <li style="margin-bottom:10px"><b style="color:var(--ink)">It's paper.</b> Every name is tracked from its signal at one share, with no costs, no slippage and no exits. It measures the setup, not a trader.</li>
       <li style="margin-bottom:10px"><b style="color:var(--ink)">Survivorship bias applies.</b> The model was built on today's stocks — the ones that survived to be listed. That flatters any backtest, ours included. The live book, running since July 2026, is the honest test, and it is still young.</li>
       <li style="margin-bottom:10px"><b style="color:var(--ink)">The headline is a monthly snapshot.</b> The big numbers on the home page are frozen on the last trading day of each month and never restated. The Track Record page recomputes nightly, so the two can differ by a point or two. That is deliberate — a headline shouldn't wobble daily.</li>
@@ -1196,8 +1206,8 @@
       <div class="fcard"><h3>Pulse</h3><p>How the name is moving against the broad market: Strong, Neutral or Weak. Shown at the signal date and now.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="boardFilters" data-age="active">Filter by Pulse →</a> · <a data-nav="how" data-scroll="how-read">Where it shows →</a></p></div>
       <div class="fcard"><h3>Regime</h3><p>Where SPY and QQQ sit against their own history: Green (reset), Yellow (extended), Orange (stretched), Red (below trend).</p><p class="gl-see">See it: <a data-nav="board" data-scroll="regime">Today's regime bar →</a> · <a data-nav="how" data-scroll="how-regime">How we read it →</a></p></div>
       <div class="fcard"><h3>Peak ▲ (MFE)</h3><p>The best level the price touched since the signal, as a percentage. Hypothetical, not earned.</p><p class="gl-see">See it: <a data-nav="track" data-scroll="trackStats">Track Record →</a> · <a data-nav="how" data-scroll="how-read">On every card →</a></p></div>
-      <div class="fcard"><h3>Max Dip ▼</h3><p>The worst level below the signal price in the first four weeks. What you would have had to sit through.</p><p class="gl-see">See it: <a data-nav="track" data-scroll="trackStats">Track Record →</a> · <a data-nav="psychology" data-scroll="psy-chop">Why we sit through it →</a></p></div>
-      <div class="fcard"><h3>Active / Out of Range / Retired</h3><p>Still near the signal · already ran · past the four-week window and on the Track Record.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="agetabs" data-age="active">Active board →</a> · <a data-nav="board" data-scroll="agetabs" data-age="extended">Out of Range →</a> · <a data-nav="track" data-scroll="trackStats">Retired (Track Record) →</a></p></div>
+      <div class="fcard"><h3>Max Dip ▼</h3><p>The worst level below the signal price in the first four weeks after the signal. What you would have had to sit through early on.</p><p class="gl-see">See it: <a data-nav="track" data-scroll="trackStats">Track Record →</a> · <a data-nav="psychology" data-scroll="psy-chop">Why we sit through it →</a></p></div>
+      <div class="fcard"><h3>Active / Out of Range / Retired</h3><p>Has not run +5% yet (up to 12 weeks) · has run +5% · has run and passed the 4-week mark, or 12 weeks without running, and on the Track Record. Age (Fresh under 4 wk, Seasoned 4–12 wk) is shown; price, not age, decides Active.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="agetabs" data-age="active">Active board →</a> · <a data-nav="board" data-scroll="agetabs" data-age="extended">Out of Range →</a> · <a data-nav="track" data-scroll="trackStats">Retired (Track Record) →</a></p></div>
     </div>
     <div class="disc" style="margin-top:26px">The Handbook is educational and describes our own approach and research. It is not investment advice, not a recommendation to buy, sell, hold or size any position, and not tailored to anyone. All figures are hypothetical and paper-tracked. Know your own situation and consider a licensed professional.</div>
   </div></section>
@@ -1590,11 +1600,11 @@ const PULSE = { strong:["pulse-strong","var(--pass)","Strong"], neutral:["pulse-
 // Default view: LIST on a desktop (50+ names as cards is a wall; the list carries
 // the scorecard columns and sorting), CARDS on a phone (a 13-column table is
 // unreadable there). The toggle still lets anyone switch.
-let curSetup="all", curQ="all", curView=(window.innerWidth>=900?"list":"cards"), curAge="active", sorts=[{key:"date", dir:-1}];
+let curSetup="all", curQ="all", curFresh="all", curView=(window.innerWidth>=900?"list":"cards"), curAge="active", sorts=[{key:"date", dir:-1}];
 let curSearch="", trackSearch="";
 let fSector="",fPulse="",fDial="",fScore=0, tSector="",tPulse="",tDial="",tScore=0;
 
-const ALL_COLS = [["t","Ticker"],["sector","Sector"],["setup","Setup"],["score","Swing Score"],["q","Quality"],["rs","Pulse @ Add"],["rsn","Pulse now"],["date","Added"],["dial","Regime @ Add"],["pe","Price @ Add"],["chg","Current %"],["wk2","2wk ▲"],["mfe","Peak ▲"],["md4","Max Dip ▼"]];
+const ALL_COLS = [["t","Ticker"],["sector","Sector"],["setup","Setup"],["score","Swing Score"],["q","Quality"],["rs","Pulse @ Add"],["rsn","Pulse now"],["date","Added"],["age","Age"],["dial","Regime @ Add"],["pe","Price @ Add"],["chg","Current %"],["wk2","2wk ▲"],["wk4","4wk ▲"],["mfe","Peak ▲"],["md4","Max Dip ▼"]];
 // Dollar prices may be absent from the public feed (see build_teaser.py). Drop the
 // column entirely rather than showing 176 dashes, and restore it automatically the
 // moment prices are back in the data.
@@ -1638,11 +1648,16 @@ const EXT_PCT = 5;   // Active = current price within +5% of the setup (or below
 function extPct(d){ return (d.pe && d.pc!=null) ? (d.pc/d.pe-1)*100 : 0; }
 function newBadge(d){ if(d.phase==="pending") return ' <span class="newflag pend" title="Signal fired after tonight\'s close — enters at the next open. No price yet.">PENDING</span>'; return isNew(d.date) ? ' <span class="newflag">NEW</span>' : ''; }
 function defDir(k){ return ["score","date","pe","pc","chg","mfe","mae","wk2","wk4","wk12","md4"].includes(k) ? -1 : 1; }
+// Age of a setup in weeks since the signal (sessions / 5), measured to the feed date.
+function ageSessions(d){ if(!d.date||d.phase==="pending") return 0; let n=0; const a=new Date(dval(d.date)), b=new Date(REF); while(a<b){ a.setDate(a.getDate()+1); const g=a.getDay(); if(g!==0&&g!==6) n++; } return n; }
+function ageWeeks(d){ return Math.round(ageSessions(d)/5*10)/10; }
+function ageCell(d){ if(d.phase==="pending") return '<span class="faint">—</span>'; const w=ageWeeks(d); const seasoned=w>=4; return `<span class="agecell ${seasoned?"seasoned":"fresh"}" title="${ageSessions(d)} trading days since the signal · ${seasoned?"Seasoned (4–12 wk)":"Fresh (under 4 wk)"}">${w<1?"<1":w.toFixed(w%1?1:0)} wk</span>`; }
 function colval(d,k){
   switch(k){
     case "t": return d.t; case "setup": return d.setup; case "score": return d.score;
     case "q": return QRANK[d.q]; case "rs": return PRANK[d.rs]; case "rsn": return d.rsn?PRANK[d.rsn]:-1; case "sector": return d.sector||"";
     case "date": return dval(d.date);
+    case "age": return ageWeeks(d);
     case "dial": return DIALRANK[d.dial]==null?9:DIALRANK[d.dial];
     case "pe": return d.pe==null?-1:d.pe; case "pc": return d.pc==null?-1:d.pc; case "chg": return d.chg==null?-999:d.chg; case "mfe": return d.mfe==null?-999:d.mfe; case "mae": return d.mae==null?999:d.mae;
     case "wk2": return d.wk2==null?-999:d.wk2; case "wk4": return d.wk4==null?-999:d.wk4; case "wk12": return d.wk12==null?-999:d.wk12; case "md4": return d.md4==null?999:d.md4;
@@ -1668,7 +1683,8 @@ function applyFilters(base,sec,pul,dia,sco){
 function filtered(){
   let base = curSearch
     ? DATA.filter(d=>d.phase!=="retired").filter(d=>(d.t+" "+d.n).toLowerCase().includes(curSearch))
-    : DATA.filter(d=>d.phase===curAge || (curAge==="active" && d.phase==="pending")).filter(d=>curSetup==="all"||d.setup===curSetup).filter(d=>curQ==="all"||d.q==="pass");
+    : DATA.filter(d=>d.phase===curAge || (curAge==="active" && d.phase==="pending")).filter(d=>curSetup==="all"||d.setup===curSetup).filter(d=>curQ==="all"||d.q==="pass")
+          .filter(d=>curFresh==="all" || d.phase==="pending" || (curFresh==="fresh" ? ageWeeks(d)<4 : ageWeeks(d)>=4));
   base=applyFilters(base,fSector,fPulse,fDial,fScore);
   // newest signal first (what GJ asked for), then quality gate, then score
   return base.sort((a,b)=>(dval(b.date)-dval(a.date))||(QRANK[a.q]-QRANK[b.q])||(b.score-a.score));
@@ -1692,7 +1708,7 @@ function cardsHTML(items){
         <span class="badge">${d.profile}</span>
         ${rsBadge(d.rs)}${rsNowBadge(d.rsn)}
       </div>
-      ${d.phase==="pending"?`<div class="card-sc pending"><span class="sc-tag">⏳ Pending</span> Signal fired after tonight's close · enters at the next open · scorecard starts then</div>`:`<div class="card-sc"><span class="sc-tag">📊 Setup Scorecard</span> Peak ${mfeCell(d.mfe)} · Max dip ${maeCell(d.md4)}${d.wk2!=null?` · 2wk ${retCell(d.wk2)}`:''} <span class="faint">· since <b style="font-weight:700; color:var(--ink)">${d.date}</b></span>${d.dial?` <span class="faint">·</span> ${dialCell(d.dial)} <span class="faint">at add</span>`:''}</div>`}
+      ${d.phase==="pending"?`<div class="card-sc pending"><span class="sc-tag">⏳ Pending</span> Signal fired after tonight's close · enters at the next open · scorecard starts then</div>`:`<div class="card-sc"><span class="sc-tag">📊 Setup Scorecard</span> Peak ${mfeCell(d.mfe)} · Max dip ${maeCell(d.md4)}${d.wk2!=null?` · 2wk ${retCell(d.wk2)}`:''} <span class="faint">· since <b style="font-weight:700; color:var(--ink)">${d.date}</b> (${ageCell(d)})</span>${d.wk4!=null?` · 4wk ${retCell(d.wk4)}`:''}${d.dial?` <span class="faint">·</span> ${dialCell(d.dial)} <span class="faint">at add</span>`:''}</div>`}
     </div>`;
   }).join('');
 }
@@ -1715,10 +1731,12 @@ function listHTML(items){
         <td><span class="lt-pulse"><span class="lt-dot" style="background:${pic}"></span>${plabel}</span></td>
         <td>${rn?`<span class="lt-pulse"><span class="lt-dot" style="background:${rn[1]}"></span>${rn[2]}</span>`:`<span class="faint">—</span>`}</td>
         <td class="faint">${d.phase==="pending"?`<span class="pendnote" title="Signal fired after tonight's close — enters at the next open">Next open</span>`:(d.date||"—")}</td>
+        <td>${ageCell(d)}</td>
         <td>${dialCell(d.dial)}</td>
         ${showPe?`<td class="muted">${money(d.pe)}</td>`:''}
         <td>${chgCell(d.chg)}</td>
         <td>${retCell(d.wk2)}</td>
+        <td>${retCell(d.wk4)}</td>
         <td>${mfeCell(d.mfe)}</td>
         <td>${maeCell(d.md4)}</td>
       </tr>`;
@@ -1729,8 +1747,8 @@ function listHTML(items){
     const arrow=active?(sorts[si].dir>0?" ▲":" ▼"):"";
     return `<th data-sort="${k}" class="${active?"sorted":""}">${label}${prio}<span class="arr">${arrow}</span></th>`;
   }).join("");
-  const nonSc=cols().length-6;
-  const groupRow=`<tr class="grouprow"><th colspan="${nonSc}"></th><th colspan="6" class="grouphead">📊 Setup Scorecard <span class="ghsub">— hypothetical, educational</span></th></tr>`;
+  const nonSc=cols().findIndex(c=>c[0]==="dial");
+  const groupRow=`<tr class="grouprow"><th colspan="${nonSc}"></th><th colspan="${cols().length-nonSc}" class="grouphead">📊 Setup Scorecard <span class="ghsub">— hypothetical, educational</span></th></tr>`;
   const tip=`<div class="sorttip"><b>Tip:</b> click a header to sort · <b>Shift-click</b> a second header for a two-level sort${sorts.length?` · <span class="clearsort" id="clearsort">clear sort ✕</span>`:""}</div>
     <div class="sorttip" style="padding-top:4px">The <b>Setup Scorecard</b> shows each signal's <b style="color:var(--up)">Peak</b> (maximum favorable move) and <b style="color:var(--down)">Max Dip</b> (maximum adverse move) since it appeared — the upside potential the setup offered, and the drawdown you'd have had to sit through. We use <b>no stop-loss and no price targets</b>: when and how you exit is entirely your own choice. Hypothetical and educational — <b>not</b> a return anyone earned, and not advice.${hasPrices()?' <b>Price @ Add</b> is the price when the signal fired, not an entry recommendation.':' Moves are shown as percentages, not prices: our market-data licence doesn\'t cover republishing prices, and the move is what matters for judging a setup — the price on any date is in your brokerage account (<a data-post="why-percentages-not-prices" style="color:var(--primary); font-weight:600; cursor:pointer">why we show moves, not prices</a>).'}</div>`;
   return `<div class="listwrap"><table class="ltable"><thead>${groupRow}<tr>${heads}</tr></thead><tbody>${rows}</tbody></table></div>${tip}`;
@@ -1807,6 +1825,7 @@ document.getElementById('cards').addEventListener('click', e=>{
   render();
 });
 document.querySelectorAll('#tabs .tab').forEach(tab=>tab.addEventListener('click',()=>{ document.querySelectorAll('#tabs .tab').forEach(t=>t.classList.remove('active')); tab.classList.add('active'); curSetup=tab.dataset.k; render(); }));
+document.querySelectorAll('#freshtabs .tab').forEach(tab=>tab.addEventListener('click',()=>{ document.querySelectorAll('#freshtabs .tab').forEach(t=>t.classList.remove('active')); tab.classList.add('active'); curFresh=tab.dataset.f; render(); }));
 document.querySelectorAll('#qtabs .tab').forEach(tab=>tab.addEventListener('click',()=>{ document.querySelectorAll('#qtabs .tab').forEach(t=>t.classList.remove('active')); tab.classList.add('active'); curQ=tab.dataset.q; render(); }));
 document.querySelectorAll('#vtabs .vbtn').forEach(b=>b.classList.toggle('active', b.dataset.v===curView));   // reflect the width-based default
 document.querySelectorAll('#vtabs .vbtn').forEach(btn=>btn.addEventListener('click',()=>{ document.querySelectorAll('#vtabs .vbtn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); curView=btn.dataset.v; render(); }));
@@ -1833,8 +1852,8 @@ document.querySelectorAll('#agetabs .tab').forEach(tab=>tab.addEventListener('cl
   document.querySelectorAll('#agetabs .tab').forEach(t=>t.classList.remove('active')); tab.classList.add('active'); curAge=tab.dataset.age;
   const note=document.getElementById('agenote');
   note.innerHTML = curAge==="extended"
-    ? '<b style="color:var(--muted)">Out of Range</b> — under 4 weeks old but already up 5%+ from the signal. The move has largely happened — treat these as a watch list and wait for a pullback, not a fresh entry. Educational, not actionable.'
-    : '<b style="color:var(--muted)">Active</b> = under 4 weeks old and still within +5% of the signal (or below) — a valid entry today (includes names that are down, i.e. cheaper near the line). After 4 weeks a setup retires to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.';
+    ? '<b style="color:var(--muted)">Out of Range</b> — has traded 5%+ above the signal at least once — its Peak is 5% or more. The move has happened — treat these as a watch list, not a fresh entry; a pullback does not send a name back to Active. Once it is also four weeks past the signal, it retires to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>. Educational, not actionable.'
+    : '<b style="color:var(--muted)">Active</b> = has not yet traded 5%+ above the signal — its Peak is under 5% — the setup is still ripe, for up to 12 weeks (includes names that are down, which are nearer the line). After 12 weeks without running, a setup retires to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.';
   render();
 }));
 render();
@@ -1891,18 +1910,23 @@ function renderMonthly(){
   const el=document.getElementById('trackMonthly'); if(!el) return;
   const H=STATS_HISTORY||[]; if(!H.length){ el.innerHTML=''; return; }
   const pc=v=>v==null?'—':Math.round(v)+'%', sg=v=>v==null?'—':(v>=0?'+':'')+v.toFixed(1)+'%', dd=v=>v==null?'—':v+' days';
-  const row=(label,s,cls)=>s?`<tr class="${cls||''}"><td>${label} <span class="n">${s.n} setups</span></td><td class="up">${pc(s.p5)}</td><td class="up">${pc(s.p10)}</td><td class="up">${pc(s.p20)}</td><td class="up">${sg(s.avg_peak)}</td><td class="${(s.avg_wk4||0)>=0?'up':'down'}">${sg(s.avg_wk4)}</td><td>${pc(s.pos4)}</td><td class="down">${s.avg_md4==null?'—':s.avg_md4.toFixed(1)+'%'}</td><td>${dd(s.med_dtp)}</td></tr>`:'';
+  const row=(label,s,cls)=>s?`<tr class="${cls||''}"><td>${label} <span class="n">${s.n} setups</span></td><td class="up">${pc(s.p5)}</td><td class="up">${pc(s.p10)}</td><td class="up">${pc(s.p20)}</td><td class="up">${sg(s.avg_peak)}</td><td class="${(s.avg_wk4||0)>=0?'up':'down'}">${sg(s.avg_wk4)}</td><td class="muted">${sg(s.spy_wk4)}</td><td class="${(s.excess_wk4||0)>=0?'up':'down'}" style="font-weight:700">${sg(s.excess_wk4)}</td><td>${pc(s.pos4)}</td><td class="down">${s.avg_md4==null?'—':s.avg_md4.toFixed(1)+'%'}</td><td>${dd(s.med_dtp)}</td></tr>`:'';
   const last=H[H.length-1];
   el.innerHTML=`<div class="bysetup">
     <div class="bs-k">Month by month <span style="font-weight:600; text-transform:none; letter-spacing:0; color:var(--faint)">(snapshot taken at each month end)</span></div>
-    <div class="bs-d">Each row is the setups whose 4-week window finished in that month, measured on the last trading day of the month and never restated. The bottom line is everything to date — the figure on the home page.</div>
-    <table><thead><tr><th>Month</th><th>Touched<br>+5%</th><th>Touched<br>+10%</th><th>Touched<br>+20%</th><th>Avg peak<br><span class="thsub">the ceiling</span></th><th>Held 4 wks,<br>no exit <span class="thsub">the floor</span></th><th>Positive<br>at 4 wk</th><th>Avg max<br>dip (4wk)</th><th>Median days<br>to peak</th></tr></thead>
+    <div class="bs-d">Each row is the setups whose 4-week window finished in that month, measured on the last trading day of the month and never restated. The bottom line is everything to date — the figure on the home page. These 4-week figures are by entry date and do not depend on when a name left the board.</div>
+    <table><thead><tr><th>Month</th><th>Touched<br>+5%</th><th>Touched<br>+10%</th><th>Touched<br>+20%</th><th>Avg peak<br><span class="thsub">the ceiling</span></th><th>Held 4 wks,<br>no exit <span class="thsub">the floor</span></th><th>S&amp;P 500,<br>same windows <span class="thsub">SPY, held 4 wks</span></th><th>vs S&amp;P<br><span class="thsub">floor minus SPY</span></th><th>Positive<br>at 4 wk</th><th>Avg max<br>dip (4wk)</th><th>Median days<br>to peak</th></tr></thead>
     <tbody>${H.map(s=>row(s.label,s.month)).join('')}${row('All to date <span class="n">as of '+fmtFeedDate(last.as_of)+'</span>',last.cumulative,'cum')}</tbody></table>
-    <div class="bs-note"><b>Read the two return columns as a range.</b> <b>Avg peak</b> is the best level reached — the room a setup gave you, known only in hindsight. <b>Held 4 wks, no exit</b> is what you got with no management at all: hold from the signal to retirement and do nothing. Where you land between them depends on your exit, and the exit is yours. Both are from the signal price; paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>
+    <div class="bs-note"><b>Read the two return columns as a range.</b> <b>Avg peak</b> is the best level reached — the room a setup gave you, known only in hindsight. <b>Held 4 wks, no exit</b> is what you got with no management at all: hold from the signal to retirement and do nothing. Where you land between them depends on your exit, and the exit is yours. <b>S&amp;P 500, same windows</b> is SPY held over exactly the same 4-week windows as that month's setups (entry-day open to the close 20 sessions later), so the floor is judged against what the index did while the setups were being held — not against a calendar month. Both are from the signal price; paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>
   </div>`;
 }
+// The statistics cohort = every setup whose 4-week window has completed (wk4 is
+// present), WHATEVER its phase. Under the lifecycle rule a runner retires at week 4
+// but a non-runner stays Active to week 12, so "retired names" alone would be a
+// self-selected, flattering set. Same definition as the monthly snapshot.
+function cohort4(){ return DATA.filter(d=>d.phase!=="pending" && d.wk4!=null); }
 function renderStats(){
-  const all=DATA.filter(d=>d.phase==="retired");
+  const all=cohort4();
   if(!all.length) return;
   const date=FEED_DATE?fmtFeedDate(FEED_DATE):"—", upd=` <span class="faint">(updated ${date})</span>`;
   const pct=(g,k)=>{ const pk=g.map(d=>d.mfe).filter(v=>v!=null); return pk.length?Math.round(pk.filter(v=>v>=k).length/pk.length*100):null; };
@@ -1924,8 +1948,9 @@ function renderStats(){
 let tsorts=[{key:"date", dir:-1}], tSetup="all", tQ="all";
 function tcmp(a,b){ for(const s of tsorts){ const av=colval(a,s.key), bv=colval(b,s.key); let r=(typeof av==="string")?av.localeCompare(bv):(av-bv); if(r) return s.dir*r; } return dval(b.date)-dval(a.date); }
 function renderTrack(){
-  const all=DATA.filter(d=>d.phase==="retired").sort((a,b)=>dval(b.date)-dval(a.date));
-  let items=trackSearch?all.filter(d=>(d.t+" "+d.n).toLowerCase().includes(trackSearch)):all.slice();
+  const all=cohort4();                                                       // statistics
+  const retired=DATA.filter(d=>d.phase==="retired").sort((a,b)=>dval(b.date)-dval(a.date));   // the table
+  let items=trackSearch?retired.filter(d=>(d.t+" "+d.n).toLowerCase().includes(trackSearch)):retired.slice();
   items=applyFilters(items,tSector,tPulse,tDial,tScore).filter(d=>tSetup==="all"||d.setup===tSetup).filter(d=>tQ==="all"||d.q==="pass");
   if(tsorts.length) items=items.slice().sort(tcmp);
   const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:0;
@@ -1936,15 +1961,18 @@ function renderTrack(){
   const t5=peaks.filter(v=>v>=5).length, t10=peaks.filter(v=>v>=10).length;
   const pk=x=>peaks.length?Math.round(x/peaks.length*100):0;
   const st=document.getElementById('trackStats');
-  if(st) st.innerHTML=`
-    <div class="trstat"><div class="v">${all.length}</div><div class="l">Retired setups</div></div>
+  if(st && !all.length){ st.style.display='none'; }
+  { const rc=document.getElementById('runclean'); if(rc) rc.style.display = all.length ? '' : 'none'; }
+  if(st && all.length){ st.style.display='flex'; }
+  if(st && all.length) st.innerHTML=`
+    <div class="trstat"><div class="v">${all.length}</div><div class="l">Setups past 4 weeks</div></div>
     <div class="trstat"><div class="v up">${pk(t5)}%</div><div class="l">Touched +5% <span style="color:var(--faint)">(${t5}/${peaks.length})</span></div></div>
     <div class="trstat"><div class="v up">${pk(t10)}%</div><div class="l">Touched +10% <span style="color:var(--faint)">(${t10}/${peaks.length})</span></div></div>
     <div class="trstat"><div class="v ${avg(w4)>=0?'up':'down'}">${avg(w4)>=0?'+':''}${avg(w4).toFixed(1)}%</div><div class="l">Held 4 wks, no exit <span style="color:var(--faint)">(the floor)</span></div></div>
     <div class="trstat"><div class="v">${win4}%</div><div class="l">Positive at 4 weeks</div></div>
     <div class="trstat"><div class="v ${avg(w2)>=0?'up':'down'}">${avg(w2)>=0?'+':''}${avg(w2).toFixed(1)}%</div><div class="l">Held 2 wks, no exit</div></div>
     <div class="trstat"><div class="v down">${avg(dips).toFixed(1)}%</div><div class="l">Avg max dip (4wk)</div></div>
-    <div style="flex-basis:100%; font-size:11px; color:var(--faint); border-top:1px solid var(--line); padding-top:10px"><b>Touched +5% / +10%</b> counts setups whose price reached that level at its best point (peak / MFE) at any time while held — <b>not</b> a return anyone captured. No one sells the exact top; these are hindsight highs. The point is that these setups have real room to run — even a fraction of the peak, on the order of 7–8%, is a meaningful move. The <b>held, no exit</b> figures beside them are the opposite end: hold from the signal to that horizon and do nothing — the floor, with no skill applied. Your result lands between the two and depends on your exit. Everything here is a percentage from the signal price, never a dollar price: our market-data licence doesn't cover republishing prices, and percentages are what let a $700 stock and a $25 stock sit in the same table (<a data-post="why-percentages-not-prices" style="color:var(--primary); font-weight:600; cursor:pointer">why we show moves, not prices</a>). Paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>`;
+    <div style="flex-basis:100%; font-size:11px; color:var(--faint); border-top:1px solid var(--line); padding-top:10px">These figures cover <b>every setup whose 4-week window has completed</b> — on the board or retired — so a name cannot drop out of the statistics by staying Active. <b>Touched +5% / +10%</b> counts setups whose price reached that level at its best point (peak / MFE) at any time while held — <b>not</b> a return anyone captured. No one sells the exact top; these are hindsight highs. The point is that these setups have real room to run — even a fraction of the peak, on the order of 7–8%, is a meaningful move. The <b>held, no exit</b> figures beside them are the opposite end: hold from the signal to that horizon and do nothing — the floor, with no skill applied. Your result lands between the two and depends on your exit. Everything here is a percentage from the signal price, never a dollar price: our market-data licence doesn't cover republishing prices, and percentages are what let a $700 stock and a $25 stock sit in the same table (<a data-post="why-percentages-not-prices" style="color:var(--primary); font-weight:600; cursor:pointer">why we show moves, not prices</a>). Paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>`;
   // "Did they run clean?" — from d5 / d10 (dip before the FIRST touch of +5% / +10%).
   // Denominator = setups that touched the level at all (d5/d10 present).
   {
@@ -1959,7 +1987,8 @@ function renderTrack(){
   // Phoenix vs Cruise, side by side, from the same retired names. Every number
   // here is computed from the feed, so it can never drift from the table below.
   const bs=document.getElementById('trackBySetup');
-  if(bs){
+  if(bs && !all.length) bs.innerHTML='';
+  if(bs && all.length){
     const med=a=>{ if(!a.length) return null; const s=a.slice().sort((x,y)=>x-y); return s[Math.floor(s.length/2)]; };
     const row=(key,label,cls)=>{
       const g=all.filter(d=>d.setup===key);
@@ -1981,7 +2010,7 @@ function renderTrack(){
     };
     bs.innerHTML=`<div class="bysetup">
       <div class="bs-k">Phoenix vs Cruise — how each setup has behaved <span style="font-weight:600; text-transform:none; letter-spacing:0; color:var(--faint)">(updated ${FEED_DATE?fmtFeedDate(FEED_DATE):'—'})</span></div>
-      <div class="bs-d">The same retired setups, split by type. Read across a row: how often it reached each level at its best point, how far it went on average, and what it cost in patience along the way.</div>
+      <div class="bs-d">The same setups past their 4-week mark, split by type. Read across a row: how often it reached each level at its best point, how far it went on average, and what it cost in patience along the way.</div>
       <table><thead><tr><th>Setup</th><th>Touched<br>+5%</th><th>Touched<br>+10%</th><th>Touched<br>+20%</th><th>Avg peak<br><span class="thsub">the ceiling</span></th><th>Held 2 wks,<br>no exit</th><th>Held 4 wks,<br>no exit <span class="thsub">the floor</span></th><th>Positive<br>at 4 wk</th><th>Avg max<br>dip (4wk)</th><th>Median days<br>to peak</th></tr></thead>
       <tbody>${row('phoenix','Phoenix','phoenix')}${row('cruise','Cruise','cruise')}</tbody></table>
       <div class="bs-note">Peak is the ceiling (best level reached, hindsight). Held-with-no-exit is the floor (hold to the horizon, do nothing). Your result lands between them and depends on your exit. All from the signal price; hypothetical, not returns anyone earned. Educational, not advice.</div>
@@ -2004,7 +2033,7 @@ function renderTrack(){
       <td>${maeCell(d.md4)}</td>
     </tr>`;
   }).join('');
-  const TCOLS=[["t","Ticker"],["sector","Sector"],["setup","Setup"],["q","Q"],["date","Signal"],["dial","Regime @ Add"],["wk2","2wk"],["wk4","4wk"],["wk12","12wk"],["mfe","Peak ▲"],["md4","Max Dip ▼"]];
+  const TCOLS=[["t","Ticker"],["sector","Sector"],["setup","Setup"],["q","Q"],["date","Signal"],["dial","Regime @ Add"],["wk2","2wk"],["wk4","4wk"],["wk12","12wk <span class=\"thsub\">if held that long</span>"],["mfe","Peak ▲"],["md4","Max Dip ▼ <span class=\"thsub\">first 4 wk</span>"]];
   const heads=TCOLS.map(([k,label])=>{
     const si=tsorts.findIndex(s=>s.key===k); const active=si>=0;
     const prio=(active&&tsorts.length>1)?`<span class="prio">${PRIO[si]}</span>`:"";
@@ -2013,7 +2042,9 @@ function renderTrack(){
   }).join('');
   const tip=`<div class="sorttip"><b>Tip:</b> click a header to sort · <b>Shift-click</b> a second header for a two-level sort${(tsorts.length&&!(tsorts.length===1&&tsorts[0].key==="date"&&tsorts[0].dir===-1))?` · <span class="clearsort" id="tclearsort">clear sort ✕</span>`:""}</div>`;
   const body=document.getElementById('trackBody');
-  if(body) body.innerHTML=`${tip}<div class="listwrap"><table class="ltable"><thead><tr>${heads}</tr></thead><tbody>${rows}</tbody></table></div>`;
+  if(body) body.innerHTML = retired.length
+    ? `${tip}<div class="listwrap"><table class="ltable"><thead><tr>${heads}</tr></thead><tbody>${rows}</tbody></table></div>`
+    : `<div class="disc" style="text-align:center; padding:34px 20px"><b>No retired setups match these filters yet.</b><br><span class="muted">A setup retires once it has run +5% and passed the 4-week mark, or after 12 weeks if it never runs.</span></div>`;
 }
 renderTrack();
 { const tb=document.getElementById('trackBody'); if(tb) tb.addEventListener('click', e=>{

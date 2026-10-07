@@ -286,18 +286,30 @@ def main():
                 return np.nan
             return (float(lo[:hit[0] + 1].min()) / e_px - 1) * 100
         dip_to5, dip_to10 = dip_before_touch(5), dip_before_touch(10)
-        # lifecycle phase — an ACTIONABILITY signal (can you still take the trade?):
-        #   Retired  = >= 4 weeks held (short-term trade done; scorecard locks)
-        #   Extended = < 4 weeks AND already ran UP >= 5% (the move happened -> DON'T chase)
-        #   Active   = < 4 weeks AND up < 5% (still a valid entry — INCLUDING names that
-        #              are DOWN, which are cheaper near the line and arguably better entries)
+        # lifecycle phase — an ACTIONABILITY signal (can you still take the trade?)
+        # [GJ's definition, 2026-10-07]:
+        #   Active   = has NOT yet traded >= +5% above entry (intraday HIGH — the same
+        #              measure as the published Peak/MFE column, so the two always agree). Stays Active — including
+        #              names that are DOWN — for up to 12 weeks (60 sessions). Price
+        #              decides, not the calendar. (Validated: entering Active names at
+        #              wk4 returned +6.2%/58% over the next 8 weeks; down >10% best.)
+        #   Extended = has traded >= +5% at least once ("the move happened"). STICKY:
+        #              a pullback does not send it back to Active.
+        #   Retired  = ONE clock from the signal: has run (Extended) AND is past the
+        #              4-week mark (20 sessions after entry); OR 12 weeks after entry
+        #              without ever running. A name that first runs after week 4
+        #              retires the day it runs.
         dh = len(win)
-        if dh >= W4:
+        _hits = np.nonzero(np.asarray(win["High"].values, dtype=float) >= e_px * 1.05)[0]
+        ext_since = win.index[_hits[0]] if len(_hits) else None
+        ext_days = (dh - 1 - int(_hits[0])) if len(_hits) else 0      # sessions since first +5% close
+        if (ext_since is not None and dh > W4) or dh > W12:
             phase = "Retired"
-        elif ret >= 5:
-            phase = "Extended"
+            retired_via = "ran" if ext_since is not None else "window"
+        elif ext_since is not None:
+            phase = "Extended"; retired_via = ""
         else:
-            phase = "Active"
+            phase = "Active"; retired_via = ""
 
         spy_after = spy[spy.index >= e_date]
         spy_e = float(spy_after["Open"].iloc[0])
@@ -307,6 +319,7 @@ def main():
 
         rows.append(base | dict(
             setup=setup, dial=dial, phase=phase,
+            ext_since=(ext_since.date() if ext_since is not None else None), ext_days=ext_days, retired_via=retired_via,
             wk2_ret_pct=round(w2, 2) if not math.isnan(w2) else np.nan,
             wk4_ret_pct=round(w4, 2) if not math.isnan(w4) else np.nan,
             maxdip_4wk_pct=round(mae_4wk, 2) if mae_4wk == mae_4wk else np.nan,
@@ -438,7 +451,8 @@ def main():
         ("COLUMN GLOSSARY", ""),
         ("entry_date", "Date the paper trade was initiated (fills at that day's open, or the next session if it wasn't a trading day)."),
         ("setup", "Setup code AT ENTRY (see SETUP_CODES in the playbook workbook): D200G = >=25% off high + above 200-SMA + score>=2 (research: +16.2%). D200 = same, score<2 (+14.0%). B2 (Breather) = score>=2, 10-25% off (+14.1%). S2 (Sprinter) = score>=2, <=10% off (+11.3%). DLB = score>=2 but deep AND below the 200-SMA (the risky crash cohort). 'young' = under 1yr of data. Frozen at entry so the fan-out is analyzable later."),
-        ("phase", "Can you still take this trade? Active = <4wk and up less than 5% (still a valid entry — INCLUDING names that are down, which are cheaper near the line). Extended = <4wk but already ran UP 5%+ (the move happened — don't chase). Retired = >=4wk held (short-term trade done; judge by wk2/wk4 return + max dip)."),
+        ("phase", "Can you still take this trade? Active = has not yet traded +5% above entry (intraday high, same as Peak; down names included), up to 12 weeks. Extended = has traded +5% at least once (sticky). Retired = 4 weeks after the first +5% close, or 12 weeks without running."),
+        ("ext_since / ext_days / retired_via", "Date of the first intraday high >= +5% above entry; sessions since; how the name retired (ran = 4 weeks after running, window = 12 weeks without running)."),
         ("wk2_ret_pct", "Actual close-to-close return 2 weeks (10 trading days) after entry. Achievable — what a 2-week holder got. Blank until reached."),
         ("wk4_ret_pct", "Actual close-to-close return 4 weeks (20 trading days) after entry. Achievable — what a 4-week holder got. Blank until reached."),
         ("maxdip_4wk_pct", "Worst intraday drawdown vs entry during the first 4 weeks — the max pain a short-term holder would have felt."),
