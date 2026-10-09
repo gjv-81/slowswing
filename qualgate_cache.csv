@@ -35,7 +35,7 @@ BILI,FAIL,LEVERAGED,FAIL/LEV,69.2,2026-09-25,1.1,0.27,7,0.3,87.2,9.0,0.63,3.7,Co
 BLDR,WATCH,DECLINING,WATCH/DECL,52.6,2026-09-23,1.1,0.411,4,2.3,13.4,2.9,1.17,5.2,Industrials,revenue -7% YoY,
 BROS,FAIL,GROWTH,FAIL/GS,43.3,2026-09-19,1.1,0.141,6,2.39,1.0,5.8,1.6,9.8,Consumer Cyclical,"rev +28%/yr, profitable",
 BSX,PASS,CORE,PASS,77.4,2026-10-04,1.1,0.317,7,2.94,5.5,10.7,0.47,19.8,Healthcare,mature / stable,
-BX,WATCH,GROWTH,WATCH/GS,50.4,2026-09-08,1.1,,5,,4.5,,1.54,,Financial Services,"rev +20%/yr, profitable",
+BX,WATCH,GROWTH,WATCH/GS,52.8,2026-10-09,1.1,,5,,5.3,,1.54,,Financial Services,"rev +20%/yr, profitable",
 CAT,WATCH,CORE,WATCH,63.4,2026-09-23,1.1,0.218,6,5.11,2.0,24.0,2.03,16.5,Industrials,mature / stable,
 CAVA,WATCH,CORE,WATCH,53.4,2026-09-23,1.1,0.214,4,7.45,0.4,5.3,0.6,6.7,Consumer Cyclical,mature / stable,
 CBOE,PASS,CORE,PASS,76.5,2026-08-25,1.1,0.207,8,6.5,5.2,31.0,0.31,32.1,Financial Services,mature / stable,
@@ -65,7 +65,7 @@ CTSH,PASS,CORE,PASS,87.8,2026-09-25,1.1,0.344,7,5.57,10.1,95.0,0.08,15.8,Technol
 CTVA,FAIL,LEVERAGED,FAIL/LEV,65.7,2026-10-01,1.1,0.192,7,0.97,33.6,10.4,0.11,15.1,Basic Materials,distress/leverage flag,Altman-Z 0.97 in distress zone (<1.81)
 CVS,WATCH,NEW-IPO,WATCH/IPO,53.7,2026-10-02,1.1,0.218,6,2.3,7.1,1.7,1.06,2.6,Healthcare,<3yr public history,
 CZR,FAIL,LEVERAGED,FAIL/LEV,42.8,2026-10-06,1.1,0.182,6,0.53,8.2,0.8,7.11,18.1,Consumer Cyclical,distress/leverage flag,Altman-Z 0.53 in distress zone (<1.81)
-DAL,FAIL,LEVERAGED,FAIL/LEV,50.7,2026-09-08,1.1,0.188,6,1.56,7.4,10.1,0.97,9.2,Industrials,distress/leverage flag,Altman-Z 1.56 in distress zone (<1.81)
+DAL,FAIL,LEVERAGED,FAIL/LEV,50.5,2026-10-09,1.1,0.188,6,1.58,7.1,10.1,0.97,9.2,Industrials,distress/leverage flag,Altman-Z 1.58 in distress zone (<1.81)
 DASH,PASS,GROWTH,PASS/GS,66.4,2026-09-27,1.1,0.355,5,5.89,2.2,3.4,0.33,5.3,Consumer Cyclical,"rev +28%/yr, profitable",
 DDOG,PASS,GROWTH,PASS/GS,77.1,2026-09-23,1.1,0.412,6,19.91,1.0,12.5,0.34,-1.3,Technology,"rev +27%/yr, profitable",
 DELL,PASS,CORE,PASS,65.7,2026-09-23,1.1,0.224,7,3.41,2.4,5.7,-12.75,7.4,Technology,mature / stable,
@@ -134,7 +134,7 @@ LUNR,FAIL,DECLINING,FAIL/DECL,20.7,2026-09-23,1.1,0.008,4,1.94,-2.3,-23.6,-0.5,-
 LYB,FAIL,LEVERAGED,FAIL/LEV,16.1,2026-09-23,1.1,0.076,3,1.8,2.0,-0.5,1.45,2.8,Basic Materials,distress/leverage flag,Altman-Z 1.80 in distress zone (<1.81)
 LYFT,FAIL,LEVERAGED,FAIL/LEV,45.4,2026-09-27,1.1,0.29,4,-0.09,19.8,-1.6,0.39,-3.0,Technology,distress/leverage flag,Altman-Z -0.09 in distress zone (<1.81)
 MARA,FAIL,GROWTH,FAIL/GS,12.6,2026-09-23,1.1,0.1,2,0.11,-23.5,-27.3,1.05,-90.6,Financial Services,"rev +38%/yr, not yet FCF-safe","Piotroski F-score 2/9 (<=2, fundamentally weak) | Operating margin negative (-90.6%) and FCF not positive | Interest coverage -27.3x < 1.0x and FCF not positive | Burning cash and unprofitable (FCF<0 and NI<0)"
-MCHP,WATCH,CORE,WATCH,53.5,2026-09-08,1.1,0.189,6,4.03,2.2,2.3,0.86,11.2,Technology,mature / stable,
+MCHP,WATCH,CORE,WATCH,53.5,2026-10-09,1.1,0.189,6,4.12,2.1,2.3,0.86,11.2,Technology,mature / stable,
 MDB,PASS,GROWTH,PASS/GS,75.7,2026-10-03,1.1,0.47,6,22.1,1.7,-16.8,0.01,-5.6,Technology,"rev +24%/yr, not yet FCF-safe",
 MELI,PASS,GROWTH,PASS/GS,65.2,2026-09-28,1.1,0.301,5,2.69,12.4,18.8,1.69,11.1,Consumer Cyclical,"rev +39%/yr, profitable",
 MGM,FAIL,LEVERAGED,FAIL/LEV,48.6,2026-09-23,1.1,0.188,6,0.73,15.1,1.7,12.91,7.6,Consumer Cyclical,distress/leverage flag,Altman-Z 0.73 in distress zone (<1.81)
