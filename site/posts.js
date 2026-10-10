@@ -11,6 +11,47 @@
 //     (it just defines POSTS; nothing else runs).
 const POSTS = [
   {
+    slug:'when-a-setup-fails-bx', cat:{label:'Case Study', cls:'case'}, icon:'📉', sample:false,
+    author:'GJ Singh', date:'Oct 10, 2026', read:'6 min read',
+    title:'The setup that never worked at all (BX)',
+    excerpt:'Blackstone was flagged on September 9 and never once traded above its signal. Its best moment was +0.08%. It is the weakest setup in our whole tracked record, and it is worth understanding exactly why.',
+    body:`<p>Most of the case studies in this journal are about a move that happened: a clean one, a painful one, a slow one, one that earnings rescued. This one is about a setup that did nothing good from the first day to the last.</p>
+    <p>As of today, 101 setups in the paper book have passed their four week mark. Across all of them, about <b>86%</b> touched <b class="up">+5%</b> at some point and about <b>69%</b> touched <b class="up">+10%</b>. Exactly two never managed even <b>+1%</b>. Blackstone (<b>BX</b>) is the worse of those two, and by a distance.</p>
+    <div class="exfig">
+      <div class="exh">BX · Phoenix setup · signal Sep 9, 2026</div>
+      <table>
+        <tr><td>Quality gate</td><td>◆ Watch</td></tr>
+        <tr><td>Market dial when it was added</td><td>Healthy</td></tr>
+        <tr><td>Market Pulse, at add / now</td><td>Strong / Weak</td></tr>
+        <tr><td>Best it ever looked (peak)</td><td>+0.08%</td></tr>
+        <tr><td>Worst dip since the signal</td><td>&minus;18.5%</td></tr>
+        <tr><td>Four weeks after the signal</td><td>&minus;16.4%</td></tr>
+      </table>
+    </div>
+    <p>That peak figure is not a typo. In a month, Blackstone never traded more than a tenth of a percent above where it was flagged. There was no good week, no stretch where holding it felt right, no moment to take anything off. <span style="color:var(--primary);text-decoration:underline;text-decoration-color:var(--primary);text-underline-offset:3px;font-weight:600">It is the rare setup with no favourable part at all.</span></p>
+    <h2>What the setup saw</h2>
+    <p>Phoenix is our markdown signal. It looks for sound businesses the market has knocked down and that are beginning to steady, which is the opposite of chasing something already running. Blackstone had certainly been knocked down. The broad market dial read Healthy the day it was added, so this was not a case of leaning into a weak tape, and the name was carrying itself well against the market at the time.</p>
+    <p>Two things the board said more quietly are worth noting now. It cleared our fundamental quality gate only at <b>◆ Watch</b>, not at 💎. And its score sat at the floor of what qualifies rather than anywhere near the top. Neither of those is a prediction, and plenty of Watch names have worked. But this was never one of the board's confident entries, and the card said so.</p>
+    <h2>What the setup could not see</h2>
+    <p>Six days before our signal, on September 3, Blackstone's retail private credit fund capped withdrawals again after roughly a tenth of its holders asked to get out. That was not an isolated headline. Through 2026, redemption pressure across the big alternative asset managers has been a running story, and it was still live in October, with executives across the sector publicly pushing back on credit fears the same week this post was written.</p>
+    <p>So the markdown was real, and so was the reason for it. And that is the whole lesson. A price based signal can see that a name has been marked down and has stopped falling for a moment. <b>It cannot tell you whether the market overreacted or whether it is repricing something that has not finished happening.</b> Those two situations look identical on a chart. Only one of them recovers on the timeline a swing trade cares about.</p>
+    <h2>So was it preventable?</h2>
+    <p>Two honest halves, and they point in different directions.</p>
+    <p><b>Partly knowable, yes.</b> Nothing about the credit story was hidden. It had been in the financial press for months under Blackstone's own name, and with hindsight the signal landed in the middle of that story rather than after it.</p>
+    <p><b>Preventable by the model, no.</b> And here is the part that matters more. A hit rate of 86% means 14 setups in every 100 do not reach +5%. Those fourteen are not a malfunction. They are the published number, seen from the inside. If we only ever wrote up the ones that worked, the 86% would be a lie by omission, and the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a> exists so that every retired setup, winners and failures alike, sits in one table where anyone can count them.</p>
+    <blockquote>A hit rate is never a promise about one name. It is a statement about a hundred of them.</blockquote>
+    <p>We have written up the other shapes this takes: Capri (<a class="tklink" data-post="earnings-risk-cpri">CPRI</a>), where an earnings report broke a working setup, and Sandisk (<a class="tklink" data-post="hold-the-dip-sndk">SNDK</a>), where a frightening drawdown turned out to be the toll rather than the verdict. BX is the third shape. Sometimes there is no twist. Sometimes it simply does not work.</p>
+    <h2>One name was never the unit</h2>
+    <p>That arithmetic is also the reason this approach is built around a run of setups rather than a single pick. No one name carries the thesis, because no one name can. Whatever edge the model has lives in the aggregate, and so does the evidence for it. BX is one line out of a hundred and one, which is precisely the weight it was ever meant to carry.</p>
+    <p>It also stays in the record at its worst. We publish no stop loss and no price target, set out in <a data-post="exits-play-a-role" style="color:var(--primary); font-weight:600">the post on exits</a>, so there is no mechanism by which a setup like this quietly disappears from the book after a bad fortnight. It counts as a miss inside that 86%. It will appear in the Track Record when its window closes, in the same table as the names that worked. Published numbers are only worth something if the failures stay in them.</p>
+    <h2>Why BX still shows as Active</h2>
+    <p>BX still appears on the <b>Active</b> board today, sitting well below where it was flagged, and that is deliberate rather than an oversight. Active means price has not yet run more than 5% above the signal, for up to twelve weeks. It describes where price sits relative to the setup, not whether the setup is working, which is why the board states plainly that names which are down are still Active on purpose. They are, after all, nearer the line than the ones that have already run. Read the label as a location, never as a status report. BX is simply the case that makes the distinction impossible to miss.</p>
+    <h2>The record here is not closed</h2>
+    <p>Phoenix setups get up to twelve weeks before they retire to the Track Record, and BX is only at week four. It may recover some of this, or it may not, and either way it will be published with everything else when its window ends. We are not writing it off today.</p>
+    <p>But one fact about it is already settled and will not change: for an entire month, it never once traded above where it was flagged. Its best moment was +0.08%, which is a precise way of saying it never had one.</p>
+    <p>Figures above come from our paper tracked, hypothetical record as of October 10, 2026, and the site's live numbers will move on from them. Peak and dip are levels a price reached, not returns anyone earned. Educational research, not advice, and nothing here is a view on what Blackstone does next.</p>`
+  },
+  {
     slug:'why-percentages-not-prices', cat:{label:'Start Here', cls:'start'}, icon:'📐', sample:false,
     author:'GJ Singh', date:'Sep 17, 2026', read:'4 min read',
     title:'Why we show moves, not prices',

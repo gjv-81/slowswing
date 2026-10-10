@@ -217,6 +217,29 @@ def build_legend_sheet(wb):
     return ws
 
 
+def autosize(ws, min_w=6, max_w=60, wrap_cols=()):
+    """Set every column wide enough for its longest value (header included), so the
+    sheet is readable without dragging. Dates count as 10 chars and get a date format."""
+    widths = {}
+    for row in ws.iter_rows():
+        for c in row:
+            v = c.value
+            if v is None:
+                continue
+            if isinstance(v, (dt.datetime, dt.date)):
+                c.number_format = "yyyy-mm-dd"; n = 10
+            elif isinstance(v, float):
+                n = len(f"{v:.2f}")
+            else:
+                n = len(str(v))
+            L = c.column_letter
+            if L in wrap_cols:
+                continue
+            widths[L] = max(widths.get(L, 0), n)
+    for L, n in widths.items():
+        ws.column_dimensions[L].width = max(min_w, min(max_w, n + 2))
+
+
 def copy_plain_sheets(wb, path, names):
     """Carry the tracker's extra sheets (Results, Columns) into the workbook as-is."""
     src = openpyxl.load_workbook(path, data_only=True, read_only=True)
@@ -226,11 +249,12 @@ def copy_plain_sheets(wb, path, names):
         ws = wb.create_sheet(name)
         for row in src[name].iter_rows(values_only=True):
             ws.append(list(row))
-        for col, w in (("A", 34 if name == "Results" else 22), ("B", 14 if name == "Results" else 120)):
-            ws.column_dimensions[col].width = w
         if name == "Columns":
+            autosize(ws, wrap_cols=("B",)); ws.column_dimensions["B"].width = 120
             for c in ws["B"]:
-                c.alignment = openpyxl.styles.Alignment(wrap_text=True, vertical="top")
+                c.alignment = Alignment(wrap_text=True, vertical="top")
+        else:
+            autosize(ws)
 
 
 def build_tracker_sheet(wb, rows, header, tkr_col, last, cache):
@@ -281,9 +305,8 @@ def build_tracker_sheet(wb, rows, header, tkr_col, last, cache):
     if pos_hdr:
         _style_header(ws, pos_hdr, ncols)
     # freeze ONLY the positions header row (row 1) so scrolling is easy
-    ws.column_dimensions[get_column_letter(1)].width = 13           # entry_date
-    ws.column_dimensions[get_column_letter(2)].width = 10           # ticker
-    ws.column_dimensions[get_column_letter(ins_at + 1)].width = 12  # qualgate
+    autosize(ws)
+    ws.freeze_panes = "C2"
     return ws
 
 
@@ -514,6 +537,9 @@ def main(argv=None):
     build_scorecard_sheet(wb, rows, header, tkr_col, last, cache)
     build_qualgate_sheet(wb, cache)
     build_trades_sheet(wb, args.trades, cache)
+    for name in ("Scorecard", "QualGate", "Trades"):
+        if name in wb.sheetnames:
+            autosize(wb[name], max_w=48)
 
     # Atomic write: build to a temp file, then replace the target in one step.
     # This way, if the workbook is open in Excel, the on-disk file is either the

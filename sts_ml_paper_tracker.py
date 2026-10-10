@@ -582,6 +582,20 @@ def main():
         col_gloss.to_excel(xw, sheet_name="Columns", index=False, header=False)
         xw.sheets["Columns"].column_dimensions["A"].width = 22
         xw.sheets["Columns"].column_dimensions["B"].width = 120
+        # auto-fit every column so nothing shows as ######## or gets clipped
+        import datetime as _dt
+        for name in ("Tracker", "Results"):
+            ws = xw.sheets[name]; widths = {}
+            for row in ws.iter_rows():
+                for c in row:
+                    v = c.value
+                    if v is None: continue
+                    if isinstance(v, (_dt.datetime, _dt.date)): c.number_format = "yyyy-mm-dd"; n = 10
+                    elif isinstance(v, float): n = len(f"{v:.2f}")
+                    else: n = len(str(v))
+                    widths[c.column_letter] = max(widths.get(c.column_letter, 0), n)
+            for L, n in widths.items():
+                ws.column_dimensions[L].width = max(6, min(60, n + 2))
 
     print("\n" + "=" * 68)
     print("STS ML PAPER TRACKER")
