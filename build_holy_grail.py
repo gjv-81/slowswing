@@ -63,7 +63,7 @@ def read_tracker(path):
     """Return (all_rows_as_values, header_row_idx, ticker_col_idx0, last_data_row_idx).
     Row/col indices are 1-based for rows, 0-based for the ticker column."""
     wb = openpyxl.load_workbook(path, data_only=True, read_only=True)
-    ws = wb[wb.sheetnames[0]]
+    ws = wb["Tracker"] if "Tracker" in wb.sheetnames else wb[wb.sheetnames[0]]
     rows = [list(r) for r in ws.iter_rows(values_only=True)]
     header = tkr_col = None
     for i, r in enumerate(rows, start=1):
@@ -215,6 +215,22 @@ def build_legend_sheet(wb):
     ws.row_dimensions[r].height = 46
     # no freeze pane — this sheet is short and static
     return ws
+
+
+def copy_plain_sheets(wb, path, names):
+    """Carry the tracker's extra sheets (Results, Columns) into the workbook as-is."""
+    src = openpyxl.load_workbook(path, data_only=True, read_only=True)
+    for name in names:
+        if name not in src.sheetnames:
+            continue
+        ws = wb.create_sheet(name)
+        for row in src[name].iter_rows(values_only=True):
+            ws.append(list(row))
+        for col, w in (("A", 34 if name == "Results" else 22), ("B", 14 if name == "Results" else 120)):
+            ws.column_dimensions[col].width = w
+        if name == "Columns":
+            for c in ws["B"]:
+                c.alignment = openpyxl.styles.Alignment(wrap_text=True, vertical="top")
 
 
 def build_tracker_sheet(wb, rows, header, tkr_col, last, cache):
@@ -494,6 +510,7 @@ def main(argv=None):
     wb.remove(wb.active)
     build_legend_sheet(wb)
     build_tracker_sheet(wb, rows, header, tkr_col, last, cache)
+    copy_plain_sheets(wb, args.tracker, ("Results", "Columns"))
     build_scorecard_sheet(wb, rows, header, tkr_col, last, cache)
     build_qualgate_sheet(wb, cache)
     build_trades_sheet(wb, args.trades, cache)

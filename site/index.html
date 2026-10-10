@@ -87,6 +87,11 @@
   .gs-row td{position:relative; padding-bottom:22px !important}
   .gs-n{position:absolute; left:8px; bottom:4px; width:16px; height:16px; border-radius:50%; background:var(--ink); color:#fff; font-size:9px; font-weight:800; display:grid; place-items:center}
   .gs-keys h3 .anno-num{display:inline-grid; vertical-align:middle; margin-right:6px}
+  .runbanner{display:block !important; margin:6px 0 14px; padding:12px 16px; border:1px solid var(--line); border-left:3px solid var(--primary); border-radius:12px; background:var(--primary-tint); font-size:14px; line-height:1.5}
+  .runbanner .liveflag{margin-right:8px; vertical-align:middle}
+  .runbanner #runline{margin-top:6px}
+  .runbanner .btn, .runbanner #runline + div{display:none}
+  .earnflag{display:inline-block; margin-left:6px; font-size:10px; font-weight:800; color:#92400e; background:#fef3c7; border:1px solid #fcd34d; border-radius:5px; padding:1px 5px; white-space:nowrap; vertical-align:middle}
   .agecell{font-size:11px; font-weight:700; padding:2px 7px; border-radius:999px; white-space:nowrap}
   .agecell.fresh{background:#ecfdf3; color:#15803d}
   .agecell.seasoned{background:#fff7e6; color:#b45309}
@@ -849,7 +854,6 @@
         <h2 class="section">Today's live board</h2>
         <p class="muted" style="margin:6px 0 0; max-width:66ch">Setups still inside their window — <b>Active</b> (a valid entry today) and <b>Out of Range</b> (already ran +5%, wait for a pullback) — with the fundamentally strongest marked <b style="color:var(--pass)">💎 High-Quality</b>. After 4 weeks a setup retires to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>. Never an entry price, a target, or "buy this."</p>
       </div>
-      <div class="updated"><span class="liveflag">● LIVE</span> Updated <span id="upd">Sep 4, 2026</span> · next refresh after tonight's close<div style="margin-top:12px"><a class="btn btn-primary" data-tour style="font-size:13px; padding:9px 16px; cursor:pointer">▶ Take the 30-sec tour</a></div></div>
     </div>
 
     <div class="regimebar" id="regime">
@@ -860,12 +864,6 @@
       </div>
     </div>
 
-    <div class="tabs" id="agetabs" style="margin-bottom:10px">
-      <div class="tab active" data-age="active">🟢 Active board</div>
-      <div class="tab" data-age="extended">📈 Out of Range</div>
-      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = has not yet traded +5% above the price it was added at (names that are down included) — the setup is still ripe, for up to 12 weeks. <b style="color:#b45309">Pending</b> = qualified after tonight's close; it enters at the next open, so there is no price or scorecard yet. Switch to <b style="color:var(--muted)">Out of Range</b> for names that have run +5%. A name that has run retires at the 4-week mark — or after 12 weeks if it never runs — to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span>
-    </div>
-
     <div class="setupintro">
       <div class="si"><h3><span class="swatch" style="background:var(--phoenix)"></span> Phoenix</h3><p><b style="color:var(--ink)">The bigger, slower move.</b> Quality names the model reads as turning back up after being marked down. They tend to run further and take longer to get there — and they test you harder on the way, because the dip before the move is usually deeper. The <b style="color:var(--pass)">💎</b> marks the ones whose fundamentals are sound enough to hold through that.</p>
         <div style="margin-top:10px; padding-top:9px; border-top:1px solid var(--line); font-size:12.5px; color:var(--muted); line-height:1.6" id="statPhoenix">Computed from the track record once it loads.</div></div>
@@ -874,6 +872,11 @@
     </div>
     <p style="max-width:82ch; margin:14px 0 0; font-size:13px; color:var(--body); line-height:1.7"><b style="color:var(--ink)">The difference isn't how often they work.</b> <span id="statBoth">Both reached +5% at peak most of the time</span> — the first move looks much the same. What separates them is <b>how far they go after that</b>: Cruise tends to pop and stall, Phoenix keeps running. That's why a Phoenix asks for more patience and a stronger stomach, and a Cruise asks for less of both. <span class="faint">Hypothetical peak (MFE) across all setups past their 4-week mark — a level the price reached, not a return anyone earned, and not advice.</span></p>
 
+    <div class="tabs" id="agetabs" style="margin-bottom:10px">
+      <div class="tab active" data-age="active">🟢 Active board</div>
+      <div class="tab" data-age="extended">📈 Out of Range</div>
+      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = has not yet traded +5% above the price it was added at (names that are down included) — the setup is still ripe, for up to 12 weeks. <b style="color:#b45309">Pending</b> = qualified after tonight's close; it enters at the next open, so there is no price or scorecard yet. Switch to <b style="color:var(--muted)">Out of Range</b> for names that have run +5%. A name that has run retires at the 4-week mark — or after 12 weeks if it never runs — to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span>
+    </div>
     <div class="tabs" id="freshtabs" style="margin-bottom:14px">
       <div class="tab active" data-f="all" style="font-size:13px">All ages</div>
       <div class="tab" data-f="fresh" style="font-size:13px">🌱 Fresh · under 4 wk</div>
@@ -908,6 +911,7 @@
         <button class="vbtn" data-v="list">☰ List</button>
       </div>
     </div>
+    <div class="updated runbanner"><span class="liveflag">● LIVE</span> <span id="upd">Loading tonight's board…</span><div id="runline" style="margin-top:6px; font-size:12.5px; color:var(--muted)"></div><div style="margin-top:12px"><a class="btn btn-primary" data-tour style="font-size:13px; padding:9px 16px; cursor:pointer">▶ Take the 30-sec tour</a></div></div>
     <div class="trstats" id="trstats"></div>
     <div class="grid" id="cards"></div>
     <p class="faint" style="font-size:12.5px; margin-top:20px">The board shows every name the model flags today. The 💎 badge is your confidence signal — a business sound enough to hold through a drawdown. Names without it can still work, but demand more of your own homework and smaller size. A quiet day may show only a handful of setups — by design. <b style="color:var(--primary)">Tip: click any ticker to see the shape of its move.</b></p>
@@ -955,7 +959,7 @@
       <button type="button" id="fClearT" class="fclear">Clear</button>
     </div>
     <div style="display:flex; justify-content:space-between; align-items:center; gap:14px; margin:4px 0 14px; flex-wrap:wrap">
-      <div class="faint" style="font-size:12.5px">Showing <b id="trackCount" style="color:var(--ink)">–</b> retired setups · newest first</div>
+      <div class="faint" style="font-size:12.5px">Showing <b id="trackCount" style="color:var(--ink)">–</b> retired setups · newest first · <b style="color:var(--primary)">click any ticker</b> for the shape of its move</div>
       <input id="trackSearch" class="tksearch" type="search" autocomplete="off" placeholder="Search ticker or company…">
     </div>
     <div id="trackBody"></div>
@@ -1337,6 +1341,7 @@
       <div class="fcard"><h3>What do Fresh and Seasoned mean?</h3><p>Age since added: Fresh is under four weeks, Seasoned is four to twelve. Age never decides whether a stock is Active — price does. Our research found names still near their added price after week four remained attractive.</p></div>
       <div class="fcard"><h3>What does Pending mean?</h3><p>The stock qualified in tonight's scan. Our paper book enters it at tomorrow's open — nobody could have bought at tonight's close — so there is no price or scorecard until then.</p></div>
       <div class="fcard"><h3>What does NEW mean?</h3><p>Added since Monday of the current week.</p></div>
+      <div class="fcard"><h3>What does ⚠ Earnings mean?</h3><p>The company reports earnings on that date, within the next three weeks. Stocks move more than usual around a report, in either direction — worth knowing before you decide anything.</p></div>
     </div>
   </div></section>
 
@@ -1862,6 +1867,9 @@ function newBadge(d){ if(d.phase==="pending") return ' <span class="newflag pend
 function defDir(k){ return ["score","date","pe","pc","chg","mfe","mae","wk2","wk4","wk12","md4"].includes(k) ? -1 : 1; }
 // Age of a setup in weeks since the signal (sessions / 5), measured to the feed date.
 function ageSessions(d){ if(!d.date||d.phase==="pending") return 0; let n=0; const a=new Date(dval(d.date)), b=new Date(REF); while(a<b){ a.setDate(a.getDate()+1); const g=a.getDay(); if(g!==0&&g!==6) n++; } return n; }
+// Next scheduled earnings, shown only when it falls inside the next 3 weeks (a fact a
+// swing trader wants in front of them; not a signal either way).
+function earnBadge(d){ if(!d.ne) return ''; const m=String(d.ne).match(/^(\d{4})-(\d{2})-(\d{2})/); if(!m) return ''; const dt=new Date(+m[1],+m[2]-1,+m[3]); const days=Math.round((dt-REF)/86400000); if(days<0||days>21) return ''; const lab=dt.toLocaleDateString('en-US',{month:'short',day:'numeric'}); return ` <span class="earnflag" title="Scheduled earnings report ${lab} — ${days===0?'today':days+' days away'}. Expect a bigger move than usual around it.">⚠ Earnings ${lab}</span>`; }
 function ageWeeks(d){ return Math.round(ageSessions(d)/5*10)/10; }
 function ageCell(d){ if(d.phase==="pending") return '<span class="faint">—</span>'; const w=ageWeeks(d); const seasoned=w>=4; return `<span class="agecell ${seasoned?"seasoned":"fresh"}" title="${ageSessions(d)} trading days since it was added · ${seasoned?"Seasoned (4–12 wk)":"Fresh (under 4 wk)"}">${w<1?"<1":w.toFixed(w%1?1:0)} wk</span>`; }
 function colval(d,k){
@@ -1909,7 +1917,7 @@ function cardsHTML(items){
     return `
     <div class="card ${d.q==="pass"?"premium":""}" style="animation-delay:${delay}ms">
       ${d.q==="pass" ? '<span class="gem">💎 High-Quality</span>' : ''}
-      <div class="top"><div><div class="tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}${newBadge(d)}</div><div class="co">${d.n}</div>${(d.pc!=null||d.chg!=null)?`<div class="cardpx">${d.pc!=null?money(d.pc)+' ':''}${d.chg!=null?chgCell(d.chg):''}</div>`:""}</div>
+      <div class="top"><div><div class="tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}${newBadge(d)}</div><div class="co">${d.n}${earnBadge(d)}</div>${(d.pc!=null||d.chg!=null)?`<div class="cardpx">${d.pc!=null?money(d.pc)+' ':''}${d.chg!=null?chgCell(d.chg):''}</div>`:""}</div>
         <span class="setuptag ${d.setup}">${setupLabel}</span></div>
       <div class="row">
         <div class="metric"><div class="k">Swing Score</div><div class="v">${d.score.toFixed(1)} <span class="conviction ${cclass}">${clabel}</span></div></div>
@@ -1935,7 +1943,7 @@ function listHTML(items){
     const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise";
     return `
       <tr class="${d.q==="pass"?"premium":""}">
-        <td><div class="lt-tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}${newBadge(d)}</div><div class="lt-co">${d.n}</div></td>
+        <td><div class="lt-tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}${newBadge(d)}</div><div class="lt-co">${d.n}${earnBadge(d)}</div></td>
         <td class="lt-sector">${shortSector(d.sector)}</td>
         <td><span class="lt-set ${d.setup}">${setupLabel}</span></td>
         <td><span class="lt-score">${d.score.toFixed(1)}</span></td>
@@ -2092,7 +2100,25 @@ renderHome();
 // scroll through on the Track Record — and stamped with the feed's session
 // date. Nothing is typed in by hand any more; the last hand-typed version had
 // drifted a few points from the data underneath it.
-let FEED_DATE=null;
+let FEED_DATE=null, FEED_GEN=null, FEED_RUN=null;
+// "Last run" line on the board: when the feed was built and what changed. Reads the
+// feed, never a hard-coded date (the old placeholder said "Sep 4" for a month).
+function renderRunStamp(){
+  const u=document.getElementById('upd'), r=document.getElementById('runline'); if(!u) return;
+  if(DATA_STATE!=='ok' || !FEED_DATE){ u.textContent = DATA_STATE==='error' ? "Tonight's board could not be loaded — try again in a minute." : "Loading tonight's board…"; if(r) r.textContent=''; return; }
+  let when=fmtFeedDate(FEED_DATE);
+  if(FEED_GEN){ const d=new Date(FEED_GEN); if(!isNaN(d)){ const t=d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'}); when+=` · ${t} ET`; } }
+  // next session (weekday) after the feed date
+  const nx=new Date(dval(fmtFeedDate(FEED_DATE))); do{ nx.setDate(nx.getDate()+1); }while(nx.getDay()===0||nx.getDay()===6);
+  u.innerHTML=`Last run <b style="color:var(--ink)">${when}</b> · next run after the close on ${nx.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}`;
+  if(!r) return;
+  const R=FEED_RUN||{}; const L=a=>(a&&a.length)?a.join(', '):null;
+  const parts=[];
+  if(L(R.added)) parts.push(`<b style="color:var(--pass)">Added:</b> ${L(R.added)}`);
+  if(L(R.pending)) parts.push(`<b style="color:#b45309">Pending (enters at next open):</b> ${L(R.pending)}`);
+  if(L(R.retired)) parts.push(`<b style="color:var(--muted)">Retired to the Track Record:</b> ${L(R.retired)}`);
+  r.innerHTML = parts.length ? parts.join(' &nbsp;·&nbsp; ') : `<b style="color:var(--ink)">No new setups tonight.</b> The scan ran and found none — a quiet night is by design.`;
+}
 function fmtFeedDate(d){ const m=String(d).match(/^(\d{4})-(\d{2})-(\d{2})/); if(!m) return String(d);
   return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][+m[2]-1]+" "+(+m[3])+", "+m[1]; }
 // HOME-PAGE headline: read from site/stats_history.json — a snapshot written by
@@ -2232,7 +2258,7 @@ function renderTrack(){
     const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise";
     const qsym=d.q==="pass"?"💎":"◆";
     return `<tr>
-      <td><div class="lt-tkr">${d.t}</div><div class="lt-co">${d.n}</div></td>
+      <td><div class="lt-tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}</div><div class="lt-co">${d.n}</div></td>
       <td class="lt-sector">${shortSector(d.sector)}</td>
       <td><span class="lt-set ${d.setup}">${setupLabel}</span></td>
       <td><span class="lt-q ${d.q}">${qsym}</span></td>
@@ -2431,6 +2457,7 @@ function showPage(name){
   const pages=document.querySelectorAll('.page');
   if(![...pages].some(p=>p.dataset.page===name)) name="home";
   pages.forEach(p=>p.classList.toggle('active', p.dataset.page===name));
+  if(name==='board' && typeof curAge!=='undefined' && curAge!=='active'){ const t=document.querySelector('#agetabs .tab[data-age="active"]'); if(t) t.click(); }
   {const _nav=document.querySelector('nav'); if(_nav) _nav.classList.toggle('light', name==='psychology'||name==='track'||name==='start'||name==='faq');}
   document.querySelectorAll('.navlinks a').forEach(a=>a.classList.toggle('active', a.dataset.nav===name));
   window.scrollTo({top:0, behavior:'auto'});
@@ -2784,7 +2811,7 @@ const tourSteps=[
   {sel:'#tabs', t:'Filter by setup', d:'Show all names, or just Phoenix or Cruise — the two setup types our model sorts each signal into.'},
   {sel:'#qtabs', t:'Quality filter', d:'Collapse to 💎 High-Quality names only — the ones sound enough to hold through a dip.'},
   {sel:'#vtabs', t:'Cards or List', d:'Switch to a sortable list with the full Setup Scorecard: peak, max dip, and prices.'},
-  {sel:'#cards .card', t:'Read a signal', d:'Each card shows the Swing score, quality badge, market pulse, and scorecard. Tip: click any ticker to see the shape of its move.'}
+  {sel:'#cards .card', t:'Read a card', d:'Each card shows the Swing score, quality badge, market pulse, and scorecard. Tip: click any ticker to see the shape of its move.'}
 ];
 let tourI=0;
 const tourOv=document.getElementById('tourOv'), tourHole=document.getElementById('tourHole'), tourTip=document.getElementById('tourTip');
@@ -3057,6 +3084,7 @@ async function loadBoard(){
     DATA = j.names;
     FEED_AT = Date.now();
     FEED_DATE = j.session_date || null;           // the session the feed was built for
+    FEED_GEN = j.generated_at || null; FEED_RUN = j.run || null;
     setRef(FEED_DATE);
     REGIME = (j.regime && j.regime.spy) ? j.regime : null;
     DATA_STATE='ok';
@@ -3064,6 +3092,7 @@ async function loadBoard(){
     DATA=[]; REGIME=null; DATA_STATE='error';
   }
   if(typeof renderRegime==='function') renderRegime(REGIME);
+  renderRunStamp();
   if(typeof render==='function') render();
   if(typeof renderHome==='function') renderHome();
   if(typeof renderTrack==='function') renderTrack();

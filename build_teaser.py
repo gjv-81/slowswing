@@ -69,6 +69,7 @@ def main():
     out = {
         "generated_at": board.get("generated_at"),
         "session_date": board.get("session_date"),
+        "run": board.get("run"),
         "regime": board.get("regime"),
         "market": board.get("market"),
         "names": [strip_prices(r) for r in (retired + teaser)],

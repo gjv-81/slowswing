@@ -119,7 +119,7 @@ _PRICE_FIELDS = ["pe", "pc"]
 PUBLIC_FIELDS = [
     "t", "n", "setup", "phase", "score", "q", "profile", "sector",
     "rs", "rsn", "date", "dial", "chg",
-    "wk2", "wk4", "wk12", "mfe", "mae", "md4", "dtp", "d5", "d10",
+    "wk2", "wk4", "wk12", "mfe", "mae", "md4", "dtp", "d5", "d10", "ne",
 ] + (_PRICE_FIELDS if EMIT_PRICES else [])
 
 _TICKER_RE = re.compile(r"^[A-Z][A-Z.\-]{0,5}$")
@@ -316,6 +316,7 @@ def rows_from_workbook(path: Path) -> list[dict]:
             "mfe": _num(r.get("mfe_pct")),
             "mae": _num(r.get("mae_pct")),
             "dtp": _num(r.get("dtp")),                 # present once the tracker logs it; dropped if absent
+            "ne": (str(r.get("next_earn"))[:10] if r.get("next_earn") not in (None, "", "nan", "NaT") and str(r.get("next_earn")) != "nan" else None),  # next scheduled earnings date
             "_last": _num(r.get("last")),              # workbook's own last price (offline PC_SOURCE=workbook)
             # --- private fields carried along so the stripper can prove it drops them ---
             "dist200_pct": _num(r.get("dist200_pct")),
@@ -510,9 +511,30 @@ def build() -> int:
                   "pctile": _sp.get("pctile"),
                   "as_of": regime.get("as_of")}
 
+    # Run summary for the board's "last run" line: what changed versus the previous
+    # board.json (same file, before we overwrite it). Pending/added by session date;
+    # retired = was live last time, retired now.
+    run = {"added": [], "pending": [], "retired": []}
+    try:
+        prev = json.loads(OUTPUT_PATH.read_text()) if OUTPUT_PATH.is_file() else {}
+        # key by (ticker, added date): a ticker can have an old retired row AND a live row
+        prev_live = {(n["t"], n.get("date")) for n in prev.get("names", []) if n.get("phase") in ("active", "extended", "pending")}
+    except Exception:
+        prev_live = set()
+    sess_label = fmt_date(session)
+    for n in out_names:
+        if n.get("phase") == "pending":
+            run["pending"].append(n["t"])
+        elif n.get("phase") in ("active", "extended") and n.get("date") == sess_label:
+            run["added"].append(n["t"])
+        elif n.get("phase") == "retired" and (n["t"], n.get("date")) in prev_live:
+            run["retired"].append(n["t"])
+    run["retired"] = sorted(set(run["retired"]))
+
     board = {
         "generated_at": (dt.datetime.now(_EASTERN) if _EASTERN else dt.datetime.utcnow())
                         .replace(microsecond=0).isoformat(),
+        "run": run,
         "session_date": session,
         "regime": regime,
         "market": market,

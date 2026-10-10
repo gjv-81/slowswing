@@ -28,6 +28,78 @@ import numpy as np
 import pandas as pd
 
 _DIR       = os.path.dirname(os.path.abspath(__file__))   # location-independent
+EARN_DIR   = os.path.join(_DIR, "uw_archive", "earnings_hist")
+
+_earn_cache = {}
+_next_cache = {}
+def next_earnings_yf(t):
+    """Next scheduled earnings date from Yahoo (live names only, cached per run).
+    Returns a date or None; never raises."""
+    if t in _next_cache:
+        return _next_cache[t]
+    d = None
+    try:
+        import yfinance as yf
+        cal = yf.Ticker(t).calendar
+        v = cal.get("Earnings Date") if isinstance(cal, dict) else None
+        if v:
+            v = v[0] if isinstance(v, (list, tuple)) else v
+            d = pd.Timestamp(v).date()
+            if d < pd.Timestamp.today().date():
+                d = None
+    except Exception:
+        d = None
+    _next_cache[t] = d
+    return d
+
+def earnings_info(t, df, e_date):
+    """Earnings context for a position (forward-observation only, see
+    STS_EARNINGS_TAILWIND_PREREG / STS_EARNINGS_HELD_PREREG — both closed):
+      last_earn   date of the most recent earnings reaction session on/before entry
+      earn_react  that session's close-to-close move, %
+      earn_since  sessions from the reaction session to entry
+      earn_held   True if entry-day close >= reaction-session close (gap held), else False
+      next_earn   next scheduled report date (estimation row) after entry, if known
+    Source: uw_archive/earnings_hist/{t}.csv (report_date, report_time, source)."""
+    out = dict(last_earn=None, earn_react=np.nan, earn_since=np.nan, earn_held=None, next_earn=None)
+    f = os.path.join(EARN_DIR, f"{t}.csv")
+    if not os.path.exists(f):
+        return out
+    if t not in _earn_cache:
+        try:
+            e = pd.read_csv(f)
+            if "report_date" not in e.columns or "source" not in e.columns:
+                _earn_cache[t] = None
+            else:
+                e["report_date"] = pd.to_datetime(e["report_date"], errors="coerce")
+                _earn_cache[t] = e.dropna(subset=["report_date"])
+        except Exception:
+            _earn_cache[t] = None
+    e = _earn_cache[t]
+    if e is None or not len(e):
+        return out
+    idx = df.index
+    # next scheduled report strictly after entry
+    fut = e[(e["source"] != "company") & (e["report_date"] > e_date)]
+    if len(fut):
+        out["next_earn"] = fut["report_date"].min().date()
+    else:
+        out["next_earn"] = next_earnings_yf(t)         # archive is a snapshot; ask Yahoo for the live date
+    # most recent actual report with a reaction session on/before entry
+    past = e[(e["source"] == "company") & (e["report_date"] <= e_date)].sort_values("report_date")
+    if len(past):
+        r = past.iloc[-1]
+        pos = idx.searchsorted(r["report_date"])
+        if pos < len(idx) and str(r.get("report_time")) != "premarket" and idx[pos] == r["report_date"]:
+            pos += 1                                   # after-hours report: reaction is the next session
+        if 1 <= pos < len(idx) and idx[pos] <= e_date:
+            c = df["Close"]
+            out["last_earn"] = idx[pos].date()
+            out["earn_react"] = round(float(c.iloc[pos] / c.iloc[pos - 1] - 1) * 100, 2)
+            out["earn_since"] = int(idx.get_loc(e_date) - pos) if e_date in idx else np.nan
+            out["earn_held"] = bool(float(c.loc[e_date]) >= float(c.iloc[pos])) if e_date in idx else None
+    return out
+
 TRADES_CSV = os.path.join(_DIR, "sts_ml_paper_trades.csv")
 OUT_XLSX   = os.path.join(_DIR, "sts_ml_paper_tracker.xlsx")
 W2, W4     = 10, 20          # 2-week / 4-week horizons (trading days)
@@ -318,7 +390,7 @@ def main():
         spy_w12 = (float(spy_after["Close"].iloc[W12]) / spy_e - 1) * 100 if len(spy_after) > W12 else np.nan
 
         rows.append(base | dict(
-            setup=setup, dial=dial, phase=phase,
+            setup=setup, dial=dial, phase=phase, **earnings_info(t, df, e_date),
             ext_since=(ext_since.date() if ext_since is not None else None), ext_days=ext_days, retired_via=retired_via,
             wk2_ret_pct=round(w2, 2) if not math.isnan(w2) else np.nan,
             wk4_ret_pct=round(w4, 2) if not math.isnan(w4) else np.nan,
@@ -482,29 +554,34 @@ def main():
         ("status", "OPEN / CLOSED (close_date set in CSV) / PENDING (entry date not yet reached)."),
     ], columns=["term", "meaning"])
     with pd.ExcelWriter(OUT_XLSX, engine="openpyxl") as xw:
+        # Sheet 1 "Tracker": positions only, header on row 1 (the workbook builder
+        # and build_board read this sheet by header, so nothing else lives on it).
+        pos.to_excel(xw, sheet_name="Tracker", index=False)
+        xw.sheets["Tracker"].column_dimensions["A"].width = 13
+        xw.sheets["Tracker"].freeze_panes = "C2"
+        # Sheet 2 "Results": the summary blocks that used to sit above the positions.
         row = 0
-        summary.to_excel(xw, sheet_name="Tracker", index=False, startrow=row)
+        summary.to_excel(xw, sheet_name="Results", index=False, startrow=row)
         row += len(summary) + 2
         if buckets is not None:
-            buckets.to_excel(xw, sheet_name="Tracker", index=False, startrow=row)
+            buckets.to_excel(xw, sheet_name="Results", index=False, startrow=row)
             row += len(buckets) + 2
         if setups is not None:
-            setups.to_excel(xw, sheet_name="Tracker", index=False, startrow=row)
+            setups.to_excel(xw, sheet_name="Results", index=False, startrow=row)
             row += len(setups) + 2
         if retired is not None:
             pd.DataFrame([{"setup": "RETIRED SCORECARD (>=4wk held): realistic 2wk/4wk return + max dip"}]).to_excel(
-                xw, sheet_name="Tracker", index=False, header=False, startrow=row); row += 1
-            retired.to_excel(xw, sheet_name="Tracker", index=False, startrow=row)
+                xw, sheet_name="Results", index=False, header=False, startrow=row); row += 1
+            retired.to_excel(xw, sheet_name="Results", index=False, startrow=row)
             row += len(retired) + 2
         if washes is not None:
-            washes.to_excel(xw, sheet_name="Tracker", index=False, startrow=row)
+            washes.to_excel(xw, sheet_name="Results", index=False, startrow=row)
             row += len(washes) + 2
-        pos.to_excel(xw, sheet_name="Tracker", index=False, startrow=row)
-        row += len(pos) + 3
-        col_gloss.to_excel(xw, sheet_name="Tracker", index=False,
-                           header=False, startrow=row)
-        # widen column A so the entry_date is always readable
-        xw.sheets["Tracker"].column_dimensions["A"].width = 13
+        xw.sheets["Results"].column_dimensions["A"].width = 34
+        # Sheet 3 "Columns": the column glossary.
+        col_gloss.to_excel(xw, sheet_name="Columns", index=False, header=False)
+        xw.sheets["Columns"].column_dimensions["A"].width = 22
+        xw.sheets["Columns"].column_dimensions["B"].width = 120
 
     print("\n" + "=" * 68)
     print("STS ML PAPER TRACKER")
