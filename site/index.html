@@ -455,7 +455,8 @@
   /* clickable tickers */
   .tkr[data-ticker], .lt-tkr[data-ticker]{cursor:pointer}
   .tkr[data-ticker]:hover, .lt-tkr[data-ticker]:hover{text-decoration:underline; text-decoration-color:var(--primary)}
-  a,[data-nav],[data-scroll],[data-tour],[data-ticker],[data-sym],[onclick]{cursor:pointer}
+  a,[data-nav],[data-scroll],[data-tour],[data-ticker],[onclick]{cursor:pointer}
+  .rb-cell{cursor:default}
 
   /* modal */
   .modal-ov{position:fixed; inset:0; background:rgba(14,42,43,.55); backdrop-filter:blur(2px); display:none; align-items:center; justify-content:center; z-index:200; padding:20px}
@@ -860,6 +861,7 @@
       <div class="rb-title">📡 Market regime <span class="faint" style="font-weight:400">· context for sizing, not a trade trigger — how stretched the S&P 500 is vs its own recent history (<a data-nav="how" data-scroll="how-regime" style="color:var(--primary); font-weight:600">how we read it</a>)</span></div>
       <div class="rb-cells">
         <div class="rb-cell" data-sym="spy"><span class="rb-tk">SPY</span><span class="rb-px">—</span><span class="rb-pill">—</span><span class="rb-atr">—</span><span class="rb-info" tabindex="0" aria-label="What the market dial means">i<span class="rb-tip">We grade how far the S&P 500 sits above its long-term trend against its own last three years. A more stretched reading doesn't predict a decline — most stretched periods resolve quietly — but historically the market's worst multi-week drawdowns began from the most-stretched zone. Extra awareness, not advice.</span></span></div>
+        <div class="rb-cell" data-sym="qqq"><span class="rb-tk">QQQ</span><span class="rb-px">—</span><span class="rb-pill">—</span><span class="rb-atr">—</span></div>
         <div class="rb-take">A quick read on the market's health for sizing context.</div>
       </div>
     </div>
@@ -891,7 +893,7 @@
     <div class="tabs" id="qtabs" style="margin-top:-4px">
       <div class="tab active" data-q="all" style="font-size:13px">Show everything</div>
       <div class="tab" data-q="pass" style="font-size:13px">💎 High-quality only</div>
-      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px">💎 = cleared our fundamental quality gate · ◆ = watch (passed, with reservations) · names that fail the gate are never published &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span>
+      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px"><span style="color:#c0392b; font-weight:600">💎 = high-quality (cleared our fundamental gate) · <span class="lt-q watch">◆</span> = watch (passed, with reservations) · <span class="earnflag" style="margin-left:0">⚠ date</span> = earnings report due within 3 weeks</span> &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span>
     </div>
 
     <div class="filterbar" id="boardFilters">
@@ -949,7 +951,7 @@
     <div class="tabs" id="tqtabs" style="margin-top:-4px">
       <div class="tab active" data-q="all" style="font-size:13px">Show everything</div>
       <div class="tab" data-q="pass" style="font-size:13px">💎 High-quality only</div>
-      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px">💎 = cleared our fundamental quality gate · ◆ = watch (passed, with reservations) · names that fail the gate are never published &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span>
+      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px"><span style="color:#c0392b; font-weight:600">💎 = high-quality (cleared our fundamental gate) · <span class="lt-q watch">◆</span> = watch (passed, with reservations) · <span class="earnflag" style="margin-left:0">⚠ date</span> = earnings report due within 3 weeks</span> &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span>
     </div>
     <div class="filterbar" id="trackFilters">
       <label>Sector <select id="fSectorT" class="fsel"><option value="">All sectors</option></select></label>
@@ -1782,20 +1784,27 @@ function renderRegime(rg){
   if(!rg) return;
   const cls={GREEN:'green',YELLOW:'yellow',ORANGE:'orange',RED:'red',HEALTHY:'green',EXTENDED:'yellow',WEAK:'red',G:'green',Y:'yellow',O:'orange',R:'red'};
   const word={GREEN:'GREEN',YELLOW:'YELLOW',ORANGE:'ORANGE',RED:'RED',HEALTHY:'GREEN',EXTENDED:'YELLOW',WEAK:'RED',G:'GREEN',Y:'YELLOW',O:'ORANGE',R:'RED'};
+  const ord=n=>{ n=Math.round(n); const t=['th','st','nd','rd'], v=n%100; return n+(t[(v-20)%10]||t[v]||t[0]); };
   function phrase(d){
     const z=String(d.dial||d.state||'').toUpperCase();
-    if(z==='ORANGE'||z==='O') return d.pctile!=null?('more stretched than '+Math.round(d.pctile)+'% of its last 3 years'):'unusually stretched vs its last 3 years';
-    if(z==='YELLOW'||z==='Y'||z==='EXTENDED') return 'moderately stretched \u2014 an ordinary reading';
-    if(z==='GREEN'||z==='G'||z==='HEALTHY') return 'recently reset \u2014 calmer than most of its last 3 years';
-    if(z==='RED'||z==='R'||z==='WEAK') return 'below its long-term trend';
-    return '';
+    const B=x=>'<b style="color:var(--ink)">'+x+'</b>';
+    const nums=[]; if(d.pctile!=null) nums.push(B(ord(d.pctile)+' percentile')+' of its last 3 years'); if(d.stretch!=null) nums.push(B((d.stretch>=0?'+':'')+Number(d.stretch).toFixed(1)+'%')+' vs its 200-day'); if(d.atr_dist!=null) nums.push(B(Number(d.atr_dist).toFixed(1)+' ATR')+' above it');
+    const tail=nums.length?' · '+nums.join(' · '):'';
+    if(z==='ORANGE'||z==='O') return 'unusually stretched'+tail;
+    if(z==='YELLOW'||z==='Y'||z==='EXTENDED') return (nums.length?'moderately stretched':'moderately stretched — an ordinary reading')+tail;
+    if(z==='GREEN'||z==='G'||z==='HEALTHY') return (nums.length?'recently reset':'recently reset — calmer than most of its last 3 years')+tail;
+    if(z==='RED'||z==='R'||z==='WEAK') return 'below its long-term trend'+tail;
+    return tail.replace(/^ · /,'');
   }
-  const d=rg.spy||rg, cell=document.querySelector('.rb-cell[data-sym="spy"]');
-  if(cell && d){
+  for(const sym of ['spy','qqq']){
+    const d=(sym==='spy')?(rg.spy||rg):rg.qqq, cell=document.querySelector('.rb-cell[data-sym="'+sym+'"]');
+    if(!cell) continue;
+    if(!d){ cell.style.display='none'; continue; }
+    cell.style.display='';
     if(d.price!=null) cell.querySelector('.rb-px').textContent='$'+Number(d.price).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
     const z=String(d.dial||d.state||'').toUpperCase(), pill=cell.querySelector('.rb-pill');
     pill.textContent=word[z]||z; pill.className='rb-pill '+(cls[z]||'');
-    cell.querySelector('.rb-atr').textContent=phrase(d);
+    cell.querySelector('.rb-atr').innerHTML=phrase(d);
   }
   const take=document.querySelector('.rb-take');
   if(take && rg.take) take.textContent=rg.take+(rg.as_of?'  (as of '+rg.as_of+')':'');
@@ -1821,7 +1830,7 @@ let curSetup="all", curQ="all", curFresh="all", curView=(window.innerWidth>=900?
 let curSearch="", trackSearch="";
 let fSector="",fPulse="",fDial="",fScore=0, tSector="",tPulse="",tDial="",tScore=0;
 
-const ALL_COLS = [["t","Ticker"],["sector","Sector"],["setup","Setup"],["score","Swing Score"],["q","Quality"],["rs","Pulse @ Add"],["rsn","Pulse now"],["date","Added"],["age","Age"],["dial","Regime @ Add"],["pe","Price @ Add"],["chg","Current %"],["wk2","2wk ▲"],["wk4","4wk ▲"],["mfe","Peak ▲"],["md4","Max Dip ▼"]];
+const ALL_COLS = [["t","Ticker"],["sector","Sector"],["setup","Setup"],["score","Swing Score"],["q","Q"],["rs","Pulse @ Add"],["rsn","Pulse now"],["date","Added"],["age","Age"],["dial","Regime @ Add"],["pe","Price @ Add"],["chg","Current %"],["wk2","2wk ▲"],["wk4","4wk ▲"],["mfe","Peak ▲"],["md4","Max Dip ▼"]];
 // Dollar prices may be absent from the public feed (see build_teaser.py). Drop the
 // column entirely rather than showing 176 dashes, and restore it automatically the
 // moment prices are back in the data.
@@ -1869,7 +1878,7 @@ function defDir(k){ return ["score","date","pe","pc","chg","mfe","mae","wk2","wk
 function ageSessions(d){ if(!d.date||d.phase==="pending") return 0; let n=0; const a=new Date(dval(d.date)), b=new Date(REF); while(a<b){ a.setDate(a.getDate()+1); const g=a.getDay(); if(g!==0&&g!==6) n++; } return n; }
 // Next scheduled earnings, shown only when it falls inside the next 3 weeks (a fact a
 // swing trader wants in front of them; not a signal either way).
-function earnBadge(d){ if(!d.ne) return ''; const m=String(d.ne).match(/^(\d{4})-(\d{2})-(\d{2})/); if(!m) return ''; const dt=new Date(+m[1],+m[2]-1,+m[3]); const days=Math.round((dt-REF)/86400000); if(days<0||days>21) return ''; const lab=dt.toLocaleDateString('en-US',{month:'short',day:'numeric'}); return ` <span class="earnflag" title="Scheduled earnings report ${lab} — ${days===0?'today':days+' days away'}. Expect a bigger move than usual around it.">⚠ Earnings ${lab}</span>`; }
+function earnBadge(d){ if(!d.ne) return ''; const m=String(d.ne).match(/^(\d{4})-(\d{2})-(\d{2})/); if(!m) return ''; const dt=new Date(+m[1],+m[2]-1,+m[3]); const days=Math.round((dt-REF)/86400000); if(days<0||days>21) return ''; const lab=dt.toLocaleDateString('en-US',{month:'short',day:'numeric'}); return ` <span class="earnflag" title="Earnings report ${lab} — ${days===0?'today':days+' days away'}. Expect a bigger move than usual around it.">⚠ ${lab}</span>`; }
 function ageWeeks(d){ return Math.round(ageSessions(d)/5*10)/10; }
 function ageCell(d){ if(d.phase==="pending") return '<span class="faint">—</span>'; const w=ageWeeks(d); const seasoned=w>=4; return `<span class="agecell ${seasoned?"seasoned":"fresh"}" title="${ageSessions(d)} trading days since it was added · ${seasoned?"Seasoned (4–12 wk)":"Fresh (under 4 wk)"}">${w<1?"<1":w.toFixed(w%1?1:0)} wk</span>`; }
 function colval(d,k){
@@ -1947,7 +1956,7 @@ function listHTML(items){
         <td class="lt-sector">${shortSector(d.sector)}</td>
         <td><span class="lt-set ${d.setup}">${setupLabel}</span></td>
         <td><span class="lt-score">${d.score.toFixed(1)}</span></td>
-        <td><span class="lt-q ${d.q}">${qsym} ${qtxt}</span></td>
+        <td><span class="lt-q ${d.q}" title="${qtxt}">${qsym}</span></td>
         <td><span class="lt-pulse"><span class="lt-dot" style="background:${pic}"></span>${plabel}</span></td>
         <td>${rn?`<span class="lt-pulse"><span class="lt-dot" style="background:${rn[1]}"></span>${rn[2]}</span>`:`<span class="faint">—</span>`}</td>
         <td class="faint">${d.phase==="pending"?`<span class="pendnote" title="Qualified after tonight's close — enters at the next open">Next open</span>`:(d.date||"—")}</td>
