@@ -166,12 +166,12 @@
   .pair{border:1px solid var(--line); border-radius:18px; padding:18px 22px; background:#fff; box-shadow:0 18px 40px -30px rgba(14,42,43,.4); min-width:300px}
   .pair-k{font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:700; text-align:center; margin-bottom:12px}
   .pair-row{display:flex; align-items:center; gap:18px; justify-content:center}
-  .pair-us,.pair-them{width:150px; height:150px; border-radius:50%; display:grid; place-items:center; text-align:center}
+  .pair-us,.pair-them{width:150px; height:150px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 14px; box-sizing:border-box}
   .pair-us{color:#fff; background:radial-gradient(circle at 35% 28%, #16b3a0, var(--primary)); box-shadow:0 22px 46px -18px rgba(15,118,110,.5)}
   .pair-us.alt{background:radial-gradient(circle at 35% 28%, #4aa3f2, #1d4ed8); box-shadow:0 22px 46px -18px rgba(29,78,216,.5)}
   .pair-them{background:#f1f5f7; color:var(--muted); border:1px dashed var(--line2)}
-  .pair-us .bnum,.pair-them .bnum{font-size:44px; font-weight:850; line-height:1; letter-spacing:-.02em}
-  .pair-us .bsub,.pair-them .bsub{font-size:12px; margin-top:6px; font-weight:650; opacity:.9}
+  .pair-us .bnum,.pair-them .bnum{font-size:42px; font-weight:850; line-height:1; letter-spacing:-.02em}
+  .pair-us .bsub,.pair-them .bsub{font-size:11.5px; margin-top:5px; font-weight:650; opacity:.9; line-height:1.25}
   .pair-vs{font-size:13px; font-weight:800; color:var(--faint); letter-spacing:.1em}
   @media (max-width:560px){ .pair{min-width:0; width:100%} .pair-us,.pair-them{width:120px; height:120px} .pair-us .bnum,.pair-them .bnum{font-size:34px} }
   .hero-pill{display:inline-flex; align-items:center; gap:6px; margin:0 auto 20px; padding:8px 16px 8px 12px; border-radius:999px; background:#fff; border:1px solid var(--line); box-shadow:0 4px 14px -8px rgba(15,118,110,.35); font-size:13.5px; color:var(--muted); font-weight:600; white-space:nowrap}
@@ -742,10 +742,49 @@
     <p class="faint" style="font-size:11.5px; margin:14px auto 0; max-width:94ch; text-align:center">Hypothetical peak (maximum favorable move) across all <b><span id="statN">—</span> published setups</b> that completed their 4-week window, measured as of <b><span id="statDate">—</span></b> — a level the price touched, not returns earned, not advice. Snapshot taken on the last trading day of each month and never restated. S&amp;P comparison: current constituents, month-start to monthly high, 3-year average — it reads high, which works against us. Month by month on the <a data-nav="track" data-scroll="trackMonthly" style="color:var(--primary); font-weight:600">Track Record</a>.</p>
   </div></section>
 
+  <section class="block" id="home-card"><div class="wrap">
+    <div class="kicker" style="text-align:center">How to read a card</div>
+    <h2 class="section" style="text-align:center; max-width:26ch; margin:6px auto 4px">This is what you get — one clear card per name</h2>
+    <p class="muted" style="text-align:center; max-width:66ch; margin:0 auto; font-size:16px">Every name on your board arrives as a card like this. Here's what each part is telling you.</p>
+    <div class="annowrap">
+      <div class="annocol left">
+        <div class="anno-b"><span class="anno-num">1</span><div><div class="anno-t">The stock</div><div class="anno-d">The ticker, company name, and its move since it was added. Click any ticker on the live board to see the shape of that move. Moves are shown as percentages, not prices — the move is what matters for judging a setup, and the price on any date is in your brokerage account.</div></div></div>
+        <div class="anno-b"><span class="anno-num">2</span><div><div class="anno-t">AI Score</div><div class="anno-d">How strongly the stock matched what our machine-learning model looks for, on the night it was added. Higher is a stronger match.</div></div></div>
+        <div class="anno-b"><span class="anno-num">3</span><div><div class="anno-t">Profile</div><div class="anno-d">Core or Growth &mdash; the company&rsquo;s business type. Shown so you can balance across styles and avoid piling into one theme.</div></div></div>
+      </div>
+      <div class="annocard-hold">
+        <div class="card premium anno-card">
+          <span class="gem">&#128142; High-Quality</span>
+          <span class="pin" style="left:-11px; top:26px">1</span>
+          <span class="pin" style="right:-11px; top:-4px">4</span>
+          <span class="pin" style="right:-11px; top:34px">5</span>
+          <span class="pin" style="left:-11px; top:112px">2</span>
+          <span class="pin" style="left:-11px; top:204px">3</span>
+          <span class="pin" style="left:200px; top:204px">6</span>
+          <span class="pin" style="right:-11px; top:236px">7</span>
+          <div class="top"><div><div class="tkr">RKLB</div><div class="co">Rocket Lab USA</div><div class="cardpx"><span class="chg-up">+6.2%</span></div></div><span class="setuptag phoenix">Phoenix</span></div>
+          <div class="row">
+            <div class="metric"><div class="k">AI Score</div><div class="v">8.4 <span class="conviction vhigh">Very high</span></div></div>
+            <div class="metric"><div class="k">Sector</div><div class="v" style="font-size:14px">Industrials</div></div>
+          </div>
+          <div class="badges"><span class="badge">Core</span><span class="badge">&#128200; Strong pulse</span></div>
+          <div class="card-sc"><span class="sc-tag">&#128202; Setup Scorecard</span> Peak <b style="color:var(--pass)">+12.6%</b> &middot; Max dip <b style="color:var(--fail)">&minus;3.4%</b> &middot; 2wk +5.1% <span class="faint">&middot; since <b style="font-weight:700; color:var(--ink)">Aug 18</b></span></div>
+        </div>
+      </div>
+      <div class="annocol right">
+        <div class="anno-b"><span class="anno-num">4</span><div><div class="anno-t" style="color:var(--pass)">&#128142; Quality gate</div><div class="anno-d">Cleared our fundamental quality check &mdash; a financially sound company, sound enough to hold through a dip.</div></div></div>
+        <div class="anno-b"><span class="anno-num">5</span><div><div class="anno-t" style="color:var(--phoenix)">Setup type</div><div class="anno-d">Phoenix or Cruise &mdash; the two setup types our machine-learning model sorts each stock into. The label captures the kind of opportunity the model found; the card&rsquo;s read tells you what to expect.</div></div></div>
+        <div class="anno-b"><span class="anno-num">6</span><div><div class="anno-t">Market Pulse</div><div class="anno-d">How the name was moving versus the market when the setup fired (<b>Pulse @ Add</b>), and how it is moving now (<b>Pulse now</b>, refreshed each evening) &mdash; Strong, Neutral, or Weak.</div></div></div>
+        <div class="anno-b"><span class="anno-num">7</span><div><div class="anno-t">Setup Scorecard</div><div class="anno-d">Its hypothetical track record: how far it ran (Peak) and its worst dip since it was added. Educational &mdash; not returns earned.</div></div></div>
+      </div>
+    </div>
+    <p class="annohint">An illustrative example. <a data-nav="board" style="color:var(--primary); font-weight:600">See today's live board &rarr;</a></p>
+  </div></section>
+
   <section class="block" id="home-why"><div class="wrap">
     <div class="kicker">Why this is not another screener</div>
     <h2 class="section" style="max-width:30ch">Screeners give you lists. We give you the setups.</h2>
-    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Search the web and you'll find a thousand ways to scan for stocks — RSI, MACD, Bollinger bands, a YouTube method, a Reddit thread. All of them hand you a list and leave the hours of work to you. Our model was trained on ten years of daily data to recognise the price conditions that most often came before a move over the next few weeks, then validated on years it had never seen. Think of it as the difference between a search engine and an answer: you don't get a hundred candidates, you get the handful that fit — each one already checked for financial health.</p>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px"><b style="color:#e11d1d; font-weight:650">Search the web and you'll find a thousand ways to scan for stocks — RSI, MACD, Bollinger bands, a YouTube method, a Reddit thread.</b> All of them hand you a list and leave the hours of work to you. Our model was trained on ten years of daily data to recognise the price conditions that most often came before a move over the next few weeks, then validated on years it had never seen. Think of it as the difference between a search engine and an answer: you don't get a hundred candidates, you get the handful that fit — each one already checked for financial health.</p>
     <div class="cols3" style="margin-top:22px" id="screenerCompare">
       <div class="fcard" style="border-color:rgba(15,118,110,.35)"><div class="ico">🧪</div><h3>Tested against the screens people actually use</h3><p>Same 1,000 stocks, same ten years, same question: did the price reach +5% within four weeks? <b style="color:var(--primary)">Our setups: 71%.</b> RSI oversold: 62%. Bollinger band: 57%. MACD cross: 53%. A random day: 54%.</p></div>
       <div class="fcard" style="border-color:rgba(15,118,110,.35)"><div class="ico">📊</div><h3>Twice as likely to give you +10%</h3><p><b style="color:var(--primary)">45% of our setups reached +10%</b>, against 24% on a random day and 31% for the best of the classic screens. The move the board is built around is simply there more often.</p></div>

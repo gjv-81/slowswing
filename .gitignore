@@ -38,3 +38,8 @@ uts_daily_backtest.xlsx
 
 # ---- served copies (the built one is in site/ and KV; the gated board never sits in site/)
 site/board.json
+
+# ---- bundles and extra data dirs
+*.tar.gz
+daily_data_ext/
+daily_data_slow_ext/
