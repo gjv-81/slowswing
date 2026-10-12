@@ -11,6 +11,56 @@
 //     (it just defines POSTS; nothing else runs).
 const POSTS = [
   {
+    slug:'where-corrections-start', cat:{label:'Lesson', cls:'lesson'}, icon:'🎚️', sample:false,
+    author:'GJ Singh', date:'Oct 12, 2026', read:'6 min read',
+    title:'Nine corrections, and where each one began',
+    excerpt:'Every drop of 5% or more that our market dial has been able to grade started from Extended or Over-extended. None started from Healthy. That sounds stronger than it is, and the reasons why are the interesting part.',
+    body:`<p>The top of the board carries a market dial: a reading of how stretched the S&amp;P 500 is against its own recent history, graded Healthy, Extended, Over-extended or Weak. The note beside it has always said that the market's worst multi week declines have historically begun from the most stretched readings. This post is the evidence behind that sentence, and the places where it is weaker than it sounds.</p>
+    <p>We looked at every decline of <b>5% or more</b> in the S&amp;P 500 since the dial has valid history. That start point is not a choice. The percentile needs three years of trailing data before it means anything, so the record begins in late 2019 and earlier episodes cannot be graded at all. That leaves <b>nine</b> corrections. For each one, we took the dial's reading on the day the decline began, which is the day of the peak, not somewhere in the middle of the fall.</p>
+    <div style="overflow-x:auto;margin:22px 0">
+      <table style="border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px">
+        <thead>
+          <tr style="background:var(--primary);color:#fff">
+            <th style="text-align:left;padding:9px 10px;border:1px solid #0e6b63">Peak</th>
+            <th style="text-align:left;padding:9px 10px;border:1px solid #0e6b63">Trough</th>
+            <th style="text-align:center;padding:9px 10px;border:1px solid #0e6b63">Drop</th>
+            <th style="text-align:center;padding:9px 10px;border:1px solid #0e6b63">Percentile</th>
+            <th style="text-align:left;padding:9px 10px;border:1px solid #0e6b63">Dial at the peak</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:7px 10px;border:1px solid #e2e8f0">2020-02-19</td><td style="padding:7px 10px;border:1px solid #e2e8f0">2020-03-23</td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0"><b class="down">&minus;33.7%</b></td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0">98</td><td style="padding:7px 10px;border:1px solid #e2e8f0"><b style="color:#c2410c">Over-extended</b></td></tr>
+          <tr style="background:#f8fafc"><td style="padding:7px 10px;border:1px solid #e2e8f0">2020-09-02</td><td style="padding:7px 10px;border:1px solid #e2e8f0">2020-09-23</td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0"><b class="down">&minus;9.4%</b></td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0">100</td><td style="padding:7px 10px;border:1px solid #e2e8f0"><b style="color:#c2410c">Over-extended</b></td></tr>
+          <tr><td style="padding:7px 10px;border:1px solid #e2e8f0">2021-09-02</td><td style="padding:7px 10px;border:1px solid #e2e8f0">2021-10-04</td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0"><b class="down">&minus;5.1%</b></td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0">77</td><td style="padding:7px 10px;border:1px solid #e2e8f0"><b style="color:var(--watch)">Extended</b></td></tr>
+          <tr style="background:#f8fafc"><td style="padding:7px 10px;border:1px solid #e2e8f0">2022-01-03</td><td style="padding:7px 10px;border:1px solid #e2e8f0">2022-10-12</td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0"><b class="down">&minus;24.5%</b></td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0">60</td><td style="padding:7px 10px;border:1px solid #e2e8f0"><b style="color:var(--watch)">Extended</b></td></tr>
+          <tr><td style="padding:7px 10px;border:1px solid #e2e8f0">2024-03-27</td><td style="padding:7px 10px;border:1px solid #e2e8f0">2024-04-19</td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0"><b class="down">&minus;5.4%</b></td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0">97</td><td style="padding:7px 10px;border:1px solid #e2e8f0"><b style="color:#c2410c">Over-extended</b></td></tr>
+          <tr style="background:#f8fafc"><td style="padding:7px 10px;border:1px solid #e2e8f0">2024-07-16</td><td style="padding:7px 10px;border:1px solid #e2e8f0">2024-08-05</td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0"><b class="down">&minus;8.4%</b></td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0">100</td><td style="padding:7px 10px;border:1px solid #e2e8f0"><b style="color:#c2410c">Over-extended</b></td></tr>
+          <tr><td style="padding:7px 10px;border:1px solid #e2e8f0">2025-02-19</td><td style="padding:7px 10px;border:1px solid #e2e8f0">2025-04-08</td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0"><b class="down">&minus;18.8%</b></td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0">62</td><td style="padding:7px 10px;border:1px solid #e2e8f0"><b style="color:var(--watch)">Extended</b></td></tr>
+          <tr style="background:#f8fafc"><td style="padding:7px 10px;border:1px solid #e2e8f0">2025-10-29</td><td style="padding:7px 10px;border:1px solid #e2e8f0">2025-11-20</td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0"><b class="down">&minus;5.1%</b></td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0">96</td><td style="padding:7px 10px;border:1px solid #e2e8f0"><b style="color:#c2410c">Over-extended</b></td></tr>
+          <tr><td style="padding:7px 10px;border:1px solid #e2e8f0">2026-01-27</td><td style="padding:7px 10px;border:1px solid #e2e8f0">2026-03-30</td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0"><b class="down">&minus;8.9%</b></td><td style="text-align:center;padding:7px 10px;border:1px solid #e2e8f0">57</td><td style="padding:7px 10px;border:1px solid #e2e8f0"><b style="color:var(--watch)">Extended</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13px;color:var(--faint);margin-top:-8px">Percentile is where the market's stretch sat against its own prior three years on the day the decline started. 100 means more stretched than any day in that window.</p>
+    <h2>What the table says</h2>
+    <p>All nine began from <b style="color:var(--watch)">Extended</b> or <b style="color:#c2410c">Over-extended</b>. Not one began from <b style="color:var(--pass)">Healthy</b>. The lowest starting reading in the whole sample was the 57th percentile.</p>
+    <p>Over-extended is rare air. It accounts for only about <b>9%</b> of all trading days in the record, yet <b>five of the nine</b> corrections started there. That is the dial doing the one job it was built for. It is not a prediction, and most stretched stretches pass quietly, but declines have begun from that zone far out of proportion to how often the zone occurs.</p>
+    <h2>The part we did not expect</h2>
+    <p>Sort the nine by size and something awkward appears. The ordinary dips, the ones between 5% and 10%, started from the <em>most</em> extreme readings: a median around the 96th percentile. Snap backs from a stretched tape, which is roughly what the dial was designed to anticipate.</p>
+    <p>The two genuinely large declines did not behave that way at all. The 2022 bear, which ran to nearly <b class="down">&minus;25%</b> over nine months, started from the 60th percentile. The 2025 decline of almost <b class="down">&minus;19%</b> started from the 62nd. Both were merely ordinary Extended readings, the kind the market produces constantly, and both had causes the dial has no visibility into whatsoever: interest rates in one case, tariffs in the other.</p>
+    <p><span style="color:var(--primary);text-decoration:underline;text-decoration-color:var(--primary);text-underline-offset:3px;font-weight:600">So an extreme dial reading has flagged a routine air pocket, while the serious declines arrived without that warning.</span> Stated plainly, because it matters more than the headline finding: <b>the dial cannot tell a 5% decline from a 25% one in advance.</b> It can say something about where declines have tended to begin. It says nothing about how far they go.</p>
+    <h2>Where the dial sits now</h2>
+    <p>As of the October 9 session, the S&amp;P 500 reads <b style="color:var(--pass)">Healthy</b> at the <b>43rd percentile</b>, which is below the starting point of every correction in the table. The Nasdaq dial reads Extended at the 65th, so the two are not saying quite the same thing, and the board shows both for that reason.</p>
+    <p>Resist the obvious reading of that. Which brings us to the caveats, and they deserve more room than the finding.</p>
+    <h2>Why this is thinner evidence than it looks</h2>
+    <p><b>Nine is a handful, not a dataset.</b> Nine episodes across about seven years of valid history is barely more than one market cycle. Any conclusion drawn from it should be held loosely.</p>
+    <p><b>There is a hole in the middle of the sample.</b> Not one of the nine landed between 10% and 15%. The record jumps straight from a 9.4% decline to an 18.8% one. A gap that size in a sample this small is a reminder of how little the sample can carry.</p>
+    <p><b>And the headline finding is partly arithmetic rather than insight.</b> This is the one worth sitting with. "No correction ever started from Healthy" is less impressive once you notice that after any sizable decline, the stretch resets by definition. Healthy days therefore cluster immediately <em>after</em> corrections rather than before them. Some of what looks like a predictive finding is really the measurement describing its own shape. We would be doing readers a disservice to present it as cleaner than that.</p>
+    <h2>What it actually supports</h2>
+    <p>The dial has always been framed on this site as context for how hard to lean in, never a forecast and never a trigger, and this history is precisely why it is worded that way. It supports treating a stretched tape as a reason for extra awareness. It does not make a Healthy reading bulletproof, it cannot time anything, and the two largest declines in the sample both began from readings that would have raised nobody's eyebrow.</p>
+    <p>Figures above are drawn from S&amp;P 500 history through the October 9, 2026 session and describe what has already happened. They are not a forecast of anything, and nothing here is advice or a recommendation about any security.</p>`
+  },
+  {
     slug:'when-a-setup-fails-bx', cat:{label:'Case Study', cls:'case'}, icon:'📉', sample:false,
     author:'GJ Singh', date:'Oct 10, 2026', read:'6 min read',
     title:'The setup that never worked at all (BX)',

@@ -69,6 +69,7 @@
   .navdrop:hover .navmenu{display:flex}
   .navmenu a{font-size:14px; color:var(--body); padding:9px 12px; border-radius:8px; cursor:pointer; white-space:nowrap; font-weight:500}
   .navmenu a:hover{background:var(--panel2); color:var(--primary)}
+  .navmenu .msep{border-top:1px solid var(--line); margin-top:6px; padding-top:12px; border-radius:0 0 8px 8px}
   .navmenu .mdesc{display:block; font-size:11.5px; color:var(--faint); font-weight:400; margin-top:1px}
   section[id^="how-"],section[id^="psy-"],section[id^="hb-"],section[id^="st-"],section[id^="faq-"],#cancelsec,#trackMonthly,#regime,#agetabs,#tabs,#qtabs,#boardFilters,#trackStats{scroll-margin-top:100px}
 
@@ -83,7 +84,6 @@
   .pagetoc a:hover{color:var(--ink)}
   .pagetoc a.on{color:var(--primary); font-weight:700; border-left-color:var(--primary)}
   @media (min-width:1560px){ .pagetoc.show{display:block} }
-  @media (min-width:1000px){ #faq-evening .steps{grid-template-columns:repeat(5,1fr)} }
   .gs-row td{position:relative; padding-bottom:22px !important}
   .gs-n{position:absolute; left:8px; bottom:4px; width:16px; height:16px; border-radius:50%; background:var(--ink); color:#fff; font-size:9px; font-weight:800; display:grid; place-items:center}
   .gs-keys h3 .anno-num{display:inline-grid; vertical-align:middle; margin-right:6px}
@@ -158,6 +158,18 @@
   section.block:first-child{border-top:none}
 
   /* HERO */
+  .pairs{display:flex; gap:26px; justify-content:center; flex-wrap:wrap; margin-top:26px}
+  .pair{border:1px solid var(--line); border-radius:18px; padding:18px 22px; background:#fff; box-shadow:0 18px 40px -30px rgba(14,42,43,.4); min-width:300px}
+  .pair-k{font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:700; text-align:center; margin-bottom:12px}
+  .pair-row{display:flex; align-items:center; gap:18px; justify-content:center}
+  .pair-us,.pair-them{width:150px; height:150px; border-radius:50%; display:grid; place-items:center; text-align:center}
+  .pair-us{color:#fff; background:radial-gradient(circle at 35% 28%, #16b3a0, var(--primary)); box-shadow:0 22px 46px -18px rgba(15,118,110,.5)}
+  .pair-us.alt{background:radial-gradient(circle at 35% 28%, #4aa3f2, #1d4ed8); box-shadow:0 22px 46px -18px rgba(29,78,216,.5)}
+  .pair-them{background:#f1f5f7; color:var(--muted); border:1px dashed var(--line2)}
+  .pair-us .bnum,.pair-them .bnum{font-size:44px; font-weight:850; line-height:1; letter-spacing:-.02em}
+  .pair-us .bsub,.pair-them .bsub{font-size:12px; margin-top:6px; font-weight:650; opacity:.9}
+  .pair-vs{font-size:13px; font-weight:800; color:var(--faint); letter-spacing:.1em}
+  @media (max-width:560px){ .pair{min-width:0; width:100%} .pair-us,.pair-them{width:120px; height:120px} .pair-us .bnum,.pair-them .bnum{font-size:34px} }
   .hero-pill{display:inline-flex; align-items:center; gap:6px; margin:0 auto 20px; padding:8px 16px 8px 12px; border-radius:999px; background:#fff; border:1px solid var(--line); box-shadow:0 4px 14px -8px rgba(15,118,110,.35); font-size:13.5px; color:var(--muted); font-weight:600; white-space:nowrap}
   .hero-what{display:flex; justify-content:center; flex-wrap:wrap; gap:8px 22px; margin:16px auto 0; font-size:13.5px; font-weight:650; color:var(--primary-dark)}
   .hero-what span{white-space:nowrap}
@@ -165,7 +177,7 @@
   .hero-pill .hp-chk{display:inline-grid; place-items:center; width:18px; height:18px; border-radius:50%; background:var(--primary); color:#fff; font-size:11px; font-weight:800}
   .hero-pill .hp-go{color:var(--primary); font-weight:700}
   .hero-pill:hover{border-color:var(--primary)}
-  @media (max-width:560px){ .hero-pill{white-space:normal; font-size:12.5px; padding:8px 12px} }
+  @media (max-width:560px){ .hero-pill{white-space:normal; font-size:12.5px; padding:8px 12px; flex-wrap:wrap; justify-content:center; row-gap:2px; line-height:1.4} .hero-pill b{font-size:14.5px} }
   .hero{padding:78px 0 64px; background:linear-gradient(180deg,var(--primary-tint),#fff 78%); position:relative; overflow:hidden}
   .herogrid{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center}
   .pill{display:inline-flex; gap:8px; align-items:center; font-size:13px; color:var(--primary); border:1px solid var(--line2); background:#fff; padding:6px 13px; border-radius:999px; font-weight:600}
@@ -615,8 +627,13 @@
     .navlinks{display:none; flex-direction:column; flex-basis:100%; gap:2px; margin-left:0; padding:8px 0 4px; border-top:1px solid var(--line)}
     nav.open .navlinks{display:flex}
     .navlinks a{padding:11px 10px; font-size:15px; border-radius:8px}
-    .navdrop{position:static}
-    .navdrop .navmenu{display:none!important}
+    .navdrop{position:static; flex-direction:column; align-items:stretch}
+    /* Phone: the dropdown cannot open, so its page-level entries become plain rows
+       and the in-page anchors are dropped (they are reachable from the How page). */
+    .navdrop .navmenu{display:flex!important; position:static; border:0; box-shadow:none; padding:0; min-width:0; background:transparent}
+    .navdrop .navmenu a:not(.mpage){display:none}
+    .navdrop .navmenu .msep{border-top:0; margin-top:0; padding-top:11px}
+    .navdrop .navmenu .mdesc{display:none}
     /* The dropdown parent sits inside a div, so its anchor was only as wide as its
        own text — every other row in the menu is full width. On a phone that means
        a tap an inch to the right of "How it works" does nothing at all. */
@@ -646,7 +663,7 @@
 
 <!-- NAV -->
 <nav><div class="wrap">
-  <div class="logo" data-nav="home"><span class="mark" aria-hidden="true"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><g class="axis"><line x1="44" y1="100" x2="184" y2="100"/><line x1="100" y1="156" x2="100" y2="16"/><path d="M184 100 l-6 -3.2 v6.4 z"/><path d="M100 16 l-3.2 6 h6.4 z"/></g><g class="glyph" transform="translate(52,52) scale(1.5)"><path class="arc" d="M5.92 38.99 A27 27 0 1 0 54.64 17.30" stroke-width="3.1" stroke-linecap="round"/><path d="M50.01 10.17 L61.91 16.76 L51.18 23.73 Z"/><rect x="23.5" y="18.5" width="17" height="2.8" rx="1.4"/><rect x="23.5" y="42.7" width="17" height="2.8" rx="1.4"/><path class="wall" d="M26 21.3 C26 27,30.6 30.6,31.7 32 C30.6 33.4,26 37,26 42.7" stroke-width="1.8"/><path class="wall" d="M38 21.3 C38 27,33.4 30.6,32.3 32 C33.4 33.4,38 37,38 42.7" stroke-width="1.8"/><path d="M27.6 22 H36.4 L32 30.4 Z" opacity=".42"/><path d="M32 33.6 L36.4 42 H27.6 Z"/></g></svg></span><div class="ltxt"><div class="lwm"><span class="the">The </span><span class="slow">Slow</span> <span class="swing">Swing</span></div><div class="sub">Stock setup research</div></div></div>
+  <div class="logo" data-nav="home"><span class="mark" aria-hidden="true"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><g class="axis"><line x1="44" y1="100" x2="184" y2="100"/><line x1="100" y1="156" x2="100" y2="16"/><path d="M184 100 l-6 -3.2 v6.4 z"/><path d="M100 16 l-3.2 6 h6.4 z"/></g><g class="glyph" transform="translate(52,52) scale(1.5)"><path class="arc" d="M5.92 38.99 A27 27 0 1 0 54.64 17.30" stroke-width="3.1" stroke-linecap="round"/><path d="M50.01 10.17 L61.91 16.76 L51.18 23.73 Z"/><rect x="23.5" y="18.5" width="17" height="2.8" rx="1.4"/><rect x="23.5" y="42.7" width="17" height="2.8" rx="1.4"/><path class="wall" d="M26 21.3 C26 27,30.6 30.6,31.7 32 C30.6 33.4,26 37,26 42.7" stroke-width="1.8"/><path class="wall" d="M38 21.3 C38 27,33.4 30.6,32.3 32 C33.4 33.4,38 37,38 42.7" stroke-width="1.8"/><path d="M27.6 22 H36.4 L32 30.4 Z" opacity=".42"/><path d="M32 33.6 L36.4 42 H27.6 Z"/></g></svg></span><div class="ltxt"><div class="lwm"><span class="the">The </span><span class="slow">Slow</span> <span class="swing">Swing</span></div><div class="sub">AI stock setup research</div></div></div>
   <button class="navtoggle" id="navToggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="navlinks">
     <a data-nav="home">Home</a>
@@ -662,12 +679,12 @@
         <a data-nav="how" data-scroll="how-regime">Market regime &amp; timing<span class="mdesc">Why timing vs. SPY matters</span></a>
         <a data-nav="how" data-scroll="how-read">How to read a card<span class="mdesc">What every row shows</span></a>
         <a data-nav="how" data-scroll="how-gate">The quality gate<span class="mdesc">Why you can hold a dip</span></a>
+        <a data-nav="psychology" class="msep mpage">Trading psychology<span class="mdesc">Discipline, sizing, your plan</span></a>
+        <a data-nav="handbook" class="mpage">Handbook<span class="mdesc">The full reference</span></a>
+        <a data-nav="faq" class="mpage">FAQ<span class="mdesc">Quick answers</span></a>
+        <a data-nav="blog" class="mpage">Blog<span class="mdesc">Notes and studies</span></a>
       </div>
     </div>
-    <a data-nav="psychology"><span class="navlong">Trading </span>Psychology</a>
-    <a data-nav="handbook">Handbook</a>
-    <a data-nav="faq">FAQ</a>
-    <a data-nav="blog">Blog</a>
     <a data-nav="pricing">Pricing</a>
     <a id="navTour" data-tour>▶ 30-sec tour</a>
   </div>
@@ -680,169 +697,79 @@
 <!-- ============ HOME ============ -->
 <div class="page active" data-page="home">
   <header class="hero"><div class="wrap">
-    <div style="text-align:center; margin:2px auto 18px; max-width:88ch">
+    <div style="text-align:center; margin:2px auto 0; max-width:88ch">
       <a class="hero-pill" data-signup data-plan="monthly"><span class="hp-chk">✓</span> 30 days free &nbsp;·&nbsp; <b>No card required</b> &nbsp;·&nbsp; <span class="hp-go">Start your trial →</span></a>
-      <div style="margin:0 auto; font-size:clamp(21px,3.9vw,34px); line-height:1.15; letter-spacing:-.02em; color:var(--ink); font-weight:800">Cut through the noise. Find the stock setups that matter.</div>
-      <h2 style="margin:16px auto 0; max-width:40ch; font-size:clamp(17px,2.5vw,23px); line-height:1.3; letter-spacing:-.01em; color:var(--ink); font-weight:700">Every evening after the close, a short list of U.S. stocks whose setups look ripe for a 2–4 week swing.</h2>
-      <p class="muted" style="margin:10px auto 0; max-width:62ch; font-size:15.5px"><b style="color:var(--ink)">This is trading, not investing.</b> We scan the whole market so you don't have to — you get the shortlist, each name screened for quality, and you decide what to do with it. Educational research, not advice.</p>
+      <h1 style="margin:0 auto; max-width:22ch; font-size:clamp(28px,4.6vw,46px); line-height:1.08; letter-spacing:-.025em; color:var(--ink); font-weight:850">AI-found stock setups for 5% swing trades.</h1>
+      <p class="muted" style="margin:16px auto 0; max-width:66ch; font-size:17px; line-height:1.55">Every evening after the close, our machine-learning model scans the U.S. market and hands you a handful of quality stocks whose setups are in place. <b style="color:var(--ink)">More than half reach +5% within two weeks; 86% within their window.</b> Trading, not investing — and no screener finds these for you.</p>
       <div class="hero-what">
-        <span>🕔 New list every evening</span>
-        <span>📆 Held for weeks — not minutes, not years</span>
-        <span>🔎 You research it. You decide.</span>
+        <span>🤖 Machine-learning model, 10 years of data</span>
+        <span>🕔 A handful of names every evening</span>
+        <span>💎 Every one a financially sound company</span>
       </div>
-      <div style="margin-top:14px; font-size:14px"><a data-nav="start" style="color:var(--primary); font-weight:700">New here? How to use the site →</a></div>
-    </div>
-    <div class="kicker" style="text-align:center; margin-bottom:14px">Our edge, in one glance</div>
-    <div class="balloons2">
-      <div class="balloon"><div><div class="bnum"><span class="cval" data-count="">—</span>%</div><div class="bsub">reached <b>+5% or more</b> at peak</div></div></div>
-      <div class="balloon alt"><div><div class="bnum"><span class="cval" data-count="">—</span>%</div><div class="bsub">reached <b>+10% or more</b> at peak</div></div></div>
-    </div>
-    <div class="ballooncap">
-      <div style="font-weight:750; color:var(--ink); font-size:18px">Across <i>every</i> setup that has run its full window — winners and losers alike, not a cherry-picked few.</div>
-      <div class="muted" style="font-size:15px; margin-top:6px">The large majority reach a meaningful gain at some point — <span id="statMedianPeak">median ~3 weeks</span> to that peak. What you do with the move is yours.</div>
-      <div style="font-size:12px; color:var(--faint); margin-top:12px; letter-spacing:.02em" id="statAsOf">Restated monthly</div>
-    </div>
-    <p class="faint" style="font-size:11.5px; margin:14px auto 0; max-width:94ch; text-align:center"><b>Hypothetical maximum favorable moves</b> (peak / MFE) across all <b><span id="statN">—</span> setups that completed their 4-week tracking window</b> in the live paper book (began <b>Jul 20, 2026</b>), measured as of <b><span id="statDate">—</span></b> — a level the price touched, <b>not</b> returns anyone earned, and not advice. We use no stops or targets; if, when, and how you act is your decision. Snapshot taken on the last trading day of each month and never restated afterwards; the month-by-month record is on the Track Record page.</p>
-
-    <div class="herohead">
-      <a class="pill" id="shortlistLink" data-nav="board"><span class="dot"></span> A short list of setups, refreshed after every close →</a>
-      <h1>Trade deliberately.</h1>
-      <p class="lead">Every night our model does the hunting, so our setups can be the <b style="color:var(--ink)">first filter</b> in your own process for finding high-quality stock trades. Educational research, not investment advice.</p>
-      <ul class="herobul">
-        <li><span class="hi">⏱️</span><span><b>Built for busy professionals</b> — a vetted shortlist after every close, not hours of screening.</span></li>
-        <li><span class="hi">📵</span><span><b>No staring at charts</b> — we scan the whole market nightly; you check in on your own schedule.</span></li>
-        <li><span class="hi">💎</span><span><b>Only high-quality setups</b> — every name clears a fundamental quality gate.</span></li>
-      </ul>
-      <div class="herocta">
+      <div class="herocta" style="justify-content:center; margin-top:22px">
         <a class="btn btn-primary heroCta" data-nav="pricing">Start free trial</a>
-        <a class="btn btn-ghost" data-nav="board">Check the board →</a>
+        <a class="btn btn-ghost" data-nav="board">See today's board →</a>
         <span class="microcopy" id="heroMicro" data-default="30 days free · no card required · then $15/mo">30 days free · no card required · then $15/mo</span>
       </div>
-      <div class="heronums">
-        <div><div class="n">Nightly</div><div class="l">full U.S. market scan</div></div>
-        <div><div class="n">2</div><div class="l">setups we publish</div></div>
-        <div><div class="n">💎</div><div class="l">flags the strongest companies</div></div>
-        <div><div class="n">10 yrs</div><div class="l">of data behind the model</div></div>
-      </div>
+      <div style="margin-top:12px; font-size:14px"><a data-nav="start" style="color:var(--primary); font-weight:700">New here? How to use the site →</a></div>
     </div>
   </div></header>
 
   <section class="block"><div class="wrap">
-    <div class="kicker" style="text-align:center">A peek at today's setup</div>
-    <h2 class="section" style="text-align:center; max-width:26ch; margin:6px auto 4px">This is what you get — one clear card per name</h2>
-    <p class="muted" style="text-align:center; max-width:66ch; margin:0 auto; font-size:16px">Every name on your board arrives as a card like this. Here's what each part is telling you.</p>
-    <div class="annowrap">
-      <div class="annocol left">
-        <div class="anno-b"><span class="anno-num">1</span><div><div class="anno-t">The stock</div><div class="anno-d">The ticker, company name, and its move since it was added. Click any ticker on the live board to see the shape of that move. You won't see a dollar price anywhere on the board: our market-data licence doesn't cover republishing prices, and for judging a setup the move matters more than the number — the price on any date is one click away in your brokerage account (<a data-post="why-percentages-not-prices" style="color:var(--primary); font-weight:600; cursor:pointer">why we show moves, not prices</a>).</div></div></div>
-        <div class="anno-b"><span class="anno-num">2</span><div><div class="anno-t">Swing Score</div><div class="anno-d">Our conviction score. Higher means a stronger match to the profile of past winners.</div></div></div>
-        <div class="anno-b"><span class="anno-num">3</span><div><div class="anno-t">Profile</div><div class="anno-d">Core or Growth &mdash; the company&rsquo;s business type. Shown so you can balance across styles and avoid piling into one theme.</div></div></div>
+    <div class="kicker" style="text-align:center">If you trade for 5% moves, this is where to look</div>
+    <h2 class="section" style="text-align:center; margin:8px auto 0; max-width:30ch">Our setups vs. a typical S&amp;P 500 stock</h2>
+    <p class="muted" style="text-align:center; max-width:66ch; margin:10px auto 0; font-size:15.5px">Same question for both: did the price reach the mark within four weeks? Ours is every setup we have published, winners and losers. The comparison is every S&amp;P 500 stock, from the start of each month, over the last three years.</p>
+    <div class="pairs">
+      <div class="pair">
+        <div class="pair-k">Reached <b>+5%</b></div>
+        <div class="pair-row"><div class="pair-us"><div class="bnum"><span class="cval" data-count="">—</span>%</div><div class="bsub">our setups</div></div><div class="pair-vs">vs</div><div class="pair-them"><div class="bnum"><span id="baseP5">—</span>%</div><div class="bsub">typical S&amp;P 500 stock</div></div></div>
       </div>
-      <div class="annocard-hold">
-        <div class="card premium anno-card">
-          <span class="gem">&#128142; High-Quality</span>
-          <span class="pin" style="left:-11px; top:26px">1</span>
-          <span class="pin" style="right:-11px; top:-4px">4</span>
-          <span class="pin" style="right:-11px; top:34px">5</span>
-          <span class="pin" style="left:-11px; top:112px">2</span>
-          <span class="pin" style="left:-11px; top:204px">3</span>
-          <span class="pin" style="left:200px; top:204px">6</span>
-          <span class="pin" style="right:-11px; top:236px">7</span>
-          <div class="top"><div><div class="tkr">RKLB</div><div class="co">Rocket Lab USA</div><div class="cardpx"><span class="chg-up">+6.2%</span></div></div><span class="setuptag phoenix">Phoenix</span></div>
-          <div class="row">
-            <div class="metric"><div class="k">Swing Score</div><div class="v">8.4 <span class="conviction vhigh">Very high</span></div></div>
-            <div class="metric"><div class="k">Sector</div><div class="v" style="font-size:14px">Industrials</div></div>
-          </div>
-          <div class="badges"><span class="badge">Core</span><span class="badge">&#128200; Strong pulse</span></div>
-          <div class="card-sc"><span class="sc-tag">&#128202; Setup Scorecard</span> Peak <b style="color:var(--pass)">+12.6%</b> &middot; Max dip <b style="color:var(--fail)">&minus;3.4%</b> &middot; 2wk +5.1% <span class="faint">&middot; since <b style="font-weight:700; color:var(--ink)">Aug 18</b></span></div>
-        </div>
-      </div>
-      <div class="annocol right">
-        <div class="anno-b"><span class="anno-num">4</span><div><div class="anno-t" style="color:var(--pass)">&#128142; Quality gate</div><div class="anno-d">Cleared our fundamental quality check &mdash; a financially sound company, sound enough to hold through a dip.</div></div></div>
-        <div class="anno-b"><span class="anno-num">5</span><div><div class="anno-t" style="color:var(--phoenix)">Setup type</div><div class="anno-d">Phoenix or Cruise &mdash; the two setup types our machine-learning model sorts each stock into. The label captures the kind of opportunity the model found; the card&rsquo;s read tells you what to expect.</div></div></div>
-        <div class="anno-b"><span class="anno-num">6</span><div><div class="anno-t">Market Pulse</div><div class="anno-d">How the name was moving versus the market when the setup fired (<b>Pulse @ Add</b>), and how it is moving now (<b>Pulse now</b>, refreshed each evening) &mdash; Strong, Neutral, or Weak.</div></div></div>
-        <div class="anno-b"><span class="anno-num">7</span><div><div class="anno-t">Setup Scorecard</div><div class="anno-d">Its hypothetical track record: how far it ran (Peak) and its worst dip since it was added. Educational &mdash; not returns earned.</div></div></div>
+      <div class="pair">
+        <div class="pair-k">Reached <b>+10%</b></div>
+        <div class="pair-row"><div class="pair-us alt"><div class="bnum"><span class="cval" data-count="">—</span>%</div><div class="bsub">our setups</div></div><div class="pair-vs">vs</div><div class="pair-them"><div class="bnum"><span id="baseP10">—</span>%</div><div class="bsub">typical S&amp;P 500 stock</div></div></div>
       </div>
     </div>
-    <p class="annohint">An illustrative example. <a data-nav="board" style="color:var(--primary); font-weight:600">See today's live board &rarr;</a></p>
+    <div class="ballooncap" style="margin-top:22px">
+      <div style="font-weight:750; color:var(--ink); font-size:17px">Most of the move comes early: <span id="statP5_2wk">more than half</span> of our setups reach +5% inside two weeks, and the <span id="statMedianPeak">median peak lands around week three</span>.</div>
+      <div class="muted" style="font-size:14.5px; margin-top:8px">Traders who take 5% and move on, and traders who ride a trailing stop, both use this board.</div>
+      <div style="font-size:12px; color:var(--faint); margin-top:12px; letter-spacing:.02em" id="statAsOf">Restated monthly</div>
+    </div>
+    <p class="faint" style="font-size:11.5px; margin:14px auto 0; max-width:94ch; text-align:center">Hypothetical peak (maximum favorable move) across all <b><span id="statN">—</span> published setups</b> that completed their 4-week window, measured as of <b><span id="statDate">—</span></b> — a level the price touched, not returns earned, not advice. Snapshot taken on the last trading day of each month and never restated. S&amp;P comparison: current constituents, month-start to monthly high, 3-year average — it reads high, which works against us. Month by month on the <a data-nav="track" data-scroll="trackMonthly" style="color:var(--primary); font-weight:600">Track Record</a>.</p>
   </div></section>
 
-  <section class="block"><div class="wrap">
-    <div class="analogyband">
-      <div>
-        <div class="kicker">The idea in one line</div>
-        <h2 class="section" style="max-width:18ch; margin-top:6px">We scout the fat pitches. The swing is yours.</h2>
-        <p class="muted" style="font-size:16px; max-width:60ch; margin-top:12px">Our setups are pitches grooved right in your wheelhouse — the kind you <i>can</i> drive for extra bases. We don't swing for you; we just keep you from chasing junk out of the zone. Some turn into singles, some into home runs — how far you take it, and when you exit, is entirely your call.</p>
-      </div>
-      <div class="videocard" data-video>
-        <div class="playbtn">▶</div>
-        <div class="vlabel">See how it works — a 1-minute tour</div>
-        <div class="vsub">How The Slow Swing works, in a minute</div>
-      </div>
+  <section class="block" id="home-why"><div class="wrap">
+    <div class="kicker">Why this is not another screener</div>
+    <h2 class="section" style="max-width:30ch">Screeners give you lists. We give you the setups.</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Search the web and you'll find a thousand ways to scan for stocks — RSI, MACD, Bollinger bands, a YouTube method, a Reddit thread. All of them hand you a list and leave the hours of work to you. Our model was trained on ten years of daily data to recognise the price conditions that most often came before a move over the next few weeks, then validated on years it had never seen. Think of it as the difference between a search engine and an answer: you don't get a hundred candidates, you get the handful that fit — each one already checked for financial health.</p>
+    <div class="cols3" style="margin-top:22px" id="screenerCompare">
+      <div class="fcard"><div class="ico">🤖</div><h3>A model, not a filter</h3><p>A screener matches rules you typed in. The model learned which conditions actually preceded moves — across 600 stocks and a decade — and scores every stock on them each night.</p></div>
+      <div class="fcard"><div class="ico">⏱️</div><h3>Hours of work, done</h3><p>The scan, the scoring, the fundamental check and the tracking all happen before you sit down. You see a handful of names, their AI Score, and how each has behaved since.</p></div>
+      <div class="fcard"><div class="ico">📈</div><h3>An open record</h3><p>Every setup we publish is tracked in public, winners and losers, with its real returns. Most sites show you their best trades. We show you all of them.</p></div>
     </div>
   </div></section>
 
   <section class="block"><div class="wrap">
-    <div class="kicker">What The Slow Swing is</div>
-    <h2 class="section">A quant research desk that does the hunting for you</h2>
-    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">You already know the idea that works: buy good companies when they're temporarily out of favor, and give them room to recover. The hard part is <i>finding</i> those moments — it means scanning hundreds of charts every night, which is time a working professional simply doesn't have. The Slow Swing does that scan for you.</p>
-    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">Every evening after the close, our machine-learning model — trained on ten years of U.S. market data — grades the entire market and surfaces the short list whose behavior matches the statistical profile of past winners. Each name is then run through a fundamental quality gate, so what reaches your board isn't just a promising chart: it's a financially sound business at an interesting moment.</p>
-    <p class="muted" style="max-width:74ch; margin-top:14px; font-size:16px">You get a handful of setups a week, sorted into two clear types — <b style="color:var(--phoenix)">Phoenix</b> and <b style="color:var(--cruise)">Cruise</b> — each with a plain-English read. No entry prices, no targets, no pressure to act. Just a vetted starting point for the few deliberate stock trades you actually have time to make, held for weeks rather than minutes. And because emotion wrecks most swing traders, the <b style="color:var(--pass)">💎 quality flag</b> tells you which names are sound enough to hold through a dip with confidence.</p>
-
-    <div style="margin-top:30px"><a class="btn btn-ghost" data-nav="board">See today's full board →</a></div>
+    <div class="kicker">The market, read for you</div>
+    <h2 class="section" style="max-width:30ch">We also tell you what kind of market you're in</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Every board carries a regime read for the S&amp;P 500 and the Nasdaq-100: where each sits against its own last three years, as a percentile and as a distance from its 200-day line. Green means the market has recently reset — historically the friendliest backdrop for these setups; in our research, setups entered after a reset returned several times what the same setups returned in a stretched market. Yellow and Orange mean stretched. It's context for how much to risk, not a trigger — and almost nobody else puts it next to the stock list.</p>
+    <p class="gl-see" style="font-size:13.5px; margin-top:12px">See it: <a data-nav="board" data-scroll="regime">Today's regime bar →</a> · <a data-nav="how" data-scroll="how-regime">How to use it →</a></p>
   </div></section>
 
   <section class="block"><div class="wrap">
-    <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap">
-      <div>
-        <div class="kicker">Trading Psychology</div>
-        <h2 class="section" style="max-width:24ch">The hardest part isn't the setup — it's you</h2>
-      </div>
-      <a class="btn btn-ghost" data-nav="psychology">Read our trading psychology →</a>
-    </div>
-    <p class="muted" style="max-width:74ch; margin:10px 0 0; font-size:16px">The best setup in the world won't help if you sell in a panic or bet too big. The Slow Swing is a disciplined filter — but the mindset is what turns it into results — read how we think about discipline, emotional control, and risk on our Trading Psychology page.</p>
-  </div></section>
-
-  <section class="block"><div class="wrap">
-    <div class="kicker">Expectations</div>
-    <h2 class="section">Who this is for — and who it isn't</h2>
-    <p class="muted" style="max-width:76ch; margin-top:10px; font-size:16px">The Slow Swing is an <b style="color:var(--ink)">educational research service</b> — we are not a broker-dealer or an investment adviser. We don't execute trades, hold your money, or tell you what to buy or sell. To act on anything you learn here, you'll use your own brokerage account.</p>
-    <div class="cols3" style="grid-template-columns:1fr 1fr; margin-top:24px">
-      <div class="fcard" style="border-color:rgba(21,128,61,.35)">
-        <div class="ico" style="background:rgba(21,128,61,.1)">✅</div>
-        <h3>A good fit if…</h3>
-        <ul class="fitlist">
-          <li>You want a few deliberate <b>swing trades</b> a week, held for weeks — not minutes.</li>
-          <li>You want a vetted starting point and will do your own homework on top.</li>
-          <li>You value a repeatable process and education over hot tips.</li>
-        </ul>
-      </div>
-      <div class="fcard" style="border-color:rgba(185,28,28,.3)">
-        <div class="ico" style="background:rgba(185,28,28,.08)">🚫</div>
-        <h3>Not the right fit if…</h3>
-        <ul class="fitlist">
-          <li>You're looking for a <b>broker</b> or somewhere to place trades — we're not one; you'll trade on your own broker platform.</li>
-          <li>You want <b>intraday / day-trading</b> signals — this education is for swing trading, not intraday.</li>
-          <li>You want personalized advice or someone to tell you exactly what to buy or sell.</li>
-        </ul>
-      </div>
+    <div class="kicker">Who this is for</div>
+    <h2 class="section" style="max-width:30ch">Busy people who want a few good trades a week</h2>
+    <div class="cols3" style="margin-top:22px">
+      <div class="fcard"><div class="ico">✅</div><h3>For you if</h3><p>You trade in your own brokerage account, you're after 5–10% moves over days to weeks, and you'd rather spend ten minutes an evening on a vetted shortlist than hours on screens.</p></div>
+      <div class="fcard"><div class="ico">⛔</div><h3>Not for you if</h3><p>You day-trade, you want someone to place trades for you, or you want a fund manager. We're a research publisher — we find the setups, you trade them with your broker.</p></div>
+      <div class="fcard"><div class="ico">🧭</div><h3>How it works, in one line</h3><p>Open the board after 5 pm ET, look at the Active names, check the AI Score and the 💎, pick what fits your plan, and trade it where you already trade. <a data-nav="start" style="color:var(--primary); font-weight:650">Getting started →</a></p></div>
     </div>
   </div></section>
 
   <section class="block"><div class="wrap" style="text-align:center">
-    <div class="kicker">A live peek</div>
-    <h3 class="section" style="font-size:22px; margin:6px auto 4px">Today's board — a name from the list</h3>
-    <p class="muted" style="max-width:56ch; margin:0 auto 18px; font-size:15px">Refreshed after every close. Subscribers see the full board every trading day.</p>
-    <div class="heroart livepeek" style="max-width:360px; margin:0 auto; padding:16px; cursor:pointer" title="See today's full board">
-      <div class="hb"><span class="kicker">Today's board</span><span class="liveflag">● LIVE</span></div>
-      <div class="grid" id="heropeek" style="grid-template-columns:1fr; gap:12px"></div>
-    </div>
-    <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap"><a class="btn btn-ghost" data-nav="board">See the entire board →</a><a class="btn btn-primary" data-tour style="cursor:pointer">▶ Take the 30-sec tour</a></div>
-  </div></section>
-
-  <section class="block"><div class="wrap" style="text-align:center">
-    <h2 class="section" style="max-width:20ch; margin:0 auto">Ready to make fewer, better stock trades?</h2>
-    <p class="muted" style="max-width:48ch; margin:10px auto 22px">Try the full board free for a week. Cancel anytime before it renews.</p>
-    <a class="btn btn-primary" data-nav="pricing" style="padding:14px 28px">Start your free month</a>
+    <h2 class="section" style="margin:0 auto; max-width:28ch">Tonight's board is waiting.</h2>
+    <p class="muted" style="margin:10px auto 0; max-width:50ch">30 days free, no card. Watch a few setups play out and decide for yourself.</p>
+    <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap"><a class="btn btn-primary heroCta" data-nav="pricing" style="padding:13px 26px">Start free trial</a><a class="btn btn-ghost" data-nav="track">Read the track record →</a></div>
+    <div class="disc" style="margin-top:28px; text-align:left">Educational research, not advice. Not a recommendation to buy, sell, hold or size any position, and not tailored to anyone. All figures are hypothetical and paper-tracked.</div>
   </div></section>
 </div>
 
@@ -1002,10 +929,10 @@
   <section class="block" id="how-boards"><div class="wrap">
     <div class="kicker">The board, day to day</div>
     <h2 class="section">Active board vs. Out of Range board</h2>
-    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Every evening after the close, the model re-scans the market and refreshes the board. A setup is only worth acting on while price is still near where the stock was added — once a name has run away from that level, chasing it is a different (and worse) trade. So we split the board by <b style="color:var(--ink)">how far price has moved from the setup</b>, not by date.</p>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">When a stock goes on the board, the conditions our model looks for are in place that evening. <b style="color:var(--ink)">Active</b> means they still are. Once a stock is <b style="color:var(--ink)">Out of Range</b>, the move has happened. So the board is split by <b style="color:var(--ink)">what price has done since the stock was added</b>, not by date.</p>
     <div class="cols3" style="grid-template-columns:1fr 1fr; margin-top:24px">
-      <div class="fcard" style="border-color:rgba(21,128,61,.35)"><div class="ico" style="background:rgba(21,128,61,.1)">🟢</div><h3>Active board</h3><p>Price is still within <b>+5% of the setup</b> — or below it. The conditions the model flagged still look ripe here, so this is the list to study first. Fresh arrivals this week carry a gold <b>NEW</b> tag.</p></div>
-      <div class="fcard" style="border-color:rgba(201,138,18,.35)"><div class="ico" style="background:rgba(201,138,18,.1)">📈</div><h3>Out of Range board</h3><p>Price has already moved <b>more than +5%</b> past the setup — the window where conditions looked ripe has largely passed. We keep these to show the calls that worked: their <b style="color:var(--up)">Peak</b> vs <b style="color:var(--down)">Max Dip</b>, and — importantly — the <b>median time to peak</b>, evidence that gains often arrive in weeks, not months. Educational, not actionable.</p></div>
+      <div class="fcard" style="border-color:rgba(21,128,61,.35)"><div class="ico" style="background:rgba(21,128,61,.1)">🟢</div><h3>Active board</h3><p>The stock has <b>not yet traded 5% above</b> the price it was added at — some sit below it, and those stay Active on purpose. The conditions the model flagged are still in place, so this is the list to study first, for up to twelve weeks. Fresh arrivals this week carry a gold <b>NEW</b> tag.</p></div>
+      <div class="fcard" style="border-color:rgba(201,138,18,.35)"><div class="ico" style="background:rgba(201,138,18,.1)">📈</div><h3>Out of Range board</h3><p>The stock has traded <b>5% or more above</b> its added price at least once — the move has happened, and a pullback does not send it back. We keep these to show how setups play out: their <b style="color:var(--up)">Peak</b> vs <b style="color:var(--down)">Max Dip</b>, and the <b>median time to peak</b>, evidence that gains often arrive in weeks, not months. Educational, not an invitation to chase.</p></div>
     </div>
     <p class="muted" style="max-width:74ch; margin-top:18px; font-size:15px">Because we use <b style="color:var(--ink)">no stop-loss and no price targets</b>, the board tells you <i>when conditions look ripe</i> — the entry timing, the position size, and especially the exit are always your decision. The Out of Range board exists to build conviction, not to imply anyone bought at the low or sold at the peak.</p>
   </div></section>
@@ -1019,6 +946,12 @@
       <div class="fcard"><div class="ico">🔗</div><h3>Correlation to SPY</h3><p>How tightly a name tracks the market. Highly correlated names give you little shelter — when SPY drops, they usually drop with it. Lower-correlation quality names are steadier when the tape turns.</p></div>
       <div class="fcard"><div class="ico">🎚️</div><h3>The regime dial</h3><p>A four-step read on how stretched the S&P 500 is versus its <b>own recent history</b>: <b style="color:var(--pass)">Green</b> (recently reset — historically the friendliest backdrop), <b style="color:var(--watch)">Yellow</b> (moderately stretched, an ordinary reading), <b style="color:#c2410c">Orange</b> (unusually stretched — most such periods pass quietly, but the market's rare deep drops have historically started here), <b style="color:var(--fail)">Red</b> (below its long-term trend). Context for how hard to lean in — never a forecast or a command.</p></div>
     </div>
+    <div class="fcard" style="margin-top:22px; max-width:78ch" id="how-regime-use">
+      <h3>How to use it — with the numbers</h3>
+      <p>In our ten-year research, the same setups returned on average <b style="color:var(--ink)">+8.6% over twelve weeks</b> when entered with the dial <b style="color:var(--fail)">Red</b> (the market below its long-term trend, after a correction) against <b style="color:var(--ink)">+1.7%</b> when entered in <b style="color:var(--watch)">Yellow</b> (stretched). That is roughly a five-fold difference from the same stock list — the dial is a return lever, not just a mood indicator.</p>
+      <p>The live book, started in July 2026, says the same thing so far: setups added with the market <b style="color:var(--pass)">Healthy</b> averaged <b style="color:var(--ink)">+7.0% at four weeks</b> (90 setups) against <b style="color:var(--ink)">−0.4%</b> for those added with it <b style="color:var(--watch)">Extended</b> (11 setups — a small sample, read with care).</p>
+      <p style="margin-bottom:0">So, in practice: <b style="color:var(--ink)">Green or Red</b> — the board has usually earned fuller attention and the more patient, bigger Phoenix names tend to pay; <b style="color:var(--ink)">Yellow</b> — ordinary, size as you normally would; <b style="color:var(--ink)">Orange</b> — be choosier, smaller, and favour the steadier Cruise names. The dial changes how much, never whether the setup is real.</p>
+    </div>
     <p class="muted" style="max-width:74ch; margin-top:18px; font-size:15px">We frame regime as <b style="color:var(--ink)">context</b>, not a command — a way to gauge how supportive conditions are, never a hard veto or a market forecast. We can't predict the market any more than we can predict a single stock. A weak regime is generally a reason for caution — the environment tends to favor lower-beta, less-correlated quality names; a healthy regime is more supportive. Same setups, read against the conditions.</p>
   </div></section>
 
@@ -1029,7 +962,7 @@
       <div class="videocard" data-video style="max-width:230px; padding:18px"><div class="playbtn" style="width:46px;height:46px;font-size:17px;margin-bottom:10px">▶</div><div class="vlabel" style="font-size:13.5px">Watch: reading a card</div><div class="vsub">45-second walkthrough</div></div>
     </div>
     <div class="cols3">
-      <div class="fcard"><div class="ico">◆</div><h3>The Swing Score</h3><p>Our model's conviction reading, distilled from years of market data. Higher means a stronger match to what we're looking for. Use it to prioritize your attention — a ranking, not a promise.</p></div>
+      <div class="fcard"><div class="ico">◆</div><h3>The AI Score</h3><p>Our model's conviction reading, distilled from years of market data. Higher means a stronger match to what we're looking for. Use it to prioritize your attention — a ranking, not a promise.</p></div>
       <div class="fcard"><div class="ico">🛡️</div><h3>The Quality badge</h3><p>💎 means the company cleared a fundamental safety screen built on published academic research. It's not about predicting the next move — it's about knowing the business underneath is sound.</p></div>
       <div class="fcard"><div class="ico">🔥</div><h3>The Setup</h3><p>Which of our two setups the stock fits — Phoenix or Cruise. Each carries its own character and temperament, so you know the kind of opportunity you're holding and roughly what to expect.</p></div>
       <div class="fcard"><div class="ico">📈</div><h3>Market Pulse</h3><p>A quick read on how the name is carrying itself versus the broader market — Strong, Neutral, or Weak. Shown two ways: as it was when the stock was added, and as it is now, refreshed each evening. Context, one of several inputs the model considers, not a signal to act on by itself.</p></div>
@@ -1135,7 +1068,7 @@
     <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Everything on this site, in reading order. Some of it lives on other pages and is linked from here; the rest is written for this page. Read it once, slowly. It is a description of <b style="color:var(--ink)">our</b> approach and what <b style="color:var(--ink)">our</b> data showed — not a set of instructions for you.</p>
     <div class="cols3" style="margin-top:22px">
       <div class="fcard"><div class="ico">1</div><h3><a data-nav="handbook" data-scroll="hb-what" style="color:var(--ink)">What this is, and isn't</a></h3><p>Research, not advice. Trading, not investing. Weeks, not minutes.</p></div>
-      <div class="fcard"><div class="ico">2</div><h3><a data-nav="how" style="color:var(--ink)">How the board is built →</a></h3><p>Phoenix and Cruise, the Swing Score, the quality gate, Pulse, the regime bar.</p></div>
+      <div class="fcard"><div class="ico">2</div><h3><a data-nav="how" style="color:var(--ink)">How the board is built →</a></h3><p>Phoenix and Cruise, the AI Score, the quality gate, Pulse, the regime bar.</p></div>
       <div class="fcard"><div class="ico">3</div><h3><a data-nav="handbook" data-scroll="hb-life" style="color:var(--ink)">The life of a setup</a></h3><p>Active → Out of Range → Retired, and what the data says about each stage.</p></div>
       <div class="fcard"><div class="ico">4</div><h3><a data-nav="handbook" data-scroll="hb-ten" style="color:var(--ink)">The board in ten minutes</a></h3><p>The evening routine we use ourselves.</p></div>
       <div class="fcard"><div class="ico">5</div><h3><a data-nav="handbook" data-scroll="hb-tested" style="color:var(--ink)">What we tested and rejected</a></h3><p>Stops, targets, warning lights. Three studies, one conclusion.</p></div>
@@ -1175,7 +1108,7 @@
     <ol class="muted" style="max-width:74ch; margin-top:14px; font-size:16px; padding-left:22px; line-height:1.7">
       <li style="margin-bottom:10px"><b style="color:var(--ink)">The regime bar first.</b> SPY and QQQ against their own history. Green means the market has recently reset; yellow, extended but ordinary; orange, stretched. In our data the same setups did several times better entered after a reset than entered stretched. This is context for how bold to be, never a trigger.</li>
       <li style="margin-bottom:10px"><b style="color:var(--ink)">New names, then the 💎 filter.</b> Anything with a NEW badge qualified this week. Collapse to High-Quality only. The gate exists so that when a name dips — and nearly all of them dip — you're holding a business sound enough to sit through it.</li>
-      <li style="margin-bottom:10px"><b style="color:var(--ink)">Phoenix or Cruise, and the Swing Score.</b> Phoenix is the bigger, slower move that tests you harder on the way; Cruise is the smaller, quicker one. The score is conviction: how strongly the conditions matched. Higher is better; it is not a forecast.</li>
+      <li style="margin-bottom:10px"><b style="color:var(--ink)">Phoenix or Cruise, and the AI Score.</b> Phoenix is the bigger, slower move that tests you harder on the way; Cruise is the smaller, quicker one. The score is conviction: how strongly the conditions matched. Higher is better; it is not a forecast.</li>
       <li style="margin-bottom:10px"><b style="color:var(--ink)">Pulse @ Add and Pulse now.</b> How the name was moving against the market when it qualified, and how it is moving tonight. A tie-breaker between names, not a reason on its own.</li>
       <li style="margin-bottom:10px"><b style="color:var(--ink)">Click the ticker.</b> The shape of the move since the stock was added — peak, worst dip, where it is now — as percentages. This is where you check whether a name is still below, at or just above its added price, or has already run.</li>
       <li style="margin-bottom:10px"><b style="color:var(--ink)">What we ignore.</b> The intraday chart. The news. Anything that happened before tonight's close. The board is built on daily closes, and reading it more than once a day adds noise, not information.</li>
@@ -1215,7 +1148,7 @@
     <div class="cols3" style="margin-top:18px">
       <div class="fcard"><h3>Added</h3><p>The evening a stock qualified for a setup and went on the board. Every row shows its date. Not a buy instruction.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="agetabs" data-age="active">Active board →</a> · <a data-nav="how" data-scroll="how-read">How to read a card →</a></p></div>
       <div class="fcard"><h3>Phoenix / Cruise</h3><p>The two setup types. Phoenix: the bigger, slower recovery move. Cruise: the smaller, quicker breather inside a trend.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="phoenix">Phoenix on the board →</a> · <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="cruise">Cruise on the board →</a> · <a data-nav="how" data-scroll="how-boards">The two setups →</a></p></div>
-      <div class="fcard"><h3>Swing Score</h3><p>Conviction — how strongly the conditions matched the model. Higher is stronger; it is not a forecast.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="boardFilters" data-age="active">Filter the board by score →</a> · <a data-nav="how" data-scroll="how-read">What the score means →</a></p></div>
+      <div class="fcard"><h3>AI Score</h3><p>Conviction — how strongly the conditions matched the model. Higher is stronger; it is not a forecast.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="boardFilters" data-age="active">Filter the board by score →</a> · <a data-nav="how" data-scroll="how-read">What the score means →</a></p></div>
       <div class="fcard"><h3>Quality gate</h3><p>A fundamental screen every published name has passed: 💎 High-Quality or ◆ Watch. Names that fail it are tracked internally but never published. The reason you can hold a dip.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="qtabs" data-age="active">💎 High-quality only →</a> · <a data-nav="how" data-scroll="how-gate">How the gate works →</a></p></div>
       <div class="fcard"><h3>Pulse</h3><p>How the name is moving against the broad market: Strong, Neutral or Weak. Shown as of the day added, and now.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="boardFilters" data-age="active">Filter by Pulse →</a> · <a data-nav="how" data-scroll="how-read">Where it shows →</a></p></div>
       <div class="fcard"><h3>Regime</h3><p>Where SPY and QQQ sit against their own history: Green (reset), Yellow (extended), Orange (stretched), Red (below trend).</p><p class="gl-see">See it: <a data-nav="board" data-scroll="regime">Today's regime bar →</a> · <a data-nav="how" data-scroll="how-regime">How we read it →</a></p></div>
@@ -1298,61 +1231,35 @@
   <section class="block"><div class="wrap">
     <div class="convband">
       <div class="kicker">FAQ</div>
-      <h2 class="section" style="max-width:26ch">Everything else, in plain language</h2>
-      <p class="muted" style="max-width:70ch; margin-top:14px; font-size:16px">The seven steps are on <a data-nav="start" style="color:var(--primary); font-weight:700">Getting started</a>. This page explains the rest: the two setups, every number on the board, how a stock moves through it, what an evening looks like, and the practical questions about your account.</p>
+      <h2 class="section" style="max-width:26ch">The questions people ask first</h2>
+      <p class="muted" style="max-width:70ch; margin-top:14px; font-size:16px">The seven steps are on <a data-nav="start" style="color:var(--primary); font-weight:700">Getting started</a>; every term on the board is one line each in the <a data-nav="handbook" data-scroll="hb-gloss" style="color:var(--primary); font-weight:700">Handbook glossary</a>. This page is the short list.</p>
       <div class="toc-inline" data-toc-inline="faq"></div>
     </div>
   </div></section>
 
-  <section class="block" id="faq-setups"><div class="wrap">
-    <div class="kicker">The setups</div>
-    <h2 class="section">Phoenix, Cruise, and what the model is looking for</h2>
+  <section class="block" id="faq-ask"><div class="wrap">
+    <div class="kicker">Quick answers</div>
+    <h2 class="section">Ten things worth knowing</h2>
     <div class="cols3" style="margin-top:18px">
-      <div class="fcard"><h3>What is a Phoenix?</h3><p>A quality company whose stock has been marked down hard and is now turning back up — holding its long-term trend rather than breaking it. The bigger, slower move: it tends to run further and take longer, and it asks for more patience through the dips. <a data-nav="how" data-scroll="how-boards" style="color:var(--primary); font-weight:650">More →</a></p></div>
-      <div class="fcard"><h3>What is a Cruise?</h3><p>An established leader taking a breather inside a trend the model reads as intact. The smaller, quicker move: it tends to pop sooner and settle sooner, with shallower dips. Less drama, smaller room.</p></div>
-      <div class="fcard"><h3>How does the model find them?</h3><p>It was trained on ten years of daily data across the U.S. market to recognise the price conditions that most often preceded a good few weeks. Every evening it grades every stock in our universe and adds the ones that fit. We describe the setups by character, not by formula. <a data-nav="how" data-scroll="how-method" style="color:var(--primary); font-weight:650">Methodology →</a></p></div>
-      <div class="fcard"><h3>Which stocks are in the universe?</h3><p>U.S. mid- and large-caps — S&amp;P 500 and S&amp;P 400 constituents — priced $50 or more when added, and screened by the quality gate. No small caps, no low-priced stocks.</p></div>
-      <div class="fcard"><h3>Why only two setups?</h3><p>Because these are the two we could validate out of sample and track honestly. More patterns would mean more names and a lower bar. A short list is the product.</p></div>
       <div class="fcard"><h3>Is a setup a buy signal?</h3><p>It's a shortlist. A setup tells you a quality company is in a position that has historically been followed by a move — the hard, time-consuming part of finding candidates is done. Which ones you trade, and how, is where your judgement comes in.</p></div>
-    </div>
-  </div></section>
-
-  <section class="block" id="faq-numbers"><div class="wrap">
-    <div class="kicker">The numbers</div>
-    <h2 class="section">Swing Score, Pulse, Regime, Peak and Max Dip</h2>
-    <div class="cols3" style="margin-top:18px">
-      <div class="fcard"><h3>What is the Swing Score?</h3><p>How strongly a stock matched what the model looks for, on the night it was added. Higher is a stronger match. It is a way to rank your attention across the board — not a forecast, and not a target.</p></div>
-      <div class="fcard"><h3>What is Pulse?</h3><p>How the stock has been moving against the broad market over the past couple of months: Strong, Neutral or Weak. <b>Pulse @ Add</b> is frozen as of the day it was added; <b>Pulse now</b> is refreshed every night, so you can see whether the stock is gaining or losing ground against the market since.</p></div>
-      <div class="fcard"><h3>What is Regime?</h3><p>How stretched the S&amp;P 500 is against its own recent history on the day a stock was added: Healthy, Extended, Weak or Over-extended. Our research shows setups entered in calmer markets have done better. Context for how much to risk, not a trigger. <a data-nav="how" data-scroll="how-regime" style="color:var(--primary); font-weight:650">More →</a></p></div>
-      <div class="fcard"><h3>What is Peak?</h3><p>The best level the price touched since the stock was added, as a percentage. A hindsight high — nobody sells the exact top — shown so you can see the room a setup gave. At 5% or more, the stock moves to Out of Range.</p></div>
-      <div class="fcard"><h3>What is Max Dip?</h3><p>The worst level below the price when added, in the first four weeks. What you would have had to sit through. Most setups dip before they run; the Trading Psychology page is about living with that.</p></div>
-      <div class="fcard"><h3>What are 2wk / 4wk / 12wk?</h3><p>Real close-to-close returns at those marks after the stock was added — not peaks. They fill in as a stock reaches each mark; a dash means it isn't that old yet.</p></div>
-      <div class="fcard"><h3>What is the quality gate?</h3><p>A fundamental screen — profitability, balance-sheet strength, a bankruptcy-risk veto, cash generation — grounded in published research. 💎 passed cleanly, ◆ passed with reservations, failing companies never appear. <a data-nav="how" data-scroll="how-gate" style="color:var(--primary); font-weight:650">More →</a></p></div>
-      <div class="fcard"><h3>What do the balloons on the home page mean?</h3><p>Across every setup that completed its first four weeks, the share whose Peak reached +5% and +10%. Snapshot taken at each month end and never restated. Hypothetical peak, not returns anyone earned. <a data-nav="track" data-scroll="trackMonthly" style="color:var(--primary); font-weight:650">Month by month →</a></p></div>
-      <div class="fcard"><h3>Why percentages and not prices?</h3><p>Our market-data licence covers research, not republishing quotes — and the move is what matters for judging a setup. The price on any day is in your brokerage account. <a data-post="why-percentages-not-prices" style="color:var(--primary); font-weight:650">More →</a></p></div>
-    </div>
-  </div></section>
-
-  <section class="block" id="faq-board"><div class="wrap">
-    <div class="kicker">Active, Out of Range, Retired</div>
-    <h2 class="section">How a stock moves through the board</h2>
-    <div class="cols3" style="margin-top:18px">
-      <div class="fcard"><h3>What does Active mean?</h3><p>The stock has not yet traded 5% above the price it was added at — its Peak is under 5%. The setup is still ripe by our definition, and it stays Active for up to twelve weeks. Names that are <i>down</i> are still Active on purpose.</p></div>
-      <div class="fcard"><h3>What does Out of Range mean?</h3><p>The stock has traded 5% or more above its added price at least once. The move has happened. We keep these visible so you can watch how setups play out — not as an invitation to chase. A pullback does not send a name back to Active.</p></div>
-      <div class="fcard"><h3>When does a stock retire?</h3><p>Once it has run 5% and is four weeks past being added — or after twelve weeks if it never runs. It then lands on the Track Record with its real returns. Every name retires; nothing is quietly dropped. <a data-nav="handbook" data-scroll="hb-life" style="color:var(--primary); font-weight:650">More →</a></p></div>
-      <div class="fcard"><h3>What do Fresh and Seasoned mean?</h3><p>Age since added: Fresh is under four weeks, Seasoned is four to twelve. Age never decides whether a stock is Active — price does. Our research found names still near their added price after week four remained attractive.</p></div>
+      <div class="fcard"><h3>How many setups a night is normal?</h3><p>Usually two to six, sometimes zero. The model only adds a stock when the conditions are there. A long list would mean the bar is too low.</p></div>
+      <div class="fcard"><h3>A stock is down 15% and still Active. Why?</h3><p>Because it hasn't run yet — and our research says that's often where the opportunity is. Names still near or below their added price after a few weeks went on to do better than names that had already moved. So we keep them Active deliberately, so you don't lose sight of them. <a data-nav="handbook" data-scroll="hb-life" style="color:var(--primary); font-weight:650">More →</a></p></div>
+      <div class="fcard"><h3>Why did a name leave the board?</h3><p>It retired: either it had run 5% and passed the four-week mark, or it spent twelve weeks without running. Retired names are on the Track Record with their real returns. Nothing is quietly dropped. <a data-nav="track" data-scroll="trackStats" style="color:var(--primary); font-weight:650">More →</a></p></div>
       <div class="fcard"><h3>What does Pending mean?</h3><p>The stock qualified in tonight's scan. Our paper book enters it at tomorrow's open — nobody could have bought at tonight's close — so there is no price or scorecard until then.</p></div>
-      <div class="fcard"><h3>What does NEW mean?</h3><p>Added since Monday of the current week.</p></div>
-      <div class="fcard"><h3>What does ⚠ Earnings mean?</h3><p>The company reports earnings on that date, within the next three weeks. Stocks move more than usual around a report, in either direction — worth knowing before you decide anything.</p></div>
+      <div class="fcard"><h3>Why percentages and not prices?</h3><p>The move is what matters for judging a setup, and a percentage makes a $60 stock and a $900 stock comparable on one board. The price on any given day is in your brokerage account. <a data-post="why-percentages-not-prices" style="color:var(--primary); font-weight:650">More →</a></p></div>
+      <div class="fcard"><h3>What do the balloons on the home page mean?</h3><p>Across every setup that completed its first four weeks, the share whose Peak reached +5% and +10% — set against the same measure for a typical S&amp;P 500 stock. Snapshot taken at each month end and never restated. Hypothetical peak, not returns anyone earned. <a data-nav="track" data-scroll="trackMonthly" style="color:var(--primary); font-weight:650">Month by month →</a></p></div>
+      <div class="fcard"><h3>Why "trading, not investing"?</h3><p>Because the setups describe a price condition that has tended to resolve over weeks — not a company to own for years. Different horizon, different mindset. <a data-nav="handbook" data-scroll="hb-what" style="color:var(--primary); font-weight:650">More →</a></p></div>
+      <div class="fcard"><h3>Why no stops or targets?</h3><p>We tested them on thousands of our own setups; every version made results worse. The dip is usually the toll, not the verdict. <a data-nav="psychology" data-scroll="psy-chop" style="color:var(--primary); font-weight:650">More →</a></p></div>
+      <div class="fcard"><h3>Is this advice? Can I ask about a particular stock?</h3><p>It's research, and we're a publisher — the same board goes to every member. We don't know your situation, so we can't tell you what to buy or comment on individual trades. What we can do is make sure every name on the board has earned its place and show you exactly how each one has behaved.</p></div>
     </div>
   </div></section>
 
-  <section class="block" id="faq-row"><div class="wrap">
+<section class="block" id="faq-row"><div class="wrap">
     <div class="kicker">Reading the board</div>
     <h2 class="section">What every column on the board means</h2>
     <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">The board is a table with a lot of columns. Here is one row, taken apart. The numbers are illustrative.</p>
     <div class="listwrap" style="margin-top:18px"><table class="ltable gs-row"><thead><tr>
-      <th>Ticker</th><th>Sector</th><th>Setup</th><th>Swing Score</th><th>Quality</th><th>Pulse @ Add</th><th>Pulse now</th><th>Added</th><th>Age</th><th>Regime @ Add</th><th>Current %</th><th>2wk ▲</th><th>4wk ▲</th><th>Peak ▲</th><th>Max Dip ▼</th></tr></thead>
+      <th>Ticker</th><th>Sector</th><th>Setup</th><th>AI Score</th><th>Quality</th><th>Pulse @ Add</th><th>Pulse now</th><th>Added</th><th>Age</th><th>Regime @ Add</th><th>Current %</th><th>2wk ▲</th><th>4wk ▲</th><th>Peak ▲</th><th>Max Dip ▼</th></tr></thead>
       <tbody><tr>
         <td><div class="lt-tkr">ABCD <span class="newflag">NEW</span></div><div class="lt-co">Example Co.</div><div class="gs-n">1</div></td>
         <td class="lt-sector">Tech<div class="gs-n">2</div></td>
@@ -1374,7 +1281,7 @@
       <div class="fcard"><h3><span class="anno-num">1</span> Ticker &amp; company</h3><p>Click the ticker for the shape of its move since it was added. <span class="newflag">NEW</span> = added this week. <span class="newflag pend">PENDING</span> = qualified after tonight's close, enters at tomorrow's open.</p></div>
       <div class="fcard"><h3><span class="anno-num">2</span> Sector</h3><p>So you can keep your own portfolio balanced and avoid piling into one theme.</p></div>
       <div class="fcard"><h3><span class="anno-num">3</span> Setup</h3><p>Phoenix (bigger, slower recovery) or Cruise (smaller, quicker breather). Each has its own temperament.</p></div>
-      <div class="fcard"><h3><span class="anno-num">4</span> Swing Score</h3><p>How strongly the stock matched what the model looks for. Higher is stronger. It ranks attention; it is not a forecast.</p></div>
+      <div class="fcard"><h3><span class="anno-num">4</span> AI Score</h3><p>How strongly the stock matched what the model looks for. Higher is stronger. It ranks attention; it is not a forecast.</p></div>
       <div class="fcard"><h3><span class="anno-num">5</span> Quality</h3><p>💎 passed our fundamental screen cleanly; ◆ passed with reservations. Failing companies are never shown.</p></div>
       <div class="fcard"><h3><span class="anno-num">6</span> Pulse @ Add · Pulse now</h3><p>How the stock is moving against the broad market — Strong, Neutral or Weak — frozen as of the day it was added, and refreshed each night.</p></div>
       <div class="fcard"><h3><span class="anno-num">7</span> Added</h3><p>The evening the stock qualified and went on the board. Everything to the right is measured from the price that day.</p></div>
@@ -1387,34 +1294,6 @@
     </div>
   </div></section>
 
-  <section class="block" id="faq-evening"><div class="wrap">
-    <div class="kicker">Using the site</div>
-    <h2 class="section">What using it actually looks like</h2>
-    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">This is how members tend to use the site. It is a description, not a schedule you have to keep.</p>
-    <div class="steps" style="margin-top:18px">
-      <div class="step"><div class="num">5:00</div><h4>The board updates</h4><p>A little after 5 pm Eastern, once the day's closing data is in. Weeknights only.</p></div>
-      <div class="step"><div class="num">5:05</div><h4>Glance at what's new</h4><p>New names carry a <span class="newflag">NEW</span> tag for the week; a <span class="newflag pend">PENDING</span> tag means it enters at tomorrow's open. Most nights that is two to six names. Some nights it is none — a quiet night is by design.</p></div>
-      <div class="step"><div class="num">5:10</div><h4>Look at the Active board</h4><p>Sort by Added or by Swing Score. Click a ticker or two to see the shape of the move. Check the quality badge and the sector.</p></div>
-      <div class="step"><div class="num">later</div><h4>Pick your candidates</h4><p>Read up on the companies that caught your eye, check they fit your plan, and decide your exit approach before you act.</p></div>
-      <div class="step"><div class="num">next day</div><h4>Trade it with your broker</h4><p>Take the setups you like to your brokerage account and place the trade there, at the size you've decided on.</p></div>
-    </div>
-  </div></section>
-
-  <section class="block" id="faq-ask"><div class="wrap">
-    <div class="kicker">Quick answers</div>
-    <h2 class="section">The questions people ask first</h2>
-    <div class="cols3" style="margin-top:18px">
-      <div class="fcard"><h3>Why don't you show prices?</h3><p>Our market-data licence covers research, not republishing quotes — and the move is what matters for judging a setup. The price on any given day is in your brokerage account. <a data-post="why-percentages-not-prices" style="color:var(--primary); font-weight:650">More →</a></p></div>
-      <div class="fcard"><h3>A stock is down 15% and still Active. Why?</h3><p>Because it hasn't run yet — and our research says that's often where the opportunity is. Names still near or below their added price after a few weeks went on to do better than names that had already moved. So we keep them Active deliberately, so you don't lose sight of them. <a data-nav="handbook" data-scroll="hb-life" style="color:var(--primary); font-weight:650">More →</a></p></div>
-      <div class="fcard"><h3>Why did a name leave the board?</h3><p>It retired: either it had run 5% and passed the four-week mark, or it spent twelve weeks without running. Retired names are on the Track Record with their real returns. Nothing is quietly dropped. <a data-nav="track" data-scroll="trackStats" style="color:var(--primary); font-weight:650">More →</a></p></div>
-      <div class="fcard"><h3>What does Pending mean?</h3><p>The stock qualified in tonight's scan. Our paper book enters it at tomorrow's open — nobody could have bought at tonight's close — so there is no price or scorecard until then.</p></div>
-      <div class="fcard"><h3>How many setups a night is normal?</h3><p>Usually two to six, sometimes zero. The model only adds a stock when the conditions are there. A long list would mean the bar is too low.</p></div>
-      <div class="fcard"><h3>Why "trading, not investing"?</h3><p>Because the setups describe a price condition that has tended to resolve over weeks — not a company to own for years. Different horizon, different mindset. <a data-nav="handbook" data-scroll="hb-what" style="color:var(--primary); font-weight:650">More →</a></p></div>
-      <div class="fcard"><h3>Why no stops or targets?</h3><p>We tested them on thousands of our own setups; every version made results worse. The dip is usually the toll, not the verdict. <a data-nav="psychology" data-scroll="psy-chop" style="color:var(--primary); font-weight:650">More →</a></p></div>
-      <div class="fcard"><h3>Is this advice?</h3><p>It's research, and we're a publisher — the same board goes to every member. We don't know your situation, so we can't tell you what to buy; what we can do is make sure every name on the board has earned its place and show you exactly how each one has behaved.</p></div>
-      <div class="fcard"><h3>Where are the definitions?</h3><p>Every term on the board, one line each, in the Handbook glossary. <a data-nav="handbook" data-scroll="hb-gloss" style="color:var(--primary); font-weight:650">Glossary →</a></p></div>
-    </div>
-  </div></section>
   <section class="block" id="faq-account"><div class="wrap">
     <div class="kicker">Account &amp; billing</div>
     <h2 class="section">Trial, plans, cancelling</h2>
@@ -1423,7 +1302,6 @@
       <div class="fcard"><h3>What does it cost after that?</h3><p>$15 a month, or $120 a year ($10 a month). The same board and the same research on every plan. <a data-nav="pricing" style="color:var(--primary); font-weight:650">Pricing →</a></p></div>
       <div class="fcard"><h3>How do I cancel?</h3><p>Account → Billing → Cancel, or email support@theslowswing.com. Monthly plans keep access to the end of the billing month; annual plans to the end of the paid year. <a data-nav="pricing" data-scroll="cancelsec" style="color:var(--primary); font-weight:650">Cancellation policy →</a></p></div>
       <div class="fcard"><h3>I didn't get the sign-in email.</h3><p>Check spam, and make sure you used <b>Start free trial</b> rather than <b>Log in</b> for a new address. The email also carries a six-digit code you can type on the device you're already on.</p></div>
-      <div class="fcard"><h3>Can I ask whether to buy a particular stock?</h3><p>We can't give personal advice, so we don't comment on individual trades. Everything we know about a stock on the board is already on the board — the setup, the quality check, Pulse, Peak and Max Dip — and the Handbook explains how to read it.</p></div>
       <div class="fcard"><h3>Who is behind this?</h3><p>Theslowswing LLC — a small research publisher built by a working professional who trades this way himself. We publish the research and the full record; your trades stay with your broker. <a data-nav="contact" style="color:var(--primary); font-weight:650">Contact →</a></p></div>
     </div>
   </div></section>
@@ -1445,7 +1323,7 @@
         <div class="muted" style="font-size:13px">billed monthly · $240 / year</div>
         <ul>
           <li>✓ <b>The nightly board</b> — every Phoenix &amp; Cruise setup, refreshed after each close</li>
-          <li>✓ <b>The Swing Score &amp; quality badge</b> on every name</li>
+          <li>✓ <b>The AI Score &amp; quality badge</b> on every name</li>
           <li>✓ <b>The educational layer</b> — why each setup qualifies</li>
           <li>✓ <b>Market-context read</b> so you know when to lean in</li>
           <li class="trialbullet">✓ <b>30 days free</b>, then cancel anytime — no lock-in</li>
@@ -1461,7 +1339,7 @@
         <ul>
           <li>✓ <b>Everything in Monthly</b>, at a third off the monthly rate</li>
           <li>✓ <b>$60 saved</b> every year vs paying month to month</li>
-          <li>✓ <b>The Swing Score &amp; quality badge</b> on every name</li>
+          <li>✓ <b>The AI Score &amp; quality badge</b> on every name</li>
           <li>✓ <b>The full educational layer</b> &amp; market context</li>
           <li class="trialbullet">✓ <b>30 days free</b>, then cancel anytime — no lock-in</li>
         </ul>
@@ -1475,7 +1353,7 @@
         <div class="amt">$80<small> / year</small></div>
         <div class="muted" style="font-size:13px"><s style="color:var(--faint)">$120</s> &nbsp;<b style="color:var(--pass)">$80 / year</b> · ≈ $6.67/mo</div>
         <ul>
-          <li>✓ <b>Everything in Annual</b> — the full board, Swing Score, quality badge &amp; market context</li>
+          <li>✓ <b>Everything in Annual</b> — the full board, AI Score, quality badge &amp; market context</li>
           <li>✓ <b>Under $7 a month</b> — the lowest price we'll ever offer</li>
           <li>✓ <b>Locked in for life</b> — your founding rate never goes up while you stay subscribed</li>
           <li>✓ <b>For our founding members</b> — a thank-you for backing us early</li>
@@ -1830,7 +1708,7 @@ let curSetup="all", curQ="all", curFresh="all", curView=(window.innerWidth>=900?
 let curSearch="", trackSearch="";
 let fSector="",fPulse="",fDial="",fScore=0, tSector="",tPulse="",tDial="",tScore=0;
 
-const ALL_COLS = [["t","Ticker"],["sector","Sector"],["setup","Setup"],["score","Swing Score"],["q","Q"],["rs","Pulse @ Add"],["rsn","Pulse now"],["date","Added"],["age","Age"],["dial","Regime @ Add"],["pe","Price @ Add"],["chg","Current %"],["wk2","2wk ▲"],["wk4","4wk ▲"],["mfe","Peak ▲"],["md4","Max Dip ▼"]];
+const ALL_COLS = [["t","Ticker"],["sector","Sector"],["setup","Setup"],["score","AI Score"],["q","Q"],["rs","Pulse @ Add"],["rsn","Pulse now"],["date","Added"],["age","Age"],["dial","Regime @ Add"],["pe","Price @ Add"],["chg","Current %"],["wk2","2wk ▲"],["wk4","4wk ▲"],["mfe","Peak ▲"],["md4","Max Dip ▼"]];
 // Dollar prices may be absent from the public feed (see build_teaser.py). Drop the
 // column entirely rather than showing 176 dashes, and restore it automatically the
 // moment prices are back in the data.
@@ -1929,7 +1807,7 @@ function cardsHTML(items){
       <div class="top"><div><div class="tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}${newBadge(d)}</div><div class="co">${d.n}${earnBadge(d)}</div>${(d.pc!=null||d.chg!=null)?`<div class="cardpx">${d.pc!=null?money(d.pc)+' ':''}${d.chg!=null?chgCell(d.chg):''}</div>`:""}</div>
         <span class="setuptag ${d.setup}">${setupLabel}</span></div>
       <div class="row">
-        <div class="metric"><div class="k">Swing Score</div><div class="v">${d.score.toFixed(1)} <span class="conviction ${cclass}">${clabel}</span></div></div>
+        <div class="metric"><div class="k">AI Score</div><div class="v">${d.score.toFixed(1)} <span class="conviction ${cclass}">${clabel}</span></div></div>
         <div class="metric"><div class="k">Sector</div><div class="v" style="font-size:14px">${shortSector(d.sector)}</div></div>
       </div>
       <div class="badges">
@@ -1979,7 +1857,7 @@ function listHTML(items){
   const nonSc=cols().findIndex(c=>c[0]==="dial");
   const groupRow=`<tr class="grouprow"><th colspan="${nonSc}"></th><th colspan="${cols().length-nonSc}" class="grouphead">📊 Setup Scorecard <span class="ghsub">— hypothetical, educational</span></th></tr>`;
   const tip=`<div class="sorttip"><b>Tip:</b> click a header to sort · <b>Shift-click</b> a second header for a two-level sort${sorts.length?` · <span class="clearsort" id="clearsort">clear sort ✕</span>`:""}</div>
-    <div class="sorttip" style="padding-top:4px">The <b>Setup Scorecard</b> shows each setup's <b style="color:var(--up)">Peak</b> (maximum favorable move) and <b style="color:var(--down)">Max Dip</b> (maximum adverse move) since it appeared — the upside potential the setup offered, and the drawdown you'd have had to sit through. We use <b>no stop-loss and no price targets</b>: when and how you exit is entirely your own choice. Hypothetical and educational — <b>not</b> a return anyone earned, and not advice.${hasPrices()?' <b>Price @ Add</b> is the price when the stock was added, not an entry recommendation.':' Moves are shown as percentages, not prices: our market-data licence doesn\'t cover republishing prices, and the move is what matters for judging a setup — the price on any date is in your brokerage account (<a data-post="why-percentages-not-prices" style="color:var(--primary); font-weight:600; cursor:pointer">why we show moves, not prices</a>).'}</div>`;
+    <div class="sorttip" style="padding-top:4px">The <b>Setup Scorecard</b> shows each setup's <b style="color:var(--up)">Peak</b> (maximum favorable move) and <b style="color:var(--down)">Max Dip</b> (maximum adverse move) since it appeared — the upside potential the setup offered, and the drawdown you'd have had to sit through. We use <b>no stop-loss and no price targets</b>: when and how you exit is entirely your own choice. Hypothetical and educational — <b>not</b> a return anyone earned, and not advice.${hasPrices()?' <b>Price @ Add</b> is the price when the stock was added, not an entry recommendation.':' Moves are shown as percentages, not prices — the move is what matters for judging a setup, and the price on any date is in your brokerage account (<a data-post="why-percentages-not-prices" style="color:var(--primary); font-weight:600; cursor:pointer">why we show moves, not prices</a>).'}</div>`;
   return `<div class="listwrap"><table class="ltable"><thead>${groupRow}<tr>${heads}</tr></thead><tbody>${rows}</tbody></table></div>${tip}`;
 }
 
@@ -2134,10 +2012,10 @@ function fmtFeedDate(d){ const m=String(d).match(/^(\d{4})-(\d{2})-(\d{2})/); if
 // build_stats.py on the last trading day of each month. Nothing here recomputes
 // the headline; the number is literally "as of" the snapshot date and cannot
 // creep between restatements. Board cards / Track Record stay nightly.
-let STATS_HISTORY=null;
+let STATS_HISTORY=null, STATS_BASELINE=null;
 async function loadStatsHistory(){
   try{ const r=await fetch('stats_history.json',{cache:'no-store'}); if(!r.ok) return null;
-       const j=await r.json(); STATS_HISTORY=(j&&Array.isArray(j.snapshots))?j.snapshots:null; }
+       const j=await r.json(); STATS_HISTORY=(j&&Array.isArray(j.snapshots))?j.snapshots:null; STATS_BASELINE=(j&&j.baseline)||null; }
   catch(e){ STATS_HISTORY=null; }
   renderHeadline(); renderMonthly();
 }
@@ -2146,9 +2024,11 @@ function renderHeadline(){
   const set=(id,html)=>{ const el=document.getElementById(id); if(el) el.innerHTML=html; };
   const snap=STATS_HISTORY&&STATS_HISTORY.length?STATS_HISTORY[STATS_HISTORY.length-1]:null;
   const c=snap&&snap.cumulative; if(!c) return;
-  const b=document.querySelectorAll('.balloons2 .cval');
+  const b=document.querySelectorAll('.pairs .cval');
   if(b.length>=2){ b[0].dataset.count=Math.round(c.p5); b[1].dataset.count=Math.round(c.p10); countUp(); }
-  if(c.med_dtp!=null){ const w=Math.max(0.5,Math.round(c.med_dtp/5*2)/2); const txt=(Number.isInteger(w)?w:Math.floor(w)+'½'); set('statMedianPeak', `median ~${txt} week${w===1?'':'s'}`); }
+  if(c.med_dtp!=null){ const w=Math.max(0.5,Math.round(c.med_dtp/5*2)/2); const txt=(Number.isInteger(w)?w:Math.floor(w)+'½'); set('statMedianPeak', `median peak lands around week ${txt}`); }
+  if(c.p5_2wk!=null){ const v=Math.round(c.p5_2wk); set('statP5_2wk', v>=66?'two in three':v>=50?'more than half':v+'%'); }
+  if(STATS_BASELINE){ set('baseP5', String(Math.round(STATS_BASELINE.p5))); set('baseP10', String(Math.round(STATS_BASELINE.p10))); }
   set('statN', String(c.n)); set('statDate', fmtFeedDate(snap.as_of));
   set('statAsOf', `As of <b style="color:var(--body)">${fmtFeedDate(snap.as_of)}</b> · restated monthly · next update ${fmtFeedDate(nextMonthEnd(snap.as_of))}`);
 }
@@ -2157,14 +2037,17 @@ function renderMonthly(){
   const el=document.getElementById('trackMonthly'); if(!el) return;
   const H=STATS_HISTORY||[]; if(!H.length){ el.innerHTML=''; return; }
   const pc=v=>v==null?'—':Math.round(v)+'%', sg=v=>v==null?'—':(v>=0?'+':'')+v.toFixed(1)+'%', dd=v=>v==null?'—':v+' days';
-  const row=(label,s,cls)=>s?`<tr class="${cls||''}"><td>${label} <span class="n">${s.n} setups</span></td><td class="up">${pc(s.p5)}</td><td class="up">${pc(s.p10)}</td><td class="up">${pc(s.p20)}</td><td class="up">${sg(s.avg_peak)}</td><td class="${(s.avg_wk4||0)>=0?'up':'down'}">${sg(s.avg_wk4)}</td><td class="muted">${sg(s.spy_wk4)}</td><td class="${(s.excess_wk4||0)>=0?'up':'down'}" style="font-weight:700">${sg(s.excess_wk4)}</td><td>${pc(s.pos4)}</td><td class="down">${s.avg_md4==null?'—':s.avg_md4.toFixed(1)+'%'}</td><td>${dd(s.med_dtp)}</td></tr>`:'';
-  const last=H[H.length-1];
+  const BM=(STATS_BASELINE&&STATS_BASELINE.by_month)||{};
+  const bl=s=>{ const b=s._bl; return b&&b.p5!=null?Math.round(b.p5)+'% / '+Math.round(b.p10)+'%':'—'; };
+  const row=(label,s,cls)=>s?`<tr class="${cls||''}"><td>${label} <span class="n">${s.n} setups</span></td><td class="up">${pc(s.p5)}</td><td class="up">${pc(s.p10)}</td><td class="muted" style="white-space:nowrap">${bl(s)}</td><td class="up">${pc(s.p20)}</td><td class="up">${sg(s.avg_peak)}</td><td class="${(s.avg_wk4||0)>=0?'up':'down'}">${sg(s.avg_wk4)}</td><td class="muted">${sg(s.spy_wk4)}</td><td class="${(s.excess_wk4||0)>=0?'up':'down'}" style="font-weight:700">${sg(s.excess_wk4)}</td><td>${pc(s.pos4)}</td><td class="down">${s.avg_md4==null?'—':s.avg_md4.toFixed(1)+'%'}</td><td>${dd(s.med_dtp)}</td></tr>`:'';
+  H.forEach(h=>{ if(h.month) h.month._bl=BM[String(h.as_of).slice(0,7)]; });
+  const last=H[H.length-1]; if(last.cumulative&&STATS_BASELINE) last.cumulative._bl={p5:STATS_BASELINE.p5,p10:STATS_BASELINE.p10};
   el.innerHTML=`<div class="bysetup">
     <div class="bs-k">Month by month <span style="font-weight:600; text-transform:none; letter-spacing:0; color:var(--faint)">(snapshot taken at each month end)</span></div>
     <div class="bs-d">Each row is the setups whose 4-week window finished in that month, measured on the last trading day of the month and never restated. The bottom line is everything to date — the figure on the home page. These 4-week figures are by entry date and do not depend on when a name left the board.</div>
-    <table><thead><tr><th>Month</th><th>Touched<br>+5%</th><th>Touched<br>+10%</th><th>Touched<br>+20%</th><th>Avg peak<br><span class="thsub">the ceiling</span></th><th>Held 4 wks,<br>no exit <span class="thsub">the floor</span></th><th>S&amp;P 500,<br>same windows <span class="thsub">SPY, held 4 wks</span></th><th>vs S&amp;P<br><span class="thsub">floor minus SPY</span></th><th>Positive<br>at 4 wk</th><th>Avg max<br>dip (4wk)</th><th>Median days<br>to peak</th></tr></thead>
+    <table><thead><tr><th>Month</th><th>Touched<br>+5%</th><th>Touched<br>+10%</th><th style="white-space:nowrap">Typical S&amp;P<br>500 stock <span class="thsub">+5% / +10%</span></th><th>Touched<br>+20%</th><th>Avg peak<br><span class="thsub">the ceiling</span></th><th>Held 4 wks,<br>no exit <span class="thsub">the floor</span></th><th>S&amp;P 500,<br>same windows <span class="thsub">SPY, held 4 wks</span></th><th>vs S&amp;P<br><span class="thsub">floor minus SPY</span></th><th>Positive<br>at 4 wk</th><th>Avg max<br>dip (4wk)</th><th>Median days<br>to peak</th></tr></thead>
     <tbody>${H.map(s=>row(s.label,s.month)).join('')}${row('All to date <span class="n">as of '+fmtFeedDate(last.as_of)+'</span>',last.cumulative,'cum')}</tbody></table>
-    <div class="bs-note"><b>Read the two return columns as a range.</b> <b>Avg peak</b> is the best level reached — the room a setup gave you, known only in hindsight. <b>Held 4 wks, no exit</b> is what you got with no management at all: hold from the day added to retirement and do nothing. Where you land between them depends on your exit, and the exit is yours. <b>S&amp;P 500, same windows</b> is SPY held over exactly the same 4-week windows as that month's setups (entry-day open to the close 20 sessions later), so the floor is judged against what the index did while the setups were being held — not against a calendar month. Both are measured from the price when added; paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>
+    <div class="bs-note"><b>Typical S&amp;P 500 stock</b> is the same question asked of the index: for every current S&amp;P 500 constituent, did the price touch +5% (or +10%) above its first-session open at any point in that calendar month? The bottom line is the three-year average. Measured the most generous way for the index — from each month's lowest low to its highest high — a typical S&amp;P 500 stock touched +5% about ${STATS_BASELINE?Math.round(STATS_BASELINE.low_p5):79}% of the time and +10% about ${STATS_BASELINE?Math.round(STATS_BASELINE.low_p10):45}%; that is the ceiling for the comparison, and nobody buys every month's low. <b>Read the two return columns as a range.</b> <b>Avg peak</b> is the best level reached — the room a setup gave you, known only in hindsight. <b>Held 4 wks, no exit</b> is what you got with no management at all: hold from the day added to retirement and do nothing. Where you land between them depends on your exit, and the exit is yours. <b>S&amp;P 500, same windows</b> is SPY held over exactly the same 4-week windows as that month's setups (entry-day open to the close 20 sessions later), so the floor is judged against what the index did while the setups were being held — not against a calendar month. Both are measured from the price when added; paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>
   </div>`;
 }
 // The statistics cohort = every setup whose 4-week window has completed (wk4 is
@@ -2219,7 +2102,7 @@ function renderTrack(){
     <div class="trstat"><div class="v">${win4}%</div><div class="l">Positive at 4 weeks</div></div>
     <div class="trstat"><div class="v ${avg(w2)>=0?'up':'down'}">${avg(w2)>=0?'+':''}${avg(w2).toFixed(1)}%</div><div class="l">Held 2 wks, no exit</div></div>
     <div class="trstat"><div class="v down">${avg(dips).toFixed(1)}%</div><div class="l">Avg max dip (4wk)</div></div>
-    <div style="flex-basis:100%; font-size:11px; color:var(--faint); border-top:1px solid var(--line); padding-top:10px">These figures cover <b>every setup whose 4-week window has completed</b> — on the board or retired — so a name cannot drop out of the statistics by staying Active. <b>Touched +5% / +10%</b> counts setups whose price reached that level at its best point (peak / MFE) at any time while held — <b>not</b> a return anyone captured. No one sells the exact top; these are hindsight highs. The point is that these setups have real room to run — even a fraction of the peak, on the order of 7–8%, is a meaningful move. The <b>held, no exit</b> figures beside them are the opposite end: hold from the day added to that horizon and do nothing — the floor, with no skill applied. Your result lands between the two and depends on your exit. Everything here is a percentage from the price when added, never a dollar price: our market-data licence doesn't cover republishing prices, and percentages are what let a $700 stock and a $25 stock sit in the same table (<a data-post="why-percentages-not-prices" style="color:var(--primary); font-weight:600; cursor:pointer">why we show moves, not prices</a>). Paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>`;
+    <div style="flex-basis:100%; font-size:11px; color:var(--faint); border-top:1px solid var(--line); padding-top:10px">These figures cover <b>every setup whose 4-week window has completed</b> — on the board or retired — so a name cannot drop out of the statistics by staying Active. <b>Touched +5% / +10%</b> counts setups whose price reached that level at its best point (peak / MFE) at any time while held — <b>not</b> a return anyone captured. No one sells the exact top; these are hindsight highs. The point is that these setups have real room to run — even a fraction of the peak, on the order of 7–8%, is a meaningful move. The <b>held, no exit</b> figures beside them are the opposite end: hold from the day added to that horizon and do nothing — the floor, with no skill applied. Your result lands between the two and depends on your exit. Everything here is a percentage from the price when added — percentages are what let a $700 stock and a $60 stock sit in the same table (<a data-post="why-percentages-not-prices" style="color:var(--primary); font-weight:600; cursor:pointer">why we show moves, not prices</a>). Paper / hypothetical, survivorship bias applies, costs excluded. Educational, not advice.</div>`;
   // "Did they run clean?" — from d5 / d10 (dip before the FIRST touch of +5% / +10%).
   // Denominator = setups that touched the level at all (d5/d10 present).
   {
@@ -2820,7 +2703,7 @@ const tourSteps=[
   {sel:'#tabs', t:'Filter by setup', d:'Show all names, or just Phoenix or Cruise — the two setup types our model sorts each signal into.'},
   {sel:'#qtabs', t:'Quality filter', d:'Collapse to 💎 High-Quality names only — the ones sound enough to hold through a dip.'},
   {sel:'#vtabs', t:'Cards or List', d:'Switch to a sortable list with the full Setup Scorecard: peak, max dip, and prices.'},
-  {sel:'#cards .card', t:'Read a card', d:'Each card shows the Swing score, quality badge, market pulse, and scorecard. Tip: click any ticker to see the shape of its move.'}
+  {sel:'#cards .card', t:'Read a card', d:'Each card shows the AI Score, quality badge, market pulse, and scorecard. Tip: click any ticker to see the shape of its move.'}
 ];
 let tourI=0;
 const tourOv=document.getElementById('tourOv'), tourHole=document.getElementById('tourHole'), tourTip=document.getElementById('tourTip');
@@ -3043,7 +2926,7 @@ function lockedHTML(){
     <div style="font-size:34px">\u{1F512}</div>
     <h3 style="margin:12px 0 6px; color:var(--ink); font-size:21px">${expired ? 'Your trial has ended' : "Tonight's board is for members"}</h3>
     <p style="color:var(--muted); font-size:15px; margin:0 auto 20px; max-width:46ch">${expired
-      ? 'Subscribe to keep the nightly board, the Swing Score and the quality gate on every name.'
+      ? 'Subscribe to keep the nightly board, the AI Score and the quality gate on every name.'
       : 'Start 30 days free — no card required, nothing to cancel. The full board refreshes every evening after the close. New here? <a data-nav="start" style="color:var(--primary); font-weight:700">Getting started →</a>'}</p>
     <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:22px">
       ${expired
@@ -3053,7 +2936,7 @@ function lockedHTML(){
     </div>
     <div style="max-width:44ch; margin:0 auto; text-align:left; color:var(--muted); font-size:14px; line-height:1.8">
       <div>✓ Every Phoenix &amp; Cruise setup, refreshed nightly</div>
-      <div>✓ The Swing Score and quality badge on every name</div>
+      <div>✓ The AI Score and quality badge on every name</div>
       <div>✓ The market-context read for sizing</div>
       <div>✓ The full Setup Scorecard — peak, max dip, days to peak</div>
     </div>

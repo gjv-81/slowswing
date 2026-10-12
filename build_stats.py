@@ -30,6 +30,7 @@ the month (or with --asof / --force). Idempotent per month.
 import argparse, json, sys, datetime as dt
 from pathlib import Path
 import pandas as pd
+import numpy as np
 
 HERE = Path(__file__).resolve().parent
 XLSX = HERE / "STS_holy_grail.xlsx"
@@ -112,6 +113,27 @@ def spy_stats(df):
     return {"spy_wk4": sp, "excess_wk4": (round(float(w4.mean()) - sp, 1) if len(w4) else None)}
 
 
+def first_touch(row, asof: dt.date, level=0.05):
+    """Sessions from entry to the first High >= entry*(1+level), through asof; None if never."""
+    b = bars(row.ticker)
+    if b is None:
+        return None
+    e = row.entry_date.date()
+    w = b[(b.index.date >= e) & (b.index.date <= asof)].dropna(subset=["High"])
+    hit = np.nonzero(w["High"].values >= row.entry * (1 + level))[0] if len(w) else []
+    return int(hit[0]) if len(hit) else None
+
+
+def timing_stats(df, asof: dt.date):
+    """Share touching +5% within 5 / 10 / 20 sessions — the 'how soon' numbers."""
+    ft = [first_touch(r, asof) for r in df.itertuples()]
+    n = len(ft)
+    if not n:
+        return {}
+    r = lambda k: round(sum(1 for x in ft if x is not None and x < k) / n * 100, 1)
+    return {"p5_1wk": r(5), "p5_2wk": r(10), "p5_4wk": r(20)}
+
+
 def stats(df, asof: dt.date):
     if not len(df):
         return None
@@ -127,6 +149,7 @@ def stats(df, asof: dt.date):
         "pos4": r((w4 > 0).mean() * 100) if len(w4) else None,
         "avg_md4": r(md.mean()) if len(md) else None,
         **spy_stats(df),
+        **timing_stats(df, asof),
     }
 
 
@@ -134,9 +157,30 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--asof", help="snapshot date YYYY-MM-DD (backfill)")
     ap.add_argument("--force", action="store_true", help="snapshot today even if not month end")
+    ap.add_argument("--augment-timing", action="store_true",
+                    help="add p5_1wk/p5_2wk/p5_4wk to EXISTING snapshots (nothing else is touched)")
     ap.add_argument("--augment-spy", action="store_true",
                     help="add spy_wk4 / excess_wk4 to EXISTING snapshots (nothing else is touched)")
     a = ap.parse_args()
+
+    if a.augment_timing:
+        hist = json.loads(OUT.read_text())
+        df = load_positions()
+        completed = df["entry_date"].dt.date + WINDOW
+        for snap in hist["snapshots"]:
+            asof = dt.date.fromisoformat(snap["as_of"])
+            cum = df[completed <= asof]
+            month = df[(completed >= asof.replace(day=1)) & (completed <= asof)]
+            groups = {"cumulative": cum, "month": month,
+                      "phoenix": cum[cum["setup"].isin({"D200G", "DLB"})], "cruise": cum[cum["setup"].isin({"B2"})]}
+            for k, g in groups.items():
+                tgt = snap["by_setup"][k] if k in ("phoenix", "cruise") else snap[k]
+                if tgt is None or tgt.get("n") != len(g):
+                    continue
+                tgt.update(timing_stats(g, asof))
+                print(f"  {snap['label']} {k}: +5% within 1wk {tgt.get('p5_1wk')}%  2wk {tgt.get('p5_2wk')}%  4wk {tgt.get('p5_4wk')}%")
+        OUT.write_text(json.dumps(hist, indent=1))
+        return 0
 
     if a.augment_spy:
         hist = json.loads(OUT.read_text())
