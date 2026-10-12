@@ -43,3 +43,12 @@ site/board.json
 *.tar.gz
 daily_data_ext/
 daily_data_slow_ext/
+
+# ---- research data lives in ~/Documents/STS local files
+uw_archive/
+options_pilot*/
+*.tar.gz
+*.parquet
+*.docx
+*.rtf
+*.pdf
