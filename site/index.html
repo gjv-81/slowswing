@@ -690,6 +690,7 @@
         <a data-nav="blog" class="mpage">Blog<span class="mdesc">Notes and studies</span></a>
       </div>
     </div>
+    <a data-nav="story">My story</a>
     <a data-nav="pricing">Pricing</a>
     <a id="navTour" data-tour>▶ 30-sec tour</a>
   </div>
@@ -812,6 +813,7 @@
       <div class="fcard"><div class="ico">⛔</div><h3>Not for you if</h3><p>You day-trade, you want someone to place trades for you, or you want a fund manager. We're a research publisher — we find the setups, you trade them with your broker.</p></div>
       <div class="fcard"><div class="ico">🧭</div><h3>How it works, in one line</h3><p>Open the board after 5 pm ET, look at the Active names, check the AI Score and the 💎, pick what fits your plan, and trade it where you already trade. <a data-nav="start" style="color:var(--primary); font-weight:650">Getting started →</a></p></div>
     </div>
+    <p class="gl-see" style="font-size:14px; margin-top:16px">Built by a physician who trades this way himself. <a data-nav="story">Why I started The Slow Swing →</a></p>
   </div></section>
 
   <section class="block"><div class="wrap" style="text-align:center">
@@ -1231,6 +1233,40 @@
     <div class="kicker">2 · Today's Board</div>
     <h2 class="section">This is where you look each evening</h2>
     <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">The <b style="color:var(--ink)">Active</b> board is the live list: stocks still near the price they were added at, where the setup is still ripe. <b style="color:var(--ink)">Out of Range</b> holds the ones that have already moved up 5% or more — useful to watch how setups play out. Each row shows the stock's <b style="color:var(--up)">Peak</b> (the best it has done since it was added) and <b style="color:var(--down)">Max Dip</b> (the worst), so you know what to expect from it. Click any ticker for the shape of its move.</p>
+    <p class="muted" style="max-width:74ch; margin-top:18px; font-size:15px"><b style="color:var(--ink)">One card, taken apart.</b> Every name arrives as a card like this — here is what each part is telling you.</p>
+    <div class="annowrap">
+      <div class="annocol left">
+        <div class="anno-b"><span class="anno-num">1</span><div><div class="anno-t">The stock</div><div class="anno-d">The ticker, company name, and its move since it was added. Click any ticker on the live board to see the shape of that move. Moves are shown as percentages, not prices — the move is what matters for judging a setup, and the price on any date is in your brokerage account.</div></div></div>
+        <div class="anno-b"><span class="anno-num">2</span><div><div class="anno-t">AI Score</div><div class="anno-d">How strongly the stock matched what our machine-learning model looks for, on the night it was added. Higher is a stronger match.</div></div></div>
+        <div class="anno-b"><span class="anno-num">3</span><div><div class="anno-t">Profile</div><div class="anno-d">Core or Growth &mdash; the company&rsquo;s business type. Shown so you can balance across styles and avoid piling into one theme.</div></div></div>
+      </div>
+      <div class="annocard-hold">
+        <div class="card premium anno-card">
+          <span class="gem">&#128142; High-Quality</span>
+          <span class="pin" style="left:-11px; top:26px">1</span>
+          <span class="pin" style="right:-11px; top:-4px">4</span>
+          <span class="pin" style="right:-11px; top:34px">5</span>
+          <span class="pin" style="left:-11px; top:112px">2</span>
+          <span class="pin" style="left:-11px; top:204px">3</span>
+          <span class="pin" style="left:200px; top:204px">6</span>
+          <span class="pin" style="right:-11px; top:236px">7</span>
+          <div class="top"><div><div class="tkr">RKLB</div><div class="co">Rocket Lab USA</div><div class="cardpx"><span class="chg-up">+6.2%</span></div></div><span class="setuptag phoenix">Phoenix</span></div>
+          <div class="row">
+            <div class="metric"><div class="k">AI Score</div><div class="v">8.4 <span class="conviction vhigh">Very high</span></div></div>
+            <div class="metric"><div class="k">Sector</div><div class="v" style="font-size:14px">Industrials</div></div>
+          </div>
+          <div class="badges"><span class="badge">Core</span><span class="badge">&#128200; Strong pulse</span></div>
+          <div class="card-sc"><span class="sc-tag">&#128202; Setup Scorecard</span> Peak <b style="color:var(--pass)">+12.6%</b> &middot; Max dip <b style="color:var(--fail)">&minus;3.4%</b> &middot; 2wk +5.1% <span class="faint">&middot; since <b style="font-weight:700; color:var(--ink)">Aug 18</b></span></div>
+        </div>
+      </div>
+      <div class="annocol right">
+        <div class="anno-b"><span class="anno-num">4</span><div><div class="anno-t" style="color:var(--pass)">&#128142; Quality gate</div><div class="anno-d">Cleared our fundamental quality check &mdash; a financially sound company, sound enough to hold through a dip.</div></div></div>
+        <div class="anno-b"><span class="anno-num">5</span><div><div class="anno-t" style="color:var(--phoenix)">Setup type</div><div class="anno-d">Phoenix or Cruise &mdash; the two setup types our machine-learning model sorts each stock into. The label captures the kind of opportunity the model found; the card&rsquo;s read tells you what to expect.</div></div></div>
+        <div class="anno-b"><span class="anno-num">6</span><div><div class="anno-t">Market Pulse</div><div class="anno-d">How the name was moving versus the market when the setup fired (<b>Pulse @ Add</b>), and how it is moving now (<b>Pulse now</b>, refreshed each evening) &mdash; Strong, Neutral, or Weak.</div></div></div>
+        <div class="anno-b"><span class="anno-num">7</span><div><div class="anno-t">Setup Scorecard</div><div class="anno-d">Its hypothetical track record: how far it ran (Peak) and its worst dip since it was added. Educational &mdash; not returns earned.</div></div></div>
+      </div>
+    </div>
+    <p class="annohint" style="margin-top:10px">An illustrative example.</p>
     <p class="gl-see" style="font-size:13.5px; margin-top:12px">See it: <a data-nav="board" data-scroll="agetabs" data-age="active">Active board →</a> · <a data-nav="board" data-scroll="agetabs" data-age="extended">Out of Range →</a> · <a data-nav="how" data-scroll="how-read">How to read a card →</a></p>
   </div></section>
 
@@ -1351,7 +1387,7 @@
       <div class="fcard"><h3>What does it cost after that?</h3><p>$15 a month, or $120 a year ($10 a month). The same board and the same research on every plan. <a data-nav="pricing" style="color:var(--primary); font-weight:650">Pricing →</a></p></div>
       <div class="fcard"><h3>How do I cancel?</h3><p>Account → Billing → Cancel, or email support@theslowswing.com. Monthly plans keep access to the end of the billing month; annual plans to the end of the paid year. <a data-nav="pricing" data-scroll="cancelsec" style="color:var(--primary); font-weight:650">Cancellation policy →</a></p></div>
       <div class="fcard"><h3>I didn't get the sign-in email.</h3><p>Check spam, and make sure you used <b>Start free trial</b> rather than <b>Log in</b> for a new address. The email also carries a six-digit code you can type on the device you're already on.</p></div>
-      <div class="fcard"><h3>Who is behind this?</h3><p>Theslowswing LLC — a small research publisher built by a working professional who trades this way himself. We publish the research and the full record; your trades stay with your broker. <a data-nav="contact" style="color:var(--primary); font-weight:650">Contact →</a></p></div>
+      <div class="fcard"><h3>Who is behind this?</h3><p>Theslowswing LLC — a small research publisher built by a working professional who trades this way himself. We publish the research and the full record; your trades stay with your broker. <a data-nav="story" style="color:var(--primary); font-weight:650">My story →</a> · <a data-nav="contact" style="color:var(--primary); font-weight:650">Contact →</a></p></div>
     </div>
   </div></section>
   <section class="block"><div class="wrap">
@@ -1657,6 +1693,24 @@
 </div>
 
 <!-- CONTACT -->
+<!-- ============ MY STORY (text lives in story.js) ============ -->
+<div class="page" data-page="story">
+  <section class="block"><div class="wrap">
+    <div class="convband">
+      <div class="kicker">My story</div>
+      <h2 class="section" id="storyTitle" style="max-width:26ch">Why I started The Slow Swing</h2>
+      <p class="muted" id="storyByline" style="margin-top:10px; font-size:15px; font-weight:600"></p>
+    </div>
+  </div></section>
+  <section class="block"><div class="wrap">
+    <div class="article">
+      <div class="article-body" id="storyBody"></div>
+      <div class="notadvice" id="storyFoot"></div>
+    </div>
+    <p class="gl-see" style="font-size:14px; margin-top:28px; text-align:center">See it in practice: <a data-nav="board">Tonight's board →</a> · <a data-nav="start">Getting started →</a> · <a data-nav="track">Track Record →</a></p>
+  </div></section>
+</div>
+
 <div class="page" data-page="contact">
   <section class="block"><div class="wrap">
     <div class="kicker">Contact</div>
@@ -1694,7 +1748,7 @@
 
 <footer><div class="wrap">
   <div>© 2026 Theslowswing LLC · Educational research, not advice</div>
-  <div class="faint"><a data-nav="terms">Terms</a> · <a data-nav="risk">Risk Disclosure</a> · <a data-nav="privacy">Privacy</a> · <a data-nav="cancellation">Cancellation</a> · <a data-nav="contact">Contact</a></div>
+  <div class="faint"><a data-nav="terms">Terms</a> · <a data-nav="risk">Risk Disclosure</a> · <a data-nav="privacy">Privacy</a> · <a data-nav="cancellation">Cancellation</a> · <a data-nav="contact">Contact</a> · <a data-nav="story">My story</a></div>
 </div></footer>
 
 <div class="modal-ov" id="modal"><div class="modal-card"><button class="modal-close" id="modalClose">✕</button><div id="modalBody"></div></div></div>
@@ -1702,6 +1756,7 @@
 
 <aside class="pagetoc" id="pagetoc" aria-label="On this page"></aside>
 <script src="posts.js"></script>
+<script src="story.js"></script>
 <script>
 let DATA = [];            // filled from the live feed; deliberately NOT baked in
 let REGIME = null;        // ditto — a stale regime read is worse than none
@@ -2392,14 +2447,20 @@ function buildToc(page){
   }
   if(secs.length) mark(secs[0].id);
 }
+function renderStory(){
+  const S=(typeof STORY!=='undefined')?STORY:null; if(!S) return;
+  const set=(id,h)=>{ const el=document.getElementById(id); if(el) el.innerHTML=h; };
+  set('storyTitle', S.title||'My story'); set('storyByline', S.byline||''); set('storyBody', S.body||''); set('storyFoot', S.foot||BLOG_FOOT);
+}
 function showPage(name){
+  if(name==='story') renderStory();
   checkForNewVersion(name); maybeRefreshFeed();
   if(name==='blog' && typeof backToBlog==='function') backToBlog();
   const pages=document.querySelectorAll('.page');
   if(![...pages].some(p=>p.dataset.page===name)) name="home";
   pages.forEach(p=>p.classList.toggle('active', p.dataset.page===name));
   if(name==='board' && typeof curAge!=='undefined' && curAge!=='active'){ const t=document.querySelector('#agetabs .tab[data-age="active"]'); if(t) t.click(); }
-  {const _nav=document.querySelector('nav'); if(_nav) _nav.classList.toggle('light', name==='psychology'||name==='track'||name==='start'||name==='faq');}
+  {const _nav=document.querySelector('nav'); if(_nav) _nav.classList.toggle('light', name==='psychology'||name==='track'||name==='start'||name==='faq'||name==='story');}
   document.querySelectorAll('.navlinks a').forEach(a=>a.classList.toggle('active', a.dataset.nav===name));
   window.scrollTo({top:0, behavior:'auto'});
   try{ if(location.hash.slice(1)!==name) history.replaceState(null,'','#'+name); }catch(e){}

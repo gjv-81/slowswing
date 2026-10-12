@@ -13,7 +13,7 @@ const POSTS = [
   {
     slug:'where-corrections-start', cat:{label:'Lesson', cls:'lesson'}, icon:'🎚️', sample:false,
     author:'GJ Singh', date:'Oct 12, 2026', read:'6 min read',
-    title:'Nine corrections, and where each one began',
+    title:'How to read the market dial: nine corrections, and where each one began',
     excerpt:'Every drop of 5% or more that our market dial has been able to grade started from Extended or Over-extended. None started from Healthy. That sounds stronger than it is, and the reasons why are the interesting part.',
     body:`<p>The top of the board carries a market dial: a reading of how stretched the S&amp;P 500 is against its own recent history, graded Healthy, Extended, Over-extended or Weak. The note beside it has always said that the market's worst multi week declines have historically begun from the most stretched readings. This post is the evidence behind that sentence, and the places where it is weaker than it sounds.</p>
     <p>We looked at every decline of <b>5% or more</b> in the S&amp;P 500 since the dial has valid history. That start point is not a choice. The percentile needs three years of trailing data before it means anything, so the record begins in late 2019 and earlier episodes cannot be graded at all. That leaves <b>nine</b> corrections. For each one, we took the dial's reading on the day the decline began, which is the day of the peak, not somewhere in the middle of the fall.</p>
@@ -56,7 +56,7 @@ const POSTS = [
     <p><b>Nine is a handful, not a dataset.</b> Nine episodes across about seven years of valid history is barely more than one market cycle. Any conclusion drawn from it should be held loosely.</p>
     <p><b>There is a hole in the middle of the sample.</b> Not one of the nine landed between 10% and 15%. The record jumps straight from a 9.4% decline to an 18.8% one. A gap that size in a sample this small is a reminder of how little the sample can carry.</p>
     <p><b>And the headline finding is partly arithmetic rather than insight.</b> This is the one worth sitting with. "No correction ever started from Healthy" is less impressive once you notice that after any sizable decline, the stretch resets by definition. Healthy days therefore cluster immediately <em>after</em> corrections rather than before them. Some of what looks like a predictive finding is really the measurement describing its own shape. We would be doing readers a disservice to present it as cleaner than that.</p>
-    <h2>What it actually supports</h2>
+    <h2>What the dial is for</h2>
     <p>The dial has always been framed on this site as context for how hard to lean in, never a forecast and never a trigger, and this history is precisely why it is worded that way. It supports treating a stretched tape as a reason for extra awareness. It does not make a Healthy reading bulletproof, it cannot time anything, and the two largest declines in the sample both began from readings that would have raised nobody's eyebrow.</p>
     <p>Figures above are drawn from S&amp;P 500 history through the October 9, 2026 session and describe what has already happened. They are not a forecast of anything, and nothing here is advice or a recommendation about any security.</p>`
   },
@@ -318,11 +318,11 @@ const POSTS = [
   {
     slug:'swing-score', cat:{label:'Lesson', cls:'lesson'}, icon:'🎯', sample:false,
     author:'GJ Singh', date:'Sep 5, 2026', read:'4 min read',
-    title:'Why a high Swing Score can be a warning',
-    excerpt:'The Swing Score is a machine-learning conviction reading — but higher is not always better. A low score can be the entry; a high one, on an extended name, can be the trap.',
-    body:`<p>Every name on the board carries a single number — its <strong>Swing Score</strong>. It's the closest thing we have to a one-glance conviction reading, and it's easy to misread, so here is how we actually think about it.</p>
+    title:'Why a high AI Score can be a warning',
+    excerpt:'The AI Score is a machine-learning conviction reading — but higher is not always better. A low score can be the entry; a high one, on an extended name, can be the trap.',
+    body:`<p>Every name on the board carries a single number — its <strong>AI Score</strong>. It's the closest thing we have to a one-glance conviction reading, and it's easy to misread, so here is how we actually think about it.</p>
     <h2>Where the number comes from</h2>
-    <p>The Swing Score is produced by a <strong>machine-learning model trained on years of U.S. market data</strong>. In plain terms, it measures how closely a stock's current behavior resembles the conditions that have historically preceded strong swing moves — a higher score means a stronger match to that profile. We keep the ingredients proprietary, but the output is deliberately simple: one number you can rank and compare across tonight's list.</p>
+    <p>The AI Score is produced by a <strong>machine-learning model trained on years of U.S. market data</strong>. In plain terms, it measures how closely a stock's current behavior resembles the conditions that have historically preceded strong swing moves — a higher score means a stronger match to that profile. We keep the ingredients proprietary, but the output is deliberately simple: one number you can rank and compare across tonight's list.</p>
     <h2>How we use it — and how we don't</h2>
     <p>The score is a way to <strong>prioritize attention, not a buy button</strong>. It tells you which names most resemble the pattern right now, so you know where to look first. It does not tell you to act — and, the part most people miss, a higher number is not automatically a better trade.</p>
     <h2>Why a lower score can be the better entry</h2>
@@ -331,7 +331,7 @@ const POSTS = [
     <p>Here is the counterintuitive part. A score tends to <em>climb as a move matures</em> — the more a stock has already done, the more it looks like a winner in progress, and the higher it reads. But by the time the number is very high, much of the move may already be behind it. On a name that has <strong>already extended</strong> well past where the setup first appeared, a high score is less a green light than a caution: it is telling you the move has largely happened, and chasing an extended name is a different — and usually worse — trade than being early near the line.</p>
     <p>That is exactly why the board splits names into <strong>Active</strong> (still near the setup, where the score is most useful) and <strong>Out of Range</strong> (already ran, shown for the record — not to chase). The score is one input; always read it together with where price sits, never on its own.</p>
     <h2>The takeaway</h2>
-    <p>Treat the Swing Score as a <strong>ranking, not a verdict</strong>. Highest is not the goal — the setup you want is a strong-enough score on a name that is <em>still near its setup</em>, in a supportive market. A modest score early can be an opportunity; a very high score late, on a stretched name, can be a trap. As always, this is educational context for your own judgment — not a recommendation, and not a promise about any outcome.</p>`
+    <p>Treat the AI Score as a <strong>ranking, not a verdict</strong>. Highest is not the goal — the setup you want is a strong-enough score on a name that is <em>still near its setup</em>, in a supportive market. A modest score early can be an opportunity; a very high score late, on a stretched name, can be a trap. As always, this is educational context for your own judgment — not a recommendation, and not a promise about any outcome.</p>`
   },
   {
     slug:'why-winners-dip', cat:{label:'Lesson', cls:'lesson'}, icon:'🧭', sample:false,
