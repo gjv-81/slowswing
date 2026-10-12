@@ -69,6 +69,10 @@
   .navdrop:hover .navmenu{display:flex}
   .navmenu a{font-size:14px; color:var(--body); padding:9px 12px; border-radius:8px; cursor:pointer; white-space:nowrap; font-weight:500}
   .navmenu a:hover{background:var(--panel2); color:var(--primary)}
+  nav:not(.light) .navlinks .navmenu a{color:var(--ink)}
+  nav:not(.light) .navlinks .navmenu a:hover{background:var(--panel2); color:var(--primary)}
+  nav:not(.light) .navlinks .navmenu a.active{color:var(--primary); background:var(--primary-tint)}
+  nav:not(.light) .navlinks .navmenu .mdesc{color:var(--muted)}
   .navmenu .msep{border-top:1px solid var(--line); margin-top:6px; padding-top:12px; border-radius:0 0 8px 8px}
   .navmenu .mdesc{display:block; font-size:11.5px; color:var(--faint); font-weight:400; margin-top:1px}
   section[id^="how-"],section[id^="psy-"],section[id^="hb-"],section[id^="st-"],section[id^="faq-"],#cancelsec,#trackMonthly,#regime,#agetabs,#tabs,#qtabs,#boardFilters,#trackStats{scroll-margin-top:100px}
@@ -634,6 +638,7 @@
     .navdrop .navmenu a:not(.mpage){display:none}
     .navdrop .navmenu .msep{border-top:0; margin-top:0; padding-top:11px}
     .navdrop .navmenu .mdesc{display:none}
+    nav:not(.light) .navlinks .navmenu a{color:#c4d8d4}
     /* The dropdown parent sits inside a div, so its anchor was only as wide as its
        own text — every other row in the menu is full width. On a phone that means
        a tap an inch to the right of "How it works" does nothing at all. */
@@ -742,6 +747,11 @@
     <h2 class="section" style="max-width:30ch">Screeners give you lists. We give you the setups.</h2>
     <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Search the web and you'll find a thousand ways to scan for stocks — RSI, MACD, Bollinger bands, a YouTube method, a Reddit thread. All of them hand you a list and leave the hours of work to you. Our model was trained on ten years of daily data to recognise the price conditions that most often came before a move over the next few weeks, then validated on years it had never seen. Think of it as the difference between a search engine and an answer: you don't get a hundred candidates, you get the handful that fit — each one already checked for financial health.</p>
     <div class="cols3" style="margin-top:22px" id="screenerCompare">
+      <div class="fcard" style="border-color:rgba(15,118,110,.35)"><div class="ico">🧪</div><h3>Tested against the screens people actually use</h3><p>Same 1,000 stocks, same ten years, same question: did the price reach +5% within four weeks? <b style="color:var(--primary)">Our setups: 71%.</b> RSI oversold: 62%. Bollinger band: 57%. MACD cross: 53%. A random day: 54%.</p></div>
+      <div class="fcard" style="border-color:rgba(15,118,110,.35)"><div class="ico">📊</div><h3>Twice as likely to give you +10%</h3><p><b style="color:var(--primary)">45% of our setups reached +10%</b>, against 24% on a random day and 31% for the best of the classic screens. The move the board is built around is simply there more often.</p></div>
+      <div class="fcard" style="border-color:rgba(15,118,110,.35)"><div class="ico">🎯</div><h3>And far fewer names to wade through</h3><p>The classic screens fired 9,000 to 41,000 times over the decade; our setups 3,900 — and every published one has also passed the quality gate. Hypothetical, peak touched not returns earned, not advice.</p></div>
+    </div>
+    <div class="cols3" style="margin-top:14px">
       <div class="fcard"><div class="ico">🤖</div><h3>A model, not a filter</h3><p>A screener matches rules you typed in. The model learned which conditions actually preceded moves — across 600 stocks and a decade — and scores every stock on them each night.</p></div>
       <div class="fcard"><div class="ico">⏱️</div><h3>Hours of work, done</h3><p>The scan, the scoring, the fundamental check and the tracking all happen before you sit down. You see a handful of names, their AI Score, and how each has behaved since.</p></div>
       <div class="fcard"><div class="ico">📈</div><h3>An open record</h3><p>Every setup we publish is tracked in public, winners and losers, with its real returns. Most sites show you their best trades. We show you all of them.</p></div>
