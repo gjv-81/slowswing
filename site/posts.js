@@ -12,9 +12,9 @@
 const POSTS = [
   {
     slug:'where-corrections-start', cat:{label:'Lesson', cls:'lesson'}, icon:'🎚️', sample:false,
-    author:'GJ Singh', date:'Oct 12, 2026', read:'6 min read',
+    author:'GJ Singh', date:'Oct 12, 2026', read:'4 min read',
     title:'How to read the market dial: nine corrections, and where each one began',
-    excerpt:'Every drop of 5% or more that our market dial has been able to grade started from Extended or Over-extended. None started from Healthy. That sounds stronger than it is, and the reasons why are the interesting part.',
+    excerpt:'Every drop of 5% or more we could grade started from Extended or Over-extended. None started from Healthy. Here is what that means for how you read the dial, and the two big drops it missed.',
     body:`<p>The top of the board carries a market dial: a reading of how stretched the S&amp;P 500 is against its own recent history, graded Healthy, Extended, Over-extended or Weak. The note beside it has always said that the market's worst multi week declines have historically begun from the most stretched readings. This post is the evidence behind that sentence, and the places where it is weaker than it sounds.</p>
     <p>We looked at every decline of <b>5% or more</b> in the S&amp;P 500 since the dial has valid history. That start point is not a choice. The percentile needs three years of trailing data before it means anything, so the record begins in late 2019 and earlier episodes cannot be graded at all. That leaves <b>nine</b> corrections. For each one, we took the dial's reading on the day the decline began, which is the day of the peak, not somewhere in the middle of the fall.</p>
     <div style="overflow-x:auto;margin:22px 0">
@@ -43,22 +43,21 @@ const POSTS = [
     </div>
     <p style="font-size:13px;color:var(--faint);margin-top:-8px">Percentile is where the market's stretch sat against its own prior three years on the day the decline started. 100 means more stretched than any day in that window.</p>
     <h2>What the table says</h2>
-    <p>All nine began from <b style="color:var(--watch)">Extended</b> or <b style="color:#c2410c">Over-extended</b>. Not one began from <b style="color:var(--pass)">Healthy</b>. The lowest starting reading in the whole sample was the 57th percentile.</p>
-    <p>Over-extended is rare air. It accounts for only about <b>9%</b> of all trading days in the record, yet <b>five of the nine</b> corrections started there. That is the dial doing the one job it was built for. It is not a prediction, and most stretched stretches pass quietly, but declines have begun from that zone far out of proportion to how often the zone occurs.</p>
-    <h2>The part we did not expect</h2>
-    <p>Sort the nine by size and something awkward appears. The ordinary dips, the ones between 5% and 10%, started from the <em>most</em> extreme readings: a median around the 96th percentile. Snap backs from a stretched tape, which is roughly what the dial was designed to anticipate.</p>
-    <p>The two genuinely large declines did not behave that way at all. The 2022 bear, which ran to nearly <b class="down">&minus;25%</b> over nine months, started from the 60th percentile. The 2025 decline of almost <b class="down">&minus;19%</b> started from the 62nd. Both were merely ordinary Extended readings, the kind the market produces constantly, and both had causes the dial has no visibility into whatsoever: interest rates in one case, tariffs in the other.</p>
-    <p><span style="color:var(--primary);text-decoration:underline;text-decoration-color:var(--primary);text-underline-offset:3px;font-weight:600">So an extreme dial reading has flagged a routine air pocket, while the serious declines arrived without that warning.</span> Stated plainly, because it matters more than the headline finding: <b>the dial cannot tell a 5% decline from a 25% one in advance.</b> It can say something about where declines have tended to begin. It says nothing about how far they go.</p>
-    <h2>Where the dial sits now</h2>
-    <p>As of the October 9 session, the S&amp;P 500 reads <b style="color:var(--pass)">Healthy</b> at the <b>43rd percentile</b>, which is below the starting point of every correction in the table. The Nasdaq dial reads Extended at the 65th, so the two are not saying quite the same thing, and the board shows both for that reason.</p>
-    <p>Resist the obvious reading of that. Which brings us to the caveats, and they deserve more room than the finding.</p>
-    <h2>Why this is thinner evidence than it looks</h2>
-    <p><b>Nine is a handful, not a dataset.</b> Nine episodes across about seven years of valid history is barely more than one market cycle. Any conclusion drawn from it should be held loosely.</p>
-    <p><b>There is a hole in the middle of the sample.</b> Not one of the nine landed between 10% and 15%. The record jumps straight from a 9.4% decline to an 18.8% one. A gap that size in a sample this small is a reminder of how little the sample can carry.</p>
-    <p><b>And the headline finding is partly arithmetic rather than insight.</b> This is the one worth sitting with. "No correction ever started from Healthy" is less impressive once you notice that after any sizable decline, the stretch resets by definition. Healthy days therefore cluster immediately <em>after</em> corrections rather than before them. Some of what looks like a predictive finding is really the measurement describing its own shape. We would be doing readers a disservice to present it as cleaner than that.</p>
-    <h2>What the dial is for</h2>
-    <p>The dial has always been framed on this site as context for how hard to lean in, never a forecast and never a trigger, and this history is precisely why it is worded that way. It supports treating a stretched tape as a reason for extra awareness. It does not make a Healthy reading bulletproof, it cannot time anything, and the two largest declines in the sample both began from readings that would have raised nobody's eyebrow.</p>
-    <p>Figures above are drawn from S&amp;P 500 history through the October 9, 2026 session and describe what has already happened. They are not a forecast of anything, and nothing here is advice or a recommendation about any security.</p>`
+    <p>All nine drops started from <b style="color:var(--watch)">Extended</b> or <b style="color:#c2410c">Over-extended</b>. None started from <b style="color:var(--pass)">Healthy</b>. The lowest reading of any of them was the 57th percentile.</p>
+    <p>Over-extended is rare. It happens on about <b>9%</b> of trading days. But <b>five of the nine</b> drops started there. That is the dial earning its place.</p>
+    <h2>The surprise</h2>
+    <p>Sort the nine by size and something odd shows up.</p>
+    <p>The small drops, the ones between 5% and 10%, started from the most extreme readings. Median around the 96th percentile. A stretched tape and a quick snap back. That is what the dial was built to catch.</p>
+    <p>The two big ones did not work that way. The 2022 bear ran to nearly <b class="down">25%</b> and started from the 60th percentile. The 2025 drop of almost <b class="down">19%</b> started from the 62nd. Both were ordinary Extended readings. Both had causes the dial cannot see: interest rates in one, tariffs in the other.</p>
+    <p><span style="color:var(--primary);text-decoration:underline;text-decoration-color:var(--primary);text-underline-offset:3px;font-weight:600">So the dial was loudest before the small drops, and said nothing unusual before the big ones.</span></p>
+    <h2>What each reading means</h2>
+    <p><b style="color:var(--pass)">Healthy</b> is the friendliest reading in the table. Not one drop started from it. Our own research points the same way: setups entered after the market has reset have done better than the same setups entered into a stretched tape. If you are going to lean in, the history says this is the backdrop to do it in.</p>
+    <p><b style="color:var(--watch)">Extended</b> is ordinary. It is where the market spends a lot of its time. Nothing about it says stop.</p>
+    <p><b style="color:#c2410c">Over-extended</b> is the one to respect. It shows up on about 9% of days but produced five of the nine drops. Go in smaller. Most stretched runs still pass quietly, so this is about size, not about sitting out.</p>
+    <p>And know what it misses. The dial catches the small, fast drops. It did not flag 2022 or 2025, which both started from ordinary readings and came from things no price measure can see. <b>Use it for sizing, not for timing.</b></p>
+    <h2>Where the dial sits today</h2>
+    <p>As of the October 9 session the S&amp;P 500 reads <b style="color:var(--pass)">Healthy</b> at the <b>43rd percentile</b>, below where every drop in this table started. The Nasdaq reads Extended at the 65th, so the two do not agree right now. The board shows both.</p>
+    <p>Figures are from S&amp;P 500 history through the October 9, 2026 session, and nine drops over seven years is a small sample. Educational research, not advice.</p>`
   },
   {
     slug:'when-a-setup-fails-bx', cat:{label:'Case Study', cls:'case'}, icon:'📉', sample:false,

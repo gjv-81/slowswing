@@ -52,3 +52,6 @@ options_pilot*/
 *.docx
 *.rtf
 *.pdf
+
+# ---- announcement key (POST /api/announce); same value as the worker secret
+.announce_key

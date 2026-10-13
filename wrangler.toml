@@ -15,8 +15,14 @@ binding = "ASSETS"
 
 [vars]
 APP_URL = "https://theslowswing.com"
-EMAIL_FROM = "The Slow Swing <hello@send.theslowswing.com>"
+EMAIL_FROM = "The Slow Swing <hello@theslowswing.com>"   # root domain verified in Resend 2026-10-13; was hello@send.theslowswing.com
 NOTIFY_EMAIL = "gjv1000@gmail.com"
+# Complimentary full-access accounts (comma-separated, no trial, no card). Owner first.
+COMP_EMAILS = "gjv1000@gmail.com"
+# Journal announcements (POST /api/announce). Sender must be a Resend-verified
+# domain: verify theslowswing.com in Resend before the first real send, or
+# comment this line out to fall back to EMAIL_FROM (send.theslowswing.com).
+# ANNOUNCE_FROM = "The Slow Swing <hello@theslowswing.com>"
 
 # Stripe LIVE price IDs (acct_1UCn8TDl0kTLe9eM, product prod_VDDkspzAgZss56).
 # Price IDs are not secrets. The secret key goes in via: wrangler secret put STRIPE_SECRET_KEY

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Journey of a Signal — raw vs published universe</title>
+<style>
+  :root{--primary:#0f766e; --ink:#0f172a; --mut:#64748b; --bg:#ffffff;}
+  *{box-sizing:border-box}
+  body{margin:0; font-family:-apple-system,"Segoe UI",Inter,Roboto,sans-serif; background:#f8fafc; color:var(--ink); padding:28px; display:grid; gap:26px; justify-items:center}
+  .card{background:var(--bg); border:1px solid #e2e8f0; border-radius:16px; padding:30px 34px 24px; max-width:860px; width:100%; box-shadow:0 24px 60px -30px rgba(15,23,42,.18)}
+  .kicker{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--primary); font-weight:700}
+  h2{margin:6px 0 4px; font-size:24px; letter-spacing:-.02em}
+  .sub{color:var(--mut); font-size:13.5px; margin:0 0 16px; max-width:66ch}
+  .badge{display:inline-block; background:#ecfdf5; color:#065f46; border:1px solid #6ee7b7; font-size:10.5px; font-weight:700; letter-spacing:.06em; padding:4px 10px; border-radius:99px; margin-bottom:10px}
+  svg{width:100%; height:auto; display:block}
+  .note{font-size:11.5px; color:var(--mut); margin-top:12px; line-height:1.5}
+  .legend{display:flex; gap:22px; font-size:12px; color:var(--mut); margin-top:8px; flex-wrap:wrap}
+  .legend span{display:inline-flex; align-items:center; gap:7px}
+  .sw{width:18px; height:10px; border-radius:3px; display:inline-block}
+  @media (max-width:720px){.card{padding:20px}}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="badge">A — BOARD RULES, 10-YEAR BACKTEST · 2,226 hypothetical signals · quality-screened, $50+ · 2017–2026</div>
+  <div class="kicker">What the typical journey looks like</div>
+  <h2>12 weeks in the life of a signal</h2>
+  <p class="sub">Every signal the model would have generated under today's board rules (quality-screened, $50-and-up universe), overlaid from its signal date. A backtest — not a record of signals we published.</p>
+  <svg id="fanB" viewBox="0 0 840 420" xmlns="http://www.w3.org/2000/svg"></svg>
+  <div class="legend">
+    <span><span class="sw" style="background:#0f766e"></span> median path</span>
+    <span><span class="sw" style="background:rgba(15,118,110,.28)"></span> middle 50% of paths</span>
+    <span><span class="sw" style="background:rgba(15,118,110,.12)"></span> middle 80% of paths</span>
+  </div>
+  <p class="note">Hypothetical backtest, not a record of published signals: 2,226 signals the model would have generated (Apr 2017 – Oct 2026), next-session-open entry, no stop-losses or targets. Quality screen uses current fundamentals applied retroactively (no historical screen data exists). Range of past paths — not returns earned, not a projection, not advice. Current constituents only (survivorship applies).</p>
+</div>
+
+<div class="card">
+  <div class="badge" style="background:#eff6ff;color:#1e40af;border-color:#93c5fd">B — RAW, EVERYTHING · 16,745 signals · no quality screen, no price floor · 2017–2026</div>
+  <div class="kicker">The same signals, before any screening</div>
+  <h2>Raw cone — all tickers, ungated</h2>
+  <p class="sub">Same signal definition across the entire 1,000-ticker research universe, including everything the published board excludes.</p>
+  <svg id="fanA" viewBox="0 0 840 420" xmlns="http://www.w3.org/2000/svg"></svg>
+  <div class="legend">
+    <span><span class="sw" style="background:#1d4ed8"></span> median path</span>
+    <span><span class="sw" style="background:rgba(29,78,216,.26)"></span> middle 50% of paths</span>
+    <span><span class="sw" style="background:rgba(29,78,216,.11)"></span> middle 80% of paths</span>
+  </div>
+  <p class="note">Hypothetical: 16,745 historical signals (Jan 2017 – Oct 2026), same mechanics. Research view — not the published universe.</p>
+</div>
+
+<script>
+// ===== REAL DATA — cone_data_both.json (cone_study_both.py, 2026-10-12) =====
+const PUB={
+ w:[0,1,2,3,4,5,6,7,8,9,10,11,12],
+ p10:[-3.5,-9.74,-11.85,-14.59,-16.39,-18.74,-19.96,-20.78,-21.65,-23.61,-25.47,-25.91,-26.5],
+ p25:[-1.62,-4.35,-5.24,-6.35,-7.54,-8.19,-9.12,-9.9,-10.93,-11.16,-11.88,-12.07,-11.92],
+ p50:[0.08,0.64,1.16,1.83,1.64,1.87,1.59,2.27,2.24,2.57,3.64,4.03,3.79],
+ p75:[1.7,5.63,8.31,10.72,11.4,13.57,14.69,16.82,17.73,18.7,20.25,22.92,22.77],
+ p90:[3.64,11.13,16.14,19.9,23.38,26.63,29.15,32.24,34.49,37.41,40.87,43.4,45.79],
+ ann:[[9,2.57,-66,-66,['Patience pays','Median ~+4% by week 11-12;','55% of paths finished up.'],'start'],
+      [12,22.77,-110,-30,['The right tail does the work','A quarter of paths ran past +23%;','one in ten passed +46%.'],'end']],
+ col:'#0f766e', b50:'rgba(15,118,110,.28)', b80:'rgba(15,118,110,.12)'};
+const RAW={
+ w:[0,1,2,3,4,5,6,7,8,9,10,11,12],
+ p10:[-3.72,-9.75,-12.86,-14.92,-16.86,-18.62,-19.76,-20.98,-21.77,-22.82,-23.8,-24.73,-25.23],
+ p25:[-1.74,-4.45,-5.6,-6.63,-7.39,-8.08,-8.63,-8.82,-9.29,-9.51,-9.68,-9.81,-10.09],
+ p50:[0.0,0.55,1.22,1.8,2.14,2.7,3.26,3.72,4.28,5.11,5.88,6.32,6.83],
+ p75:[1.75,5.93,8.5,10.76,12.67,14.78,16.39,18.03,19.25,21.05,22.96,24.66,25.93],
+ p90:[3.8,12.18,17.27,21.94,24.74,28.51,31.67,33.73,36.49,39.98,43.21,46.18,47.96],
+ ann:[[9,5.11,-66,-66,['Median +6.8% by week 12','60% of paths finished up —','junk included, bear tapes included.'],'start'],
+      [12,25.93,-110,-30,['Wider right tail','Quarter past +26%,','one in ten past +48%.'],'end']],
+ col:'#1d4ed8', b50:'rgba(29,78,216,.26)', b80:'rgba(29,78,216,.11)'};
+// ============================================================================
+
+function renderFan(svgId, D, delay){
+  const svg=document.getElementById(svgId);
+  const NS='http://www.w3.org/2000/svg';
+  const W=840,H=420,L=62,R=24,T=22,B=44;
+  const ymin=-30,ymax=50;
+  const x=w=>L+(W-L-R)*w/12;
+  const y=v=>T+(H-T-B)*(ymax-v)/(ymax-ymin);
+  const el=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e};
+  for(let v=-30;v<=50;v+=10){
+    el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:v===0?'#94a3b8':'#eef2f7','stroke-width':v===0?1.4:1});
+    el('text',{x:L-10,y:y(v)+4,'text-anchor':'end','font-size':11,fill:'#94a3b8'}).textContent=(v>0?'+':'')+v+'%';
+  }
+  D.w.forEach(w=>{ if(w%2===0){
+    el('text',{x:x(w),y:H-16,'text-anchor':'middle','font-size':11,fill:'#94a3b8'}).textContent='wk '+w;}});
+  const area=(lo,hi,fill)=>{
+    let d='M'+x(0)+' '+y(lo[0]);
+    D.w.forEach((w,i)=>d+=' L'+x(w)+' '+y(lo[i]));
+    for(let i=D.w.length-1;i>=0;i--) d+=' L'+x(D.w[i])+' '+y(hi[i]);
+    return el('path',{d:d+' Z',fill,opacity:0});
+  };
+  const line=(vals,stroke,wd)=>{
+    let d='M'+x(0)+' '+y(vals[0]);
+    D.w.forEach((w,i)=>d+=' L'+x(w)+' '+y(vals[i]));
+    const p=el('path',{d,fill:'none',stroke,'stroke-width':wd,'stroke-linecap':'round'});
+    const len=p.getTotalLength();
+    p.style.strokeDasharray=len; p.style.strokeDashoffset=len;
+    return p;
+  };
+  const b80=area(D.p10,D.p90,D.b80);
+  const b50=area(D.p25,D.p75,D.b50);
+  const med=line(D.p50,D.col,3.5);
+  const anns=[];
+  D.ann.forEach(([wx,vy,dx,dy,text,anchor])=>{
+    const g=document.createElementNS(NS,'g'); g.setAttribute('opacity',0); svg.appendChild(g);
+    const c=document.createElementNS(NS,'circle');
+    c.setAttribute('cx',x(wx)); c.setAttribute('cy',y(vy)); c.setAttribute('r',5);
+    c.setAttribute('fill','#fff'); c.setAttribute('stroke',D.col); c.setAttribute('stroke-width',2.5);
+    g.appendChild(c);
+    const lead=document.createElementNS(NS,'line');
+    lead.setAttribute('x1',x(wx)); lead.setAttribute('y1',y(vy));
+    lead.setAttribute('x2',x(wx)+dx); lead.setAttribute('y2',y(vy)+dy);
+    lead.setAttribute('stroke','#94a3b8'); lead.setAttribute('stroke-width',1);
+    g.appendChild(lead);
+    text.forEach((t,i)=>{
+      const tx=document.createElementNS(NS,'text');
+      tx.setAttribute('x',x(wx)+dx+(anchor==='end'?-6:6)); tx.setAttribute('y',y(vy)+dy+4+i*15);
+      tx.setAttribute('font-size',12.5); tx.setAttribute('fill','#334155'); tx.setAttribute('text-anchor',anchor);
+      tx.setAttribute('font-weight',i===0?700:400);
+      tx.textContent=t; g.appendChild(tx);
+    });
+    anns.push(g);
+  });
+  requestAnimationFrame(()=>{
+    b80.style.transition=`opacity 1s ease ${delay+.2}s`; b80.style.opacity=1;
+    b50.style.transition=`opacity 1s ease ${delay+.6}s`; b50.style.opacity=1;
+    med.style.transition=`stroke-dashoffset 2.2s ease ${delay+1}s`; med.style.strokeDashoffset=0;
+    anns.forEach((g,i)=>{ g.style.transition=`opacity .7s ease ${delay+2+i*.7}s`; g.style.opacity=1; });
+  });
+}
+renderFan('fanB',PUB,0);
+renderFan('fanA',RAW,.8);
+</script>
+</body>
+</html>

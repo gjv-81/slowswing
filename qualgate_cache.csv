@@ -36,6 +36,7 @@ BLDR,WATCH,DECLINING,WATCH/DECL,52.6,2026-09-23,1.1,0.411,4,2.3,13.4,2.9,1.17,5.
 BROS,FAIL,GROWTH,FAIL/GS,43.3,2026-09-19,1.1,0.141,6,2.39,1.0,5.8,1.6,9.8,Consumer Cyclical,"rev +28%/yr, profitable",
 BSX,PASS,CORE,PASS,77.4,2026-10-04,1.1,0.317,7,2.94,5.5,10.7,0.47,19.8,Healthcare,mature / stable,
 BX,WATCH,GROWTH,WATCH/GS,52.8,2026-10-09,1.1,,5,,5.3,,1.54,,Financial Services,"rev +20%/yr, profitable",
+CAG,FAIL,LEVERAGED,FAIL/LEV,37.3,2026-10-13,1.1,0.156,4,1.06,15.0,-3.7,1.14,11.2,Consumer Defensive,distress/leverage flag,Altman-Z 1.06 in distress zone (<1.81)
 CAT,WATCH,CORE,WATCH,63.4,2026-09-23,1.1,0.218,6,5.11,2.0,24.0,2.03,16.5,Industrials,mature / stable,
 CAVA,WATCH,CORE,WATCH,53.4,2026-09-23,1.1,0.214,4,7.45,0.4,5.3,0.6,6.7,Consumer Cyclical,mature / stable,
 CBOE,PASS,CORE,PASS,76.5,2026-08-25,1.1,0.207,8,6.5,5.2,31.0,0.31,32.1,Financial Services,mature / stable,
@@ -56,6 +57,7 @@ COO,PASS,CORE,PASS,65.7,2026-09-21,1.1,0.216,6,2.95,4.2,6.7,0.3,16.7,Healthcare,
 COP,WATCH,CORE,WATCH,64.4,2026-08-25,1.1,0.121,7,3.37,4.5,11.3,0.36,19.2,,mature / stable,
 CPB,FAIL,NEW-IPO,FAIL/IPO,0.0,2026-09-16,1.1,,0,,,,,,Consumer Defensive,<3yr public history,"Piotroski F-score 0/9 (<=2, fundamentally weak)"
 CPRI,WATCH,DECLINING,WATCH/DECL,61.1,2026-09-29,1.1,0.669,8,3.47,0.8,1.0,17.75,2.2,Consumer Cyclical,revenue -4% YoY,
+CRM,PASS,CORE,PASS,72.1,2026-10-13,1.1,0.287,7,3.02,7.4,,0.29,21.5,Technology,mature / stable,
 CROX,PASS,DECLINING,PASS/DECL,67.2,2026-09-23,1.1,0.565,5,3.56,11.0,1.8,1.25,22.0,Consumer Cyclical,revenue -1% YoY,
 CRSP,FAIL,SPECULATIVE,FAIL/SPEC,36.3,2026-09-23,1.1,-0.094,2,8.22,-6.9,,0.11,,Healthcare,pre-commercial (minimal revenue),"Piotroski F-score 2/9 (<=2, fundamentally weak) | Gross profit <= 0 (not a viable business) | Burning cash and unprofitable (FCF<0 and NI<0)"
 CRWD,WATCH,SPECULATIVE,WATCH/SPEC,59.5,2026-09-23,1.1,0.324,4,24.97,0.5,-3.5,0.19,-6.1,Technology,pre-commercial (P/S 56),
@@ -142,7 +144,7 @@ MOH,WATCH,CORE,WATCH,50.5,2026-10-05,1.1,0.262,4,4.33,-6.3,4.1,0.97,1.7,Healthca
 MORN,PASS,CORE,PASS,76.6,2026-09-21,1.1,0.416,6,3.95,5.9,13.5,1.03,20.6,Financial Services,mature / stable,
 MOS,FAIL,CORE,FAIL,37.8,2026-09-23,1.1,0.078,7,1.94,-6.9,6.0,0.44,9.0,Basic Materials,mature / stable,
 MP,FAIL,SPECULATIVE,FAIL/SPEC,31.8,2026-09-23,1.1,-0.015,4,3.42,-3.8,-2.7,0.51,-64.6,Basic Materials,pre-commercial (P/S 39),Gross profit <= 0 (not a viable business) | Operating margin negative (-64.6%) and FCF not positive | Interest coverage -2.7x < 1.0x and FCF not positive | Burning cash and unprofitable (FCF<0 and NI<0)
-MPC,WATCH,DECLINING,WATCH/DECL,60.3,2026-09-12,1.1,0.119,7,3.76,4.3,6.0,1.98,4.3,Energy,revenue -4% YoY,
+MPC,WATCH,DECLINING,WATCH/DECL,59.6,2026-10-13,1.1,0.119,7,3.99,3.6,6.0,1.98,4.3,Energy,revenue -4% YoY,
 MPWR,PASS,GROWTH,PASS/GS,69.4,2026-09-23,1.1,0.367,5,62.94,1.0,25.0,0.01,26.1,Technology,"rev +26%/yr, profitable",
 MRNA,FAIL,DECLINING,FAIL/DECL,35.6,2026-09-23,1.1,0.085,4,12.51,-2.9,-275.8,0.15,-159.9,Healthcare,revenue -40% YoY,Operating margin negative (-159.9%) and FCF not positive | Interest coverage -275.8x < 1.0x and FCF not positive | Burning cash and unprofitable (FCF<0 and NI<0)
 MRVL,PASS,GROWTH,PASS/GS,69.9,2026-09-23,1.1,0.188,8,18.74,0.6,16.0,0.33,16.3,Technology,"rev +42%/yr, profitable",

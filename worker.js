@@ -99,9 +99,18 @@ const clearSession = () => `tss=; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Ag
 
 // ---------- subscriber store ----------
 const subKey = (e) => `sub:${normEmail(e)}`;
+// Complimentary accounts: COMP_EMAILS in wrangler.toml (comma-separated). These
+// get the board with no trial clock and no card — the owner, family, a reviewer.
+// Applied on read, so a later signup or Stripe event can never downgrade them.
+function isComp(env, email) {
+  const list = String(env.COMP_EMAILS || "").split(",").map((x) => normEmail(x.trim())).filter(Boolean);
+  return list.includes(normEmail(email));
+}
 async function getSub(env, email) {
   const raw = await env.STORE.get(subKey(email));
-  return raw ? JSON.parse(raw) : null;
+  const rec = raw ? JSON.parse(raw) : null;
+  if (isComp(env, email)) return { ...(rec || {}), status: "comp", comp: true };
+  return rec;
 }
 async function putSub(env, email, rec) {
   await env.STORE.put(subKey(email), JSON.stringify(rec));
@@ -112,6 +121,9 @@ async function putSub(env, email, rec) {
 function entitlement(sub) {
   if (!sub) return { ok: false, reason: "no_account", status: "none", daysLeft: 0 };
   const status = sub.status || "none";
+
+  // Complimentary account (COMP_EMAILS): full access, no clock.
+  if (status === "comp") return { ok: true, reason: "", status: "comp", daysLeft: null };
 
   // A paid subscription is the strongest claim.
   if (status === "active" || status === "past_due") {
@@ -550,6 +562,174 @@ async function deadManCheck(env) {
   return { ok: false, session, expected: etDate, counts };
 }
 
+
+// ---------- post announcements (new blog post -> members) ----------
+// POST /api/announce  { slug, title, excerpt, intro, date, read, test, to }
+//   Authorization: Bearer <ANNOUNCE_KEY>   (wrangler secret put ANNOUNCE_KEY)
+//   test:true sends ONLY to `to` (default NOTIFY_EMAIL) and records nothing.
+//   A real send goes to every account whose entitlement is ok today (paid,
+//   comp, or inside the trial) and has not unsubscribed from post mail
+//   (rec.nomail). Each (slug, email) pair is marked in KV so re-running the
+//   same slug can never double-send; a corrected post is a new slug.
+//   Sent via Resend's batch endpoint, 100 per request.
+function announceEmail(env, post, unsubUrl) {
+  const base = env.APP_URL || "https://theslowswing.com";
+  const link = `${base}/#post/${encodeURIComponent(post.slug)}`;
+  const meta = [post.date, post.read].filter(Boolean).join(" · ");
+  const html = `<div style="font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:560px;margin:0 auto;color:#0f172a;line-height:1.6">
+    <p style="margin:0 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0f766e;font-weight:700">New from The Slow Swing journal</p>
+    <h2 style="margin:0 0 6px;font-size:23px;line-height:1.25;color:#0e2a2b">${esc(post.title)}</h2>
+    ${meta ? `<p style="margin:0 0 18px;color:#64748b;font-size:13px">${esc(meta)}</p>` : ""}
+    <div style="font-size:16px">${post.intro}</div>
+    ${btn(link, "Read the rest →")}
+    <p style="margin:0 0 24px;color:#64748b;font-size:13px">Or copy this link: <a href="${link}" style="color:#0f766e">${link}</a></p>
+    <p style="margin:0 0 8px">Keep swinging,<br><b>The Slow Swing Team</b></p>
+    <p style="margin:0 0 14px;color:#64748b;font-size:12px;line-height:1.5">The Slow Swing is educational research, not investment advice. We are not a broker-dealer or investment adviser, and we don't execute trades. Figures are paper-tracked and hypothetical — levels a price reached, not returns anyone earned. Do your own research.</p>
+    <p style="margin:0;color:#94a3b8;font-size:12px">You receive these because you are a member of The Slow Swing. <a href="${unsubUrl}" style="color:#64748b">Stop post emails</a> — your account and the nightly board are unaffected.</p>
+  </div>`;
+  const text = `New from The Slow Swing journal\n\n${post.title}\n${meta}\n\n${(post.excerpt || "").trim()}\n\nRead the rest: ${link}\n\nEducational research, not advice.\nStop post emails: ${unsubUrl}`;
+  return { subject: post.title, html, text };
+}
+async function unsubUrlFor(env, email) {
+  const t = await signToken({ t: "unsub", e: normEmail(email) }, env.SESSION_SECRET);
+  return `${env.APP_URL || "https://theslowswing.com"}/api/unsub?t=${encodeURIComponent(t)}`;
+}
+// Who gets a post today: every account whose entitlement is ok, not opted out,
+// and not already sent this slug.
+async function announceRecipients(env, slug) {
+  const emails = []; let cursor; const seen = new Set();
+  do {
+    const page = await env.STORE.list({ prefix: "sub:", cursor });
+    for (const k of page.keys) {
+      const email = k.name.slice(4);
+      if (seen.has(email)) continue; seen.add(email);
+      const rec = await getSub(env, email);
+      if (!rec || rec.nomail) continue;
+      if (!entitlement(rec).ok) continue;
+      if (await env.STORE.get(`sent:post:${slug}:${email}`)) continue;
+      emails.push(email);
+    }
+    cursor = page.list_complete ? null : page.cursor;
+  } while (cursor);
+  return emails;
+}
+// Batch-send one post to a list (100 per Resend request). `extra` is HTML
+// appended only to the owner's test copy (the Publish button).
+async function announceSend(env, post, emails, { test = false, extra = "" } = {}) {
+  const from = env.ANNOUNCE_FROM || env.EMAIL_FROM || "The Slow Swing <hello@send.theslowswing.com>";
+  let sent = 0, failed = [];
+  for (let i = 0; i < emails.length; i += 100) {
+    const chunk = emails.slice(i, i + 100);
+    const batch = [];
+    for (const to of chunk) {
+      const u = await unsubUrlFor(env, to);
+      const m = announceEmail(env, post, u);
+      batch.push({ from, to: [to], reply_to: "support@theslowswing.com", subject: m.subject,
+                   html: extra ? m.html.replace(/<\/div>\s*$/, extra + "</div>") : m.html, text: m.text,
+                   headers: { "List-Unsubscribe": `<${u}>` } });
+    }
+    const r = await fetch("https://api.resend.com/emails/batch", {
+      method: "POST",
+      headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, "content-type": "application/json" },
+      body: JSON.stringify(batch),
+    });
+    if (r.ok) {
+      sent += chunk.length;
+      if (!test) for (const to of chunk) await env.STORE.put(`sent:post:${post.slug}:${to}`, "1");
+    } else {
+      let why = ""; try { why = (await r.text()).slice(0, 300); } catch (e) {}
+      console.log(`resend batch ${r.status} ${why}`);
+      failed.push({ status: r.status, why, n: chunk.length });
+    }
+  }
+  if (!test && sent) await env.STORE.put(`announced:${post.slug}`, JSON.stringify({ at: new Date().toISOString(), sent }));
+  return { sent, failed };
+}
+async function announce(request, env) {
+  const auth = request.headers.get("authorization") || "";
+  if (!env.ANNOUNCE_KEY || auth !== `Bearer ${env.ANNOUNCE_KEY}`) return json({ error: "forbidden" }, 403);
+  let post; try { post = await request.json(); } catch { return json({ error: "bad json" }, 400); }
+  if (!post || !post.slug || !post.title || !post.intro) return json({ error: "slug, title, intro required" }, 400);
+  post.slug = String(post.slug).replace(/[^a-z0-9-]/g, "");
+
+  if (post.test) {
+    // Owner's preview. Park the post for 7 days and put a one-click Publish
+    // button at the bottom of this copy only. The link opens a confirmation
+    // page; the send itself happens on that page's button (POST), so a mail
+    // scanner pre-opening the link can never trigger a mailing.
+    const to = normEmail(post.to || env.NOTIFY_EMAIL);
+    const pending = { slug: post.slug, title: post.title, excerpt: post.excerpt, intro: post.intro, date: post.date, read: post.read };
+    await env.STORE.put(`pending:${post.slug}`, JSON.stringify(pending), { expirationTtl: 7 * 86400 });
+    const n = (await announceRecipients(env, post.slug)).length;
+    const tok = await signToken({ t: "publish", s: post.slug, exp: Date.now() + 7 * 86400000 }, env.SESSION_SECRET);
+    const url = `${env.APP_URL || "https://theslowswing.com"}/api/publish?t=${encodeURIComponent(tok)}`;
+    const extra = `<div style="margin-top:28px;padding:16px 18px;border:2px dashed #0f766e;border-radius:12px;background:#f0fdfa">
+      <p style="margin:0 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0f766e;font-weight:700">Owner preview — members did not receive this</p>
+      <p style="margin:0 0 14px;color:#0f172a">This is how the post will look. <b>${n}</b> member${n === 1 ? "" : "s"} would receive it right now.</p>
+      ${btn(url, "Publish to members →")}
+      <p style="margin:0;color:#64748b;font-size:12px">Opens a confirmation page first. The link works for 7 days and the post can only be sent once.</p>
+    </div>`;
+    const r = await announceSend(env, pending, [to], { test: true, extra });
+    return json({ ok: r.failed.length === 0, ...r, test: true, recipients: [to], would_receive: n });
+  }
+
+  const emails = await announceRecipients(env, post.slug);
+  if (!emails.length) return json({ ok: true, sent: 0, note: "nobody left to send to" });
+  const r = await announceSend(env, post, emails);
+  return json({ ok: r.failed.length === 0, ...r, test: false });
+}
+// GET  /api/publish?t=  -> confirmation page (no side effects)
+// POST /api/publish     -> the send. Token must verify, the parked post must
+//                          still exist (deleted after a send => single use).
+function publishPage(env, title, body) {
+  return new Response(`<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>
+<body style="font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:560px;margin:60px auto;padding:0 20px;color:#0f172a;line-height:1.6">
+<p style="margin:0 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0f766e;font-weight:700">The Slow Swing · journal</p>
+<h2 style="margin:0 0 16px;color:#0e2a2b">${esc(title)}</h2>${body}
+<p style="margin-top:28px"><a href="${env.APP_URL || "https://theslowswing.com"}" style="color:#0f766e">Back to The Slow Swing</a></p></body>`,
+    { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" } });
+}
+async function publish(request, env) {
+  let tok;
+  if (request.method === "POST") { const f = await request.formData(); tok = f.get("t"); }
+  else tok = new URL(request.url).searchParams.get("t");
+  const p = await verifyToken(tok || "", env.SESSION_SECRET);
+  if (!p || p.t !== "publish" || !p.s) return publishPage(env, "That link didn't work", "<p>It may be older than 7 days or incomplete. Run the test send again from the terminal to get a fresh one.</p>");
+  const done = await env.STORE.get(`announced:${p.s}`);
+  if (done) { const d = JSON.parse(done); return publishPage(env, "Already sent", `<p>This post went to <b>${d.sent}</b> member${d.sent === 1 ? "" : "s"} on ${esc(fmtDate(new Date(d.at)))}. Nothing more to do.</p>`); }
+  const raw = await env.STORE.get(`pending:${p.s}`);
+  if (!raw) return publishPage(env, "Nothing waiting to publish", "<p>No parked post for this link. Run <code>./send_post.sh &lt;slug&gt; --test</code> again and use the button in the new email.</p>");
+  const post = JSON.parse(raw);
+  const emails = await announceRecipients(env, p.s);
+  if (request.method !== "POST") {
+    return publishPage(env, "Send this post to members?", `
+      <p style="font-size:18px;margin:0 0 4px"><b>${esc(post.title)}</b></p>
+      <p style="margin:0 0 18px;color:#64748b">${esc([post.date, post.read].filter(Boolean).join(" · "))}</p>
+      <p>It will go to <b>${emails.length}</b> member${emails.length === 1 ? "" : "s"} — everyone who can open the board today and has not opted out of post emails.</p>
+      <form method="post" action="/api/publish" style="margin-top:22px"><input type="hidden" name="t" value="${esc(tok)}">
+        <button type="submit" style="background:#0f766e;color:#fff;border:0;padding:13px 26px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer">Send to ${emails.length} member${emails.length === 1 ? "" : "s"}</button>
+      </form>
+      <p style="margin-top:14px;color:#64748b;font-size:13px">This can only happen once per post. If you need to change the text, fix it in posts.js, redeploy, and run the test again.</p>`);
+  }
+  if (!emails.length) { await env.STORE.delete(`pending:${p.s}`); return publishPage(env, "Nobody to send to", "<p>Every eligible member already has this post, or there are no eligible members right now.</p>"); }
+  const r = await announceSend(env, post, emails);
+  await env.STORE.delete(`pending:${p.s}`);
+  if (r.failed.length) return publishPage(env, "Partly sent", `<p>Sent to <b>${r.sent}</b>; <b>${r.failed.reduce((a, f) => a + f.n, 0)}</b> failed (Resend ${esc(String(r.failed[0].status))}). Run the terminal send to retry the rest — it skips anyone who already received it.</p>`);
+  return publishPage(env, "Sent", `<p><b>${esc(post.title)}</b> went to <b>${r.sent}</b> member${r.sent === 1 ? "" : "s"}. Resend → Emails shows each delivery.</p>`);
+}
+async function unsubscribe(request, env) {
+  const url = new URL(request.url);
+  const p = await verifyToken(url.searchParams.get("t") || "", env.SESSION_SECRET);
+  const page = (title, body) => new Response(`<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title}</title><body style="font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:520px;margin:60px auto;padding:0 20px;color:#0f172a;line-height:1.6"><h2 style="color:#0f766e">${title}</h2><p>${body}</p><p><a href="${env.APP_URL || "https://theslowswing.com"}" style="color:#0f766e">Back to The Slow Swing</a></p></body>`,
+    { headers: { "content-type": "text/html; charset=utf-8" } });
+  if (!p || p.t !== "unsub" || !p.e) return page("That link didn't work", "It may be old or incomplete. Reply to any of our emails and we'll take care of it.");
+  const raw = await env.STORE.get(subKey(p.e));
+  const rec = raw ? JSON.parse(raw) : {};
+  rec.nomail = true; rec.nomail_at = new Date().toISOString();
+  await putSub(env, p.e, rec);
+  return page("Done — no more post emails", `${esc(p.e)} will not receive journal announcements. Your account and the nightly board are unchanged. Sign-in and billing emails still arrive, since they are part of the service.`);
+}
+
 // ---------- routes ----------
 export default {
   async scheduled(event, env, ctx) {
@@ -571,6 +751,9 @@ export default {
       if (p === "/api/checkout" && request.method === "POST") return await checkout(request, env);
       if (p === "/api/portal" && request.method === "POST") return await portal(request, env);
       if (p === "/api/stripe-webhook" && request.method === "POST") return await stripeWebhook(request, env);
+      if (p === "/api/announce" && request.method === "POST") return await announce(request, env);
+      if (p === "/api/unsub" && request.method === "GET") return await unsubscribe(request, env);
+      if (p === "/api/publish" && (request.method === "GET" || request.method === "POST")) return await publish(request, env);
     } catch (e) {
       return json({ error: "Something went wrong on our end. Please try again." }, 500);
     }
@@ -716,6 +899,7 @@ async function me(request, env) {
   const sub = await getSub(env, email);
   const ent = entitlement(sub);
   return json({ authed: true, email, member: ent.ok, status: ent.status, daysLeft: ent.daysLeft,
+                comp: ent.status === "comp",
                 // drives the "Manage billing" link — cancellation must be as easy as signing up
                 hasSub: !!(sub && sub.customer),
                 // the exact date, so the pricing page can promise "no charge until X"
