@@ -64,9 +64,17 @@ fi
 "$PY" "$DIR/build_stats.py" >> "$LOG" 2>&1
 
 # --- publish board.json to Cloudflare / theslowswing.com (added 2026-09-06) ---
+DEPLOY_OK=1
 if [ "$BOARD" != "none" ] && [ $brc -eq 0 ]; then
   echo "----- publish to cloudflare -----" >> "$LOG" 2>&1
-  /bin/zsh "$DIR/deploy_site.sh" >> "$LOG" 2>&1
+  # 2026-10-13: a single transient "fetch failed" from wrangler left the public
+  # site a day stale while the run reported success. Retry with a pause, and
+  # treat a final failure as a failure (alert below).
+  d=0; DEPLOY_OK=0
+  while [ $d -lt 3 ]; do
+    /bin/zsh "$DIR/deploy_site.sh" >> "$LOG" 2>&1 && { DEPLOY_OK=1; break; }
+    d=$((d+1)); echo "----- deploy attempt $d failed, waiting 120s -----" >> "$LOG" 2>&1; sleep 120
+  done
 else
   echo "----- publish SKIPPED (board=$BOARD rc=$brc) -----" >> "$LOG" 2>&1
 fi
@@ -74,8 +82,10 @@ fi
 # --- positive failure alert (added 2026-09-16) ---
 # The summary Telegram only goes out on success, so silence was the only alarm.
 # Now a failed scan, a failed board build or a skipped publish each say so.
-if [ $SCAN_OK -eq 0 ] || [ "$BOARD" = "none" ] || [ $brc -ne 0 ]; then
+if [ $SCAN_OK -eq 0 ] || [ "$BOARD" = "none" ] || [ $brc -ne 0 ] || [ $DEPLOY_OK -eq 0 ]; then
   MSG="❌ STS evening run problem $(/bin/date '+%a %b %d')"
+  [ $DEPLOY_OK -eq 0 ] && MSG="$MSG
+• Cloudflare publish FAILED 3x (network?) — public site still shows the previous session; member board in KV may be current. Fix: zsh ~/STS/15min/deploy_site.sh"
   [ $SCAN_OK -eq 0 ] && MSG="$MSG
 • scan FAILED after 3 attempts (Yahoo/yfinance down?) — no new names tonight"
   case "$BOARD" in
