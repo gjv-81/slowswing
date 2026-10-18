@@ -16,8 +16,6 @@ import warnings; warnings.filterwarnings("ignore")
 
 HERE=Path(__file__).resolve().parent
 LOG=HERE/"x200g_log.csv"
-TG_TOKEN="8608595671:AAHwVnhGeP3iiX9jk9EV4CPGAmArrbT-DkI"
-TG_CHAT="6499078442"
 
 def rsi(s,n=20):
     d=s.diff();up,dn=d.clip(lower=0),-d.clip(upper=0)

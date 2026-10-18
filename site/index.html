@@ -3241,6 +3241,10 @@ async function loadBoard(){
     const j = await r.json();
     if(!j || !Array.isArray(j.names) || !j.names.length) throw new Error('empty feed');
     DATA = j.names;
+    // Consistency guard: Max Dip comes from the tracker (previous-session bars when
+    // the vendor's latest bar is late), Current from the board price. A current
+    // move below the recorded dip IS a dip, so never show a dip shallower than it.
+    DATA.forEach(d=>{ if(d && d.chg!=null && d.mae!=null && d.chg<d.mae) d.mae=d.chg; if(d && d.chg!=null && d.mfe!=null && d.chg>d.mfe) d.mfe=d.chg; });
     FEED_AT = Date.now();
     FEED_DATE = j.session_date || null;           // the session the feed was built for
     FEED_GEN = j.generated_at || null; FEED_RUN = j.run || null;

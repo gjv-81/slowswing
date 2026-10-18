@@ -6,8 +6,9 @@
 #   cd ~/Documents/STS/15min && python3.12 sts_ml_evening.py
 #
 # WHAT IT DOES, in order:
-#   1. Downloads fresh daily data (2 years) for the research universe
-#      (ticker list = daily_data_10y/ filenames) plus SPY and RSP
+#   1. Refreshes daily data for the research universe (ticker list =
+#      daily_data_10y/ filenames) plus SPY and RSP — Marketstack-first via
+#      data_refresh.py (append-only, licensed), Yahoo 2y download as fallback
 #   2. Computes the STS ML score for every ticker — IDENTICAL formula to
 #      the TOS column (same z-constants, same +/-3 sigma clipping), plus
 #      RS vs RSP (40-day) and the SPY regime dial
@@ -172,6 +173,73 @@ def fetch_batch(tickers):
         print(f"  STILL MISSING after retries: {', '.join(missing[:20])}")
     return out
 
+def expected_session(today=None):
+    """The last session whose close should be on disk tonight: today if it is a
+    weekday, else the previous weekday. (US holidays are not modelled — on a
+    holiday the data is one day 'stale', which only costs a warning.)"""
+    d = today or datetime.date.today()
+    while d.weekday() >= 5:
+        d -= datetime.timedelta(days=1)
+    return d
+
+def load_from_csvs(tickers, universe_dir, years=2):
+    """Read the last `years` of each ticker's CSV into the same dict layout that
+    fetch_batch() returns (DatetimeIndex, Open/High/Low/Close/Volume)."""
+    cutoff = pd.Timestamp(datetime.date.today() - datetime.timedelta(days=int(365.25 * years)))
+    out = {}
+    for t in tickers:
+        p = os.path.join(universe_dir, f"{t}.csv")
+        if not os.path.exists(p):
+            continue
+        try:
+            df = pd.read_csv(p, index_col=0, parse_dates=True).sort_index()
+            df.index = pd.to_datetime(df.index).tz_localize(None)
+            df = df[["Open", "High", "Low", "Close", "Volume"]].dropna(subset=["Close"])
+            df = df[(df.index >= cutoff) & (df["Close"] > 0)]
+            if len(df): out[t] = df
+        except Exception as e:                       # noqa: BLE001
+            print(f"  {t}: CSV unreadable ({e})")
+    return out
+
+def load_universe_data(universe):
+    """Marketstack-first (licensed, append-only, ~10 requests), Yahoo fallback.
+
+    Path A — EOD_PROVIDER=marketstack in .env and STS_FORCE_YAHOO unset:
+      data_refresh.refresh_folder() appends tonight's bars (and re-adjusts for
+      any dividend/split) to daily_data_10y/*.csv, then the 2-year tails are
+      read back from the CSVs. Falls back to path B if Marketstack errors out
+      or has not published tonight's session yet.
+    Path B — the old route: yfinance 2y download + write_back() merge.
+    Returns (data, source) where source is "marketstack" or "yahoo"."""
+    want = universe + ["SPY", "RSP"]
+    use_ms = _env("EOD_PROVIDER", "").lower() == "marketstack" and not os.environ.get("STS_FORCE_YAHOO")
+    if use_ms:
+        try:
+            from data_refresh import refresh_folder
+            rep = refresh_folder(UNIVERSE_DIR, extra=["SPY", "RSP"])
+            fatal = [e for e in rep.errors if e.startswith("marketstack:")]
+            exp = expected_session().isoformat()
+            if fatal:
+                print(f"  Marketstack refresh failed: {fatal[0]} -> falling back to Yahoo")
+            elif not rep.latest_date or rep.latest_date < exp:
+                print(f"  Marketstack latest session {rep.latest_date} < expected {exp} "
+                      f"(not published yet?) -> falling back to Yahoo")
+            else:
+                data = load_from_csvs(want, UNIVERSE_DIR)
+                if "SPY" in data and "RSP" in data and len(data) >= 0.9 * len(want):
+                    if rep.missing:
+                        print(f"  no new bar for {len(rep.missing)}: {', '.join(rep.missing[:15])}")
+                    return data, "marketstack"
+                print(f"  only {len(data)}/{len(want)} CSVs loaded after refresh -> falling back to Yahoo")
+        except Exception as e:                       # noqa: BLE001
+            print(f"  Marketstack path error: {e} -> falling back to Yahoo")
+    print("  Downloading 2y daily data from Yahoo ...")
+    data = fetch_batch(want)
+    if data:
+        print("Writing fresh bars back to CSVs ...")
+        write_back(data, UNIVERSE_DIR)
+    return data, "yahoo"
+
 def write_back(data, universe_dir):
     """Merge the freshly-fetched bars into each ticker's on-disk CSV so the saved
     history stays current instead of frozen at first-download. Deep history is
@@ -235,14 +303,11 @@ def main():
                        for f in glob.glob(os.path.join(UNIVERSE_DIR, "*.csv")) +
                                 glob.glob(os.path.join(UNIVERSE_DIR, "*.parquet"))})
     if not universe: sys.exit(f"ERROR: no universe files in {UNIVERSE_DIR}")
-    print(f"Universe: {len(universe)} tickers. Downloading 2y daily data ...")
-    data = fetch_batch(universe + ["SPY", "RSP"])
+    print(f"Universe: {len(universe)} tickers. Refreshing daily data ...")
+    data, data_source = load_universe_data(universe)
     if "SPY" not in data or "RSP" not in data:
-        sys.exit("ERROR: SPY/RSP download failed — cannot score. Try again.")
-
-    # keep the on-disk CSVs current (they used to freeze at first-download)
-    print("Writing fresh bars back to CSVs ...")
-    write_back(data, UNIVERSE_DIR)
+        sys.exit("ERROR: SPY/RSP data unavailable — cannot score. Try again.")
+    print(f"Data source tonight: {data_source}; latest SPY bar {data['SPY'].index.max().date()}")
 
     # ── SPY regime dial — PERCENTILE version (validated in spy_regime_study.py) ──
     # "Extended" is graded against SPY's OWN trailing-3yr stretch distribution,
@@ -460,6 +525,10 @@ def main():
            f"\n{body}")
     if "OK" not in hg_status:
         msg += f"\n\n⚠️ {esc(hg_status)}"
+    _src = {"marketstack": "data: Marketstack", "yahoo": "data: Yahoo (fallback)"}[data_source]
+    msg += f"\n\n<i>{_src} · bars through {data['SPY'].index.max().date()}</i>"
+    if data_source == "yahoo":
+        msg = msg.replace("🌙 <b>STS", "🌙⚠️ <b>STS", 1)
     send_telegram(msg, html=True)
     print("\nDone.")
 

@@ -18,7 +18,8 @@
 #                   auto-filled from the open of entry_date / next session)
 #   Close early  -> optional close_date column
 #   Run          -> cd ~/Documents/STS/15min && python3.12 sts_ml_paper_tracker.py
-#   Stateless — recomputed from CSV + yfinance each run; safe to skip days.
+#   Stateless — recomputed each run from the trades CSV + daily_data_10y CSVs
+#   (Marketstack-refreshed; Yahoo only as per-ticker fallback); safe to skip days.
 #
 # CSV: entry_date,ticker,shares,entry_price,score_at_entry,rs_at_entry,notes[,close_date]
 # ============================================================================
@@ -119,10 +120,48 @@ GLOSSARY = [
  ("SAMPLE TOO SMALL", "Fewer than 100 twelve-week checkpoints -> results are anecdotes, not conclusions. Pre-committed."),
 ]
 
-def fetch_history(tickers, start):
-    import yfinance as yf, time
-    data = {}
-    for t in tickers:
+def fetch_history(tickers, start, csv_dir=None, stale_days=4):
+    """Daily OHLC per ticker from `start`. CSV-first: daily_data_10y/<T>.csv is
+    the licensed, total-return-adjusted history the evening refresh just brought
+    up to date (Marketstack). Yahoo is used only for a ticker whose CSV is
+    missing, unreadable, or more than `stale_days` behind the newest CSV date
+    seen (e.g. the night Marketstack itself failed and the evening script fell
+    back to Yahoo — then the CSVs are already Yahoo-refreshed anyway).
+    STS_FORCE_YAHOO=1 in the environment skips the CSVs entirely."""
+    import time
+    data, need_yahoo, local = {}, [], {}
+    csv_dir = csv_dir or os.path.join(_DIR, "daily_data_10y")
+    if not os.environ.get("STS_FORCE_YAHOO"):
+        for t in tickers:
+            p = os.path.join(csv_dir, f"{t}.csv")
+            if not os.path.exists(p):
+                continue
+            try:
+                df = pd.read_csv(p, index_col=0, parse_dates=True).sort_index()
+                df.index = pd.to_datetime(df.index).tz_localize(None)
+                df = df[df.index >= pd.Timestamp(start)]
+                df = df[df["Close"].notna() & (df["Close"] > 0)][["Open", "High", "Low", "Close"]].copy()
+                if len(df): local[t] = df
+            except Exception as e:                  # noqa: BLE001
+                print(f"  {t}: CSV unreadable ({e})")
+        newest = max((df.index.max() for df in local.values()), default=None)
+        for t in tickers:
+            df = local.get(t)
+            if df is not None and newest is not None and (newest - df.index.max()).days <= stale_days:
+                data[t] = df
+            else:
+                need_yahoo.append(t)
+        print(f"  history: {len(data)} from local CSVs"
+              + (f", {len(need_yahoo)} to fetch from Yahoo ({', '.join(need_yahoo[:10])})" if need_yahoo else "")
+              + (f"; newest CSV bar {newest.date()}" if newest is not None else ""))
+        # a closed position's CSV may legitimately end long ago — keep the CSV
+        # bars for those rather than letting Yahoo (which drops dead tickers) win
+    else:
+        need_yahoo = list(tickers)
+    if not need_yahoo:
+        return data
+    import yfinance as yf
+    for t in need_yahoo:
         for attempt in range(3):          # Yahoo rate-limits bursts; retry per ticker
             try:
                 df = yf.download(t, start=start, progress=False, auto_adjust=True)
@@ -135,7 +174,11 @@ def fetch_history(tickers, start):
                 pass
             time.sleep(3 * (attempt + 1))
         else:
-            print(f"  WARNING: could not fetch {t} after 3 tries")
+            if t in local:                 # stale CSV beats nothing (closed/delisted names)
+                data[t] = local[t]
+                print(f"  {t}: Yahoo failed, using local CSV through {local[t].index.max().date()}")
+            else:
+                print(f"  WARNING: could not fetch {t} after 3 tries")
     return data
 
 def main():
@@ -270,7 +313,9 @@ def main():
         # let a later night, with the bar present, freeze the right one.
         if not _has_px:
             _cal = spy.index[spy.index >= tr["entry_date"]]
-            if len(_cal) and e_date == _cal[0]:
+            # 2026-10-16: Yahoo returned the session's row with NaN prices (bar not
+            # finalised yet) and two fills froze as "nan". Never freeze a non-number.
+            if len(_cal) and e_date == _cal[0] and np.isfinite(e_px) and e_px > 0:
                 fills[_i] = (e_date.strftime("%Y-%m-%d"), round(e_px, 4))
             else:
                 print(f"  WARNING: {t} fill {e_date.date()} is not the first session on/after "

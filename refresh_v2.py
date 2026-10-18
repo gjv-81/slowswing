@@ -1,11 +1,15 @@
 #!/usr/bin/env python3.12
 """
-refresh_v2.py — nightly data refresh for the SEPARATE v2 universe (daily_data_v2/).
-Batch-downloads the last 2 years for every ticker already in daily_data_v2/
-(plus SPY/RSP) and MERGES the fresh bars into each CSV: deep history preserved,
-fresh (re-adjusted) values win on overlapping dates. Same merge logic as the
-live pipeline's write_back. Fast: chunked/threaded yfinance (~1000 names in a
-few minutes). Run by run_v2_evening.sh before eval_universe_v2.py.
+refresh_v2.py — nightly data refresh for the SEPARATE v2 universe (daily_data_v2/)
+plus the expansion folders daily_data_ext/ and daily_data_slow_ext/.
+
+Marketstack-first (append-only via data_refresh.py: only the missing sessions
+are fetched, ~3 requests per 100 tickers, history re-adjusted for any
+dividend/split). If Marketstack fails for a folder, or has not published the
+expected session yet, that folder falls back to the old Yahoo route: 2y (v2) /
+1y (ext) batch download merged into each CSV, fresh values winning on overlap.
+STS_FORCE_YAHOO=1 skips Marketstack. Run by run_v2_evening.sh before
+eval_universe_v2.py.
 """
 import os, glob
 from pathlib import Path
@@ -17,6 +21,50 @@ COLS = ["Open", "High", "Low", "Close", "Volume"]
 
 EXTDIR = HERE / "daily_data_ext"     # fast-lane expansion universe (refreshed too)
 
+SLOWDIR = HERE / "daily_data_slow_ext"
+
+def _env(key, default=""):
+    v = os.environ.get(key)
+    if v: return v
+    try:
+        for line in open(HERE / ".env"):
+            line = line.strip()
+            if line.startswith(key + "="):
+                return line.split("=", 1)[1].strip().strip('"').strip("'")
+    except OSError:
+        pass
+    return default
+
+def _expected_session():
+    import datetime as dt
+    d = dt.date.today()
+    while d.weekday() >= 5:
+        d -= dt.timedelta(days=1)
+    return d.isoformat()
+
+def refresh_marketstack():
+    """Returns the set of folders that are current after the Marketstack pass
+    (the caller runs the Yahoo route for the rest)."""
+    if _env("EOD_PROVIDER", "").lower() != "marketstack" or os.environ.get("STS_FORCE_YAHOO"):
+        return set()
+    try:
+        from data_refresh import refresh_all
+        reps = refresh_all(["daily_data_v2", "daily_data_ext", "daily_data_slow_ext"],
+                           {"daily_data_v2": ["SPY", "RSP"]})
+    except Exception as e:                           # noqa: BLE001
+        print(f"Marketstack refresh failed: {e} -> Yahoo for all folders")
+        return set()
+    exp = _expected_session(); ok = set()
+    for r in reps:
+        fatal = [e for e in r.errors if e.startswith("marketstack:")]
+        if fatal:
+            print(f"  {r.folder}: {fatal[0]} -> Yahoo")
+        elif r.folder != "daily_data_slow_ext" and (not r.latest_date or r.latest_date < exp):
+            print(f"  {r.folder}: latest {r.latest_date} < expected {exp} -> Yahoo")
+        else:
+            ok.add(r.folder)
+    return ok
+
 def main():
     tickers = sorted({os.path.splitext(os.path.basename(f))[0].upper()
                       for f in glob.glob(str(OUTDIR / "*.csv"))} | {"SPY", "RSP"})
@@ -24,10 +72,17 @@ def main():
                   for f in glob.glob(str(EXTDIR / "*.csv"))} - set(tickers))
     if not tickers:
         raise SystemExit("daily_data_v2/ is empty — run build_universe.py first")
+    done = refresh_marketstack()
+    if "daily_data_v2" in done:
+        tickers = []
+    if "daily_data_ext" in done:
+        ext = []
+    if not tickers and not ext:
+        print("All folders refreshed from Marketstack."); return
     import yfinance as yf
-    print(f"Refreshing {len(tickers)} v2 tickers (2y batch) ...")
     updated = failed = 0
     CH = 100
+    if tickers: print(f"Refreshing {len(tickers)} v2 tickers from Yahoo (2y batch) ...")
     for i in range(0, len(tickers), CH):
         chunk = tickers[i:i+CH]
         try:
@@ -54,10 +109,10 @@ def main():
             except Exception:
                 failed += 1
         print(f"  {min(i+CH, len(tickers))}/{len(tickers)} done")
-    print(f"v2 refresh: {updated} updated, {failed} failed")
+    if tickers: print(f"v2 refresh (Yahoo): {updated} updated, {failed} failed")
     # ---- fast-lane expansion universe (daily_data_ext) — same merge, 1y window ----
     if ext:
-        print(f"Refreshing {len(ext)} ext tickers ...")
+        print(f"Refreshing {len(ext)} ext tickers from Yahoo ...")
         eupd = 0
         for i in range(0, len(ext), CH):
             chunk = ext[i:i+CH]

@@ -125,6 +125,15 @@ class EODError(RuntimeError):
     """Any failure to obtain data — network, auth, empty result, HTTP error."""
 
 
+def _redact(msg) -> str:
+    """Strip API keys from anything that ends up in a log or a Telegram message.
+    requests' connection errors echo the full URL, access_key included."""
+    import re
+    s = str(msg)
+    s = re.sub(r"(access_key|apiKey|apikey|token)=[^&\s'\")]+", r"\1=<redacted>", s)
+    return s[:600]
+
+
 # --------------------------------------------------------------------------- #
 #  Base provider: shared HTTP, retry/backoff, and rate-limit throttling.       #
 # --------------------------------------------------------------------------- #
@@ -193,7 +202,7 @@ class EODProvider:
                 time.sleep(2.0 * (attempt + 1))
                 continue
             raise EODError(f"{self.name}: HTTP {resp.status_code} — {resp.text[:200]}")
-        raise EODError(f"{self.name}: failed after {tries} attempts ({last_err})")
+        raise EODError(f"{self.name}: failed after {tries} attempts ({_redact(last_err)})")
 
 
 # --------------------------------------------------------------------------- #
