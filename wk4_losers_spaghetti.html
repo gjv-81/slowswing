@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>15 names, one starting line — the week-4 losers cohort</title>
+<style>
+  :root{--primary:#0f766e; --ink:#0f172a; --mut:#64748b;}
+  *{box-sizing:border-box}
+  body{margin:0; font-family:-apple-system,"Segoe UI",Inter,Roboto,sans-serif; background:#f8fafc; color:var(--ink); display:grid; place-items:center; min-height:100vh; padding:24px}
+  .card{position:relative; background:#fff; border:1px solid #e2e8f0; border-radius:16px; padding:30px 34px 22px; max-width:960px; width:100%; box-shadow:0 24px 60px -30px rgba(15,23,42,.18)}
+  .badge{display:inline-block; background:#ecfdf5; color:#065f46; border:1px solid #6ee7b7; font-size:10.5px; font-weight:700; letter-spacing:.06em; padding:4px 10px; border-radius:99px; margin-bottom:10px}
+  .kicker{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--primary); font-weight:700}
+  h2{margin:6px 0 4px; font-size:24px; letter-spacing:-.02em}
+  .sub{color:var(--mut); font-size:13.5px; margin:0 0 14px; max-width:70ch}
+  svg{width:100%; height:auto; display:block}
+  .leg{display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:5px 14px; margin-top:14px; font-size:12px}
+  .leg b{display:inline-block; width:20px; color:#64748b; font-weight:700}
+  .pos{color:#0f766e; font-weight:700}
+  .negv{color:#b91c1c; font-weight:700}
+  .note{font-size:11.5px; color:var(--mut); margin-top:12px; line-height:1.5}
+  .replay{position:absolute; top:26px; right:28px; background:#fff; border:1px solid #cbd5e1; color:#0f766e; font-weight:700; font-size:12.5px; padding:7px 14px; border-radius:99px; cursor:pointer; box-shadow:0 2px 8px rgba(15,23,42,.08)}
+  .replay:hover{background:#ecfdf5; border-color:#6ee7b7}
+  @media (max-width:760px){.replay{position:static; display:inline-block; margin:0 0 10px 10px}}
+</style>
+</head>
+<body>
+<div class="card">
+  <button class="replay" id="replay">&#x21bb; Replay</button>
+  <div class="badge">LIVE TRACK RECORD &mdash; first locked cohort, July&ndash;October 2026</div>
+  <div class="kicker">One starting line, 15 different endings</div>
+  <h2>The 15 published signals that were red at week 4 &mdash; where each went by week 12</h2>
+  <p class="sub">Every line is a real published signal (quality-screened, $50+), drawn from its signal day (0%). All 15 were below their signal price at the four-week mark. The right edge shows where each finished eight weeks later.</p>
+  <svg id="sp" viewBox="0 0 980 560" xmlns="http://www.w3.org/2000/svg"></svg>
+  <div class="leg" id="leg"></div>
+  <p class="note">"Peak" = the highest closing gain each name reached at any point in its 12 weeks — a level touched, not a return earned. Live record of published signals, tracked from the signal date with no stop-losses or targets; returns at closing prices, dividends excluded. Shown because we publish the full picture, winners and losers alike. Past results do not predict any single name. Not advice.</p>
+</div>
+<script>
+const DATA_ALL=[{"t": "OKTA", "w4": -0.0, "w12": 47.6, "p": [-3.24, -3.65, -1.95, -2.71, -3.57, -3.08, -0.59, 0.47, 0.22, 4.64, 4.09, 1.59, 5.0, 6.73, 6.42, 4.28, 9.69, 4.37, 1.4, 1.88, -0.04, -5.03, -4.33, -7.28, -7.54, -4.84, 22.41, 17.68, 22.5, 17.82, 15.5, 20.64, 20.77, 18.64, 22.29, 21.13, 17.87, 31.99, 34.82, 33.17, 34.52, 29.1, 35.45, 39.19, 45.38, 46.28, 38.18, 43.13, 45.04, 48.03, 50.52, 49.72, 54.53, 54.8, 54.33, 55.89, 64.33, 60.75, 60.36, 50.02, 47.61]}, {"t": "AMD", "w4": -2.1, "w12": 17.1, "p": [-2.6, 5.31, 6.83, 4.39, 0.96, -4.26, -12.07, -16.91, -6.11, -7.9, -6.26, 0.31, -6.76, -5.36, -6.51, -9.18, -8.26, -6.59, -6.57, -0.5, -2.13, -6.31, -9.78, -9.2, -8.46, -11.65, -7.32, -6.98, -7.8, -9.95, -8.95, -11.1, -11.59, -11.77, -7.63, -2.18, 0.79, -2.59, -0.17, -4.56, -2.48, -0.87, 5.43, 8.28, 19.06, 20.65, 18.88, 21.71, 21.98, 17.58, 17.52, 18.33, 19.1, 22.61, 22.2, 25.61, 24.92, 20.05, 17.62, 14.94, 17.12]}, {"t": "COIN", "w4": -4.8, "w12": 14.9, "p": [1.42, 11.16, 5.01, 1.88, 0.06, 5.88, 6.14, 1.2, 3.41, -7.54, -7.39, -4.72, -5.25, -8.08, -2.9, -6.01, -6.07, -5.78, -2.71, -6.14, -4.83, -7.56, 1.27, 8.95, 17.89, 13.46, 18.31, 14.91, 20.56, 12.93, 18.92, 11.78, 10.6, 21.82, 16.72, 13.12, 10.45, 8.91, 10.79, 21.03, 8.8, 4.0, 9.98, 22.8, 27.09, 27.11, 25.25, 25.93, 23.34, 21.24, 20.12, 17.84, 19.66, 15.68, 18.98, 17.42, 12.81, 8.73, 13.4, 14.03, 14.92]}, {"t": "DUOL", "w4": -1.9, "w12": 5.6, "p": [0.91, -6.01, -9.93, -9.05, -7.87, 0.11, 6.07, 5.65, 0.69, 1.61, 2.35, 3.82, 1.99, -7.61, -1.34, 3.4, 2.08, 1.47, 8.61, 0.11, -1.9, 5.25, 10.06, 10.82, 10.14, 10.67, 10.07, 6.18, 7.67, 10.78, 11.82, 19.66, 18.97, 19.7, 16.42, 10.33, 4.94, 9.41, 8.29, 13.91, 16.01, 11.67, 10.87, 6.95, 12.62, 11.33, 10.02, 11.36, 8.16, 1.22, 7.49, 7.33, 10.47, 8.74, 10.87, 11.64, 14.35, 13.97, 12.99, 11.35, 5.59]}, {"t": "QCOM", "w4": -7.6, "w12": 1.3, "p": [-2.98, -1.17, 0.05, -2.53, -4.89, -3.14, -7.22, -11.32, -13.64, -15.92, -13.66, -7.34, -10.26, -8.64, -4.38, -7.62, -7.33, -7.11, -6.13, -5.56, -7.62, -8.75, -7.77, -8.44, -8.43, -9.7, -8.54, -6.74, -6.14, -6.47, -2.89, -5.09, -3.18, -3.45, -3.36, -0.29, 1.03, 1.31, 4.22, 3.18, 7.56, 5.86, 8.08, 1.79, 11.24, 13.56, 12.97, 11.26, 15.68, 7.38, 5.44, 5.41, 4.29, 5.88, 3.55, 3.68, 1.44, 0.81, 0.52, -0.1, 1.29]}, {"t": "CSCO", "w4": -2.5, "w12": -1.5, "p": [0.68, 1.94, 2.29, 3.2, 0.43, 1.39, 3.56, 3.45, 8.7, 8.48, 7.93, 8.42, 9.44, 7.53, 10.61, 1.31, -0.29, 0.8, -0.35, -1.29, -2.15, -0.86, -1.58, -0.79, 0.32, 0.13, -1.85, -1.35, -2.02, -2.27, -3.03, -2.5, -2.53, -2.29, -4.07, 0.12, -1.73, -1.72, -3.8, -1.57, -2.22, -0.48, -4.96, -4.97, -4.49, -4.73, -4.7, -4.52, -3.9, -2.89, 0.57, 1.12, 5.71, 5.22, 2.98, 6.12, 3.38, 3.14, 1.86, -1.54, -1.54]}, {"t": "ARM", "w4": -0.2, "w12": -6.1, "p": [-0.88, 6.52, 4.19, 4.06, -4.41, -2.08, -10.02, -17.32, -11.2, -11.88, -12.11, 3.15, 0.95, 5.4, 3.89, -1.53, -1.13, -0.05, 2.44, 2.74, -0.21, -6.87, -8.33, -7.82, -10.54, -12.21, -11.19, -7.7, -6.17, -12.11, -11.06, -13.67, -13.65, -10.81, -7.32, -3.85, -2.86, -6.55, -2.65, -12.13, -11.09, -10.3, -2.61, 1.33, 18.71, 22.5, 22.26, 12.62, 14.09, 4.17, 7.97, 6.49, 7.48, 13.05, 11.36, 11.24, 8.22, 1.21, -2.1, -6.16, -6.11]}, {"t": "CAT", "w4": -0.9, "w12": -13.2, "p": [-2.89, -0.0, -0.08, 0.51, -0.14, -1.88, -5.52, -12.06, -9.09, -8.45, -6.74, -1.51, -2.13, -3.71, -5.37, -5.89, -5.24, -3.87, -3.98, -3.76, -0.94, -5.52, -8.3, -8.38, -6.98, -8.87, -8.84, -7.65, -8.2, -10.08, -10.4, -12.45, -10.98, -10.1, -8.55, -7.59, -8.36, -9.55, -8.03, -11.91, -11.96, -12.05, -10.27, -9.1, -8.26, -9.21, -8.76, -9.52, -7.69, -7.87, -7.12, -8.9, -7.15, -5.01, -4.7, -2.98, -8.56, -10.54, -10.06, -10.18, -13.17]}, {"t": "WING", "w4": -20.9, "w12": -14.1, "p": [-3.85, -8.04, -5.88, -8.1, -7.87, -6.48, -8.1, -4.97, -8.46, -11.76, -11.15, -17.21, -15.6, -20.53, -20.4, -19.92, -24.12, -23.63, -22.39, -13.81, -20.92, -21.72, -17.63, -22.34, -21.11, -20.15, -22.19, -23.29, -24.86, -22.38, -25.18, -25.1, -22.67, -24.63, -25.37, -25.2, -24.43, -24.47, -19.97, -21.61, -31.08, -30.93, -29.09, -28.87, -26.65, -30.03, -33.11, -33.14, -32.29, -30.43, -25.77, -27.99, -28.68, -26.95, -26.98, -23.32, -20.26, -19.02, -16.45, -13.88, -14.05]}, {"t": "ON", "w4": -7.2, "w12": -14.7, "p": [-3.54, 1.31, 2.73, 0.28, -3.42, -0.93, -6.11, -12.26, -6.83, -9.2, -10.55, -10.12, -14.43, -12.85, -9.69, -11.24, -9.76, -7.3, -9.26, -8.03, -7.23, -11.64, -14.8, -16.88, -17.43, -19.97, -19.33, -18.54, -16.78, -19.21, -17.57, -19.17, -19.51, -18.06, -17.25, -20.92, -21.03, -21.93, -15.29, -20.28, -18.56, -25.9, -24.01, -22.14, -20.2, -18.11, -17.56, -18.61, -14.11, -15.83, -15.5, -14.47, -10.9, -5.55, -4.39, -3.97, -8.2, -11.65, -13.74, -15.44, -14.68]}, {"t": "AMAT", "w4": -1.9, "w12": -14.8, "p": [-3.65, 3.47, 1.52, 3.15, -1.72, -5.27, -12.68, -20.01, -8.04, -6.96, -5.03, 0.18, -2.09, -3.33, -1.19, -4.31, -3.67, 0.46, -2.03, -7.05, -1.89, -5.74, -9.06, -8.96, -9.67, -11.17, -11.93, -11.98, -11.5, -15.3, -15.9, -18.93, -19.56, -20.02, -16.57, -13.26, -13.98, -16.7, -16.25, -22.17, -22.73, -23.79, -23.42, -18.43, -14.83, -13.32, -12.97, -12.99, -11.02, -10.69, -6.06, -6.18, -2.89, -0.92, -0.51, -2.71, -4.48, -6.51, -6.98, -8.72, -14.83]}, {"t": "KLAC", "w4": -5.3, "w12": -15.3, "p": [-4.53, 0.05, -1.27, 0.59, -3.19, -6.48, -12.26, -21.73, -17.07, -15.93, -15.96, -10.12, -11.34, -11.14, -8.89, -11.36, -7.81, -4.23, -3.72, -6.31, -5.27, -10.32, -13.78, -14.43, -15.29, -16.41, -15.59, -15.37, -15.39, -19.18, -19.22, -21.32, -20.69, -20.38, -14.55, -12.99, -15.79, -18.43, -16.83, -22.15, -22.64, -22.95, -22.2, -18.51, -15.3, -13.3, -13.51, -13.86, -13.48, -12.91, -9.52, -10.26, -7.77, -4.75, -4.77, -9.09, -9.38, -9.43, -9.96, -12.47, -15.29]}, {"t": "VRT", "w4": -0.9, "w12": -19.5, "p": [-1.13, 3.22, 2.09, 3.06, -1.57, -2.51, -8.62, -24.39, -22.88, -18.11, -10.83, -8.5, -5.78, -6.72, -7.66, -8.44, -4.47, -2.25, -2.69, -0.39, -0.87, -7.61, -11.53, -10.29, -11.2, -13.57, -13.31, -10.57, -8.72, -12.85, -12.3, -13.23, -12.98, -8.87, -4.91, -1.41, -10.88, -15.89, -12.86, -19.51, -20.45, -18.82, -18.12, -15.44, -14.94, -14.06, -15.65, -16.83, -14.12, -17.25, -15.8, -18.18, -16.55, -14.49, -14.01, -14.17, -16.42, -17.36, -17.68, -18.84, -19.54]}, {"t": "BLDR", "w4": -5.8, "w12": -30.6, "p": [-2.42, -6.39, -4.66, -5.3, -2.2, -2.39, -1.1, -9.05, -11.4, -10.82, -2.71, 1.17, 1.83, -2.67, 0.26, -3.38, 0.81, -2.81, -1.26, -2.67, -5.76, -9.23, -2.62, -5.61, -5.76, -5.74, -6.9, -7.83, -9.79, -9.1, -10.87, -15.72, -15.32, -13.85, -11.69, -16.0, -17.6, -20.85, -18.97, -19.14, -19.19, -19.93, -22.58, -21.99, -21.45, -18.3, -20.59, -21.77, -20.58, -22.13, -22.78, -23.48, -23.02, -24.5, -25.33, -24.54, -28.12, -27.77, -29.06, -30.01, -30.59]}, {"t": "MTZ", "w4": -10.3, "w12": -38.9, "p": [-0.24, 4.15, 5.91, 6.36, 0.13, -0.18, -7.4, -14.82, -3.84, -22.02, -22.58, -19.47, -20.94, -23.35, -19.25, -20.49, -19.19, -16.69, -15.2, -11.8, -10.35, -16.98, -19.37, -19.43, -21.09, -24.32, -26.84, -26.28, -25.57, -28.57, -28.94, -29.54, -30.25, -31.16, -29.7, -27.04, -28.67, -31.18, -28.75, -32.52, -34.0, -33.13, -38.43, -36.46, -33.94, -34.3, -35.53, -37.18, -36.92, -39.51, -37.69, -36.69, -36.68, -36.0, -34.98, -32.34, -33.8, -35.79, -36.98, -38.69, -38.91]}];
+function render(){
+const DATA=DATA_ALL;
+const svg=document.getElementById('sp');
+svg.innerHTML=''; document.getElementById('leg').innerHTML='';
+const NS='http://www.w3.org/2000/svg';
+const W=980,H=560,L=56,R=210,T=18,B=40;
+const ymin=-45,ymax=65;
+const x=d=>L+(W-L-R)*d/60;
+const y=v=>T+(H-T-B)*(ymax-v)/(ymax-ymin);
+const el=(n,a,parent)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);(parent||svg).appendChild(e);return e};
+for(let v=-40;v<=60;v+=10){
+  el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:v===0?'#94a3b8':'#eef2f7','stroke-width':v===0?1.4:1});
+  el('text',{x:L-8,y:y(v)+4,'text-anchor':'end','font-size':11,fill:'#94a3b8'}).textContent=(v>0?'+':'')+v+'%';
+}
+[0,4,8,12].forEach(w=>{
+  el('text',{x:x(w*5),y:H-18,'text-anchor':'middle','font-size':11,fill:'#94a3b8'}).textContent='wk '+w;});
+el('line',{x1:x(20),x2:x(20),y1:T,y2:H-B,stroke:'#f59e0b','stroke-width':1.5,'stroke-dasharray':'4 4'});
+el('text',{x:x(20),y:T+12,'text-anchor':'middle','font-size':11.5,fill:'#92400e','font-weight':700}).textContent='week 4 — all 15 in the red';
+// density bell of endpoints
+(function(){
+  const ends=DATA.map(o=>o.w12);
+  const bw=8, xs=[];
+  for(let v=ymin;v<=ymax;v+=1){
+    let dsum=0;
+    ends.forEach(e=>{const z=(v-e)/bw; dsum+=Math.exp(-0.5*z*z);});
+    xs.push([v,dsum]);
+  }
+  const mx=Math.max(...xs.map(a=>a[1]));
+  const x0=W-R+4, scale=54/mx;
+  let d='M'+x0+' '+y(xs[0][0]);
+  xs.forEach(([v,dd])=>{d+=' L'+(x0+dd*scale)+' '+y(v);});
+  d+=' L'+x0+' '+y(xs[xs.length-1][0])+' Z';
+  const p=el('path',{d,fill:'rgba(15,118,110,.10)',stroke:'rgba(15,118,110,.35)','stroke-width':1});
+  p.style.opacity=0; p.id='bell';
+})();
+const slotTop=T+8, slotGap=(H-T-B-16)/(DATA.length-1);
+const paths=[]; const labels=[];
+DATA.forEach((o,i)=>{
+  const col=o.w12>0?'#0f766e':'#c2410c';
+  const op=o.w12>0?0.95:0.75;
+  let d='M'+x(0)+' '+y(o.p[0]);
+  o.p.forEach((v,k)=>{d+=' L'+x(k)+' '+y(v);});
+  const p=el('path',{d,fill:'none',stroke:col,'stroke-width':1.6,'stroke-opacity':op,'stroke-linecap':'round'});
+  const len=p.getTotalLength(); p.style.strokeDasharray=len; p.style.strokeDashoffset=len;
+  paths.push(p);
+  const ey=y(o.w12), sy=slotTop+i*slotGap, lx=W-R+66;
+  const g=el('g',{opacity:0});
+  el('circle',{cx:x(60),cy:ey,r:3,fill:col},g);
+  el('line',{x1:x(60)+3,y1:ey,x2:lx-4,y2:sy,stroke:'#cbd5e1','stroke-width':.8},g);
+  el('text',{x:lx,y:sy+3.5,'font-size':11,fill:'#64748b','font-weight':700},g).textContent=(i+1);
+  const pk=Math.max(...o.p);
+  const pkcol=pk>5?'#166534':(pk>0?'#34d399':'#94a3b8');
+  const txt=el('text',{x:lx+16,y:sy+3.5,'font-size':11,fill:col,'font-weight':600},g);
+  txt.textContent=o.t+' '+(o.w12>0?'+':'')+o.w12.toFixed(1)+'%';
+  const ts=document.createElementNS(NS,'tspan');
+  ts.setAttribute('fill',pkcol); ts.setAttribute('font-weight','700');
+  ts.textContent=' (pk '+(pk>0?'+':'')+pk.toFixed(0)+'%)';
+  txt.appendChild(ts);
+  labels.push(g);
+});
+// average (basket) line + SPY line, drawn last
+const med=[-1.93, 0.79, 0.46, -0.01, -2.62, -2.09, -5.06, -10.27, -7.04, -8.78, -7.37, -4.02, -5.02, -6.29, -4.43, -6.69, -5.65, -4.88, -4.26, -4.17, -4.81, -7.93, -7.84, -8.01, -7.68, -8.96, -6.87, -7.03, -6.15, -8.4, -8.0, -9.05, -8.84, -7.68, -6.37, -5.74, -7.35, -7.88, -5.7, -7.75, -8.63, -9.9, -8.39, -6.37, -1.73, -0.93, -2.32, -2.83, -1.72, -3.99, -2.04, -2.66, -0.83, 0.52, 0.57, 1.23, 0.02, -1.96, -2.42, -4.38, -5.48];   // basket average (all 15 equally weighted)
+const ALL55=[-0.87, 1.95, 1.67, 1.23, -0.89, -0.27, -2.26, -5.1, -1.11, -0.9, 1.24, 6.57, 5.38, 4.68, 7.26, 5.96, 6.85, 8.71, 9.92, 10.46, 11.14, 7.49, 6.93, 7.02, 7.15, 5.31, 6.07, 7.65, 8.92, 6.47, 6.89, 4.61, 4.82, 6.2, 7.31, 7.26, 6.42, 4.69, 6.93, 4.29, 3.66, 3.74, 5.67, 6.72, 9.47, 10.44, 9.73, 8.74, 9.44, 7.63, 8.56, 8.46, 10.99, 11.72, 12.56, 13.69, 12.86, 11.38, 12.21, 10.01, 9.76];
+const spy=[-0.58, 0.06, -0.03, -1.08, -1.08, -1.06, -0.69, -1.87, -0.24, 0.49, 1.7, 3.32, 3.18, 3.01, 3.55, 3.59, 3.34, 3.52, 4.06, 3.85, 3.38, 2.75, 2.94, 2.19, 2.58, 2.36, 2.68, 2.66, 3.17, 2.95, 2.79, 2.22, 2.55, 3.41, 2.99, 2.52, 2.13, 1.54, 2.23, 1.88, 1.56, 1.29, 2.38, 2.45, 3.76, 3.78, 3.12, 2.98, 3.44, 2.77, 2.67, 2.59, 2.83, 3.51, 4.06, 4.57, 4.39, 4.0, 4.47, 4.36, 4.37];   // S&P 500, same entry dates, averaged the same way
+let sdd='M'+x(0)+' '+y(spy[0]);
+spy.forEach((v,k)=>{sdd+=' L'+x(k)+' '+y(v);});
+const clip=el('clipPath',{id:'sweep'});
+const crect=el('rect',{x:L,y:0,width:0,height:H},clip);
+const canim=document.createElementNS(NS,'animate');
+canim.setAttribute('attributeName','width'); canim.setAttribute('from','0');
+canim.setAttribute('to',String(W-L)); canim.setAttribute('begin','indefinite');
+canim.setAttribute('dur','4.5s'); canim.setAttribute('fill','freeze');
+crect.appendChild(canim);
+const spyP=el('path',{d:sdd,fill:'none',stroke:'#475569','stroke-width':2.5,'stroke-dasharray':'7 5','stroke-linecap':'round','clip-path':'url(#sweep)'});
+// average running-peak line (best moment so far, averaged across the 15)
+const rp=[];
+{
+  const cur=DATA.map(o=>o.p[0]);
+  for(let k=0;k<=60;k++){
+    DATA.forEach((o,j)=>{ if(o.p[k]>cur[j]) cur[j]=o.p[k]; });
+    rp.push(cur.reduce((a,b)=>a+b,0)/cur.length);
+  }
+}
+let rdd='M'+x(0)+' '+y(rp[0]);
+rp.forEach((v,k)=>{rdd+=' L'+x(k)+' '+y(v);});
+const rpP=el('path',{d:rdd,fill:'none',stroke:'#7c3aed','stroke-width':2.4,'stroke-dasharray':'2 4','stroke-linecap':'round','clip-path':'url(#sweep)'});
+let add='M'+x(0)+' '+y(ALL55[0]);
+ALL55.forEach((v,k)=>{add+=' L'+x(k)+' '+y(v);});
+const allP=el('path',{d:add,fill:'none',stroke:'#0f766e','stroke-width':3,'stroke-linecap':'round','clip-path':'url(#sweep)'});
+let mdd='M'+x(0)+' '+y(med[0]);
+med.forEach((v,k)=>{mdd+=' L'+x(k)+' '+y(v);});
+const medP=el('path',{d:mdd,fill:'none',stroke:'#0f172a','stroke-width':4.5,'stroke-linecap':'round','clip-path':'url(#sweep)'});
+const medLbl=el('g',{opacity:0});
+// endpoint dots for the four summary lines
+[[med,'#0f172a'],[spy,'#475569'],[rp,'#7c3aed'],[ALL55,'#0f766e']].forEach(([arr,cc])=>{
+  el('circle',{cx:x(60),cy:y(arr[60]),r:4,fill:cc},medLbl);
+  el('circle',{cx:x(20),cy:y(arr[20]),r:4,fill:'#fff',stroke:cc,'stroke-width':2.2},medLbl);
+});
+// one legend box, top-left, with wk4 and final values per line
+const bx=L+14, by=T+6, bw=460, bh=86;
+el('rect',{x:bx,y:by,width:bw,height:bh,rx:8,fill:'rgba(255,255,255,.92)',stroke:'#e2e8f0'},medLbl);
+const rowsLeg=[
+  ['#0f766e',3,null,'ALL 55 published signals','wk4 '+fmt(ALL55[20])+' \u2192 12wk '+fmt(ALL55[60])],
+  ['#7c3aed',2.4,'2 4','These 15 \u2014 avg best moment (touched)','wk4 '+fmt(rp[20])+' \u2192 12wk '+fmt(rp[60])],
+  ['#475569',2.5,'7 5','S&P 500, same period','wk4 '+fmt(spy[20])+' \u2192 12wk '+fmt(spy[60])],
+  ['#0f172a',4,null,'These 15, held together','wk4 '+fmt(med[20])+' \u2192 12wk '+fmt(med[60])]
+];
+rowsLeg.forEach(([cc,sw,dash,name,vals],i)=>{
+  const ry=by+16+i*18;
+  const ln=el('line',{x1:bx+10,x2:bx+34,y1:ry-4,y2:ry-4,stroke:cc,'stroke-width':sw},medLbl);
+  if(dash) ln.setAttribute('stroke-dasharray',dash);
+  el('text',{x:bx+42,y:ry,'font-size':11.5,'font-weight':700,fill:cc},medLbl).textContent=name;
+  el('text',{x:bx+262,y:ry,'font-size':11,'font-weight':600,fill:'#64748b'},medLbl).textContent=vals;
+});
+function fmt(v){return (v>0?'+':'')+v.toFixed(1)+'%';}
+requestAnimationFrame(()=>{
+  paths.forEach((p,i)=>{p.style.transition=`stroke-dashoffset 5s ease ${0.3+i*0.55}s`; p.style.strokeDashoffset=0;});
+  labels.forEach((g,i)=>{g.style.transition=`opacity .9s ease ${4.5+i*0.55}s`; g.style.opacity=1;});
+  const bell=document.getElementById('bell');
+  bell.style.transition='opacity 1.5s ease 13s'; bell.style.opacity=1;
+  setTimeout(()=>{
+    try{canim.beginElement();}catch(e){}
+    paths.forEach(p=>{p.style.transition='stroke-opacity 1.5s ease'; p.setAttribute('stroke-opacity',0.15);});
+    labels.forEach(g=>{g.style.transition='opacity 1.5s ease'; g.style.opacity=0.35;});
+    const bell=document.getElementById('bell');
+    if(bell){bell.style.transition='opacity 1.5s ease'; bell.style.opacity=0.4;}
+  },14000); // summary lines sweep in over a faded background
+  medLbl.style.transition='opacity .8s ease 18.2s'; medLbl.style.opacity=1;
+});
+const leg=document.getElementById('leg');
+DATA.forEach((o,i)=>{
+  const s=document.createElement('span');
+  const pk=Math.max(...o.p);
+  const pkcol=pk>5?'#166534':(pk>0?'#34d399':'#94a3b8');
+  s.innerHTML='<b>'+(i+1)+'</b>'+o.t+' <span class="'+(o.w12>0?'pos':'negv')+'">'+(o.w12>0?'+':'')+o.w12.toFixed(1)+'%</span> <span style="color:'+pkcol+';font-weight:700">(peak '+(pk>0?'+':'')+pk.toFixed(0)+'%)</span>';
+  leg.appendChild(s);
+});
+}
+render();
+document.getElementById('replay').onclick=render;
+</script>
+</body>
+</html>

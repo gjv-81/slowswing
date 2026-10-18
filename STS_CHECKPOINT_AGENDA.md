@@ -48,3 +48,18 @@ UW personal account go/no-go for live flame trading.
    daily_data_slow_ext/. Fold into the merged universe HERE as part of the
    single dated universe change (items 1 + 9 together).
 
+
+10. LATE-ENTRY FORMALIZATION (added 2026-10-18) — candidate study, pre-register
+    before running: "entering an Active name at day N (5/10/15) that is down
+    >X% (5/10/15) since signal — forward 4/8/12-week returns vs day-one entry."
+    Motivation: user question "is -13% at day 10 still a good time to enter?"
+    Existing evidence (cohort-level, not cell-specific): wk4 Active-state late
+    entries +6.2% fwd 8wk; down>10% at wk4 the best (+8.0%); post-touch fwd
+    +7.3%/57.6%/+4.5% excess (STS_LINETOUCH_EXIT_PREREG.md). If a cell
+    validates on locked data AND survives forward paper-testing, it may become
+    an Evidence-page cohort statistic — NEVER a star/badge on a live board name
+    (entry recommendation; compliance bright line). Related new evidence for
+    item 2 (near-line entry filter): ATR-distance taxonomy 2026-10-18 —
+    stretched entries (>=1.5 ATR above 200d) breach the line in 33-65% of
+    cases within 12wk; every post-entry line-based exit tested FAILED
+    (12th & 13th consecutive exit-aid failures; breach day ~= local bottom).
