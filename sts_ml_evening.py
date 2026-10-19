@@ -216,7 +216,17 @@ def load_universe_data(universe):
     if use_ms:
         try:
             from data_refresh import refresh_folder
-            rep = refresh_folder(UNIVERSE_DIR, extra=["SPY", "RSP"])
+            # open positions that came from the v2 scan have no CSV here yet — seed
+            # them (25/night) so the tracker reads licensed bars instead of Yahoo
+            extra = ["SPY", "RSP"]
+            try:
+                _tr = pd.read_csv(TRADES_CSV)
+                if "close_date" in _tr.columns:
+                    _tr = _tr[_tr["close_date"].isna()]
+                extra += sorted({str(x).upper() for x in _tr["ticker"]} - set(universe))
+            except Exception:
+                pass
+            rep = refresh_folder(UNIVERSE_DIR, extra=extra)
             fatal = [e for e in rep.errors if e.startswith("marketstack:")]
             exp = expected_session().isoformat()
             if fatal:
@@ -350,9 +360,17 @@ def main():
 
     print("Scoring universe ...")
     results = []
+    spy_last = data["SPY"].index.max()
+    stale = []
     for t in universe:
         if t in EXCLUDE or t not in data: continue
         df = data[t]
+        # STALE-DATA GUARD: a ticker whose last bar is more than 5 sessions behind
+        # SPY's has stopped trading (merger/delisting) or its vendor history is
+        # broken. Scoring it produces nonsense — AVB on 2026-10-18 "qualified" at
+        # 4.2 off a Yahoo file that ended Aug 24 with rewritten prices.
+        if int(np.busday_count(df.index.max().date(), spy_last.date())) > 5:
+            stale.append(t); continue
         if float(df["Close"].iloc[-1]) < MIN_PRICE: continue
         r = score_ticker(df)
         if r is None: continue
@@ -363,7 +381,8 @@ def main():
                             setup=setup, wr=wr, dist200_pct=r["dist200_pct"]))
     res = pd.DataFrame(results).sort_values("score", ascending=False)
     qual = res[res["score"] >= THRESHOLD]
-    print(f"Scored {len(res)} tickers; {len(qual)} qualify (score >= {THRESHOLD})")
+    print(f"Scored {len(res)} tickers; {len(qual)} qualify (score >= {THRESHOLD})"
+          + (f"; {len(stale)} skipped as stale/dead: {', '.join(stale[:12])}" if stale else ""))
 
     # ── append NEW tickers + premium RE-QUALIFICATIONS ──────────────────────
     # A ticker already in the book can re-enter ONLY if it has UPGRADED into a

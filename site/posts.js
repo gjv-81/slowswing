@@ -11,6 +11,28 @@
 //     (it just defines POSTS; nothing else runs).
 const POSTS = [
   {
+    slug:'red-at-the-checkpoint', cat:{label:'Lesson', cls:'lesson'}, icon:'📊', sample:false,
+    author:'GJ Singh', date:'Oct 19, 2026', read:'4 min read',
+    title:'Red at the checkpoint: what happened to the 15 signals that were losing at week 4',
+    excerpt:'Our first batch finished its full 12 weeks. Here is every published signal that was under water at week 4, tracked to the end. Five recovered, ten did not, and at week 4 you could not tell which was which.',
+    body:`<p>Our first batch of signals just finished its full 12-week window. That gives us something we didn't have before: real endings, not predictions.</p>
+    <p>Today we want to show you the scariest-looking group &mdash; every published signal that was below its signal price at the four-week mark. All 15 of them.</p>
+    <div style="margin:26px 0">
+      <iframe src="wk4_losers_chart.html" title="15 published signals that were red at week 4, tracked to week 12" scrolling="no" style="width:100%;height:840px;border:0;display:block;overflow:hidden" onload="var f=this,fit=function(){try{var h=f.contentDocument.documentElement.scrollHeight;if(h>40)f.style.height=(h+2)+&quot;px&quot;}catch(e){}};fit();setTimeout(fit,250);setTimeout(fit,1200);try{window.addEventListener(&quot;resize&quot;,fit)}catch(e){}"></iframe>
+    </div>
+    <p>Look at the chart. Every line starts at the same place: the signal day, at zero. By week 4, all 15 are under water &mdash; held together as one basket, they're down 4.8%.</p>
+    <p>Here's the twist: by that same week-4 mark, these struggling names had already touched +4.6% at their average best moment &mdash; more than the S&amp;P 500 gained in the whole four weeks. Eleven of the 15 had been green at some point. Red at the checkpoint almost never means it was never working &mdash; it means it didn't hold.</p>
+    <p>Then watch the next eight weeks. The lines scatter in every direction.</p>
+    <p>Five of the 15 recovered. <a class="tklink" data-nav="track">OKTA</a> didn't just recover &mdash; it finished up 47.6%, the best name in our whole book. <a class="tklink" data-nav="track">AMD</a> +17.1%. <a class="tklink" data-nav="track">COIN</a> +14.9%. If you had given up at week 4, you would have sold each of them near its low.</p>
+    <p>Ten never came back. <a class="tklink" data-nav="track">MTZ</a> finished down 38.9%. <a class="tklink" data-nav="track">BLDR</a> down 30.6%. Holding them did not save them.</p>
+    <p>Held together, the basket ended at &minus;5.5% &mdash; while the S&amp;P 500 gained 4.4% over the same twelve weeks. One big winner softened what ten losers did. That's why we hold the basket, not a favorite.</p>
+    <p>Now look at the top line on the chart: all 55 published signals from this same period &mdash; winners and losers together &mdash; finished at +9.8%, with 58% winners. The group that looked broken at week 4 still couldn't drag the book down.</p>
+    <p>Timing mattered here too. These 15 lived their weeks 4 through 12 in August and September &mdash; historically the choppiest, weakest stretch of the market year. Our signals are recovery stocks, and recovery stocks move harder than the market in both directions. In a rising tape that extra motion works for us; in a sideways, nervous tape it shows up as exactly what you see in this chart. That's context, not an excuse &mdash; we show the batch as it happened and let the next batches speak for themselves.</p>
+    <p>That's the honest shape of this group: some healed, most didn't, and at week 4 you could not tell which was which. Our ten years of research says a group like this usually ends better. This batch didn't. One batch in one choppy stretch doesn't overturn ten years &mdash; but we're not going to hide it either. We log it, and we watch the next batches.</p>
+    <p>How to read this as a subscriber: the board tracks every signal for 12 weeks, because that's the horizon the system was built on. A name down at week 4 is not a failed signal &mdash; and not a guaranteed comeback either. It's an unfinished one. The grade comes at week 12.</p>`,
+    foot:`All figures are from our live record of published signals, measured at closing prices, no stop-losses, no targets, dividends excluded. "Touched" and "best moment" refer to the highest closing gain reached at any point &mdash; levels touched, not returns earned. Past results don't predict any single name. This is education, not advice.`
+  },
+  {
     slug:'where-corrections-start', cat:{label:'Lesson', cls:'lesson'}, icon:'🎚️', sample:false,
     author:'GJ Singh', date:'Oct 12, 2026', read:'4 min read',
     title:'How to read the market dial: nine corrections, and where each one began',

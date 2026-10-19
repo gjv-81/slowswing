@@ -370,6 +370,9 @@
   .ltable tr:last-child td{border-bottom:none}
   .ltable tbody tr:hover td{background:var(--panel2)}
   .ltable tbody tr.premium td{box-shadow:inset 3px 0 0 var(--pass)}
+  .ltable tbody tr.trk-hl td{background:#fef3c7; box-shadow:inset 3px 0 0 var(--gold,#b45309)}
+  @keyframes trkPulse{0%{background:#fde68a}100%{background:#fef3c7}}
+  .ltable tbody tr.trk-hl td{animation:trkPulse 1.2s ease-out}
   .lt-tkr{font-weight:800; font-size:11.5px; letter-spacing:-.01em; color:var(--ink)}
   .lt-co{color:var(--muted); font-size:9px}
   .lt-sector{color:var(--muted); font-size:9.5px}
@@ -2332,7 +2335,7 @@ function renderTrack(){
   const rows=items.map(d=>{
     const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise";
     const qsym=d.q==="pass"?"💎":"◆";
-    return `<tr>
+    return `<tr data-row="${d.t}">
       <td><div class="lt-tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}</div><div class="lt-co">${d.n}</div></td>
       <td class="lt-sector">${shortSector(d.sector)}</td>
       <td><span class="lt-set ${d.setup}">${setupLabel}</span></td>
@@ -2633,7 +2636,22 @@ document.addEventListener('click', e=>{
   if(a.dataset.age){ const t=document.querySelector('#agetabs .tab[data-age="'+a.dataset.age+'"]'); if(t && !t.classList.contains('active')) t.click(); }
   if(a.dataset.setup){ const t=document.querySelector('#tabs .tab[data-k="'+a.dataset.setup+'"]'); if(t && !t.classList.contains('active')) t.click(); }
   if(sc){ const el=document.getElementById(sc); if(el) setTimeout(()=>el.scrollIntoView({behavior:'smooth', block:'start'}), 70); }
+  if(nav==='track' && a.dataset.track) gotoTrack(a.dataset.track);
 });
+// Deep link to a ticker's own Track Record rows: <a data-nav="track" data-track="OKTA">OKTA</a>
+// (blog posts use it). Clears the filters, searches the ticker so every one of its
+// signals is on screen, scrolls there and highlights the rows. A ticker with no
+// retired signal yet (still on the board) falls back to the plain table.
+function gotoTrack(t){
+  t=String(t||'').toUpperCase().trim(); if(!t) return;
+  const clr=document.getElementById('fClearT'); if(clr) clr.click();
+  const ts=document.getElementById('trackSearch'); if(ts) ts.value=t;
+  trackSearch=t.toLowerCase(); renderTrack();
+  let rows=document.querySelectorAll('[data-page="track"] tr[data-row="'+t+'"]');
+  if(!rows.length){ if(ts) ts.value=''; trackSearch=''; renderTrack(); return; }
+  rows.forEach(r=>r.classList.add('trk-hl'));
+  setTimeout(()=>{ const r=document.querySelector('[data-page="track"] tr.trk-hl'); if(r) r.scrollIntoView({behavior:'smooth', block:'center'}); }, 90);
+}
 showPage(location.hash.slice(1) || 'home');
 window.addEventListener('hashchange', ()=>{ const n=location.hash.slice(1)||'home'; showPage(n); });
 

@@ -55,3 +55,4 @@ options_pilot*/
 
 # ---- announcement key (POST /api/announce); same value as the worker secret
 .announce_key
+daily_data_10y_retired/

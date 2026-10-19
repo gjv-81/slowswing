@@ -1,7 +1,7 @@
 # Cloudflare static-assets headers. The page and the public feed must never be
 # served from a stale browser cache: every deploy should be visible on the next
 # navigation, not after a hard refresh. (Hashed assets, if any are ever added,
-# can be cached long — these three change in place.)
+# can be cached long — the files listed here change in place.)
 /
   Cache-Control: no-cache
 /index.html
@@ -13,4 +13,6 @@
 /version.json
   Cache-Control: no-cache
 /stats_history.json
+  Cache-Control: no-cache
+/wk4_losers_chart.html
   Cache-Control: no-cache

@@ -268,7 +268,9 @@ def refresh_folder(folder: str | Path, extra: Iterable[str] = (), provider: Opti
             last[t] = None
 
     # business-day calendar guess for "how far behind"
-    bdays_since = lambda d: int(np.busday_count(d.date(), today)) if d is not None else None
+    # sessions strictly AFTER the last stored bar, up to and including today
+    # (busday_count is half-open: [last+1, today+1) — a Sunday run after a Friday bar = 0)
+    bdays_since = lambda d: int(np.busday_count(d.date() + dt.timedelta(days=1), today + dt.timedelta(days=1))) if d is not None else None
     active, seed, dead = [], [], []
     for t in want:
         if t not in frames:
@@ -281,6 +283,9 @@ def refresh_folder(folder: str | Path, extra: Iterable[str] = (), provider: Opti
         else:
             rep.unchanged += 1
     rep.dead = dead
+    on_disk = [last[t] for t in want if last.get(t) is not None]
+    if on_disk:                       # latest bar already on disk (so a no-op night still reports it)
+        rep.latest_date = max(on_disk).date().isoformat()
     if verbose:
         print(f"[{rep.folder}] {len(want)} tickers: {len(active)} to refresh, {rep.unchanged} current, "
               f"{len(dead)} dormant, {len(seed)} to seed")
