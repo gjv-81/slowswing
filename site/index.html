@@ -983,7 +983,7 @@
       <button type="button" id="fClearT" class="fclear">Clear</button>
     </div>
     <div style="display:flex; justify-content:space-between; align-items:center; gap:14px; margin:4px 0 14px; flex-wrap:wrap">
-      <div class="faint" style="font-size:12.5px">Showing <b id="trackCount" style="color:var(--ink)">–</b> retired setups · newest first · <b style="color:var(--primary)">click any ticker</b> for the shape of its move</div>
+      <div class="faint" style="font-size:12.5px">Showing <b id="trackCount" style="color:var(--ink)">–</b> retired setups · biggest peak first · <b style="color:var(--primary)">click any ticker</b> for the shape of its move</div>
       <input id="trackSearch" class="tksearch" type="search" autocomplete="off" placeholder="Search ticker or company…">
     </div>
     <div id="trackBody"></div>
@@ -2261,7 +2261,7 @@ function renderStats(){
 }
 
 // ---- Track Record page (retired positions) ----
-let tsorts=[{key:"date", dir:-1}], tSetup="all", tQ="all";
+let tsorts=[{key:"mfe", dir:-1}], tSetup="all", tQ="all";   // default: biggest peak first
 function tcmp(a,b){ for(const s of tsorts){ const av=colval(a,s.key), bv=colval(b,s.key); let r=(typeof av==="string")?av.localeCompare(bv):(av-bv); if(r) return s.dir*r; } return dval(b.date)-dval(a.date); }
 function renderTrack(){
   const all=cohort4();                                                       // statistics
@@ -2364,7 +2364,7 @@ function renderTrack(){
 }
 renderTrack();
 { const tb=document.getElementById('trackBody'); if(tb) tb.addEventListener('click', e=>{
-  if(e.target.closest('#tclearsort')){ tsorts=[{key:"date", dir:-1}]; renderTrack(); return; }
+  if(e.target.closest('#tclearsort')){ tsorts=[{key:"mfe", dir:-1}]; renderTrack(); return; }
   const th=e.target.closest('th[data-sort]'); if(!th) return;
   const k=th.dataset.sort; const idx=tsorts.findIndex(s=>s.key===k);
   if(e.shiftKey){ if(idx>=0){ tsorts[idx].dir=-tsorts[idx].dir; } else { tsorts.push({key:k,dir:defDir(k)}); } }
