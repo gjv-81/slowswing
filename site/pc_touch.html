@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How often each group touched +5%, +10% and +20%</title>
+<style>
+  :root{--primary:#0f766e; --phx:#7c3aed; --cru:#1d4ed8; --ink:#0f172a; --mut:#64748b;}
+  *{box-sizing:border-box}
+  body{margin:0; font-family:-apple-system,"Segoe UI",Inter,Roboto,sans-serif; background:#fff; color:var(--ink); line-height:1.65; padding:0}
+  .wrap{max-width:760px; margin:0 auto; padding:48px 22px 80px}
+  .kicker{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--primary); font-weight:700}
+  h1{font-size:34px; letter-spacing:-.02em; line-height:1.15; margin:10px 0 6px}
+  .meta{color:var(--mut); font-size:13px; margin-bottom:26px}
+  p{font-size:16.5px; margin:16px 0}
+  .tk{color:var(--primary); font-weight:700; cursor:pointer}
+  table{border-collapse:collapse; width:100%; margin:20px 0; font-size:14.5px}
+  th,td{padding:9px 12px; border-bottom:1px solid #e2e8f0; text-align:left}
+  th{font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--mut)}
+  td.v{font-weight:700}
+  .phx{color:var(--phx)} .cru{color:var(--cru)} .good{color:#166534; font-weight:800} .bad{color:#b91c1c; font-weight:800}
+  .chartcard{position:relative; background:#fff; border:0; border-radius:0; padding:2px 0; margin:0; box-shadow:none}
+  @media (max-width:1000px){.chartcard{margin:30px 0}}
+  .badge{display:inline-block; background:#ecfdf5; color:#065f46; border:1px solid #6ee7b7; font-size:10.5px; font-weight:700; letter-spacing:.06em; padding:4px 10px; border-radius:99px; margin-bottom:8px}
+  .chartcard h2{margin:4px 0 4px; font-size:20px; letter-spacing:-.01em}
+  .sub{color:var(--mut); font-size:13px; margin:0 0 12px; max-width:70ch}
+  svg{width:100%; height:auto; display:block}
+  .legend{display:flex; gap:20px; font-size:12px; color:var(--mut); margin-top:10px; flex-wrap:wrap}
+  .legend span{display:inline-flex; align-items:center; gap:7px}
+  .sw{width:20px; height:4px; border-radius:2px; display:inline-block}
+  .sw.d{background:repeating-linear-gradient(90deg,#94a3b8 0 5px,transparent 5px 9px); height:3px}
+  .sw.dr{background:repeating-linear-gradient(90deg,#dc2626 0 5px,transparent 5px 9px); height:3px}
+  .note{font-size:11px; color:var(--mut); margin-top:10px; line-height:1.5}
+  .replaywrap{margin:12px 0 2px}
+  .replay{background:#fff; border:1px solid var(--primary); color:var(--primary); font-weight:700; font-size:13px; padding:9px 18px; border-radius:99px; cursor:pointer}
+  @media (max-width:460px){.replay{width:100%}}
+  .replay:hover{background:#ecfdf5}
+  .toggles{display:flex; gap:8px; margin:4px 0 12px}
+  .tg{border:1.5px solid #cbd5e1; background:#fff; color:#334155; font-weight:700; font-size:13px; padding:6px 15px; border-radius:99px; cursor:pointer}
+  .tg.active{background:var(--primary); border-color:var(--primary); color:#fff}
+  .small{font-size:13px; color:var(--mut); font-style:italic}
+</style>
+</head>
+<body>
+<div class="chartcard">
+    <div class="badge">SAME TWELVE WEEKS FOR EVERYONE</div>
+    <h2>How many had touched the level by week N</h2>
+    <p class="sub">Same start (July 20), same twelve weeks, same choppy market. Each line: the share of that group whose price had touched the level — intraday high vs. start — by week N.</p>
+    <div class="toggles">
+      <button class="tg active" data-lv="5">+5%</button>
+      <button class="tg" data-lv="10">+10%</button>
+      <button class="tg" data-lv="20">+20%</button>
+      <button class="tg" id="tourbtn" style="margin-left:auto">&#x21bb; Replay tour</button>
+    </div>
+    <svg id="tc" viewBox="0 0 940 460" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--phx)"></span> Phoenix (41)</span>
+      <span><span class="sw" style="background:var(--cru)"></span> Cruise (14)</span>
+      <span><span class="sw d"></span> every S&amp;P 500 stock (492)</span>
+    </div>
+  </div>
+<script>
+(function(){
+
+const D={"phoenix": {"5": [9.8, 61.0, 78.0, 80.5, 85.4, 85.4, 85.4, 87.8, 87.8, 90.2, 90.2, 90.2, 90.2], "10": [0.0, 31.7, 56.1, 63.4, 75.6, 75.6, 75.6, 75.6, 75.6, 78.0, 78.0, 78.0, 78.0], "20": [0.0, 2.4, 4.9, 34.1, 43.9, 51.2, 51.2, 56.1, 56.1, 61.0, 63.4, 63.4, 63.4], "n": 41}, "cruise": {"5": [0.0, 57.1, 85.7, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0], "10": [0.0, 14.3, 50.0, 57.1, 71.4, 71.4, 71.4, 71.4, 71.4, 78.6, 78.6, 78.6, 78.6], "20": [0.0, 0.0, 0.0, 14.3, 14.3, 14.3, 21.4, 21.4, 21.4, 28.6, 28.6, 35.7, 35.7], "n": 14}, "spx": {"5": [0.6, 26.8, 57.3, 67.1, 69.7, 71.3, 72.2, 73.0, 73.6, 74.2, 74.4, 74.6, 75.2], "10": [0.0, 7.1, 24.4, 36.2, 41.3, 45.5, 46.5, 47.8, 48.0, 49.2, 49.4, 50.2, 51.0], "20": [0.0, 0.4, 2.2, 7.3, 10.2, 13.2, 15.2, 16.3, 16.7, 17.5, 18.3, 19.1, 19.7], "n": 492}};
+const NS='http://www.w3.org/2000/svg';
+const svg=document.getElementById('tc');
+const W=940,H=460,L=56,R=150,T=18,B=44;
+const x=w=>L+(W-L-R)*w/12;
+const y=v=>T+(H-T-B)*(100-v)/100;
+const el=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e};
+for(let v=0;v<=100;v+=20){
+  el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:'#eef2f7'});
+  el('text',{x:L-8,y:y(v)+4,'text-anchor':'end','font-size':11,fill:'#94a3b8'}).textContent=v+'%';
+}
+[0,2,4,6,8,10,12].forEach(w=>{
+  el('text',{x:x(w),y:H-18,'text-anchor':'middle','font-size':11,fill:'#94a3b8'}).textContent='wk '+w;});
+el('line',{x1:x(4),x2:x(4),y1:T,y2:H-B,stroke:'#f59e0b','stroke-width':1.3,'stroke-dasharray':'4 4'});
+el('text',{x:x(4),y:T+12,'text-anchor':'middle','font-size':11,fill:'#92400e','font-weight':700}).textContent='week 4';
+const series=[['phoenix','#7c3aed',3.2,null],['cruise','#1d4ed8',3.2,null],['spx','#64748b',2.4,'7 5']];
+const lines={},labels={},w4dots={},w4txt={};
+series.forEach(([k,col,wd,dash])=>{
+  const p=el('path',{fill:'none',stroke:col,'stroke-width':wd,'stroke-linecap':'round'});
+  if(dash)p.setAttribute('stroke-dasharray',dash);
+  lines[k]=p;
+  const t=el('text',{x:x(12)+10,y:0,'font-size':12.5,'font-weight':800,fill:col});
+  labels[k]=t;
+  w4dots[k]=el('circle',{cx:x(4),cy:0,r:4,fill:'#fff',stroke:col,'stroke-width':2.2});
+  w4txt[k]=el('text',{x:x(4)-8,y:0,'font-size':13,'font-weight':900,fill:col,'text-anchor':'end',stroke:'#fff','stroke-width':4,'paint-order':'stroke'});
+});
+function dOf(vals){let d='M'+x(0)+' '+y(vals[0]);vals.forEach((v,i)=>{d+=' L'+x(i)+' '+y(v);});return d;}
+let cur=null;
+function show(lv){
+  cur=lv;
+  document.querySelectorAll('.tg').forEach(b=>b.classList.toggle('active',b.dataset.lv==lv));
+  series.forEach(([k,col])=>{
+    const vals=D[k][lv];
+    const p=lines[k];
+    p.style.transition='d 0.9s ease';
+    p.setAttribute('d',dOf(vals));
+    const t=labels[k];
+    t.style.transition='y 0.9s ease';
+    t.setAttribute('y',y(vals[12])+4);
+    const names={phoenix:'Phoenix',cruise:'Cruise',spx:'S&P 500'};
+    t.textContent=names[k]+' '+vals[12].toFixed(0)+'%';
+  });
+  // wk4 markers + bold values (de-overlapped)
+  series.forEach(([k,col])=>{
+    const v4=D[k][lv][4];
+    const d=w4dots[k]; d.style.transition='cy 0.9s ease'; d.setAttribute('cy',y(v4));
+    const t=w4txt[k]; t.style.transition='y 0.9s ease'; t.textContent=v4.toFixed(0)+'%';
+  });
+  const y4=series.map(([k])=>y(D[k][lv][4])+4).map((v,i)=>({i,v})).sort((a,b)=>a.v-b.v);
+  for(let j=1;j<y4.length;j++){ if(y4[j].v-y4[j-1].v<17){ y4[j].v=y4[j-1].v+17; } }
+  y4.forEach(o=>w4txt[series[o.i][0]].setAttribute('y',o.v));
+  // de-overlap end labels
+  const ys=series.map(([k])=>parseFloat(labels[k].getAttribute('y'))).map((v,i)=>({i,v})).sort((a,b)=>a.v-b.v);
+  for(let j=1;j<ys.length;j++){ if(ys[j].v-ys[j-1].v<16){ ys[j].v=ys[j-1].v+16; } }
+  ys.forEach(o=>labels[series[o.i][0]].setAttribute('y',o.v));
+}
+show('5');
+// intro draw animation
+series.forEach(([k])=>{
+  const p=lines[k];
+  const len=p.getTotalLength();
+  p.style.strokeDasharray=(k==='spx'? '7 5' : len);
+  if(k!=='spx'){ p.style.strokeDashoffset=len;
+    requestAnimationFrame(()=>{p.style.transition='stroke-dashoffset 2.2s ease .3s';p.style.strokeDashoffset=0;
+      setTimeout(()=>{p.style.strokeDasharray='none';p.style.transition='d 0.9s ease';},2800);});}
+});
+// auto-tour: 5 -> 10 -> 20, ends on 20 (the stat people would otherwise miss).
+// any manual click cancels it; the tour button replays it.
+let tourTimers=[];
+function cancelTour(){tourTimers.forEach(clearTimeout);tourTimers=[];}
+function runTour(){
+  cancelTour(); show('5');
+  tourTimers.push(setTimeout(()=>show('10'),3200));
+  tourTimers.push(setTimeout(()=>show('20'),5800));
+}
+runTour();
+document.querySelectorAll('.tg').forEach(b=>b.onclick=()=>{cancelTour();show(b.dataset.lv);});
+const tb=document.getElementById('tourbtn'); if(tb) tb.onclick=runTour;
+
+})();
+</script>
+</body>
+</html>

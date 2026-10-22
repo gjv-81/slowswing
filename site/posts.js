@@ -11,6 +11,72 @@
 //     (it just defines POSTS; nothing else runs).
 const POSTS = [
   {
+    slug:'phoenix-cruise-vs-sp500', cat:{label:'Lesson', cls:'lesson'}, icon:'⚖️', sample:false,
+    author:'GJ Singh', date:'Oct 20, 2026', read:'7 min read',
+    title:'Two setups, one choppy market: Phoenix, Cruise, and every S&amp;P 500 stock — measured',
+    excerpt:'Our first 55 published signals finished their 12 weeks. Here is how Phoenix and Cruise each behaved, and how both compare with every stock in the S&P 500 over the exact same weeks.',
+    body:`<style>
+.pcpost table{border-collapse:collapse; width:100%; margin:20px 0; font-size:14.5px}
+.pcpost th,.pcpost td{padding:9px 12px; border-bottom:1px solid #e2e8f0; text-align:left}
+.pcpost th{font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#64748b; font-weight:800}
+.pcpost td.v{font-weight:700}
+.pcpost .phx{color:#7c3aed}
+.pcpost .cru{color:#1d4ed8}
+.pcpost .good{color:#166534; font-weight:800}
+.pcpost .bad{color:#b91c1c; font-weight:800}
+</style>
+<div class="pcpost">
+<p>Our first batch of published signals has finished its full 12-week window. Last week we dissected the names that were losing at week 4. This week: the whole picture, split by our two setups — and measured against every stock in the S&amp;P 500 over the exact same twelve weeks.</p>
+
+  <p>Start with the chart. Every thin line is a real published signal. The thick lines are what matters: the average for each setup, next to the typical S&amp;P 500 stock.</p>
+
+  <!-- CHART 1: spaghetti with setup averages -->
+    <div style="margin:26px 0">
+      <iframe src="pc_spaghetti.html" title="Phoenix and Cruise averages against the typical S&amp;P 500 stock, 12 weeks" scrolling="no" style="width:100%;height:930px;border:0;display:block;overflow:hidden" onload="var f=this,fit=function(){try{var h=f.contentDocument.documentElement.scrollHeight;if(h>40)f.style.height=(h+2)+&quot;px&quot;}catch(e){}};fit();setTimeout(fit,250);setTimeout(fit,1500);try{window.addEventListener(&quot;resize&quot;,fit)}catch(e){}"></iframe>
+    </div>
+    <p>The two setups have different personalities, and the chart shows both. <span class="phx"><b>Phoenix</b></span> sprints: it was 8.5 points ahead of the market at week 4 and kept 6.1 of them to the finish. <span class="cru"><b>Cruise</b></span> ran closer to the market early and edged away slowly. Phoenix makes its money in the first month and defends it; Cruise simmers the whole way.</p>
+
+  <table>
+    <tr><th></th><th class="phx">Phoenix (41 signals)</th><th class="cru">Cruise (14 signals)</th></tr>
+    <tr><td>Winners at week 4</td><td class="v">78%</td><td class="v">57%</td></tr>
+    <tr><td>Ahead of the S&amp;P at week 4</td><td class="v">+8.5 points</td><td class="v">+2.8 points</td></tr>
+    <tr><td>Winners at week 12</td><td class="v">58%</td><td class="v">57%</td></tr>
+    <tr><td>Average at week 12</td><td class="v">+10.5%</td><td class="v">+7.6%</td></tr>
+    <tr><td>Touched +5%</td><td class="v">90%</td><td class="v">100%</td></tr>
+    <tr><td>Touched +10%</td><td class="v">78%</td><td class="v">79%</td></tr>
+    <tr><td>Touched +20%</td><td class="v">63%</td><td class="v">36%</td></tr>
+    <tr><td>Ahead of the S&amp;P at week 12</td><td class="v">+6.1 points</td><td class="v">+3.3 points</td></tr>
+  </table>
+
+  <p>Every single Cruise name touched +5% within four weeks — all 14. But Cruise names visit their gains, give some back, and finish steady rather than spectacular. Phoenix is the one that reaches +20%; Cruise is the one that almost never misses +5%.</p>
+
+  <p>Now the question a fair skeptic should ask: <i>wasn't everything going up anyway?</i> No — the opposite. Pick a level below and watch where the market's line sits.</p>
+
+  <!-- CHART 2: interactive touch levels -->
+    <div style="margin:26px 0">
+      <iframe src="pc_touch.html" title="How often each group touched +5%, +10% and +20%" scrolling="no" style="width:100%;height:580px;border:0;display:block;overflow:hidden" onload="var f=this,fit=function(){try{var h=f.contentDocument.documentElement.scrollHeight;if(h>40)f.style.height=(h+2)+&quot;px&quot;}catch(e){}};fit();setTimeout(fit,250);setTimeout(fit,1500);try{window.addEventListener(&quot;resize&quot;,fit)}catch(e){}"></iframe>
+    </div>
+    <table>
+    <tr><th>same twelve weeks</th><th>typical S&amp;P 500 stock</th><th>our published signals</th></tr>
+    <tr><td>Touched +5%</td><td class="v">75%</td><td class="v good">93%</td></tr>
+    <tr><td>Touched +10%</td><td class="v">51%</td><td class="v good">78%</td></tr>
+    <tr><td>Touched +20%</td><td class="v">20%</td><td class="v good">56%</td></tr>
+    <tr><td>Green at week 12</td><td class="v">43%</td><td class="v good">58%</td></tr>
+    <tr><td>Average at week 12</td><td class="v">+0.3%</td><td class="v good">+9.8%</td></tr>
+    <tr><td>Median at week 12</td><td class="v bad">&minus;2.2%</td><td class="v good">+5.2%</td></tr>
+  </table>
+
+  <p><b>Read that bottom line twice.</b> In these twelve weeks the <i>typical</i> S&amp;P 500 stock lost money — the index's gain came from a handful of giants. Against that tape, our typical signal made 5.2%, and more than half our signals touched +20% at some point — a level only one market stock in five ever saw.</p>
+
+  <p class="small">Small print that matters: this is one cohort — 55 signals entered in late July, graded through a rough August and September. Cruise is only 14 names. The next batches lock over the coming weeks and we'll keep publishing them, whatever they say.</p>
+
+  
+</div>
+</div>
+`,
+    foot:`All figures from our live record of published signals, no stop-losses, no targets, dividends excluded. "Touched" = highest intraday level reached — not returns earned. The S&amp;P comparison uses all 492 measurable S&amp;P 500 stocks from the same start date; using today's index members flatters both sides equally. Past results don't predict any single name. Not advice.`
+  },
+  {
     slug:'red-at-the-checkpoint', cat:{label:'Lesson', cls:'lesson'}, icon:'📊', sample:false,
     author:'GJ Singh', date:'Oct 19, 2026', read:'4 min read',
     title:'Red at the checkpoint: what happened to the 15 signals that were losing at week 4',
