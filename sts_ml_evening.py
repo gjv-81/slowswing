@@ -174,10 +174,20 @@ def fetch_batch(tickers):
     return out
 
 def expected_session(today=None):
-    """The last session whose close should be on disk tonight: today if it is a
-    weekday, else the previous weekday. (US holidays are not modelled — on a
-    holiday the data is one day 'stale', which only costs a warning.)"""
-    d = today or datetime.date.today()
+    """The last session whose close should be on disk: today (ET) if it is a
+    weekday AND the market has closed, else the previous weekday. Clock is New
+    York time whatever the laptop is set to. (US holidays are not modelled — on
+    a holiday the data is one day 'stale', which only costs a Yahoo fallback.)"""
+    if today is None:
+        try:
+            from zoneinfo import ZoneInfo
+            now = datetime.datetime.now(ZoneInfo("America/New_York"))
+        except Exception:
+            now = datetime.datetime.now()
+        today = now.date()
+        if (now.hour, now.minute) < (16, 0):
+            today -= datetime.timedelta(days=1)
+    d = today
     while d.weekday() >= 5:
         d -= datetime.timedelta(days=1)
     return d

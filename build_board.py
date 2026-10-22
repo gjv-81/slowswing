@@ -349,6 +349,12 @@ def expected_session() -> str:
         return forced.strip()
     now = dt.datetime.now(_EASTERN) if _EASTERN else dt.datetime.utcnow()
     d = now.date()
+    # Before the close (16:00 ET) today's bar cannot exist yet, so the session we
+    # expect prices for is the PREVIOUS trading day. A run at 00:29 ET on Oct 22
+    # (GJ, back from a flight) expected an Oct 22 bar, called every Oct 21 price
+    # stale and fell back to workbook prices.
+    if _EASTERN and (now.hour, now.minute) < (16, 0):
+        d -= dt.timedelta(days=1)
     while d.weekday() >= 5:
         d -= dt.timedelta(days=1)
     return d.isoformat()

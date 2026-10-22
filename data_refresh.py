@@ -24,9 +24,12 @@ HOW THE ADJUSTMENT STAYS CONSISTENT
       volume * f
   Actions are applied oldest-first. On a normal night there are none.
 
-REQUEST BUDGET (Marketstack counts requests, 100 symbols per request)
-  ~2,000 distinct tickers across the four folders -> ~20 requests for bars,
-  ~20 for dividends, ~20 for splits = ~60/night, ~1,300/month of Basic's 10,000.
+REQUEST BUDGET — Marketstack bills PER SYMBOL (each symbol in a multi-symbol
+  call counts as one request, per page). Verified the hard way on 2026-10-22:
+  3 endpoints x ~3,250 tickers/night blew through Basic's 10,000 in four nights
+  ($125 overage). Now ONE call per symbol per night (dividends and split factors
+  are read from the EOD rows themselves). Use it only for folders that must be
+  licensed: daily_data_10y (605 names ≈ 13k/month). Research folders stay on Yahoo.
 
 FALLBACK
   If Marketstack fails for a whole folder (network, auth, quota), the caller
@@ -95,6 +98,7 @@ class _MS(MarketstackProvider):
         """Raw EOD rows for many symbols over a date range. One request per 100
         symbols per 1000-row page (a 10-session catch-up for 100 names fits in one)."""
         out: dict[str, list] = {t: [] for t in tickers}
+        self.events = getattr(self, "events", {"div": {}, "split": {}})
         for i in range(0, len(tickers), CHUNK):
             chunk = tickers[i:i + CHUNK]
             rows = self._paged("eod", {"access_key": self.key, "symbols": ",".join(chunk),
@@ -103,6 +107,16 @@ class _MS(MarketstackProvider):
                 b = self._bar(r)
                 if b is not None:
                     out.setdefault(b.ticker, []).append(b)
+                # Each EOD row carries that day's dividend and split_factor, so the
+                # corporate actions come free with the bars. The separate
+                # /dividends and /splits endpoints TRIPLED the bill (Marketstack
+                # charges per SYMBOL per call, not per call — see 2026-10-22).
+                sym = str(r.get("symbol", "")).upper(); d = str(r.get("date", ""))[:10]
+                dv = self._f(r, "dividend"); sf = self._f(r, "split_factor")
+                if sym and d and dv and dv > 0:
+                    self.events["div"].setdefault(sym, []).append((d, float(dv)))
+                if sym and d and sf and sf > 0 and abs(sf - 1.0) > 1e-9:
+                    self.events["split"].setdefault(sym, []).append((d, float(sf)))
         return out
 
     def _events_many(self, path: str, tickers: list[str], date_from: str, date_to: str,
@@ -301,9 +315,9 @@ def refresh_folder(folder: str | Path, extra: Iterable[str] = (), provider: Opti
             for i in range(0, len(active), CHUNK):
                 chunk = active[i:i + CHUNK]
                 date_from = (last[chunk[0]] + pd.Timedelta(days=1)).date().isoformat()
+                prov.events = {"div": {}, "split": {}}
                 bars.update(prov.eod_range_many(chunk, date_from, date_to))
-                divs.update(prov.dividends_many(chunk, date_from, date_to))
-                spl.update(prov.splits_many(chunk, date_from, date_to))
+                divs.update(prov.events["div"]); spl.update(prov.events["split"])
         except EODError as e:
             rep.errors.append(f"marketstack: {e}"); rep.requests = prov.requests
             return rep

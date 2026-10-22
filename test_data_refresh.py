@@ -98,6 +98,10 @@ class Fake:
     def eod_range_many(self, tickers, date_from, date_to):
         self.requests += 1
         sl = raw_split.loc[date_from:date_to]
+        ev_d = [(d, a) for d, a in divs if date_from <= d <= date_to]
+        ev_s = [(s_date, 10.0)] if date_from <= s_date <= date_to else []
+        self.events = {"div": {t: ev_d for t in tickers if t != "GONE"},
+                       "split": {t: ev_s for t in tickers if t != "GONE"}}
         return {t: to_bars(sl, t) for t in tickers if t != "GONE"}
     def dividends_many(self, tickers, date_from, date_to):
         self.requests += 1
@@ -130,7 +134,7 @@ with tempfile.TemporaryDirectory() as tmp:
     rep = dr.refresh_folder(folder, extra=["NEWT"], provider=fk, today=today, verbose=False)
     assert rep.updated == 3 and rep.unchanged == 1, rep.summary()        # AAA, LATE, NEWT(seeded)
     assert rep.dead == ["GONE"] and rep.seeded == ["NEWT"] and not rep.errors, rep.summary()
-    assert rep.requests == 5, rep.requests                                 # 3 range calls + 2 seed calls
+    assert rep.requests == 3, rep.requests                                 # 1 range call + 2 seed calls
     assert [a[:2] for a in rep.actions] == [("AAA", "split")], rep.actions
     check("refresh_folder AAA", dr._read_csv(folder / "AAA.csv"), ref_split, tol=1e-6)
     check("refresh_folder LATE", dr._read_csv(folder / "LATE.csv"), ref_split, tol=1e-6)

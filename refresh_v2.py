@@ -36,8 +36,17 @@ def _env(key, default=""):
     return default
 
 def _expected_session():
+    """Last closed session, New York time: today after 16:00 ET on a weekday,
+    otherwise the previous weekday."""
     import datetime as dt
-    d = dt.date.today()
+    try:
+        from zoneinfo import ZoneInfo
+        now = dt.datetime.now(ZoneInfo("America/New_York"))
+    except Exception:
+        now = dt.datetime.now()
+    d = now.date()
+    if (now.hour, now.minute) < (16, 0):
+        d -= dt.timedelta(days=1)
     while d.weekday() >= 5:
         d -= dt.timedelta(days=1)
     return d.isoformat()
@@ -45,6 +54,12 @@ def _expected_session():
 def refresh_marketstack():
     """Returns the set of folders that are current after the Marketstack pass
     (the caller runs the Yahoo route for the rest)."""
+    # OFF unless V2_MARKETSTACK=1 is set in .env: Marketstack bills per SYMBOL and
+    # these three research folders are ~2,650 names a night (~56k/month) — far more
+    # than any affordable plan. They are never displayed, so Yahoo is acceptable
+    # here (GJ, Sep 16). Found out via a $125 overage on 2026-10-22.
+    if _env("V2_MARKETSTACK", "") != "1":
+        return set()
     if _env("EOD_PROVIDER", "").lower() != "marketstack" or os.environ.get("STS_FORCE_YAHOO"):
         return set()
     try:

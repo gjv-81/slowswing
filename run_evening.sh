@@ -1,4 +1,5 @@
 #!/bin/zsh
+export STS_FORCE_YAHOO=1   # TEMP 2026-10-22: no Marketstack until billing is settled
 # STS evening runner — called by cron. Location-independent: uses its own folder,
 # so it works wherever this folder lives (no hardcoded ~/Documents path).
 DIR="$(cd "$(dirname "$0")" && pwd)"
