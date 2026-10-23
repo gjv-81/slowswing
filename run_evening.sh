@@ -47,9 +47,17 @@ echo "----- build_regime + build_board -----" >> "$LOG" 2>&1
 # prices. If both the scan and the vendor failed, publish nothing: yesterday's
 # board stays live rather than yesterday's prices wearing today's date.
 BOARD="marketstack"
+if [ "${STS_FORCE_YAHOO:-0}" = "1" ]; then
+  # TEMP 2026-10-22: everything on Yahoo until Marketstack billing is settled —
+  # the board takes the workbook's (tracker/Yahoo) closes, zero vendor calls.
+  echo "----- STS_FORCE_YAHOO=1: board from workbook prices, no Marketstack call -----" >> "$LOG" 2>&1
+  PC_SOURCE=workbook "$PY" "$DIR/build_board.py" >> "$LOG" 2>&1
+  brc=$?; BOARD="workbook"
+else
 "$PY" "$DIR/build_board.py" >> "$LOG" 2>&1
 brc=$?
-if [ $brc -ne 0 ]; then
+fi
+if [ $brc -ne 0 ] && [ "$BOARD" = "marketstack" ]; then
   if [ $SCAN_OK -eq 1 ]; then
     echo "----- marketstack board rc=$brc -> falling back to workbook prices -----" >> "$LOG" 2>&1
     PC_SOURCE=workbook "$PY" "$DIR/build_board.py" >> "$LOG" 2>&1
@@ -123,6 +131,14 @@ if [ -d "$DIR/.git" ]; then
   ( cd "$DIR" && /usr/bin/git add -A >> "$LOG" 2>&1 \
     && /usr/bin/git -c user.name="STS nightly" -c user.email="gjv1000@gmail.com" commit -q -m "nightly $(/bin/date '+%Y-%m-%d %H:%M')" >> "$LOG" 2>&1 \
     ; /usr/bin/git push -q origin main >> "$LOG" 2>&1 && echo "----- git push OK -----" >> "$LOG" || echo "!! git push failed (see above)" >> "$LOG" )
+fi
+
+# --- keep the Cloudflare R2 state bucket current (shadow period of the GitHub
+#     migration; the CI reads its starting state from r2:sts-state/live/).
+#     No-op until .r2_env exists. See r2_sync_mac.sh.
+if [ -f "$DIR/.r2_env" ] && command -v rclone >/dev/null 2>&1; then
+  echo "----- R2 sync up -----" >> "$LOG" 2>&1
+  /bin/zsh "$DIR/r2_sync_mac.sh" up >> "$LOG" 2>&1 || echo "!! R2 sync failed (non-fatal)" >> "$LOG"
 fi
 
 echo "===== cron END $(/bin/date) rc=$rc after $((n+1)) attempt(s) board=$BOARD =====" >> "$LOG" 2>&1

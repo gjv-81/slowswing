@@ -56,3 +56,6 @@ options_pilot*/
 # ---- announcement key (POST /api/announce); same value as the worker secret
 .announce_key
 daily_data_10y_retired/
+.r2_env
+ci_last_session.txt
+.env_uw
