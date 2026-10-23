@@ -63,7 +63,7 @@ jobs:
       - uses: actions/setup-node@v4
         if: steps.guard.outputs.go == '1'
         with:
-          node-version: "20"
+          node-version: "22"
           cache: npm
 
       - name: Install
