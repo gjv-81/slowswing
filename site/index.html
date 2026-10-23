@@ -216,6 +216,9 @@
   .miniquote{font-size:13px; color:var(--muted)}
 
   /* generic panels / cards */
+  .card.oor{opacity:.5; filter:saturate(.35)} .card.oor:hover{opacity:.95; filter:none}
+  .ltable tbody tr.oor td{opacity:.5} .ltable tbody tr.oor:hover td{opacity:1}
+  .oor-tag{display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:.02em; color:#b45309; background:#fff7ed; border:1px solid #fed7aa; border-radius:999px; padding:2px 8px; margin-left:6px; vertical-align:middle; white-space:nowrap}
   .card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:18px; position:relative; transition:transform .15s, box-shadow .15s, border-color .15s; animation:cardIn .42s cubic-bezier(.2,.75,.3,1) both}
   .card:hover{transform:translateY(-2px); box-shadow:0 16px 40px -24px rgba(14,42,43,.35); border-color:var(--line2)}
   @keyframes cardIn{from{opacity:0; transform:translateY(14px) scale(.98)} to{opacity:1; transform:none}}
@@ -899,7 +902,7 @@
     <div class="tabs" id="agetabs" style="margin-bottom:10px">
       <div class="tab active" data-age="active">🟢 Active board</div>
       <div class="tab" data-age="extended">📈 Out of Range</div>
-      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = has not yet traded +5% above the price it was added at (names that are down included) — the setup is still ripe, for up to 12 weeks. <b style="color:#b45309">Pending</b> = qualified after tonight's close; it enters at the next open, so there is no price or scorecard yet. Switch to <b style="color:var(--muted)">Out of Range</b> for names that have run +5%. A name that has run retires at the 4-week mark — or after 12 weeks if it never runs — to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span>
+      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = has not yet traded +5% above the price it was added at (names that are down included) — the setup is still ripe, for up to 12 weeks. <b style="color:#b45309">Pending</b> = qualified after tonight's close; it enters at the next open, so there is no price or scorecard yet. <b style="color:#b45309">Greyed</b> = <b style="color:var(--muted)">Out of Range</b>: has already run +5% above its added price — kept on the board so you can see every current signal; the move has happened, so treat those as a watch list. A name that has run retires at the 4-week mark — or after 12 weeks if it never runs — to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span>
     </div>
     <div class="tabs" id="freshtabs" style="margin-bottom:14px">
       <div class="tab active" data-f="all" style="font-size:13px">All ages</div>
@@ -928,7 +931,7 @@
     <div style="display:flex; justify-content:space-between; align-items:center; gap:14px; margin:4px 0 14px; flex-wrap:wrap">
       <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap">
         <input id="boardSearch" class="tksearch" type="search" autocomplete="off" placeholder="Search ticker or company…">
-        <div class="faint" style="font-size:12.5px">Showing <b id="count" style="color:var(--ink)">–</b> names on today's board</div>
+        <div class="faint" style="font-size:12.5px" id="countwrap">Showing <b id="count" style="color:var(--ink)">–</b> names on today's board</div>
       </div>
       <div class="vtoggle" id="vtabs">
         <button class="vbtn active" data-v="cards">▦ Cards</button>
@@ -1976,7 +1979,7 @@ function applyFilters(base,sec,pul,dia,sco){
 function filtered(){
   let base = curSearch
     ? DATA.filter(d=>d.phase!=="retired").filter(d=>(d.t+" "+d.n).toLowerCase().includes(curSearch))
-    : DATA.filter(d=>d.phase===curAge || (curAge==="active" && d.phase==="pending")).filter(d=>curSetup==="all"||d.setup===curSetup).filter(d=>curQ==="all"||d.q==="pass")
+    : DATA.filter(d=>d.phase===curAge || (curAge==="active" && (d.phase==="pending" || d.phase==="extended")))   // Active board shows Out of Range too (greyed) so every current signal is visible.filter(d=>curSetup==="all"||d.setup===curSetup).filter(d=>curQ==="all"||d.q==="pass")
           .filter(d=>curFresh==="all" || d.phase==="pending" || (curFresh==="fresh" ? ageWeeks(d)<4 : ageWeeks(d)>=4));
   base=applyFilters(base,fSector,fPulse,fDial,fScore);
   // newest signal first (what GJ asked for), then quality gate, then score
@@ -1988,10 +1991,11 @@ function cardsHTML(items){
     const [clabel,cclass]=conv(d.score); const q=QMETA[d.q];
     const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise"; const delay=Math.min(i,14)*32;
     return `
-    <div class="card ${d.q==="pass"?"premium":""}" style="animation-delay:${delay}ms">
+    <div class="card ${d.q==="pass"?"premium":""}${d.phase==="extended"?" oor":""}" style="animation-delay:${delay}ms">
       ${d.q==="pass" ? '<span class="gem">💎 High-Quality</span>' : ''}
       <div class="top"><div><div class="tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}${newBadge(d)}</div><div class="co">${d.n}${earnBadge(d)}</div>${(d.pc!=null||d.chg!=null)?`<div class="cardpx">${d.pc!=null?money(d.pc)+' ':''}${d.chg!=null?chgCell(d.chg):''}</div>`:""}</div>
         <span class="setuptag ${d.setup}">${setupLabel}</span></div>
+      ${d.phase==="extended"?'<div style="margin:-4px 0 8px"><span class="oor-tag">📈 Out of range · has run +5%</span></div>':''}
       <div class="row">
         <div class="metric"><div class="k">AI Score</div><div class="v">${d.score.toFixed(1)} <span class="conviction ${cclass}">${clabel}</span></div></div>
         <div class="metric"><div class="k">Sector</div><div class="v" style="font-size:14px">${shortSector(d.sector)}</div></div>
@@ -2015,8 +2019,8 @@ function listHTML(items){
     const qsym=d.q==="pass"?"💎":"◆"; const qtxt=d.q==="pass"?"High-Quality":"Watch";
     const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise";
     return `
-      <tr class="${d.q==="pass"?"premium":""}">
-        <td><div class="lt-tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}${newBadge(d)}</div><div class="lt-co">${d.n}${earnBadge(d)}</div></td>
+      <tr class="${d.q==="pass"?"premium":""}${d.phase==="extended"?" oor":""}">
+        <td><div class="lt-tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}${newBadge(d)}${d.phase==="extended"?'<span class="oor-tag" title="Has run +5% above its added price">📈 Out of range</span>':''}</div><div class="lt-co">${d.n}${earnBadge(d)}</div></td>
         <td class="lt-sector">${shortSector(d.sector)}</td>
         <td><span class="lt-set ${d.setup}">${setupLabel}</span></td>
         <td><span class="lt-score">${d.score.toFixed(1)}</span></td>
@@ -2077,10 +2081,13 @@ function render(){
     return;
   }
   let items=filtered();
-  const isP=d=>d.phase==="pending"?0:1;   // pending rows always on top, whatever the sort
+  const isP=d=>d.phase==="pending"?0:(d.phase==="extended"?2:1);   // pending on top, active next, out-of-range (greyed) last, whatever the sort
   if(curView==="list"){ if(sorts.length) items=items.slice().sort(cmp); items=items.slice().sort((a,b)=>isP(a)-isP(b)); el.className=""; el.innerHTML=listHTML(items); }
   else { items=items.slice().sort((a,b)=>isP(a)-isP(b)); el.className="grid"; el.innerHTML=cardsHTML(items); }
-  document.getElementById('count').textContent=items.length;
+  const nOOR=items.filter(d=>d.phase==="extended").length;
+  const cw=document.getElementById('countwrap');
+  if(curAge==="active" && nOOR) cw.innerHTML=`Showing <b id="count" style="color:var(--ink)">${items.length-nOOR}</b> active + <b style="color:#b45309">${nOOR}</b> out of range (greyed) on today's board`;
+  else cw.innerHTML=`Showing <b id="count" style="color:var(--ink)">${items.length}</b> names on today's board`;
   renderTrStats(items);
 }
 
@@ -2146,7 +2153,7 @@ document.querySelectorAll('#agetabs .tab').forEach(tab=>tab.addEventListener('cl
   const note=document.getElementById('agenote');
   note.innerHTML = curAge==="extended"
     ? '<b style="color:var(--muted)">Out of Range</b> — has traded 5%+ above its added price at least once — its Peak is 5% or more. The move has happened — treat these as a watch list, not a fresh entry; a pullback does not send a name back to Active. Once it is also four weeks past the day it was added, it retires to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>. Educational, not actionable.'
-    : '<b style="color:var(--muted)">Active</b> = has not yet traded 5%+ above its added price — its Peak is under 5% — the setup is still ripe, for up to 12 weeks (includes names that are down, which are nearer the line). After 12 weeks without running, a setup retires to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.';
+    : '<b style="color:var(--muted)">Active</b> = has not yet traded 5%+ above its added price — its Peak is under 5% — the setup is still ripe, for up to 12 weeks (includes names that are down, which are nearer the line). <b style="color:#b45309">Greyed</b> = <b style="color:var(--muted)">Out of Range</b>: has already run +5% — kept in view so every current signal is visible; the move has happened, treat as a watch list. After 12 weeks without running, a setup retires to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.';
   render();
 }));
 render();
@@ -2979,7 +2986,7 @@ function countUp(){
 // ===== Guided tour =====
 const tourSteps=[
   {sel:'.regimebar', t:'Market regime', d:'A quick read on the market’s health (SPY/QQQ) — context for sizing, never a trade trigger.'},
-  {sel:'#agetabs', t:'Active vs Out of Range', d:'Active = price still near the setup. Out of Range = already ran, kept to show how past signals played out.'},
+  {sel:'#agetabs', t:'Active vs Out of Range', d:'Active = price still near the setup. Greyed names have already run +5% (Out of Range) — every current signal stays in view. The Out of Range tab shows just those, with their stats.'},
   {sel:'#tabs', t:'Filter by setup', d:'Show all names, or just Phoenix or Cruise — the two setup types our model sorts each signal into.'},
   {sel:'#qtabs', t:'Quality filter', d:'Collapse to 💎 High-Quality names only — the ones sound enough to hold through a dip.'},
   {sel:'#vtabs', t:'Cards or List', d:'Switch to a sortable list with the full Setup Scorecard: peak, max dip, and prices.'},
