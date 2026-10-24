@@ -256,6 +256,13 @@
   .bs-legend p{margin:8px 0 0; line-height:1.55}
   .bs-legend .faint{font-size:12px}
   .boardmain{min-width:0}
+  /* always-visible scrollbars on the two scrolling panes (macOS hides them until you scroll,
+     so readers did not realise there was more below) */
+  .boardside, [data-page="board"] .listwrap{overflow-y:scroll; scrollbar-width:thin; scrollbar-color:#9aa5b1 #eef2f5; scrollbar-gutter:stable}
+  .boardside::-webkit-scrollbar, [data-page="board"] .listwrap::-webkit-scrollbar{width:10px; height:10px}
+  .boardside::-webkit-scrollbar-track, [data-page="board"] .listwrap::-webkit-scrollbar-track{background:#eef2f5; border-radius:8px}
+  .boardside::-webkit-scrollbar-thumb, [data-page="board"] .listwrap::-webkit-scrollbar-thumb{background:#9aa5b1; border-radius:8px; border:2px solid #eef2f5}
+  .boardside::-webkit-scrollbar-thumb:hover, [data-page="board"] .listwrap::-webkit-scrollbar-thumb:hover{background:#6b7682}
   @media (max-width:1040px){ .boardlayout{grid-template-columns:1fr; gap:14px} .boardside{position:static; max-height:none} .boardside .tabs{flex-direction:row; flex-wrap:wrap} .boardside .tab,.boardside #agetabs .tab{width:auto} .boardside .filterbar{flex-direction:row; flex-wrap:wrap} .boardside .filterbar label{flex-direction:row; align-items:center; gap:6px} }
   /* out-of-range divider inside the Active board */
   .oor-div td, .oor-divcard{background:#fffbeb; color:#92400e; font-size:12.5px; font-weight:600; padding:9px 12px; border-top:2px solid #fde68a; border-bottom:1px solid #fde68a}
