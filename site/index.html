@@ -216,7 +216,7 @@
   .miniquote{font-size:13px; color:var(--muted)}
 
   /* generic panels / cards */
-  .card.oor{opacity:.5; filter:saturate(.35)} .card.oor:hover{opacity:.95; filter:none}
+  .card.oor{animation:none; opacity:.55; filter:saturate(.35)} .card.oor:hover{opacity:1; filter:none}   /* animation:none — cardIn ends at opacity 1 and would undo the greying */
   .ltable tbody tr.oor td{opacity:.5} .ltable tbody tr.oor:hover td{opacity:1}
   .oor-tag{display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:.02em; color:#b45309; background:#fff7ed; border:1px solid #fed7aa; border-radius:999px; padding:2px 8px; margin-left:6px; vertical-align:middle; white-space:nowrap}
   .card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:18px; position:relative; transition:transform .15s, box-shadow .15s, border-color .15s; animation:cardIn .42s cubic-bezier(.2,.75,.3,1) both}
@@ -236,6 +236,32 @@
   .si p{font-size:14px; color:var(--muted); margin:10px 0 0}
 
   .tabs{display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap}
+  /* ---- board: sticky control sidebar (2026-10-24) ---- */
+  [data-page="board"] .wrap{max-width:1460px}
+  .boardlayout{display:grid; grid-template-columns:236px minmax(0,1fr); gap:24px; align-items:start; margin-top:18px}
+  .boardside{position:sticky; top:86px; max-height:calc(100vh - 100px); overflow:auto; padding-right:4px; scrollbar-width:thin}
+  .boardside .bs-group{margin-bottom:14px}
+  .boardside .bs-h{font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 6px 2px}
+  .boardside .tabs{flex-direction:column; gap:6px; margin-bottom:0}
+  .boardside .tab, .boardside #agetabs .tab{width:100%; box-sizing:border-box; text-align:left; font-size:13px; padding:8px 12px; margin:0}
+  .boardside #agetabs .tab{font-size:14px; font-weight:750; padding:10px 12px}
+  .boardside .filterbar{flex-direction:column; align-items:stretch; gap:8px; margin:0}
+  .boardside .filterbar label{display:flex; flex-direction:column; gap:3px; font-size:12px; color:var(--muted)}
+  .boardside .filterbar .fsel{width:100%; box-sizing:border-box}
+  .boardside .filterbar .fclear{align-self:flex-start}
+  .boardside .tksearch{width:100%; box-sizing:border-box; min-width:0}
+  .boardside .vtoggle{display:flex; gap:6px} .boardside .vbtn{flex:1}
+  .bs-legend{font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:10px; margin-top:4px}
+  .bs-legend summary{cursor:pointer; font-weight:700; color:var(--body); font-size:12.5px; padding:2px 0}
+  .bs-legend p{margin:8px 0 0; line-height:1.55}
+  .bs-legend .faint{font-size:12px}
+  .boardmain{min-width:0}
+  @media (max-width:1040px){ .boardlayout{grid-template-columns:1fr; gap:14px} .boardside{position:static; max-height:none} .boardside .tabs{flex-direction:row; flex-wrap:wrap} .boardside .tab,.boardside #agetabs .tab{width:auto} .boardside .filterbar{flex-direction:row; flex-wrap:wrap} .boardside .filterbar label{flex-direction:row; align-items:center; gap:6px} }
+  /* out-of-range divider inside the Active board */
+  .oor-div td, .oor-divcard{background:#fffbeb; color:#92400e; font-size:12.5px; font-weight:600; padding:9px 12px; border-top:2px solid #fde68a; border-bottom:1px solid #fde68a}
+  .oor-divcard{grid-column:1/-1; border-radius:10px; border:1px solid #fde68a; margin:6px 0 -4px}
+  .oor-div .oor-toggle, .oor-divcard .oor-toggle{margin-left:10px; color:#b45309; font-weight:700; cursor:pointer; text-decoration:underline; text-decoration-color:#fcd34d; white-space:nowrap}
+  .oor-div td{position:sticky; left:0}
   .tksearch{font-size:13px; padding:8px 13px; border:1px solid var(--line2); border-radius:9px; background:#fff; color:var(--ink); min-width:210px; outline:none}
   .tksearch:focus{border-color:var(--primary)}
   .filterbar{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin:2px 0 12px}
@@ -372,7 +398,7 @@
   .ltable td{padding:5px 6px; border-bottom:1px solid var(--line); vertical-align:middle; white-space:nowrap}
   .ltable tr:last-child td{border-bottom:none}
   .ltable tbody tr:hover td{background:var(--panel2)}
-  .ltable tbody tr.premium td{box-shadow:inset 3px 0 0 var(--pass)}
+  .ltable tbody tr.premium td:first-child{box-shadow:inset 3px 0 0 var(--pass)}   /* one green edge per 💎 row (was every cell → looked like bars) */
   .ltable tbody tr.trk-hl td{background:#fef3c7; box-shadow:inset 3px 0 0 var(--gold,#b45309)}
   @keyframes trkPulse{0%{background:#fde68a}100%{background:#fef3c7}}
   .ltable tbody tr.trk-hl td{animation:trkPulse 1.2s ease-out}
@@ -714,6 +740,7 @@
         <a data-nav="blog" class="mpage">Blog<span class="mdesc">Notes and studies</span></a>
       </div>
     </div>
+    <a data-nav="blog">Blog</a>
     <a data-nav="story">My story</a>
     <a data-nav="pricing">Pricing</a>
     <a id="navTour" data-tour>▶ 30-sec tour</a>
@@ -899,49 +926,44 @@
     </div>
     <p style="max-width:82ch; margin:14px 0 0; font-size:13px; color:var(--body); line-height:1.7"><b style="color:var(--ink)">The difference isn't how often they work.</b> <span id="statBoth">Both reached +5% at peak most of the time</span> — the first move looks much the same. What separates them is <b>how far they go after that</b>: Cruise tends to pop and stall, Phoenix keeps running. That's why a Phoenix asks for more patience and a stronger stomach, and a Cruise asks for less of both.</p>
 
-    <div class="tabs" id="agetabs" style="margin-bottom:10px">
-      <div class="tab active" data-age="active">🟢 Active board</div>
-      <div class="tab" data-age="extended">📈 Out of Range</div>
-      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = has not yet traded +5% above the price it was added at (names that are down included) — the setup is still ripe, for up to 12 weeks. <b style="color:#b45309">Pending</b> = qualified after tonight's close; it enters at the next open, so there is no price or scorecard yet. <b style="color:#b45309">Greyed</b> = <b style="color:var(--muted)">Out of Range</b>: has already run +5% above its added price — kept on the board so you can see every current signal; the move has happened, so treat those as a watch list. A name that has run retires at the 4-week mark — or after 12 weeks if it never runs — to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span>
-    </div>
-    <div class="tabs" id="freshtabs" style="margin-bottom:14px">
-      <div class="tab active" data-f="all" style="font-size:13px">All ages</div>
+    <div class="boardlayout">
+      <aside class="boardside" id="boardside">
+        <div class="bs-group"><div class="bs-h">Board</div><div class="tabs" id="agetabs"><div class="tab active" data-age="active">🟢 Active board</div>
+      <div class="tab" data-age="extended">📈 Out of Range</div></div></div>
+        <div class="bs-group"><div class="bs-h">Age</div><div class="tabs" id="freshtabs"><div class="tab active" data-f="all" style="font-size:13px">All ages</div>
       <div class="tab" data-f="fresh" style="font-size:13px">🌱 Fresh · under 4 wk</div>
-      <div class="tab" data-f="seasoned" style="font-size:13px">🌾 Seasoned · 4–12 wk</div>
-      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px">A setup stays <b style="color:var(--muted)">Active</b> until it has run +5% — for up to 12 weeks. Once it runs it moves to <b style="color:var(--muted)">Out of Range</b>, and retires once it is also four weeks past the day it was added. Price decides, not the calendar — see <a data-nav="how" data-scroll="how-boards" style="color:var(--primary); font-weight:600">the board, day to day</a>.</span>
-    </div>
-    <div class="tabs" id="tabs">
-      <div class="tab active" data-k="all">All setups</div>
+      <div class="tab" data-f="seasoned" style="font-size:13px">🌾 Seasoned · 4–12 wk</div></div></div>
+        <div class="bs-group"><div class="bs-h">Setup</div><div class="tabs" id="tabs"><div class="tab active" data-k="all">All setups</div>
       <div class="tab" data-k="phoenix">Phoenix</div>
-      <div class="tab" data-k="cruise">Cruise</div>
-    </div>
-    <div class="tabs" id="qtabs" style="margin-top:-4px">
-      <div class="tab active" data-q="all" style="font-size:13px">Show everything</div>
-      <div class="tab" data-q="pass" style="font-size:13px">💎 High-quality only</div>
-      <span class="faint" style="font-size:12px; align-self:center; margin-left:6px"><span style="color:#c0392b; font-weight:600">💎 = high-quality (cleared our fundamental gate) · <span class="lt-q watch">◆</span> = watch (passed, with reservations) · <span class="earnflag" style="margin-left:0">⚠ date</span> = earnings report due within 3 weeks</span> &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span>
-    </div>
-
-    <div class="filterbar" id="boardFilters">
+      <div class="tab" data-k="cruise">Cruise</div></div></div>
+        <div class="bs-group"><div class="bs-h">Quality</div><div class="tabs" id="qtabs"><div class="tab active" data-q="all" style="font-size:13px">Show everything</div>
+      <div class="tab" data-q="pass" style="font-size:13px">💎 High-quality only</div></div></div>
+        <div class="bs-group"><div class="bs-h">Filters</div><div class="filterbar" id="boardFilters">
       <label>Sector <select id="fSector" class="fsel"><option value="">All sectors</option></select></label>
       <label>Pulse <select id="fPulse" class="fsel"><option value="">Any</option><option value="strong">Strong</option><option value="neutral">Neutral</option><option value="weak">Weak</option></select></label>
       <label>Regime&nbsp;@&nbsp;add <select id="fDial" class="fsel"><option value="">Any</option><option value="Healthy">Healthy</option><option value="Extended">Extended</option><option value="Weak">Weak</option><option value="Over-extended">Over-extended</option></select></label>
       <label>Min&nbsp;score <select id="fScore" class="fsel"><option value="0">Any</option><option value="2">2.0+</option><option value="2.5">2.5+</option><option value="3">3.0+</option><option value="3.5">3.5+</option></select></label>
       <button type="button" id="fClear" class="fclear">Clear</button>
-    </div>
-    <div style="display:flex; justify-content:space-between; align-items:center; gap:14px; margin:4px 0 14px; flex-wrap:wrap">
-      <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap">
-        <input id="boardSearch" class="tksearch" type="search" autocomplete="off" placeholder="Search ticker or company…">
-        <div class="faint" style="font-size:12.5px" id="countwrap">Showing <b id="count" style="color:var(--ink)">–</b> names on today's board</div>
-      </div>
-      <div class="vtoggle" id="vtabs">
+    </div></div>
+        <div class="bs-group"><div class="bs-h">Find</div><input id="boardSearch" class="tksearch" type="search" autocomplete="off" placeholder="Search ticker or company…"></div>
+        <div class="bs-group"><div class="vtoggle" id="vtabs">
         <button class="vbtn active" data-v="cards">▦ Cards</button>
         <button class="vbtn" data-v="list">☰ List</button>
-      </div>
-    </div>
-    <div class="updated runbanner"><span class="liveflag">● LIVE</span> <span id="upd">Loading tonight's board…</span><div id="runline" style="margin-top:6px; font-size:12.5px; color:var(--muted)"></div><div style="margin-top:12px"><a class="btn btn-primary" data-tour style="font-size:13px; padding:9px 16px; cursor:pointer">▶ Take the 30-sec tour</a></div></div>
-    <div class="trstats" id="trstats"></div>
-    <div class="grid" id="cards"></div>
+      </div></div>
+        <details class="bs-legend"><summary>Legend &amp; definitions</summary>
+          <p><span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = has not yet traded +5% above the price it was added at (names that are down included) — the setup is still ripe, for up to 12 weeks. <b style="color:#b45309">Pending</b> = qualified after tonight's close; it enters at the next open, so there is no price or scorecard yet. <b style="color:#b45309">Greyed</b> = <b style="color:var(--muted)">Out of Range</b>: has already run +5% above its added price — kept on the board so you can see every current signal; the move has happened, so treat those as a watch list. A name that has run retires at the 4-week mark — or after 12 weeks if it never runs — to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span></p>
+          <p><span class="faint" style="font-size:12px; align-self:center; margin-left:6px">A setup stays <b style="color:var(--muted)">Active</b> until it has run +5% — for up to 12 weeks. Once it runs it moves to <b style="color:var(--muted)">Out of Range</b>, and retires once it is also four weeks past the day it was added. Price decides, not the calendar — see <a data-nav="how" data-scroll="how-boards" style="color:var(--primary); font-weight:600">the board, day to day</a>.</span></p>
+          <p><span class="faint" style="font-size:12px; align-self:center; margin-left:6px"><span style="color:#c0392b; font-weight:600">💎 = high-quality (cleared our fundamental gate) · <span class="lt-q watch">◆</span> = watch (passed, with reservations) · <span class="earnflag" style="margin-left:0">⚠ date</span> = earnings report due within 3 weeks</span> &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span></p>
+        </details>
+      </aside>
+      <div class="boardmain">
+        <div class="faint" style="font-size:12.5px" id="countwrap">Showing <b id="count" style="color:var(--ink)">–</b> names on today's board</div>
+        <div class="updated runbanner"><span class="liveflag">● LIVE</span> <span id="upd">Loading tonight's board…</span><div id="runline" style="margin-top:6px; font-size:12.5px; color:var(--muted)"></div><div style="margin-top:12px"><a class="btn btn-primary" data-tour style="font-size:13px; padding:9px 16px; cursor:pointer">▶ Take the 30-sec tour</a></div></div>
+        <div class="trstats" id="trstats"></div>
+        <div class="grid" id="cards"></div>
     <p class="faint" style="font-size:12.5px; margin-top:20px">The board shows every name the model flags today. The 💎 badge is your confidence signal — a business sound enough to hold through a drawdown. Names without it can still work, but demand more of your own homework and smaller size. A quiet day may show only a handful of setups — by design. <b style="color:var(--primary)">Tip: click any ticker to see the shape of its move.</b></p>
+      </div><!-- /boardmain -->
+    </div><!-- /boardlayout -->
   </div></section>
 </div>
 
@@ -1893,6 +1915,7 @@ const PULSE = { strong:["pulse-strong","var(--pass)","Strong"], neutral:["pulse-
 // Default view: LIST on a desktop (50+ names as cards is a wall; the list carries
 // the scorecard columns and sorting), CARDS on a phone (a 13-column table is
 // unreadable there). The toggle still lets anyone switch.
+let oorOpen=(()=>{try{return localStorage.getItem("oorOpen")!=="0"}catch(e){return true}})();
 let curSetup="all", curQ="all", curFresh="all", curView=(window.innerWidth>=900?"list":"cards"), curAge="active", sorts=[{key:"date", dir:-1}];
 let curSearch="", trackSearch="";
 let fSector="",fPulse="",fDial="",fScore=0, tSector="",tPulse="",tDial="",tScore=0;
@@ -1986,11 +2009,20 @@ function filtered(){
   return base.sort((a,b)=>(dval(b.date)-dval(a.date))||(QRANK[a.q]-QRANK[b.q])||(b.score-a.score));
 }
 
+function oorDividerText(n){
+  return `📈 <b>Out of range</b> · ${n} name${n===1?"":"s"} that ${n===1?"has":"have"} already run +5% since added — the move has happened, shown as a watch list <span class="oor-toggle" id="oorToggle">${oorOpen?"Hide ▴":"Show ▾"}</span>`;
+}
 function cardsHTML(items){
+  const nO=items.filter(d=>d.phase==="extended").length; let divDone=false;
   return items.map((d,i)=>{
+    let pre="";
+    if(curAge==="active" && d.phase==="extended"){
+      if(!divDone){ divDone=true; pre=`<div class="oor-divcard">${oorDividerText(nO)}</div>`; }
+      if(!oorOpen) return pre;
+    }
     const [clabel,cclass]=conv(d.score); const q=QMETA[d.q];
     const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise"; const delay=Math.min(i,14)*32;
-    return `
+    return pre+`
     <div class="card ${d.q==="pass"?"premium":""}${d.phase==="extended"?" oor":""}" style="animation-delay:${delay}ms">
       ${d.q==="pass" ? '<span class="gem">💎 High-Quality</span>' : ''}
       <div class="top"><div><div class="tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}${newBadge(d)}</div><div class="co">${d.n}${earnBadge(d)}</div>${(d.pc!=null||d.chg!=null)?`<div class="cardpx">${d.pc!=null?money(d.pc)+' ':''}${d.chg!=null?chgCell(d.chg):''}</div>`:""}</div>
@@ -2013,14 +2045,20 @@ function cardsHTML(items){
 function listHTML(items){
   // Header and cells must agree, or the table shifts. One decision, used by both.
   const showPe=hasPrices();
+  const nO=items.filter(d=>d.phase==="extended").length; let divDone=false;
   const rows=items.map(d=>{
+    let pre="";
+    if(curAge==="active" && d.phase==="extended"){
+      if(!divDone){ divDone=true; pre=`<tr class="oor-div"><td colspan="${cols().length}">${oorDividerText(nO)}</td></tr>`; }
+      if(!oorOpen) return pre;
+    }
     const [,pic,plabel]=PULSE[d.rs]||PULSE.neutral;
     const rn=d.rsn?(PULSE[d.rsn]||PULSE.neutral):null;
     const qsym=d.q==="pass"?"💎":"◆"; const qtxt=d.q==="pass"?"High-Quality":"Watch";
     const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise";
-    return `
+    return pre+`
       <tr class="${d.q==="pass"?"premium":""}${d.phase==="extended"?" oor":""}">
-        <td><div class="lt-tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}${newBadge(d)}${d.phase==="extended"?'<span class="oor-tag" title="Has run +5% above its added price">📈 Out of range</span>':''}</div><div class="lt-co">${d.n}${earnBadge(d)}</div></td>
+        <td><div class="lt-tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}${newBadge(d)}</div><div class="lt-co">${d.n}${earnBadge(d)}</div></td>
         <td class="lt-sector">${shortSector(d.sector)}</td>
         <td><span class="lt-set ${d.setup}">${setupLabel}</span></td>
         <td><span class="lt-score">${d.score.toFixed(1)}</span></td>
@@ -2634,6 +2672,7 @@ function showPage(name){
 // locked board a signed-out visitor sees. One listener on document catches
 // anything, whenever it appears.
 document.addEventListener('click', e=>{
+  if(e.target.closest('#oorToggle')){ oorOpen=!oorOpen; try{localStorage.setItem('oorOpen', oorOpen?"1":"0")}catch(_){} render(); return; }
   const a=e.target.closest('[data-nav]');
   if(!a) return;
   e.preventDefault();

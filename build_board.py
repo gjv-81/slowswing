@@ -412,12 +412,37 @@ def build() -> int:
                 for r in rows if r.get("_last") is not None}
         provider = "workbook(last)"
     else:
-        try:
-            bars = get_eod_many(want)
-        except EODError as e:
-            print(f"! price pull failed entirely: {e}\n  leaving existing board.json untouched.")
-            return 2
-        provider = next((b.source for b in bars.values() if b), "?")
+        # CSV-FIRST (added 2026-10-24): the nightly refresh has just written
+        # tonight's bar for every universe name into daily_data_10y/<T>.csv from
+        # Marketstack. Re-asking the vendor for the same ~66 closes cost ~1,400
+        # units a month for nothing. Read the CSVs; ask the vendor ONLY for names
+        # whose CSV does not carry the session's bar (seeded late, dead, etc.).
+        from collections import namedtuple
+        _CBar = namedtuple("_CBar", "close date source")
+        bars, need = {}, []
+        for t in want:
+            fp = os.path.join(os.path.dirname(os.path.abspath(__file__)), "daily_data_10y", f"{t}.csv")
+            try:
+                with open(fp, "rb") as fh:
+                    fh.seek(0, 2); size = fh.tell(); fh.seek(max(0, size - 400)); tail = fh.read().decode("utf-8", "ignore")
+                last_line = [ln for ln in tail.strip().splitlines() if ln.strip()][-1]
+                d, _o, _h, _l, c, *_ = last_line.split(",")
+                if d[:10] == session and float(c) > 0:
+                    bars[t] = _CBar(float(c), d[:10], "csv(marketstack)"); continue
+            except Exception:
+                pass
+            need.append(t)
+        if need:
+            try:
+                fetched = get_eod_many(need)
+                bars.update({k: v for k, v in fetched.items() if v})
+            except EODError as e:
+                if not bars:
+                    print(f"! price pull failed entirely: {e}\n  leaving existing board.json untouched.")
+                    return 2
+                print(f"! vendor pull for {len(need)} CSV-less names failed ({e}); they will count as stale")
+        provider = "csv" + (f"+{len(need)} vendor" if need else "")
+        print(f"# prices: {len(bars) - len([t for t in need if t in bars])} from CSVs, {len(need)} asked from vendor ({', '.join(need[:10])})")
         # retired rows: frozen workbook price, stamped with the session so the
         # freshness guard (which is about LIVE prices) ignores them
         from collections import namedtuple
