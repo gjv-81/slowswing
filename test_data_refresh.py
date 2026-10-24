@@ -134,7 +134,7 @@ with tempfile.TemporaryDirectory() as tmp:
     rep = dr.refresh_folder(folder, extra=["NEWT"], provider=fk, today=today, verbose=False)
     assert rep.updated == 3 and rep.unchanged == 1, rep.summary()        # AAA, LATE, NEWT(seeded)
     assert rep.dead == ["GONE"] and rep.seeded == ["NEWT"] and not rep.errors, rep.summary()
-    assert rep.requests == 3, rep.requests                                 # 1 range call + 2 seed calls
+    assert rep.requests == 4, rep.requests                                 # LATE in a shared call, AAA (22 behind) alone, + 2 seed calls
     assert [a[:2] for a in rep.actions] == [("AAA", "split")], rep.actions
     check("refresh_folder AAA", dr._read_csv(folder / "AAA.csv"), ref_split, tol=1e-6)
     check("refresh_folder LATE", dr._read_csv(folder / "LATE.csv"), ref_split, tol=1e-6)

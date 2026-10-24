@@ -310,14 +310,37 @@ def refresh_folder(folder: str | Path, extra: Iterable[str] = (), provider: Opti
     # stopped printing weeks ago) must not turn every chunk into a 2-month pull.
     if active:
         active.sort(key=lambda t: last[t])
+        # Names far behind (dead/merged, or a long outage) are requested ONE AT A
+        # TIME: on 2026-10-23 a chunk of 4 laggards + 96 healthy names, asked
+        # from Aug 22, came back completely empty and 96 names missed Friday's
+        # bar. Healthy names (<= LAG_SESSIONS behind) share 100-symbol requests.
+        LAG_SESSIONS = 10
+        lag = [t for t in active if bdays_since(last[t]) > LAG_SESSIONS]
+        normal = [t for t in active if t not in set(lag)]
+        groups = [normal[i:i + CHUNK] for i in range(0, len(normal), CHUNK)] + [[t] for t in lag]
         bars, divs, spl = {}, {}, {}
+
+        def fetch_group(chunk, depth=0):
+            """One multi-symbol request; if it comes back with NO bars for ANY
+            symbol, bisect and retry so a single unknown ticker (PSKY-style
+            renames, fresh listings) cannot blank out the healthy names that
+            shared its request. Costs extra units only when something is wrong."""
+            date_from = (last[chunk[0]] + pd.Timedelta(days=1)).date().isoformat()
+            prov.events = {"div": {}, "split": {}}
+            got = prov.eod_range_many(chunk, date_from, date_to)
+            divs.update(prov.events["div"]); spl.update(prov.events["split"])
+            if len(chunk) > 1 and not any(got.get(t) for t in chunk):
+                msg = f"EMPTY chunk ({len(chunk)} symbols {chunk[0]}..{chunk[-1]} from {date_from}) -> bisecting"
+                rep.errors.append(msg)
+                if verbose: print("  !! " + msg)
+                h = len(chunk) // 2
+                fetch_group(chunk[:h], depth + 1); fetch_group(chunk[h:], depth + 1)
+                return
+            bars.update(got)
+
         try:
-            for i in range(0, len(active), CHUNK):
-                chunk = active[i:i + CHUNK]
-                date_from = (last[chunk[0]] + pd.Timedelta(days=1)).date().isoformat()
-                prov.events = {"div": {}, "split": {}}
-                bars.update(prov.eod_range_many(chunk, date_from, date_to))
-                divs.update(prov.events["div"]); spl.update(prov.events["split"])
+            for chunk in groups:
+                if chunk: fetch_group(chunk)
         except EODError as e:
             rep.errors.append(f"marketstack: {e}"); rep.requests = prov.requests
             return rep

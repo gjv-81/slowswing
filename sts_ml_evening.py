@@ -493,9 +493,22 @@ def main():
     print(hg_status)
 
     # ── telegram: NEW NAMES ONLY + SPY dial (redesigned 2026-09-30) ─────────
+    # Quality gate per ticker, so the Telegram says which new names will
+    # actually appear on the site. FAIL names are tracked in the book but never
+    # published — on 2026-10-23 UAL/CTVA (both FAIL) were in this message while
+    # the site showed only ALAB (PASS), which looked like a mismatch.
+    _gate = {}
+    try:
+        _qg = pd.read_csv(os.path.join(DIR, "qualgate_cache.csv"))
+        _gate = {str(a).upper(): str(b).upper() for a, b in zip(_qg["ticker"], _qg["gate"])}
+    except Exception:
+        pass
+    def gate_mark(t):
+        g = _gate.get(str(t).upper(), "")
+        return {"PASS": "💎 published", "WATCH": "◆ published", "FAIL": "✗ gate FAIL — book only, not on site"}.get(g, "gate ? — not on site until scored")
     def tag(r):
         s = str(r["setup"]) + (f"/{r['wr']}" if str(r.get("wr","")) else "")
-        return f"{r['ticker']}  ({s}  score {r['score']})"
+        return f"{r['ticker']}  ({s}  score {r['score']})  · {gate_mark(r['ticker'])}"
     freshtxt = "\n  ".join(tag(r) for r in fresh) if fresh else ""
     requaltxt = "\n  ".join(tag(r)+"  [re-qual]" for r in requal) if requal else ""
 
