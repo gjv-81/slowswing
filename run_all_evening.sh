@@ -1,5 +1,4 @@
 #!/bin/zsh
-export STS_FORCE_YAHOO=1   # TEMP 2026-10-22: no Marketstack until billing is settled
 # STS master evening runner — ONE scheduled job, correct order, no overlap.
 # -----------------------------------------------------------------------------
 # Why this exists: v2 and the live run BOTH start with `rm -rf ~/.cache/py-yfinance`.

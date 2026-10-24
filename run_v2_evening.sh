@@ -1,5 +1,4 @@
 #!/bin/zsh
-export STS_FORCE_YAHOO=1   # TEMP 2026-10-22: no Marketstack until billing is settled
 # STS v2 evening runner — cron 5:30pm weekdays (BEFORE the 6:30pm live run, so
 # v2_new_today.txt is ready for the combined Telegram). Location-independent.
 #   crontab line:  30 17 * * 1-5  ~/STS/15min/run_v2_evening.sh
