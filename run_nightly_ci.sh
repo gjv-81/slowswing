@@ -52,6 +52,7 @@ tg() {
 }
 
 # ---- rclone remote "r2" configured purely from env (no config file on disk)
+export RCLONE_CONFIG=/dev/null
 export RCLONE_CONFIG_R2_TYPE=s3
 export RCLONE_CONFIG_R2_PROVIDER=Cloudflare
 export RCLONE_CONFIG_R2_REGION=auto

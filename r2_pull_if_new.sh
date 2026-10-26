@@ -16,7 +16,7 @@ export PATH="/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:$PATH"
 [ -f "$DIR/.r2_env" ] || { echo "$(date) missing .r2_env" >> "$LOG"; exit 1; }
 command -v rclone >/dev/null 2>&1 || { echo "$(date) rclone missing" >> "$LOG"; exit 1; }
 set -a; source "$DIR/.r2_env"; set +a
-export RCLONE_CONFIG_R2_TYPE=s3 RCLONE_CONFIG_R2_PROVIDER=Cloudflare RCLONE_CONFIG_R2_REGION=auto RCLONE_CONFIG_R2_NO_CHECK_BUCKET=true RCLONE_CONFIG_R2_ACL=private
+export RCLONE_CONFIG=/dev/null RCLONE_CONFIG_R2_TYPE=s3 RCLONE_CONFIG_R2_PROVIDER=Cloudflare RCLONE_CONFIG_R2_REGION=auto RCLONE_CONFIG_R2_NO_CHECK_BUCKET=true RCLONE_CONFIG_R2_ACL=private
 export RCLONE_CONFIG_R2_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID" RCLONE_CONFIG_R2_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY"
 export RCLONE_CONFIG_R2_ENDPOINT="https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
 B="${R2_BUCKET:-sts-state}"
