@@ -135,8 +135,11 @@ fi
 # --- keep the Cloudflare R2 state bucket current (shadow period of the GitHub
 #     migration; the CI reads its starting state from r2:sts-state/live/).
 #     No-op until .r2_env exists. See r2_sync_mac.sh.
-if [ -f "$DIR/.r2_env" ] && command -v rclone >/dev/null 2>&1; then
-  echo "----- R2 sync up -----" >> "$LOG" 2>&1
+# After the GitHub cutover the CLOUD owns the state. A manual Mac run must not
+# push its (possibly older) state over the cloud's unless explicitly asked:
+#   STS_PRIMARY=1 zsh run_all_evening.sh     (fallback night only, after r2_pull_if_new.sh --force)
+if [ "${STS_PRIMARY:-0}" = "1" ] && [ -f "$DIR/.r2_env" ] && command -v rclone >/dev/null 2>&1; then
+  echo "----- R2 sync up (STS_PRIMARY=1) -----" >> "$LOG" 2>&1
   /bin/zsh "$DIR/r2_sync_mac.sh" up >> "$LOG" 2>&1 || echo "!! R2 sync failed (non-fatal)" >> "$LOG"
 fi
 
