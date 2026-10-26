@@ -2237,11 +2237,14 @@ function renderRunStamp(){
   u.innerHTML=`Last run <b style="color:var(--ink)">${when}</b> · next run after the close on ${nx.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}`;
   if(!r) return;
   const R=FEED_RUN||{}; const L=a=>(a&&a.length)?a.join(', '):null;
+  // Always say whether anything was ADDED — a line that only mentions a retirement
+  // read as "the scan didn't run" (2026-10-26). Pending/retired follow when present.
   const parts=[];
   if(L(R.added)) parts.push(`<b style="color:var(--pass)">Added:</b> ${L(R.added)}`);
+  else if(!L(R.pending)) parts.push(`<b style="color:var(--ink)">Added: none tonight</b> — the scan ran and found no new setups; a quiet night is by design.`);
   if(L(R.pending)) parts.push(`<b style="color:#b45309">Pending (enters at next open):</b> ${L(R.pending)}`);
   if(L(R.retired)) parts.push(`<b style="color:var(--muted)">Retired to the Track Record:</b> ${L(R.retired)}`);
-  r.innerHTML = parts.length ? parts.join(' &nbsp;·&nbsp; ') : `<b style="color:var(--ink)">No new setups tonight.</b> The scan ran and found none — a quiet night is by design.`;
+  r.innerHTML = parts.join(' &nbsp;·&nbsp; ');
 }
 function fmtFeedDate(d){ const m=String(d).match(/^(\d{4})-(\d{2})-(\d{2})/); if(!m) return String(d);
   return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][+m[2]-1]+" "+(+m[3])+", "+m[1]; }
