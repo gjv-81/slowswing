@@ -1926,7 +1926,7 @@ let curSetup="all", curQ="all", curFresh="all", curView=(window.innerWidth>=900?
 let curSearch="", trackSearch="";
 let fSector="",fPulse="",fDial="",fScore=0, tSector="",tPulse="",tDial="",tScore=0;
 
-const ALL_COLS = [["t","Ticker"],["sector","Sector"],["setup","Setup"],["score","AI Score"],["q","Q"],["rs","Pulse @ Add"],["rsn","Pulse now"],["date","Added"],["age","Age"],["dial","Regime @ Add"],["pe","Price @ Add"],["chg","Current %"],["wk2","2wk ▲"],["wk4","4wk ▲"],["mfe","Peak ▲"],["md4","Max Dip ▼"]];
+const ALL_COLS = [["t","Ticker"],["sector","Sector"],["setup","Setup"],["score","AI Score"],["q","Q"],["rs","Pulse @ Add"],["rsn","Pulse now"],["date","Added"],["age","Age"],["dial","Regime @ Add"],["pe","Price @ Add"],["chg","Current %"],["wk2","2wk ▲"],["wk4","4wk ▲"],["mfe","Peak ▲"],["mae","Max Dip ▼ <span class=\"thsub\">since added</span>"]];
 // Dollar prices may be absent from the public feed (see build_teaser.py). Drop the
 // column entirely rather than showing 176 dashes, and restore it automatically the
 // moment prices are back in the data.
@@ -1985,7 +1985,7 @@ function colval(d,k){
     case "age": return ageWeeks(d);
     case "dial": return DIALRANK[d.dial]==null?9:DIALRANK[d.dial];
     case "pe": return d.pe==null?-1:d.pe; case "pc": return d.pc==null?-1:d.pc; case "chg": return d.chg==null?-999:d.chg; case "mfe": return d.mfe==null?-999:d.mfe; case "mae": return d.mae==null?999:d.mae;
-    case "wk2": return d.wk2==null?-999:d.wk2; case "wk4": return d.wk4==null?-999:d.wk4; case "wk12": return d.wk12==null?-999:d.wk12; case "md4": return d.md4==null?999:d.md4;
+    case "wk2": return d.wk2==null?-999:d.wk2; case "wk4": return d.wk4==null?-999:d.wk4; case "wk12": return d.wk12==null?-999:d.wk12; case "md4": return d.md4==null?999:d.md4; case "mae": return d.mae==null?999:d.mae;
   }
 }
 function money(v){ return v==null ? "—" : "$"+v.toFixed(2); }
@@ -2043,7 +2043,7 @@ function cardsHTML(items){
         <span class="badge">${d.profile}</span>
         ${rsBadge(d.rs)}${rsNowBadge(d.rsn)}
       </div>
-      ${d.phase==="pending"?`<div class="card-sc pending"><span class="sc-tag">⏳ Pending</span> Qualified after tonight's close · enters at the next open · scorecard starts then</div>`:`<div class="card-sc"><span class="sc-tag">📊 Setup Scorecard</span> Peak ${mfeCell(d.mfe)} · Max dip ${maeCell(d.md4)}${d.wk2!=null?` · 2wk ${retCell(d.wk2)}`:''} <span class="faint">· since <b style="font-weight:700; color:var(--ink)">${d.date}</b> (${ageCell(d)})</span>${d.wk4!=null?` · 4wk ${retCell(d.wk4)}`:''}${d.dial?` <span class="faint">·</span> ${dialCell(d.dial)} <span class="faint">at add</span>`:''}</div>`}
+      ${d.phase==="pending"?`<div class="card-sc pending"><span class="sc-tag">⏳ Pending</span> Qualified after tonight's close · enters at the next open · scorecard starts then</div>`:`<div class="card-sc"><span class="sc-tag">📊 Setup Scorecard</span> Peak ${mfeCell(d.mfe)} · Max dip ${maeCell(d.mae)}${d.wk2!=null?` · 2wk ${retCell(d.wk2)}`:''} <span class="faint">· since <b style="font-weight:700; color:var(--ink)">${d.date}</b> (${ageCell(d)})</span>${d.wk4!=null?` · 4wk ${retCell(d.wk4)}`:''}${d.dial?` <span class="faint">·</span> ${dialCell(d.dial)} <span class="faint">at add</span>`:''}</div>`}
     </div>`;
   }).join('');
 }
@@ -2079,7 +2079,7 @@ function listHTML(items){
         <td>${retCell(d.wk2)}</td>
         <td>${retCell(d.wk4)}</td>
         <td>${mfeCell(d.mfe)}</td>
-        <td>${maeCell(d.md4)}</td>
+        <td>${maeCell(d.mae)}</td>
       </tr>`;
   }).join('');
   const heads=cols().map(([k,label])=>{
