@@ -740,7 +740,7 @@ export default {
     //                   cron is on time. Two UTC slots cover EDT and EST; the
     //                   ET-clock check below picks the right one and the
     //                   workflow skips itself if the session is already done.
-    if ((event.cron || "").startsWith("45 2")) ctx.waitUntil(dispatchNightly(env));
+    if ((event.cron || "").startsWith("25 2")) ctx.waitUntil(dispatchNightly(env));
     else ctx.waitUntil(deadManCheck(env));
   },
 
@@ -776,7 +776,7 @@ async function dispatchNightly(env) {
   if (!env.GH_DISPATCH_TOKEN) return { ok: false, why: "no GH_DISPATCH_TOKEN" };
   const et = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
   const hm = et.getHours() * 100 + et.getMinutes();
-  if (hm < 1735 || hm > 1900) return { ok: false, why: `ET ${hm} outside 17:35-19:00` };   // the EST/EDT slot that is actually 5:45 pm
+  if (hm < 1720 || hm > 1900) return { ok: false, why: `ET ${hm} outside 17:20-19:00` };   // the EST/EDT slot that is actually 5:45 pm
   const r = await fetch("https://api.github.com/repos/gjv-81/slowswing/actions/workflows/nightly.yml/dispatches", {
     method: "POST",
     headers: { authorization: `Bearer ${env.GH_DISPATCH_TOKEN}`, accept: "application/vnd.github+json",
