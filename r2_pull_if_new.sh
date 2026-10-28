@@ -28,6 +28,9 @@ if [ "$remote" = "$local_" ] && [ "$1" != "--force" ]; then exit 0; fi
 
 echo "===== $(date) pulling session $remote (laptop had ${local_:-none}) =====" >> "$LOG"
 zsh "$DIR/r2_sync_mac.sh" down >> "$LOG" 2>&1 && echo "$remote" > "$DIR/ci_last_session.txt"
+# keep the laptop's git in step with the cloud's nightly "(CI)" commits so a later
+# site push is never rejected as out of date; local edits are auto-stashed/restored
+( cd "$DIR" && /usr/bin/git pull -q --rebase --autostash origin main >> "$LOG" 2>&1 && echo "git: in step with origin/main" >> "$LOG" || echo "git: pull --rebase needs attention (see above)" >> "$LOG" )
 echo "----- done $(date): STS_holy_grail.xlsx $(stat -f '%Sm' STS_holy_grail.xlsx 2>/dev/null) -----" >> "$LOG"
 # tell the phone, so a missing message is itself a signal
 TG="$(grep '^TG_TOKEN=' "$DIR/.env" | cut -d= -f2- | tr -d '"'"'"' )"; CH="$(grep '^TG_CHAT=' "$DIR/.env" | cut -d= -f2- | tr -d '"'"'"' )"
