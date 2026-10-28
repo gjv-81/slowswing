@@ -7,7 +7,7 @@ main = "worker.js"
 # Fires the `scheduled` handler in worker.js, which emails NOTIFY_EMAIL if
 # board:current in KV is not stamped with today's session.
 [triggers]
-crons = ["0 1 * * 2-6"]
+crons = ["0 1 * * 2-6", "45 21 * * 1-5", "45 22 * * 1-5"]   # dead-man 9pm ET; nightly kick 5:45pm ET (EDT slot, EST slot)
 
 [assets]
 directory = "./site"

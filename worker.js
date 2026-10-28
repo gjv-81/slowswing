@@ -733,7 +733,15 @@ async function unsubscribe(request, env) {
 // ---------- routes ----------
 export default {
   async scheduled(event, env, ctx) {
-    ctx.waitUntil(deadManCheck(env));
+    // Two jobs share the cron trigger; event.cron says which fired.
+    //   "0 1 * * 2-6"   9 pm ET dead-man check (was the only one)
+    //   "45 21/22 *"    kick the nightly on GitHub at 5:45 pm ET. GitHub's own
+    //                   schedule ran ~3 hours late on 2026-10-26/27; Cloudflare
+    //                   cron is on time. Two UTC slots cover EDT and EST; the
+    //                   ET-clock check below picks the right one and the
+    //                   workflow skips itself if the session is already done.
+    if ((event.cron || "").startsWith("45 2")) ctx.waitUntil(dispatchNightly(env));
+    else ctx.waitUntil(deadManCheck(env));
   },
 
   async fetch(request, env, ctx) {
@@ -760,6 +768,29 @@ export default {
     return env.ASSETS.fetch(request);
   },
 };
+
+// Trigger the GitHub Actions "nightly" workflow (publish=1). Needs secret
+// GH_DISPATCH_TOKEN: a GitHub PAT with repo + workflow (or fine-grained
+// Actions: write) for gjv-81/slowswing.
+async function dispatchNightly(env) {
+  if (!env.GH_DISPATCH_TOKEN) return { ok: false, why: "no GH_DISPATCH_TOKEN" };
+  const et = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
+  const hm = et.getHours() * 100 + et.getMinutes();
+  if (hm < 1735 || hm > 1900) return { ok: false, why: `ET ${hm} outside 17:35-19:00` };   // the EST/EDT slot that is actually 5:45 pm
+  const r = await fetch("https://api.github.com/repos/gjv-81/slowswing/actions/workflows/nightly.yml/dispatches", {
+    method: "POST",
+    headers: { authorization: `Bearer ${env.GH_DISPATCH_TOKEN}`, accept: "application/vnd.github+json",
+               "content-type": "application/json", "user-agent": "theslowswing-worker" },
+    body: JSON.stringify({ ref: "main", inputs: { publish: "1", force_run: "0" } }),
+  });
+  console.log(`nightly dispatch -> ${r.status}`);
+  if (r.status !== 204 && env.TG_TOKEN && env.TG_CHAT) {
+    await fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/sendMessage`, { method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ chat_id: env.TG_CHAT, text: `❌ could not start the nightly on GitHub (HTTP ${r.status}). GitHub's own 5:40/6:40/7:40 pm slots remain as fallback.` }) });
+  }
+  return { ok: r.status === 204, status: r.status };
+}
 
 async function rateLimited(request, env, ctx, bucket, max) {
   const ip = request.headers.get("cf-connecting-ip") || "unknown";
