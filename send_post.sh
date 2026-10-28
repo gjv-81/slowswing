@@ -24,6 +24,7 @@ BODY="$(node -e '
   const p=c.P.find(x=>x.slug===process.argv[2]);
   if(!p){ console.error("no post with slug "+process.argv[2]); process.exit(2); }
   if(p.sample){ console.error("refusing: post is marked sample:true"); process.exit(3); }
+  if(p.published!==true){ console.error("refusing: post is not published (needs `published: true` in posts.js — GJ approves, then the blog chat sets it)"); process.exit(4); }
   // first paragraph of the body = the teaser
   const m=p.body.match(/<p[\s\S]*?<\/p>/i);
   const intro=m?m[0]:("<p>"+p.excerpt+"</p>");

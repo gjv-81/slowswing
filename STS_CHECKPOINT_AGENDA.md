@@ -63,3 +63,49 @@ UW personal account go/no-go for live flame trading.
     stretched entries (>=1.5 ATR above 200d) breach the line in 33-65% of
     cases within 12wk; every post-entry line-based exit tested FAILED
     (12th & 13th consecutive exit-aid failures; breach day ~= local bottom).
+
+11. RS-AT-ENTRY FLOOR (added 2026-10-26, from the MTZ post-mortem) — candidate
+    filter, pre-register before testing further: block (or downweight) entries
+    whose 40-day relative strength vs the market is below a floor (e.g. -15).
+    First look, locked published cohort (n=63): RS<-15 at entry -> 50% win,
+    +1.4% avg; -15..0 -> 56%, +9.8%; 0..15 -> 53%, +8.8%; >15 -> 67%, +18.0%.
+    Both MTZ entries had RS -20.6 and -23.8. Needs: full 10-year backtest with
+    pre-set pass/fail bars, plus check it doesn't just re-discover the momentum
+    features already in the score.
+
+BUG TO FIX (qualgate.py, found 2026-10-22/26): old companies (TER, MTZ) are
+being labeled NEW-IPO / "<3yr public history" because yfinance returned
+truncated fundamentals. Their gate scores are computed on a sliver of data and
+their IPO flavor tag is wrong — this pollutes the IPO-cohort stats (WATCH/IPO
+was the worst locked cell). Fix: when price history shows 3yr+ but fundamentals
+history is short, flag as DATA-THIN instead of NEW-IPO and re-pull before
+scoring.
+
+ITEM 11 RESOLVED (2026-10-26): RS-at-entry floor backtested same day
+(STS_RS_FLOOR_PREREG.md) and REJECTED — over 10 years the RS<-15 bucket is the
+best performer by average excess (+14.2 pts), with ordinary medians and the
+biggest winners. The live-cohort weakness was one choppy window. RS stays
+display-only.
+
+12. GATE RE-WEIGHTING VIA REGRESSION (added 2026-10-26) — DO NOT RUN BEFORE
+    ~500 locked 12-week outcomes (expected roughly mid-2027). Idea: learn the
+    six gate-component weights from outcomes (like the STS ML score), instead
+    of the current hand-set research weights (F 24 / GP 22 / Z 16 / FCF 14 /
+    Solv 14 / Trend 10; PASS 65 / WATCH 50 set by calibration).
+    Why wait: (a) no historical point-in-time fundamentals (yfinance = today's
+    statements, ~4yr) — training on them is hindsight; the tracker's nightly
+    logs are accumulating clean, look-ahead-free training data instead;
+    (b) 124 locked outcomes from one market stretch would overfit (see the
+    rejected RS floor, item 11, for how convincing that mistake looks).
+    Method when triggered: pre-register; train on first half of locked data,
+    test on second half; adopt ONLY if it beats the hand weights out of sample.
+    Until then the gate stays as-is (live spread: PASS +12.8% vs FAIL -4.9%
+    at wk12 — working).
+
+13. RE-ENTRY DOORS TOO NARROW (added 2026-10-26, STS_THIRD_ENTRY_PREREG.md) —
+    backtest: signals refused re-entry (no premium door) beat SPY by +8.3 pts
+    at wk12, better than allowed re-entries (+4.2), both eras. Decide in
+    November: add a "deeper markdown" third door (re-entry if >=10 pts deeper
+    off the 52wk high than previous entry), weigh board clutter + repeat-loser
+    optics (MTZ would re-enter under this door too). LRCX (Oct 2026) is the
+    live example the current rules refuse.

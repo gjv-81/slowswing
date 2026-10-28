@@ -2442,10 +2442,24 @@ function _postCard(p, featured){
   }
   return '<div class="bcard" data-post="'+p.slug+'"><span class="btag '+p.cat.cls+'">'+p.cat.label+'</span><h3>'+p.title+'</h3><div class="bex">'+p.excerpt+'</div><div class="bmeta">'+_bmeta(p)+'</div></div>';
 }
+// PUBLISH GATE (2026-10-28). A post goes live ONLY with an explicit
+// `published: true` in its posts.js entry. Being in the file is not enough —
+// an unapproved draft reached the site that way. Posts dated before the gate
+// date were approved by GJ at the time and are grandfathered; anything newer
+// without the flag is invisible: not listed, not openable, not deep-linkable.
+const POST_GATE_DATE=new Date('2026-10-28');
+function LIVE_POSTS(){
+  return POSTS.filter(p=>{
+    if(p.sample) return false;
+    if(p.published===true) return true;
+    if(p.published===false) return false;
+    const d=new Date(p.date); return !isNaN(d) && d<POST_GATE_DATE;
+  });
+}
 function renderBlog(){
-  const cats=['All', ...[...new Set(POSTS.map(p=>p.cat.label))]];
+  const cats=['All', ...[...new Set(LIVE_POSTS().map(p=>p.cat.label))]];
   const cw=document.getElementById('blogCats'); if(cw) cw.innerHTML=cats.map(c=>'<div class="blog-cat '+(c===curCat?'active':'')+'" data-cat="'+c+'">'+c+'</div>').join('');
-  const list=POSTS.filter(p=>curCat==='All'||p.cat.label===curCat);
+  const list=LIVE_POSTS().filter(p=>curCat==='All'||p.cat.label===curCat);
   const feat=document.getElementById('blogFeatured'), grid=document.getElementById('blogGrid'), empty=document.getElementById('blogEmpty');
   if(!feat) return;
   if(!list.length){ feat.innerHTML=''; grid.innerHTML=''; empty.style.display='block'; return; }
@@ -2496,7 +2510,7 @@ function journeySVG(nodes){
   return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Price journey from the day added through its worst dip and its peak">${s}</svg>`;
 }
 function openPost(slug){
-  const p=POSTS.find(x=>x.slug===slug); if(!p) return;
+  const p=LIVE_POSTS().find(x=>x.slug===slug); if(!p) return;
   document.getElementById('blogPost').innerHTML=
     '<div class="article"><div class="blog-back" data-blogback>← All posts</div>'+
     (p.sample?'<div class="samplebar">✎ <b>Sample post</b> — a template that shows the format and tone. Replace it with your own write-up when you\'re ready.</div>':'')+
@@ -2517,7 +2531,7 @@ function backToBlog(){
   try{ if(location.hash.indexOf('#post/')===0) history.replaceState(null,'','#blog'); }catch(e){}
 }
 document.addEventListener('click', e=>{
-  const pc=e.target.closest('[data-post]'); if(pc){ e.preventDefault(); const onBlog=!!document.querySelector('.page.active[data-page="blog"]'); if(!onBlog) showPage('blog'); if(POSTS.some(x=>x.slug===pc.dataset.post)) openPost(pc.dataset.post); return; }
+  const pc=e.target.closest('[data-post]'); if(pc){ e.preventDefault(); const onBlog=!!document.querySelector('.page.active[data-page="blog"]'); if(!onBlog) showPage('blog'); if(LIVE_POSTS().some(x=>x.slug===pc.dataset.post)) openPost(pc.dataset.post); return; }
   const cc=e.target.closest('[data-cat]'); if(cc){ curCat=cc.dataset.cat; renderBlog(); return; }
   if(e.target.closest('[data-blogback]')){ backToBlog(); window.scrollTo({top:0,behavior:'auto'}); }
 });
@@ -2661,7 +2675,7 @@ function showPage(name){
   if(name && name.indexOf('post/')===0){
     const slug=decodeURIComponent(name.slice(5));
     showPage('blog');
-    if(typeof openPost==='function' && POSTS.some(x=>x.slug===slug)){ openPost(slug); try{ history.replaceState(null,'','#post/'+slug); }catch(e){} }
+    if(typeof openPost==='function' && LIVE_POSTS().some(x=>x.slug===slug)){ openPost(slug); try{ history.replaceState(null,'','#post/'+slug); }catch(e){} }
     return;
   }
   if(name==='story') renderStory();
