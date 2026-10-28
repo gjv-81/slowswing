@@ -69,7 +69,10 @@ def main():
     out = {
         "generated_at": board.get("generated_at"),
         "session_date": board.get("session_date"),
-        "run": board.get("run"),
+        # Public feed: tonight's ADDED / PENDING names are the paid product — never
+        # ship them in the open file (2026-10-27: they were). Retired names are
+        # already public on the Track Record, so those may stay.
+        "run": {"added": [], "pending": [], "retired": (board.get("run") or {}).get("retired", [])},
         "regime": board.get("regime"),
         "market": board.get("market"),
         "names": [strip_prices(r) for r in (retired + teaser)],

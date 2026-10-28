@@ -952,10 +952,6 @@
       <button type="button" id="fClear" class="fclear">Clear</button>
     </div></div>
         <div class="bs-group"><div class="bs-h">Find</div><input id="boardSearch" class="tksearch" type="search" autocomplete="off" placeholder="Search ticker or company…"></div>
-        <div class="bs-group"><div class="vtoggle" id="vtabs">
-        <button class="vbtn active" data-v="cards">▦ Cards</button>
-        <button class="vbtn" data-v="list">☰ List</button>
-      </div></div>
         <details class="bs-legend"><summary>Legend &amp; definitions</summary>
           <p><span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = has not yet traded +5% above the price it was added at (names that are down included) — the setup is still ripe, for up to 12 weeks. <b style="color:#b45309">Pending</b> = qualified after tonight's close; it enters at the next open, so there is no price or scorecard yet. <b style="color:#b45309">Greyed</b> = <b style="color:var(--muted)">Out of Range</b>: has already run +5% above its added price — kept on the board so you can see every current signal; the move has happened, so treat those as a watch list. A name that has run retires at the 4-week mark — or after 12 weeks if it never runs — to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span></p>
           <p><span class="faint" style="font-size:12px; align-self:center; margin-left:6px">A setup stays <b style="color:var(--muted)">Active</b> until it has run +5% — for up to 12 weeks. Once it runs it moves to <b style="color:var(--muted)">Out of Range</b>, and retires once it is also four weeks past the day it was added. Price decides, not the calendar — see <a data-nav="how" data-scroll="how-boards" style="color:var(--primary); font-weight:600">the board, day to day</a>.</span></p>
@@ -963,7 +959,13 @@
         </details>
       </aside>
       <div class="boardmain">
-        <div class="faint" style="font-size:12.5px" id="countwrap">Showing <b id="count" style="color:var(--ink)">–</b> names on today's board</div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:10px">
+          <div class="faint" style="font-size:12.5px" id="countwrap">Showing <b id="count" style="color:var(--ink)">–</b> names on today's board</div>
+          <div class="vtoggle" id="vtabs">
+        <button class="vbtn active" data-v="cards">▦ Cards</button>
+        <button class="vbtn" data-v="list">☰ List</button>
+      </div>
+        </div>
         <div class="updated runbanner"><span class="liveflag">● LIVE</span> <span id="upd">Loading tonight's board…</span><div id="runline" style="margin-top:6px; font-size:12.5px; color:var(--muted)"></div><div style="margin-top:12px"><a class="btn btn-primary" data-tour style="font-size:13px; padding:9px 16px; cursor:pointer">▶ Take the 30-sec tour</a></div></div>
         <div class="trstats" id="trstats"></div>
         <div class="grid" id="cards"></div>
@@ -2236,6 +2238,7 @@ function renderRunStamp(){
   const nx=new Date(dval(fmtFeedDate(FEED_DATE))); do{ nx.setDate(nx.getDate()+1); }while(nx.getDay()===0||nx.getDay()===6);
   u.innerHTML=`Last run <b style="color:var(--ink)">${when}</b> · next run after the close on ${nx.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}`;
   if(!r) return;
+  if(!MEMBER){ r.innerHTML=`<b style="color:var(--ink)">What changed tonight</b> — new names, pending entries and retirements — is shown to members. <a data-nav="pricing" style="color:var(--primary); font-weight:600">Start your free trial →</a>`; return; }
   const R=FEED_RUN||{}; const L=a=>(a&&a.length)?a.join(', '):null;
   // Always say whether anything was ADDED — a line that only mentions a retirement
   // read as "the scan didn't run" (2026-10-26). Pending/retired follow when present.
