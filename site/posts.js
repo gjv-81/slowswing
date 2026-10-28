@@ -11,6 +11,102 @@
 //     (it just defines POSTS; nothing else runs).
 const POSTS = [
   {
+    slug:'money-made-somewhere-else', cat:{label:'Case study', cls:'case'}, icon:'🔎', sample:false,
+    published:true,
+    author:'GJ Singh', date:'Oct 28, 2026', read:'6 min read',
+    title:`When everyone was arguing about AI spending, money was being made somewhere else`,
+    excerpt:`On the Nasdaq's worst AI day of the quarter, three names on our board rose 8 to 11 percent. None of them is a chip maker or a data centre. Here is where the model found them, and how fast they moved.`,
+    body:`<style>
+.lagpost table{border-collapse:collapse; width:100%; margin:20px 0; font-size:14.5px}
+.lagpost th,.lagpost td{padding:9px 12px; border-bottom:1px solid #e2e8f0; text-align:left}
+.lagpost th{font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#64748b; font-weight:800}
+.lagpost td.v{font-weight:700}
+.lagpost .acn{color:#7c3aed} .lagpost .spot{color:#1d4ed8} .lagpost .rop{color:#0f766e}
+.lagpost .good{color:#166534; font-weight:800}
+.lagpost .bad{color:#b91c1c; font-weight:800}
+.lagpost .big{font-weight:800}
+.lagpost .tscroll{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:20px 0}
+.lagpost .tscroll table{margin:0; min-width:620px}
+@media (max-width:560px){.lagpost th,.lagpost td{padding:8px 9px; font-size:13.5px}}
+</style>
+<div class="lagpost">
+  <p>On Wednesday 22 October the AI trade had one of its worst days of the year. The Nasdaq fell. AI and chip stocks caused almost all of that fall. The S&amp;P 500 closed down 1.2%.</p>
+
+  <p>Three names on our board went the other way that day. <span class="spot"><b>Spotify</b></span>&nbsp;<a class="tklink" data-nav="track">SPOT</a> rose 11.1%. <span class="rop"><b>Roper</b></span>&nbsp;<a class="tklink" data-nav="track">ROP</a> rose 9.7%. <span class="acn"><b>Accenture</b></span>&nbsp;<a class="tklink" data-nav="track">ACN</a> rose 7.7%.</p>
+
+  <p>None of the three is a chip company or a data centre story. One sells music subscriptions. One sells industrial software. One sells consulting.</p>
+
+  <h3>Where the model found them</h3>
+
+  <p>The board does not look for stocks that are already working. It looks for sound companies that have been beaten down and forgotten. We call that setup Phoenix. In July, August and September it kept pointing at the same ignored corner of the market.</p>
+
+  <p>Here is how these three looked on the day each one qualified.</p>
+
+  <table>
+    <tr><th></th><th>Signal date</th><th>The stock that year</th><th>The S&amp;P that year</th></tr>
+    <tr><td class="acn"><b>Accenture</b>&nbsp;<a class="tklink" data-nav="track">ACN</a></td><td>24 Aug</td><td class="v bad">down 29%</td><td class="v">up 13%</td></tr>
+    <tr><td class="spot"><b>Spotify</b>&nbsp;<a class="tklink" data-nav="track">SPOT</a></td><td>11 Aug</td><td class="v bad">down 14%</td><td class="v">up 14%</td></tr>
+    <tr><td class="rop"><b>Roper</b>&nbsp;<a class="tklink" data-nav="track">ROP</a></td><td>30 Jul</td><td class="v bad">down 12%</td><td class="v">up 9%</td></tr>
+  </table>
+
+  <p>None of these was easy to look at. Accenture&nbsp;<a class="tklink" data-nav="track">ACN</a> had dropped 18% in one day on its June earnings, and then kept falling for two more weeks. Spotify&nbsp;<a class="tklink" data-nav="track">SPOT</a> was a third below its 2025 high. Roper&nbsp;<a class="tklink" data-nav="track">ROP</a> had gone sideways and down for a year while the market went up.</p>
+
+  <h3>What happened next</h3>
+
+  <p>Each line below is one published signal. <b>Change since signal</b> means where the price closed on 23 October compared with where it closed on the day the name qualified. Nothing was bought, sold or trimmed in between. <b>Best it reached</b> is the highest the price got at any point. <b>Worst dip</b> is the lowest it got. All of these are still open, so the numbers keep moving.</p>
+
+  <div style="margin:26px 0">
+    <iframe src="laggards_chart.html" title="Accenture, Spotify and Roper from signal date to 23 October, against the S&amp;P 500" scrolling="no" style="width:100%;height:760px;border:0;display:block;overflow:hidden" onload="var f=this,fit=function(){try{var h=f.contentDocument.documentElement.scrollHeight;if(h>40)f.style.height=(h+2)+&quot;px&quot;}catch(e){}};fit();setTimeout(fit,250);setTimeout(fit,1500);try{window.addEventListener(&quot;resize&quot;,fit)}catch(e){}"></iframe>
+  </div>
+
+  <div class="tscroll">
+  <table>
+    <tr><th></th><th>Signal date</th><th>Days</th><th>Change since signal</th><th>Best it reached</th><th>Worst dip</th><th>S&amp;P, same days</th></tr>
+    <tr><td class="rop"><b>Roper</b>&nbsp;<a class="tklink" data-nav="track">ROP</a></td><td>30 Jul</td><td>61</td><td class="v good">+10.2%</td><td class="v good">+11.9%</td><td class="v bad">&minus;12.9%</td><td class="v">+3.5%</td></tr>
+    <tr><td class="spot"><b>Spotify</b>&nbsp;<a class="tklink" data-nav="track">SPOT</a></td><td>11 Aug</td><td>53</td><td class="v good">+14.5%</td><td class="v good">+16.4%</td><td class="v bad">&minus;7.9%</td><td class="v">&minus;1.6%</td></tr>
+    <tr><td class="acn"><b>Accenture</b>&nbsp;<a class="tklink" data-nav="track">ACN</a></td><td>24 Aug</td><td>44</td><td class="v good big">+35.1%</td><td class="v good">+40.5%</td><td class="v bad">&minus;7.5%</td><td class="v">&minus;0.4%</td></tr>
+    <tr><td class="acn"><b>Accenture</b>&nbsp;<a class="tklink" data-nav="track">ACN</a></td><td>15 Sep</td><td>29</td><td class="v good">+30.9%</td><td class="v good">+36.1%</td><td class="v bad">&minus;10.4%</td><td class="v">+0.2%</td></tr>
+    <tr><td class="spot"><b>Spotify</b>&nbsp;<a class="tklink" data-nav="track">SPOT</a></td><td>18 Sep</td><td>26</td><td class="v good">+10.8%</td><td class="v good">+12.6%</td><td class="v bad">&minus;10.8%</td><td class="v">&minus;0.2%</td></tr>
+    <tr><td class="acn"><b>Accenture</b>&nbsp;<a class="tklink" data-nav="track">ACN</a></td><td>6 Oct</td><td>14</td><td class="v good">+27.6%</td><td class="v good">+32.7%</td><td class="v bad">&minus;2.2%</td><td class="v">&minus;2.3%</td></tr>
+    <tr><td class="rop"><b>Roper</b>&nbsp;<a class="tklink" data-nav="track">ROP</a></td><td>13 Oct</td><td>9</td><td class="v good big">+19.0%</td><td class="v good">+20.8%</td><td class="v bad">&minus;0.4%</td><td class="v">&minus;2.2%</td></tr>
+  </table>
+  </div>
+
+  <p>Accenture&nbsp;<a class="tklink" data-nav="track">ACN</a> appears three times and Roper&nbsp;<a class="tklink" data-nav="track">ROP</a> twice. That is because the model flagged the same name again each time it qualified again. That is normal. It is how a recovery builds.</p>
+
+  <p>Look at the two Roper lines. The July signal was down 12.9% at its worst. It was still down 7.4% on 13 October, which is the day Roper qualified a second time. The model was not chasing a winner. It was finding the same company again at a lower price. Both lines then turned together in the last week of October.</p>
+
+  <h3>How fast the last two moved</h3>
+
+  <p>Look at the bottom two rows. Accenture&nbsp;<a class="tklink" data-nav="track">ACN</a> rose 27.6% in fourteen days. Roper&nbsp;<a class="tklink" data-nav="track">ROP</a> rose 19.0% in nine days, and at its worst it was down only four tenths of one percent.</p>
+
+  <p>That is unusually clean. We will not pretend it is normal. Across our whole live record, the typical signal takes about two and a half weeks to reach its best point, and the typical signal is down 14% at some stage along the way. Most names make you sit through something uncomfortable. These two did not.</p>
+
+  <p>What is normal is when the gain shows up. Most of Roper&rsquo;s&nbsp;<a class="tklink" data-nav="track">ROP</a> 19% came in a single day. You cannot catch a day like that by deciding on the morning of it.</p>
+
+  <h3>Earnings, and what the quality gate is for</h3>
+
+  <p>Earnings can wreck a good setup in one morning. That is the risk the quality gate is built for.</p>
+
+  <p>The gate looks at the company&rsquo;s finances before the name reaches the board. Is it profitable. Does cash actually come in. Is the debt small enough to handle. A company that passes has an earnings problem when it stumbles. A company that fails may have a survival problem.</p>
+
+  <p>Accenture&nbsp;<a class="tklink" data-nav="track">ACN</a> passed. That matters, because Accenture had already been punished 18% on one earnings report. A company with cash coming in and low debt can sit through that. So the name stayed on the board instead of being dropped. Its next report came on 1 October, and the stock rose 15.8% in one day.</p>
+
+  <p>Spotify&nbsp;<a class="tklink" data-nav="track">SPOT</a> passed too. It went through its 22 October report and gained 11.1% that day.</p>
+
+  <p>Roper&nbsp;<a class="tklink" data-nav="track">ROP</a> did not pass. It carries a <b>WATCH</b> grade, which means its finances looked less solid. It still rose 9.7% on its earnings day. The gate does not pick which companies will have a good quarter. It picks which ones can take a bad one and still be standing.</p>
+
+  <p>This is also why some names never reach you at all. If a company gets a <b>FAIL</b> grade, we keep tracking it ourselves <span style="text-decoration:underline; text-underline-offset:4px">but we never publish it</span>. Roughly four in ten never make it to the board. A company in that condition can be knocked over by one bad quarter and never come back. Roper was not in that group. <b>WATCH</b> means its finances looked weaker than Accenture&rsquo;s. It does not mean they looked fragile, and Roper did recover.</p>
+
+  <h3>What this is worth to you</h3>
+
+  <p>When one story owns every headline, fewer people are paying attention to everything else. Prices get sloppy there. That is exactly where our board kept finding names this quarter. It is also the reason to keep reading a research list on the night it hands you something dull.</p>
+
+  <p>And when a stock has fallen a long way, the first question is not how cheap it looks. It is whether the company can pay its bills while it waits to recover. A recovery takes months. A company with cash and little debt can wait that out. A company buried in debt may never get the chance, and the stock never comes back. The gate asks that question before a name ever reaches you.</p>
+</div>`,
+    foot:`Educational research, not advice. All figures come from our live record of published signals, measured from the signal date to the close on 23 October 2026, with no stop losses and no targets, dividends excluded. These positions are open and the numbers will change. Past results do not predict what any single future signal will do. Disclosure: the author held Accenture, Spotify and Roper personally, sold them after taking gains, and holds none of the three as of publication. The Slow Swing is not a broker-dealer or investment adviser.`
+  },
+  {
     slug:'phoenix-cruise-vs-sp500', cat:{label:'Lesson', cls:'lesson'}, icon:'⚖️', sample:false,
     author:'GJ Singh', date:'Oct 20, 2026', read:'7 min read',
     title:'Two setups, one choppy market: Phoenix, Cruise, and every S&amp;P 500 stock — measured',

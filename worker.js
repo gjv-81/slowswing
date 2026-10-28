@@ -567,9 +567,10 @@ async function deadManCheck(env) {
 // POST /api/announce  { slug, title, excerpt, intro, date, read, test, to }
 //   Authorization: Bearer <ANNOUNCE_KEY>   (wrangler secret put ANNOUNCE_KEY)
 //   test:true sends ONLY to `to` (default NOTIFY_EMAIL) and records nothing.
-//   A real send goes to every account whose entitlement is ok today (paid,
-//   comp, or inside the trial) and has not unsubscribed from post mail
-//   (rec.nomail). Each (slug, email) pair is marked in KV so re-running the
+//   A real send goes to every account on file — paid, comp, inside the trial
+//   AND expired trials (GJ, 2026-10-28: "all the subscribers, even the ones
+//   whose trials have ended"; posts are public, so lapsed readers can open
+//   them) — unless they unsubscribed from post mail (rec.nomail). Each (slug, email) pair is marked in KV so re-running the
 //   same slug can never double-send; a corrected post is a new slug.
 //   Sent via Resend's batch endpoint, 100 per request.
 function announceEmail(env, post, unsubUrl) {
@@ -585,7 +586,7 @@ function announceEmail(env, post, unsubUrl) {
     <p style="margin:0 0 24px;color:#64748b;font-size:13px">Or copy this link: <a href="${link}" style="color:#0f766e">${link}</a></p>
     <p style="margin:0 0 8px">Keep swinging,<br><b>The Slow Swing Team</b></p>
     <p style="margin:0 0 14px;color:#64748b;font-size:12px;line-height:1.5">The Slow Swing is educational research, not investment advice. We are not a broker-dealer or investment adviser, and we don't execute trades. Figures are paper-tracked and hypothetical — levels a price reached, not returns anyone earned. Do your own research.</p>
-    <p style="margin:0;color:#94a3b8;font-size:12px">You receive these because you are a member of The Slow Swing. <a href="${unsubUrl}" style="color:#64748b">Stop post emails</a> — your account and the nightly board are unaffected.</p>
+    <p style="margin:0;color:#94a3b8;font-size:12px">You receive these because you signed up with The Slow Swing. <a href="${unsubUrl}" style="color:#64748b">Stop post emails</a> — your account and the nightly board are unaffected.</p>
   </div>`;
   const text = `New from The Slow Swing journal\n\n${post.title}\n${meta}\n\n${(post.excerpt || "").trim()}\n\nRead the rest: ${link}\n\nEducational research, not advice.\nStop post emails: ${unsubUrl}`;
   return { subject: post.title, html, text };
@@ -594,8 +595,8 @@ async function unsubUrlFor(env, email) {
   const t = await signToken({ t: "unsub", e: normEmail(email) }, env.SESSION_SECRET);
   return `${env.APP_URL || "https://theslowswing.com"}/api/unsub?t=${encodeURIComponent(t)}`;
 }
-// Who gets a post today: every account whose entitlement is ok, not opted out,
-// and not already sent this slug.
+// Who gets a post today: every account on file (entitled or not — expired
+// trials included), not opted out, and not already sent this slug.
 async function announceRecipients(env, slug) {
   const emails = []; let cursor; const seen = new Set();
   do {
@@ -605,7 +606,6 @@ async function announceRecipients(env, slug) {
       if (seen.has(email)) continue; seen.add(email);
       const rec = await getSub(env, email);
       if (!rec || rec.nomail) continue;
-      if (!entitlement(rec).ok) continue;
       if (await env.STORE.get(`sent:post:${slug}:${email}`)) continue;
       emails.push(email);
     }
