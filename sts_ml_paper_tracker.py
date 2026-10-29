@@ -416,17 +416,33 @@ def main():
         #              4-week mark (20 sessions after entry); OR 12 weeks after entry
         #              without ever running. A name that first runs after week 4
         #              retires the day it runs.
+        #   [ADDED 2026-10-29, GJ — "back in range", narrow rule / Option A]
+        #   A +5% touch on the FIRST or SECOND session after entry does NOT make the
+        #   name Extended for good. While its only +5% touches are on days 1-2:
+        #   Extended if the latest close is >= +5%, otherwise Active ("back in
+        #   range"), and it keeps the normal 12-week Active window. Any +5% touch
+        #   on day 3 or later -> the old STICKY Extended rule applies from then on.
+        #   Validated 2017-2026: day 1-2 pops that closed back below +5%, measured
+        #   from that close, touched +5% within 4 wk 76% / +10% 58% / +20% 28% vs
+        #   72 / 48 / 20 for fresh signals (both eras). Pops on day 3+ had no edge,
+        #   so they stay sticky (agenda item 14).
         dh = len(win)
         _hits = np.nonzero(np.asarray(win["High"].values, dtype=float) >= e_px * 1.05)[0]
         ext_since = win.index[_hits[0]] if len(_hits) else None
-        ext_days = (dh - 1 - int(_hits[0])) if len(_hits) else 0      # sessions since first +5% close
-        if (ext_since is not None and dh > W4) or dh > W12:
+        ext_days = (dh - 1 - int(_hits[0])) if len(_hits) else 0      # sessions since first +5% touch
+        _late = _hits[_hits >= 2]                                     # touches on day 3 or later
+        _early_only = len(_hits) > 0 and len(_late) == 0
+        _last_up = float(win["Close"].values[-1]) >= e_px * 1.05
+        if (len(_late) and dh > W4) or dh > W12:
             phase = "Retired"
-            retired_via = "ran" if ext_since is not None else "window"
-        elif ext_since is not None:
+            retired_via = "ran" if len(_late) else "window"
+        elif len(_late):
+            phase = "Extended"; retired_via = ""
+        elif _early_only and _last_up:
             phase = "Extended"; retired_via = ""
         else:
             phase = "Active"; retired_via = ""
+        back_in_range = bool(phase == "Active" and _early_only)
 
         spy_after = spy[spy.index >= e_date]
         spy_e = float(spy_after["Open"].iloc[0])
@@ -437,6 +453,7 @@ def main():
         rows.append(base | dict(
             setup=setup, dial=dial, phase=phase, **earnings_info(t, df, e_date),
             ext_since=(ext_since.date() if ext_since is not None else None), ext_days=ext_days, retired_via=retired_via,
+            back_in_range=back_in_range,
             wk2_ret_pct=round(w2, 2) if not math.isnan(w2) else np.nan,
             wk4_ret_pct=round(w4, 2) if not math.isnan(w4) else np.nan,
             maxdip_4wk_pct=round(mae_4wk, 2) if mae_4wk == mae_4wk else np.nan,
@@ -568,7 +585,8 @@ def main():
         ("COLUMN GLOSSARY", ""),
         ("entry_date", "Date the paper trade was initiated (fills at that day's open, or the next session if it wasn't a trading day)."),
         ("setup", "Setup code AT ENTRY (see SETUP_CODES in the playbook workbook): D200G = >=25% off high + above 200-SMA + score>=2 (research: +16.2%). D200 = same, score<2 (+14.0%). B2 (Breather) = score>=2, 10-25% off (+14.1%). S2 (Sprinter) = score>=2, <=10% off (+11.3%). DLB = score>=2 but deep AND below the 200-SMA (the risky crash cohort). 'young' = under 1yr of data. Frozen at entry so the fan-out is analyzable later."),
-        ("phase", "Can you still take this trade? Active = has not yet traded +5% above entry (intraday high, same as Peak; down names included), up to 12 weeks. Extended = has traded +5% at least once (sticky). Retired = 4 weeks after the first +5% close, or 12 weeks without running."),
+        ("phase", "Can you still take this trade? Active = has not yet traded +5% above entry (intraday high, same as Peak; down names included), up to 12 weeks. Exception (2026-10-29): a +5% pop on day 1 or 2 that closes back below +5% stays Active ('back in range'). Extended = has traded +5% (sticky), or a day-1/2 pop whose latest close is still +5% or more. Retired = 4 weeks after running (a +5% touch on day 3+), or 12 weeks."),
+        ("back_in_range", "TRUE = touched +5% only on day 1 or 2 after entry, and the latest close is back below +5% -> still Active."),
         ("ext_since / ext_days / retired_via", "Date of the first intraday high >= +5% above entry; sessions since; how the name retired (ran = 4 weeks after running, window = 12 weeks without running)."),
         ("wk2_ret_pct", "Actual close-to-close return 2 weeks (10 trading days) after entry. Achievable — what a 2-week holder got. Blank until reached."),
         ("wk4_ret_pct", "Actual close-to-close return 4 weeks (20 trading days) after entry. Achievable — what a 4-week holder got. Blank until reached."),

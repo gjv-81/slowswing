@@ -120,6 +120,7 @@ PUBLIC_FIELDS = [
     "t", "n", "setup", "phase", "score", "q", "profile", "sector",
     "rs", "rsn", "date", "dial", "chg",
     "wk2", "wk4", "wk12", "mfe", "mae", "md4", "dtp", "d5", "d10", "ne",
+    "bir", "t5d",   # 2026-10-29: back-in-range flag (day 1-2 pop, closed back) + date it touched +5%
 ] + (_PRICE_FIELDS if EMIT_PRICES else [])
 
 _TICKER_RE = re.compile(r"^[A-Z][A-Z.\-]{0,5}$")
@@ -317,6 +318,9 @@ def rows_from_workbook(path: Path) -> list[dict]:
             "mae": _num(r.get("mae_pct")),
             "dtp": _num(r.get("dtp")),                 # present once the tracker logs it; dropped if absent
             "ne": (str(r.get("next_earn"))[:10] if r.get("next_earn") not in (None, "", "nan", "NaT") and str(r.get("next_earn")) != "nan" else None),  # next scheduled earnings date
+            # back in range: +5% pop on day 1-2, closed back below +5% -> still Active
+            "bir": (True if (r["_phase"].lower() == "active" and str(r.get("back_in_range")).strip().lower() in ("true", "1", "1.0")) else None),
+            "t5d": (fmt_date(r.get("ext_since")) if str(r.get("ext_since")) not in ("None", "nan", "NaT", "") else None),
             "_last": _num(r.get("last")),              # workbook's own last price (offline PC_SOURCE=workbook)
             # --- private fields carried along so the stripper can prove it drops them ---
             "dist200_pct": _num(r.get("dist200_pct")),
