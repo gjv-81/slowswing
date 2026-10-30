@@ -255,6 +255,20 @@
   .bs-legend summary{cursor:pointer; font-weight:700; color:var(--body); font-size:12.5px; padding:2px 0}
   .bs-legend p{margin:8px 0 0; line-height:1.55}
   .bs-legend .faint{font-size:12px}
+  /* 2026-10-30: search + legend moved from the sidebar to the top of the board (GJ: the sidebar
+     disclosure opened below the fold of the sticky sidebar and looked dead). */
+  .boardtop{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:10px}
+  .boardtop #countwrap{margin-right:auto}
+  .boardtop .tksearch{flex:1 1 220px; max-width:340px}
+  .legendtop{border:1px solid var(--line); border-radius:10px; padding:8px 14px; margin:0 0 12px; background:#fff}
+  .legendtop summary{list-style:none; display:flex; align-items:center; gap:8px; font-size:12.5px}
+  .legendtop summary::-webkit-details-marker{display:none}
+  .legendtop summary::before{content:"▸"; font-size:12px; color:var(--primary); transition:transform .15s}
+  .legendtop[open] summary::before{transform:rotate(90deg)}
+  .legendtop .lg-hint{font-weight:400; color:var(--faint)}
+  .legendtop .lg-body{padding:4px 0 6px}
+  .legendtop .lg-body p{margin:8px 0 0}
+  @media (max-width:640px){ .boardtop .tksearch{max-width:none; flex-basis:100%} .boardtop #countwrap{flex-basis:100%} .legendtop .lg-hint{display:none} }
   .boardmain{min-width:0}
   /* always-visible scrollbars on the two scrolling panes (macOS hides them until you scroll,
      so readers did not realise there was more below) */
@@ -952,21 +966,23 @@
       <label>Min&nbsp;score <select id="fScore" class="fsel"><option value="0">Any</option><option value="2">2.0+</option><option value="2.5">2.5+</option><option value="3">3.0+</option><option value="3.5">3.5+</option></select></label>
       <button type="button" id="fClear" class="fclear">Clear</button>
     </div></div>
-        <div class="bs-group"><div class="bs-h">Find</div><input id="boardSearch" class="tksearch" type="search" autocomplete="off" placeholder="Search ticker or company…"></div>
-        <details class="bs-legend"><summary>Legend &amp; definitions</summary>
-          <p><span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = has not yet traded +5% above the price it was added at (names that are down included) — the setup is still ripe, for up to 12 weeks. <b style="color:#b45309">Pending</b> = qualified after tonight's close; it enters at the next open, so there is no price or scorecard yet. <b style="color:#b45309">Greyed</b> = <b style="color:var(--muted)">Out of Range</b>: has traded 5% or more above its setup price — kept on the board so you can see every current signal; the move has happened, so treat those as a watch list. One exception: if a setup pops 5% on its first or second day and closes back below that, it stays on the Active board, marked <span class="birflag">↩ Back in range</span>, and is judged by its close from then on (a close at +5% or more moves it out again). A name that has run retires at the 4-week mark — or after 12 weeks if it never runs — to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span></p>
-          <p><span class="faint" style="font-size:12px; align-self:center; margin-left:6px">A setup stays <b style="color:var(--muted)">Active</b> until it has run +5% — for up to 12 weeks. Once it runs it moves to <b style="color:var(--muted)">Out of Range</b> (except a day 1–2 pop that closes back below +5%, which stays Active as "Back in range"), and retires once it is also four weeks past the day it was added. Price decides, not the calendar — see <a data-nav="how" data-scroll="how-boards" style="color:var(--primary); font-weight:600">the board, day to day</a>.</span></p>
-          <p><span class="faint" style="font-size:12px; align-self:center; margin-left:6px"><span style="color:#c0392b; font-weight:600">💎 = high-quality (cleared our fundamental gate) · <span class="lt-q watch">◆</span> = watch (passed, with reservations) · <span class="earnflag" style="margin-left:0">⚠ date</span> = earnings report due within 3 weeks</span> &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span></p>
-        </details>
       </aside>
       <div class="boardmain">
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:10px">
+        <div class="boardtop">
           <div class="faint" style="font-size:12.5px" id="countwrap">Showing <b id="count" style="color:var(--ink)">–</b> names on today's board</div>
+          <input id="boardSearch" class="tksearch" type="search" autocomplete="off" placeholder="Search ticker or company…" aria-label="Search ticker or company">
           <div class="vtoggle" id="vtabs">
         <button class="vbtn active" data-v="cards">▦ Cards</button>
         <button class="vbtn" data-v="list">☰ List</button>
       </div>
         </div>
+        <details class="bs-legend legendtop" id="legendTop"><summary>Legend &amp; definitions <span class="lg-hint">— Active, Pending, Out of Range, Back in range, 💎 / ◆, ⚠ earnings</span></summary>
+          <div class="lg-body">
+          <p><span class="faint" style="font-size:12px; align-self:center; margin-left:6px" id="agenote"><b style="color:var(--muted)">Active</b> = has not yet traded +5% above the price it was added at (names that are down included) — the setup is still ripe, for up to 12 weeks. <b style="color:#b45309">Pending</b> = qualified after tonight's close; it enters at the next open, so there is no price or scorecard yet. <b style="color:#b45309">Greyed</b> = <b style="color:var(--muted)">Out of Range</b>: has traded 5% or more above its setup price — kept on the board so you can see every current signal; the move has happened, so treat those as a watch list. One exception: if a setup pops 5% on its first or second day and closes back below that, it stays on the Active board, marked <span class="birflag">↩ Back in range</span>, and is judged by its close from then on (a close at +5% or more moves it out again). A name that has run retires at the 4-week mark — or after 12 weeks if it never runs — to the <a data-nav="track" style="color:var(--primary); font-weight:600">Track Record</a>.</span></p>
+          <p><span class="faint" style="font-size:12px; align-self:center; margin-left:6px">A setup stays <b style="color:var(--muted)">Active</b> until it has run +5% — for up to 12 weeks. Once it runs it moves to <b style="color:var(--muted)">Out of Range</b> (except a day 1–2 pop that closes back below +5%, which stays Active as "Back in range"), and retires once it is also four weeks past the day it was added. Price decides, not the calendar — see <a data-nav="how" data-scroll="how-boards" style="color:var(--primary); font-weight:600">the board, day to day</a>.</span></p>
+          <p><span class="faint" style="font-size:12px; align-self:center; margin-left:6px"><span style="color:#c0392b; font-weight:600">💎 = high-quality (cleared our fundamental gate) · <span class="lt-q watch">◆</span> = watch (passed, with reservations) · <span class="earnflag" style="margin-left:0">⚠ date</span> = earnings report due within 3 weeks</span> &nbsp;·&nbsp; <b style="color:var(--muted)">⇧-click = 2nd sort</b></span></p>
+          </div>
+        </details>
         <div class="updated runbanner"><span class="liveflag">● LIVE</span> <span id="upd">Loading tonight's board…</span><div id="runline" style="margin-top:6px; font-size:12.5px; color:var(--muted)"></div><div style="margin-top:12px"><a class="btn btn-primary" data-tour style="font-size:13px; padding:9px 16px; cursor:pointer">▶ Take the 30-sec tour</a></div></div>
         <div class="trstats" id="trstats"></div>
         <div class="grid" id="cards"></div>
