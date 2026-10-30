@@ -60,3 +60,6 @@ daily_data_10y_retired/
 ci_last_session.txt
 .env_uw
 r2_pull.log
+
+# blog drafts live outside site/ and are never committed; a post reaches the site only via site/posts.js with published:true
+drafts/

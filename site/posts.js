@@ -11,6 +11,74 @@
 //     (it just defines POSTS; nothing else runs).
 const POSTS = [
   {
+    slug:'written-before-the-next-panic', cat:{label:'Note', cls:'note'}, icon:'⚠️', sample:false,
+    published:true,
+    author:'GJ Singh', date:'Oct 30, 2026', read:'5 min read',
+    title:`Written before the next panic`,
+    excerpt:`Most of what we publish looks backward. This one looks forward: a claim written down before the next market panic, so you can hold us to it.`,
+    body:`<style>
+.panicpost table{border-collapse:collapse; width:100%; margin:22px 0; font-size:14.5px}
+.panicpost th,.panicpost td{padding:10px 12px; border-bottom:1px solid #e2e8f0; text-align:left}
+.panicpost th{font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#64748b; font-weight:800}
+.panicpost td.v{font-weight:700}
+.panicpost .hi{color:#166534; font-weight:800}
+.panicpost blockquote{margin:22px 0; padding:14px 18px; border-left:4px solid #0f766e; background:#f0fdfa; font-size:16px}
+.panicpost blockquote p{margin:0}
+@media (max-width:560px){.panicpost th,.panicpost td{padding:8px 9px; font-size:13.5px}}
+</style>
+<div class="panicpost">
+  <p>Most of what we publish looks backward. This post looks forward. We are writing down a claim before the next market panic, so you can hold us to it.</p>
+
+  <blockquote><p><b>The claim.</b> On the days when the market is already sliding and then a hundred or more stocks gap down at the open all at once, our <b>proprietary setups</b> that fire in the next three sessions have done better than our proprietary setups at any other time.</p></blockquote>
+
+  <h3>Where it comes from</h3>
+
+  <p>We went back through ten years of our <b>proprietary setups</b>. We found 52 days in that time when 91 or more stocks in our universe gapped down at the open on the same day. Think March 2020, June 2022, April 2025.</p>
+
+  <p>On their own, those days did not change much. The result only showed up when the market had <i>already</i> dropped 3% or more over the previous two weeks, meaning the gap down came at the end of a slide rather than out of nowhere. Our proprietary setups that fired right after that did this.</p>
+
+  <table>
+    <tr><th>Touched within 4 weeks</th><th>Our setups after a panic day</th><th>Our setups on every other day</th></tr>
+    <tr><td>+5%</td><td class="v hi">84%</td><td class="v">71%</td></tr>
+    <tr><td>+10%</td><td class="v hi">60%</td><td class="v">47%</td></tr>
+    <tr><td>+20%</td><td class="v hi">31%</td><td class="v">19%</td></tr>
+  </table>
+
+  <p>That is 132 proprietary setups, and the numbers leave out March 2020, which was stronger still. The pattern held in the first half of the decade and in the second half, which is the test we set before we looked.</p>
+
+  <h3>Is this just a falling market?</h3>
+
+  <p>Fair question, and we checked. We already publish a market dial that turns red when the market is below its long trend, and red periods have always been our better entries. About two thirds of these proprietary setups happened while the dial was red, so the two overlap heavily.</p>
+
+  <p>But they are not the same thing. In the last five years, red alone reached +5% and +10% in 74% and 51% of cases. Red plus a panic day reached 86% and 62%. The panic day sharpens something we already knew rather than replacing it.</p>
+
+  <h3>Why we think it works</h3>
+
+  <p>A panic day is the moment everyone sells everything, the good along with the bad. Forced selling does not sort. <span style="text-decoration:underline; text-underline-offset:4px">Our <b>proprietary setups</b> tend to be the ones thrown out with the rest, and when the selling stops, they are among the first to come back.</span></p>
+
+  <h3>The honest part</h3>
+
+  <p>Three things to know before you get excited.</p>
+
+  <p>First, this comes from about a dozen panic episodes in ten years. That is a small number, and each panic is really one event, so twelve is closer to the true sample size than 132 is.</p>
+
+  <p>Second, the ride is rougher. A panic entry dips further before it works than a normal one does. <span style="text-decoration:underline; text-underline-offset:4px">Our proprietary setups pay faster in these moments, but they make you sweat first.</span></p>
+
+  <p>Third, like everything on this site, these are levels the price touched, not returns anyone earned.</p>
+
+  <h3>What we are doing about it</h3>
+
+  <p>Starting today, the system watches for these conditions every night. When a panic day arrives, our proprietary setups that fire in the following three sessions get marked. Then we wait and let the record speak. If the next panic proves us wrong, we will publish that too.</p>
+
+  <h3>What this is not</h3>
+
+  <p>It is not a signal to buy anything. It is not a prediction of a crash, and nothing in our data says when the next one comes. It is a statement, made in advance, about what our proprietary setups have done in one specific kind of moment.</p>
+
+  <p>The conditions described here are not present today. When they are, you will see it on the board.</p>
+</div>`,
+    foot:`Educational research, not advice. Hypothetical backtest over ten years of our proprietary setups as the model would have generated them under today's rules. It is not a record of published setups. Levels are what the price touched at the intraday peak, not returns anyone earned. The universe is current index members only, so companies that failed along the way are invisible and the figures are a ceiling. Not advice. The Slow Swing is not a broker-dealer or investment adviser.`
+  },
+  {
     slug:'money-made-somewhere-else', cat:{label:'Case study', cls:'case'}, icon:'🔎', sample:false,
     published:true,
     author:'GJ Singh', date:'Oct 28, 2026', read:'6 min read',
