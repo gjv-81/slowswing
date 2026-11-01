@@ -11,6 +11,46 @@
 //     (it just defines POSTS; nothing else runs).
 const POSTS = [
   {
+    slug:'meet-the-sprinter', cat:{label:'Note', cls:'note'}, icon:'🏃', sample:false,
+    published:true,
+    author:'GJ Singh', date:'Nov 1, 2026', read:'4 min read',
+    title:`Meet the <span class="spr" style="color:#b45309; font-weight:800">Sprinter</span>`,
+    excerpt:`Alongside Phoenix and Cruise, the board now shows a third proprietary setup: strong stocks running near their highs, added only after their first real pause.`,
+    body:`<style>
+.sprpost{--spr:#b45309}
+.sprpost strong{font-weight:800}
+.sprpost u{text-decoration-color:#b45309; text-decoration-thickness:2px; text-underline-offset:4px}
+.sprpost .ai{color:#0f766e; font-weight:600}
+.sprpost .spr{color:#b45309; font-weight:800}
+.sprpost blockquote{border-left:4px solid #b45309; background:#fffbf5; margin:26px 0; padding:14px 20px; border-radius:0 10px 10px 0; font-size:17px; font-style:italic}
+.sprpost blockquote p{margin:0}
+</style>
+<div class="sprpost">
+  <p>Something new is coming to the board. Alongside Phoenix and Cruise, there&rsquo;s a third proprietary setup: <strong>Sprinter</strong>.</p>
+
+  <h2>What it is</h2>
+  <p>All three setups come from the same place: <span class="ai">our proprietary AI model</span>, trained on ten years of market data, scoring every stock in our universe every night. Phoenix is where our AI score finds quality companies the market has marked down and is quietly starting to re-rate. Cruise is where it finds strong businesses in a pause that most screens misread as weakness. Sprinter is the third kind: strong stocks running near their highs, where our AI score separates <strong>the ones with real staying power from the ones about to tire</strong>. Then the model waits for the first real pause before putting the name on the board.</p>
+
+  <h2>Why we waited to add it</h2>
+  <p><strong>Strong stocks are the ones people are most afraid to buy.</strong> The feeling is familiar: <em>it&rsquo;s already run so far, surely a correction is coming.</em> We spent the last month testing that fear against ten years of data. The fear turned out to be misplaced. <u>The strong names our AI score picks out don&rsquo;t behave like the ones people are afraid of.</u></p>
+
+  <blockquote><p>That timing is <span class="ai">our differentiator</span>. It isn&rsquo;t something a human watching charts can do reliably, and it isn&rsquo;t something a stock screener does at all.</p></blockquote>
+
+  <h2>What to expect</h2>
+  <p><strong>Fewer names.</strong> Our AI score sets a high bar. Sprinter will be the smallest of the three setups, sometimes with nothing on it for a stretch.</p>
+  <p><strong>Similar success rates.</strong> In our research, Sprinters reached their first targets about as often as Phoenix and Cruise, and sometimes a bit more often. They&rsquo;re not a riskier bet. They&rsquo;re a different kind of stock, found the same way.</p>
+  <p><strong>Fast in both directions.</strong> Strong names move. About half see a quick dip in the first week before going on. That&rsquo;s the character of the setup, not a sign something is wrong.</p>
+
+  <h2>What it isn&rsquo;t</h2>
+  <p>It isn&rsquo;t a chase. We don&rsquo;t add a strong stock while it&rsquo;s sprinting. We add it when it stops to breathe. And like everything here, it&rsquo;s a setup for your own judgment, <em>not a buy signal</em>.</p>
+
+  <p>Sprinter gets its own scorecard and its own track record, from its first name onward. We&rsquo;ll report it separately, so you can see how it does on its own, good or bad.</p>
+
+  <p>No Sprinter has qualified yet. When the first one does, it appears on the board and we&rsquo;ll email you the same day.</p>
+</div>`,
+    foot:`Educational research, not advice. Historical results are hypothetical and don't predict any single name.`
+  },
+  {
     slug:'written-before-the-next-panic', cat:{label:'Note', cls:'note'}, icon:'⚠️', sample:false,
     published:true,
     author:'GJ Singh', date:'Oct 30, 2026', read:'5 min read',
