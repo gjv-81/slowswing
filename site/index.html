@@ -11,7 +11,7 @@
     --line:#e3eaee; --line2:#d3dde2;
     --ink:#0e2a2b; --body:#3f4d53; --muted:#6b7a80; --faint:#98a5ab;
     --primary:#0f766e; --primary-dark:#0b5c56; --primary-tint:#e6f2f0;
-    --phoenix:#7c3aed; --cruise:#1d4ed8;
+    --phoenix:#7c3aed; --cruise:#1d4ed8; --sprinter:#b45309;   /* Sprinter amber (handoff #11, 2026-11-01) */
     --pass:#15803d; --watch:#b7791f; --fail:#b91c1c;
     --up:#15803d; --down:#c0392b; --gold:#c98a12;
     --radius:14px; --maxw:1140px;
@@ -229,7 +229,8 @@
   .boardhead{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:22px}
   .updated{font-size:13px; color:var(--muted); display:flex; align-items:center; gap:8px}
   .liveflag{font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--pass); border:1px solid rgba(21,128,61,.35); border-radius:6px; padding:2px 7px}
-  .setupintro{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px}
+  .setupintro{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-bottom:24px}
+  @media (max-width:1100px){ .setupintro{grid-template-columns:1fr 1fr} .setupintro .si:last-child{grid-column:1/-1} }
   .si{background:var(--panel2); border:1px solid var(--line); border-radius:var(--radius); padding:20px}
   .si h3{font-size:18px; display:flex; align-items:center; gap:10px}
   .si .swatch{width:12px;height:12px;border-radius:4px}
@@ -298,6 +299,8 @@
   .tab[data-k="cruise"]{color:var(--cruise); background:rgba(29,78,216,.08); border-color:rgba(29,78,216,.28); font-weight:700}
   .tab[data-k="phoenix"].active{background:var(--phoenix); color:#fff; border-color:var(--phoenix); box-shadow:0 4px 12px -5px rgba(124,58,237,.55)}
   .tab[data-k="cruise"].active{background:var(--cruise); color:#fff; border-color:var(--cruise); box-shadow:0 4px 12px -5px rgba(29,78,216,.55)}
+  .tab[data-k="sprinter"]{color:var(--sprinter); background:rgba(180,83,9,.08); border-color:rgba(180,83,9,.28); font-weight:700}
+  .tab[data-k="sprinter"].active{background:var(--sprinter); color:#fff; border-color:var(--sprinter); box-shadow:0 4px 12px -5px rgba(180,83,9,.55)}
   .tab[data-q="pass"].active{background:var(--pass); color:#fff; border-color:var(--pass); box-shadow:0 4px 12px -5px rgba(21,128,61,.5)}
   #agetabs .tab{font-size:16px; font-weight:750; padding:11px 22px}
   #agetabs .tab[data-age="active"].active{background:var(--pass); color:#fff; border-color:var(--pass); box-shadow:0 5px 14px -6px rgba(21,128,61,.55)}
@@ -320,6 +323,7 @@
   .bysetup tr.cum td{border-top:2px solid var(--line); font-weight:800}
   .bysetup td.up{color:var(--up)} .bysetup td.down{color:var(--down)}
   .bysetup td .n{font-weight:500; color:var(--faint); font-size:12px}
+  .bysetup td.muted{text-align:left; font-weight:500; color:var(--muted)}
   .bysetup .bs-note{font-size:11px; color:var(--faint); border-top:1px solid var(--line); padding-top:10px; margin-top:10px}
   @media(max-width:700px){ .bysetup table{min-width:640px} }
 
@@ -337,6 +341,7 @@
   .setuptag{font-size:11px; font-weight:750; letter-spacing:.04em; text-transform:uppercase; padding:4px 9px; border-radius:7px}
   .setuptag.phoenix{background:rgba(124,58,237,.1); color:var(--phoenix)}
   .setuptag.cruise{background:rgba(29,78,216,.1); color:var(--cruise)}
+  .setuptag.sprinter{background:rgba(180,83,9,.1); color:var(--sprinter)}
   .row{display:flex; align-items:center; gap:8px; margin-top:14px; flex-wrap:wrap}
   .metric{flex:1; min-width:120px; background:var(--panel2); border:1px solid var(--line); border-radius:10px; padding:9px 12px}
   .metric .k{font-size:11px; color:var(--faint); letter-spacing:.04em; text-transform:uppercase}
@@ -429,7 +434,7 @@
   .lt-sector{color:var(--muted); font-size:9.5px}
   .lt-score{font-weight:750; font-size:11.5px; color:var(--ink)}
   .lt-q.pass{color:var(--pass); font-weight:750} .lt-q.watch{color:var(--watch); font-weight:750} .lt-q.fail{color:var(--fail); font-weight:750}
-  .lt-set.phoenix{color:var(--phoenix); font-weight:700} .lt-set.cruise{color:var(--cruise); font-weight:700}
+  .lt-set.phoenix{color:var(--phoenix); font-weight:700} .lt-set.cruise{color:var(--cruise); font-weight:700} .lt-set.sprinter{color:var(--sprinter); font-weight:700}
   .lt-pulse{display:inline-flex; align-items:center; gap:7px; font-weight:600}
   .lt-dot{width:8px; height:8px; border-radius:50%; flex:none}
 
@@ -868,7 +873,7 @@
       </div>
       <div class="annocol right">
         <div class="anno-b"><span class="anno-num">4</span><div><div class="anno-t" style="color:var(--pass)">&#128142; Quality gate</div><div class="anno-d">Passed our fundamental quality check. &#128142; cleared it cleanly; &#9670; passed with reservations noted. Companies that fail it never reach the board.</div></div></div>
-        <div class="anno-b"><span class="anno-num">5</span><div><div class="anno-t" style="color:var(--phoenix)">Setup type</div><div class="anno-d">Phoenix or Cruise &mdash; the two setup types our machine-learning model sorts each stock into. The label captures the kind of opportunity the model found; the card&rsquo;s read tells you what to expect.</div></div></div>
+        <div class="anno-b"><span class="anno-num">5</span><div><div class="anno-t" style="color:var(--phoenix)">Setup type</div><div class="anno-d">Phoenix, Cruise or Sprinter &mdash; the three setup types our machine-learning model sorts each stock into. The label captures the kind of opportunity the model found; the card&rsquo;s read tells you what to expect.</div></div></div>
         <div class="anno-b"><span class="anno-num">6</span><div><div class="anno-t">Market Pulse</div><div class="anno-d">How the name was moving versus the market when the setup fired (<b>Pulse @ Add</b>), and how it is moving now (<b>Pulse now</b>, refreshed each evening) &mdash; Strong, Neutral, or Weak.</div></div></div>
         <div class="anno-b"><span class="anno-num">7</span><div><div class="anno-t">Setup Scorecard</div><div class="anno-d">Its hypothetical track record: how far it ran (Peak) and its worst dip since it was added. Educational &mdash; not returns earned.</div></div></div>
       </div>
@@ -944,6 +949,8 @@
         <div style="margin-top:10px; padding-top:9px; border-top:1px solid var(--line); font-size:12.5px; color:var(--muted); line-height:1.6" id="statPhoenix">Computed from the track record once it loads.</div></div>
       <div class="si"><h3><span class="swatch" style="background:var(--cruise)"></span> Cruise</h3><p><b style="color:var(--ink)">The smaller, quicker move.</b> Established leaders taking a breather inside strength the model reads as still intact. They tend to pop sooner and settle sooner — less drama and less waiting, but a smaller move to work with.</p>
         <div style="margin-top:10px; padding-top:9px; border-top:1px solid var(--line); font-size:12.5px; color:var(--muted); line-height:1.6" id="statCruise">Computed from the track record once it loads.</div></div>
+      <div class="si"><h3><span class="swatch" style="background:var(--sprinter)"></span> Sprinter</h3><p><b style="color:var(--ink)">Strength, after its first pause.</b> Our third proprietary setup. Our AI model finds strong stocks running near their highs and separates the ones with real staying power from the ones about to tire; a Sprinter joins the board only after its first real pause. Fewer names than Phoenix or Cruise, similar success rates, and faster in both directions. <span class="faint">About half of Sprinters see a 5% dip in their first week.</span></p>
+        <div style="margin-top:10px; padding-top:9px; border-top:1px solid var(--line); font-size:12.5px; color:var(--muted); line-height:1.6" id="statSprinter">No Sprinter has qualified yet — the first one appears here the day it does.</div></div>
     </div>
     <p style="max-width:82ch; margin:14px 0 0; font-size:13px; color:var(--body); line-height:1.7"><b style="color:var(--ink)">The difference isn't how often they work.</b> <span id="statBoth">Both reached +5% at peak most of the time</span> — the first move looks much the same. What separates them is <b>how far they go after that</b>: Cruise tends to pop and stall, Phoenix keeps running. That's why a Phoenix asks for more patience and a stronger stomach, and a Cruise asks for less of both.</p>
 
@@ -956,7 +963,8 @@
       <div class="tab" data-f="seasoned" style="font-size:13px">🌾 Seasoned · 4–12 wk</div></div></div>
         <div class="bs-group"><div class="bs-h">Setup</div><div class="tabs" id="tabs"><div class="tab active" data-k="all">All setups</div>
       <div class="tab" data-k="phoenix">Phoenix</div>
-      <div class="tab" data-k="cruise">Cruise</div></div></div>
+      <div class="tab" data-k="cruise">Cruise</div>
+      <div class="tab" data-k="sprinter">Sprinter</div></div></div>
         <div class="bs-group"><div class="bs-h">Quality</div><div class="tabs" id="qtabs"><div class="tab active" data-q="all" style="font-size:13px">Show everything</div>
       <div class="tab" data-q="pass" style="font-size:13px">💎 High-quality only</div></div></div>
         <div class="bs-group"><div class="bs-h">Filters</div><div class="filterbar" id="boardFilters">
@@ -1019,6 +1027,7 @@
       <div class="tab active" data-k="all">All setups</div>
       <div class="tab" data-k="phoenix">Phoenix</div>
       <div class="tab" data-k="cruise">Cruise</div>
+      <div class="tab" data-k="sprinter">Sprinter</div>
     </div>
     <div class="tabs" id="tqtabs" style="margin-top:-4px">
       <div class="tab active" data-q="all" style="font-size:13px">Show everything</div>
@@ -1110,7 +1119,7 @@
     <div class="cols3">
       <div class="fcard"><div class="ico">◆</div><h3>The AI Score</h3><p>Our model's conviction reading, distilled from years of market data. Higher means a stronger match to what we're looking for. Use it to prioritize your attention — a ranking, not a promise.</p></div>
       <div class="fcard"><div class="ico">🛡️</div><h3>The Quality badge</h3><p>💎 means the company cleared a fundamental safety screen built on published academic research. It's not about predicting the next move — it's about knowing the business underneath is sound.</p></div>
-      <div class="fcard"><div class="ico">🔥</div><h3>The Setup</h3><p>Which of our two setups the stock fits — Phoenix or Cruise. Each carries its own character and temperament, so you know the kind of opportunity you're holding and roughly what to expect.</p></div>
+      <div class="fcard"><div class="ico">🔥</div><h3>The Setup</h3><p>Which of our three setups the stock fits — Phoenix, Cruise or Sprinter. Each carries its own character and temperament, so you know the kind of opportunity you're holding and roughly what to expect.</p></div>
       <div class="fcard"><div class="ico">📈</div><h3>Market Pulse</h3><p>A quick read on how the name is carrying itself versus the broader market — Strong, Neutral, or Weak. Shown two ways: as it was when the stock was added, and as it is now, refreshed each evening. Context, one of several inputs the model considers, not a signal to act on by itself.</p></div>
       <div class="fcard"><div class="ico">🏷️</div><h3>Sector &amp; profile</h3><p>The industry and business type (Core, Growth) so you can keep your own portfolio balanced and avoid piling into one theme.</p></div>
       <div class="fcard"><div class="ico">🧭</div><h3>What we don't show</h3><p>No entry price. No exit. No "buy now." We tell you the conditions look ripe from a technical standpoint — the decision, the sizing, and the timing are always yours.</p></div>
@@ -1254,7 +1263,7 @@
     <ol class="muted" style="max-width:74ch; margin-top:14px; font-size:16px; padding-left:22px; line-height:1.7">
       <li style="margin-bottom:10px"><b style="color:var(--ink)">The regime bar first.</b> SPY and QQQ against their own history. Green means the market has recently reset; yellow, extended but ordinary; orange, stretched. In our data the same setups did several times better entered after a reset than entered stretched. This is context for how bold to be, never a trigger.</li>
       <li style="margin-bottom:10px"><b style="color:var(--ink)">New names, then the 💎 filter.</b> Anything with a NEW badge qualified this week. Collapse to High-Quality only. The gate exists so that when a name dips — and nearly all of them dip — you're holding a business sound enough to sit through it.</li>
-      <li style="margin-bottom:10px"><b style="color:var(--ink)">Phoenix or Cruise, and the AI Score.</b> Phoenix is the bigger, slower move that tests you harder on the way; Cruise is the smaller, quicker one. The score is conviction: how strongly the conditions matched. Higher is better; it is not a forecast.</li>
+      <li style="margin-bottom:10px"><b style="color:var(--ink)">The setup, and the AI Score.</b> Phoenix is the bigger, slower move that tests you harder on the way; Cruise is the smaller, quicker one; Sprinter is a strong stock near its highs, added after its first real pause. The score is conviction: how strongly the conditions matched. Higher is better; it is not a forecast.</li>
       <li style="margin-bottom:10px"><b style="color:var(--ink)">Pulse @ Add and Pulse now.</b> How the name was moving against the market when it qualified, and how it is moving tonight. A tie-breaker between names, not a reason on its own.</li>
       <li style="margin-bottom:10px"><b style="color:var(--ink)">Click the ticker.</b> The shape of the move since the stock was added — peak, worst dip, where it is now — as percentages. This is where you check whether a name is still below, at or just above its added price, or has already run.</li>
       <li style="margin-bottom:10px"><b style="color:var(--ink)">What we ignore.</b> The intraday chart. The news. Anything that happened before tonight's close. The board is built on daily closes, and reading it more than once a day adds noise, not information.</li>
@@ -1293,7 +1302,7 @@
     <h2 class="section">Every term on the board</h2>
     <div class="cols3" style="margin-top:18px">
       <div class="fcard"><h3>Added</h3><p>The evening a stock qualified for a setup and went on the board. Every row shows its date. Not a buy instruction.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="agetabs" data-age="active">Active board →</a> · <a data-nav="how" data-scroll="how-read">How to read a card →</a></p></div>
-      <div class="fcard"><h3>Phoenix / Cruise</h3><p>The two setup types. Phoenix: the bigger, slower recovery move. Cruise: the smaller, quicker breather inside a trend.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="phoenix">Phoenix on the board →</a> · <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="cruise">Cruise on the board →</a> · <a data-nav="how" data-scroll="how-boards">The two setups →</a></p></div>
+      <div class="fcard"><h3>Phoenix / Cruise / Sprinter</h3><p>The three setup types. Phoenix: the bigger, slower recovery move. Cruise: the smaller, quicker breather inside a trend. Sprinter: a strong stock near its highs, added only after its first real pause.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="phoenix">Phoenix on the board →</a> · <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="cruise">Cruise on the board →</a> · <a data-nav="how" data-scroll="how-boards">The setups →</a></p></div>
       <div class="fcard"><h3>AI Score</h3><p>Conviction — how strongly the conditions matched the model. Higher is stronger; it is not a forecast.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="boardFilters" data-age="active">Filter the board by score →</a> · <a data-nav="how" data-scroll="how-read">What the score means →</a></p></div>
       <div class="fcard"><h3>Quality gate</h3><p>A fundamental screen every published name has passed: 💎 High-Quality or ◆ Watch. Names that fail it are tracked internally but never published. The reason you can hold a dip.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="qtabs" data-age="active">💎 High-quality only →</a> · <a data-nav="how" data-scroll="how-gate">How the gate works →</a></p></div>
       <div class="fcard"><h3>Pulse</h3><p>How the name is moving against the broad market: Strong, Neutral or Weak. Shown as of the day added, and now.</p><p class="gl-see">See it: <a data-nav="board" data-scroll="boardFilters" data-age="active">Filter by Pulse →</a> · <a data-nav="how" data-scroll="how-read">Where it shows →</a></p></div>
@@ -1318,10 +1327,10 @@
   </div></section>
 
   <section class="block" id="st-setups"><div class="wrap">
-    <div class="kicker">1 · Two setups</div>
-    <h2 class="section">Phoenix and Cruise — that's the whole menu</h2>
-    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Every evening after the close, our model scans U.S. mid- and large-cap stocks for two patterns that have historically been followed by a move over the next few weeks. <b style="color:var(--phoenix)">Phoenix</b> is a quality stock turning back up after being marked down — the bigger, slower move. <b style="color:var(--cruise)">Cruise</b> is a market leader pausing inside a strong trend — the smaller, quicker move. A stock that fits one of them goes on the board that night. That's the whole menu, and it's deliberately short.</p>
-    <p class="gl-see" style="font-size:13.5px; margin-top:12px">See it: <a data-nav="how" data-scroll="how-boards">The two setups →</a> · <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="phoenix">Phoenix on the board →</a> · <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="cruise">Cruise on the board →</a></p>
+    <div class="kicker">1 · Three setups</div>
+    <h2 class="section">Phoenix, Cruise and Sprinter — that's the whole menu</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">Every evening after the close, our model scans U.S. mid- and large-cap stocks for three patterns that have historically been followed by a move over the next few weeks. <b style="color:var(--phoenix)">Phoenix</b> is a quality stock turning back up after being marked down — the bigger, slower move. <b style="color:var(--cruise)">Cruise</b> is a market leader pausing inside a strong trend — the smaller, quicker move. <b style="color:var(--sprinter)">Sprinter</b>, our third proprietary setup, is a strong stock running near its highs that joins the board only after its first real pause — fewer names, similar success rates, faster in both directions. A stock that fits one of them goes on the board that night. That's the whole menu, and it's deliberately short.</p>
+    <p class="gl-see" style="font-size:13.5px; margin-top:12px">See it: <a data-nav="how" data-scroll="how-boards">The setups →</a> · <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="phoenix">Phoenix on the board →</a> · <a data-nav="board" data-scroll="tabs" data-age="active" data-setup="cruise">Cruise on the board →</a></p>
   </div></section>
 
   <section class="block" id="st-board"><div class="wrap">
@@ -1356,7 +1365,7 @@
       </div>
       <div class="annocol right">
         <div class="anno-b"><span class="anno-num">4</span><div><div class="anno-t" style="color:var(--pass)">&#128142; Quality gate</div><div class="anno-d">Passed our fundamental quality check. &#128142; cleared it cleanly; &#9670; passed with reservations noted. Companies that fail it never reach the board.</div></div></div>
-        <div class="anno-b"><span class="anno-num">5</span><div><div class="anno-t" style="color:var(--phoenix)">Setup type</div><div class="anno-d">Phoenix or Cruise &mdash; the two setup types our machine-learning model sorts each stock into. The label captures the kind of opportunity the model found; the card&rsquo;s read tells you what to expect.</div></div></div>
+        <div class="anno-b"><span class="anno-num">5</span><div><div class="anno-t" style="color:var(--phoenix)">Setup type</div><div class="anno-d">Phoenix, Cruise or Sprinter &mdash; the three setup types our machine-learning model sorts each stock into. The label captures the kind of opportunity the model found; the card&rsquo;s read tells you what to expect.</div></div></div>
         <div class="anno-b"><span class="anno-num">6</span><div><div class="anno-t">Market Pulse</div><div class="anno-d">How the name was moving versus the market when the setup fired (<b>Pulse @ Add</b>), and how it is moving now (<b>Pulse now</b>, refreshed each evening) &mdash; Strong, Neutral, or Weak.</div></div></div>
         <div class="anno-b"><span class="anno-num">7</span><div><div class="anno-t">Setup Scorecard</div><div class="anno-d">Its hypothetical track record: how far it ran (Peak) and its worst dip since it was added. Educational &mdash; not returns earned.</div></div></div>
       </div>
@@ -1926,9 +1935,11 @@ function renderRegime(rg){
 }
 renderRegime(REGIME);
 
+const SETUP_LABEL = {phoenix:"Phoenix", cruise:"Cruise", sprinter:"Sprinter"};
 const MEANS = {
   phoenix:"Beaten-down name showing early signs of turning back up. Expect volatility — a 💎 tells you the business is sound enough to sit through it.",
-  cruise:"Established leader pausing inside an uptrend. Steadier profile — strength taking a breather."
+  cruise:"Established leader pausing inside an uptrend. Steadier profile — strength taking a breather.",
+  sprinter:"Strong stock near its highs, added after its first real pause. Faster in both directions — about half see a 5% dip in the first week."
 };
 const QMETA = {
   pass:  {cls:"pass",  label:"💎 High-Quality"},
@@ -2048,7 +2059,7 @@ function cardsHTML(items){
       if(!oorOpen) return pre;
     }
     const [clabel,cclass]=conv(d.score); const q=QMETA[d.q];
-    const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise"; const delay=Math.min(i,14)*32;
+    const setupLabel=SETUP_LABEL[d.setup]||d.setup; const delay=Math.min(i,14)*32;
     return pre+`
     <div class="card ${d.q==="pass"?"premium":""}${d.phase==="extended"?" oor":""}" style="animation-delay:${delay}ms">
       ${d.q==="pass" ? '<span class="gem">💎 High-Quality</span>' : ''}
@@ -2082,7 +2093,7 @@ function listHTML(items){
     const [,pic,plabel]=PULSE[d.rs]||PULSE.neutral;
     const rn=d.rsn?(PULSE[d.rsn]||PULSE.neutral):null;
     const qsym=d.q==="pass"?"💎":"◆"; const qtxt=d.q==="pass"?"High-Quality":"Watch";
-    const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise";
+    const setupLabel=SETUP_LABEL[d.setup]||d.setup;
     return pre+`
       <tr class="${d.q==="pass"?"premium":""}${d.phase==="extended"?" oor":""}">
         <td><div class="lt-tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}${newBadge(d)}</div><div class="lt-co">${d.n}${earnBadge(d)}</div></td>
@@ -2332,6 +2343,12 @@ function renderStats(){
   };
   set('statPhoenix', card('phoenix','Phoenix',' to get there'));
   set('statCruise', card('cruise','Cruise',''));
+  { // Sprinter has its own clock: live figures only from its own entries, never mixed with Phoenix/Cruise
+    const sp=DATA.filter(d=>d.setup==='sprinter'&&d.phase!=='pending'), done=sp.filter(d=>d.wk4!=null);
+    if(!sp.length) set('statSprinter','No Sprinter has qualified yet — the first one appears here the day it does.');
+    else if(done.length<20){ const first=sp.map(d=>dval(d.date)).sort((a,b)=>a-b)[0]; const arrive=new Date(first); arrive.setDate(arrive.getDate()+28); set('statSprinter',`<b>${sp.length}</b> Sprinter${sp.length===1?'':'s'} on the board since <b>${fmtFeedDate(new Date(first).toISOString().slice(0,10))}</b>. First results arrive ${fmtFeedDate(arrive.toISOString().slice(0,10))}; percentages are shown once 20 four-week windows have completed.`); }
+    else set('statSprinter', card('sprinter','Sprinter',''));
+  }
   const ph=pct(all.filter(d=>d.setup==='phoenix'),5), cr=pct(all.filter(d=>d.setup==='cruise'),5);
   if(ph!=null&&cr!=null) set('statBoth', `Both reached +5% at peak most of the time (Phoenix <b>${ph}%</b>, Cruise <b>${cr}%</b>)`);
 }
@@ -2400,16 +2417,22 @@ function renderTrack(){
         <td>${m!=null?m+' days':'—'}</td>
       </tr>`;
     };
+    // Sprinter row: its own clock from the first entry; no thin percentages before 20 completed 4-week windows.
+    const sprinterRow=()=>{ const sp=DATA.filter(d=>d.setup==='sprinter'&&d.phase!=='pending'), done=sp.filter(d=>d.wk4!=null);
+      if(!sp.length) return `<tr class="sprinter"><td><span class="lt-set sprinter">Sprinter</span> <span class="n">live since first entry</span></td><td colspan="9" class="muted">No Sprinter has qualified yet. Measured separately, from its first entry onward.</td></tr>`;
+      if(done.length<20){ const first=sp.map(d=>dval(d.date)).sort((a,b)=>a-b)[0]; const arrive=new Date(first); arrive.setDate(arrive.getDate()+28);
+        return `<tr class="sprinter"><td><span class="lt-set sprinter">Sprinter</span> <span class="n">${sp.length} since ${fmtFeedDate(new Date(first).toISOString().slice(0,10))}</span></td><td colspan="9" class="muted">First results arrive ${fmtFeedDate(arrive.toISOString().slice(0,10))} — figures appear once 20 four-week windows have completed.</td></tr>`; }
+      return row('sprinter','Sprinter','sprinter'); };
     bs.innerHTML=`<div class="bysetup">
-      <div class="bs-k">Phoenix vs Cruise — how each setup has behaved <span style="font-weight:600; text-transform:none; letter-spacing:0; color:var(--faint)">(updated ${FEED_DATE?fmtFeedDate(FEED_DATE):'—'})</span></div>
+      <div class="bs-k">By setup — how each has behaved <span style="font-weight:600; text-transform:none; letter-spacing:0; color:var(--faint)">(updated ${FEED_DATE?fmtFeedDate(FEED_DATE):'—'})</span></div>
       <div class="bs-d">The same setups past their 4-week mark, split by type. Read across a row: how often it reached each level at its best point, how far it went on average, and what it cost in patience along the way.</div>
       <table><thead><tr><th>Setup</th><th>Touched<br>+5%</th><th>Touched<br>+10%</th><th>Touched<br>+20%</th><th>Avg peak<br><span class="thsub">the ceiling</span></th><th>Held 2 wks,<br>no exit</th><th>Held 4 wks,<br>no exit <span class="thsub">the floor</span></th><th>Positive<br>at 4 wk</th><th>Avg max<br>dip (4wk)</th><th>Median days<br>to peak</th></tr></thead>
-      <tbody>${row('phoenix','Phoenix','phoenix')}${row('cruise','Cruise','cruise')}</tbody></table>
+      <tbody>${row('phoenix','Phoenix','phoenix')}${row('cruise','Cruise','cruise')}${sprinterRow()}</tbody></table>
       <div class="bs-note">Peak is the ceiling (best level reached, hindsight). Held-with-no-exit is the floor (hold to the horizon, do nothing). Your result lands between them and depends on your exit.</div>
     </div>`;
   }
   const rows=items.map(d=>{
-    const setupLabel=d.setup==="phoenix"?"Phoenix":"Cruise";
+    const setupLabel=SETUP_LABEL[d.setup]||d.setup;
     const qsym=d.q==="pass"?"💎":"◆";
     return `<tr data-row="${d.t}">
       <td><div class="lt-tkr" data-ticker="${d.t}" title="Click for the % move chart">${d.t}</div><div class="lt-co">${d.n}</div></td>
@@ -3007,7 +3030,7 @@ function openExplainer(){
         <div class="exp-badge"><div class="exp-badge-ic">💎</div><div class="exp-badge-t">High-Quality</div><div class="exp-badge-d">sound enough to hold through a dip</div></div>
         <div class="exp-badge"><div class="exp-badge-ic">◆</div><div class="exp-badge-t">Watch</div><div class="exp-badge-d">decent — do your homework</div></div>
       </div><div class="exp-s">Names that fail the gate are never published.</div>`,
-    `<div class="exp-h" style="font-size:22px">Sorted into two clear signals.</div><div style="margin-top:6px"><span class="exp-pill2" style="background:rgba(124,58,237,.32)">Phoenix</span><span class="exp-pill2" style="background:rgba(90,169,240,.32)">Cruise</span></div><div class="exp-s">Phoenix and Cruise — the two setup types our model sorts each signal into, each with its own character.</div>`,
+    `<div class="exp-h" style="font-size:22px">Sorted into three clear signals.</div><div style="margin-top:6px"><span class="exp-pill2" style="background:rgba(124,58,237,.32)">Phoenix</span><span class="exp-pill2" style="background:rgba(90,169,240,.32)">Cruise</span><span class="exp-pill2" style="background:rgba(180,83,9,.32)">Sprinter</span></div><div class="exp-s">Phoenix, Cruise and Sprinter — the three setup types our model sorts each signal into, each with its own character.</div>`,
     `<div class="exp-k">How one setup plays out</div>${journey}<div class="exp-s" style="max-width:42ch">Signal → a dip into the red → the climb. Peak <b style="color:#5ee0c8">+<span data-c="18">0</span>%</b> · worst dip <b style="color:#ff8f8f"><span data-c="-4">0</span>%</b> along the way. Hypothetical peak (MFE), not a return earned.</div>`,
     `<div class="exp-k">The Setup Scorecard</div><div class="exp-h" style="font-size:22px">You always see both sides.</div><div style="display:flex; gap:16px; margin-top:16px; flex-wrap:wrap; justify-content:center">
         <div class="exp-scard"><div class="exp-scard-v up">+<span data-c="18">0</span>%</div><div class="exp-scard-l">Peak ▲ — the upside the setup offered</div></div>
@@ -3071,7 +3094,7 @@ function countUp(){
 const tourSteps=[
   {sel:'.regimebar', t:'Market regime', d:'A quick read on the market’s health (SPY/QQQ) — context for sizing, never a trade trigger.'},
   {sel:'#agetabs', t:'Active vs Out of Range', d:'Active = price still near the setup. Greyed names have already run +5% (Out of Range) — every current signal stays in view. A "Back in range" tag marks a day 1–2 pop that closed back below +5%. The Out of Range tab shows just those, with their stats.'},
-  {sel:'#tabs', t:'Filter by setup', d:'Show all names, or just Phoenix or Cruise — the two setup types our model sorts each signal into.'},
+  {sel:'#tabs', t:'Filter by setup', d:'Show all names, or just one setup — Phoenix, Cruise or Sprinter.'},
   {sel:'#qtabs', t:'Quality filter', d:'Collapse to 💎 High-Quality names only — the ones sound enough to hold through a dip.'},
   {sel:'#vtabs', t:'Cards or List', d:'Switch to a sortable list with the full Setup Scorecard: peak, max dip, and prices.'},
   {sel:'#cards .card', t:'Read a card', d:'Each card shows the AI Score, quality badge, market pulse, and scorecard. Tip: click any ticker to see the shape of its move.'}

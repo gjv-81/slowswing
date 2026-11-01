@@ -67,6 +67,7 @@ RC="rclone --fast-list --transfers 32 --checkers 32 --checksum --stats-one-line 
 STATE_DIRS="daily_data_10y daily_data_v2 daily_data_ext daily_data_slow_ext daily_data_10y_retired uw_archive/earnings_hist holy_grail_archive"
 STATE_FILES="sts_ml_paper_trades.csv sts_ml_paper_tracker.xlsx STS_holy_grail.xlsx STS_holy_grail_v2.xlsx \
              v2_alerted_history.csv v2_new_today.txt x200g_log.csv qualgate_cache.csv cap_cache.json names.json \
+             s2_watch.csv panic_log.csv \
              regime.json board.json site/stats_history.json site/teaser.json ci_last_session.txt"
 
 # ---- the session this run is for (last closed session, ET) ----------------
@@ -118,6 +119,10 @@ echo "===== v2 CI END $(stamp) rc=$v2rc after $((n+1)) attempt(s) =====" >> "$V2
 # ---- 2. X200-G observation --------------------------------------------------
 log "----- x200g observation -----"
 $PY x200g_observe.py >> "$LOG" 2>&1
+# panic-entry conditions (observation tag; STS_T5_MKTGAP_PREREG.md). Reads
+# daily_data_v2 (refreshed in step 1), writes panic_log.csv; the scan reads it.
+log "----- panic-entry check -----"
+$PY panic_observe.py >> "$LOG" 2>&1 || log "!! panic_observe failed (non-fatal)"
 
 # ---- 3. live scan + tracker + workbook (3 attempts) ------------------------
 # In shadow mode the scan must not message members: blank the token for python only.
@@ -192,6 +197,7 @@ if [ "$PUBLISH" = "1" ] && [ -d .git ]; then
   log "----- git push-back -----"
   git add -A sts_ml_paper_trades.csv sts_ml_paper_tracker.xlsx STS_holy_grail.xlsx STS_holy_grail_v2.xlsx \
              v2_alerted_history.csv v2_new_today.txt x200g_log.csv qualgate_cache.csv cap_cache.json \
+             s2_watch.csv panic_log.csv \
              regime.json board.json site/stats_history.json site/teaser.json site/version.json 2>/dev/null
   git -c user.name="STS nightly (CI)" -c user.email="gjv1000@gmail.com" commit -q -m "nightly $SESSION (CI)" >> "$LOG" 2>&1 || true
   git push -q origin HEAD:main >> "$LOG" 2>&1 && log "----- git push OK -----" || log "!! git push failed (non-fatal)"

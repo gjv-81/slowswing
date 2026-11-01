@@ -99,6 +99,13 @@ REGIME_TICKERS = ("SPY", "QQQ")
 # through to Phoenix by default. (Decision: GJ, 2026-09-16.)
 PHOENIX_CODES = {"D200G", "DLB"}
 CRUISE_CODES = {"B2"}
+# Sprinter (2026-11-01, handoff #11): S2 names that entered through the pullback
+# door. The tracker codes them "S2" and the trade note carries "S2-PB". Older S2
+# rows (signal-day entries from before the rule) carry no such note and stay
+# unpublished — they never earned a Sprinter track record. The pullback % in the
+# note is NOT emitted to board.json (mechanics stay in the workbook).
+SPRINTER_CODES = {"S2"}
+SPRINTER_NOTE = "S2-PB"
 
 # RS grading (rs_at_entry ~ 40-day relative strength vs equal-weight, in points).
 RS_STRONG, RS_WEAK = 5.0, -5.0
@@ -190,12 +197,14 @@ def company_name(t: str) -> str:
     return cleaned if cleaned and cleaned.upper() != t.upper() else raw
 
 
-def brand_setup(code: str, wr: str = "") -> str:
+def brand_setup(code: str, wr: str = "", notes: str = "") -> str:
     code = (code or "").upper().strip()
     if code in CRUISE_CODES:
         return "cruise"
     if code in PHOENIX_CODES:
         return "phoenix"
+    if code in SPRINTER_CODES and SPRINTER_NOTE in str(notes or ""):
+        return "sprinter"
     raise ValueError(f"unpublishable setup code reached brand_setup: {code!r}")
 
 
@@ -247,11 +256,13 @@ def rows_from_workbook(path: Path) -> list[dict]:
     tr = tr.assign(_phase=tr["phase"].astype(str).str.strip().str.capitalize())
     tr = tr[tr["_phase"].isin(PHASE_INCLUDE)]
     _code = tr["setup"].astype(str).str.upper().str.strip()
-    _drop = tr[~_code.isin(PHOENIX_CODES | CRUISE_CODES)]
+    _notes = tr["notes"].astype(str) if "notes" in tr.columns else pd.Series("", index=tr.index)
+    _pub = _code.isin(PHOENIX_CODES | CRUISE_CODES) | (_code.isin(SPRINTER_CODES) & _notes.str.contains(SPRINTER_NOTE, regex=False))
+    _drop = tr[~_pub]
     if len(_drop):
         print(f"# setup gate: {len(_drop)} rows not published "
               f"({', '.join(f'{k}={v}' for k, v in _drop['setup'].astype(str).value_counts().items())})")
-    tr = tr[_code.isin(PHOENIX_CODES | CRUISE_CODES)]
+    tr = tr[_pub]
     tr = tr.assign(_q=tr["qualgate"].map(grade_q))
     tr = tr[tr["_q"].str.upper().isin(INCLUDE_QUALGATES)]
     # Pending rows (signal tonight, fill tomorrow) have no entry yet: judge them
@@ -297,7 +308,7 @@ def rows_from_workbook(path: Path) -> list[dict]:
         rows.append({
             "t": t,
             "n": company_name(t),                     # names.json lookup, falls back to ticker
-            "setup": brand_setup(r.get("setup", ""), r.get("wr", "")),
+            "setup": brand_setup(r.get("setup", ""), r.get("wr", ""), r.get("notes", "")),
             "phase": r["_phase"].lower(),             # active / extended / retired (from the pipeline)
             "score": _num(r.get("score_at_entry")),
             "q": grade_q(r.get("qualgate")),

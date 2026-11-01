@@ -261,6 +261,20 @@ def main():
         p = 100 * (w.iloc[:-1] < w.iloc[-1]).mean()
         return "O" if p > 90 else ("Y" if p >= 50 else "G")
 
+    # Panic-entry tag (observation only; STS_T5_MKTGAP_PREREG.md): an entry whose
+    # signal date falls inside a tag window logged by panic_observe.py.
+    _panic_windows = []
+    try:
+        _pl = pd.read_csv(os.path.join(_DIR, "panic_log.csv"), dtype=str)
+        for _r in _pl.itertuples():
+            if str(_r.heavy) == "True" and str(_r.falling) == "True" and str(_r.tag_until):
+                _panic_windows.append((pd.Timestamp(_r.date), pd.Timestamp(_r.tag_until)))
+    except Exception:
+        pass
+    def panic_tag(entry_date):
+        d0 = pd.Timestamp(entry_date) - pd.Timedelta(days=1)   # signal day = the session before the fill
+        return any(a <= d0 <= b for a, b in _panic_windows)
+
     rows, missing = [], []
     fills = {}     # trade-row index -> (fill date, fill price) for rows filled tonight
     for _i, tr in trades.iterrows():
@@ -352,6 +366,11 @@ def main():
                 setup = "-"
         else:
             setup = "young"
+        # S2 pullback door (2026-11-01): the signal was S2 (within 10% of the high);
+        # entry happens after a 6-10% pullback, so entry-day data may read as B2.
+        # Keep the setup the signal earned — the note carries "S2-PB".
+        if "S2-PB" in str(tr.get("notes", "")):
+            setup = "S2"
         # ── SPY regime dial at entry (percentile version: R / G / Y / O) ──
         dial = spy_dial(e_date)
 
@@ -454,6 +473,7 @@ def main():
             setup=setup, dial=dial, phase=phase, **earnings_info(t, df, e_date),
             ext_since=(ext_since.date() if ext_since is not None else None), ext_days=ext_days, retired_via=retired_via,
             back_in_range=back_in_range,
+            panic_entry=panic_tag(e_date),
             wk2_ret_pct=round(w2, 2) if not math.isnan(w2) else np.nan,
             wk4_ret_pct=round(w4, 2) if not math.isnan(w4) else np.nan,
             maxdip_4wk_pct=round(mae_4wk, 2) if mae_4wk == mae_4wk else np.nan,
@@ -587,6 +607,7 @@ def main():
         ("setup", "Setup code AT ENTRY (see SETUP_CODES in the playbook workbook): D200G = >=25% off high + above 200-SMA + score>=2 (research: +16.2%). D200 = same, score<2 (+14.0%). B2 (Breather) = score>=2, 10-25% off (+14.1%). S2 (Sprinter) = score>=2, <=10% off (+11.3%). DLB = score>=2 but deep AND below the 200-SMA (the risky crash cohort). 'young' = under 1yr of data. Frozen at entry so the fan-out is analyzable later."),
         ("phase", "Can you still take this trade? Active = has not yet traded +5% above entry (intraday high, same as Peak; down names included), up to 12 weeks. Exception (2026-10-29): a +5% pop on day 1 or 2 that closes back below +5% stays Active ('back in range'). Extended = has traded +5% (sticky), or a day-1/2 pop whose latest close is still +5% or more. Retired = 4 weeks after running (a +5% touch on day 3+), or 12 weeks."),
         ("back_in_range", "TRUE = touched +5% only on day 1 or 2 after entry, and the latest close is back below +5% -> still Active."),
+        ("panic_entry", "TRUE = the signal fired within 3 sessions of a heavy market-wide gap-down day (91+ names) while SPY was down 3%+ over 10 sessions. Observation tag only (STS_T5_MKTGAP_PREREG.md)."),
         ("ext_since / ext_days / retired_via", "Date of the first intraday high >= +5% above entry; sessions since; how the name retired (ran = 4 weeks after running, window = 12 weeks without running)."),
         ("wk2_ret_pct", "Actual close-to-close return 2 weeks (10 trading days) after entry. Achievable — what a 2-week holder got. Blank until reached."),
         ("wk4_ret_pct", "Actual close-to-close return 4 weeks (20 trading days) after entry. Achievable — what a 4-week holder got. Blank until reached."),

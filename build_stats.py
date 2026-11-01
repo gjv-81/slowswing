@@ -36,7 +36,9 @@ HERE = Path(__file__).resolve().parent
 XLSX = HERE / "STS_holy_grail.xlsx"
 BARS = HERE / "daily_data_10y"
 OUT = HERE / "site" / "stats_history.json"
-PUBLISHED = {"D200G", "DLB", "B2"}          # same gate as build_board.py: Phoenix + Cruise only
+PUBLISHED = {"D200G", "DLB", "B2", "S2"}    # same gate as build_board.py: Phoenix + Cruise + Sprinter (S2 only via the pullback door, see load_positions)
+SPRINTER_NOTE = "S2-PB"                     # an S2 row counts only if its trade note says it entered through the pullback door
+SETUP_GROUPS = (("phoenix", {"D200G", "DLB"}), ("cruise", {"B2"}), ("sprinter", {"S2"}))
 PUBLISHED_GATES = {"PASS", "WATCH"}         # SITE SPEC (2026-09-29): mirror build_board — no FAIL
 MIN_ENTRY_PRICE = 50.0                      # SITE SPEC (2026-09-29): mirror build_board — $50 floor
 WINDOW = dt.timedelta(days=28)              # the 4-week tracking window, calendar days
@@ -53,6 +55,8 @@ def load_positions():
     df = pd.read_excel(XLSX, sheet_name="Tracker")
     df["entry_date"] = pd.to_datetime(df["entry_date"], errors="coerce")
     df = df[df["entry_date"].notna() & df["setup"].isin(PUBLISHED)].copy()
+    _notes = df["notes"].astype(str) if "notes" in df.columns else pd.Series("", index=df.index)
+    df = df[(df["setup"] != "S2") | _notes.str.contains(SPRINTER_NOTE, regex=False)]
     _gate = df["qualgate"].astype(str).str.split("/").str[0].str.upper()
     df = df[_gate.isin(PUBLISHED_GATES)]
     df = df[pd.to_numeric(df["entry"], errors="coerce") >= MIN_ENTRY_PRICE]
@@ -172,9 +176,9 @@ def main():
             cum = df[completed <= asof]
             month = df[(completed >= asof.replace(day=1)) & (completed <= asof)]
             groups = {"cumulative": cum, "month": month,
-                      "phoenix": cum[cum["setup"].isin({"D200G", "DLB"})], "cruise": cum[cum["setup"].isin({"B2"})]}
+                      **{k: cum[cum["setup"].isin(v)] for k, v in SETUP_GROUPS}}
             for k, g in groups.items():
-                tgt = snap["by_setup"][k] if k in ("phoenix", "cruise") else snap[k]
+                tgt = snap["by_setup"].get(k) if k in dict(SETUP_GROUPS) else snap[k]
                 if tgt is None or tgt.get("n") != len(g):
                     continue
                 tgt.update(timing_stats(g, asof))
@@ -191,9 +195,9 @@ def main():
             cum = df[completed <= asof]
             month = df[(completed >= asof.replace(day=1)) & (completed <= asof)]
             groups = {"cumulative": cum, "month": month,
-                      "phoenix": cum[cum["setup"].isin({"D200G", "DLB"})], "cruise": cum[cum["setup"].isin({"B2"})]}
+                      **{k: cum[cum["setup"].isin(v)] for k, v in SETUP_GROUPS}}
             for k, g in groups.items():
-                tgt = snap["by_setup"][k] if k in ("phoenix", "cruise") else snap[k]
+                tgt = snap["by_setup"].get(k) if k in dict(SETUP_GROUPS) else snap[k]
                 if tgt is None:
                     continue
                 if tgt.get("n") != len(g):
@@ -227,8 +231,13 @@ def main():
         "month": stats(month, asof),
         "cumulative": stats(cum, asof),
         "by_setup": {k: stats(cum[cum["setup"].isin(v)], asof)
-                     for k, v in (("phoenix", {"D200G", "DLB"}), ("cruise", {"B2"}))},
+                     for k, v in SETUP_GROUPS},
     }
+    # Sprinter's own clock: the site labels its section from the first pullback-door
+    # entry and shows "first results arrive <date>" until the 4-week windows exist.
+    _spr = df[df["setup"] == "S2"]
+    if len(_spr):
+        entry["sprinter_since"] = _spr["entry_date"].min().date().isoformat()
 
     hist = {"snapshots": []}
     if OUT.exists():

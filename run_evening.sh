@@ -16,6 +16,9 @@ rm -rf "$HOME/.cache/py-yfinance" 2>/dev/null
 # --- X200-G observation scan FIRST (logs tonight's signals; main message reads the log) ---
 echo "----- x200g observation -----" >> "$LOG" 2>&1
 "$PY" "$DIR/x200g_observe.py" >> "$LOG" 2>&1
+# --- panic-entry conditions (observation tag; STS_T5_MKTGAP_PREREG.md, 2026-10-30) ---
+echo "----- panic-entry check -----" >> "$LOG" 2>&1
+"$PY" "$DIR/panic_observe.py" >> "$LOG" 2>&1
 
 n=0
 while [ $n -lt 3 ]; do

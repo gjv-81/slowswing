@@ -422,10 +422,46 @@ def main():
         d = row.get("dist200_pct")
         return row["setup"] == "D200G" and d == d and d <= 10
 
+    # ── S2 PULLBACK DOOR (GJ, 2026-11-01; STS_S2_ENTRY_PREREG.md) ──────────────
+    # S2 signals (score>=2, within 10% of the 52wk high) no longer enter on the
+    # signal day. They go on a watch list and enter on the FIRST day they CLOSE
+    # 6-10% below their 20-day closing high, within 40 sessions of the signal.
+    # 10y gated backtest: pullback entry 77/54/23% touched +5/+10/+20 in 4 wk vs
+    # 72/48/20% on the signal day, same worst dip; 96% of S2s offer it, median
+    # wait 8 sessions. Gap-down entries were tested and rejected (deeper dips).
+    S2_WATCH = os.path.join(DIR, "s2_watch.csv")
+    S2_PB_LO, S2_PB_HI, S2_WATCH_DAYS = -10.0, -6.0, 60   # % below 20d high; ~40 sessions
+    s2w = pd.read_csv(S2_WATCH, dtype=str) if os.path.exists(S2_WATCH) else \
+          pd.DataFrame(columns=["ticker", "signal_date", "score", "rs"])
+    s2w = s2w[pd.to_datetime(s2w["signal_date"], errors="coerce") >= pd.Timestamp(today) - pd.Timedelta(days=S2_WATCH_DAYS)]
+    def pullback_pct(t):
+        c = data[t]["Close"].dropna()
+        return float(c.iloc[-1] / c.iloc[-20:].max() - 1) * 100 if len(c) >= 20 else np.nan
+    s2_entries = []     # rows entering today via the pullback door
+    watched = set(s2w["ticker"].astype(str))
+    for _, w in s2w.iterrows():
+        t = str(w["ticker"])
+        if t in known or t not in data: continue
+        pb = pullback_pct(t)
+        if pb == pb and S2_PB_LO <= pb <= S2_PB_HI:
+            s2_entries.append(dict(ticker=t, score=float(w["score"]), rs=float(w["rs"]),
+                                   last=round(float(data[t]["Close"].iloc[-1]), 2),
+                                   setup="S2", wr="", dist200_pct=np.nan, pb=round(pb, 1)))
+    s2_new_watch = []
+
     fresh, requal = [], []
     for _, row in qual.iterrows():
         t = row["ticker"]
         if t not in known:
+            if row["setup"] == "S2":
+                pb = pullback_pct(t)
+                if pb == pb and S2_PB_LO <= pb <= S2_PB_HI:
+                    r2 = dict(row); r2["pb"] = round(pb, 1)
+                    if t not in {e["ticker"] for e in s2_entries}: s2_entries.append(r2)
+                elif t not in watched:
+                    s2_new_watch.append(dict(ticker=t, signal_date=today.isoformat(),
+                                             score=row["score"], rs=row["rs"]))
+                continue            # S2 never enters on the signal day any more
             fresh.append(row); continue
         # already in the book — allow only a premium UPGRADE after cooldown
         if not is_premium(row): continue
@@ -444,6 +480,17 @@ def main():
     for row in requal:
         tag = "D200G" if row["setup"] == "D200G" else str(row["wr"])
         added_rows.append((row, f"RE-QUAL {tag} {today.isoformat()}"))
+    for row in s2_entries:
+        added_rows.append((row, f"S2-PB {row.get('pb', '')}% {today.isoformat()}"))   # tracker reads "S2-PB" -> setup S2
+    # update the S2 watch list: drop names that entered today, add tonight's new S2 signals
+    entered = {r["ticker"] for r, _ in added_rows}
+    s2w = s2w[~s2w["ticker"].astype(str).isin(entered)]
+    if s2_new_watch:
+        s2w = pd.concat([s2w, pd.DataFrame(s2_new_watch).astype(str)], ignore_index=True)
+    s2w.to_csv(S2_WATCH, index=False)
+    if s2_new_watch or s2_entries:
+        print(f"S2 pullback door — watching: {', '.join(w['ticker'] for w in s2_new_watch) or 'none new'} | "
+              f"entered on pullback: {', '.join(str(r['ticker']) + '(' + str(r.get('pb')) + '%)' for r in s2_entries) or 'none'}")
 
     if added_rows:
         add = pd.DataFrame({
@@ -552,12 +599,34 @@ def main():
     except Exception:
         pass
 
+    # Panic-entry conditions (panic_observe.py runs first; observation tag only)
+    panic_line = ""
+    try:
+        pl = pd.read_csv(os.path.join(DIR, "panic_log.csv"), dtype=str)
+        pr = pl[pl["date"] == today]
+        if len(pr):
+            pr = pr.iloc[-1]
+            if str(pr["tag_on"]) == "True":
+                panic_line = (f"🚨 <b>Panic-entry conditions ON</b> — {pr['gapdown_count']} stocks gapped down, "
+                              f"SPY {float(pr['spy_10d']):+.1f}% over 10d (tag until {pr['tag_until']})")
+            elif str(pr["heavy"]) == "True":
+                panic_line = f"⚡ Heavy gap-down day ({pr['gapdown_count']} stocks) but SPY not yet down 3% over 10d — tag off"
+    except Exception:
+        pass
+
     import html as _html
     dial_icon = {"R": "🔴", "O": "🟠", "Y": "🟡", "G": "🟢"}.get(zone[0], "⚪")
     esc = _html.escape
     sections = []
+    if panic_line: sections.append(panic_line)
     if freshtxt:  sections.append(f"🆕 <b>New — universe</b>\n  {esc(freshtxt)}")
     if requaltxt: sections.append(f"🔁 <b>Re-qualified</b>\n  {esc(requaltxt)}")
+    try:
+        _s2txt = "\n  ".join(f"{r['ticker']}  pulled back {r.get('pb')}% from 20d high  (score {r['score']})" for r in s2_entries)
+        if _s2txt: sections.append(f"🎯 <b>S2 — pullback entry</b>\n  {esc(_s2txt)}")
+        if s2_new_watch: sections.append(f"👀 <b>S2 watching</b> (waiting for a 6-10% pullback)\n  {esc(', '.join(w['ticker'] for w in s2_new_watch))}")
+    except Exception:
+        pass
     if v2txt:     sections.append(f"🌐 <b>New — v2 only</b> (not in universe)\n  {esc(v2txt)}")
     if xg:        sections.append(f"👁 <b>X200-G</b> (observation only)\n  {esc(xg)}")
     body = "\n\n".join(sections) if sections else "No new names tonight."
