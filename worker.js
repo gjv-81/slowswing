@@ -740,8 +740,15 @@ export default {
     //                   cron is on time. Two UTC slots cover EDT and EST; the
     //                   ET-clock check below picks the right one and the
     //                   workflow skips itself if the session is already done.
-    if ((event.cron || "").startsWith("25 2")) ctx.waitUntil(dispatchNightly(env));
-    else ctx.waitUntil(deadManCheck(env));
+    // 2026-10-31: every firing is recorded in KV (cron:log) so a silent miss can
+    // be diagnosed after the fact — GET /api/cron-status (Bearer ANNOUNCE_KEY).
+    const job = (event.cron || "").startsWith("25 2") ? "kick" : "deadman";
+    ctx.waitUntil((async () => {
+      let res;
+      try { res = job === "kick" ? await dispatchNightly(env) : await deadManCheck(env); }
+      catch (e) { res = { error: String(e && e.message || e) }; }
+      await cronLog(env, { job, cron: event.cron, at: new Date().toISOString(), res });
+    })());
   },
 
   async fetch(request, env, ctx) {
@@ -749,6 +756,8 @@ export default {
     try {
       // Manual dead-man check (GET) for testing; harmless to expose — it only emails the operator.
       if (p === "/api/deadman") return json(await deadManCheck(env));
+      if (p === "/api/cron-status" && request.method === "GET") return await cronStatus(request, env);
+      if (p === "/api/kick" && request.method === "POST") return await kickNow(request, env);
       if (p === "/api/signup" && request.method === "POST") return await signup(request, env, ctx);
       if (p === "/api/login" && request.method === "POST") return await login(request, env, ctx);
       if (p === "/api/code" && request.method === "POST") return await redeemCode(request, env, ctx);
@@ -772,24 +781,50 @@ export default {
 // Trigger the GitHub Actions "nightly" workflow (publish=1). Needs secret
 // GH_DISPATCH_TOKEN: a GitHub PAT with repo + workflow (or fine-grained
 // Actions: write) for gjv-81/slowswing.
-async function dispatchNightly(env) {
+async function cronLog(env, entry) {
+  try {
+    const raw = await env.STORE.get("cron:log");
+    const log = raw ? JSON.parse(raw) : [];
+    log.unshift(entry);
+    await env.STORE.put("cron:log", JSON.stringify(log.slice(0, 40)));
+  } catch (e) { console.log("cronLog failed " + e); }
+}
+async function dispatchNightly(env, { force = false } = {}) {
   if (!env.GH_DISPATCH_TOKEN) return { ok: false, why: "no GH_DISPATCH_TOKEN" };
   const et = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
   const hm = et.getHours() * 100 + et.getMinutes();
-  if (hm < 1720 || hm > 1900) return { ok: false, why: `ET ${hm} outside 17:20-19:00` };   // the EST/EDT slot that is actually 5:45 pm
+  if (!force && (hm < 1720 || hm > 1900)) return { ok: false, why: `ET ${hm} outside 17:20-19:00` };   // the EST/EDT slot that is actually 5:45 pm
   const r = await fetch("https://api.github.com/repos/gjv-81/slowswing/actions/workflows/nightly.yml/dispatches", {
     method: "POST",
     headers: { authorization: `Bearer ${env.GH_DISPATCH_TOKEN}`, accept: "application/vnd.github+json",
                "content-type": "application/json", "user-agent": "theslowswing-worker" },
     body: JSON.stringify({ ref: "main", inputs: { publish: "1", force_run: "0" } }),
   });
-  console.log(`nightly dispatch -> ${r.status}`);
+  let detail = ""; if (r.status !== 204) { try { detail = (await r.text()).slice(0, 200); } catch (e) {} }
+  console.log(`nightly dispatch -> ${r.status} ${detail}`);
   if (r.status !== 204 && env.TG_TOKEN && env.TG_CHAT) {
     await fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/sendMessage`, { method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ chat_id: env.TG_CHAT, text: `❌ could not start the nightly on GitHub (HTTP ${r.status}). GitHub's own 5:40/6:40/7:40 pm slots remain as fallback.` }) });
   }
-  return { ok: r.status === 204, status: r.status };
+  return { ok: r.status === 204, status: r.status, detail, et: hm };
+}
+// Diagnostics for the operator (Bearer ANNOUNCE_KEY):
+//   GET  /api/cron-status  -> the last 40 cron firings and what each did
+//   POST /api/kick         -> start the nightly on GitHub now (ignores the time window;
+//                             the workflow still skips itself if tonight is done)
+async function cronStatus(request, env) {
+  const auth = request.headers.get("authorization") || "";
+  if (!env.ANNOUNCE_KEY || auth !== `Bearer ${env.ANNOUNCE_KEY}`) return json({ error: "forbidden" }, 403);
+  const raw = await env.STORE.get("cron:log");
+  return json({ now: new Date().toISOString(), has_token: !!env.GH_DISPATCH_TOKEN, has_tg: !!(env.TG_TOKEN && env.TG_CHAT), log: raw ? JSON.parse(raw) : [] });
+}
+async function kickNow(request, env) {
+  const auth = request.headers.get("authorization") || "";
+  if (!env.ANNOUNCE_KEY || auth !== `Bearer ${env.ANNOUNCE_KEY}`) return json({ error: "forbidden" }, 403);
+  const res = await dispatchNightly(env, { force: true });
+  await cronLog(env, { job: "kick-manual", at: new Date().toISOString(), res });
+  return json(res);
 }
 
 async function rateLimited(request, env, ctx, bucket, max) {

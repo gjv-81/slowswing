@@ -17,6 +17,7 @@ binding = "ASSETS"
 APP_URL = "https://theslowswing.com"
 EMAIL_FROM = "The Slow Swing <hello@theslowswing.com>"   # root domain verified in Resend 2026-10-13; was hello@send.theslowswing.com
 NOTIFY_EMAIL = "gjv1000@gmail.com"
+TG_CHAT = "6499078442"      # Telegram chat id for ❌ alerts from the worker (the bot token stays a secret). Was missing until 2026-10-31, so kick failures were silent.
 # Complimentary full-access accounts (comma-separated, no trial, no card). Owner first.
 COMP_EMAILS = "gjv1000@gmail.com"
 # Journal announcements (POST /api/announce). Sender must be a Resend-verified
