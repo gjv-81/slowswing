@@ -24,6 +24,15 @@ Writes:
       SAME months as our setups (computed in the page from by_month). p5/p10 stay
       for the "three-year average" line in the track-record table.
 
+SAME-WINDOWS comparison (GJ, 2026-11-01 — the one the site shows):
+  For every snapshot in stats_history.json, and for every one of OUR published
+  setups in that snapshot's cohort (same cohort rules as build_stats.load_positions:
+  window completed by the snapshot date), measure every S&P 500 stock from the OPEN
+  of our setup's entry date to its highest HIGH through the snapshot date — exactly
+  how build_stats measures our own peak — and average across the cohort. Written as
+  idx_p5 / idx_p10 / idx_p20 / idx_n on snap["month"] and snap["cumulative"]. Our
+  own figures are never touched (never restated); only the comparison is added.
+
 Run (monthly, after build_stats.py has written the month's snapshot):
   python3 sp500_touch_baseline.py            # last completed month + current if complete
   python3 sp500_touch_baseline.py 2026-10    # a specific month
@@ -91,6 +100,44 @@ def month_complete(frames, ym):
     return last.date() >= pd.Timestamp(nxt).date() - pd.tseries.offsets.BDay(1)
 
 
+def same_windows(frames, hist):
+    """Add idx_p5/idx_p10/idx_p20/idx_n to every snapshot's month + cumulative blocks."""
+    sys.path.insert(0, HERE)
+    import build_stats                                   # same cohort rules as the published figures
+    df = build_stats.load_positions()
+    completed = df["entry_date"].dt.date + build_stats.WINDOW
+    names = {t: d for t, d in frames.items() if t != "SPY"}
+    cache = {}
+    def idx_touch(entry, asof):
+        key = (entry.date(), asof)
+        if key not in cache:
+            hits = np.zeros(3); n = 0
+            for d in names.values():
+                w = d[(d.index >= entry) & (d.index.date <= asof)]
+                if len(w) < 5:
+                    continue
+                o = float(w["Open"].iloc[0]); h = float(w["High"].max()); n += 1
+                hits += [h >= o * 1.05, h >= o * 1.10, h >= o * 1.20]
+            cache[key] = (hits / n * 100) if n else None
+        return cache[key]
+    def fill(block, g, asof):
+        if block is None or not len(g):
+            return
+        vals = [v for v in (idx_touch(e, asof) for e in g["entry_date"]) if v is not None]
+        if not vals:
+            return
+        m = np.mean(vals, axis=0)
+        block.update({"idx_p5": round(float(m[0]), 1), "idx_p10": round(float(m[1]), 1), "idx_p20": round(float(m[2]), 1), "idx_n": len(vals)})
+    for snap in hist.get("snapshots", []):
+        asof = dt.date.fromisoformat(snap["as_of"])
+        cum = df[completed <= asof]
+        month = df[(completed >= asof.replace(day=1)) & (completed <= asof)]
+        fill(snap.get("cumulative"), cum, asof)
+        fill(snap.get("month"), month, asof)
+        c = snap.get("cumulative") or {}
+        print(f"  {snap['label']}: S&P same windows -> month {snap['month'].get('idx_p5') if snap.get('month') else None}/{snap['month'].get('idx_p10') if snap.get('month') else None}  cumulative {c.get('idx_p5')}/{c.get('idx_p10')} (n={c.get('idx_n')})")
+
+
 def main(argv):
     frames = load_all()
     spy_path = os.path.join(DATA, "SPY.csv")
@@ -137,6 +184,10 @@ def main(argv):
         "updated": today.isoformat(),
     })
     hist["baseline"] = base
+    try:
+        same_windows(frames, hist)
+    except Exception as e:
+        print(f"same-windows comparison failed (non-fatal): {e}")
     json.dump(hist, open(HIST, "w"), indent=1)
     print(f"baseline -> {os.path.relpath(HIST, HERE)}: {len(by_month)} months, trailing-{len(keys)} avg +5% {base['p5']} / +10% {base['p10']} (as of {base['as_of']})")
     return 0
