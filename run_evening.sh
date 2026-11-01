@@ -73,6 +73,7 @@ fi
 # --- month-end track-record snapshot for the home-page headline (added 2026-09-18) ---
 # No-op except on the last trading day of the month; writes site/stats_history.json.
 "$PY" "$DIR/build_stats.py" >> "$LOG" 2>&1
+"$PY" "$DIR/sp500_touch_baseline.py" >> "$LOG" 2>&1
 
 # --- publish board.json to Cloudflare / theslowswing.com (added 2026-09-06) ---
 DEPLOY_OK=1

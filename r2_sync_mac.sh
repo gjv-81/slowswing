@@ -27,7 +27,7 @@ RC=(rclone --fast-list --transfers 32 --checkers 32 --checksum --stats-one-line 
 DIRS=(daily_data_10y daily_data_v2 daily_data_ext daily_data_slow_ext daily_data_10y_retired uw_archive/earnings_hist holy_grail_archive)
 FILES=(sts_ml_paper_trades.csv sts_ml_paper_tracker.xlsx STS_holy_grail.xlsx STS_holy_grail_v2.xlsx
        v2_alerted_history.csv v2_new_today.txt x200g_log.csv qualgate_cache.csv cap_cache.json names.json
-       s2_watch.csv panic_log.csv
+       s2_watch.csv panic_log.csv sp500_monthly_touch_baseline.csv
        regime.json board.json site/stats_history.json site/teaser.json)
 
 case "$1" in

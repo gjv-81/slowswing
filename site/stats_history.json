@@ -214,14 +214,14 @@
  "updated": "2026-10-30",
  "baseline": {
   "source": "sp500_monthly_touch_baseline.csv",
-  "as_of": "2026-09",
+  "as_of": "2026-10",
   "months": 36,
-  "n_stocks": 493,
+  "n_stocks": 494,
   "note": "A typical S&P 500 stock, from the first session of each calendar month to its highest high in that month (M1). Current constituents, so it reads high. Hypothetical.",
-  "p5": 54.7,
-  "p10": 26.6,
-  "low_p5": 78.8,
-  "low_p10": 45.4,
+  "p5": 56.1,
+  "p10": 27.9,
+  "low_p5": 79.6,
+  "low_p10": 46.8,
   "by_month": {
    "2023-10": {
     "p5": 36.1,
@@ -366,7 +366,12 @@
    "2026-09": {
     "p5": 30.0,
     "p10": 14.4
+   },
+   "2026-10": {
+    "p5": 85.8,
+    "p10": 57.6
    }
-  }
+  },
+  "updated": "2026-11-01"
  }
 }

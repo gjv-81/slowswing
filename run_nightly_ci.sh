@@ -67,7 +67,7 @@ RC="rclone --fast-list --transfers 32 --checkers 32 --checksum --stats-one-line 
 STATE_DIRS="daily_data_10y daily_data_v2 daily_data_ext daily_data_slow_ext daily_data_10y_retired uw_archive/earnings_hist holy_grail_archive"
 STATE_FILES="sts_ml_paper_trades.csv sts_ml_paper_tracker.xlsx STS_holy_grail.xlsx STS_holy_grail_v2.xlsx \
              v2_alerted_history.csv v2_new_today.txt x200g_log.csv qualgate_cache.csv cap_cache.json names.json \
-             s2_watch.csv panic_log.csv \
+             s2_watch.csv panic_log.csv sp500_monthly_touch_baseline.csv \
              regime.json board.json site/stats_history.json site/teaser.json ci_last_session.txt"
 
 # ---- the session this run is for (last closed session, ET) ----------------
@@ -155,6 +155,9 @@ if [ $brc -ne 0 ] && [ "$BOARD" = "marketstack" ]; then
   fi
 fi
 $PY build_stats.py >> "$LOG" 2>&1
+# "typical S&P 500 stock" comparison for the balloons / track record: writes the completed
+# month(s) into sp500_monthly_touch_baseline.csv and stats_history.json["baseline"] (website chat owns this)
+$PY sp500_touch_baseline.py >> "$LOG" 2>&1 || log "!! sp500_touch_baseline failed (non-fatal)"
 
 # ---- 5. publish (live mode only) -------------------------------------------
 DEPLOY_OK=1
@@ -197,7 +200,7 @@ if [ "$PUBLISH" = "1" ] && [ -d .git ]; then
   log "----- git push-back -----"
   git add -A sts_ml_paper_trades.csv sts_ml_paper_tracker.xlsx STS_holy_grail.xlsx STS_holy_grail_v2.xlsx \
              v2_alerted_history.csv v2_new_today.txt x200g_log.csv qualgate_cache.csv cap_cache.json \
-             s2_watch.csv panic_log.csv \
+             s2_watch.csv panic_log.csv sp500_monthly_touch_baseline.csv \
              regime.json board.json site/stats_history.json site/teaser.json site/version.json 2>/dev/null
   git -c user.name="STS nightly (CI)" -c user.email="gjv1000@gmail.com" commit -q -m "nightly $SESSION (CI)" >> "$LOG" 2>&1 || true
   git push -q origin HEAD:main >> "$LOG" 2>&1 && log "----- git push OK -----" || log "!! git push failed (non-fatal)"
