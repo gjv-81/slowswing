@@ -17,11 +17,7 @@
     "excess_wk4": 7.0,
     "p5_1wk": 33.3,
     "p5_2wk": 57.6,
-    "p5_4wk": 69.7,
-    "idx_p5": 71.2,
-    "idx_p10": 44.9,
-    "idx_p20": 14.7,
-    "idx_n": 68
+    "p5_4wk": 69.7
    },
    "cumulative": {
     "n": 66,
@@ -37,11 +33,7 @@
     "excess_wk4": 7.0,
     "p5_1wk": 33.3,
     "p5_2wk": 57.6,
-    "p5_4wk": 69.7,
-    "idx_p5": 71.2,
-    "idx_p10": 44.9,
-    "idx_p20": 14.7,
-    "idx_n": 68
+    "p5_4wk": 69.7
    },
    "by_setup": {
     "phoenix": {
@@ -95,11 +87,7 @@
     "excess_wk4": -3.0,
     "p5_1wk": 35.7,
     "p5_2wk": 53.6,
-    "p5_4wk": 64.3,
-    "idx_p5": 38.0,
-    "idx_p10": 16.7,
-    "idx_p20": 4.4,
-    "idx_n": 28
+    "p5_4wk": 64.3
    },
    "cumulative": {
     "n": 94,
@@ -115,11 +103,7 @@
     "excess_wk4": 4.3,
     "p5_1wk": 34.0,
     "p5_2wk": 56.4,
-    "p5_4wk": 68.1,
-    "idx_p5": 63.0,
-    "idx_p10": 39.1,
-    "idx_p20": 14.2,
-    "idx_n": 96
+    "p5_4wk": 68.1
    },
    "by_setup": {
     "phoenix": {
@@ -173,11 +157,7 @@
     "excess_wk4": 2.4,
     "p5_1wk": 37.0,
     "p5_2wk": 48.1,
-    "p5_4wk": 70.4,
-    "idx_p5": 69.0,
-    "idx_p10": 42.9,
-    "idx_p20": 10.2,
-    "idx_n": 27
+    "p5_4wk": 70.4
    },
    "cumulative": {
     "n": 123,
@@ -193,11 +173,7 @@
     "excess_wk4": 3.7,
     "p5_1wk": 43.9,
     "p5_2wk": 64.2,
-    "p5_4wk": 78.9,
-    "idx_p5": 71.4,
-    "idx_p10": 47.8,
-    "idx_p20": 18.7,
-    "idx_n": 123
+    "p5_4wk": 78.9
    },
    "by_setup": {
     "phoenix": {
@@ -238,14 +214,14 @@
  "updated": "2026-10-30",
  "baseline": {
   "source": "sp500_monthly_touch_baseline.csv",
-  "as_of": "2026-10",
+  "as_of": "2026-09",
   "months": 36,
-  "n_stocks": 494,
+  "n_stocks": 493,
   "note": "A typical S&P 500 stock, from the first session of each calendar month to its highest high in that month (M1). Current constituents, so it reads high. Hypothetical.",
-  "p5": 56.1,
-  "p10": 27.9,
-  "low_p5": 79.6,
-  "low_p10": 46.8,
+  "p5": 54.7,
+  "p10": 26.6,
+  "low_p5": 78.8,
+  "low_p10": 45.4,
   "by_month": {
    "2023-10": {
     "p5": 36.1,
@@ -390,12 +366,7 @@
    "2026-09": {
     "p5": 30.0,
     "p10": 14.4
-   },
-   "2026-10": {
-    "p5": 85.8,
-    "p10": 57.6
    }
-  },
-  "updated": "2026-11-01"
+  }
  }
 }
