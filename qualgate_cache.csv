@@ -35,7 +35,7 @@ BIDU,FAIL,LEVERAGED,FAIL/LEV,17.4,2026-10-29,1.1,0.126,2,1.19,-61.4,3.4,0.36,8.0
 BILI,FAIL,LEVERAGED,FAIL/LEV,69.2,2026-10-26,1.1,0.27,7,0.29,96.8,9.0,0.63,3.7,Communication Services,distress/leverage flag,Altman-Z 0.29 in distress zone (<1.81)
 BLDR,WATCH,DECLINING,WATCH/DECL,52.3,2026-10-26,1.1,0.411,4,2.27,14.1,2.9,1.17,5.2,Industrials,revenue -7% YoY,
 BROS,FAIL,GROWTH,FAIL/GS,44.7,2026-10-20,1.1,0.141,6,2.53,0.9,5.8,1.6,9.8,Consumer Cyclical,"rev +28%/yr, profitable",
-BSX,PASS,CORE,PASS,77.4,2026-10-04,1.1,0.317,7,2.94,5.5,10.7,0.47,19.8,Healthcare,mature / stable,
+BSX,PASS,CORE,PASS,77.5,2026-11-04,1.1,0.317,7,3.09,5.1,10.7,0.47,19.8,,mature / stable,
 BX,WATCH,GROWTH,WATCH/GS,52.8,2026-10-09,1.1,,5,,5.3,,1.54,,Financial Services,"rev +20%/yr, profitable",
 CAG,FAIL,LEVERAGED,FAIL/LEV,37.3,2026-10-13,1.1,0.156,4,1.06,15.0,-3.7,1.14,11.2,Consumer Defensive,distress/leverage flag,Altman-Z 1.06 in distress zone (<1.81)
 CAT,WATCH,CORE,WATCH,63.4,2026-10-26,1.1,0.218,6,4.68,2.3,24.0,2.03,16.5,Industrials,mature / stable,
