@@ -11,6 +11,65 @@
 //     (it just defines POSTS; nothing else runs).
 const POSTS = [
   {
+    slug:'chips-selling-off', cat:{label:'Note', cls:'note'}, icon:'📉', sample:false,
+    published:true,
+    author:'GJ Singh', date:'Nov 5, 2026', read:'5 min read',
+    title:`Chips are selling off. Our model does not know why.`,
+    excerpt:`Semiconductors are under heavy pressure and the political picture just changed. Our proprietary score has no idea either of those things happened. Here is what that has cost us so far, and what we would want you to do about it.`,
+    body:`<style>
+.chippost strong{font-weight:800}
+.chippost u{text-decoration-color:#b91c1c; text-decoration-thickness:2px; text-underline-offset:4px}
+.chippost .dd{color:#b91c1c; font-weight:800}
+.chippost .big{font-weight:800}
+</style>
+<div class="chippost">
+  <p>Semiconductors are having a rough stretch. The sector is down about 21% since June while the S&amp;P 500 is up slightly over the same months. It has fallen for seven sessions in a row. Roughly a trillion dollars has come off chip stocks in this move.</p>
+
+  <p>Memory names have been hit hardest. So has anything tied to AI spending.</p>
+
+  <h2>What is actually driving it</h2>
+
+  <p>Two things, mostly. Investors are questioning how long the spending on AI infrastructure can keep growing at this pace. And inflation data has pushed rate expectations the wrong way.</p>
+
+  <p>Then there is the thing nobody can price yet. The midterms changed control of Congress. What that means for data centre policy, power use, permitting and chip export rules is genuinely unknown. It is not in the market yet because nobody knows what it is. We are not going to pretend we do either, and we are not going to tell you what any of it means politically.</p>
+
+  <p>What we can say is that it is a real source of uncertainty sitting over this sector for the next several months.</p>
+
+  <h2>Our model does not know any of this happened</h2>
+
+  <div style="margin:26px 0">
+    <iframe src="semi_chart.html" title="The semiconductor sector against the S&amp;P 500 since June, with every date our model flagged a chip name" scrolling="no" style="width:100%;height:780px;border:0;display:block;overflow:hidden" onload="var f=this,fit=function(){try{var h=f.contentDocument.documentElement.scrollHeight;if(h>40)f.style.height=(h+2)+&quot;px&quot;}catch(e){}};fit();setTimeout(fit,250);setTimeout(fit,1500);try{window.addEventListener(&quot;resize&quot;,fit)}catch(e){}"></iframe>
+  </div>
+
+  <p>Our proprietary score looks at a stock&rsquo;s own price behaviour. That is all. It does not read the news. It does not know an election happened. There is no input for policy, for rates, for sector sentiment, or for anything said on television.</p>
+
+  <p>So it has kept doing what it always does. Since June it has put <strong>35 semiconductor names</strong> on the board. You can see them along the bottom of the chart, and you can see that they cluster most thickly in October, which is when the selling was worst. A sector falling this far is exactly the condition that produces our kind of setup.</p>
+
+  <h2>What it has cost us</h2>
+
+  <p>This is the part we would rather not write, which is why we are writing it.</p>
+
+  <p>Those semiconductor positions are the worst part of our book. They are down about <strong>15% on average</strong>. The book as a whole is down about <strong>1.6%</strong>. One chip name is down 38% in thirteen days. Two more are down over 20%.</p>
+
+  <p>The model flagged another memory name this morning.</p>
+
+  <p><strong>Being blind to something is not the same as being protected from it.</strong> A name on our board is exposed to every one of these risks, exactly like any other chip stock. <u>The model is not immune to regulation or to a sector in retreat. It simply cannot see either one coming.</u></p>
+
+  <p>The one place market conditions enter our work is the market dial on the board, which reads the overall market rather than any single name. That is a sizing tool. It is not a shield either.</p>
+
+  <h2>What we would want you to take from this</h2>
+
+  <p class="dd">Do your own homework before you act on anything, and do more of it than usual right now.</p>
+
+  <p>A setup tells you that a stock&rsquo;s price behaviour has reached a condition that has historically been followed by a move. It tells you nothing about whether Congress is about to change the economics of the industry that stock sits in. Those are two different questions and only one of them is ours.</p>
+
+  <p>These are short term headwinds and the dust has not settled. Nobody knows the trajectory yet, us included. If you are looking at a semiconductor setup in the next few months, size it like something uncertain, because it is.</p>
+
+  <p>We will keep publishing these names, because the record only means something if the losers are in it. We will also keep telling you when the model is walking into something it cannot see. Today it is.</p>
+</div>`,
+    foot:`Educational research, not advice. Our setups are generated by a model that uses price behaviour only and has no knowledge of policy, macroeconomic conditions or news. Position figures are from our live paper record as of Nov 5, 2026, are open positions that will change, and are not returns anyone earned. Sector figures use a broad semiconductor ETF. The Slow Swing is not a broker-dealer or investment adviser.`
+  },
+  {
     slug:'meet-the-sprinter', cat:{label:'Note', cls:'note'}, icon:'🏃', sample:false,
     published:true,
     author:'GJ Singh', date:'Nov 1, 2026', read:'4 min read',

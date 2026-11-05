@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The model kept flagging chips all the way down</title>
+<style>
+  :root{--primary:#0f766e; --ink:#0f172a; --mut:#64748b;}
+  *{box-sizing:border-box}
+  body{margin:0; font-family:-apple-system,"Segoe UI",Inter,Roboto,sans-serif; background:#fff; color:var(--ink); line-height:1.65; padding:0}
+  .chartcard{position:relative; background:#fff; border:0; padding:2px 0; margin:0}
+  @media (max-width:1000px){.chartcard{margin:30px 0}}
+  .badge{display:inline-block; background:#fef2f2; color:#991b1b; border:1px solid #fecaca; font-size:10.5px; font-weight:700; letter-spacing:.06em; padding:4px 10px; border-radius:99px; margin-bottom:8px}
+  .chartcard h2{margin:4px 0 4px; font-size:20px; letter-spacing:-.01em}
+  .sub{color:var(--mut); font-size:13px; margin:0 0 12px; max-width:70ch}
+  svg{width:100%; height:auto; display:block}
+  .legend{display:flex; align-items:center; gap:12px 20px; font-size:12px; color:var(--mut); margin-top:12px; flex-wrap:wrap}
+  .legend span{display:inline-flex; align-items:center; gap:7px}
+  .sw{width:20px; height:4px; border-radius:2px; display:inline-block}
+  .sw.d{background:repeating-linear-gradient(90deg,#94a3b8 0 5px,transparent 5px 9px); height:3px}
+  .sw.tick{width:3px; height:14px; border-radius:1px; background:#0f766e}
+  .note{font-size:11px; color:var(--mut); margin-top:10px; line-height:1.5}
+  .replay{margin-left:auto; background:#fff; border:1px solid var(--primary); color:var(--primary); font-weight:700; font-size:12.5px; padding:7px 15px; border-radius:99px; cursor:pointer; flex:none}
+  @media (max-width:560px){.replay{margin-left:0; width:100%; padding:9px 15px}}
+  .replay:hover{background:#ecfdf5}
+</style>
+</head>
+<body>
+<div class="chartcard">
+  <div class="badge">LIVE RECORD &mdash; 1 June to 4 November 2026</div>
+  <h2>The model kept flagging chip stocks all the way down</h2>
+  <p class="sub">The semiconductor sector against the S&amp;P 500 since June. Each tick along the bottom is a day our proprietary score put a semiconductor name on the board. There are 35 of them.</p>
+  <svg id="sp" viewBox="0 0 960 520" xmlns="http://www.w3.org/2000/svg"></svg>
+  <div class="legend">
+    <span><span class="sw" style="background:#dc2626"></span> Semiconductor sector</span>
+    <span><span class="sw d"></span> S&amp;P 500</span>
+    <span><span class="sw tick"></span> a chip name flagged</span>
+    <button class="replay" id="replay">&#x21bb; Replay</button>
+  </div>
+  <p class="note">Both lines are percentage change from 1 June 2026. The sector is represented by a broad semiconductor ETF. Flags are entries in our live paper record, winners and losers alike. Not returns earned, and not advice.</p>
+</div>
+<script>
+(function(){
+const D={"dates":["2026-06-01","2026-06-02","2026-06-03","2026-06-04","2026-06-05","2026-06-08","2026-06-09","2026-06-10","2026-06-11","2026-06-12","2026-06-15","2026-06-16","2026-06-17","2026-06-18","2026-06-22","2026-06-23","2026-06-24","2026-06-25","2026-06-26","2026-06-29","2026-06-30","2026-07-01","2026-07-02","2026-07-06","2026-07-07","2026-07-08","2026-07-09","2026-07-10","2026-07-13","2026-07-14","2026-07-15","2026-07-16","2026-07-17","2026-07-20","2026-07-21","2026-07-22","2026-07-23","2026-07-24","2026-07-27","2026-07-28","2026-07-29","2026-07-30","2026-07-31","2026-08-03","2026-08-04","2026-08-05","2026-08-06","2026-08-07","2026-08-10","2026-08-11","2026-08-12","2026-08-13","2026-08-14","2026-08-17","2026-08-18","2026-08-19","2026-08-20","2026-08-21","2026-08-24","2026-08-25","2026-08-26","2026-08-27","2026-08-28","2026-08-31","2026-09-01","2026-09-02","2026-09-03","2026-09-04","2026-09-08","2026-09-09","2026-09-10","2026-09-11","2026-09-14","2026-09-15","2026-09-16","2026-09-17","2026-09-18","2026-09-21","2026-09-22","2026-09-23","2026-09-24","2026-09-25","2026-09-28","2026-09-29","2026-09-30","2026-10-01","2026-10-02","2026-10-05","2026-10-06","2026-10-07","2026-10-08","2026-10-09","2026-10-12","2026-10-13","2026-10-14","2026-10-15","2026-10-16","2026-10-19","2026-10-20","2026-10-21","2026-10-22","2026-10-23","2026-10-26","2026-10-27","2026-10-28","2026-10-29","2026-10-30","2026-11-02","2026-11-03","2026-11-04"],"soxx":[0.0,5.79,7.65,5.38,-5.62,-0.08,-1.71,-5.32,2.62,4.25,9.93,3.43,4.91,11.86,14.58,5.55,5.22,9.37,3.2,7.47,12.09,4.91,-0.93,1.72,-3.49,-1.68,1.76,1.69,-3.16,-0.65,-2.87,-7.2,-8.72,-8.31,-3.32,-2.82,-3.57,-7.81,-9.7,-14.03,-18.66,-11.74,-11.68,-11.19,-5.15,-7.16,-6.85,-4.97,-7.39,-6.55,-4.38,-3.66,-3.72,-2.19,-7.04,-9.09,-8.63,-9.03,-11.45,-10.08,-9.84,-8.09,-11.03,-10.6,-12.48,-12.28,-12.15,-9.06,-7.57,-6.94,-9.49,-7.8,-12.99,-12.68,-12.12,-9.13,-6.69,-2.09,0.26,-0.97,-0.91,0.24,-1.84,-0.67,-0.46,0.88,3.08,3.19,3.18,2.02,-1.4,-2.08,-4.63,-4.79,-9.08,-9.9,-13.64,-12.14,-12.48,-10.66,-16.73,-16.29,-13.91,-10.54,-8.64,-10.05,-17.47,-20.59,-18.6,-21.16],"spy":[0.0,0.14,-0.57,-0.19,-2.77,-2.55,-2.83,-4.36,-2.74,-2.21,-0.49,-1.08,-2.32,-1.3,-1.61,-3.04,-3.09,-2.95,-3.65,-2.06,-1.3,-1.43,-1.56,-0.7,-1.17,-1.48,-0.65,-0.22,-0.98,-0.63,-0.24,-0.78,-1.76,-1.92,-1.1,-1.21,-2.43,-2.33,-2.31,-2.08,-3.59,-1.97,-1.26,0.14,1.95,1.74,1.58,2.2,2.17,1.85,2.1,2.81,2.61,2.13,1.44,1.65,0.79,1.21,0.91,1.23,1.25,1.92,1.69,1.38,0.69,1.13,2.19,1.8,1.24,0.77,0.16,1.02,0.57,0.11,-0.34,0.79,0.92,2.49,2.47,1.73,1.65,2.2,1.44,1.26,1.05,1.23,1.98,2.67,3.23,2.98,2.55,3.16,3.1,3.09,1.97,2.26,1.13,1.56,1.9,2.43,1.22,0.7,1.41,1.98,2.33,1.94,0.13,-0.35,-0.05,1.6],"flags":[{"d":"2026-07-20","t":"ARM"},{"d":"2026-07-20","t":"WDC"},{"d":"2026-07-20","t":"SNDK"},{"d":"2026-07-20","t":"MU"},{"d":"2026-07-20","t":"STX"},{"d":"2026-07-20","t":"AMAT"},{"d":"2026-07-20","t":"INTC"},{"d":"2026-07-20","t":"MRVL"},{"d":"2026-07-20","t":"KLAC"},{"d":"2026-07-20","t":"SMCI"},{"d":"2026-07-20","t":"TER"},{"d":"2026-07-20","t":"LRCX"},{"d":"2026-07-20","t":"AMD"},{"d":"2026-07-20","t":"ON"},{"d":"2026-07-20","t":"SWKS"},{"d":"2026-07-20","t":"COHR"},{"d":"2026-07-20","t":"QCOM"},{"d":"2026-07-20","t":"MPWR"},{"d":"2026-07-30","t":"TXN"},{"d":"2026-08-14","t":"ON"},{"d":"2026-08-24","t":"KLAC"},{"d":"2026-08-28","t":"AVGO"},{"d":"2026-09-01","t":"QCOM"},{"d":"2026-09-02","t":"AMAT"},{"d":"2026-09-09","t":"MCHP"},{"d":"2026-09-15","t":"LRCX"},{"d":"2026-09-16","t":"WDC"},{"d":"2026-09-22","t":"MPWR"},{"d":"2026-10-15","t":"STX"},{"d":"2026-10-16","t":"SMCI"},{"d":"2026-10-19","t":"INTC"},{"d":"2026-10-21","t":"ARM"},{"d":"2026-10-23","t":"SNDK"},{"d":"2026-11-02","t":"MRVL"},{"d":"2026-11-05","t":"MU"}]};
+const MON=[[0, "Jun"], [21, "Jul"], [43, "Aug"], [64, "Sep"], [85, "Oct"], [107, "Nov"]];
+const NS='http://www.w3.org/2000/svg';
+const svg=document.getElementById('sp');
+const W=960,H=520,L=52,R=128,T=22,B=74;
+const N=D.dates.length;
+const ymin=-26,ymax=18;
+const x=i=>L+(W-L-R)*i/(N-1);
+const y=v=>T+(H-T-B)*(ymax-v)/(ymax-ymin);
+const el=(n,a,par)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);(par||svg).appendChild(e);return e};
+const fmt=v=>(v>0?'+':'')+v.toFixed(1)+'%';
+const IDX={}; D.dates.forEach((d,i)=>IDX[d]=i);
+
+function render(){
+  svg.innerHTML='';
+  for(let v=-25;v<=15;v+=5){
+    el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:v===0?'#94a3b8':'#eef2f7','stroke-width':v===0?1.4:1});
+    el('text',{x:L-8,y:y(v)+4,'text-anchor':'end','font-size':11,fill:'#94a3b8'}).textContent=(v>0?'+':'')+v+'%';
+  }
+  MON.forEach(m=>{
+    el('line',{x1:x(m[0]),x2:x(m[0]),y1:T,y2:H-B,stroke:'#f1f5f9','stroke-width':1});
+    el('text',{x:x(m[0]),y:H-B+18,'text-anchor':'middle','font-size':11,fill:'#94a3b8'}).textContent=m[1];
+  });
+  // flag ticks
+  const tickG=el('g',{opacity:0});
+  el('line',{x1:L,x2:W-R,y1:H-B+30,y2:H-B+30,stroke:'#e2e8f0','stroke-width':1},tickG);
+  D.flags.forEach(f=>{const i=IDX[f.d]; if(i===undefined)return;
+    el('line',{x1:x(i),x2:x(i),y1:H-B+24,y2:H-B+40,stroke:'#0f766e','stroke-width':2.4,'stroke-linecap':'round',opacity:.75},tickG);});
+  el('text',{x:L,y:H-B+58,'font-size':11.5,fill:'#0f766e','font-weight':700},tickG).textContent=D.flags.length+' semiconductor names flagged over this stretch';
+
+  let sd='',xd='';
+  D.spy.forEach((v,k)=>{sd+=(sd?' L':'M')+x(k)+' '+y(v);});
+  D.soxx.forEach((v,k)=>{xd+=(xd?' L':'M')+x(k)+' '+y(v);});
+  const sA=el('path',{d:sd,fill:'none',stroke:'#94a3b8','stroke-width':2.2,'stroke-dasharray':'7 5',opacity:0});
+  const p=el('path',{d:xd,fill:'none',stroke:'#dc2626','stroke-width':3.6,'stroke-linecap':'round','stroke-linejoin':'round'});
+  const len=p.getTotalLength(); p.style.strokeDasharray=len; p.style.strokeDashoffset=len;
+
+  const lbl=el('g',{opacity:0});
+  const last=N-1;
+  el('circle',{cx:x(last),cy:y(D.soxx[last]),r:4.5,fill:'#dc2626'},lbl);
+  el('text',{x:x(last)+10,y:y(D.soxx[last])+4,'font-size':12.5,'font-weight':800,fill:'#dc2626',stroke:'#fff','stroke-width':3.5,'paint-order':'stroke'},lbl).textContent='Chips '+fmt(D.soxx[last]);
+  el('circle',{cx:x(last),cy:y(D.spy[last]),r:4,fill:'#94a3b8'},lbl);
+  el('text',{x:x(last)+10,y:y(D.spy[last])+4,'font-size':12.5,'font-weight':800,fill:'#64748b',stroke:'#fff','stroke-width':3.5,'paint-order':'stroke'},lbl).textContent='S&P '+fmt(D.spy[last]);
+  // peak marker
+  let pk=0; D.soxx.forEach((v,i)=>{if(v>D.soxx[pk])pk=i;});
+  el('circle',{cx:x(pk),cy:y(D.soxx[pk]),r:3.5,fill:'#fff',stroke:'#dc2626','stroke-width':2},lbl);
+  el('text',{x:x(pk),y:y(D.soxx[pk])-12,'text-anchor':'middle','font-size':11.5,'font-weight':700,fill:'#991b1b',stroke:'#fff','stroke-width':3,'paint-order':'stroke'},lbl).textContent='peak';
+
+  requestAnimationFrame(()=>{
+    p.style.transition='stroke-dashoffset 4.4s ease'; p.style.strokeDashoffset=0;
+    sA.style.transition='opacity 1.4s ease 1s'; sA.style.opacity=.9;
+    tickG.style.transition='opacity 1.3s ease 3.6s'; tickG.style.opacity=1;
+    lbl.style.transition='opacity 1s ease 4.6s'; lbl.style.opacity=1;
+  });
+}
+render();
+document.getElementById('replay').onclick=render;
+})();
+</script>
+</body>
+</html>
