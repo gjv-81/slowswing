@@ -7,7 +7,10 @@ main = "worker.js"
 # Fires the `scheduled` handler in worker.js, which emails NOTIFY_EMAIL if
 # board:current in KV is not stamped with today's session.
 [triggers]
-crons = ["0 1 * * 2-6", "25 21 * * 1-5", "25 22 * * 1-5"]   # dead-man 9pm ET; nightly kick 5:25pm ET (EDT slot, EST slot)
+# Days are spelled out on purpose: Cloudflare numbers the week 1-7 starting at SUNDAY
+# (standard cron starts at 0), so "1-5" here meant Sun-Thu — the kick never fired on
+# Fridays (2026-10-30, 2026-11-06) and fired on Sunday 2026-11-01. Found 2026-11-07.
+crons = ["0 1 * * TUE-SAT", "25 21 * * MON-FRI", "25 22 * * MON-FRI"]   # dead-man 9pm ET (Tue-Sat UTC = Mon-Fri evenings ET); nightly kick 5:25pm ET (EDT slot, EST slot)
 
 [assets]
 directory = "./site"
