@@ -127,6 +127,7 @@ PUBLIC_FIELDS = [
     "t", "n", "setup", "phase", "score", "q", "profile", "sector",
     "rs", "rsn", "date", "dial", "chg",
     "wk2", "wk4", "wk12", "mfe", "mae", "md4", "dtp", "d5", "d10", "ne",
+    "dt5", "dt10",   # 2026-11-07: trading days from entry to the FIRST touch of +5% / +10% (null = not yet / never)
     "bir", "t5d",   # 2026-10-29: back-in-range flag (day 1-2 pop, closed back) + date it touched +5%
 ] + (_PRICE_FIELDS if EMIT_PRICES else [])
 
@@ -333,6 +334,7 @@ def rows_from_workbook(path: Path) -> list[dict]:
             "bir": (True if (r["_phase"].lower() == "active" and str(r.get("back_in_range")).strip().lower() in ("true", "1", "1.0")) else None),
             "t5d": (fmt_date(r.get("ext_since")) if str(r.get("ext_since")) not in ("None", "nan", "NaT", "") else None),
             "_last": _num(r.get("last")),              # workbook's own last price (offline PC_SOURCE=workbook)
+            "_entry_date": str(r.get("entry_date"))[:10],
             # --- private fields carried along so the stripper can prove it drops them ---
             "dist200_pct": _num(r.get("dist200_pct")),
             "wash_min8w": _num(r.get("wash_min8w")),
@@ -416,6 +418,35 @@ def build() -> int:
     live = [r for r in rows if str(r.get("phase", "")).lower() != "retired"]
     names = [r["t"].upper() for r in live]
     want = list(dict.fromkeys(names + list(REGIME_TICKERS)))
+
+    # ---- days to the first touch of +5% / +10% (2026-11-07) ----------------
+    # The site's Track Record shows how FAST the 5-10% came, not held returns.
+    # Entry day = day 0, like the tracker's days-to-peak. Read from the refreshed
+    # daily_data_10y CSVs; a name whose CSV is missing simply gets null.
+    _here = os.path.dirname(os.path.abspath(__file__))
+    for row in rows:
+        row["dt5"] = row["dt10"] = None
+        pe, ed = row.get("pe"), row.get("_entry_date")
+        if not pe or not ed or ed in ("None", "nan", "NaT") or row.get("phase") == "pending":
+            continue
+        try:
+            fp = os.path.join(_here, "daily_data_10y", f"{row['t']}.csv")
+            with open(fp) as fh:
+                hdr = fh.readline().strip().split(",")
+                ih = hdr.index("High") if "High" in hdr else 2
+                i = 0; got5 = got10 = None
+                for ln in fh:
+                    p = ln.split(",")
+                    if p[0][:10] < ed or len(p) <= ih or not p[ih]:
+                        continue
+                    hi = float(p[ih])
+                    if got5 is None and hi >= pe * 1.05: got5 = i
+                    if got10 is None and hi >= pe * 1.10: got10 = i
+                    if got5 is not None and got10 is not None: break
+                    i += 1
+            row["dt5"], row["dt10"] = got5, got10
+        except Exception:
+            pass
 
     # PC_SOURCE=workbook -> use each position's own 'last' price from the workbook.
     # Offline, no vendor call, never trips the freshness guard. Ideal for local beta.

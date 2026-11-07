@@ -1007,7 +1007,7 @@
       <div>
         <div class="kicker">Honest track record · paper / hypothetical</div>
         <h2 class="section">Every setup, once its window closes</h2>
-        <p class="muted" style="margin:6px 0 0; max-width:72ch">A setup retires here once it has <b>run +5% and passed the 4-week mark</b> — or after <b>12 weeks</b> if it never runs — with its <b>actual</b> 2-, 4- and (where held that long) 12-week returns, its peak and the worst dip along the way. Each figure locks at its own maturity and is never restated. No cherry-picking: every retired name is shown, winners and losers alike.</p>
+        <p class="muted" style="margin:6px 0 0; max-width:72ch">A setup retires here once it has <b>run +5% and passed the 4-week mark</b> — or after <b>12 weeks</b> if it never runs — with <b>how many trading days it took to touch +5% and +10%</b>, its peak, and the worst dip along the way. A dash means it never got there. No cherry-picking: every retired name is shown, winners and losers alike.</p>
       </div>
     </div>
     <div class="trstats" id="trackStats" style="display:flex"></div>
@@ -1046,7 +1046,7 @@
       <input id="trackSearch" class="tksearch" type="search" autocomplete="off" placeholder="Search ticker or company…">
     </div>
     <div id="trackBody"></div>
-    <p class="faint" style="font-size:12px; margin-top:16px">Returns are <b>actual close-to-close</b> at 2 / 4 / 12 weeks after the stock was added. Peak is the best intraday level reached since — a hindsight high, not a return anyone captured. Everything on this page is measured from the price when added, paper-tracked during live validation (started Jul 20, 2026), subject to survivorship bias and excluding costs. Educational research, not advice.</p>
+    <p class="faint" style="font-size:12px; margin-top:16px"><b>Days to +5% / +10%</b> count trading days from the day added to the first time the price touched that level (the day added is day 0; "same day" means it got there on day 0). A level touched is a level, not a return anyone captured — where you sold is yours. Peak is the best intraday level reached since — a hindsight high. Everything on this page is measured from the price when added, paper-tracked during live validation (started Jul 20, 2026), subject to survivorship bias and excluding costs. Educational research, not advice.</p>
   </div></section>
 </div>
 
@@ -1976,6 +1976,8 @@ function dialCell(v){
 }
 const SECTOR_SHORT = {"Technology":"Tech","Financial Services":"Financials","Consumer Cyclical":"Consumer Cyc","Communication Services":"Comm Svcs","Consumer Defensive":"Consumer Def","Basic Materials":"Materials","Healthcare":"Health","Industrials":"Industrials","Real Estate":"Real Estate","Energy":"Energy","Utilities":"Utilities"};
 function shortSector(s){ return SECTOR_SHORT[s] || s || "—"; }
+// days from the day added to the first touch of a level; "—" = never got there (shown, not hidden)
+function daysCell(v){ if(v==null) return '<span class="faint" title="Never touched this level">—</span>'; return `<span class="agecell ${v<=5?'fresh':''}" style="font-weight:700">${v===0?'same day':v+' d'}</span>`; }
 function retCell(v){ if(v==null) return '<span class="faint">—</span>'; const c=v>=0?'chg-up':'chg-down'; return `<span class="${c}">${v>=0?'+':''}${v.toFixed(1)}%</span>`; }
 const MON = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
 const PRIO = ["①","②","③","④","⑤","⑥","⑦"];
@@ -2001,7 +2003,7 @@ const EXT_PCT = 5;   // Active = current price within +5% of the setup (or below
 function extPct(d){ return (d.pe && d.pc!=null) ? (d.pc/d.pe-1)*100 : 0; }
 function birBadge(d){ return d.bir ? ` <span class="birflag" title="Popped +5% on ${d.t5d||"its first days"}, then closed back below +5% of the setup price. The setup conditions are unchanged.">↩ Back in range</span>` : ''; }   // 2026-10-29: narrow rule — day 1–2 pop that closed back stays Active, judged by its close
 function newBadge(d){ if(d.phase==="pending") return ' <span class="newflag pend" title="Qualified after tonight\'s close — enters at the next open. No price yet.">PENDING</span>'; return (isNew(d.date) ? ' <span class="newflag">NEW</span>' : '') + birBadge(d); }
-function defDir(k){ return ["score","date","pe","pc","chg","mfe","mae","wk2","wk4","wk12","md4"].includes(k) ? -1 : 1; }
+function defDir(k){ return ["score","date","pe","pc","chg","mfe","mae","wk2","wk4","wk12","md4"].includes(k) ? -1 : 1; }   // dt5/dt10: ascending = fastest first
 // Age of a setup in weeks since the signal (sessions / 5), measured to the feed date.
 function ageSessions(d){ if(!d.date||d.phase==="pending") return 0; let n=0; const a=new Date(dval(d.date)), b=new Date(REF); while(a<b){ a.setDate(a.getDate()+1); const g=a.getDay(); if(g!==0&&g!==6) n++; } return n; }
 // Next scheduled earnings, shown only when it falls inside the next 3 weeks (a fact a
@@ -2017,7 +2019,7 @@ function colval(d,k){
     case "age": return ageWeeks(d);
     case "dial": return DIALRANK[d.dial]==null?9:DIALRANK[d.dial];
     case "pe": return d.pe==null?-1:d.pe; case "pc": return d.pc==null?-1:d.pc; case "chg": return d.chg==null?-999:d.chg; case "mfe": return d.mfe==null?-999:d.mfe; case "mae": return d.mae==null?999:d.mae;
-    case "wk2": return d.wk2==null?-999:d.wk2; case "wk4": return d.wk4==null?-999:d.wk4; case "wk12": return d.wk12==null?-999:d.wk12; case "md4": return d.md4==null?999:d.md4; case "mae": return d.mae==null?999:d.mae;
+    case "wk2": return d.wk2==null?-999:d.wk2; case "wk4": return d.wk4==null?-999:d.wk4; case "wk12": return d.wk12==null?-999:d.wk12; case "dt5": return d.dt5==null?999:d.dt5; case "dt10": return d.dt10==null?999:d.dt10; case "md4": return d.md4==null?999:d.md4; case "mae": return d.mae==null?999:d.mae;
   }
 }
 function money(v){ return v==null ? "—" : "$"+v.toFixed(2); }
@@ -2446,14 +2448,13 @@ function renderTrack(){
       <td><span class="lt-q ${d.q}">${qsym}</span></td>
       <td class="faint">${d.date||"—"}</td>
       <td>${dialCell(d.dial)}</td>
-      <td>${retCell(d.wk2)}</td>
-      <td>${retCell(d.wk4)}</td>
-      <td>${retCell(d.wk12)}</td>
+      <td>${daysCell(d.dt5)}</td>
+      <td>${daysCell(d.dt10)}</td>
       <td>${mfeCell(d.mfe)}</td>
       <td>${maeCell(d.md4)}</td>
     </tr>`;
   }).join('');
-  const TCOLS=[["t","Ticker"],["sector","Sector"],["setup","Setup"],["q","Q"],["date","Added"],["dial","Regime @ Add"],["wk2","2wk"],["wk4","4wk"],["wk12","12wk <span class=\"thsub\">if held that long</span>"],["mfe","Peak ▲"],["md4","Max Dip ▼ <span class=\"thsub\">first 4 wk</span>"]];
+  const TCOLS=[["t","Ticker"],["sector","Sector"],["setup","Setup"],["q","Q"],["date","Added"],["dial","Regime @ Add"],["dt5","Days to +5%"],["dt10","Days to +10%"],["mfe","Peak ▲"],["md4","Max Dip ▼ <span class=\"thsub\">first 4 wk</span>"]];
   const heads=TCOLS.map(([k,label])=>{
     const si=tsorts.findIndex(s=>s.key===k); const active=si>=0;
     const prio=(active&&tsorts.length>1)?`<span class="prio">${PRIO[si]}</span>`:"";
