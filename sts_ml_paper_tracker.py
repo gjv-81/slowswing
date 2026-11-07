@@ -131,7 +131,7 @@ def fetch_history(tickers, start, csv_dir=None, stale_days=4):
     import time
     data, need_yahoo, local = {}, [], {}
     csv_dir = csv_dir or os.path.join(_DIR, "daily_data_10y")
-    if not os.environ.get("STS_FORCE_YAHOO"):
+    if os.environ.get("STS_FORCE_YAHOO", "").strip().lower() not in ("1", "true", "yes"):   # "0" = off (CI passes "0")
         for t in tickers:
             p = os.path.join(csv_dir, f"{t}.csv")
             if not os.path.exists(p):

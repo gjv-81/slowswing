@@ -222,7 +222,10 @@ def load_universe_data(universe):
     Path B — the old route: yfinance 2y download + write_back() merge.
     Returns (data, source) where source is "marketstack" or "yahoo"."""
     want = universe + ["SPY", "RSP"]
-    use_ms = _env("EOD_PROVIDER", "").lower() == "marketstack" and not os.environ.get("STS_FORCE_YAHOO")
+    # 2026-11-07: the CI passes STS_FORCE_YAHOO="0"; a bare os.environ.get() treated "0"
+    # as ON and every cloud run since the 2026-10-26 cutover quietly used Yahoo.
+    force_yahoo = os.environ.get("STS_FORCE_YAHOO", "").strip().lower() in ("1", "true", "yes")
+    use_ms = _env("EOD_PROVIDER", "").lower() == "marketstack" and not force_yahoo
     if use_ms:
         try:
             from data_refresh import refresh_folder
@@ -266,7 +269,7 @@ def write_back(data, universe_dir):
     preserved (only the last ~2y get refreshed); on overlapping dates the FRESH
     (re-adjusted) values win. Non-fatal per ticker — a bad name never aborts the run."""
     cols = ["Open", "High", "Low", "Close", "Volume"]
-    updated = 0
+    updated = 0; rebased = []; alerts = []
     for t, fresh in data.items():
         try:
             f = fresh.copy()
@@ -287,15 +290,54 @@ def write_back(data, universe_dir):
                 # single night. For a normally-trading ticker the result is
                 # identical to before: Yahoo returns every session, so fresh wins
                 # everywhere.
+                # T16 guard (2026-11-04): keep the deep history on the SAME
+                # adjustment basis as the fresh window. Yahoo re-adjusts the
+                # whole fresh window after a split/spin-off, but the bars older
+                # than the window were never touched — that stitched a fake
+                # one-day -50% into MNST/APH/IESC (Sep 2024) and -85% into
+                # CTVA. Fix: measure old/fresh on the OLDEST overlapping days and
+                # rescale everything before the window by that ratio.
+                ov = old.index.intersection(f.index).sort_values()
+                if len(ov) >= 5:
+                    r = (f.loc[ov[:5], "Close"] / old.loc[ov[:5], "Close"]).astype(float)
+                    rr = float(r.median())
+                    if abs(rr - 1) > 0.002 and float((r / rr - 1).abs().max()) < 0.005:
+                        pre = old.index < ov[0]
+                        for c in ("Open", "High", "Low", "Close"):
+                            if c in old.columns: old.loc[pre, c] = old.loc[pre, c] * rr
+                        if "Volume" in old.columns: old.loc[pre, "Volume"] = (old.loc[pre, "Volume"] / rr).round()
+                        rebased.append(f"{t} x{rr:.4f}")
                 merged = pd.concat([old, f]).sort_index()
                 merged = merged[~merged.index.duplicated(keep="last")]
             else:
                 merged = f
+            # T16 alert: a 40%+ one-day move in the fresh window that does NOT
+            # reverse the next day is either a missed split or a bad print —
+            # it would show up as a fake deep DLB for a year. Flag it, don't hide it.
+            c = merged["Close"].astype(float)
+            jump = (c / c.shift(1) - 1)
+            recent = jump.index >= f.index.min()
+            big = jump[recent & (jump.abs() >= 0.40)]
+            for d, j in big.items():
+                nxt = jump.get(jump.index[jump.index > d][0]) if (jump.index > d).any() else 0.0
+                if abs(nxt) < 0.3 * abs(j):            # didn't reverse -> suspicious
+                    alerts.append(f"{t} {d.date()} {j:+.0%}")
             merged.reset_index().rename(columns={"index": "Date"}).to_csv(path, index=False)
             updated += 1
         except Exception as e:
             print(f"  write-back {t} failed (non-fatal): {e}")
     print(f"Write-back: refreshed {updated} CSVs in {os.path.basename(universe_dir)}/ (now current)")
+    if rebased:
+        print(f"  rebased deep history (adjustment basis changed): {', '.join(rebased)}")
+    if alerts:
+        msg = "⚠️ DATA CHECK — 40%+ one-day move with no reversal (missed split or bad print?):\n" + "\n".join(alerts[:15])
+        print("  " + msg.replace("\n", "\n  "))
+        try:
+            with open(os.path.join(os.path.dirname(universe_dir), "data_alerts.log"), "a") as fh:
+                fh.write(f"{pd.Timestamp.today().date()} {os.path.basename(universe_dir)}: {'; '.join(alerts)}\n")
+            send_telegram(msg)
+        except Exception as e:
+            print(f"  data-alert send failed (non-fatal): {e}")
 
 def send_telegram(msg, html=False):
     if not TELEGRAM_ENABLED: return
@@ -600,12 +642,23 @@ def main():
         pass
 
     # Panic-entry conditions (panic_observe.py runs first; observation tag only)
-    panic_line = ""
+    panic_line = ""; breadth_line = ""
     try:
         pl = pd.read_csv(os.path.join(DIR, "panic_log.csv"), dtype=str)
         pr = pl[pl["date"] == today]
         if len(pr):
             pr = pr.iloc[-1]
+            # Breadth line (GJ 2026-11-06): our universe's own health, with the
+            # 20-session-ago reading for direction. Descriptive, not a gate.
+            try:
+                b200 = int(float(pr["breadth200"])); b50 = int(float(pr["breadth50"]))
+                hist = pl[pl["breadth200"].astype(str).str.len() > 0]
+                prev = hist[hist["date"] < today]
+                ago = f" (was {int(float(prev['breadth200'].iloc[-20]))}% 4 wks ago)" if len(prev) >= 20 else ""
+                flag = "🔻" if b200 < 35 else ("🔸" if b200 < 55 else "")
+                breadth_line = f"     breadth {b200}% above 200d · {b50}% above 50d{ago} {flag}"
+            except Exception:
+                pass
             if str(pr["tag_on"]) == "True":
                 panic_line = (f"🚨 <b>Panic-entry conditions ON</b> — {pr['gapdown_count']} stocks gapped down, "
                               f"SPY {float(pr['spy_10d']):+.1f}% over 10d (tag until {pr['tag_until']})")
@@ -633,7 +686,8 @@ def main():
     msg = (f"🌙 <b>STS — {today.isoformat()}</b>\n"
            f"{dial_icon} {esc(zone)}\n"
            f"     stretch {stretch_now:+.1f}% vs 200d  ·  ATR {regime:+.1f}\n"
-           f"\n{body}")
+           + (f"{esc(breadth_line)}\n" if breadth_line else "")
+           + f"\n{body}")
     if "OK" not in hg_status:
         msg += f"\n\n⚠️ {esc(hg_status)}"
     _src = {"marketstack": "data: Marketstack", "yahoo": "data: Yahoo (fallback)"}[data_source]

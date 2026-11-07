@@ -60,7 +60,7 @@ def refresh_marketstack():
     # here (GJ, Sep 16). Found out via a $125 overage on 2026-10-22.
     if _env("V2_MARKETSTACK", "") != "1":
         return set()
-    if _env("EOD_PROVIDER", "").lower() != "marketstack" or os.environ.get("STS_FORCE_YAHOO"):
+    if _env("EOD_PROVIDER", "").lower() != "marketstack" or os.environ.get("STS_FORCE_YAHOO", "").strip().lower() in ("1", "true", "yes"):
         return set()
     try:
         from data_refresh import refresh_all
