@@ -22,7 +22,7 @@ APA,WATCH,DECLINING,WATCH/DECL,61.4,2026-10-26,1.1,0.204,7,1.99,9.8,11.0,0.75,30
 ARE,FAIL,DECLINING,FAIL/DECL,40.3,2026-10-26,1.1,0.059,5,,18.9,-4.4,0.82,18.8,Real Estate,revenue -3% YoY,
 ARES,FAIL,GROWTH,FAIL/GS,46.3,2026-10-26,1.1,0.106,5,1.25,11.5,2.7,3.33,15.9,Financial Services,"rev +44%/yr, profitable",
 ARM,PASS,SPECULATIVE,PASS/SPEC,73.9,2026-10-26,1.1,0.448,6,61.12,0.4,8.2,0.06,18.5,Technology,pre-commercial (P/S 48),
-ARWR,WATCH,GROWTH,WATCH/GS,64.2,2026-10-11,1.1,,5,5.97,1.8,1.6,0.79,11.9,Healthcare,"rev +51%/yr, not yet FCF-safe",
+ARWR,WATCH,GROWTH,WATCH/GS,64.5,2026-11-11,1.1,,5,4.69,2.3,1.6,0.79,11.9,Healthcare,"rev +51%/yr, not yet FCF-safe",
 ASTS,FAIL,SPECULATIVE,FAIL/SPEC,26.8,2026-10-26,1.1,0.007,4,2.76,-10.1,-11.7,1.22,-405.7,Technology,pre-commercial (P/S 167),Operating margin negative (-405.7%) and FCF not positive | Interest coverage -11.7x < 1.0x and FCF not positive | Burning cash and unprofitable (FCF<0 and NI<0)
 AVAV,FAIL,GROWTH,FAIL/GS,26.5,2026-10-26,1.1,0.088,2,3.39,-2.6,-53.4,0.19,-3.6,Industrials,"rev +141%/yr, not yet FCF-safe","Piotroski F-score 2/9 (<=2, fundamentally weak) | Operating margin negative (-3.6%) and FCF not positive | Interest coverage -53.4x < 1.0x and FCF not positive | Burning cash and unprofitable (FCF<0 and NI<0)"
 AVB,FAIL,NEW-IPO,FAIL/IPO,30.3,2026-10-18,1.1,0.087,4,1.81,5.4,5.1,0.82,30.2,Real Estate,<3yr public history,
@@ -207,7 +207,7 @@ SMCI,FAIL,GROWTH,FAIL/GS,32.1,2026-10-26,1.1,0.141,2,3.55,-32.5,15.3,0.61,7.1,Te
 SNDK,PASS,NEW-IPO,PASS/IPO,95.6,2026-10-26,1.1,0.643,8,19.88,6.3,179.3,0.01,61.6,Technology,<3yr public history + high growth,
 SNPS,FAIL,CORE,FAIL,33.9,2026-10-28,1.1,0.113,3,3.41,1.5,4.1,0.5,13.0,,mature / stable,
 SOFI,FAIL,GROWTH,FAIL/GS,24.9,2026-10-26,1.1,,2,,-21.4,,0.18,,Financial Services,"rev +38%/yr, not yet FCF-safe","Piotroski F-score 2/9 (<=2, fundamentally weak)"
-SPOT,PASS,CORE,PASS,76.6,2026-10-11,1.1,0.366,6,11.68,2.6,72.7,0.23,12.8,Communication Services,mature / stable,
+SPOT,PASS,CORE,PASS,75.8,2026-11-11,1.1,0.366,6,13.15,2.3,72.7,0.23,12.8,Communication Services,mature / stable,
 SRPT,FAIL,LEVERAGED,FAIL/LEV,35.0,2026-11-02,1.1,0.406,3,-0.99,-16.3,-17.4,0.91,-29.9,,distress/leverage flag,Altman-Z -0.99 in distress zone (<1.81) | Operating margin negative (-29.9%) and FCF not positive | Interest coverage -17.4x < 1.0x and FCF not positive | Burning cash and unprofitable (FCF<0 and NI<0)
 STLD,WATCH,CORE,WATCH,57.0,2026-10-26,1.1,0.146,5,5.78,1.5,22.3,0.47,8.8,Basic Materials,mature / stable,
 STX,PASS,GROWTH,PASS/GS,82.3,2026-10-26,1.1,0.557,8,13.22,2.1,14.0,1.78,34.7,Technology,"rev +34%/yr, profitable",
