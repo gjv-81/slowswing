@@ -2274,10 +2274,13 @@ function renderRunStamp(){
   const R=FEED_RUN||{}; const L=a=>(a&&a.length)?a.join(', '):null;
   // Always say whether anything was ADDED — a line that only mentions a retirement
   // read as "the scan didn't run" (2026-10-26). Pending/retired follow when present.
+  // 2026-11-12 (GJ): two separate facts every night — what joined the board today
+  // (names that got their price at the open, usually last night's pending list) and
+  // what tonight's scan found. A quiet scan is said out loud even on a night something joined.
   const parts=[];
-  if(L(R.added)) parts.push(`<b style="color:var(--pass)">Added:</b> ${L(R.added)}`);
-  else if(!L(R.pending)) parts.push(`<b style="color:var(--ink)">Added: none tonight</b> — the scan ran and found no new setups; a quiet night is by design.`);
-  if(L(R.pending)) parts.push(`<b style="color:#b45309">Pending (enters at next open):</b> ${L(R.pending)}`);
+  parts.push(L(R.added) ? `<b style="color:var(--pass)">Added to the board today:</b> ${L(R.added)}` : `<b style="color:var(--ink)">Added to the board today:</b> none`);
+  if(L(R.pending)) parts.push(`<b style="color:#b45309">Qualified tonight (enters at next open):</b> ${L(R.pending)}`);
+  else parts.push(`<span class="muted">The scan ran and found no new setups tonight; a quiet night is by design.</span>`);
   if(L(R.retired)) parts.push(`<b style="color:var(--muted)">Retired to the Track Record:</b> ${L(R.retired)}`);
   r.innerHTML = parts.join(' &nbsp;·&nbsp; ');
 }
