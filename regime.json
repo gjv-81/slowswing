@@ -1,22 +1,22 @@
 {
-  "as_of": "2026-11-11",
+  "as_of": "2026-11-12",
   "spy": {
-    "price": 759.81,
+    "price": 757.12,
     "dial": "GREEN",
-    "stretch": 4.3,
-    "pctile": 15,
-    "atr_dist": 2.8
+    "stretch": 3.9,
+    "pctile": 14,
+    "atr_dist": 2.6
   },
   "qqq": {
-    "price": 690.38,
+    "price": 688.17,
     "dial": "GREEN",
-    "stretch": 1.4,
+    "stretch": 1.1,
     "pctile": 9,
-    "atr_dist": 0.6
+    "atr_dist": 0.4
   },
   "dial": "GREEN",
   "state": "GREEN",
-  "pctile": 15,
-  "stretch": 4.3,
+  "pctile": 14,
+  "stretch": 3.9,
   "take": "The S&P 500 recently reset and is calmer than most of its last three years \u2014 historically a supportive backdrop. Context for sizing, not a signal."
 }
