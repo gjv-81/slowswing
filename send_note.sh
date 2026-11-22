@@ -20,7 +20,7 @@ BODY="$(node -e '
   if(process.argv[2]==="--test"){ o.test=true; if(process.argv[3]) o.to=process.argv[3]; }
   process.stdout.write(JSON.stringify(o));
 ' "$FILE" "$MODE" "$TO")"
-echo "$BODY" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const o=JSON.parse(s);console.log((o.test?"TEST → "+(o.to||"NOTIFY_EMAIL"):"REAL SEND to all signups")+"\n  "+o.title+"\n  links to: #"+(o.path||"post/"+o.slug))})'
+printf '%s' "$BODY" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const o=JSON.parse(s);console.log((o.test?"TEST → "+(o.to||"NOTIFY_EMAIL"):"REAL SEND to all signups")+"\n  "+o.title+"\n  links to: #"+(o.path||"post/"+o.slug))})'
 if [ "$MODE" != "--test" ]; then
   printf "Type SEND to confirm: "; read ans; [ "$ans" = "SEND" ] || { echo "aborted"; exit 1; }
 fi
