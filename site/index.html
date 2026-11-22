@@ -172,8 +172,12 @@
   .mh-small{font-size:13px; color:var(--muted)}
   .mh-row{display:flex; gap:26px; align-items:center; flex-wrap:wrap}
   .mh-meter{position:relative; height:14px; border-radius:7px; background:linear-gradient(90deg,#fecaca 0 35%,#fde68a 35% 55%,#bbf7d0 55% 100%)}
-  .mh-meter i{position:absolute; top:-5px; width:4px; height:24px; background:var(--ink); border-radius:2px; margin-left:-2px; transition:left .35s}
-  .mh-meter b{position:absolute; top:-4px; width:2px; height:22px; background:#94a3b8; margin-left:-1px; transition:left .35s}
+  /* 2026-11-22 (GJ): thicker, darker markers. Black = four weeks ago; today is dark red when below it, dark green when above, black when unchanged. */
+  .mh-meter i{position:absolute; top:-8px; width:7px; height:30px; background:#0b1220; border-radius:3px; margin-left:-3.5px; transition:left .35s; z-index:2; box-shadow:0 0 0 1.5px #fff}
+  .mh-meter i.dn{background:#991b1b} .mh-meter i.up{background:#14532d}
+  .mh-meter b{position:absolute; top:-6px; width:4px; height:26px; background:#0b1220; border-radius:2px; margin-left:-2px; transition:left .35s; z-index:1}
+  .mh-key i{display:inline-block; width:7px; height:14px; border-radius:3px; vertical-align:-2px; background:#0b1220} .mh-key i.dn{background:#991b1b} .mh-key i.up{background:#14532d}
+  .mh-key b{display:inline-block; width:4px; height:14px; border-radius:2px; vertical-align:-2px; background:#0b1220}
   .mh-scale{display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-top:6px}
   .mh-pill{display:inline-block; padding:5px 13px; border-radius:999px; font-size:13px; font-weight:750; white-space:nowrap}
   .mh-pill.amber{background:#fef3c7; color:#b45309} .mh-pill.red{background:#fee2e2; color:var(--fail)} .mh-pill.green{background:#dcfce7; color:var(--pass)}
@@ -1062,7 +1066,7 @@
         <div><div class="mh-lab" id="mhLab">Market breadth</div><div class="mh-big"><span id="mhLong">—</span>%</div><div class="mh-small">of stocks in an uptrend</div></div>
         <div style="flex:1; min-width:270px"><div class="mh-meter"><b id="mhMk4"></b><i id="mhMk"></i></div>
           <div class="mh-scale"><span>0</span><span>Washed out</span><span>Mixed</span><span>Broad</span><span>100</span></div>
-          <div class="mh-small" style="margin-top:8px"><span style="display:inline-block; width:4px; height:13px; background:var(--ink); border-radius:2px; vertical-align:-2px"></span> today &nbsp;&nbsp; <span style="display:inline-block; width:2px; height:13px; background:#94a3b8; vertical-align:-2px"></span> four weeks ago</div>
+          <div class="mh-small mh-key" style="margin-top:8px" id="mhKey"></div>
           <div class="mh-small" style="margin-top:9px" id="mhChg"></div></div>
         <div><span class="mh-pill" id="mhPill"></span></div></div></div>
 
@@ -2409,6 +2413,8 @@ function renderHealth(){
   $('mhSwitch').innerHTML=keys.map(k=>`<button class="${k===mhView?'on':''}" data-mh="${k}">${V[k].label}</button>`).join('');
   $('mhLab').textContent=v.label+' · breadth'; $('mhLong').textContent=n.long;
   $('mhMk').style.left=n.long+'%'; $('mhMk4').style.left=n.long_4w+'%';
+  { const d=n.long-n.long_4w, c=d<0?'dn':(d>0?'up':''); $('mhMk').className=c;
+    $('mhKey').innerHTML=`<i class="${c}"></i> today${d<0?' (lower than four weeks ago)':(d>0?' (higher than four weeks ago)':' (unchanged)')} &nbsp;&nbsp; <b></b> four weeks ago`; }
   $('mhChg').innerHTML=`${mhArrow(n.long,n.long_4w)} in 4 weeks (was ${n.long_4w}%) · 12-month range ${n.lo_12m}–${n.hi_12m}% · ${v.n} stocks`;
   const p=$('mhPill'); p.textContent=v.state; p.className='mh-pill '+mhPillClass(v.state);
   $('mhT1').textContent=n.long;  $('mhT1s').innerHTML='in a long-term uptrend · '+mhArrow(n.long,n.long_4w);
