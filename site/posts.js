@@ -11,6 +11,129 @@
 //     (it just defines POSTS; nothing else runs).
 const POSTS = [
   {
+    slug:'this-looks-like-2022', cat:{label:'Note', cls:'note'}, icon:'📉', sample:false,
+    published:true,
+    author:'GJ Singh', date:'Nov 22, 2026', read:'7 min read',
+    title:`This looks like 2022. That is not the comfort it sounds like.`,
+    excerpt:`Semiconductors have now fallen as far as they did in all of 2022, in half the time. Last week was a 4.5 standard deviation week. Here is what has happened after falls this deep, and what holding through one has actually required.`,
+    body:`<style>
+.y22 table{border-collapse:collapse; width:100%; margin:20px 0; font-size:14.5px}
+.y22 th,.y22 td{padding:9px 12px; border-bottom:1px solid #e2e8f0; text-align:left}
+.y22 th{font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#64748b; font-weight:800}
+.y22 td.v{font-weight:700}
+.y22 .bad{color:#b91c1c; font-weight:800}
+.y22 .good{color:#166534; font-weight:800}
+.y22 .sub td{color:#64748b; font-size:13.5px}
+.y22 .grp td{border-top:2px solid #cbd5e1}
+.y22 .tscroll{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:20px 0}
+.y22 .tscroll table{margin:0; min-width:560px}
+.y22 .tcap{font-size:12.5px; color:#64748b; margin:18px 0 -8px; font-weight:700}
+@media (max-width:560px){.y22 th,.y22 td{padding:8px 9px; font-size:13.5px}}
+</style>
+<div class="y22">
+  <p>It has been an unusually busy month, which is why there has been no post for a few weeks. Some of that was work that has nothing to do with this site. I also have an agentic AI system trading SPY futures, live and under test right now. It is a separate piece of research with its own record, and it is not part of what you subscribe to.</p>
+
+  <p>Back to what matters this week.</p>
+
+  <h2>Last week was not a normal week</h2>
+
+  <p>A typical day in the S&amp;P 500 this year has moved about 0.85% either way. That is the yardstick. Against it, here is last week.</p>
+
+  <table>
+    <tr><th></th><th>Move</th><th>In standard deviations</th></tr>
+    <tr><td>Monday</td><td class="v bad">&minus;1.91%</td><td class="v">&minus;2.2</td></tr>
+    <tr><td>Tuesday</td><td class="v bad">&minus;1.01%</td><td class="v">&minus;1.2</td></tr>
+    <tr><td>Wednesday</td><td class="v bad">&minus;0.31%</td><td class="v">&minus;0.4</td></tr>
+    <tr><td>Thursday</td><td class="v bad">&minus;1.96%</td><td class="v">&minus;2.3</td></tr>
+    <tr><td>Friday</td><td class="v bad">&minus;3.64%</td><td class="v bad">&minus;4.3</td></tr>
+  </table>
+
+  <p>Five down days. Four of them beyond one standard deviation. Three beyond two. The week finished at &minus;8.56%, which is a <b>4.5 standard deviation week</b>.</p>
+
+  <p>There have been four other weeks like this since 2016. Six months after every one of them, the market was higher, with a median gain of 12.5%.</p>
+
+  <h2>Semiconductors have already done their entire 2022</h2>
+
+  <p>This is the part that got my attention. Using an equal weight basket of the 27 semiconductor names in our universe, the sector is down <b>44% from its June 22 peak</b>. It fell 17% last week alone.</p>
+
+  <p>In 2022, semis fell 44% from the January high to the October low. They have now matched that entire decline in five months instead of ten.</p>
+
+  <p class="tcap">Who fell most in 2022 (January to the October 12 low)</p>
+  <table>
+    <tr><th>Group</th><th>Fall</th></tr>
+    <tr><td>Semiconductors</td><td class="v bad">&minus;44%</td></tr>
+    <tr><td>Software</td><td class="v bad">&minus;40%</td></tr>
+    <tr><td>Communication services</td><td class="v bad">&minus;40%</td></tr>
+    <tr><td>Technology (all)</td><td class="v bad">&minus;36%</td></tr>
+    <tr><td>Consumer cyclical</td><td class="v bad">&minus;30%</td></tr>
+    <tr><td>SPY</td><td class="v bad">&minus;24%</td></tr>
+    <tr><td>Utilities</td><td class="v bad">&minus;10%</td></tr>
+    <tr><td>Consumer staples</td><td class="v bad">&minus;4%</td></tr>
+    <tr><td>Energy</td><td class="v good">+40%</td></tr>
+  </table>
+
+  <p class="tcap">Where we are now</p>
+  <table>
+    <tr><th>Group</th><th>Fall from peak</th><th>Peak date</th></tr>
+    <tr><td>Semiconductors</td><td class="v bad">&minus;44%</td><td>June 22</td></tr>
+    <tr><td>Technology</td><td class="v bad">&minus;22%</td><td>October 6</td></tr>
+    <tr><td>SPY</td><td class="v bad">&minus;11%</td><td>October 6</td></tr>
+  </table>
+
+  <p>One difference matters. In 2022 the whole market fell 24%. Today the S&amp;P is down 11% and semis are carrying most of the damage. That is closer to a sector bust than a market wide bear, at least so far.</p>
+
+  <h2>What happened after deep semiconductor falls</h2>
+
+  <p>Every semis drop of 25% or more since 2017, measured from the low:</p>
+
+  <div class="tscroll">
+  <table>
+    <tr><th>Low</th><th>Depth</th><th>+1 month</th><th>+2 months</th><th>+6 months</th></tr>
+    <tr><td>Dec 2018</td><td class="v bad">&minus;30%</td><td class="v good">+24%</td><td class="v good">+38%</td><td class="v good">+39%</td></tr>
+    <tr><td>Mar 2020</td><td class="v bad">&minus;38%</td><td class="v good">+37%</td><td class="v good">+50%</td><td class="v good">+85%</td></tr>
+    <tr><td>Oct 2022</td><td class="v bad">&minus;45%</td><td class="v good">+29%</td><td class="v good">+31%</td><td class="v good">+44%</td></tr>
+    <tr><td>Aug 2024</td><td class="v bad">&minus;27%</td><td class="v good">+4%</td><td class="v good">+18%</td><td class="v good">+17%</td></tr>
+    <tr><td>Apr 2025</td><td class="v bad">&minus;40%</td><td class="v good">+26%</td><td class="v good">+45%</td><td class="v good">+93%</td></tr>
+  </table>
+  </div>
+
+  <p>Semis have always bounced hard from deep lows. Six months after each of those five, they were up between 17% and 93%.</p>
+
+  <h2>Now the part that keeps me honest</h2>
+
+  <p><b>Every row in that table is measured from the exact bottom, and the bottom is only known afterwards.</b></p>
+
+  <p>2022 had two lows that behaved completely differently.</p>
+
+  <div class="tscroll">
+  <table>
+    <tr><th>Measured from</th><th></th><th>Fall so far</th><th>+1 month</th><th>+2 months</th><th>+6 months</th></tr>
+    <tr class="grp"><td>June 16 low <span style="color:#b91c1c">(false bottom)</span></td><td>Semis</td><td class="v bad">&minus;37%</td><td class="v good">+11%</td><td class="v good">+19%</td><td class="v good">+8%</td></tr>
+    <tr class="sub"><td></td><td>SPY</td><td class="v bad">&minus;23%</td><td class="v good">+7%</td><td class="v good">+17%</td><td class="v good">+7%</td></tr>
+    <tr class="grp"><td>October 12 low <span style="color:#166534">(real bottom)</span></td><td>Semis</td><td class="v bad">&minus;44%</td><td class="v good">+25%</td><td class="v good">+29%</td><td class="v good">+41%</td></tr>
+    <tr class="sub"><td></td><td>SPY</td><td class="v bad">&minus;24%</td><td class="v good">+11%</td><td class="v good">+12%</td><td class="v good">+17%</td></tr>
+  </table>
+  </div>
+
+  <p>After the June low, semis rallied 22% in two months. Then they fell 28% to a new low in October. The bounce was real. It did not hold.</p>
+
+  <h2>What this costs us right now</h2>
+
+  <p>Our book is down about 15.5% across 348 positions. The semiconductor names in it are down about 32%. Two weeks ago those numbers were 1.6% and 15%. That is how fast this has moved.</p>
+
+  <p>We do not use stop losses, because every stop we tested reduced returns over a full cycle. The price of that choice is weeks like this one, where there is nothing between you and the drawdown except your own decision.</p>
+
+  <h2>So should you hold</h2>
+
+  <p>I am not going to tell you to hold, and you should be suspicious of anyone who does.</p>
+
+  <p>What I can tell you is what holding has required in the past. Every deep semiconductor fall in our data was followed by a strong recovery. In 2022, the people who collected that recovery were the ones still there in October, after the June bounce had already come and failed.</p>
+
+  <p>That is the character of this kind of market. The names that fall hardest tend to bounce hardest, and the bounce rarely arrives on a convenient schedule.</p>
+</div>`,
+    foot:`Educational research, not advice. Standard deviation figures use daily S&amp;P 500 moves against the trailing one year daily standard deviation. Sector figures use equal weight baskets of the stocks in our universe, which hold only companies that exist today, so historical recoveries look somewhat better than they were. Book figures are our live paper record as of Nov 20, 2026, are open positions that will change, and are not returns anyone earned. The Slow Swing is not a broker-dealer or investment adviser.`
+  },
+  {
     slug:'chips-selling-off', cat:{label:'Note', cls:'note'}, icon:'📉', sample:false,
     published:true,
     author:'GJ Singh', date:'Nov 5, 2026', read:'5 min read',
