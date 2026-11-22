@@ -116,6 +116,19 @@ while [ $n -lt 3 ]; do
 done
 echo "===== v2 CI END $(stamp) rc=$v2rc after $((n+1)) attempt(s) =====" >> "$V2LOG"
 
+# ---- 1b. price-file hygiene (2026-11-22) ------------------------------------
+# QUARANTINE: files too corrupted to repair leave the universe (the scan builds its
+# universe from the files present). SOXX carried ~200 bars on mixed 1x/3x scales back
+# to early 2025 (split adjustment applied on some nights and not others). ETF, never
+# published; the folder sync removes it from R2 too.
+mkdir -p daily_data_10y_retired
+for q in SOXX; do
+  [ -f "daily_data_10y/$q.csv" ] && mv "daily_data_10y/$q.csv" "daily_data_10y_retired/$q.csv" && log "quarantined $q"
+done
+# REPAIR: isolated bars on the wrong scale (3x, 10x) are rescaled; real moves are left alone.
+log "----- price-scale check -----"
+$PY repair_price_spikes.py >> "$LOG" 2>&1 || log "!! repair_price_spikes failed (non-fatal)"
+
 # ---- 2. X200-G observation --------------------------------------------------
 log "----- x200g observation -----"
 $PY x200g_observe.py >> "$LOG" 2>&1
