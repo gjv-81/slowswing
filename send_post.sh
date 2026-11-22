@@ -33,7 +33,7 @@ BODY="$(node -e '
   process.stdout.write(JSON.stringify(out));
 ' "$DIR/site/posts.js" "$SLUG" "$MODE" "$TO")"
 
-echo "$BODY" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const o=JSON.parse(s);console.log((o.test?"TEST → "+(o.to||"NOTIFY_EMAIL"):"REAL SEND to all entitled members")+"\n  "+o.title+"\n  "+o.intro.replace(/<[^>]+>/g,"").slice(0,160)+"…")})'
+printf '%s' "$BODY" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const o=JSON.parse(s);console.log((o.test?"TEST → "+(o.to||"NOTIFY_EMAIL"):"REAL SEND to all entitled members")+"\n  "+o.title+"\n  "+o.intro.replace(/<[^>]+>/g,"").slice(0,160)+"…")})'
 if [ "$MODE" != "--test" ]; then
   printf "Type SEND to confirm: "; read ans; [ "$ans" = "SEND" ] || { echo "aborted"; exit 1; }
 fi
