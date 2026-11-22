@@ -12,7 +12,7 @@
 const POSTS = [
   {
     slug:'this-looks-like-2022', cat:{label:'Note', cls:'note'}, icon:'📉', sample:false,
-    published:true,
+    published:false,
     author:'GJ Singh', date:'Nov 22, 2026', read:'7 min read',
     title:`This looks like 2022. That is not the comfort it sounds like.`,
     excerpt:`Semiconductors have now fallen as far as they did in all of 2022, in half the time. Last week was a 4.5 standard deviation week. Here is what has happened after falls this deep, and what holding through one has actually required.`,
@@ -123,15 +123,19 @@ const POSTS = [
 
   <p>We do not use stop losses, because every stop we tested reduced returns over a full cycle. The price of that choice is weeks like this one, where there is nothing between you and the drawdown except your own decision.</p>
 
-  <h2>So should you hold</h2>
+  <h2>I am holding</h2>
 
-  <p>I am not going to tell you to hold, and you should be suspicious of anyone who does.</p>
+  <p>I am not selling semiconductors into a 44% fall. Here is why, and what would make me wrong.</p>
 
-  <p>What I can tell you is what holding has required in the past. Every deep semiconductor fall in our data was followed by a strong recovery. In 2022, the people who collected that recovery were the ones still there in October, after the June bounce had already come and failed.</p>
+  <p>I do not think AI spending slows in the next six months. Last week the Senate passed a bipartisan permitting bill that speeds up energy and infrastructure projects, which is the real constraint on building data centres. The same bill also shifts billions in grid costs onto those data centres, and that part was fought over hard. I read the combination as a Congress that intends the buildout to happen and is arguing about who pays for the power, not whether to allow it. That is a view, not a fact, and you may read it differently.</p>
 
-  <p>That is the character of this kind of market. The names that fall hardest tend to bounce hardest, and the bounce rarely arrives on a convenient schedule.</p>
+  <p>The second reason is in the tables above. Every deep semiconductor fall in our data was higher six months later, by between 17% and 93%.</p>
+
+  <p><b>What would make me wrong:</b> a large cloud company cutting its capital spending guidance. That is the number I am watching. If one of them guides capex down, the thesis behind this whole sector changes and I will say so here.</p>
+
+  <p>I made the opposite mistake in 2022. I sold. Then I watched the October low turn into the best entry of the decade for this sector. I am not making that trade twice.</p>
 </div>`,
-    foot:`Educational research, not advice. Standard deviation figures use daily S&amp;P 500 moves against the trailing one year daily standard deviation. Sector figures use equal weight baskets of the stocks in our universe, which hold only companies that exist today, so historical recoveries look somewhat better than they were. Book figures are our live paper record as of Nov 20, 2026, are open positions that will change, and are not returns anyone earned. The Slow Swing is not a broker-dealer or investment adviser.`
+    foot:`Educational research, not advice. Standard deviation figures use daily S&amp;P 500 moves against the trailing one year daily standard deviation. Sector figures use equal weight baskets of the stocks in our universe, which hold only companies that exist today, so historical recoveries look somewhat better than they were. Book figures are our live paper record as of Nov 20, 2026, are open positions that will change, and are not returns anyone earned. Disclosure: I personally hold NVDA, MU, STX, MRVL, ARM, QCOM and PLTR as of publication. All seven have appeared on the board and all seven are currently showing a loss. This post is my own opinion, published to every reader alike, and it is not a recommendation to you. The Slow Swing is not a broker-dealer or investment adviser.`
   },
   {
     slug:'chips-selling-off', cat:{label:'Note', cls:'note'}, icon:'📉', sample:false,
