@@ -575,20 +575,25 @@ async function deadManCheck(env) {
 //   Sent via Resend's batch endpoint, 100 per request.
 function announceEmail(env, post, unsubUrl) {
   const base = env.APP_URL || "https://theslowswing.com";
-  const link = `${base}/#post/${encodeURIComponent(post.slug)}`;
+  // 2026-11-22: an announcement that is not a journal post (e.g. a new page) may carry
+  // its own target page, kicker line and button text. Defaults are the journal-post ones.
+  const path = post.path ? String(post.path).replace(/[^a-z0-9\-\/]/gi, "") : `post/${encodeURIComponent(post.slug)}`;
+  const link = `${base}/#${path}`;
+  const kicker = post.kicker || "New from The Slow Swing journal";
+  const cta = post.cta || "Read the rest →";
   const meta = [post.date, post.read].filter(Boolean).join(" · ");
   const html = `<div style="font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:560px;margin:0 auto;color:#0f172a;line-height:1.6">
-    <p style="margin:0 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0f766e;font-weight:700">New from The Slow Swing journal</p>
+    <p style="margin:0 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0f766e;font-weight:700">${esc(kicker)}</p>
     <h2 style="margin:0 0 6px;font-size:23px;line-height:1.25;color:#0e2a2b">${esc(post.title)}</h2>
     ${meta ? `<p style="margin:0 0 18px;color:#64748b;font-size:13px">${esc(meta)}</p>` : ""}
     <div style="font-size:16px">${post.intro}</div>
-    ${btn(link, "Read the rest →")}
+    ${btn(link, cta)}
     <p style="margin:0 0 24px;color:#64748b;font-size:13px">Or copy this link: <a href="${link}" style="color:#0f766e">${link}</a></p>
     <p style="margin:0 0 8px">Keep swinging,<br><b>The Slow Swing Team</b></p>
     <p style="margin:0 0 14px;color:#64748b;font-size:12px;line-height:1.5">The Slow Swing is educational research, not investment advice. We are not a broker-dealer or investment adviser, and we don't execute trades. Figures are paper-tracked and hypothetical — levels a price reached, not returns anyone earned. Do your own research.</p>
     <p style="margin:0;color:#94a3b8;font-size:12px">You receive these because you signed up with The Slow Swing. <a href="${unsubUrl}" style="color:#64748b">Stop post emails</a> — your account and the nightly board are unaffected.</p>
   </div>`;
-  const text = `New from The Slow Swing journal\n\n${post.title}\n${meta}\n\n${(post.excerpt || "").trim()}\n\nRead the rest: ${link}\n\nEducational research, not advice.\nStop post emails: ${unsubUrl}`;
+  const text = `${kicker}\n\n${post.title}\n${meta}\n\n${(post.excerpt || "").trim()}\n\n${cta.replace(/\s*→$/, "")}: ${link}\n\nEducational research, not advice.\nStop post emails: ${unsubUrl}`;
   return { subject: post.title, html, text };
 }
 async function unsubUrlFor(env, email) {
@@ -658,7 +663,8 @@ async function announce(request, env) {
     // page; the send itself happens on that page's button (POST), so a mail
     // scanner pre-opening the link can never trigger a mailing.
     const to = normEmail(post.to || env.NOTIFY_EMAIL);
-    const pending = { slug: post.slug, title: post.title, excerpt: post.excerpt, intro: post.intro, date: post.date, read: post.read };
+    const pending = { slug: post.slug, title: post.title, excerpt: post.excerpt, intro: post.intro, date: post.date, read: post.read,
+                      path: post.path, kicker: post.kicker, cta: post.cta };
     await env.STORE.put(`pending:${post.slug}`, JSON.stringify(pending), { expirationTtl: 7 * 86400 });
     const n = (await announceRecipients(env, post.slug)).length;
     const tok = await signToken({ t: "publish", s: post.slug, exp: Date.now() + 7 * 86400000 }, env.SESSION_SECRET);

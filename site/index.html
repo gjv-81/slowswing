@@ -159,6 +159,52 @@
   .page.active{display:block; animation:pageIn .34s ease both}
   @keyframes pageIn{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
   section.block{padding:64px 0; border-top:1px solid var(--line)}
+  /* ===== Market Health page (handoff #12, 2026-11-22) ===== */
+  [data-page="health"] .wrap{max-width:980px}
+  .mh-lede{color:var(--muted); font-size:16px; margin:8px 0 22px; max-width:70ch}
+  .mh-switch{display:inline-flex; border:1px solid var(--line2); border-radius:10px; overflow:hidden; margin-bottom:22px; white-space:nowrap}
+  .mh-switch button{border:0; background:#fff; padding:9px 18px; font-size:14px; font-weight:650; color:var(--muted); cursor:pointer; font-family:inherit}
+  .mh-switch button+button{border-left:1px solid var(--line2)}
+  .mh-switch button.on{background:var(--primary); color:#fff}
+  .mh-card{border:1px solid var(--line); border-radius:var(--radius); padding:20px 22px; margin:0 0 18px; background:#fff}
+  .mh-lab{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; font-weight:700}
+  .mh-big{font-size:46px; font-weight:800; line-height:1.05; color:var(--ink); letter-spacing:-.02em}
+  .mh-small{font-size:13px; color:var(--muted)}
+  .mh-row{display:flex; gap:26px; align-items:center; flex-wrap:wrap}
+  .mh-meter{position:relative; height:14px; border-radius:7px; background:linear-gradient(90deg,#fecaca 0 35%,#fde68a 35% 55%,#bbf7d0 55% 100%)}
+  .mh-meter i{position:absolute; top:-5px; width:4px; height:24px; background:var(--ink); border-radius:2px; margin-left:-2px; transition:left .35s}
+  .mh-meter b{position:absolute; top:-4px; width:2px; height:22px; background:#94a3b8; margin-left:-1px; transition:left .35s}
+  .mh-scale{display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-top:6px}
+  .mh-pill{display:inline-block; padding:5px 13px; border-radius:999px; font-size:13px; font-weight:750; white-space:nowrap}
+  .mh-pill.amber{background:#fef3c7; color:#b45309} .mh-pill.red{background:#fee2e2; color:var(--fail)} .mh-pill.green{background:#dcfce7; color:var(--pass)}
+  .mh-tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px}
+  .mh-tile{background:var(--bg2); border:1px solid var(--line); border-radius:10px; padding:14px}
+  .mh-tile .mh-big{font-size:30px}
+  .mh-dn{color:var(--down); font-weight:650} .mh-up{color:var(--up); font-weight:650}
+  .mh-card h3{font-size:17px; margin:0 0 4px; color:var(--ink)}
+  .mh-why{color:var(--muted); font-size:13.5px; margin:0 0 14px; line-height:1.5}
+  .mh-sec{display:grid; grid-template-columns:170px 1fr 86px; gap:10px; align-items:center; font-size:13.5px; padding:5px 0; color:var(--body)}
+  .mh-bar{height:12px; background:#e2e8f0; border-radius:6px; position:relative}
+  .mh-bar span{display:block; height:100%; border-radius:6px}
+  .mh-bar em{position:absolute; top:-3px; width:2px; height:18px; background:#475569}
+  .mh-note{font-size:12px; color:var(--muted); margin-top:10px; line-height:1.5}
+  #mhChart text{font-family:inherit}
+  .mh-how{background:var(--bg2); border-radius:12px; padding:16px 20px; font-size:14px; line-height:1.6}
+  .mh-how b{color:var(--ink)}
+  .mh-disc{font-size:12px; color:var(--muted); margin-top:12px; line-height:1.6}
+  .mh-asof{font-size:12.5px; color:var(--faint); margin-top:16px}
+  .mh-boardline{font-size:13px; margin-top:10px; color:var(--muted)}
+  .mh-boardline a{color:var(--primary); font-weight:650; cursor:pointer}
+  /* one more nav item: shift the existing tightening steps up so the row still fits */
+  @media (max-width:1900px){ .navlinks a{font-size:12.5px; padding:8px 7px} .navcta .btn{font-size:12.5px; padding:8px 11px} .navcta{gap:6px} }
+  @media (max-width:1800px){ .navlinks a#navTour{display:none} }
+  @media (max-width:1640px){ .navlinks a{font-size:12px; padding:7px 6px} }
+  @media (max-width:1440px){ nav .wrap{gap:14px} .logo{gap:8px} .logo .mark{width:54px; height:54px} .logo .lwm{font-size:22px} .logo .sub{font-size:9.5px; letter-spacing:.13em} }
+  @media (max-width:1290px){ .navlinks a[data-nav="home"]{display:none} .navlinks{margin-left:2px; gap:0} .navlinks a{font-size:11.5px; padding:7px 5px} .navcta .btn{font-size:11.5px; padding:7px 9px} }
+  @media (max-width:1190px){ .logo .sub{display:none} .navlinks a{padding:7px 4px; font-size:11px} .navcta .btn{padding:7px 8px; font-size:11px} }
+  @media (max-width:480px){ .mh-switch{display:flex} .mh-switch button{flex:1; padding:9px 6px !important; font-size:12.5px !important} .mh-sec{grid-template-columns:104px 1fr 66px !important; font-size:12.5px} }
+  @media (max-width:900px){ .mh-switch button{padding:9px 12px; font-size:13px} .mh-sec{grid-template-columns:120px 1fr 74px} .mh-big{font-size:38px} }
+
   .evteaser{display:grid; grid-template-columns:minmax(0,440px) minmax(0,1fr); gap:34px; align-items:center; margin-top:26px}
   .evpanel{border:1px solid var(--line); border-radius:16px; padding:18px 18px 14px; background:#fff; box-shadow:0 18px 40px -30px rgba(14,42,43,.4)}
   .evbadge{display:inline-block; background:#fff7ed; color:#9a3412; border:1px solid #fdba74; font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:4px 10px; border-radius:99px; margin-bottom:10px}
@@ -751,6 +797,7 @@
     <a data-nav="start">Getting started</a>
     <a data-nav="evidence">The Evidence</a>
     <a data-nav="board">Board</a>
+    <a data-nav="health">Market Health</a>
     <a data-nav="track">Track Record</a>
     <div class="navdrop">
       <a data-nav="how">How it works ▾</a>
@@ -758,6 +805,7 @@
         <a data-nav="how" data-scroll="how-approach">Our approach<span class="mdesc">The edge is conviction</span></a>
         <a data-nav="how" data-scroll="how-method">Methodology<span class="mdesc">How we built it</span></a>
         <a data-nav="how" data-scroll="how-boards">Active vs Out of Range<span class="mdesc">The board, day to day</span></a>
+        <a data-nav="how" data-scroll="how-health">Market Health<span class="mdesc">Looking past the index</span></a>
         <a data-nav="how" data-scroll="how-regime">Market regime &amp; timing<span class="mdesc">Why timing vs. SPY matters</span></a>
         <a data-nav="how" data-scroll="how-read">How to read a card<span class="mdesc">What every row shows</span></a>
         <a data-nav="how" data-scroll="how-gate">The quality gate<span class="mdesc">Why you can hold a dip</span></a>
@@ -942,6 +990,7 @@
         <div class="rb-cell" data-sym="qqq"><span class="rb-tk">QQQ</span><span class="rb-px">—</span><span class="rb-pill">—</span><span class="rb-atr">—</span></div>
         <div class="rb-take">A quick read on the market's health for sizing context.</div>
       </div>
+      <div class="mh-boardline" id="mhBoardLine" style="display:none"></div>
     </div>
 
     <div class="setupintro">
@@ -1001,6 +1050,40 @@
 </div>
 
 <!-- ============ TRACK RECORD ============ -->
+<div class="page" data-page="health">
+  <section class="block"><div class="wrap">
+    <div class="kicker">Context, not timing</div>
+    <h2 class="section">Market Health</h2>
+    <p class="mh-lede">How many stocks are taking part in the market's move. An index can rise on a handful of giants while most stocks fall, and this page shows the difference.</p>
+    <div id="mhBody">
+      <div class="mh-switch" id="mhSwitch"></div>
+
+      <div class="mh-card"><div class="mh-row">
+        <div><div class="mh-lab" id="mhLab">Market breadth</div><div class="mh-big"><span id="mhLong">—</span>%</div><div class="mh-small">of stocks in an uptrend</div></div>
+        <div style="flex:1; min-width:270px"><div class="mh-meter"><b id="mhMk4"></b><i id="mhMk"></i></div>
+          <div class="mh-scale"><span>0</span><span>Washed out</span><span>Mixed</span><span>Broad</span><span>100</span></div>
+          <div class="mh-small" style="margin-top:9px" id="mhChg"></div></div>
+        <div><span class="mh-pill" id="mhPill"></span></div></div></div>
+
+      <div class="mh-card"><div class="mh-tiles">
+        <div class="mh-tile"><div class="mh-lab">Long-term</div><div class="mh-big"><span id="mhT1">—</span>%</div><div class="mh-small" id="mhT1s"></div></div>
+        <div class="mh-tile"><div class="mh-lab">Short-term</div><div class="mh-big"><span id="mhT2">—</span>%</div><div class="mh-small" id="mhT2s"></div></div>
+        <div class="mh-tile"><div class="mh-lab">What it describes</div><div style="font-size:16px; font-weight:750; margin-top:6px; color:var(--ink)" id="mhState"></div><div class="mh-small" style="margin-top:4px" id="mhText"></div></div></div></div>
+
+      <div class="mh-card"><h3 id="mhChartTitle"></h3><p class="mh-why">When the index line climbs while the breadth line falls, fewer stocks are carrying the market.</p>
+        <svg id="mhChart" viewBox="0 0 900 330" width="100%" role="img" aria-label="Breadth history against the index"></svg>
+        <div class="mh-small" style="margin-top:6px"><span style="color:#0f766e; font-weight:700">━</span> % of stocks in an uptrend (left) &nbsp; <span style="color:#94a3b8; font-weight:700">━</span> <span id="mhIdxLab"></span>, indexed (no scale) &nbsp; <span style="background:#fee2e2; padding:0 6px">shaded</span> = breadth below 35%</div>
+        <div class="mh-note" id="mhMemNote"></div></div>
+
+      <div class="mh-card"><h3>By sector</h3><p class="mh-why">Share of each sector's stocks in an uptrend today. The tick shows where it stood four weeks ago. Sector view covers all stocks.</p><div id="mhSectors"></div></div>
+
+      <div class="mh-how"><b>How to read this page.</b> Breadth above about 55% means most stocks are taking part. Below about 35% means most are not. A falling reading while the index holds up is a narrowing market. A rising reading from a low is a recovering one.
+        <div class="mh-disc">Market Health describes the market's current state. It is not a forecast, a signal, or advice, and it does not tell you what any single stock will do. Educational research only. <a data-nav="how" data-scroll="how-health" style="color:var(--primary); font-weight:600">How it is put together →</a></div></div>
+      <div class="mh-asof" id="mhAsOf"></div>
+    </div>
+  </div></section>
+</div>
+
 <div class="page" data-page="track">
   <section class="block"><div class="wrap">
     <div class="boardhead">
@@ -1090,6 +1173,18 @@
       <div class="fcard" style="border-color:rgba(201,138,18,.35)"><div class="ico" style="background:rgba(201,138,18,.1)">📈</div><h3>Out of Range board</h3><p>The stock has traded <b>5% or more above</b> its setup price — the move has happened, and a pullback does not send it back. One exception: if a setup pops 5% on its first or second day and closes back below that, it stays on the Active board, marked "Back in range." We keep these to show how setups play out: their <b style="color:var(--up)">Peak</b> vs <b style="color:var(--down)">Max Dip</b>, and the <b>median time to peak</b>, evidence that gains often arrive in weeks, not months. Educational, not an invitation to chase.</p></div>
     </div>
     <p class="muted" style="max-width:74ch; margin-top:18px; font-size:15px">Because we use <b style="color:var(--ink)">no stop-loss and no price targets</b>, the board tells you <i>when conditions look ripe</i> — the entry timing, the position size, and especially the exit are always your decision. The Out of Range board exists to build conviction, not to imply anyone bought at the low or sold at the peak.</p>
+  </div></section>
+
+  <section class="block" id="how-health"><div class="wrap">
+    <div class="kicker">Market Health</div>
+    <h2 class="section">Market Health: looking past the index</h2>
+    <p class="muted" style="max-width:74ch; margin-top:12px; font-size:16px">The S&amp;P 500 is weighted by size, so a few giant companies can carry it. Market Health ignores size and counts stocks one by one.</p>
+    <div class="cols3" style="margin-top:22px">
+      <div class="fcard"><div class="ico">📊</div><h3>Breadth</h3><p>The share of stocks in an uptrend. We show two readings: long-term and short-term.</p></div>
+      <div class="fcard"><div class="ico">🔭</div><h3>Three views</h3><p>All the stocks we track, the S&amp;P 500 and the Nasdaq-100.</p></div>
+      <div class="fcard"><div class="ico">🏷️</div><h3>Five plain descriptions</h3><p>Broad advance, Mixed, Narrowing, Washed out and Recovering. Each one is set by fixed rules, so the label never depends on anyone's opinion.</p></div>
+    </div>
+    <p class="muted" style="max-width:74ch; margin-top:18px; font-size:15px"><b style="color:var(--ink)">Updated every evening</b> after the market closes. Market Health describes the market as it is today. It is not a forecast and it is not a signal for any single stock. <a data-nav="health" style="color:var(--primary); font-weight:600">Open Market Health →</a></p>
   </div></section>
 
   <section class="block" id="how-regime"><div class="wrap">
@@ -2286,6 +2381,66 @@ function renderRunStamp(){
 }
 function fmtFeedDate(d){ const m=String(d).match(/^(\d{4})-(\d{2})-(\d{2})/); if(!m) return String(d);
   return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][+m[2]-1]+" "+(+m[3])+", "+m[1]; }
+
+// ===== Market Health (handoff #12, 2026-11-22) =====
+// Public page. Data: site/breadth.json, written by the nightly (build_breadth.py).
+// Wording rule: "in an uptrend" only — never how it is computed; never tied to the setups.
+let BREADTH=null, mhView='all';
+try{ const v=localStorage.getItem('mhView'); if(v) mhView=v; }catch(e){}
+async function loadBreadth(){
+  try{ const r=await fetch('breadth.json',{cache:'no-store'}); if(!r.ok) throw 0; const j=await r.json();
+       BREADTH=(j&&j.views&&j.as_of)?j:null; }
+  catch(e){ BREADTH=(typeof window!=='undefined'&&window.__BREADTH_PREVIEW)||null; }
+  renderHealth();
+}
+function mhArrow(now,ago){ const d=now-ago; return d===0?'unchanged':`<span class="${d>0?'mh-up':'mh-dn'}">${d>0?'▲':'▼'} ${Math.abs(d)} points</span>`; }
+function mhPillClass(state){ const s=String(state||''); return /^Washed/.test(s)?'red':(/^(Broad|Recovering)/.test(s)?'green':'amber'); }
+function renderHealth(){
+  const body=document.getElementById('mhBody'); if(!body) return;
+  const line=document.getElementById('mhBoardLine');
+  if(!BREADTH){ if(!body.dataset.orig){ body.dataset.orig='1'; body.dataset.html=body.innerHTML; }
+    body.innerHTML='<div class="mh-card" style="text-align:center; color:var(--muted)">Market Health is updating. Please check back shortly.</div>'; if(line) line.style.display='none'; return; }
+  if(body.dataset.html && !document.getElementById('mhSwitch')) body.innerHTML=body.dataset.html;
+  const V=BREADTH.views, keys=['all','spx','ndx'].filter(k=>V[k]&&V[k].now&&V[k].history);
+  if(!keys.length){ BREADTH=null; return renderHealth(); }
+  if(!keys.includes(mhView)) mhView=keys[0];
+  const $=id=>document.getElementById(id), v=V[mhView], n=v.now;
+  $('mhSwitch').innerHTML=keys.map(k=>`<button class="${k===mhView?'on':''}" data-mh="${k}">${V[k].label}</button>`).join('');
+  $('mhLab').textContent=v.label+' · breadth'; $('mhLong').textContent=n.long;
+  $('mhMk').style.left=n.long+'%'; $('mhMk4').style.left=n.long_4w+'%';
+  $('mhChg').innerHTML=`${mhArrow(n.long,n.long_4w)} in 4 weeks (was ${n.long_4w}%) · 12-month range ${n.lo_12m}–${n.hi_12m}% · ${v.n} stocks`;
+  const p=$('mhPill'); p.textContent=v.state; p.className='mh-pill '+mhPillClass(v.state);
+  $('mhT1').textContent=n.long;  $('mhT1s').innerHTML='in a long-term uptrend · '+mhArrow(n.long,n.long_4w);
+  $('mhT2').textContent=n.short; $('mhT2s').innerHTML='in a short-term uptrend · '+mhArrow(n.short,n.short_4w);
+  $('mhState').textContent=v.state; $('mhText').textContent=v.text||'';
+  const idxName=String(v.index_label||'').split(' (')[0];
+  $('mhChartTitle').textContent=v.label+' breadth vs the '+idxName; $('mhIdxLab').textContent=v.index_label||'';
+  $('mhMemNote').textContent=mhView==='all'?'':'History uses the companies in the index today, not the members at each past date.';
+  mhChart(v.history, n.long);   // label the last point with the headline reading so the two never disagree by a rounding
+  let h=''; for(const s of (BREADTH.sectors||[])){ const c=s.now>=55?'#16a34a':(s.now>=35?'#d97706':'#dc2626'), d=s.now-s.ago;
+    h+=`<div class="mh-sec"><div>${s.name}</div><div class="mh-bar"><span style="width:${s.now}%; background:${c}"></span><em style="left:${s.ago}%"></em></div><div><b style="color:var(--ink)">${s.now}%</b> ${d===0?'':`<span class="${d>0?'mh-up':'mh-dn'}" style="font-size:12px">${d>0?'▲':'▼'}${Math.abs(d)}</span>`}</div></div>`; }
+  $('mhSectors').innerHTML=h;
+  $('mhAsOf').textContent=`As of ${fmtFeedDate(BREADTH.as_of)}. Updated every evening after the close.`;
+  // Board: one line under the regime bar (All-stocks reading), linking to this public page
+  if(line && V.all && V.all.now){ const a=V.all.now, d=a.long-a.long_4w;
+    line.innerHTML=`<a data-nav="health">Market Health: ${a.long}% of stocks in an uptrend${d===0?'':(d>0?' ▲':' ▼')}</a> <span class="faint">· context, not timing</span>`; line.style.display=''; }
+}
+function mhChart(hh, nowLong){ const svg=document.getElementById('mhChart'); if(!svg||!hh||!hh.dates||!hh.dates.length) return;
+  const W=900,H=330,L=44,R=20,T=14,Bm=30,n=hh.dates.length, B=hh.breadth, I=hh.index;
+  const x=i=>L+(W-L-R-36)*i/Math.max(1,n-1), y=q=>T+(H-T-Bm)*(1-q/100);
+  const s0=Math.min(...I), s1=Math.max(...I), ys=q=>T+(H-T-Bm)*(1-(q-s0)/((s1-s0)||1));
+  let h='', st=null;
+  for(let i=0;i<n;i++){ const lo=B[i]<35; if(lo&&st===null) st=i; if((!lo||i===n-1)&&st!==null){ h+=`<rect x="${x(st)}" y="${T}" width="${Math.max(2,x(i)-x(st))}" height="${H-T-Bm}" fill="#fee2e2" opacity=".7"/>`; st=null; } }
+  for(const g of [0,25,50,75,100]) h+=`<line x1="${L}" x2="${W-R}" y1="${y(g)}" y2="${y(g)}" stroke="#e2e8f0"/><text x="${L-8}" y="${y(g)+4}" font-size="11" fill="#64748b" text-anchor="end">${g}%</text>`;
+  let last=''; hh.dates.forEach((d,i)=>{ const yr=d.slice(0,4); if(yr!==last){ last=yr; h+=`<text x="${x(i)}" y="${H-8}" font-size="11" fill="#64748b">${yr}</text>`; } });
+  h+=`<polyline fill="none" stroke="#94a3b8" stroke-width="1.6" points="${I.map((q,i)=>x(i).toFixed(1)+','+ys(q).toFixed(1)).join(' ')}"/>`;
+  h+=`<polyline fill="none" stroke="#0f766e" stroke-width="2.2" points="${B.map((q,i)=>x(i).toFixed(1)+','+y(q).toFixed(1)).join(' ')}"/>`;
+  const li=n-1; h+=`<circle cx="${x(li)}" cy="${y(B[li])}" r="4" fill="#0f766e"/><text x="${x(li)+7}" y="${y(B[li])+4}" font-size="12" font-weight="700" fill="#0f766e" stroke="#fff" stroke-width="3" paint-order="stroke">${nowLong!=null?nowLong:Math.round(B[li])}%</text>`;
+  svg.innerHTML=h;
+}
+document.addEventListener('click', e=>{ const b=e.target.closest('[data-mh]'); if(!b) return; mhView=b.dataset.mh; try{ localStorage.setItem('mhView', mhView); }catch(_){} renderHealth(); });
+loadBreadth();
+
 // HOME-PAGE headline: read from site/stats_history.json — a snapshot written by
 // build_stats.py on the last trading day of each month. Nothing here recomputes
 // the headline; the number is literally "as of" the snapshot date and cannot
@@ -2731,13 +2886,14 @@ function showPage(name){
   }
   if(name==='story') renderStory();
   if(name==='evidence') renderEvidence();
+  if(name==='health') loadBreadth();
   checkForNewVersion(name); maybeRefreshFeed();
   if(name==='blog' && typeof backToBlog==='function') backToBlog();
   const pages=document.querySelectorAll('.page');
   if(![...pages].some(p=>p.dataset.page===name)) name="home";
   pages.forEach(p=>p.classList.toggle('active', p.dataset.page===name));
   if(name==='board' && typeof curAge!=='undefined' && curAge!=='active'){ const t=document.querySelector('#agetabs .tab[data-age="active"]'); if(t) t.click(); }
-  {const _nav=document.querySelector('nav'); if(_nav) _nav.classList.toggle('light', name==='psychology'||name==='track'||name==='start'||name==='faq'||name==='story'||name==='evidence');}
+  {const _nav=document.querySelector('nav'); if(_nav) _nav.classList.toggle('light', name==='psychology'||name==='track'||name==='start'||name==='faq'||name==='story'||name==='evidence'||name==='health');}
   document.querySelectorAll('.navlinks a').forEach(a=>a.classList.toggle('active', a.dataset.nav===name));
   window.scrollTo({top:0, behavior:'auto'});
   try{ if(location.hash.slice(1)!==name) history.replaceState(null,'','#'+name); }catch(e){}
