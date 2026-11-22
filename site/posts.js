@@ -12,7 +12,7 @@
 const POSTS = [
   {
     slug:'this-looks-like-2022', cat:{label:'Note', cls:'note'}, icon:'📉', sample:false,
-    published:false,
+    published:true,
     author:'GJ Singh', date:'Nov 22, 2026', read:'7 min read',
     title:`This looks like 2022. That is not the comfort it sounds like.`,
     excerpt:`Semiconductors have now fallen as far as they did in all of 2022, in half the time. Last week was a 4.5 standard deviation week. Here is what has happened after falls this deep, and what holding through one has actually required.`,
