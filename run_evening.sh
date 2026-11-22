@@ -74,6 +74,8 @@ fi
 # No-op except on the last trading day of the month; writes site/stats_history.json.
 "$PY" "$DIR/build_stats.py" >> "$LOG" 2>&1
 "$PY" "$DIR/sp500_touch_baseline.py" >> "$LOG" 2>&1
+# --- Market Health page numbers (added 2026-11-22): writes site/breadth.json. Non-fatal. ---
+"$PY" "$DIR/build_breadth.py" >> "$LOG" 2>&1 || echo "!! build_breadth failed (non-fatal)" >> "$LOG"
 
 # --- publish board.json to Cloudflare / theslowswing.com (added 2026-09-06) ---
 DEPLOY_OK=1

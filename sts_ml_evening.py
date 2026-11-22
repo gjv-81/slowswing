@@ -211,6 +211,8 @@ def load_from_csvs(tickers, universe_dir, years=2):
             print(f"  {t}: CSV unreadable ({e})")
     return out
 
+MS_NOTE = ""     # Marketstack quota warning / refusal note for tonight's Telegram (ms_usage.py)
+
 def load_universe_data(universe):
     """Marketstack-first (licensed, append-only, ~10 requests), Yahoo fallback.
 
@@ -241,6 +243,10 @@ def load_universe_data(universe):
                 pass
             rep = refresh_folder(UNIVERSE_DIR, extra=extra)
             fatal = [e for e in rep.errors if e.startswith("marketstack:")]
+            global MS_NOTE
+            MS_NOTE = getattr(rep, "usage_warning", "") or ""
+            if fatal:
+                MS_NOTE = f"Marketstack refused tonight's pull ({fatal[0][:110]}). Used Yahoo instead."
             exp = expected_session().isoformat()
             if fatal:
                 print(f"  Marketstack refresh failed: {fatal[0]} -> falling back to Yahoo")
@@ -690,6 +696,8 @@ def main():
            + f"\n{body}")
     if "OK" not in hg_status:
         msg += f"\n\n⚠️ {esc(hg_status)}"
+    if MS_NOTE:
+        msg += f"\n\n📊 {esc(MS_NOTE)}"
     _src = {"marketstack": "data: Marketstack", "yahoo": "data: Yahoo (fallback)"}[data_source]
     msg += f"\n\n<i>{_src} · bars through {data['SPY'].index.max().date()}</i>"
     if data_source == "yahoo":

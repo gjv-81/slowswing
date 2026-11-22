@@ -68,7 +68,8 @@ STATE_DIRS="daily_data_10y daily_data_v2 daily_data_ext daily_data_slow_ext dail
 STATE_FILES="sts_ml_paper_trades.csv sts_ml_paper_tracker.xlsx STS_holy_grail.xlsx STS_holy_grail_v2.xlsx \
              v2_alerted_history.csv v2_new_today.txt x200g_log.csv qualgate_cache.csv cap_cache.json names.json \
              s2_watch.csv panic_log.csv sp500_monthly_touch_baseline.csv \
-             regime.json board.json site/stats_history.json site/teaser.json ci_last_session.txt"
+             regime.json board.json site/stats_history.json site/teaser.json ci_last_session.txt \
+             marketstack_usage.json site/breadth.json"
 
 # ---- the session this run is for (last closed session, ET) ----------------
 SESSION="$($PY - <<'EOF'
@@ -171,6 +172,8 @@ $PY build_stats.py >> "$LOG" 2>&1
 # "typical S&P 500 stock" comparison for the balloons / track record: writes the completed
 # month(s) into sp500_monthly_touch_baseline.csv and stats_history.json["baseline"] (website chat owns this)
 $PY sp500_touch_baseline.py >> "$LOG" 2>&1 || log "!! sp500_touch_baseline failed (non-fatal)"
+# Market Health page numbers (added 2026-11-22): writes site/breadth.json. Non-fatal.
+$PY build_breadth.py >> "$LOG" 2>&1 || log "!! build_breadth failed (non-fatal)"
 
 # ---- 5. publish (live mode only) -------------------------------------------
 DEPLOY_OK=1

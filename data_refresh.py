@@ -73,6 +73,8 @@ class Report:
     seeded: list = field(default_factory=list)
     actions: list = field(default_factory=list)      # (ticker, kind, date, value)
     requests: int = 0
+    billed: int = 0                                  # Marketstack bills per SYMBOL per call
+    usage_warning: str = ""                         # set when the cycle count crosses 75/90/100%
     latest_date: Optional[str] = None
     errors: list = field(default_factory=list)
 
@@ -383,6 +385,15 @@ def refresh_folder(folder: str | Path, extra: Iterable[str] = (), provider: Opti
         rep.errors.append(f"{len(seed) - SEED_PER_NIGHT} new tickers deferred to later nights")
 
     rep.requests = prov.requests
+    # billing estimate: one call per active symbol, ~2 per freshly seeded name (history + dividends)
+    rep.billed = len(active) + 2 * len(rep.seeded)
+    if not dry_run:
+        try:
+            import ms_usage
+            rep.usage_warning = ms_usage.record(rep.billed, rep.folder)
+            if verbose: print(f"  marketstack usage: +{rep.billed} tonight -> {ms_usage.status()}")
+        except Exception as e:                        # noqa: BLE001
+            if verbose: print(f"  ms_usage failed (non-fatal): {e}")
     if verbose:
         print("  " + rep.summary())
         for t, kind, when, val in rep.actions:

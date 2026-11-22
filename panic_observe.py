@@ -31,6 +31,12 @@ def main():
     asof = spy.index.max()
     spy10 = (float(spy.iloc[-1]) / float(spy.iloc[-11]) - 1) * 100 if len(spy) > 11 else np.nan
     count = 0; n_checked = 0
+    # Breadth (added 2026-11-06, GJ): % of the universe closing above its own
+    # 200-day and 50-day. Descriptive only — it failed as a predictor in the
+    # internal-dial test (STS_INTERNAL_DIAL_PREREG.md), but it is the number that
+    # showed our stocks' own bear a year before SPY's in 2021 (92% -> 51%).
+    # Reference points: 2018/2025 bottoms 10-15%, Jun 2022 13%, Jan 2022 70%.
+    ab200 = 0; ab50 = 0; n_b = 0
     for fp in glob.glob(str(HERE / "daily_data_v2" / "*.csv")):
         t = os.path.basename(fp)[:-4].upper()
         if t in {"SPY", "QQQ", "RSP"}: continue
@@ -43,6 +49,13 @@ def main():
         h, l, o = float(d["High"].iloc[-1]), float(d["Low"].iloc[-2]), float(d["Open"].iloc[-1])
         pc = float(d["Close"].iloc[-2])
         if h < l and o <= pc * 0.98: count += 1
+        if len(d) >= 200:
+            c = d["Close"].astype(float)
+            n_b += 1
+            if c.iloc[-1] > c.iloc[-200:].mean(): ab200 += 1
+            if c.iloc[-1] > c.iloc[-50:].mean(): ab50 += 1
+    breadth200 = round(100 * ab200 / n_b) if n_b else ""
+    breadth50 = round(100 * ab50 / n_b) if n_b else ""
     heavy = count >= HEAVY_THRESHOLD
     falling = bool(np.isfinite(spy10) and spy10 <= SPY_DROP)
     today = asof.date().isoformat()
@@ -66,7 +79,8 @@ def main():
             tag_until = (asof + pd.Timedelta(days=5)).date().isoformat()
     tag_on = bool((heavy and falling) or (tag_until and tag_until >= today))
     row = dict(date=today, gapdown_count=count, checked=n_checked, spy_10d=round(spy10, 2) if np.isfinite(spy10) else "",
-               heavy=heavy, falling=falling, tag_on=tag_on, tag_until=tag_until)
+               heavy=heavy, falling=falling, tag_on=tag_on, tag_until=tag_until,
+               breadth200=breadth200, breadth50=breadth50)
     df = pd.DataFrame([row])
     if LOG.exists():
         old = pd.read_csv(LOG, dtype=str)
@@ -75,7 +89,8 @@ def main():
     df.to_csv(LOG, index=False)
     status = "ON" if tag_on else "off"
     print(f"PANIC-ENTRY check {today}: {count} gap-downs (of {n_checked}), SPY 10d {spy10:+.1f}% -> "
-          f"heavy={heavy} falling={falling} tag={status}" + (f" (until {tag_until})" if tag_on and tag_until else ""))
+          f"heavy={heavy} falling={falling} tag={status}" + (f" (until {tag_until})" if tag_on and tag_until else "")
+          + f" | breadth: {breadth200}% above 200d, {breadth50}% above 50d (n={n_b})")
 
 if __name__ == "__main__":
     main()
