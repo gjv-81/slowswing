@@ -487,9 +487,18 @@ def main():
         return float(c.iloc[-1] / c.iloc[-20:].max() - 1) * 100 if len(c) >= 20 else np.nan
     s2_entries = []     # rows entering today via the pullback door
     watched = set(s2w["ticker"].astype(str))
+    def s2_door_open(t):
+        # 2026-11-24 (GJ): a name that has ALREADY been in the book may use the Sprinter door
+        # too, once REQUAL_COOLDOWN_DAYS have passed since its last entry. Until now the door
+        # only took never-seen names; 10 of the 12 S2 qualifiers in Nov 2026 were old book
+        # names, so no Sprinter ever entered. The study (STS_S2_ENTRY_PREREG.md) had no
+        # "never in the book" condition — only the 20-session spacing this cooldown mirrors.
+        if t not in known: return True
+        last_date, _n = last_seen.get(t, (pd.NaT, ""))
+        return pd.isna(last_date) or (pd.Timestamp(today) - last_date).days >= REQUAL_COOLDOWN_DAYS
     for _, w in s2w.iterrows():
         t = str(w["ticker"])
-        if t in known or t not in data: continue
+        if t not in data or not s2_door_open(t): continue
         pb = pullback_pct(t)
         if pb == pb and S2_PB_LO <= pb <= S2_PB_HI:
             s2_entries.append(dict(ticker=t, score=float(w["score"]), rs=float(w["rs"]),
@@ -511,6 +520,17 @@ def main():
                                              score=row["score"], rs=row["rs"]))
                 continue            # S2 never enters on the signal day any more
             fresh.append(row); continue
+        # already in the book, and tonight it is a Sprinter candidate (S2): pullback door
+        if row["setup"] == "S2" and not is_premium(row):
+            if s2_door_open(t):
+                pb = pullback_pct(t)
+                if pb == pb and S2_PB_LO <= pb <= S2_PB_HI:
+                    r2 = dict(row); r2["pb"] = round(pb, 1)
+                    if t not in {e["ticker"] for e in s2_entries}: s2_entries.append(r2)
+                elif t not in watched:
+                    s2_new_watch.append(dict(ticker=t, signal_date=today.isoformat(),
+                                             score=row["score"], rs=row["rs"]))
+            continue
         # already in the book — allow only a premium UPGRADE after cooldown
         if not is_premium(row): continue
         last_date, last_note = last_seen.get(t, (pd.NaT, ""))
