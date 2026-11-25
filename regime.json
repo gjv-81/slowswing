@@ -1,22 +1,22 @@
 {
-  "as_of": "2026-11-24",
+  "as_of": "2026-11-25",
   "spy": {
-    "price": 718.78,
+    "price": 716.7,
     "dial": "RED",
-    "stretch": -1.6,
+    "stretch": -1.9,
     "pctile": 4,
-    "atr_dist": -0.8
+    "atr_dist": -0.9
   },
   "qqq": {
-    "price": 638.1,
+    "price": 633.93,
     "dial": "RED",
-    "stretch": -6.5,
+    "stretch": -7.1,
     "pctile": 2,
-    "atr_dist": -2.1
+    "atr_dist": -2.3
   },
   "dial": "RED",
   "state": "RED",
   "pctile": 4,
-  "stretch": -1.6,
+  "stretch": -1.9,
   "take": "The S&P 500 is below its long-term trend \u2014 reduce size and lean on the highest-quality names. Context, not a forecast."
 }
