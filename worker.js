@@ -596,6 +596,18 @@ function announceEmail(env, post, unsubUrl) {
   const text = `${kicker}\n\n${post.title}\n${meta}\n\n${(post.excerpt || "").trim()}\n\n${cta.replace(/\s*→$/, "")}: ${link}\n\nEducational research, not advice.\nStop post emails: ${unsubUrl}`;
   return { subject: post.title, html, text };
 }
+// POST /api/letter {to, subject, html, text} — ONE personal note from The Slow Swing to
+// ONE address (a welcome to a complimentary account, a reply). Owner only: Bearer
+// ANNOUNCE_KEY. Sent from EMAIL_FROM with replies going to support@. Added 2026-11-25.
+async function letter(request, env) {
+  const auth = request.headers.get("authorization") || "";
+  if (!env.ANNOUNCE_KEY || auth !== `Bearer ${env.ANNOUNCE_KEY}`) return json({ error: "forbidden" }, 403);
+  let m; try { m = await request.json(); } catch { return json({ error: "bad json" }, 400); }
+  const to = normEmail((m && m.to) || "");
+  if (!to || !/^[^@\s,;]+@[^@\s,;]+\.[^@\s,;]+$/.test(to) || !m.subject || !m.html) return json({ error: "to (one address), subject, html required" }, 400);
+  const ok = await sendEmail(env, { to, subject: String(m.subject), html: String(m.html), text: String(m.text || "") });
+  return json({ ok: !!ok, to });
+}
 async function unsubUrlFor(env, email) {
   const t = await signToken({ t: "unsub", e: normEmail(email) }, env.SESSION_SECRET);
   return `${env.APP_URL || "https://theslowswing.com"}/api/unsub?t=${encodeURIComponent(t)}`;
@@ -775,6 +787,7 @@ export default {
       if (p === "/api/portal" && request.method === "POST") return await portal(request, env);
       if (p === "/api/stripe-webhook" && request.method === "POST") return await stripeWebhook(request, env);
       if (p === "/api/announce" && request.method === "POST") return await announce(request, env);
+      if (p === "/api/letter" && request.method === "POST") return await letter(request, env);
       if (p === "/api/unsub" && request.method === "GET") return await unsubscribe(request, env);
       if (p === "/api/publish" && (request.method === "GET" || request.method === "POST")) return await publish(request, env);
     } catch (e) {

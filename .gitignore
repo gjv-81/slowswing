@@ -63,3 +63,6 @@ r2_pull.log
 
 # blog drafts live outside site/ and are never committed; a post reaches the site only via site/posts.js with published:true
 drafts/
+
+# personal one-off emails (hold recipients' addresses) stay on the Mac
+letters/
