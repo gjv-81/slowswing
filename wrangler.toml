@@ -22,7 +22,7 @@ EMAIL_FROM = "The Slow Swing <hello@theslowswing.com>"   # root domain verified 
 NOTIFY_EMAIL = "gjv1000@gmail.com"
 TG_CHAT = "6499078442"      # Telegram chat id for ❌ alerts from the worker (the bot token stays a secret). Was missing until 2026-10-31, so kick failures were silent.
 # Complimentary full-access accounts (comma-separated, no trial, no card). Owner first.
-COMP_EMAILS = "gjv1000@gmail.com"
+COMP_EMAILS = "gjv1000@gmail.com,vivaanvinayak2015@gmail.com"
 # Journal announcements (POST /api/announce). Sender must be a Resend-verified
 # domain: verify theslowswing.com in Resend before the first real send, or
 # comment this line out to fall back to EMAIL_FROM (send.theslowswing.com).
