@@ -11,6 +11,109 @@
 //     (it just defines POSTS; nothing else runs).
 const POSTS = [
   {
+    slug:'red-market-history', cat:{label:'Note', cls:'note'}, icon:'🚦', sample:false,
+    published:true,
+    author:'GJ Singh', date:'Nov 27, 2026', read:'5 min read',
+    title:`What our setups did in every red market since 2017`,
+    excerpt:`The market dial turned red last week. We went back through every red stretch since 2017 to see how our setups behaved. The average is the best of any zone. The average also hides two completely different markets.`,
+    body:`<style>
+.redpost table{border-collapse:collapse; width:100%; margin:20px 0; font-size:14.5px}
+.redpost th,.redpost td{padding:9px 12px; border-bottom:1px solid #e2e8f0; text-align:left}
+.redpost th{font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#64748b; font-weight:800}
+.redpost td.v{font-weight:700}
+.redpost .hi{font-weight:800}
+.redpost .red{color:#b91c1c; font-weight:800}
+.redpost .amber{color:#b45309; font-weight:800}
+.redpost .green{color:#166534; font-weight:800}
+.redpost .grey{color:#64748b; font-weight:800}
+.redpost .tscroll{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:20px 0}
+.redpost .tscroll table{margin:0; min-width:600px}
+.redpost .tscroll.yr table{min-width:460px}
+.redpost .tnote{font-size:13.5px; line-height:1.55; color:#64748b; margin:8px 0 22px}
+.redpost .tnote p{margin:0 0 6px; font-size:inherit; line-height:inherit; color:inherit}
+.redpost sup{font-size:.7em; font-weight:700}
+@media (max-width:560px){.redpost th,.redpost td{padding:8px 9px; font-size:13.5px}}
+</style>
+<div class="redpost">
+  <p>Last week the market dial turned red. The question that follows is what that means for the board, so we went and looked.</p>
+
+  <p>What follows is a backtest. It is our setups as the model would have generated them over the past ten years, not a record of signals we published at the time.</p>
+
+  <h2>Red has been the best zone, on average</h2>
+
+  <p>Every setup in the backtest, sorted by what the dial read on the day it appeared:</p>
+
+  <div class="tscroll">
+  <table>
+    <tr><th>Dial</th><th>Signals</th><th>Reached +5%</th><th>Reached +10%</th><th>Days to +5%</th><th>Fell 10% first</th><th>12 week average</th></tr>
+    <tr><td class="red">Red</td><td class="v">528</td><td class="v hi">77%</td><td class="v hi">56%</td><td class="v hi">2</td><td class="v">29%</td><td class="v green hi">+12.9%</td></tr>
+    <tr><td class="green">Green</td><td class="v">785</td><td class="v">76%</td><td class="v">52%</td><td class="v">3</td><td class="v">27%</td><td class="v green">+8.5%<sup>1,2</sup></td></tr>
+    <tr><td class="amber">Yellow</td><td class="v">848</td><td class="v">75%</td><td class="v">51%</td><td class="v">4</td><td class="v">25%</td><td class="v green">+2.3%</td></tr>
+    <tr><td class="amber">Orange</td><td class="v">170</td><td class="v">73%</td><td class="v">45%</td><td class="v">3</td><td class="v">28%</td><td class="v green">+8.5%<sup>1</sup></td></tr>
+  </table>
+  </div>
+  <div class="tnote">
+  <p><sup>1</sup> Green and Orange happen to average the same; they are different sets of signals.</p>
+  <p><sup>2</sup> Of the 785 Green signals, 645 have a finished 12-week result; the other 140 are too recent. The &ldquo;reached&rdquo; columns use all 785 and the 12-week column uses the 645. The Red, Yellow and Orange rows are complete.</p>
+  </div>
+
+  <p>&ldquo;Fell 10% first&rdquo; means the price dropped 10% below the signal price before it ever gained 5%. It is the number that tells you how uncomfortable the holding was.</p>
+
+  <p>So the worst looking zone has the best record. That is not as strange as it sounds. Our setups look for companies that have been marked down, and a red market is where the markdowns are.</p>
+
+  <h2>That average is two different markets stacked on top of each other</h2>
+
+  <p>Here is the same red data split by year.</p>
+
+  <div class="tscroll yr">
+  <table>
+    <tr><th>Year</th><th>Signals</th><th>Reached +5%</th><th>Reached +10%</th><th>12 week average</th></tr>
+    <tr><td>2018</td><td class="v">11</td><td class="v">73%</td><td class="v">55%</td><td class="v green">+26%</td></tr>
+    <tr><td>2020</td><td class="v">36</td><td class="v">94%</td><td class="v">78%</td><td class="v green">+48%</td></tr>
+    <tr><td class="hi">2022</td><td class="v hi">342</td><td class="v hi">72%</td><td class="v hi">47%</td><td class="v red hi">+1.3%</td></tr>
+    <tr><td>2023</td><td class="v">31</td><td class="v">90%</td><td class="v">74%</td><td class="v green">+15%</td></tr>
+    <tr><td>2025</td><td class="v">79</td><td class="v">85%</td><td class="v">67%</td><td class="v green">+33%</td></tr>
+    <tr><td>2026</td><td class="v">26</td><td class="v">92%</td><td class="v">88%</td><td class="v green">+49%</td></tr>
+  </table>
+  </div>
+
+  <p>One of those rows is not like the others, and it is the biggest one. <b>2022 is 65% of every red signal in the data.</b></p>
+
+  <p>Strip 2022 out and the remaining 186 signals reached +5% <b>88%</b> of the time and +10% <b>72%</b> of the time, fell 10% first only 19% of the time, and averaged <b>+34%</b> over twelve weeks with 83% of them higher.</p>
+
+  <p>Put 2022 back and it drags the whole zone down to the +12.9% in the first table.</p>
+
+  <p><b>The difference was not whether the bounce came. It was whether it held.</b> In both markets the first +5% usually arrived within about two days. In the rebound years it kept going. In 2022 it gave the gain back.</p>
+
+  <h2>Where we are right now</h2>
+
+  <p>We are about six sessions into this one. So here is the same comparison, restricted to signals that appeared in the first ten sessions of a red stretch, which is exactly where we are standing.</p>
+
+  <div class="tscroll">
+  <table>
+    <tr><th></th><th>Signals</th><th>Reached +5%</th><th>Reached +10%</th><th>Fell 10% first</th><th>Average dip</th><th>12 week average</th></tr>
+    <tr><td>Rebound years</td><td class="v">103</td><td class="v">82%</td><td class="v">64%</td><td class="v">28%</td><td class="v red">&minus;13.3%</td><td class="v green hi">+37%</td></tr>
+    <tr><td class="hi">2022</td><td class="v">90</td><td class="v">68%</td><td class="v">40%</td><td class="v red">40%</td><td class="v red">&minus;14.9%</td><td class="v red hi">&minus;4.2%</td></tr>
+  </table>
+  </div>
+
+  <p>Same point, sharper. Early in a red stretch, both markets produced a bounce most of the time. One of them was the start of a 37% twelve weeks. The other was a 4% loss and a 40% chance of watching the name drop 10% before it gave you anything.</p>
+
+  <p><b>We cannot tell which one this is. Not at session six, and not from anything in this data.</b> Anyone who tells you otherwise at this point in a decline is guessing.</p>
+
+  <h2>So what do you do with this</h2>
+
+  <p>Two things we would take from it.</p>
+
+  <p><b>Expect the bounce, and do not read much into it.</b> The first +5% has shown up quickly in almost every red stretch, including the one that went on to be a disaster. A name popping 5% next week is not evidence that this is 2020 rather than 2022.</p>
+
+  <p><b>Assume a 13% dip is normal here.</b> That was the average in the early sessions of a red stretch, in both the good markets and the bad one.</p>
+
+  <p>Nothing here says a red dial is a signal to act. It is a description of what has happened before, in a small number of episodes, one of which was bad.</p>
+</div>`,
+    foot:`Educational research, not advice. Hypothetical backtest over ten years of our setups as the model would have generated them under today's rules. It is not a record of published setups. Levels are what the price touched at the intraday peak, not returns anyone earned. The universe holds only companies that exist today, so historical outcomes are a ceiling. Each red stretch is a single episode, so the signal counts above are far fewer independent events than they appear. The Slow Swing is not a broker-dealer or investment adviser.`
+  },
+  {
     slug:'this-looks-like-2022', cat:{label:'Note', cls:'note'}, icon:'📉', sample:false,
     published:true,
     author:'GJ Singh', date:'Nov 22, 2026', read:'7 min read',
